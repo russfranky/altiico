@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Local env files — never committed. See DEPLOYMENT.md for required vars.
+.env.development
+.env.production
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archived reference (large, use wayback_machine_downloader locally)
+vipe-archive/*
+!vipe-archive/README.md
+!vipe-archive/DOCUMENTATION.md

@@ -1,0 +1,14 @@
+{
+  "_comment": "Prop manifest for altiico preview. Drop GLTF/GLB files at /public/props/ and add an entry here.",
+  "_tileOffsetUnits": "tileOffset x/z in tile units (1.0 = full tile). rotY in radians. Defaults are hand-tuned — dial in per prop.",
+  "props": [
+    {
+      "id": "couch_purple",
+      "name": "Couch (sandbox)",
+      "url": "/props/couch.gltf",
+      "category": "seating",
+      "defaultOffset": { "x": 0, "y": 0, "z": -1 },
+      "defaultRotY": 0
+    }
+  ]
+}
