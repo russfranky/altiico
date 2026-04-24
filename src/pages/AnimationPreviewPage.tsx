@@ -38,6 +38,9 @@ import type { SeatHeightStandard } from '@/hooks/useHubzzCamera';
 import { makeEntry, exportSession, resolveEffectiveOffset } from '@/lib/rigCorrection';
 import type { RigCorrectionEntry, RigCorrectionScope } from '@/lib/rigCorrection';
 import { buildCollectionManifest, downloadManifest, collectionsTouchedBySession } from '@/lib/manifest';
+import { renderPfpThumbnail } from '@/lib/pfpThumbnailRenderer';
+import { uploadPfpThumbnail } from '@/services/pfpUploadService';
+import { usePrivy } from '@privy-io/react-auth';
 import { Play, Pause, RotateCcw, Upload } from 'lucide-react';
 import * as THREE from 'three';
 import type { VRM } from '@pixiv/three-vrm';
@@ -194,7 +197,7 @@ function LeftColumn({
           disabled={collectionsLoading}
         >
           <SelectTrigger className="h-8 text-xs">
-            <SelectValue placeholder={collectionsLoading ? 'Loading...' : 'Pick a collection'} />
+            <SelectValue placeholder={collectionsLoading ? 'Loading...' : 'Pick an avatar set'} />
           </SelectTrigger>
           <SelectContent>
             {collections.map((c) => (
@@ -316,6 +319,9 @@ function RightColumn({
   onExportSession,
   onExportManifest,
   onCaptureFbThumbnail,
+  onBatchRenderPfp,
+  onBatchStop,
+  batchStatus,
   sessionCount,
   rigScope,
   onScopeSwitch,
@@ -362,6 +368,16 @@ function RightColumn({
   onExportSession: () => void;
   onExportManifest: () => void;
   onCaptureFbThumbnail: () => void;
+  onBatchRenderPfp: () => void;
+  onBatchStop: () => void;
+  batchStatus: {
+    running: boolean;
+    done: number;
+    total: number;
+    failed: number;
+    stop: boolean;
+    lastError: string | null;
+  };
   sessionCount: number;
   rigScope: RigCorrectionScope;
   onScopeSwitch: (v: RigCorrectionScope) => void;
@@ -601,9 +617,9 @@ function RightColumn({
               <ToggleGroupItem
                 value="collection"
                 className="text-[11px]"
-                title={selectedCollectionName ? `Applies to entire ${selectedCollectionName} collection` : undefined}
+                title={selectedCollectionName ? `Applies to entire ${selectedCollectionName} set` : undefined}
               >
-                Collection
+                Set
               </ToggleGroupItem>
             </ToggleGroup>
 
@@ -679,11 +695,37 @@ function RightColumn({
                 className="h-7 text-[11px] flex-1"
                 onClick={onExportManifest}
                 disabled={sessionCount === 0}
-                title={sessionCount === 0 ? 'No entries yet — save at least one first' : 'One JSON per collection, cascade pre-resolved, ready for hubzz'}
+                title={sessionCount === 0 ? 'No entries yet — save at least one first' : 'One JSON per avatar set, cascade pre-resolved, ready for hubzz'}
               >
                 Export manifests
               </Button>
             </div>
+            <div className="flex gap-1 pt-1 border-t border-border mt-1">
+              <Button
+                size="sm"
+                variant={batchStatus.running ? 'destructive' : 'default'}
+                className="h-7 text-[11px] flex-1"
+                onClick={batchStatus.running ? onBatchStop : onBatchRenderPfp}
+                title="Render pfp thumbnails for every avatar in the current collection and upload to R2. Rendered URLs are spliced into the next manifest export."
+              >
+                {batchStatus.running
+                  ? `Stop (${batchStatus.done}/${batchStatus.total})`
+                  : 'Batch pfp → R2'}
+              </Button>
+            </div>
+            {batchStatus.total > 0 && !batchStatus.running && (
+              <div className="text-[10px] text-muted-foreground">
+                pfp batch: {batchStatus.done - batchStatus.failed}/{batchStatus.total} ok
+                {batchStatus.failed > 0 && <span className="text-red-400"> · {batchStatus.failed} failed</span>}
+                {batchStatus.lastError && <div className="text-red-400 truncate" title={batchStatus.lastError}>last: {batchStatus.lastError}</div>}
+              </div>
+            )}
+            {batchStatus.running && batchStatus.total > 0 && (
+              <div className="text-[10px] text-muted-foreground">
+                rendering {batchStatus.done}/{batchStatus.total}
+                {batchStatus.failed > 0 && <span className="text-red-400"> · {batchStatus.failed} failed</span>}
+              </div>
+            )}
             {sessionNotice && (
               <div
                 className={`text-[10px] ${
@@ -716,8 +758,8 @@ function RightColumn({
               .{' '}
               {scopeSwitchPrompt === 'collection' ? (
                 <>
-                  Applying this at <strong>collection</strong> scope will affect every avatar in{' '}
-                  <strong>{selectedCollectionName ?? 'this collection'}</strong>.
+                  Applying this at <strong>set</strong> scope will affect every avatar in{' '}
+                  <strong>{selectedCollectionName ?? 'this avatar set'}</strong>.
                 </>
               ) : (
                 <>Applying this at <strong>avatar</strong> scope will affect only the current avatar.</>
@@ -927,7 +969,7 @@ export default function AnimationPreviewPage() {
 
   // Overlay state
   const [showBones, setShowBones] = useState(false);
-  const [showBounds, setShowBounds] = useState(true);
+  const [showBounds, setShowBounds] = useState(false);
 
   // Seat height — matches hubzz WorldTile seatHeight standards
   const [seatHeight, setSeatHeight] = useState<SeatHeightStandard>('none');
@@ -1175,11 +1217,124 @@ export default function AnimationPreviewPage() {
     exportSession(sessionEntries);
   };
 
-  // Manifest export — one JSON file per collection touched this session.
+  // ── Batch pfp render + upload ───────────────────────────────────────────
+  // Iterates every avatar in the currently selected collection, renders each
+  // via the same framing/pose/animation knobs the user tuned live, POSTs each
+  // PNG to avatar-api which writes it to R2 at thumbs/<slug>/<id>-pfp.png.
+  // Rendered URLs are written into pfpUrlOverrides so the next manifest export
+  // reflects the freshly-generated altii.co URLs instead of whatever avatar-api
+  // originally returned as thumbnail_url.
+  const { authenticated, login, getAccessToken } = usePrivy();
+  const [pfpUrlOverrides, setPfpUrlOverrides] = useState<Record<string, string>>({});
+  const [batchStatus, setBatchStatus] = useState<{
+    running: boolean;
+    done: number;
+    total: number;
+    failed: number;
+    stop: boolean;
+    lastError: string | null;
+  }>({ running: false, done: 0, total: 0, failed: 0, stop: false, lastError: null });
+  const batchStopRef = useRef(false);
+
+  const handleBatchStop = () => {
+    batchStopRef.current = true;
+    setBatchStatus((s) => ({ ...s, stop: true }));
+  };
+
+  const handleBatchRenderPfp = async () => {
+    if (!selectedCollectionSlug) {
+      setSessionNotice({ tone: 'error', msg: 'Select a collection first' });
+      return;
+    }
+    if (!authenticated) {
+      setSessionNotice({ tone: 'error', msg: 'Sign in required for batch upload' });
+      login();
+      return;
+    }
+    const collectionAvatars = collectionAvatarsCache[selectedCollectionSlug] ?? avatars;
+    if (!collectionAvatars || collectionAvatars.length === 0) {
+      setSessionNotice({ tone: 'error', msg: 'No avatars to render in this collection' });
+      return;
+    }
+
+    const token = await getAccessToken();
+    if (!token) {
+      setSessionNotice({ tone: 'error', msg: 'Sign-in token unavailable; please sign in again' });
+      return;
+    }
+
+    batchStopRef.current = false;
+    const slug = selectedCollectionSlug;
+    setBatchStatus({ running: true, done: 0, total: collectionAvatars.length, failed: 0, stop: false, lastError: null });
+
+    for (let i = 0; i < collectionAvatars.length; i++) {
+      if (batchStopRef.current) break;
+      const avatar = collectionAvatars[i];
+      const vrmUrl = getVrmUrl(avatar);
+      if (!vrmUrl) {
+        setBatchStatus((s) => ({ ...s, failed: s.failed + 1, done: s.done + 1 }));
+        continue;
+      }
+      try {
+        const dataUrl = await renderPfpThumbnail({
+          vrmUrl,
+          // Framing defaults match what AvatarThumbnailsPage ships today.
+          // A later pass can thread the live framing knobs in — for now use
+          // the same defaults the admin dashboard uses so output is parity.
+          outputSize: 256,
+          animation: 'anim_idle',
+        });
+        const result = await uploadPfpThumbnail(slug, avatar.id, dataUrl, token);
+        if (result.ok === true) {
+          const ok = result;
+          setPfpUrlOverrides((prev) => ({ ...prev, [`${slug}:${avatar.id}`]: ok.url }));
+          setBatchStatus((s) => ({ ...s, done: s.done + 1 }));
+        } else {
+          const fail = result;
+          setBatchStatus((s) => ({
+            ...s,
+            done: s.done + 1,
+            failed: s.failed + 1,
+            lastError: `${avatar.id}: ${fail.error}${fail.message ? ` — ${fail.message}` : ''}`,
+          }));
+        }
+      } catch (err: any) {
+        setBatchStatus((s) => ({
+          ...s,
+          done: s.done + 1,
+          failed: s.failed + 1,
+          lastError: `${avatar.id}: ${err?.message ?? String(err)}`,
+        }));
+      }
+    }
+
+    setBatchStatus((s) => ({ ...s, running: false }));
+    setSessionNotice({
+      tone: 'info',
+      msg: `Batch pfp render done. ${collectionAvatars.length - (batchStopRef.current ? collectionAvatars.length - (batchStatus.done + 1) : 0)} avatars processed.`,
+    });
+  };
+
+  // Manifest export — one JSON file per collection touched this session OR
+  // for the current collection if pfp batch-render produced fresh URLs.
   // Cascade is pre-resolved here; consumer doesn't need to understand scope.
   const handleExportManifest = () => {
-    if (sessionEntries.length === 0) return;
-    const touchedSlugs = collectionsTouchedBySession(sessionEntries);
+    // Slugs worth emitting: those with rig-correction entries, PLUS the
+    // currently selected collection if any batch-rendered pfp URLs exist.
+    const touchedSlugs = new Set(collectionsTouchedBySession(sessionEntries));
+    if (selectedCollectionSlug) {
+      const hasOverrides = Object.keys(pfpUrlOverrides).some((k) => k.startsWith(`${selectedCollectionSlug}:`));
+      if (hasOverrides) touchedSlugs.add(selectedCollectionSlug);
+    }
+
+    if (touchedSlugs.size === 0) {
+      setSessionNotice({
+        tone: 'error',
+        msg: 'Nothing to export. Save a rig correction or run a pfp batch render first.',
+      });
+      return;
+    }
+
     let emitted = 0;
     for (const slug of touchedSlugs) {
       const collection = collections.find((c) => c.slug === slug);
@@ -1188,7 +1343,16 @@ export default function AnimationPreviewPage() {
         console.warn(`[manifest] skipping ${slug} — collection metadata not cached. Visit the collection first.`);
         continue;
       }
-      const manifest = buildCollectionManifest(collection, collectionAvatars, sessionEntries);
+
+      // Splice any batch-rendered pfp URLs onto the avatars for THIS slug so
+      // buildCollectionManifest sees the fresh altii.co R2 URLs via
+      // avatar.thumbnail_url. Keeps the manifest.ts signature unchanged.
+      const withOverrides = collectionAvatars.map((a) => {
+        const override = pfpUrlOverrides[`${slug}:${a.id}`];
+        return override ? { ...a, thumbnail_url: override } : a;
+      });
+
+      const manifest = buildCollectionManifest(collection, withOverrides, sessionEntries);
       downloadManifest(manifest);
       emitted++;
     }
@@ -1255,7 +1419,7 @@ export default function AnimationPreviewPage() {
           const avatarCount = sessionEntries.filter((e) => e.scope === 'avatar').length;
           return (
             <span className="ml-1 text-[10px] px-1.5 py-0.5 rounded bg-violet-500/20 text-violet-300"
-                  title={`${collectionCount} collection-scoped + ${avatarCount} avatar-scoped`}>
+                  title={`${collectionCount} set-scoped + ${avatarCount} avatar-scoped`}>
               Session: {collectionCount}c + {avatarCount}a
             </span>
           );
@@ -1349,6 +1513,9 @@ export default function AnimationPreviewPage() {
             onExportSession={handleExportSession}
             onExportManifest={handleExportManifest}
             onCaptureFbThumbnail={handleCaptureFbThumbnail}
+            onBatchRenderPfp={handleBatchRenderPfp}
+            onBatchStop={handleBatchStop}
+            batchStatus={batchStatus}
             sessionCount={sessionEntries.length}
             rigScope={rigScope}
             onScopeSwitch={handleScopeSwitch}
