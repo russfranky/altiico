@@ -133,17 +133,18 @@ const NODES: PipelineNodeSpec[] = [
     id: 'r2',
     title: 'Storage',
     icon: Cloud,
-    summary: 'Cloudflare R2 — canonical asset store',
+    summary: 'Cloudflare R2 — canonical asset store, served via altii.co',
     owner: 'r2',
     band: 'processing',
     liveStatus: 'r2',
     detail: {
       purpose:
-        'All published avatar assets live here. URLs constructed as /files/avatars/<slug>/<tokenId>.vrm. Served via the hubzz-assets-worker Cloudflare Worker.',
+        'All published avatar assets live here. URLs constructed as /avatars/<slug>/<tokenId>.vrm. Served directly via altii.co (R2 custom domain, no worker in the hot path). The hubzz-assets-worker still handles ingestion/optimization writes.',
       endpoints: [
-        'https://hubzz-assets-worker.hubzzhq.workers.dev/files/avatars/<slug>/',
-        'https://hubzz-assets-worker.hubzzhq.workers.dev/files/thumbs/<slug>/',
-        'https://hubzz-assets-worker.hubzzhq.workers.dev/files/collections/<slug>/manifest.json',
+        'https://altii.co/avatars/<slug>/',
+        'https://altii.co/thumbs/<slug>/',
+        'https://altii.co/collections/<slug>/manifest.json',
+        'https://hubzz-assets-worker.hubzzhq.workers.dev/ingest (admin writes only)',
       ],
       filePaths: [
         'packages/avatar-api/src/optimize/batch.ts (uploads after optimize)',
@@ -161,7 +162,7 @@ const NODES: PipelineNodeSpec[] = [
     liveStatus: 'admin',
     detail: {
       purpose:
-        'Collection status machine gates in-world visibility. Only published collections appear in avatar selection; staged are visible to admins/QA; draft is invisible.',
+        'Avatar set status machine gates in-world visibility. Only published sets appear in avatar selection; staged are visible to admins/QA; draft is invisible.',
       endpoints: [
         'GET /api/admin/collections',
         'PATCH /api/admin/collections/:slug/status',
