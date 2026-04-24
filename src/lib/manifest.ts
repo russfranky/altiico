@@ -57,14 +57,8 @@ function makeAvatarId(avatar: ApiAvatar): string {
   return `${avatar.collection_slug}:${avatar.id}`;
 }
 
-const ASSET_BASE = 'https://altii.co';
-
-function conventionalPfpThumbUrl(avatar: ApiAvatar): string {
-  return `${ASSET_BASE}/thumbs/${avatar.collection_slug}/${avatar.id}-pfp.png`;
-}
-
 function conventionalFbThumbUrl(avatar: ApiAvatar): string {
-  return `${ASSET_BASE}/thumbs/${avatar.collection_slug}/${avatar.id}-fb.png`;
+  return `https://altii.co/thumbs/${avatar.collection_slug}/${avatar.id}-fb.png`;
 }
 
 /**
@@ -109,7 +103,7 @@ export function buildCollectionManifest(
       tokenId: avatar.token_id ?? null,
       name: avatar.name,
       vrmUrl: getVrmUrl(avatar),
-      pfpThumbnailUrl: conventionalPfpThumbUrl(avatar),
+      pfpThumbnailUrl: avatar.thumbnail_url,
       fbThumbnailUrl: conventionalFbThumbUrl(avatar),
       contract: avatar.contract,
       chain: avatar.chain,
