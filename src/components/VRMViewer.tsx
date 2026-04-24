@@ -6,6 +6,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { VRMLoaderPlugin, VRMUtils, type VRM } from '@pixiv/three-vrm';
 import { obs } from '@/lib/obs';
+import { applyEngineMaterialOverrides } from '@/lib/engineMaterialParity';
 
 /* ─────────────────────────────────────────────
    Types
@@ -94,7 +95,7 @@ function VRMScene({
         // them rather than failing the whole load.
         try {
           VRMUtils.removeUnnecessaryVertices(gltf.scene);
-          VRMUtils.removeUnnecessaryJoints(gltf.scene);
+          VRMUtils.combineSkeletons(gltf.scene);
         } catch (e) {
           console.warn('[VRMViewer] skipping optimise pass:', e instanceof Error ? e.message : e);
           Sentry.addBreadcrumb({
@@ -110,6 +111,9 @@ function VRMScene({
         if (vrm.meta?.metaVersion === '0') {
           VRMUtils.rotateVRM0(vrm);
         }
+
+        // Hubzz engine parity — preview must render identical to in-world.
+        applyEngineMaterialOverrides(vrm.scene);
 
         // Add to scene
         scene.add(vrm.scene);

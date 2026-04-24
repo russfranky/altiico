@@ -10,6 +10,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
+import { applyEngineMaterialOverrides } from '@/lib/engineMaterialParity';
 import type { VRM } from '@pixiv/three-vrm';
 import { loadMixamoAnimation } from '@/lib/mixamoLoader';
 import { loadUALAnimation } from '@/lib/ualLoader';
@@ -31,6 +32,7 @@ import HubzzCameraControls from './HubzzCameraControls';
 import type { HubzzCameraControlsHandle } from './HubzzCameraControls';
 import type { PropInstance } from '@/lib/propsTypes';
 import { applyToonShader, createToonGradientTexture } from '@/lib/threeUtils';
+import AvatarLoadingFX from './AvatarLoadingFX';
 
 // Shared gradient across every VRM load — identical toon ramp to hubzz default (5 steps)
 const vrmGradientMap = createToonGradientTexture(5);
@@ -185,7 +187,7 @@ function OrthoCamera() {
       frustum.near,
       frustum.far,
     );
-    ortho.zoom = 1.0;
+    ortho.zoom = 2.0;
     ortho.position.copy(HUBZZ_CAMERA_OFFSET);
     ortho.lookAt(0, 0, 0);
     ortho.updateProjectionMatrix();
@@ -235,6 +237,7 @@ function AvatarAndAnimation({
   const clockRef = useRef(new THREE.Clock());
   const mountedRef = useRef(true);
   const vrmOutlineMatRef = useRef<THREE.ShaderMaterial | null>(null);
+  const loadingFxRef = useRef<AvatarLoadingFX | null>(null);
 
   // Whether avatar drag has captured the pointer (blocks camera pan)
   const [avatarDragActive, setAvatarDragActive] = useState(false);
@@ -267,12 +270,32 @@ function AvatarAndAnimation({
     }
   }, [threeScene, disposeAnimation]);
 
+  // Helpers to add/remove the in-world-style loading FX during VRM streaming.
+  const showLoadingFx = useCallback(() => {
+    if (loadingFxRef.current) return;
+    const fx = new AvatarLoadingFX(6);
+    // Place at avatar chest height so it's framed the same way the arriving VRM will be.
+    fx.position.set(0, 1.0, 0);
+    threeScene.add(fx);
+    loadingFxRef.current = fx;
+  }, [threeScene]);
+
+  const hideLoadingFx = useCallback(() => {
+    const fx = loadingFxRef.current;
+    if (!fx) return;
+    threeScene.remove(fx);
+    fx.dispose();
+    loadingFxRef.current = null;
+  }, [threeScene]);
+
   // Load VRM
   useEffect(() => {
     mountedRef.current = true;
     disposeVRM();
+    hideLoadingFx();
 
     if (!vrmUrl) return;
+    showLoadingFx();
 
     const loader = new GLTFLoader();
     loader.register((parser) => new VRMLoaderPlugin(parser));
@@ -285,6 +308,7 @@ function AvatarAndAnimation({
         if (!vrm) {
           const err = new Error('GLTF loaded but no VRM data found');
           onError?.(err);
+          hideLoadingFx();
           return;
         }
 
@@ -295,6 +319,10 @@ function AvatarAndAnimation({
         if (isVRM0) {
           VRMUtils.rotateVRM0(vrm);
         }
+
+        // Hubzz engine material parity — must run so preview renders identical
+        // to in-world. See src/lib/engineMaterialParity.ts for full context.
+        applyEngineMaterialOverrides(vrm.scene);
 
         // Prevent avatar blinking when partially off-screen — intentional, matches hubzz
         vrm.scene.traverse((node) => {
@@ -336,16 +364,19 @@ function AvatarAndAnimation({
         vrmRef.current = vrm;
         clockRef.current = new THREE.Clock();
 
+        hideLoadingFx();
         onLoad?.(vrm);
       })
       .catch((err: Error) => {
         if (!mountedRef.current) return;
+        hideLoadingFx();
         onError?.(err);
       });
 
     return () => {
       mountedRef.current = false;
       disposeVRM();
+      hideLoadingFx();
     };
   // Intentionally omitting disposeVRM — stable ref
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -491,6 +522,9 @@ function AvatarAndAnimation({
     if (mixerRef.current) {
       mixerRef.current.update(delta);
     }
+    if (loadingFxRef.current) {
+      loadingFxRef.current.update();
+    }
     // Keep the VRM outline uniform aligned with the camera so angle-based thickness
     // stays correct. See applyToonShader() docstring.
     if (vrmOutlineMatRef.current) {
@@ -587,7 +621,7 @@ const IsometricCanvas = forwardRef<IsometricCanvasHandle, IsometricCanvasProps>(
           orthographic
           camera={{
             position: [HUBZZ_CAMERA_OFFSET.x, HUBZZ_CAMERA_OFFSET.y, HUBZZ_CAMERA_OFFSET.z],
-            zoom: 1,
+            zoom: 2,
             near: 0.1,
             far: 1000,
           }}
