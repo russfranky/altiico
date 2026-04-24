@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { usePrivy, useLogin, useLogout } from '@privy-io/react-auth';
+import * as Sentry from '@sentry/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -10,6 +11,10 @@ import {
   type Submission,
   type SubmissionInput,
 } from '@/services/submissionsService';
+
+// Anchor Wave-2b creator-intake surface in Sentry so failures hitting the
+// avatar-api submit endpoint surface with the right feature context.
+const FEATURE_TAG = 'altiico_unify';
 
 const SLUG_PATTERN = /^[a-z0-9-]+$/;
 
@@ -139,6 +144,11 @@ export default function SubmitPage() {
     }
 
     setSubmitting(true);
+    Sentry.addBreadcrumb({
+      category: 'intake.submit',
+      message: `POST /api/collections/submit slug=${form.slug}`,
+      level: 'info',
+    });
     try {
       const result = await submitCollection(toInput(form), token);
       if (result.ok === true) {
@@ -153,6 +163,11 @@ export default function SubmitPage() {
         const fieldErrors = err.fields
           ? Object.entries(err.fields).map(([k, v]) => `${k}: ${v}`).join(', ')
           : null;
+        Sentry.captureMessage('intake.submit.failed', {
+          level: 'warning',
+          tags: { feature: FEATURE_TAG, 'api.status': String(result.status) },
+          extra: { error: err, slug: form.slug },
+        });
         setMessage({
           kind: 'error',
           text:
@@ -161,6 +176,9 @@ export default function SubmitPage() {
             `Submission failed (${result.status} ${err.error})`,
         });
       }
+    } catch (e) {
+      Sentry.captureException(e, { tags: { feature: FEATURE_TAG, route: 'submit' } });
+      throw e;
     } finally {
       setSubmitting(false);
     }
