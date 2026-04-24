@@ -25,8 +25,6 @@ export interface ManifestRigCorrection {
   offset: RigCorrectionOffset;
   /** 'avatar' = override, 'collection' = inherits default. 'default' entries are omitted. */
   source: 'avatar' | 'collection';
-  reviewedAt: string;
-  appliedFor?: string;
 }
 
 export interface ManifestAvatar {
@@ -59,18 +57,14 @@ function makeAvatarId(avatar: ApiAvatar): string {
   return `${avatar.collection_slug}:${avatar.id}`;
 }
 
-/**
- * Conventional R2 path for the full-body thumbnail. altiico doesn't upload —
- * this URL assumes the file exists at the standard R2 location. If it doesn't,
- * hubzz client falls back to pfpThumbnailUrl.
- */
-function conventionalFbThumbUrl(avatar: ApiAvatar): string {
-  const base = 'https://hubzz-assets-worker.hubzzhq.workers.dev/files/thumbs';
-  return `${base}/${avatar.collection_slug}/${avatar.id}-fb.png`;
+const ASSET_BASE = 'https://altii.co';
+
+function conventionalPfpThumbUrl(avatar: ApiAvatar): string {
+  return `${ASSET_BASE}/thumbs/${avatar.collection_slug}/${avatar.id}-pfp.png`;
 }
 
-function formatAppliedFor(entry: RigCorrectionEntry): string {
-  return `seat:${entry.seatHeight},anim:${entry.animationId ?? 'none'},facing:${entry.facingDeg}`;
+function conventionalFbThumbUrl(avatar: ApiAvatar): string {
+  return `${ASSET_BASE}/thumbs/${avatar.collection_slug}/${avatar.id}-fb.png`;
 }
 
 /**
@@ -92,12 +86,7 @@ export function buildCollectionManifest(
   const latestCollectionEntry = collectionEntries[collectionEntries.length - 1] ?? null;
 
   const defaultRigCorrection: ManifestRigCorrection | undefined = latestCollectionEntry
-    ? {
-        offset: latestCollectionEntry.offset,
-        source: 'collection',
-        reviewedAt: latestCollectionEntry.timestamp,
-        appliedFor: formatAppliedFor(latestCollectionEntry),
-      }
+    ? { offset: latestCollectionEntry.offset, source: 'collection' }
     : undefined;
 
   const manifestAvatars: ManifestAvatar[] = avatars.map((avatar) => {
@@ -110,12 +99,7 @@ export function buildCollectionManifest(
 
     let rigCorrection: ManifestRigCorrection | undefined;
     if (resolution.source === 'avatar' && resolution.avatarEntry) {
-      rigCorrection = {
-        offset: resolution.avatarEntry.offset,
-        source: 'avatar',
-        reviewedAt: resolution.avatarEntry.timestamp,
-        appliedFor: formatAppliedFor(resolution.avatarEntry),
-      };
+      rigCorrection = { offset: resolution.avatarEntry.offset, source: 'avatar' };
     }
     // 'collection' source inherits defaultRigCorrection at the top of the manifest;
     // we don't duplicate it per-avatar. 'default' means no correction — field omitted.
@@ -125,7 +109,7 @@ export function buildCollectionManifest(
       tokenId: avatar.token_id ?? null,
       name: avatar.name,
       vrmUrl: getVrmUrl(avatar),
-      pfpThumbnailUrl: avatar.thumbnail_url,
+      pfpThumbnailUrl: conventionalPfpThumbUrl(avatar),
       fbThumbnailUrl: conventionalFbThumbUrl(avatar),
       contract: avatar.contract,
       chain: avatar.chain,
