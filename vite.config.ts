@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: '0.0.0.0',
-    allowedHosts: ['.ngrok-free.dev', '.ngrok.io', '.trycloudflare.com', '.hubzz.xyz'],
+    allowedHosts: ['.ngrok-free.dev', '.ngrok.io', '.trycloudflare.com', '.hubzz.xyz', '.altii.co'],
     proxy: {
       '/avatar-api': {
         target: 'http://localhost:1233',
