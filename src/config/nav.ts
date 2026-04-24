@@ -15,8 +15,9 @@ export interface NavItem {
 }
 
 export const MAIN_NAV: NavItem[] = [
-  { label: 'Explore', path: '/explore', description: 'Indexed assets and collections' },
-  { label: 'Collections', path: '/explore/collections', description: 'Indexed collections' },
+  { label: 'Avatar Sets', path: '/explore/collections', description: 'Indexed avatar sets' },
+  { label: 'Avatars', path: '/explore/assets/avatars', description: 'Cross-set avatar grid' },
+  { label: 'Submit', path: '/submit', description: 'Propose an avatar set for hubzz' },
   {
     label: 'Pipeline',
     path: '/pipeline',
