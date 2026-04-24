@@ -23,6 +23,7 @@
  */
 import {
   BackSide,
+  BufferAttribute,
   BufferGeometry,
   Mesh,
   MeshToonMaterial,
@@ -124,13 +125,14 @@ function computeSmoothedNormals(geometry: BufferGeometry): void {
     smoothed[i * 3 + 1] = final.y;
     smoothed[i * 3 + 2] = final.z;
   }
-  // Write back into the geometry's normal buffer in-place. The engine's
-  // AvatarVRMManager stores results as "smoothNormal" but the actual draw
-  // path uses geometry.attributes.normal — so updating normal directly is
-  // what makes the MeshToonMaterial + outline hull render with smoothed
-  // shading. needsUpdate flag tells three.js to re-upload to GPU.
-  (normAttr.array as Float32Array).set(smoothed);
-  normAttr.needsUpdate = true;
+  // Engine parity: store as separate `smoothNormal` attribute, leave
+  // original `normal` untouched. The engine does the same — no shader in
+  // the in-world code actually reads smoothNormal, but it's preserved in
+  // case a future shader does. Writing to `normal` directly (an earlier
+  // iteration) caused material tearing because MeshToonMaterial's
+  // shade-gradient lighting is sensitive to normal-buffer smoothing
+  // introducing flat facets at the group boundaries.
+  geometry.setAttribute('smoothNormal', new BufferAttribute(smoothed, 3));
 }
 
 // ── Face-exclusion filter ────────────────────────────────────────────────
