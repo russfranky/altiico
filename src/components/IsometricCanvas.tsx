@@ -10,7 +10,6 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
-import { applyEngineMaterialOverrides } from '@/lib/engineMaterialParity';
 import type { VRM } from '@pixiv/three-vrm';
 import { loadMixamoAnimation } from '@/lib/mixamoLoader';
 import { loadUALAnimation } from '@/lib/ualLoader';
@@ -319,10 +318,6 @@ function AvatarAndAnimation({
         if (isVRM0) {
           VRMUtils.rotateVRM0(vrm);
         }
-
-        // Hubzz engine material parity — must run so preview renders identical
-        // to in-world. See src/lib/engineMaterialParity.ts for full context.
-        applyEngineMaterialOverrides(vrm.scene);
 
         // Prevent avatar blinking when partially off-screen — intentional, matches hubzz
         vrm.scene.traverse((node) => {

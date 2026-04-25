@@ -19,7 +19,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 import { OutlineEffect } from 'three/examples/jsm/effects/OutlineEffect.js';
 import { VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
-import { applyEngineMaterialOverrides } from './engineMaterialParity';
 
 const AVATAR_BODY_HEIGHT = 0.85;
 const AVATAR_FLOOR_Y = -0.45;
@@ -258,10 +257,6 @@ export async function renderPfpThumbnail(options: ThumbnailOptions): Promise<str
     if (!vrm) throw new Error('VRM data not found');
 
     VRMUtils.rotateVRM0(vrm);
-
-    // Hubzz engine material parity — the rendered thumbnail should look the
-    // same way the avatar looks in-world, so operators can QA from the pfp.
-    applyEngineMaterialOverrides(vrm.scene);
 
     let retargeted: THREE.AnimationClip | null = null;
     if (animUrl) {
