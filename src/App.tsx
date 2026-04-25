@@ -58,8 +58,20 @@ function App() {
                 </Suspense>
               } />
               <Route path="/collections" element={<Navigate to="/explore/collections" replace />} />
-              {/* Preview route — dev/QA only. Gate at CDN/nginx if exposed publicly. */}
+              {/* Preview route — dev/QA only. Gate at CDN/nginx if exposed publicly.
+                   Deep-link form /preview/:slug/:id mirrors hubzz client's /a/:collection/:tokenId
+                   so operators can share a URL that loads a specific avatar directly. */}
               <Route path="/preview" element={
+                <Suspense fallback={<PageSkeleton />}>
+                  <AnimationPreviewPage />
+                </Suspense>
+              } />
+              <Route path="/preview/:slug" element={
+                <Suspense fallback={<PageSkeleton />}>
+                  <AnimationPreviewPage />
+                </Suspense>
+              } />
+              <Route path="/preview/:slug/:id" element={
                 <Suspense fallback={<PageSkeleton />}>
                   <AnimationPreviewPage />
                 </Suspense>

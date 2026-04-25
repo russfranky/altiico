@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useEffect, useState, useRef, useCallback } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import type { IsometricCanvasHandle } from '@/components/IsometricCanvas';
 import type { DragOffset } from '@/components/AvatarDragHandles';
 import { Card } from '@/components/ui/card';
@@ -898,8 +899,17 @@ function RightColumn({
 // ---------------------------------------------------------------------------
 
 export default function AnimationPreviewPage() {
+  // Deep-link support — mirrors hubzz client's /a/:collection/:tokenId pattern.
+  // URL params are the initial source-of-truth; user selections push new URLs
+  // via navigate(replace: true) so refresh/bookmark preserves the loaded
+  // avatar and back/forward traverses past picks.
+  const urlParams = useParams<{ slug?: string; id?: string }>();
+  const navigate = useNavigate();
+
   const { collections, loading: collectionsLoading } = useCollections();
-  const [selectedCollectionSlug, setSelectedCollectionSlug] = useState<string | null>(null);
+  const [selectedCollectionSlug, setSelectedCollectionSlug] = useState<string | null>(
+    urlParams.slug ?? null,
+  );
   const { avatars, loading: avatarsLoading } = useAvatars(selectedCollectionSlug);
   const animations = useAnimationManifest();
   const propDefinitions = usePropsManifest();
@@ -1054,6 +1064,30 @@ export default function AnimationPreviewPage() {
   const handleVrmLoaded = (vrm: VRM) => {
     // Wait a frame so scale chain has been applied before measuring
     requestAnimationFrame(() => {
+      // Measure from humanoid skeleton (hips ↔ head), not mesh bbox.
+      // bbox includes hair, capes, accessories — inflates the reported
+      // height and makes it drift from the optimizer's 1.5–1.75m target.
+      // Skeleton gives the true "body height" per the VRM humanoid spec.
+      // head→hips is ~35% of total body height across human rigs; we
+      // extrapolate so the reported figure matches everyday "how tall
+      // is the character" intuition.
+      const hipsNode = vrm.humanoid?.getNormalizedBoneNode?.('hips')
+        ?? vrm.humanoid?.getBoneNode?.('hips');
+      const headNode = vrm.humanoid?.getNormalizedBoneNode?.('head')
+        ?? vrm.humanoid?.getBoneNode?.('head');
+      if (hipsNode && headNode) {
+        hipsNode.updateWorldMatrix(true, false);
+        headNode.updateWorldMatrix(true, false);
+        const hipsY = hipsNode.getWorldPosition(new THREE.Vector3()).y;
+        const headY = headNode.getWorldPosition(new THREE.Vector3()).y;
+        const spine = headY - hipsY;
+        if (spine > 0) {
+          // 0.35 = standard human proportion head-to-hips / total height
+          setMeasuredHeight(spine / 0.35);
+          return;
+        }
+      }
+      // Fallback to bbox if the VRM lacks a proper humanoid rig
       const bbox = new THREE.Box3().setFromObject(vrm.scene);
       const size = new THREE.Vector3();
       bbox.getSize(size);
@@ -1069,7 +1103,44 @@ export default function AnimationPreviewPage() {
     setMeasuredHeight(null);
     const url = getVrmUrl(avatar);
     setActiveVrmUrl(url);
+    // Push /preview/<slug>/<id> so refresh/bookmark preserves this pick.
+    // Use replace so the nav stack doesn't grow per-click inside one session.
+    const slug = avatar.collection_slug ?? selectedCollectionSlug;
+    if (slug) {
+      navigate(`/preview/${encodeURIComponent(slug)}/${encodeURIComponent(String(avatar.id))}`, { replace: true });
+    }
   };
+
+  // Sync collection slug → URL. Runs whenever the user picks a set even if
+  // no avatar is selected yet, so /preview/<slug> shows the set loaded.
+  useEffect(() => {
+    if (!selectedCollectionSlug) return;
+    // If an avatar is picked we've already pushed /preview/<slug>/<id>,
+    // so only push the slug-only URL when no avatar selected.
+    if (selectedAvatar) return;
+    // Avoid pushing the URL on initial mount when we're already at the
+    // matching slug (prevents a redundant history entry).
+    if (urlParams.slug === selectedCollectionSlug && !urlParams.id) return;
+    navigate(`/preview/${encodeURIComponent(selectedCollectionSlug)}`, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCollectionSlug, selectedAvatar]);
+
+  // Deep-link restore: once avatars are loaded for the URL-requested slug,
+  // auto-select the avatar whose id matches urlParams.id. Only fires on
+  // mount / when the URL changes; does not re-fire when the user picks a
+  // different avatar (selectedAvatar would be non-null at that point).
+  useEffect(() => {
+    if (!urlParams.id) return;
+    if (selectedAvatar) return;
+    if (!avatars || avatars.length === 0) return;
+    const match = avatars.find((a) => String(a.id) === urlParams.id);
+    if (match) {
+      setSelectedAvatar(match);
+      setActiveVrmUrl(getVrmUrl(match));
+      setMeasuredHeight(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlParams.id, avatars]);
 
   const handleUploadVrm = (url: string) => {
     setSelectedAvatar(null);
