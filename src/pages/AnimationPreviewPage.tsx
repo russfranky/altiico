@@ -1064,30 +1064,33 @@ export default function AnimationPreviewPage() {
   const handleVrmLoaded = (vrm: VRM) => {
     // Wait a frame so scale chain has been applied before measuring
     requestAnimationFrame(() => {
-      // Measure from humanoid skeleton (hips ↔ head), not mesh bbox.
-      // bbox includes hair, capes, accessories — inflates the reported
-      // height and makes it drift from the optimizer's 1.5–1.75m target.
-      // Skeleton gives the true "body height" per the VRM humanoid spec.
-      // head→hips is ~35% of total body height across human rigs; we
-      // extrapolate so the reported figure matches everyday "how tall
-      // is the character" intuition.
-      const hipsNode = vrm.humanoid?.getNormalizedBoneNode?.('hips')
-        ?? vrm.humanoid?.getBoneNode?.('hips');
-      const headNode = vrm.humanoid?.getNormalizedBoneNode?.('head')
-        ?? vrm.humanoid?.getBoneNode?.('head');
-      if (hipsNode && headNode) {
-        hipsNode.updateWorldMatrix(true, false);
-        headNode.updateWorldMatrix(true, false);
-        const hipsY = hipsNode.getWorldPosition(new THREE.Vector3()).y;
-        const headY = headNode.getWorldPosition(new THREE.Vector3()).y;
-        const spine = headY - hipsY;
-        if (spine > 0) {
-          // 0.35 = standard human proportion head-to-hips / total height
-          setMeasuredHeight(spine / 0.35);
+      // True body height = foot bone world-Y → head bone world-Y.
+      // This matches the VRM humanoid spec and the optimizer's own
+      // height-normalize routine. bbox includes hair/capes/accessories;
+      // head-to-hips ratio varies wildly across stylized rigs
+      // (retrodoges 0.56, 100avatars-r2 0.31) so any fixed-ratio
+      // extrapolation is wrong by construction. foot→head is stable.
+      const getBone = (name: string) =>
+        vrm.humanoid?.getNormalizedBoneNode?.(name as any) ??
+        vrm.humanoid?.getBoneNode?.(name as any);
+      const head = getBone('head');
+      const leftFoot = getBone('leftFoot');
+      const rightFoot = getBone('rightFoot');
+      const foot = leftFoot ?? rightFoot;
+
+      if (head && foot) {
+        vrm.scene.updateMatrixWorld(true);
+        const headY = head.getWorldPosition(new THREE.Vector3()).y;
+        const footY = foot.getWorldPosition(new THREE.Vector3()).y;
+        const bodyHeight = headY - footY;
+        if (bodyHeight > 0) {
+          setMeasuredHeight(bodyHeight);
           return;
         }
       }
-      // Fallback to bbox if the VRM lacks a proper humanoid rig
+      // Fallback to bbox if the VRM lacks a humanoid rig or the rig is
+      // malformed. Will over-report for avatars with hair/props; the
+      // 'over' badge is still useful but not authoritative.
       const bbox = new THREE.Box3().setFromObject(vrm.scene);
       const size = new THREE.Vector3();
       bbox.getSize(size);
