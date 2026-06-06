@@ -23,8 +23,19 @@ export function resolvePrivyAppId(): string {
 
   if (typeof window !== 'undefined') {
     const host = window.location.hostname;
+
+    // avatars.hubzz.xyz is the PRODUCTION avatars site. Its Privy login must
+    // use the PROD app so tokens validate against the same app the hubzz
+    // server/avatar-api trusts (packages/server/config.json jwks =
+    // clp0x8o7i...). Using the sandbox app here logs users into a Privy app
+    // the server rejects, so auth can never complete. Match dash.hubzz.xyz /
+    // hubzz.xyz, which also use PROD.
+    if (host === 'avatars.hubzz.xyz') {
+      return PRIVY_PROD_APP_ID;
+    }
+
     // Non-production hostnames use the sandbox app:
-    //   - *.hubzz.xyz (staging)
+    //   - other *.hubzz.xyz (staging)
     //   - localhost / 127.0.0.1
     //   - explore.altii.co (dev-box preview of altiico)
     if (

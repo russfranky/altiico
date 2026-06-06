@@ -29,9 +29,9 @@ export default function CollectionCard({ collection }: { collection: Collection 
         <img src={collection.pfp || PLACEHOLDER_IMG} alt="" loading="lazy" decoding="async" className="w-10 h-10 rounded-lg object-cover border border-border shrink-0" onError={onImgError} />
         <div className="flex-1 min-w-0">
           <h3 className="font-medium text-foreground truncate text-sm">{collection.name}</h3>
-          <span className={`text-xs ${collection.assets3D !== 'Coming Soon' ? 'text-emerald-600' : 'text-amber-600'}`}>
-            {collection.assets3D}
-          </span>
+          {collection.assets3D === 'Coming Soon' && (
+            <span className="text-xs text-amber-600">{collection.assets3D}</span>
+          )}
         </div>
       </div>
     </Link>

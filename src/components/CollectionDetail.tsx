@@ -146,7 +146,7 @@ const CollectionDetail = () => {
             <span>/</span>
             <Link to="/explore" className="hover:text-foreground transition-colors">Explore</Link>
             <span>/</span>
-            <Link to="/explore/collections" className="hover:text-foreground transition-colors">Collections</Link>
+            <Link to="/explore/collections" className="hover:text-foreground transition-colors">Avatar Sets</Link>
             <span>/</span>
             <span className="text-primary font-medium">{collection.name}</span>
           </nav>
@@ -155,9 +155,9 @@ const CollectionDetail = () => {
 
       {/* Collection header */}
       <div className="relative">
-        <div className="aspect-[21/9] sm:aspect-[3/1] max-h-[320px] overflow-hidden bg-muted/30">
+        <div className="aspect-[21/9] sm:aspect-[3/1] max-h-[320px] md:max-h-[420px] lg:max-h-[520px] overflow-hidden bg-muted/30">
           <img
-            src={collection.banner || PLACEHOLDER_IMG}
+            src={(collection.banner || PLACEHOLDER_IMG).replace(/\?fit=inside(&|$)/, "?w=1920$1").replace(/\?fit=inside$/, "")}
             alt={collection.name}
             className="w-full h-full object-cover"
             onError={onImgError}
@@ -178,6 +178,14 @@ const CollectionDetail = () => {
               </h1>
               <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-muted-foreground">
                 <span>{collection.items} units</span>
+                {collection.chain && (
+                  <>
+                    <span className="text-border">&middot;</span>
+                    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded bg-muted">
+                      {collection.chain}
+                    </span>
+                  </>
+                )}
                 {collection.category && (
                   <>
                     <span className="text-border">&middot;</span>
@@ -187,15 +195,17 @@ const CollectionDetail = () => {
                 {(collection as any).license && (
                   <>
                     <span className="text-border">&middot;</span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-muted">{(collection as any).license}</span>
+                    <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded bg-emerald-600/15 text-emerald-400">
+                      {(collection as any).license}
+                    </span>
                   </>
                 )}
-                <span className="text-border">&middot;</span>
-                <span className={cn(
-                  collection.assets3D !== 'Coming Soon' ? 'text-primary' : 'text-muted-foreground'
-                )}>
-                  {collection.assets3D}
-                </span>
+                {collection.assets3D === 'Coming Soon' && (
+                  <>
+                    <span className="text-border">&middot;</span>
+                    <span className="text-muted-foreground">{collection.assets3D}</span>
+                  </>
+                )}
               </div>
               {collection.description && (
                 <p className="mt-3 text-sm text-muted-foreground max-w-2xl">{collection.description}</p>
@@ -240,7 +250,7 @@ const CollectionDetail = () => {
             {total > 0 ? `${total.toLocaleString()} avatars` : 'Avatars'}
           </h2>
           <Input
-            placeholder="Search in collection..."
+            placeholder="Search in set..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full sm:w-56"
@@ -279,9 +289,6 @@ const CollectionDetail = () => {
                       <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium truncate opacity-0 group-hover:opacity-100 transition-opacity">
                         {avatar.name}
                       </div>
-                      {avatar.vrmUrl && (
-                        <span className="absolute top-2 left-2 text-[10px] px-2 py-0.5 rounded bg-primary/80 text-primary-foreground">3D</span>
-                      )}
                     </div>
                   </button>
                   <div className="p-2 sm:p-2.5">

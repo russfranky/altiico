@@ -67,6 +67,18 @@ function mapApiAvatar(a: any): Avatar {
   };
 }
 
+// Map API `source` field (chain / origin) to a human-readable chain badge label.
+// The API uses a small set of values — keep this in sync with what the avatar-api
+// registry actually emits. `category` is deliberately left empty for API sets —
+// see types/index.ts note. Genre-style taxonomy is a future feature.
+const CHAIN_LABELS: Record<string, string> = {
+  ethereum: 'Ethereum',
+  zora: 'Zora',
+  arweave: 'Arweave',
+  opensource: 'Open Source',
+  somnia: 'Somnia',
+};
+
 function mapApiCollection(c: APICollectionResponse): Collection {
   return {
     name: c.name,
@@ -74,7 +86,8 @@ function mapApiCollection(c: APICollectionResponse): Collection {
     banner: c.banner_url || PLACEHOLDER_IMG,
     pfp: c.pfp_url || PLACEHOLDER_IMG,
     assets3D: (c.avatar_count || 0) > 0 ? '3D Ready' : 'Coming Soon',
-    category: c.source === 'opensource' ? 'Open Source' : 'Ethereum',
+    category: '',
+    chain: c.source ? (CHAIN_LABELS[c.source.toLowerCase()] ?? c.source) : undefined,
     contract: c.contract,
     description: c.description,
     slug: c.slug,

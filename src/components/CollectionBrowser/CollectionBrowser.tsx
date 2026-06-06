@@ -58,7 +58,7 @@ const CollectionBrowser: React.FC<CollectionBrowserProps> = ({
       {mode === 'browse' && showCollectionFilter && (
         <aside className="w-48 shrink-0">
           <Card className="p-3 space-y-1">
-            <h3 className="font-semibold text-foreground mb-2 text-xs uppercase tracking-wider">Collections</h3>
+            <h3 className="font-semibold text-foreground mb-2 text-xs uppercase tracking-wider">Avatar Sets</h3>
             <div className="flex flex-col gap-0.5 max-h-80 overflow-y-auto">
               {collectionList.map((c) => (
                 <button
@@ -94,7 +94,7 @@ const CollectionBrowser: React.FC<CollectionBrowserProps> = ({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="id">Token ID</SelectItem>
-                <SelectItem value="collection">Collection</SelectItem>
+                <SelectItem value="collection">Avatar Set</SelectItem>
               </SelectContent>
             </Select>
           )}

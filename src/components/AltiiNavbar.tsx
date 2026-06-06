@@ -31,16 +31,9 @@ const AltiiNavbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="h-9 w-64 rounded-lg border border-input bg-input/30 px-3 py-1 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring"
-            />
-          </div>
-
-          <Button size="sm" className="hidden sm:inline-flex">Connect</Button>
-
+          {/* Global search + wallet Connect removed 2026-04-24 — both were
+              non-functional stubs and users typed into the search box
+              expecting results. Restore when each has real wiring. */}
           <Button
             variant="ghost"
             size="icon"
@@ -65,9 +58,6 @@ const AltiiNavbar = () => {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-2">
-              <Button className="w-full">Connect Wallet</Button>
-            </div>
           </div>
         </div>
       )}

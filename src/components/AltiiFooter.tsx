@@ -11,10 +11,10 @@ const AltiiFooter = () => {
             <span>avatar factory</span>
           </div>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/collections" className="hover:text-foreground transition-colors">
-              Cartridges
+            <Link to="/explore/collections" className="hover:text-foreground transition-colors">
+              Avatar Sets
             </Link>
-            <Link to="/avatars" className="hover:text-foreground transition-colors">
+            <Link to="/explore/assets/avatars" className="hover:text-foreground transition-colors">
               Avatars
             </Link>
             <span>&copy; {new Date().getFullYear()} altiico &middot; a hive operation</span>

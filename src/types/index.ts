@@ -16,7 +16,12 @@ export interface Collection {
   banner: string;
   pfp: string;
   assets3D: string;
+  /** Genre / editorial category. Populated for static data; empty for API-backed sets
+   *  until we add a real taxonomy. Do NOT conflate with chain origin. */
   category: string;
+  /** Chain / origin badge — "Ethereum", "Zora", "Arweave", "Open Source".
+   *  Rendered as a pill next to the set name. Separate from `category`. */
+  chain?: string;
   contract?: string;
   description?: string;
   license?: string;

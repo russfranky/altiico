@@ -29,13 +29,13 @@ export default function AltiiHero() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              to="/collections"
+              to="/explore/collections"
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              Browse the cartridges
+              Browse avatar sets
             </Link>
             <Link
-              to="/avatars"
+              to="/explore/assets/avatars"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted/50 transition-colors"
             >
               See the lineup

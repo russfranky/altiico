@@ -20,7 +20,6 @@ const ExploreCollections = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   useEffect(() => {
     let cancelled = false;
@@ -42,21 +41,17 @@ const ExploreCollections = () => {
     return () => { cancelled = true; };
   }, []);
 
-  const categories = useMemo(() => {
-    const cats = [...new Set(collections.map((c) => c.category).filter(Boolean))];
-    return ['All', ...cats] as string[];
-  }, [collections]);
-
+  // Category sidebar was removed 2026-04-24 — live API data had no meaningful
+  // taxonomy (was just chain origin shown as category). Restore when there's a
+  // real editorial/genre categorization. Chains are shown as per-card badges.
   const filteredCollections = useMemo(() => {
     return collections.filter((collection) => {
       const matchesSearch =
         collection.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (collection.description?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false);
-      const matchesCategory =
-        selectedCategory === 'All' || collection.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      return matchesSearch;
     });
-  }, [collections, searchTerm, selectedCategory]);
+  }, [collections, searchTerm]);
 
   const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     e.currentTarget.src = PLACEHOLDER_IMG;
@@ -72,24 +67,20 @@ const ExploreCollections = () => {
               Home
             </Link>
             <span>/</span>
-            <Link to="/explore" className="hover:text-foreground transition-colors">
-              Explore
-            </Link>
-            <span>/</span>
-            <span className="text-primary font-medium">Collections</span>
+            <span className="text-primary font-medium">Avatar Sets</span>
           </nav>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-                Indexed Collections
+                Avatar Sets
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                {loading ? 'Loading...' : `${collections.length} collections`} · Verified provenance
+                {loading ? 'Loading...' : `${collections.length} indexed`}
               </p>
             </div>
             <div className="flex gap-3">
               <Input
-                placeholder="Search collections..."
+                placeholder="Search avatar sets..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-48 sm:w-56"
@@ -101,54 +92,8 @@ const ExploreCollections = () => {
 
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-8">
-          {/* Filters sidebar */}
-          <aside className="w-56 shrink-0 hidden lg:block">
-            <Card className="sticky top-24 p-4 space-y-6">
-              <div>
-                <h3 className="font-semibold text-foreground mb-3 text-sm">
-                  Categories
-                </h3>
-                <div className="flex flex-col gap-0.5 max-h-64 overflow-y-auto">
-                  {categories.map((c) => (
-                    <button
-                      key={c}
-                      onClick={() => setSelectedCategory(c)}
-                      className={cn(
-                        'text-left text-sm px-3 py-2 rounded-lg transition-colors',
-                        selectedCategory === c
-                          ? 'bg-primary text-primary-foreground'
-                          : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                      )}
-                    >
-                      {c}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </Card>
-          </aside>
-
-          {/* Collection grid */}
+          {/* Collection grid — sidebar removed until real taxonomy lands */}
           <main className="flex-1 min-w-0">
-            {/* Mobile category filters */}
-            <div className="lg:hidden mb-6">
-              <div className="flex flex-wrap gap-2">
-                {categories.map((c) => (
-                  <button
-                    key={c}
-                    onClick={() => setSelectedCategory(c)}
-                    className={cn(
-                      'text-xs px-3 py-1.5 rounded-lg',
-                      selectedCategory === c
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted'
-                    )}
-                  >
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -209,7 +154,7 @@ const ExploreCollections = () => {
                               {collection.name}
                             </h3>
                             <p className="text-xs text-white/80">
-                              {collection.items} units · {collection.assets3D}
+                              {collection.items} units{collection.assets3D === 'Coming Soon' ? ` · ${collection.assets3D}` : ''}
                             </p>
                           </div>
                         </div>
@@ -218,25 +163,32 @@ const ExploreCollections = () => {
                         </div>
                       </div>
                       <div className="p-4">
-                        {collection.category && (
-                          <span className="text-xs text-muted-foreground">
-                            {collection.category}
-                          </span>
-                        )}
+                        <div className="flex items-center gap-2 flex-wrap">
+                          {collection.chain && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground uppercase tracking-wide">
+                              {collection.chain}
+                            </span>
+                          )}
+                          {collection.license && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-600/15 text-emerald-400 uppercase tracking-wide">
+                              {collection.license}
+                            </span>
+                          )}
+                        </div>
                         {collection.description && (
-                          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
                             {collection.description}
                           </p>
                         )}
                         <span className="inline-block mt-2 text-xs text-primary font-medium group-hover:underline">
-                          View collection →
+                          View avatar set →
                         </span>
                       </div>
                     </Link>
                   ))}
                 </div>
                 <p className="text-xs text-muted-foreground mt-6 text-center">
-                  {filteredCollections.length} of {collections.length} indexed collections
+                  {filteredCollections.length} of {collections.length} indexed sets
                 </p>
               </>
             ) : (
@@ -245,13 +197,12 @@ const ExploreCollections = () => {
                   No results
                 </h2>
                 <p className="text-muted-foreground mb-4">
-                  No collections match your search
+                  No avatar sets match your search
                 </p>
                 <button
                   type="button"
                   onClick={() => {
                     setSearchTerm('');
-                    setSelectedCategory('All');
                   }}
                   className="text-sm text-primary hover:underline"
                 >

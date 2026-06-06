@@ -326,11 +326,18 @@ function AvatarAndAnimation({
           }
         });
 
-        // Hubzz full scale chain — final size = VRM.scale × EntityAvatar.scale × worldEntityScale
-        // (1) bounding-box normalization (EntityAvatar.adjustAvatarScale at EntityAvatar.ts:320-335)
-        // (2) × 2.0 from EntityAvatar's own parent scale (EntityAvatar.ts:640)
-        // (3) × worldEntityScale (default 1.0 — rooftop uses default, World.ts:149)
-        // See NORTH_STAR.md "VRM scale normalization".
+        // Hubzz full scale chain — matches EntityAvatar exactly so altiico
+        // preview renders at the same size as in-world:
+        //   (1) bbox-fit into 0.7³ cube × 1.8   — adjustAvatarScale(),  EntityAvatar.ts:358-360
+        //   (2) × 2.0                           — entity parent scale,  EntityAvatar.ts:674
+        //   (3) × world.entityScale (default 1) — world scale,          EntityAvatar.ts:675
+        //
+        // The "too big" perception is real but it's matching in-world
+        // behaviour exactly. Fixing it requires changing the engine's
+        // adjustAvatarScale (bbox-fit is per research §Q9 the wrong
+        // algorithm — hair/props inflate bbox, real fix is skeleton
+        // foot→head distance). Not doing that here; preview parity
+        // with current in-world sizing is the goal.
         const bbox = new THREE.Box3().setFromObject(vrm.scene);
         const bboxSize = new THREE.Vector3();
         bbox.getSize(bboxSize);

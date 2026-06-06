@@ -12,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import AvatarCardSkeleton from './AvatarCardSkeleton';
 
@@ -110,21 +109,8 @@ const ExploreAvatars = () => {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
             <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/explore" className="hover:text-foreground transition-colors">Explore</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">Assets</span>
-            <span>/</span>
             <span className="text-primary font-medium">Avatars</span>
           </nav>
-          <Tabs defaultValue="avatars" className="mb-6">
-            <TabsList variant="line" className="gap-2 h-auto p-0 bg-transparent">
-              <TabsTrigger asChild value="avatars" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                <Link to="/explore/assets/avatars">Avatars</Link>
-              </TabsTrigger>
-              <TabsTrigger value="wearables" disabled className="cursor-not-allowed">Wearables</TabsTrigger>
-              <TabsTrigger value="animations" disabled className="cursor-not-allowed">Animations</TabsTrigger>
-            </TabsList>
-          </Tabs>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-foreground">Avatars</h1>
@@ -149,7 +135,7 @@ const ExploreAvatars = () => {
           <aside className="w-56 shrink-0 hidden lg:block">
             <Card className="sticky top-24 p-4 space-y-6">
               <div>
-                <h3 className="font-semibold text-foreground mb-3 text-sm">Collections</h3>
+                <h3 className="font-semibold text-foreground mb-3 text-sm">Avatar Sets</h3>
                 <div className="flex flex-col gap-0.5 max-h-64 overflow-y-auto">
                   <button
                     onClick={() => handleCollectionChange('All')}
@@ -241,9 +227,6 @@ const ExploreAvatars = () => {
                             <span className="text-[10px] px-2 py-0.5 rounded bg-black/60 text-white/90 truncate max-w-[80%]">
                               {avatar.collection}
                             </span>
-                            {avatar.vrmUrl && (
-                              <span className="text-[10px] px-2 py-0.5 rounded bg-primary/80 text-primary-foreground">3D</span>
-                            )}
                             {avatar.license && (
                               <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-600/80 text-white">{avatar.license}</span>
                             )}
@@ -252,16 +235,19 @@ const ExploreAvatars = () => {
                       </button>
                       <div className="p-2 sm:p-2.5">
                         <div className="text-xs font-semibold text-foreground truncate">{avatar.name}</div>
-                        <div className="mt-1.5 flex gap-1.5 flex-wrap">
-                          <button type="button" onClick={() => setPreviewAvatar(avatar)} className="text-[11px] text-primary hover:underline">
-                            Preview
-                          </button>
-                          {avatar.opensea && (
-                            <a href={avatar.opensea} target="_blank" rel="noopener noreferrer" className="text-[11px] text-muted-foreground hover:text-foreground">
-                              Market
+                        {avatar.opensea && (
+                          <div className="mt-1.5">
+                            <a
+                              href={avatar.opensea}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-[11px] text-muted-foreground hover:text-foreground"
+                            >
+                              Market →
                             </a>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
                     </article>
                   ))}
