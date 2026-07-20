@@ -1,0 +1,1622 @@
+{
+  "vrm": [
+    {
+      "slug": "vipe-heroes",
+      "name": "VIPE Heroes",
+      "sample_nft": "VIPE Hero #2779",
+      "metadata_url": "ipfs://QmSZetCrWL99Kf96KQxEZqxwFL7PgLJQWdXBg66E3v9Lr6",
+      "vrm_param": "_url",
+      "vrm_url": "ipfs://Qmcdv4EWEEtic4riWACydo9UHiKruuRF48AAWaKqormuHo/default_2779.vrm"
+    }
+  ],
+  "mentions": [],
+  "no_vrm": [
+    {
+      "slug": "rugdollz-3d",
+      "name": "RugDollz 3D",
+      "sample_nft": "RugDollz 3D #8422",
+      "metadata_url": "ipfs://bafybeiazo47oatvntjrdkjbsaz6vkpjzfd5a7zoemu62cyjcdekid3ohca/8422.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-invisible-friends",
+      "name": "3D Invisible Friends",
+      "sample_nft": "Invisible Friends 3D #4999",
+      "metadata_url": "https://invisiblefriends.io/api/metadata/3d/4999",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "dr-ethvils-3d-frankenpunks",
+      "name": "Dr. ETHvil's 3D FrankenPunks",
+      "sample_nft": "#9496",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmcSeGK9Br94yvawZihooVDXFu3W9dcnhCryLU96kYJk6v/9496.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "moon-ape-lab-3d",
+      "name": "Moon Ape Lab 3D",
+      "sample_nft": "MAL 3D #3205",
+      "metadata_url": "https://storage.moonapelab.io/static/moonapes3d/metadata/3205.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "alpacadabraz-3d",
+      "name": "ALPACADABRAZ 3D",
+      "sample_nft": "ALPACADABRA 3D #19938",
+      "metadata_url": "https://pacaviewer.fra1.cdn.digitaloceanspaces.com/metadata/19938",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "crypto-coaster-3d",
+      "name": "Crypto Coaster",
+      "sample_nft": "Track: #1978",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "ecotars-3d",
+      "name": "Ecotars 3D",
+      "sample_nft": "Ecotar #1654",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/bafybeiatr2rranmi4srzjy5hhnfz3jchtxwq3rytrnaktvh6bwc5fdm3mu/1678",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "pa-3d-printer",
+      "name": "PA 3D Printer",
+      "sample_nft": "Psychedelics Anonymous Printing Press",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmY7eMWtDbSisfD5FjNyCt5CGpVKkRtZ3jPXm4KWByAgUM/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "non-fungible-people-daz3d",
+      "name": "Non-Fungible People by Daz 3D",
+      "sample_nft": "NFP #8888",
+      "metadata_url": "https://nftcdn.daz3d.com/nfp/gen1/m/8888",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "hoodpunks-3d",
+      "name": "HoodPunks 3D",
+      "sample_nft": "HoodPunks 3D \u2014 Sealed [???]",
+      "metadata_url": "ipfs://bafkreihjdwvjiu56xqrarjoag4ic2hy6cub7itoxrwkdrdzyin6jfcrkay",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3dns-powered-domains",
+      "name": "3DNS Powered Domain Names",
+      "sample_nft": "loans.box",
+      "metadata_url": "https://api.3dns.xyz/api/v1/core_backend_service/domain/get_metadata/78ce51d58fc10c9eb7154d5707cb12b7c61e5763be856dade52e6560d2029d56",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "apes3d",
+      "name": "Apes 3D",
+      "sample_nft": "ID 0256",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/1808520292514326559710509001858648999782799812329702739586860990251894046721",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "unsupervised-burned-data-universe-moma-3d",
+      "name": "Unsupervised - Burned - Data Universe - MoMA - 3D by Refik Anadol",
+      "sample_nft": "Unsupervised \u2014 Burned \u2014 Data Universe \u2014 MoMA \u2014 3D #65",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmemVkVRDYVAsjNa2eNa96eHW1R71b7WBXwywAikuPaDRR/44698415037170023611077639980855462881371582800501602828429077410131151838137",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "lofi-originals-3d",
+      "name": "Lofi Originals 3D",
+      "sample_nft": "Lofi Originals 3D #5460",
+      "metadata_url": "https://lo3d.mypinata.cloud/ipfs/QmWg6TBExWgdrV2gmfCEgyGieEVsqo8Xtkfp69QL9BDDNh/Lo%20+%20All%20fixes/5460.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "tonyas-paintings-w-3d",
+      "name": "Tonyas Paintings w 3D",
+      "sample_nft": "Do U Believe?  1/1",
+      "metadata_url": "https://us-central1-thing-1d2be.cloudfunctions.net/getThing?thingId=6Ds09IqZK6asjsDTLXTn",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "mad-cans-3d-by-greg-mike",
+      "name": "GREG MIKE - Mad Cans (3D)",
+      "sample_nft": "Mad Can (3D) #25",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmVZ4MrGzeDiQveb5cdZPZpF6WCnM4mWKPex2PMJEgriMv/143000100025",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "gorilla-mansion-3d",
+      "name": "Gorilla Mansion Origin",
+      "sample_nft": "GM #1391",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3dpunks",
+      "name": "3DPunks",
+      "sample_nft": "3DPunks #029",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/108895657503177547807713615587106130920312718766249665638523947937197442727937",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3dbirds",
+      "name": "3DBirds",
+      "sample_nft": "#9961",
+      "metadata_url": "https://ipfs.io/ipfs/QmNSjDoYqPJUfuqVEGJ3j3b62gLQtLZwkiQYiRmFAQfGZS/9961.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "nouns3d",
+      "name": "Nouns 3D",
+      "sample_nft": "Nouns #6508",
+      "metadata_url": "https://api.nouns3d.com/token/6508",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3dbears",
+      "name": "3DBears",
+      "sample_nft": "3D Bear #1297",
+      "metadata_url": "https://www.winterbearsnft.com/api/3d/9980",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "slimhoods-3d",
+      "name": "SlimHoods 3D",
+      "sample_nft": "SlimHood #439",
+      "metadata_url": "https://slimhoods.com/api/3d/439",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "box-wolf-nft-3d-ver",
+      "name": "BOX WOLF NFT 3D Ver.",
+      "sample_nft": "TEST META WOLF",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "bones-and-bananas-3d-airdrop",
+      "name": "Bones & Bananas 3D",
+      "sample_nft": "#6778",
+      "metadata_url": "ipfs://QmQwb4hUUK2wwCMpFbRkz4HAGCaTSL5CZVP84ditGELRZN/6778",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "crypto-pills-3d-og-pillman",
+      "name": "Crypto Pills 3D OG Pillman",
+      "sample_nft": "3D OG Pillman #0443",
+      "metadata_url": "https://cdn-api.niftykit.com/reveal/GJP6wpW1FkJzGiAsOQMk/443",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "daz",
+      "name": "Daz 3D",
+      "sample_nft": "Red Balloon",
+      "metadata_url": "ipfs://ipfs/bafkreif5g4l3twi4hrzrtuig2crk5cdfp6i57thywfps6i4ec44nkzoecu",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-masks",
+      "name": "3D Masks",
+      "sample_nft": "3D Masks #030",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/15244528056173471401846803781192249991550697531563766055069909641475961913345",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "dystopunks-3d",
+      "name": "DystoPunks 3D",
+      "sample_nft": "3D DystopianPunk #51",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/38288957443944293539135671981245143138026239921444223299501622890888609923073",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-bored-ape-club",
+      "name": "3D Bored Ape Club",
+      "sample_nft": "3D Bored Ape Club #497",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/77859822866043011832279255100584647416866494667308503025315105218517163573249",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "dd3dmoto",
+      "name": "Dour Darcels 3D Motocross Editions",
+      "sample_nft": "Dour Darcels Motocross #262",
+      "metadata_url": "https://dourdarcels.s3.amazonaws.com/ddr/metadata/262",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "anaglyph-3d-skulls",
+      "name": "ANAGLYPH 3D SKULLS",
+      "sample_nft": "ANAGLYPH 3D SKULLS #511",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "nfpets-sparky-daz3d",
+      "name": "NFPets - Sparky by Daz 3D",
+      "sample_nft": "Sparky",
+      "metadata_url": "https://nftcdn.daz3d.com/nfp/pets/0000/metadata.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "catbotica-catboticans",
+      "name": "CATBOTICA 3D",
+      "sample_nft": "Replicat #2975",
+      "metadata_url": "https://tokenmd.catbotica.link/2975.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "nfpets-daz3d",
+      "name": "NFPets by Daz 3D",
+      "sample_nft": "NFPet #7889",
+      "metadata_url": "https://nftcdn.daz3d.com/nfp/pets/0769/metadata.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-hermians",
+      "name": "3D HERMIANS",
+      "sample_nft": "3D HERMIANS",
+      "metadata_url": "ipfs://bafkreifhde33jxeyagzgethdwdhfl53cd4xerxnwnth6udlbug2v6ct3h4",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-mfrs",
+      "name": "3Dmfers",
+      "sample_nft": "3d mfer",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/108171918445259117466699446740306111434095439669147294215594021420514867675137",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "sluggerapes-3d",
+      "name": "Slugger Apes 3D",
+      "sample_nft": "Slugger Apes #XXXX [UNREVEALED]",
+      "metadata_url": "ipfs://bafkreigfbq6fvtq72fxyzye6ufiichyxlw6li5hzdbc23bdlj4yvx2mumu",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-sprotos",
+      "name": "3D Sprotos",
+      "sample_nft": "3D Sproto #186",
+      "metadata_url": "ipfs://bafybeibq6s6fhgm4ckmudegdpffhmgfgnx7i5btmlgi7gtmnj3q5qpxmxq/186",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fuszy-3d",
+      "name": "Fuszy 3D",
+      "sample_nft": "#362",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "loadout-3d",
+      "name": "Loadout 3D",
+      "sample_nft": "UNREVEALED ",
+      "metadata_url": "ipfs://bafkreib4iklng4qgpdjbubsz5a3r4vkhbomrwgdy2be55m2rc3vglsh5ri",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "baby-doge-3d",
+      "name": "Baby Doge Army 3D",
+      "sample_nft": "Baby Doge 3D #9554",
+      "metadata_url": "https://gateway.pinata.cloud/ipfs/QmPJc5BvN2kezU4NGnxDdhPeEwRiniZT31GKdCqK4u8emt/9554",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "invisible-friends-physical-3d",
+      "name": "Invisible Friends Physical 3D",
+      "sample_nft": "Invisible Friends 13",
+      "metadata_url": "ipfs://QmfETsF55aQBs4srmH3eQ3Tfa8XitZihB7jYA91tEUfXP5/12",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-tiny-dinos-v2",
+      "name": "3D tiny dinos V2",
+      "sample_nft": "3D tiny dinos #6500",
+      "metadata_url": "https://ipfs.io/ipfs/QmP1cfnimp6DXBXwQzQcq3WV7uLBRCzXkNf5Y7dzkgq5sk/6500",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "polka-city-3d-asset",
+      "name": "Polka City 3D Asset",
+      "sample_nft": "Lambo Avent",
+      "metadata_url": "https://polkacity.app/3dnftassets/42000000",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "np3d",
+      "name": "Normie Punk 3D",
+      "sample_nft": "Normie Punk 3d #3107",
+      "metadata_url": "https://precious-perch-a7bnx.lighthouseweb3.xyz/ipfs/bafybeid7svlwhgdvddpvjwcokoly27r3trhrznhtjwcdxwfinvjfb7jhym/3107",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3dkongz",
+      "name": "3D Kongz",
+      "sample_nft": "3DKong #100",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/22077472414801678641245119963446746256633518039029540492861110438094044135425",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "clinique-x-daz3d",
+      "name": "Clinique x Daz 3D - Metaverse More Like Us",
+      "sample_nft": "Clinique - Dual Tones",
+      "metadata_url": "https://nftcdn.daz3d.com/nfp/upgrades/clinique/5.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-y2k",
+      "name": "3D Y2K",
+      "sample_nft": "3D Y2K #6892",
+      "metadata_url": "https://build.wield.xyz/vibe/boosterbox/metadata/3d-y2k/6892",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "test-3d-hamster",
+      "name": "Test 3D hamster",
+      "sample_nft": "NFT History - banner ownership #503",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/100800410485018109095823870043568886583609294019368045291184490456068338483201",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "3d-bumble-bee",
+      "name": "3D Bumble Bee",
+      "sample_nft": "Benjamin Bear",
+      "metadata_url": "https://arweave.net/YP3xYin40PqX_HQeuvuwPBw9T7MpcPuoC3ZVzc77mvw/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "first-base-3d-pfp",
+      "name": "First Base 3D PFP",
+      "sample_nft": "First Base 3D PFP  #666",
+      "metadata_url": "https://ipfs.io/ipfs/QmaG3MUY6UA32d146VBHHJcAwfFVLZCBFEwtDi6KTQZQDd/666.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "endangered_animals_x_reddit_collectible_avatars",
+      "name": "Endangered Animals x Reddit Collectible Avatars",
+      "sample_nft": "Aye-ayes #44005",
+      "metadata_url": "ipfs://QmWScae2G5zwwCDNaGpGHJxEcpykxdB4f5LKQMwsdq9bcS/404304.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "habbo-avatars",
+      "name": "Habbo Avatars",
+      "sample_nft": "Avatar Burned",
+      "metadata_url": "https://nft-tokens.habbo.com/avatars/metadata/11548.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "parallel-avatars",
+      "name": "Parallel Avatars",
+      "sample_nft": "Dara",
+      "metadata_url": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/10988",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "crafted-avatars",
+      "name": "Habbo: Crafted Avatars",
+      "sample_nft": "#2469",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "tollan-universe-genesis-avatars",
+      "name": "Tollan Universe Genesis Avatars",
+      "sample_nft": "Tarynn Tavares, The Storyteller",
+      "metadata_url": "https://cdn.tollan.io/genesis-avatars/metadata/179",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-senses-x-reddit-collectible-avatars",
+      "name": "The Senses x Reddit Collectible Avatars",
+      "sample_nft": "The Mouths #200",
+      "metadata_url": "ipfs://QmYjGHncrW99PHgxXyJBjzyUcV4gBv3FwBFKVUWot1a5j3/399.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "hytopia-genesis-avatars",
+      "name": "HYTOPIA Avatars: Genesis",
+      "sample_nft": "Genesis Avatar #11915",
+      "metadata_url": "https://reveal-avatars.nftworlds.com/temporaryreveal/11915",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "spooky-season-rojom-x-reddit-collectible-avatars",
+      "name": "Spooky Season: Rojom x Reddit Collectible Avatars",
+      "sample_nft": "The Moon #731",
+      "metadata_url": "https://ipfs.io/ipfs/QmaZPdNXomAbfkp4UsjDXD9vP88nj22RsjBQeSX1cXQDs9/1830.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "enlightenment-x-reddit-collectible-avatars",
+      "name": "Enlightenment x Reddit Collectible Avatars",
+      "sample_nft": "Raiza #1007",
+      "metadata_url": "https://ipfs.io/ipfs/Qmbp2yDhGoLQs98FWJncD25vFX6Fmp7n9VsX3EJw3enxEF/1006.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-other-avatars-by-saatchi-art",
+      "name": "The Other Avatars by Saatchi Art",
+      "sample_nft": "Vincent #2500",
+      "metadata_url": "https://www.saatchiartnfts.com/token/2500",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "reddit-recap-2022-x-reddit-collectible-avatars",
+      "name": "Reddit Recap 2022 x Reddit Collectible Avatars",
+      "sample_nft": "Pixel Placers #180147",
+      "metadata_url": "https://ipfs.io/ipfs/QmUNdp2JVa6WnHBUpnBrraQYL4zWApF1fET2ZmB1QPf9wo/4032372.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "captainlaserhawk",
+      "name": "Captain Laserhawk: A Blood Dragon Remix Avatar Collection",
+      "sample_nft": "Captain Laserhawk #1030",
+      "metadata_url": "https://contracts.sandbox.game/captain-laserhawk-f6d6435e-f9dd-4671-8d9d-82e2255761a4/1030",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "dendekaden-spirit-key-avatar",
+      "name": "DenDekaDen Spirit Key Avatars",
+      "sample_nft": "Believer #7766, Devotee of Bene",
+      "metadata_url": "https://dendekaden.com/api/metadata/7765",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "spooky-season-tfoust10-x-reddit-collectible-avatar",
+      "name": "Spooky Season: tfoust10 x Reddit Collectible Avatars",
+      "sample_nft": "Illusionist Foustling #1036",
+      "metadata_url": "ipfs://QmSRWFM8mU6WsWoG5AAjL6igfGTTik4gHga2yEgm6VkK5u/1035.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fvck-avatar-essence",
+      "name": "ESSENCE//",
+      "sample_nft": "ESSENCE//",
+      "metadata_url": "https://arweave.net/R1fNBE06-3gPYCi6WqF4RkPcuRjdX7fB2lycL4h9RZc/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "steve-aoki-avatars",
+      "name": "Steve Aoki Avatars",
+      "sample_nft": "SteveAoki #2844",
+      "metadata_url": "https://contracts.sandbox.game/sa/2844",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "lordkrishnacollection",
+      "name": "Lord Krishna Avatar Collection",
+      "sample_nft": "Krishna #2547",
+      "metadata_url": "https://contracts.sandbox.game/lk/982",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fistofthenorthstar-avatars",
+      "name": "Fist Of The North Star Avatars",
+      "sample_nft": "FoNS #0649",
+      "metadata_url": "https://contracts.sandbox.game/fist-of-the-north-star-f5954c56-c91d-40e1-9b4d-423e33d023ad/649",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "lvcidiaavatars",
+      "name": "FVCK_AVATAR//",
+      "sample_nft": "FVCK_AVATAR// #10990",
+      "metadata_url": "https://collectible.api.manifoldxyz.dev/collectible/0x10cDcb5a80e888ec9e9154439e86b911f684Da7B/token/0x10cDcb5a80e888ec9e9154439e86b911f684Da7B/10990",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cool-cats-avatar-wearables",
+      "name": "Cool Cats Avatar Wearables",
+      "sample_nft": "LVIII Red Hat",
+      "metadata_url": "https://s3.amazonaws.com/metadata.coolcatsnft.com/library/avatar/wearable/icon/metadata/342.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "chimpers-avatars",
+      "name": "Chimpers Avatars",
+      "sample_nft": "Stylish Chimpi",
+      "metadata_url": "https://adjacent-lime-rooster.myfilebase.com/ipfs/QmThp6x9JgEuXbBTMS9CG2wGVTKBRdrGwBxGxXHRkjJJqX",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "ateez-avatar-collection",
+      "name": "ATEEZ Avatar Collection",
+      "sample_nft": "ATEEZ #1768",
+      "metadata_url": "https://contracts.sandbox.game/atz/2071",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "future-realities-rojom-x-reddit-collectible-avatar",
+      "name": "Future Realities: Rojom x Reddit Collectible Avatars",
+      "sample_nft": "The Masks #1977",
+      "metadata_url": "ipfs://QmYvZqwCx2RcRWwm5WoD7Z46ZJXN2kjHys26GvTgE61yJN/2801.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "spooky-season-poieeeyee-x-reddit-collectible-avata",
+      "name": "Spooky Season: poieeeyee x Reddit Collectible Avatars",
+      "sample_nft": "Night Guard #1002",
+      "metadata_url": "ipfs://QmSva89Y7TrQJVrrDgpqP9QgjMDxabShSoHo8eiEHSfj6Y/1001.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "paris-hilton-avatars",
+      "name": "Paris Hilton Avatars",
+      "sample_nft": "Paris #4155",
+      "metadata_url": "https://contracts.sandbox.game/paris-hilton-eab110c3-84da-4c48-8ddd-9358c9676546/4155",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "wearing-your-emotions-x-reddit-collectible-avatars",
+      "name": "Wearing Your Emotions x Reddit Collectible Avatars",
+      "sample_nft": "Diamond Diablo #1",
+      "metadata_url": "ipfs://QmS5yvnnESWsuFGa1TXzGw6ahjPxpP3shQNgPMooCPE61e/2250.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "foustlings-x-reddit-collectible-avatars",
+      "name": "Foustlings x Reddit Collectible Avatars",
+      "sample_nft": "Rainbow Foustling #602",
+      "metadata_url": "https://ipfs.io/ipfs/Qme4Yw65xqYDRdTryWadra46FruYxLHQYWrSqFyM3kuZTU/2101.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "imagination-station-x-reddit-collectible-avatars",
+      "name": "Imagination Station x Reddit Collectible Avatars",
+      "sample_nft": "Cone Head #1",
+      "metadata_url": "https://ipfs.io/ipfs/QmRUvRTf3GNwKCfZJM9zg7dK4Sqacy93JSmxzJsp7QFfb7/300.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "reddit-cup-2022-x-reddit-collectible-avatars",
+      "name": "Reddit Cup 2022 x Reddit Collectible Avatars",
+      "sample_nft": "Australia #30668",
+      "metadata_url": "ipfs://QmQ2xpCMyo1JBraCpGErRbvnptP2JbrdhuFDCZyaG2i4Tz/230767.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "om-nom-avatars",
+      "name": "Om Nom Cut the Rope Avatars",
+      "sample_nft": "ZeptoLab #1683",
+      "metadata_url": "https://contracts.sandbox.game/zeptolabs-d763b09c-9669-4dda-8eed-1a57be0d793b/1683",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "reddit-rabbids-x-reddit-collectible-avatars",
+      "name": "Reddit Rabbids x Reddit Collectible Avatars",
+      "sample_nft": "Knight Rabbid #5999",
+      "metadata_url": "ipfs://QmUXQyNwtkWnNpKhGs6D8pPD4CKLoeZNJRPPUiDpkAjjA8/56098.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "future-realities-gasolyn-x-reddit-collectible-avat",
+      "name": "Future Realities: gasolyn x Reddit Collectible Avatars",
+      "sample_nft": "Morgan #1395",
+      "metadata_url": "https://ipfs.io/ipfs/QmNMyqKYRPgUVVwSnRVipZ3ocKHTtKgHLfrCidisuimi7Z/1744.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "baked-goods-evils-x-reddit-collectible-avatars",
+      "name": "Baked Goods & Evils x Reddit Collectible Avatars",
+      "sample_nft": "Boroborygmius #434",
+      "metadata_url": "https://ipfs.io/ipfs/QmTiLcX1X1DsoX765oZ8qve5YwWkcTLv2wX6CzUwUrWvRP/1598.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "care-bears-avatars",
+      "name": "Care Bears Avatars",
+      "sample_nft": "Care Bears #2342",
+      "metadata_url": "https://contracts.sandbox.game/carebears/2342",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "avatar-rock-out-x-reddit-collectible-avatars",
+      "name": "Avatar Rock Out x Reddit Collectible Avatars",
+      "sample_nft": "Lara Lava #616",
+      "metadata_url": "https://ipfs.io/ipfs/QmfESZz5bbrF4a9JqcFXLJ73hqeataqqaqskv9jVtZixCo/2115.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fiesta-dog-prguitarman-x-reddit-collectible-avatar",
+      "name": "Fiesta Dog: prguitarman x Reddit Collectible Avatars",
+      "sample_nft": "Fiesta Dog #1724",
+      "metadata_url": "https://ipfs.io/ipfs/QmShxV1UUEoJReCDJhzkVhNcEq2VMnQ9ds4x692zFEsqGS/1723.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "memetic-traders-x-reddit-collectible-avatars",
+      "name": "Memetic Traders x Reddit Collectible Avatars",
+      "sample_nft": "Bronze Bull #4936",
+      "metadata_url": "https://ipfs.io/ipfs/Qmdn28jGmgWgsjDfLX7nbLFkp5NLGLW2aS3uhZRcvJ1jE1/4935.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cute-cool-and-creepy-x-reddit-collectible-avatars",
+      "name": "Cute, Cool and Creepy x Reddit Collectible Avatars",
+      "sample_nft": "Cat Fish #504",
+      "metadata_url": "ipfs://QmVQgm5H5z6gBCK4gHeau5cUHGM9YfNFaJ9u1m3GFTXaTh/503.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "avatarssololeveling",
+      "name": "Solo Leveling: Unlimited Avatar Collection",
+      "sample_nft": "Otherworld #0187",
+      "metadata_url": "https://contracts.sandbox.game/sl-da9fbb95-f44b-4a40-a536-f5c91805570f/187",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "5-boro-bodega-x-reddit-collectible-avatars",
+      "name": "5 Boro Bodega x Reddit Collectible Avatars",
+      "sample_nft": "Pickle Guy #308",
+      "metadata_url": "https://ipfs.io/ipfs/Qmaw9SHLFfxHdtAYPvmEedBG8UW7sG3njNHxGYYZHAXYrr/1807.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "future-realities-prguitarman-x-reddit-collectible",
+      "name": "Future Realities: prguitarman x Reddit Collectible Avatars",
+      "sample_nft": "Nyan Cat #238",
+      "metadata_url": "https://ipfs.io/ipfs/QmbSvSb3nN5ctV947d2NK1BHKAFnGDX43hFBoL8rXMJbjX/237.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "spooky-season-stuttervoid-x-reddit-collectible-ava",
+      "name": "Spooky Season: StutterVoid x Reddit Collectible Avatars",
+      "sample_nft": "Blood Orange #107",
+      "metadata_url": "ipfs://QmUH9syshdG8m1Sm27ho5wDXidxPLgPdZVTMjL5DpVBCFn/1206.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "netmarble-avatars",
+      "name": "Netmarble Seven Knights & StoneAge Avatar Collection",
+      "sample_nft": "Destroyed Rev-7",
+      "metadata_url": "https://contracts.sandbox.game/nm-1ae1e55d-619d-4fff-acc9-55212b09cfb3/62",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "magic-of-the-woods-x-reddit-collectible-avatars",
+      "name": "Magic of the Woods x Reddit Collectible Avatars",
+      "sample_nft": "Bewitching Eyes #1030",
+      "metadata_url": "https://ipfs.io/ipfs/QmPDHp9EdG2NTUwUDiBBq4xf56NYmDzeXGbA1H9VH2He29/1629.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "natsukashii-x-reddit-collectible-avatars",
+      "name": "Natsukashii x Reddit Collectible Avatars",
+      "sample_nft": "Kitsune #200",
+      "metadata_url": "https://ipfs.io/ipfs/QmaQthnE4RcKpxGGAUiWqP9DdM4m9oCmAGavZMsT7s2Ez6/1699.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "super-bowl-lvii-x-reddit-collectible-avatars",
+      "name": "Super Bowl LVII x Reddit Collectible Avatars",
+      "sample_nft": "Chiefs #1156803",
+      "metadata_url": "ipfs://QmdxobNUHYUksvuwgRakAASmoVUtohNftANYaWZmVBfpJj/5157002.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "celestial-assembly-x-reddit-collectible-avatars",
+      "name": "Celestial Assembly x Reddit Collectible Avatars",
+      "sample_nft": "Dr. Nickelmittens #554",
+      "metadata_url": "https://ipfs.io/ipfs/QmZE9G5g8yhLB4QjGKVpkjxj6TEPZ7tFLfwsxYp1vkTngE/2053.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "growl-gang-x-reddit-collectible-avatars",
+      "name": "Growl Gang x Reddit Collectible Avatars",
+      "sample_nft": "Bow Wow Bandits #1002",
+      "metadata_url": "https://ipfs.io/ipfs/QmUTJZnr7iXVku4cQPfngFxWTNEZKMgvVES32XzRLhhm7G/1001.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "coolcats-x-reddit",
+      "name": "Cool Cats x Reddit Collectible Avatars",
+      "sample_nft": "Blue Cat and Chugs #2514",
+      "metadata_url": "https://ipfs.io/ipfs/QmeZD8RmwJPKPojHzcGKx9WspS3sbMGWgCgWsrKGpJiLQy/2711.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-minds-eyes-x-reddit-collectible-avatars",
+      "name": "The Mind's Eye(s) x Reddit Collectible Avatars",
+      "sample_nft": "Good Morning Sunshine #1",
+      "metadata_url": "https://ipfs.io/ipfs/QmZg4qXgx2mNWf5XRefu5w2n4WPY5DksA7aav2Q8P8xtcT/0.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "boomboxheads-legends",
+      "name": "Boomboxheads Legends",
+      "sample_nft": "Boomboxhead 954",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/46606655978515775225704202629468261085006677788451143001283005974984267923457",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "boomboxheads",
+      "name": "BOOMBOXHEADS",
+      "sample_nft": "Boomboxheads Special Edition #4 Finale",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmSBMHVPja3YNeWaxHmBpTDY9LDvZGVTKFTMyhxsreoJGj/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cryptoavatars",
+      "name": "CryptoAvatars",
+      "sample_nft": "Seb",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmPAHhkTz6kKpkkPNTd1FjNka5SdJu7DNLXugFcVarXkv3/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cryptoavatar3d",
+      "name": "CryptoAvatar 3d",
+      "sample_nft": "CryptoAvatar3D-098-Alf",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/26888306289756595937945422457197843080420599660901281853572907670496557924353",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cyberbrokers",
+      "name": "CyberBrokers",
+      "sample_nft": "Tidal Covert",
+      "metadata_url": "data:application/json;utf8,{\"name\":\"Tidal Covert\",\"description\":\"Every story has its villain.  Sometimes they're a giant dragon.  Sometimes they're an antiquated drone still running on Cobol that circles your head, snapping 'grams, and blasting, \\\"You are now mine!\\\" in between beats of modem static noise.  Usually, though, it's just a flock of Sheeple blocking the road.\",\"external_url\":\"https://cyberbrokers.io/\",\"image\":\"ipfs://QmcsrQJMKA9qC9GcEMgdjb9LPN99iDNAg8aQQJLJGpkHxk/5374.svg\",\"attributes\":[{\"trait_type\": \"Talent\", \"value\": \"Sheeple\"},{\"trait_type\": \"Species\", \"value\": \"Human\"},{\"trait_type\": \"Class\", \"value\": \"Explorers\"},{\"trait_type\": \"Mind\", \"value\": 17},{\"trait_type\": \"Body\", \"value\": 14},{\"trait_type\": \"Soul\", \"value\": 19},{\"trait_type\": \"Jumpsuit\", \"value\": \"Wool\"},{\"trait_type\": \"Mask\", \"value\": \"Clear V2\"},{\"trait_type\": \"Hat\", \"value\": \"Farmer\"}]}",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifters-by-xcopy",
+      "name": "Grifters",
+      "sample_nft": "Grifter #662",
+      "metadata_url": "ipfs://QmQEQYguTJ4ApkCJ8J5wSMGFfgZLP5Xz4w7yGArFdHkVjr/665/token.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "check-grifters",
+      "name": "Check Grifters by 0xsh",
+      "sample_nft": "Check Grifters#3333",
+      "metadata_url": "ipfs://QmcQoaQscyd9uA2427vZA9PTFWrY8sf1ZG2dmp6oUNXhKB/3333",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "tiny-grifters",
+      "name": "Tiny Grifters",
+      "sample_nft": "Tiny Grifters",
+      "metadata_url": "ipfs://bafkreifyts4g2qnhjkmkkq43ybk7ua6ury2duudciucaiaeminf2ssvs4m",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "uxn-grifters-by-0xsh",
+      "name": "UXN Grifters by 0xsh",
+      "sample_nft": "UXN Grifters #6666",
+      "metadata_url": "ipfs://QmbPvN3ydssAjnKFNpMm2D4tm7jeUC47GUx7CEEyKcGMMk/6666",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "handiedans-just-for-fun",
+      "name": "HANDIEDAN | GRIFTERIVATIVES",
+      "sample_nft": "GRIFTNANT 13",
+      "metadata_url": "https://arweave.net/BoZSAYLGC5rlAEqpV-VZsm2ifJniIpW0zdMOVWRRIOE/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "based-grifters",
+      "name": "based grifters",
+      "sample_nft": "based grifter #665",
+      "metadata_url": "https://arweave.net/9JM1-knx2UfGxbcL142VQWIP4dOnzFhTEuc1J5tfjwo/666/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "back-alley-grifters",
+      "name": "Back Alley Grifters (BAGs)",
+      "sample_nft": "Back Alley Grifters (BAGs) #997",
+      "metadata_url": "https://nft.bueno.art/api/contract/3R9Z5tya3I2zjDVc7UAH9/chain/1/metadata/997",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "lil-grifters",
+      "name": "Lil Grifters",
+      "sample_nft": "Lil Grifters #1593",
+      "metadata_url": "ipfs://bafybeidcchezxkvzqkqiayqb3cbl7t4ulijzskgyzrwyevgt2jm75a4bmq/1593",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "glitch-grifter",
+      "name": "Glitch Grifter",
+      "sample_nft": "Glitch Grifter #2207",
+      "metadata_url": "ipfs://QmRWmQA5DR3WHMCxWJMt99bx8G7osJxS9vCbmhMZRVRDAM/2207",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "max-pain-is-a-grifter",
+      "name": "MAX PAIN IS A GRIFTER",
+      "sample_nft": "Cow (OPEN EDITION)",
+      "metadata_url": "https://arweave.net/r-kOBaAXThCJM_2VAatjIavAegmeToKumXfqbj5DeAI/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "rotten-grifters-397441693",
+      "name": "Rotten Grifters",
+      "sample_nft": "Grifters",
+      "metadata_url": "ipfs://bafkreia5nshkxruodbtl3wchhzppii6yxexyvy52syt44c4qcvwwf2g2hi",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifter-spawn",
+      "name": "Grifter Spawn",
+      "sample_nft": "Grifter Spawn #583",
+      "metadata_url": "ipfs://QmXRSGyJdhG8eq17uaiJH8npYPFw38i5ZM6L1wFrj6QnRP/583",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifter-flimflam-267440267",
+      "name": "Grifter Flimflam by XCOPY",
+      "sample_nft": "Grifter Flimflam",
+      "metadata_url": "ipfs://QmQXSo1AgBbqPBxFNKGDA4y1i8F4ADYE4PjBsQFoEphgHJ/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifter-shady-298382739",
+      "name": "Grifter Shady by XCOPY",
+      "sample_nft": "Grifter Shady",
+      "metadata_url": "ipfs://Qmb8b3yZaHdSWhBfFf9RxFy2uDbvmQs4jRZvD6GDvvg5ph/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifter-wretch-43531167",
+      "name": "Grifter Wretch by XCOPY",
+      "sample_nft": "Grifter Wretch",
+      "metadata_url": "ipfs://QmaUzZzQGShs2jZ1QNDvs2YT2tUH9rCD4GkDQXsc4e47Dn/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "grifter-gouge-846325986",
+      "name": "Grifter Gouge by XCOPY",
+      "sample_nft": "Grifter Gouge",
+      "metadata_url": "ipfs://QmSqQkGjN7Kkswog3ccdjHzjq313d2DvpmNHiwGsQFad6E/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-real-interoperable-og",
+      "name": "The real Interoperable OG",
+      "sample_nft": "The real Interoperable OG 142",
+      "metadata_url": "data:application/json;base64,eyJuYW1lIjogIlRoZSByZWFsIEludGVyb3BlcmFibGUgT0cgMTQyIiwgImRlc2NyaXB0aW9uIjogIlRoZSByZWFsIEludGVyb3BlcmFibGUgT0ciLCAiaW1hZ2UiOiAiaXBmczovL1FtUmR2cjlqb2YyV3FyVDFwRUVLZWV4NlpSVXl3cmtqZVhwemJHNnVvcVlBdksvZnh5Sy5naWYiLCAicHJvcGVydGllcyI6IHsibnVtYmVyIjogMTQyLCAibmFtZSI6ICJUaGUgcmVhbCBJbnRlcm9wZXJhYmxlIE9HIn19",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits",
+      "name": "Meebits",
+      "sample_nft": "Meebit #8618",
+      "metadata_url": "https://meebits.larvalabs.com/meebit/8618",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-ai-toys",
+      "name": "Meebits AI Toys",
+      "sample_nft": "Viz The Visitor",
+      "metadata_url": "ipfs://bafkreihebhc4egp34zuwjj3hohfwd6hnlbp3gkkgrruhnnjrxb6wcfrb7e",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-futbol-group-1",
+      "name": "Meebits Futbol - Group 1",
+      "sample_nft": "Canada #19",
+      "metadata_url": "ipfs://bafybeidjdah4rbcfymthp55paux5lcjv3re3kavpyrjwjlavyhiyrl7og4/990",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "futbol2",
+      "name": "Meebits Futbol Group Stage",
+      "sample_nft": "Ghana #5",
+      "metadata_url": "ipfs://bafybeib57lwz4dr7hp3wthnoveddge6uldz3llgsemiy6xky6pm7pg2wt4/85.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-pins-apechain",
+      "name": "Meebits Pins",
+      "sample_nft": "Meebits Pin #569",
+      "metadata_url": "ipfs://bafybeibbr3irticpkhw6yqfky72ghj2ug6biap22lwzqvc2l4e36cfcgqy/569",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "playerzero-x-meebits",
+      "name": "PlayerZero x Meebits",
+      "sample_nft": "P\u00e9pite Pouch",
+      "metadata_url": "ipfs://bafkreie7sxra7kb5ydks6xt3ow6l56vrcymz3xz5wrgjfd3re54wb2hf3q",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-futbol-legends",
+      "name": "Meebits Futbol Legends",
+      "sample_nft": "Brazil Legend # 10",
+      "metadata_url": "ipfs://bafybeiei6d7vf3mlcpvgtezrmxytkvrhxehlyexoslo4qlxpfbxq5fh4ym/3.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebsart",
+      "name": "Meebits x Noper",
+      "sample_nft": "Meebits x Noper #0528",
+      "metadata_url": "ipfs://bafybeiaipid5lu734o6qg7zte3lwpy4cp2x4zsm5yicrkogpuyckpszbom/528",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebsart-2",
+      "name": "Meebits x Noper",
+      "sample_nft": "Black Box",
+      "metadata_url": "ipfs://bafkreicf7s5lkzpmoxgvq3ciumfl66j6jihxfudtceqzw4zcdx6jmcbtv4",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-avatars",
+      "name": "Meebits Avatars",
+      "sample_nft": "Team OpenSea",
+      "metadata_url": "ipfs://bafkreifocv3swlhhr5qwtdt7u7ezy3zfzn335qzjltvqd7ht7aw57ois4e/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "meebits-x-anomalia",
+      "name": "Meebits x Anomalia",
+      "sample_nft": "Meebits x Anomalia",
+      "metadata_url": "ipfs://bafkreiflff6u4smutw3a4twwnyfy7peembflkgtddvxp6qyni7larexzai",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-meebits-podcast",
+      "name": "The Meebits Podcast",
+      "sample_nft": "Episode 4 - Timmu Toke",
+      "metadata_url": "https://arweave.net/c--vSjQPSjUccyBTevKT3JqFg9IlKI661qYV5xnaB3Y/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "bayc-vs-meebits-1",
+      "name": "BAYC vs MEEBITS",
+      "sample_nft": "BAYC vs MEEBITS",
+      "metadata_url": "ipfs://QmWhCdmQc6jhiPriRjiwsYWqbNjvVVULvZsBj4vdQPnDN2/0",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "boredpunkmeebits",
+      "name": "BoredPunkMeebits",
+      "sample_nft": "Bored Punk Meebits #408",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmUaHR7fCz6rfq2mbyuEGnqDVN7NqreqGfLf2grMZi9MbD/408.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaanigen",
+      "name": "MetaaniGEN",
+      "sample_nft": "Metaani GEN#07245",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmTiW6V5AG3tVJuewTV2NX1yqFJzLb28MpS7ctTHnPzKXT/7245",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaanikizunaai",
+      "name": "Metaani x KizunaAI",
+      "sample_nft": "Metaani KizunaAI#00200",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmTYKXWWg8jQV21mcvvqTyd3qf8BreBG8iyffabLvvvo5q/200",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-hq",
+      "name": "Metaverse HQ",
+      "sample_nft": "Metaverse HQ Year 5 Key #3439",
+      "metadata_url": "ipfs://bafybeiho63nl6zjngx2izfw3xbyjykl7eoavm4bsmlnf54s2gdo2wpb6bi/3439",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "jrny-metaverse-box",
+      "name": "JRNY Metaverse Box",
+      "sample_nft": "Planet XOLO Hoodie #9999",
+      "metadata_url": "https://metaversebox.jrny.club/api/metadata/9999",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "role-for-metaverse",
+      "name": "Role for Metaverse",
+      "sample_nft": "Role #5264",
+      "metadata_url": "data:application/json;base64,eyJuYW1lIjogIlJvbGUgIzUyNjQiLCAiZGVzY3JpcHRpb24iOiAiUm9sZSBpcyBhIHNlZWQsIGEgc2VlZCBhY2NvdW50IGZvciBNZXRhdmVyc2UgR2FtZS4iLCAiaW1hZ2UiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQRDk0Yld3Z2RtVnljMmx2YmowaU1TNHdJaUJsYm1OdlpHbHVaejBpVlZSR0xUZ2lQejQ4YzNabklIZHBaSFJvUFNJM05UQndlQ0lnYUdWcFoyaDBQU0kzTlRCd2VDSWdkbWxsZDBKdmVEMGlNQ0F3SURjMU1DQTNOVEFpSUhabGNuTnBiMjQ5SWpFdU1TSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklpQjRiV3h1Y3pwNGJHbHVhejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TVRrNU9TOTRiR2x1YXlJK1BHY2djM1J5YjJ0bFBTSnViMjVsSWlCemRISnZhMlV0ZDJsa2RHZzlJakVpSUdacGJHdzlJbTV2Ym1VaUlHWnBiR3d0Y25Wc1pUMGlaWFpsYm05a1pDSStQSEpsWTNRZ1ptbHNiRDBpSXpJek1VUXpPU0lnZUQwaU1DSWdlVDBpTUNJZ2QybGtkR2c5SWpjMU1DSWdhR1ZwWjJoMFBTSTNOVEFpUGp3dmNtVmpkRDQ4WnlCMGNtRnVjMlp2Y20wOUluUnlZVzV6YkdGMFpTZzJNQzR3TURBd01EQXNJRE0xTGpBd01EQXdNQ2tpSUdacGJHdzlJaU5HUmtaR1JrWWlJR1pwYkd3dGNuVnNaVDBpYm05dWVtVnlieUkrUEdjZ2RISmhibk5tYjNKdFBTSjBjbUZ1YzJ4aGRHVW9NQzR3TURBd01EQXNJREUxTGpBd01EQXdNQ2tpUGp4d1lYUm9JR1E5SWswME1TNDNOVEU0TWpRNExEYzNMakV3TnpjNE5EUWdRek01TGpFMk9UZzROamtzTnpNdU5UYzFOalE0TnlBek5pNDRNems0TkRVMExEWTVMamswT0Rrd01qSWdNelF1TnpZeE56QXdNeXcyTmk0eU1qYzFORFE1SUVNek1TNDVNamM0TmpZc05qQXVPVEk1TXpReE15QXlPUzR6TnpjME1UVXlMRFUxTGpRM016UTFNekVnTWpjdU1URXdNelEzT0N3ME9TNDROVGs0T0RBeUlFd3hPQzQ1T0RZMk9EazJMRFE1TGpnMU9UZzRNRElnVERFNExqazROalk0T1RZc056Y3VNVEEzTnpnME5DQk1NQ3czTnk0eE1EYzNPRFEwSUV3d0xERXVPRGt5TWpFMU5UY2dURE15TGpJeE1USTBPVFVzTVM0NE9USXlNVFUxTnlCRE16VXVNRFExTURnek55d3hMamsxTlRJNE9UUXlJRE0zTGpnM09Ea3hPQ3d5TGpNMk5USTJPVFEySURRd0xqY3hNamMxTWpNc015NHhNakl4TlRVMk9TQkRORFF1TVRFek16VXpOQ3cwTGpFek1UTXpOek16SURRM0xqSXpNRFUzTVRFc05TNDNOekV5TlRjME9TQTFNQzR3TmpRME1EVXpMRGd1TURReE9URTJNVGNnUXpVMUxqWXdOakV5TlRjc01USXVOekE1TXpneE1pQTFPQzQwTnpFME5EY3NNVGd1TmpZNU9EWXdNeUExT0M0Mk5qQXpOamt6TERJMUxqa3lNek0xTXpNZ1F6VTRMalU1TnpNNU5USXNNekF1TXpNNE5USXpJRFUzTGpRek1qTTNORFFzTXpRdU16YzFNalE1TlNBMU5TNHhOalV6TURjc016Z3VNRE16TlRNeU9TQkROVEl1TlRnek16WTVNU3cwTVM0NU5EUXhNVEU0SURRNUxqSXhOREkxTlN3ME5DNDVOekUyTlRZM0lEUTFMakExTnprMk5EZ3NORGN1TVRFMk1UWTNOeUJETkRjdU56QXlPRGMyT0N3MU1pNHdNelU1TWpneElEVXdMalUyT0RFNU9ERXNOVFl1TnprNE1EQTBJRFV6TGpZMU16a3lPRGNzTmpFdU5EQXlNemsxTWlCRE5UY3VNalF6TkRVeU1TdzJOaTQzTmpNMk56STNJRFl3TGprNU1EUXhNRGdzTnpFdU9UazRPREF5TkNBMk5DNDRPVFE0TURRMkxEYzNMakV3TnpjNE5EUWdURFF4TGpjMU1UZ3lORGdzTnpjdU1UQTNOemcwTkNCYUlFMHhPQzQ1T0RZMk9EazJMRE0yTGpJek5Ua3lPREVnVERJNExqWXlNVGN5TmpFc016WXVNak0xT1RJNE1TQkRNekV1TmpRME5EZ3lOaXd6Tmk0eU9Ua3dNRElnTXpRdU16SXdPRGd4Tml3ek5TNHpPRFEwTXpFeElETTJMalkxTURreU16RXNNek11TkRreU1qRTFOaUJETXpndU5qWTJNRGswTWl3ek1TNDJOak13TnpNNUlETTVMamN3TlRFMk5qY3NNamt1TXpZd09EYzRNaUF6T1M0M05qZ3hOREE0TERJMkxqVTROVFl5T0RjZ1F6TTVMamN3TlRFMk5qY3NNak11T0Rjek5EVXpNU0F6T0M0Mk1ETXhNakF4TERJeExqWXdNamM1TkRRZ016WXVORFl5TURBd09Td3hPUzQzTnpNMk5USTNJRU16TkM0eE9UUTVNek0wTERFNExqQXdOelU0TkRnZ016RXVOakV5T1RrMU5pd3hOeTR3T1RNd01UUWdNamd1TnpFMk1UZzNNaXd4Tnk0d01qazVOREF4SUV3eE9DNDVPRFkyT0RrMkxERTNMakF5T1RrME1ERWdUREU0TGprNE5qWTRPVFlzTXpZdU1qTTFPVEk0TVNCYUlqNDhMM0JoZEdnK1BIQmhkR2dnWkQwaVRURXdOaTQwTlRjM01EY3NNakF1TURVM05EZzFJRU14TVRBdU1UY3pNVGM1TERJeExqTXhPRGsyTWpFZ01URXpMalEwTnpnek1pd3lNeTR5TnpReU5URTFJREV4Tmk0eU9ERTJOallzTWpVdU9USXpNelV6TXlCRE1URTVMakExTWpVeU5pd3lPQzQzTmpFMk56WTJJREV5TVM0eE16QTJOekVzTXpJdU1EUXhOVEUzSURFeU1pNDFNVFl4TURFc016VXVOell5T0RjME15QkRNVEkwTGpBeU56UTRMRE01TGprNE9EZ3lNalFnTVRJMExqYzRNekUyT1N3ME5DNHpOREE1TVRneUlERXlOQzQzT0RNeE5qa3NORGd1T0RFNU1UWXhOeUJETVRJMExqYzRNekUyT1N3MU15NHpOakEwTnprZ01USTBMakF5TnpRNExEVTNMamMwTkRFeE1UZ2dNVEl5TGpVeE5qRXdNU3cyTVM0NU56QXdOVGs1SUVNeE1qRXVNVE13TmpjeExEWTFMalk1TVRReE56SWdNVEU1TGpBMU1qVXlOaXcyT0M0NU16azNNakEySURFeE5pNHlPREUyTmpZc056RXVOekUwT1Rjd01TQkRNVEV6TGpRME56Z3pNaXczTkM0ME1qY3hORFUzSURFeE1DNHhOek14Tnprc056WXVNemd5TkRNMU1TQXhNRFl1TkRVM056QTNMRGMzTGpVNE1EZ3pPRE1nUXpFd015NHpOekU1Tnpjc056Z3VORFl6T0RjeU15QXhNREF1TWpVME56VTVMRGM0TGprek5qa3lOakVnT1RjdU1UQTJNRFUwTVN3M09TQkRPVE11T0RrME16YzFNeXczT0M0NU16WTVNall4SURrd0xqYzBOVFkzTURVc056Z3VORFl6T0RjeU15QTROeTQyTlRrNU16azVMRGMzTGpVNE1EZ3pPRE1nUXpnekxqazBORFEyT0RNc056WXVNemd5TkRNMU1TQTRNQzQyTXpnek1qZ3pMRGMwTGpReU56RTBOVGNnTnpjdU56UXhOVElzTnpFdU56RTBPVGN3TVNCRE56UXVPVGN3TmpVNU9DdzJPQzQ1TXprM01qQTJJRGN5TGpnNU1qVXhORGNzTmpVdU5qa3hOREUzTWlBM01TNDFNRGN3T0RRMkxEWXhMamszTURBMU9Ua2dRelk1TGprNU5UY3dOak1zTlRjdU56UTBNVEV4T0NBMk9TNHlOekUxTURReUxEVXpMak0yTURRM09TQTJPUzR6TXpRME56Z3pMRFE0TGpneE9URTJNVGNnUXpZNUxqSTNNVFV3TkRJc05EUXVNelF3T1RFNE1pQTJPUzQ1T1RVM01EWXpMRE01TGprNE9EZ3lNalFnTnpFdU5UQTNNRGcwTml3ek5TNDNOakk0TnpReklFTTNNaTQ0T1RJMU1UUTNMRE15TGpBME1UVXhOeUEzTkM0NU56QTJOVGs0TERJNExqYzJNVFkzTmpZZ056Y3VOelF4TlRJc01qVXVPVEl6TXpVek15QkRPREF1TmpNNE16STRNeXd5TXk0eU56UXlOVEUxSURnekxqazBORFEyT0RNc01qRXVNekU0T1RZeU1TQTROeTQyTlRrNU16azVMREl3TGpBMU56UTROU0JET1RBdU56UTFOamN3TlN3eE9TNHhOelEwTlRFeElEa3pMamc1TkRNM05UTXNNVGd1TnpBeE16azNNaUE1Tnk0eE1EWXdOVFF4TERFNExqWXpPRE15TXpRZ1F6RXdNQzR5TlRRM05Ua3NNVGd1TnpBeE16azNNaUF4TURNdU16Y3hPVGMzTERFNUxqRTNORFExTVRFZ01UQTJMalExTnpjd055d3lNQzR3TlRjME9EVWdXaUJOTVRBd0xqZzRORFVzTmpJdU56STJPVFEyTVNCRE1UQXlMakE0TVRBd09DdzJNUzQ0TkRNNU1USXlJREV3TXk0d09EZzFPVE1zTmpBdU56UXdNVEU1T0NBeE1ETXVPVEEzTWpVMkxEVTVMalF4TlRVMk9Ea2dRekV3TkM0M09EZzRPVFFzTlRjdU56YzFOalE0TnlBeE1EVXVOREU0TmpNMUxEVTJMakF3T1RVNE1EZ2dNVEExTGpjNU5qUTNPU3cxTkM0eE1UY3pOalV6SUVNeE1EWXVNRFE0TXpjMkxEVXlMak0xTVRJNU56UWdNVEEyTGpJd05UZ3hNU3cxTUM0MU9EVXlNamsxSURFd05pNHlOamczT0RVc05EZ3VPREU1TVRZeE55QkRNVEEyTGpJd05UZ3hNU3cwTnk0eE1UWXhOamMzSURFd05pNHdORGd6TnpZc05EVXVNemd4TmpNMk55QXhNRFV1TnprMk5EYzVMRFF6TGpZeE5UVTJPRGtnUXpFd05TNDBNVGcyTXpVc05ERXVOekl6TXpVek15QXhNRFF1TnpnNE9EazBMRE01TGprMU56STROVFFnTVRBekxqa3dOekkxTml3ek9DNHpNVGN6TmpVeklFTXhNRE11TURnNE5Ua3pMRE0yTGprNU1qZ3hORFFnTVRBeUxqQTRNVEF3T0N3ek5TNDRPRGt3TWpJZ01UQXdMamc0TkRVc016VXVNREExT1RnNElFTTVPUzQyT0RjNU9USXNNelF1TWpRNU1UQXhPQ0E1T0M0ME1qZzFNVEF4TERNekxqZ3pPVEV5TVRnZ09UY3VNVEEyTURVME1Td3pNeTQzTnpZd05EYzVJRU01TlM0Mk5UYzJORGs1TERNekxqZ3pPVEV5TVRnZ09UUXVNelkyTmpneExETTBMakkwT1RFd01UZ2dPVE11TWpNek1UUTNNeXd6TlM0d01EVTVPRGdnUXpreExqazNNelkyTlRRc016VXVPRGc1TURJeUlEa3dMamt6TkRVNU1qZ3NNell1T1RreU9ERTBOQ0E1TUM0eE1UVTVNamsyTERNNExqTXhOek0yTlRNZ1F6ZzVMakl6TkRJNU1qTXNNemt1T1RVM01qZzFOQ0E0T0M0Mk1EUTFOVEV6TERReExqY3lNek0xTXpNZ09EZ3VNakkyTnpBMk55dzBNeTQyTVRVMU5qZzVJRU00Tnk0NU56UTRNVEEwTERRMUxqTTRNVFl6TmpjZ09EY3VPRFE0T0RZeU1pdzBOeTR4TVRZeE5qYzNJRGczTGpnME9EZzJNaklzTkRndU9ERTVNVFl4TnlCRE9EY3VPRFE0T0RZeU1pdzFNQzQxT0RVeU1qazFJRGczTGprM05EZ3hNRFFzTlRJdU16VXhNamszTkNBNE9DNHlNalkzTURZM0xEVTBMakV4TnpNMk5UTWdRemc0TGpZd05EVTFNVE1zTlRZdU1EQTVOVGd3T0NBNE9TNHlNelF5T1RJekxEVTNMamMzTlRZME9EY2dPVEF1TVRFMU9USTVOaXcxT1M0ME1UVTFOamc1SUVNNU1DNDVNelExT1RJNExEWXdMamd3TXpFNU16WWdPVEV1T1Rjek5qWTFOQ3cyTVM0NU1EWTVPRFlnT1RNdU1qTXpNVFEzTXl3Mk1pNDNNalk1TkRZeElFTTVOQzR6TmpZMk9ERXNOak11TkRnek9ETXlNeUE1TlM0Mk5UYzJORGs1TERZekxqZzJNakkzTlRRZ09UY3VNVEEyTURVME1TdzJNeTQ0TmpJeU56VTBJRU01T0M0ME1qZzFNVEF4TERZekxqZzJNakkzTlRRZ09Ua3VOamczT1RreUxEWXpMalE0TXpnek1qTWdNVEF3TGpnNE5EVXNOakl1TnpJMk9UUTJNU0JhSWo0OEwzQmhkR2crUEhCaGRHZ2daRDBpVFRFMk1pNDNOVFkxTkRnc056Y3VPRFkwTmpjd055QkRNVFU0TGprM09ERXdNaXczT0M0Mk1qRTFOVFk1SURFMU5TNHhOamd4Tmprc056a2dNVFV4TGpNeU5qYzFMRGM1SUVNeE5EZ3VNekF6T1RrekxEYzRMamt6TmpreU5qRWdNVFExTGpRek9EWTNNaXczT0M0ek5qa3lOakUxSURFME1pNDNNekEzT0RZc056Y3VNamszTURBMklFTXhOREF1TWpjME56azJMRGMyTGpFMk1UWTNOallnTVRNNExqRTVOalkxTVN3M05DNDFOVE15T1RNMElERXpOaTQwT1RZek5TdzNNaTQwTnpFNE5UWXpJRU14TXpRdU56azJNRFVzTnpBdU1UTTRNVEl6T0NBeE16TXVOak14TURJNUxEWTNMalV5TURVMU9Ea2dNVE16TGpBd01USTRPQ3cyTkM0Mk1Ua3hOakUzSUVNeE16SXVORE0wTlRJeExEWXlMakF6TXpFek16Y2dNVE15TGpFNE1qWXlOU3cxT1M0ek9EUXdNekU1SURFek1pNHlORFUxT1Rrc05UWXVOamN4T0RVMk15Qk1NVE15TGpJME5UVTVPU3d0T0M0ME1ETXhNalV4TjJVdE1UVWdUREUxTUM0M05UazVPRE1zTFRndU5EQXpNVEkxTVRkbExURTFJRXd4TlRBdU56VTVPVGd6TERVeUxqTXhPVGMyTURVZ1F6RTFNQzQyTXpRd016VXNOVFF1TmpVek5Ea3pJREUxTUM0M05UazVPRE1zTlRZdU9USTBNVFV4TnlBeE5URXVNVE0zT0RJM0xEVTVMakV6TVRjek5qVWdRekUxTVM0ek9EazNNalFzTmpBdU5EVTJNamczTkNBeE5USXVNREU1TkRZMUxEWXhMalV5T0RVME1qa2dNVFV6TGpBeU56QTFMRFl5TGpNME9EVXdNeUJETVRVekxqazNNVFkyTWl3Mk15NHhNRFV6T0RreUlERTFOUzR3TnpNM01EZ3NOak11TlRjNE5EUXpNU0F4TlRZdU16TXpNVGtzTmpNdU56WTNOalkwTnlCRE1UVTNMamcwTkRVMk9DdzJOQzR3TVRrNU5qQXhJREUxT1M0ek9EYzBNelFzTmpRdU1EZ3pNRE16T1NBeE5qQXVPVFl4TnpnMkxEWXpMamsxTmpnNE5qSWdUREUyTWk0M05UWTFORGdzTnpjdU9EWTBOamN3TnlCYUlqNDhMM0JoZEdnK1BIQmhkR2dnWkQwaVRURTROQzQzTmpVNU9UUXNOVE11TmpRME16RXhOQ0JETVRnMUxqSXdOamd4TXl3MU5pNDJNRGczT0RJMElERTROaTQxTmpBM05UWXNOVGt1TURNM01USTFOeUF4T0RndU9ESTNPREl6TERZd0xqa3lPVE0wTVRNZ1F6RTVNQzR4TlRBeU56a3NOakV1T1RNNE5USXpJREU1TVM0MU9UZzJPRE1zTmpJdU5qazFOREE1TWlBeE9UTXVNVGN6TURNMkxEWXpMaklnUXpFNU5DNDVNell6TVN3Mk15NDNNRFExT1RBNElERTVOaTQzTmpJMU5Ua3NOak11T1RJMU16UTVNeUF4T1RndU5qVXhOemd5TERZekxqZzJNakkzTlRRZ1F6SXdNUzR4TnpBM05EWXNOak11T0RZeU1qYzFOQ0F5TURNdU5qVTRNakl5TERZekxqVXhOVE0yT1RNZ01qQTJMakV4TkRJeE1pdzJNaTQ0TWpFMU5UWTVJRU15TURndU5qTXpNVGMyTERZeUxqRXlOemMwTkRVZ01qRXhMakExTnpZM09TdzJNUzR4T0RFMk16WTNJREl4TXk0ek9EYzNNaXcxT1M0NU9ETXlNek0xSUV3eU1UY3VORFE1TlRRNUxEY3lMalEzTVRnMU5qTWdRekl4TkM0eU16YzROeXczTkM0M05ESTFNVFVnTWpFd0xqY3hNVE15TVN3M05pNDBNVE01TnpJeElESXdOaTQ0TmprNU1ERXNOemN1TkRnMk1qSTNOU0JETWpBekxqQTVNVFExTml3M09DNDBPVFUwTURreUlERTVPUzR5T0RFMU1qTXNOemtnTVRrMUxqUTBNREV3TXl3M09TQkRNVGt4TGpBek1Ua3hOaXczT1NBeE9EWXVPREV5TmpVeUxEYzRMakl4TVRVM05qZ2dNVGd5TGpjNE1qTXhMRGMyTGpZek5EY3pNRFVnUXpFM09TNHhNams0TVRNc056VXVNRFUzT0RnME1pQXhOelV1T1RRNU5qSXhMRGN5TGpneE9EYzJNalVnTVRjekxqSTBNVGN6TlN3Mk9TNDVNVGN6TmpVeklFTXhOekF1TlRrMk9ESXpMRFkyTGpjMk16WTNNamNnTVRZNExqY3dOellzTmpNdU1pQXhOamN1TlRjME1EWTJMRFU1TGpJeU5qTTBOek1nUXpFMk5pNDJPVEkwTWprc05UVXVPREl3TXpVNU15QXhOall1TWpVeE5qRXNOVEl1TXpVeE1qazNOQ0F4TmpZdU1qVXhOakVzTkRndU9ERTVNVFl4TnlCRE1UWTJMakU0T0RZek5pdzBOQzR5TnpjNE5EUXpJREUyTmk0NE9ERXpOVEVzTXprdU9ETXhNVE0zTnlBeE5qZ3VNekk1TnpVMUxETTFMalEzT1RBME1Ua2dRekUyT1M0M01UVXhPRFVzTXpFdU56VTNOamcwTmlBeE56RXVOemt6TXpNc01qZ3VOVEE1TXpneE1pQXhOelF1TlRZME1Ua3hMREkxTGpjek5ERXpNVGNnUXpFM055NDBOakE1T1Rrc01qTXVNRGcxTURJNU9TQXhPREF1TnprNE5qSTJMREl4TGpFNU1qZ3hORFFnTVRnMExqVTNOekEzTWl3eU1DNHdOVGMwT0RVZ1F6RTROeTQzTWpVM056WXNNVGt1TVRjME5EVXhNU0F4T1RBdU9UWTRPVFF5TERFNExqY3dNVE01TnpJZ01UazBMak13TmpVMk9Td3hPQzQyTXpnek1qTTBJRU14T1RjdU16STVNekkyTERFNExqY3dNVE01TnpJZ01qQXdMakk0T1RFd09Dd3hPUzR4TnpRME5URXhJREl3TXk0eE9EVTVNVGNzTWpBdU1EVTNORGcxSUVNeU1EWXVOalE1TkRreUxESXhMakU1TWpneE5EUWdNakE1TGpZM01qSTBPQ3d5TXk0d05UTTBPVE1nTWpFeUxqSTFOREU0Tml3eU5TNDJNemsxTWpFZ1F6SXhOQzQ0TXpZeE1qUXNNamd1TkRFME56Y3dOU0F5TVRZdU56VTJPRE0wTERNeExqWWdNakU0TGpBeE5qTXhOaXd6TlM0eE9UVXlNRGsySUVNeU1Ua3VNek00TnpjeUxETTVMak0xT0RBNE16Z2dNakl3TERRekxqWXhOVFUyT0RrZ01qSXdMRFEzTGprMk56WTJORGNnUXpJeU1DdzBPUzQ1TWpJNU5UUXhJREl4T1M0NU16Y3dNallzTlRFdU9ERTFNVFk1TnlBeU1Ua3VPREV4TURjNExEVXpMalkwTkRNeE1UUWdUREU0TkM0M05qVTVPVFFzTlRNdU5qUTBNekV4TkNCYUlFMHlNREl1TlRJME5qZzVMRFF5TGpnMU9EWTRNallnUXpJd01pNHpPVGczTkRFc05EQXVORFl4T0RjMk1pQXlNREV1TlRnd01EYzNMRE00TGpNME9Ea3dNaklnTWpBd0xqQTJPRFk1T1N3ek5pNDFNVGszTmpBMUlFTXhPVGd1TXpZNE16azRMRE0wTGpjMU16WTVNallnTVRrMkxqTXlNVGMwTERNekxqZ3pPVEV5TVRnZ01Ua3pMamt5T0RjeU5Td3pNeTQzTnpZd05EYzVJRU14T1RFdU5EY3lOek0xTERNekxqa3dNakU1TlRZZ01UZzVMak0yTXpFd015d3pOQzQ0TVRZM05qWTFJREU0Tnk0MU9UazRNamdzTXpZdU5URTVOell3TlNCRE1UZzFMamc1T1RVeU9Dd3pPQzR5T0RVNE1qZ3pJREU0TkM0NU1qTTBNamtzTkRBdU16azRPREF5TkNBeE9EUXVOamN4TlRNekxEUXlMamcxT0RZNE1qWWdUREl3TWk0MU1qUTJPRGtzTkRJdU9EVTROamd5TmlCYUlqNDhMM0JoZEdnK1BDOW5Qanh3YjJ4NVoyOXVJSFJ5WVc1elptOXliVDBpZEhKaGJuTnNZWFJsS0RrMUxqTTVNakV6Tml3Z01UVXVNVEV3TlRNNEtTQnliM1JoZEdVb0xUWXlMakUxTXpZMk5Da2dkSEpoYm5Oc1lYUmxLQzA1TlM0ek9USXhNellzSUMweE5TNHhNVEExTXpncElDSWdjRzlwYm5SelBTSTRPUzR3T1RRME1USTNJQzAxTGpNeE56Y3dNakkzSURFd01TNDJPRGs0TmlBdE5TNHpNVGMzTURJeU55QXhNREV1TmpnNU9EWWdNelV1TlRNNE56YzVNaUE0T1M0d09UUTBNVEkzSURNMUxqVXpPRGMzT1RJaVBqd3ZjRzlzZVdkdmJqNDhMMmMrUEhSbGVIUWdhV1E5SWsxaGJHVXRSR1Z0YjI1ekxVTm9ZVzkwYVdNaUlHWnZiblF0Wm1GdGFXeDVQU0pIWlc5eVoybGhJaUJtYjI1MExYTnBlbVU5SWpJNElpQm1iMjUwTFhkbGFXZG9kRDBpYm05eWJXRnNJaUJzYVc1bExYTndZV05wYm1jOUlqUTBJaUJtYVd4c1BTSWpSa1pHUmtaR0lqNDhkSE53WVc0Z2VEMGlOakFpSUhrOUlqSXhNaUkrVFdGc1pUd3ZkSE53WVc0K1BIUnpjR0Z1SUhnOUlqWXdJaUI1UFNJeU5UWWlQa2gxYldGdVBDOTBjM0JoYmo0OGRITndZVzRnZUQwaU5qQWlJSGs5SWpNd01DSStRMmhoYjNScFl5QkhiMjlrUEM5MGMzQmhiajQ4ZEhOd1lXNGdlRDBpTmpBaUlIazlJak0wTkNJZ1ptbHNiRDBpSXpWaU9XSmtOU0krUVdKc1pTQklhV1Z5YjNCb1lXNTBJQ0FtSTNneU1ETkNPend2ZEhOd1lXNCtQSFJ6Y0dGdUlIZzlJall3SWlCNVBTSXpPRGdpSUdacGJHdzlJaU0xWWpsaVpEVWlQaUpKWkc5c2FYcGxjaUk4TDNSemNHRnVQangwYzNCaGJpQjRQU0kyTUNJZ2VUMGlORE15SWlCbWFXeHNQU0lqWm1aak1EQXdJajRpUjJWdWFYVnpJand2ZEhOd1lXNCtQSFJ6Y0dGdUlIZzlJall3SWlCNVBTSTBOellpSUdacGJHdzlJaU0xWWpsaVpEVWlQaUpUWldSMVkyVnlJand2ZEhOd1lXNCtQQzkwWlhoMFBqeDBaWGgwSUdsa1BTSlRkSEl0UkdWNExVTnZiaTFEYUdFdGFXNTBJaUJtYjI1MExXWmhiV2xzZVQwaVIyVnZjbWRwWVNJZ1ptOXVkQzF6YVhwbFBTSXlPQ0lnWm05dWRDMTNaV2xuYUhROUltNXZjbTFoYkNJZ2JHbHVaUzF6Y0dGamFXNW5QU0kwTkNJZ1ptbHNiRDBpSTBaR1JrWkdSaUkrUEhSemNHRnVJSGc5SWpVeU1pSWdlVDBpTWpFMklqNVRkSEk4TDNSemNHRnVQangwYzNCaGJpQjRQU0kxTWpJaUlIazlJakkyTUNJK1JHVjRQQzkwYzNCaGJqNDhkSE53WVc0Z2VEMGlOVEl5SWlCNVBTSXpNRFFpUGtOdmJqd3ZkSE53WVc0K1BIUnpjR0Z1SUhnOUlqVXlNaUlnZVQwaU16UTRJajVEYUdFOEwzUnpjR0Z1UGp4MGMzQmhiaUI0UFNJMU1qSWlJSGs5SWpNNU1pSStTVzUwUEM5MGMzQmhiajQ4ZEhOd1lXNGdlRDBpTlRJeUlpQjVQU0kwTXpZaVBsZHBjend2ZEhOd1lXNCtQQzkwWlhoMFBqeDBaWGgwSUdsa1BTSXlMVE10TmkwM0xURXRNU0lnWm05dWRDMW1ZVzFwYkhrOUlrZGxiM0puYVdFaUlHWnZiblF0YzJsNlpUMGlNamdpSUdadmJuUXRkMlZwWjJoMFBTSnViM0p0WVd3aUlHeHBibVV0YzNCaFkybHVaejBpTkRRaUlHWnBiR3c5SWlOR1JrWkdSa1lpUGp4MGMzQmhiaUI0UFNJMk1UZ2lJSGs5SWpJeE5pSStPVHd2ZEhOd1lXNCtQSFJ6Y0dGdUlIZzlJall4T0NJZ2VUMGlNall3SWo0M1BDOTBjM0JoYmo0OGRITndZVzRnZUQwaU5qRTRJaUI1UFNJek1EUWlQakk4TDNSemNHRnVQangwYzNCaGJpQjRQU0kyTVRnaUlIazlJak0wT0NJK01Ed3ZkSE53WVc0K1BIUnpjR0Z1SUhnOUlqWXhPQ0lnZVQwaU16a3lJajR6UEM5MGMzQmhiajQ4ZEhOd1lXNGdlRDBpTmpFNElpQjVQU0kwTXpZaVBqZzhMM1J6Y0dGdVBqd3ZkR1Y0ZEQ0OGJHbHVaU0I0TVQwaU5Ea3dMalVpSUhreFBTSXhPVEl1TlNJZ2VESTlJalE1TUM0MUlpQjVNajBpTkRjMUxqVWlJSE4wY205clpUMGlJemszT1RjNU55SWdjM1J5YjJ0bExXeHBibVZqWVhBOUluTnhkV0Z5WlNJK1BDOXNhVzVsUGp3dlp6NDhMM04yWno0PSIsImF0dHJpYnV0ZXMiOlt7ICJ0cmFpdF90eXBlIjogIkdlbmRlciIsICJ2YWx1ZSI6ICJNYWxlIiB9LCB7ICJ0cmFpdF90eXBlIjogIk9jY3VwYXRDb2xvciIsICJ2YWx1ZSI6ICJibHVlIiB9LCB7ICJ0cmFpdF90eXBlIjogIlJhY2UiLCAidmFsdWUiOiAiSHVtYW4iIH0sIHsgInRyYWl0X3R5cGUiOiAiQWxpZ25tZW50IiwgInZhbHVlIjogIkNoYW90aWMgR29vZCIgfSwgeyAidHJhaXRfdHlwZSI6ICJPY2N1cGF0RmxhZyIsICJ2YWx1ZSI6ICJNYWdlIiB9XX0=",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "adidasoriginals",
+      "name": "adidas Originals Into the Metaverse",
+      "sample_nft": "adidas Originals: Into the Metaverse (Phase 2)",
+      "metadata_url": "ipfs://QmdEWNzkWQhvJp6AMs5iMkZ3xX3idxTp6Ai2mKwYCFWaSs/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-creatures",
+      "name": "Metaverse Creatures",
+      "sample_nft": "#261 \u2014 Warror",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/111428878727650123514080126697459375068995373451385908325618105686404460707841",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-access-card",
+      "name": "Metaverse Access Card",
+      "sample_nft": "Metaverse Access Card",
+      "metadata_url": "https://meta.internet.game/mac/550",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "stargirlsalonmetaversestardrops",
+      "name": "Stargirl Salon: Metaverse Stardrops",
+      "sample_nft": "Metaverse Stardrop #554",
+      "metadata_url": "https://bafybeic63tdmoexmmkwdeypcppsgq5cbthgy6ymqtruvrezeeo67egfmba.ipfs.w3s.link/554.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fancybearsmetaverse",
+      "name": "Fancy Bears Metaverse",
+      "sample_nft": "Fancy Bear #7862",
+      "metadata_url": "https://api.fancybearsmetaverse.com/7862",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-generative-electronic-museum-of-metaverse-art",
+      "name": "GEMMA BY TRISTAN EATON",
+      "sample_nft": "GEMMA #4921",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmU5dMCHxT3rvUDhdwVsg6A7FQ4oez59SsB2GcMhDMswwX/4921",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "guardians-of-the-metaverse",
+      "name": "Guardians of the Metaverse",
+      "sample_nft": "Guardian #9916",
+      "metadata_url": "https://metag-backend.herokuapp.com/9916",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-soldiers-of-the-metaverse",
+      "name": "The Soldiers Of The Metaverse",
+      "sample_nft": "Soldiers Of The Metaverse # 7492",
+      "metadata_url": "https://www.metaarmy.net/soldiersofthemetaverse/tokens/7492",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "pirates-of-the-metaverse-by-drip-studios",
+      "name": "Pirates of the Metaverse by Drip Studios",
+      "sample_nft": "POTM #9761",
+      "metadata_url": "https://storageapi.fleek.co/435d6632-997b-499f-a7f3-40d99af1e173-bucket/potm/9761",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "onchainhom",
+      "name": "OnChain Human Of Metaverse",
+      "sample_nft": "OnChain Human Of Metaverse #5552",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "humans-metaverse",
+      "name": "Humans Metaverse",
+      "sample_nft": "Human #6486",
+      "metadata_url": "https://storage.googleapis.com/humans-metaverse/metadata-final/6486.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-marauders",
+      "name": "Metaverse Marauders",
+      "sample_nft": "Marauder #3149",
+      "metadata_url": "https://ipfs.io/ipfs/QmanvwTSLCRtux3eiovtwoJcK7Ko8tbLXtLHmCLMq7sKQR/3149",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "timepieces-intothemetaverse",
+      "name": "TIMEPieces: Into the Metaverse by Micah Johnson",
+      "sample_nft": "TIME: Into the Metaverse | August 15, 2022",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/47962609947293890009065351706700457831661360273274544087483923735967313171336",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "pets-for-metaverse",
+      "name": "Pets for Metaverse",
+      "sample_nft": "Pets #5992",
+      "metadata_url": "data:application/json;base64,eyJuYW1lIjogIlBldHMgIzU5OTIiLCAiZGVzY3JpcHRpb24iOiAiUGV0cyBhcmUgY29tcGFuaW9ucyBpbiBwdXJzdWl0IG9mIHdoYXQgUm9sZSBzZXRzIGZpcmUgdG8uIiwgImltYWdlIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWlCbGJtTnZaR2x1WnowaVZWUkdMVGdpUHo0OGMzWm5JSGRwWkhSb1BTSTNOVEJ3ZUNJZ2FHVnBaMmgwUFNJM05UQndlQ0lnZG1sbGQwSnZlRDBpTUNBd0lEYzFNQ0EzTlRBaUlIWmxjbk5wYjI0OUlqRXVNU0lnZUcxc2JuTTlJbWgwZEhBNkx5OTNkM2N1ZHpNdWIzSm5Mekl3TURBdmMzWm5JaUI0Yld4dWN6cDRiR2x1YXowaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1UazVPUzk0YkdsdWF5SStQR2NnYzNSeWIydGxQU0p1YjI1bElpQnpkSEp2YTJVdGQybGtkR2c5SWpFaUlHWnBiR3c5SW01dmJtVWlJR1pwYkd3dGNuVnNaVDBpWlhabGJtOWtaQ0krUEdjZ2FXUTlJa0Z3Y0d4bExWUldJaUIwY21GdWMyWnZjbTA5SW5SeVlXNXpiR0YwWlNndE1URXhNUzR3TURBd01EQXNJQzB5TXpRdU1EQXdNREF3S1NJK1BHY2dkSEpoYm5ObWIzSnRQU0owY21GdWMyeGhkR1VvTVRFeE1TNHdNREF3TURBc0lESXpOQzR3TURBd01EQXBJajQ4Y21WamRDQm1hV3hzUFNJak1EY3pNVFF5SWlCNFBTSXdJaUI1UFNJd0lpQjNhV1IwYUQwaU56VXdJaUJvWldsbmFIUTlJamMxTUNJK1BDOXlaV04wUGp4MFpYaDBJR2xrUFNKRGJHRnpjeTFCYkdsbmJtMWxiblF0VTJsNlpTSWdabTl1ZEMxbVlXMXBiSGs5SWtkbGIzSm5hV0VpSUdadmJuUXRjMmw2WlQwaU1qZ2lJR1p2Ym5RdGQyVnBaMmgwUFNKdWIzSnRZV3dpSUd4cGJtVXRjM0JoWTJsdVp6MGlORFFpSUdacGJHdzlJaU5HUmtaR1JrWWlQangwYzNCaGJpQjRQU0kzT0NJZ2VUMGlNVGswSWo1UGIzcGxQQzkwYzNCaGJqNDhkSE53WVc0Z2VEMGlOemdpSUhrOUlqSXpPQ0krVG1WMWRISmhiQ0JGZG1sc1BDOTBjM0JoYmo0OGRITndZVzRnZUQwaU56Z2lJSGs5SWpJNE1pSStTSFZuWlR3dmRITndZVzQrUEhSemNHRnVJSGc5SWpjNElpQjVQU0l6TWpZaUlHWnBiR3c5SWlNMVlqbGlaRFVpUG1ObGJHVnpkR2xoYkNCSFpXeGhkR2x1YjNWeklFTjFZbVU4TDNSemNHRnVQangwYzNCaGJpQjRQU0kzT0NJZ2VUMGlNemN3SWlCbWFXeHNQU0lqTldJNVltUTFJajRpVUd4MWN5SThMM1J6Y0dGdVBqeDBjM0JoYmlCNFBTSTNPQ0lnZVQwaU5ERTBJaUJtYVd4c1BTSWpOekJoWkRRM0lqNGlWSFZ5WW05aWJHRjZaU0k4TDNSemNHRnVQangwYzNCaGJpQjRQU0kzT0NJZ2VUMGlORFU0SWlCbWFXeHNQU0lqWm1abVptWm1JajRpUm5KcFpXNWtJRWQxWVhKa0lqd3ZkSE53WVc0K1BDOTBaWGgwUGp4MFpYaDBJR2xrUFNKVGRISXRSR1Y0TFVOdmJpMURhR0V0YVc1MElpQm1iMjUwTFdaaGJXbHNlVDBpUjJWdmNtZHBZU0lnWm05dWRDMXphWHBsUFNJeU9DSWdabTl1ZEMxM1pXbG5hSFE5SW01dmNtMWhiQ0lnYkdsdVpTMXpjR0ZqYVc1blBTSTBOQ0lnWm1sc2JEMGlJMFpHUmtaR1JpSStQSFJ6Y0dGdUlIZzlJalUwTUNJZ2VUMGlNVGswSWo1VGRISThMM1J6Y0dGdVBqeDBjM0JoYmlCNFBTSTFOREFpSUhrOUlqSXpPQ0krUkdWNFBDOTBjM0JoYmo0OGRITndZVzRnZUQwaU5UUXdJaUI1UFNJeU9ESWlQa052Ymp3dmRITndZVzQrUEhSemNHRnVJSGc5SWpVME1DSWdlVDBpTXpJMklqNURhR0U4TDNSemNHRnVQangwYzNCaGJpQjRQU0kxTkRBaUlIazlJak0zTUNJK1NXNTBQQzkwYzNCaGJqNDhkSE53WVc0Z2VEMGlOVFF3SWlCNVBTSTBNVFFpUGxkcGN6d3ZkSE53WVc0K1BDOTBaWGgwUGp4MFpYaDBJR2xrUFNJeUxUTXROaTAzTFRFdE1TSWdabTl1ZEMxbVlXMXBiSGs5SWtkbGIzSm5hV0VpSUdadmJuUXRjMmw2WlQwaU1qZ2lJR1p2Ym5RdGQyVnBaMmgwUFNKdWIzSnRZV3dpSUd4cGJtVXRjM0JoWTJsdVp6MGlORFFpSUdacGJHdzlJaU5HUmtaR1JrWWlQangwYzNCaGJpQjRQU0kyTXpZaUlIazlJakU1TkNJK01Ed3ZkSE53WVc0K1BIUnpjR0Z1SUhnOUlqWXpOaUlnZVQwaU1qTTRJajR4UEM5MGMzQmhiajQ4ZEhOd1lXNGdlRDBpTmpNMklpQjVQU0l5T0RJaVBqQThMM1J6Y0dGdVBqeDBjM0JoYmlCNFBTSTJNellpSUhrOUlqTXlOaUkrTVRJOEwzUnpjR0Z1UGp4MGMzQmhiaUI0UFNJMk16WWlJSGs5SWpNM01DSStNand2ZEhOd1lXNCtQSFJ6Y0dGdUlIZzlJall6TmlJZ2VUMGlOREUwSWo0d1BDOTBjM0JoYmo0OEwzUmxlSFErUEd4cGJtVWdlREU5SWpRNU1TNDFJaUI1TVQwaU1UY3dMalVpSUhneVBTSTBPVEV1TlNJZ2VUSTlJalExTXk0MUlpQnpkSEp2YTJVOUlpTTVOemszT1RjaUlITjBjbTlyWlMxc2FXNWxZMkZ3UFNKemNYVmhjbVVpUGp3dmJHbHVaVDQ4ZEdWNGRDQjBjbUZ1YzJadmNtMDlJblJ5WVc1emJHRjBaU2czTVM0Mk5pQTVOeTQ0TkNraUlITjBlV3hsUFNKbWIyNTBMWE5wZW1VNk5qUndlRHRtYVd4c09pTm1abVk3Wm05dWRDMW1ZVzFwYkhrNlQzQmxibE5oYm5NdFJYaDBjbUZDYjJ4a0xDQlBjR1Z1SUZOaGJuTTdabTl1ZEMxM1pXbG5hSFE2T0RBd0lqNVFaWFE4TDNSbGVIUStQSFJsZUhRZ2RISmhibk5tYjNKdFBTSjBjbUZ1YzJ4aGRHVW9NVGd4TGpFZ056WXVOVE1wSUhOallXeGxLREF1TlRncElpQnpkSGxzWlQwaVptOXVkQzF6YVhwbE9qWTBjSGc3Wm1sc2JEb2pabVptTzJadmJuUXRabUZ0YVd4NU9rOXdaVzVUWVc1ekxVVjRkSEpoUW05c1pDd2dUM0JsYmlCVFlXNXpPMlp2Ym5RdGQyVnBaMmgwT2pnd01DSStjend2ZEdWNGRENDhjRzlzZVdkdmJpQm1hV3hzUFNJalptWm1JaUJ3YjJsdWRITTlJakV5TUM0ME9TQTBOaTQxTlNBeE1qUXVORGdnTXprZ01UUTRMamsySURVeExqa3pJREUwTkM0NU55QTFPUzQwT0NBeE1qQXVORGtnTkRZdU5UVWlMejQ4TDJjK1BDOW5Qand2Wno0OEwzTjJaejQ9IiwiYXR0cmlidXRlcyI6W3sgInRyYWl0X3R5cGUiOiAiU2l6ZSIsICJ2YWx1ZSI6ICJIdWdlIiB9LCB7ICJ0cmFpdF90eXBlIjogIlNwZWNpZXNDb2xvciIsICJ2YWx1ZSI6ICJibHVlIiB9LCB7ICJ0cmFpdF90eXBlIjogIkNsYXNzIiwgInZhbHVlIjogIk9vemUiIH0sIHsgInRyYWl0X3R5cGUiOiAiQWxpZ25tZW50IiwgInZhbHVlIjogIk5ldXRyYWwgRXZpbCIgfV19",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-landscape-1-decentraland-parcel-81-17-by",
+      "name": "Metaverse Landscape 1: Decentraland Parcel -81, -17 by Simon Denny",
+      "sample_nft": "Metaverse Landscape 1: Decentraland Parcel -81, -17 #132",
+      "metadata_url": "https://feralfile.com/api/contracts/0x2a86c5466f088caebf94e071a77669bae371cd87/tokens/111620246613695490106738849263862774922244140225367210165377389379116547016315",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "crazy-metaverse-kids",
+      "name": "CRAZY METAVERSE KIDS - By MaNiC & Son",
+      "sample_nft": "CRAZY METAVERSE KIDS #86",
+      "metadata_url": "ipfs://QmR9NdWa8VCARLr4RdQSfYsmfJNnPjUbLucvBBvP1r4oW4/86.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "kawaiimetacollage",
+      "name": "Kawaii Meta Collage - Opera Meets Metaverse",
+      "sample_nft": "KMC#2349",
+      "metadata_url": "https://arweave.net/f9STfBoG776xC-1UnfeOJbdDxgP3xLg-h1cA-gvrX80/5554/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-mars-martians",
+      "name": "The Martians: Metaverse",
+      "sample_nft": "The Martians #4994",
+      "metadata_url": "ipfs://QmTCoJoUNvDApqJWEyfdFBCCEWeqts65T4mtZ55dqDcDC1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metahelmet",
+      "name": "Metaverse Travel Agency (M.T.A.)",
+      "sample_nft": "#5671",
+      "metadata_url": "https://metadata.themta.io/metahelmet/5671",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "united-metaverse-nation-umn",
+      "name": "United Metaverse Nation (UMN)",
+      "sample_nft": "Passport 11045",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmPXKdR5KD6AGjT362iaqk5YH8GMy2Lnsxhr42bucEbDfw/11045",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "womenofthemetaverse",
+      "name": "Women of the Metaverse",
+      "sample_nft": "Dominique",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/84457751043465328619057449989245392658276532746991168004376457947333491949569",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "boxingboyz-metaverse",
+      "name": "Boxing Boyz Metaverse",
+      "sample_nft": "#5008",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-geometries",
+      "name": "Metaverse Geometries",
+      "sample_nft": "Metaverse Geometries",
+      "metadata_url": "ipfs://QmdC2pPngvBNsYxk7NmuRkdRHui5VUumQyLg5EEseDFcPN/0",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-fractals",
+      "name": "Metaverse Fractals",
+      "sample_nft": "Metaverse Fractals #8",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/39903677437007397492918135388867549626655450665085462550385469334918348668929",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-metaverse-5",
+      "name": "the 'metaverse'",
+      "sample_nft": "the 'metaverse' 33/1983",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverse-new-human",
+      "name": "Metaverse New Human",
+      "sample_nft": "AFSS #4944",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/51160156266662910792108384812806613653396150834796024122460372654152369569793",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "rebirth-genesis-of-a-metaverse",
+      "name": "ReBirth: Genesis of a Metaverse",
+      "sample_nft": "Short Story of a Lost Astronaut",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/58955353194292277975909326403548751672830899041008537865192463878239180292296",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "blueworld-v1",
+      "name": "BlueWorld Metaverse",
+      "sample_nft": "#2742",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmVhaZDDrJMEQ6SejdS2kmQG4bVhboGyEPqZ3aJqc7zzM5/2742",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaversity-college-of-web3",
+      "name": "Metaversity, College of Web3",
+      "sample_nft": "Metaversity Owl #2485",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmPzeo7o6seLxeLc9qwCpG8kSg3Hv8KwHtqK9MPJwh7dyV/2485",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "carman-metaverse",
+      "name": "CarMan_Metaverse",
+      "sample_nft": "CarMan_Metaverse #1281",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmYvJEw4LHBpaehH6mYZV9YXC372QSWL4BPFVJvUkKqRCg/1281.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "miss-metaverse-1",
+      "name": "Miss Metaverse \ud83e\ude9e\ud83d\udca1",
+      "sample_nft": "Miss Metaverse #95.23 \ud83e\ude9e\ud83d\udca1",
+      "metadata_url": "https://highlight-creator-assets.highlight.xyz/main/base-dir/87b8cfab-b729-4a56-93f9-017e3c21eb7f/onChainDir/28",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-metaverse-i-created",
+      "name": "The Metaverse I Created",
+      "sample_nft": "Cyber Joker",
+      "metadata_url": "ipfs://Qmbqq6wVbwPSZhDsQCF2Sj5w8Ch6QrU8vMT2qNcmwiHFYW/33",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "pinkrod-metaverse-clean-air",
+      "name": "Pinkrod Metaverse clean air",
+      "sample_nft": "Pinkrod Metaverse Clean Air",
+      "metadata_url": "https://arweave.net/thRb8qnyOVpmjt-bZw4ktrn_N27JJm2S-Ij0oi0vZWE/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "coca-cola-metaverse-vending-machine",
+      "name": "Coca-Cola Metaverse Vending Machine - Christmas 2022",
+      "sample_nft": "Mike the Elf",
+      "metadata_url": "https://api.mintstack.com/nft/6bca8a9d-cf19-4f5e-8337-17e09c468f67/metadata/27",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "firestartermetaversechampion",
+      "name": "Firestarter Metaverse Champion",
+      "sample_nft": "Hiro",
+      "metadata_url": "ipfs://QmbGSv5wbTcBFD65FXR3GxnidTiytTcCqF7ygQjVdWVZHg/hiro_227.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaverseplayers",
+      "name": "Metaverse Players (MVP)",
+      "sample_nft": "Metaverse Players #4995",
+      "metadata_url": "https://houseoffirst.com:1335/metaverseplayers/opensea/4995",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "fpxmetaverse",
+      "name": "FPX METAVERSE",
+      "sample_nft": "FPX-Metaverse Pass Card",
+      "metadata_url": "https://fpx-asset.s3.amazonaws.com/fpx_pass_card_nft.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "mintverse-virtual-metaverse",
+      "name": "Mintverse - Virtual Metaverse",
+      "sample_nft": "Mintverse - Virtual Metaverse #32",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "journey-to-the-metaverse-genesis",
+      "name": "Journey to the Metaverse(Genesis)",
+      "sample_nft": "#439",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmeB8mFedt3kvjV4W3abNaQc5eEu53UMkGZhDBG4GfHeyN/439.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "chinese-zodiac-metaverse-by-yassartlabs",
+      "name": "Chinese Zodiac Metaverse by YassartLabs",
+      "sample_nft": "Tang Shi Ying",
+      "metadata_url": "https://nhn-darkside.github.io/NFT-00/1019",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-ghost-of-metaverse-future-february-8-2023-wip",
+      "name": "\ud83d\udc7b\ud83d\udd79\ufe0f\ud83e\udd16 The Ghost of Metaverse Future! \ud83d\udc7b\ud83d\udd79\ufe0f\ud83e\udd16- February 8, 2023 WIP",
+      "sample_nft": "\ud83d\udc7b\ud83d\udd79\ufe0f\ud83e\udd16 The Ghost of Metaverse Future! \ud83d\udc7b\ud83d\udd79\ufe0f\ud83e\udd16- February 8, 2023 WIP 3",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "cemr",
+      "name": "Crypto Eggs Of Metaverse Reality (CEMR)",
+      "sample_nft": "50 Million CEMRs",
+      "metadata_url": "",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "arconanobility",
+      "name": "Arcona XR Metaverse Nobility Titles",
+      "sample_nft": "Baron of the Purple Light",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/99303134810194776115737565454567211236303886079612500656884637323156204290049",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "acesso-metaverso-da-marca-x",
+      "name": "ACESSO METAVERSO DA MARCA X",
+      "sample_nft": "ACESSO METAVERSO DA MARCA X",
+      "metadata_url": "https://api.moonwalk.com/nft/v1/collection/6344e2ed7656690011df61b1/token/2",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "metaversebuilder",
+      "name": "MetaverseBuilder",
+      "sample_nft": "Wondertech Pledge #06 August 2021",
+      "metadata_url": "https://api.opensea.io/api/v1/metadata/0x495f947276749ce646f68ac8c248420045cb7b5e/49423465304359073579882382537211734540757444947732678756335064722614490497025",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "the-paradox-meta",
+      "name": "The Paradox Metaverse Official Collection",
+      "sample_nft": "7388",
+      "metadata_url": "https://paradoxmeta.mypinata.cloud/ipfs/QmWdWboVeATYhNWtqYfkBBMoAFMGF7QaefN2QJwAJAsihH/7388.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "veecon-viper",
+      "name": "VeeCon Viper",
+      "sample_nft": "VeeCon Viper #10238",
+      "metadata_url": "https://metadata.veefriends.com/collections/0x20fd75eccd7bb9c4eb9e3bb4c09c6b382e15d63e/tokens/10238",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "viper-486",
+      "name": "VIPER-486",
+      "sample_nft": "Nermer",
+      "metadata_url": "https://viper.folia.app/v1/metadata/486",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "nyi-a-new-era-vip-experience",
+      "name": "NYI A New Era VIP Experience",
+      "sample_nft": "NYI A New Era VIP Experience #1",
+      "metadata_url": "https://api.orangecomet.io/collectible-metadata/oc-nyi-new-era-vip-experience/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "wcc-generations",
+      "name": "WCC X Dizzy Viper - Generations",
+      "sample_nft": "Leaving Las Vegas #3/3",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmVmdv7FFcMMLKoCW7gFogBkaGUQcmVNoJtAVRmoy6qoUn/",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "legends-vip-elite-series",
+      "name": "Legends VIP Elite Series",
+      "sample_nft": "Legends VIP Elite Series",
+      "metadata_url": "https://api.moonwalk.com/nft/v1/collection/6351a84e2bac550011dea4c8/token/47",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "viper-663494864",
+      "name": "VIPER by XCOPY",
+      "sample_nft": "VIPER",
+      "metadata_url": "ipfs://QmXDqz5cE68pHh1QzUHTfgn2KdPFCuMjjhDG4qBRvHqffC/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "viper-724656030",
+      "name": "VIPER by XCOPY",
+      "sample_nft": "VIPER",
+      "metadata_url": "ipfs://QmV1e84p9cpcon26fYgFPYobBhGyo8G4CiRTdKbfrqFQvM/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "viper-684190621",
+      "name": "VIPER by XCOPY",
+      "sample_nft": "VIPER",
+      "metadata_url": "ipfs://QmV1e84p9cpcon26fYgFPYobBhGyo8G4CiRTdKbfrqFQvM/1",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "voxel-ville-avatars",
+      "name": "Voxel Ville Avatars",
+      "sample_nft": "Voxel Ville Avatar #2478",
+      "metadata_url": "https://opensea-private.mypinata.cloud/ipfs/QmYp3kpW7TVbKBM4nr3aUuMgBjSUYQTqfCnwhaQBWGGaMp/2478",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "vorians-3d-avatars",
+      "name": "Vorians - 3D Avatars",
+      "sample_nft": "Vorian - Genesis V1 #48",
+      "metadata_url": "https://api.openpage.fun/v1/m/f5e1b46e-0231-4ed8-8a11-cd01e02c72e0",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "dripp-by-3dwizz-x-reddit-collectible-avatars",
+      "name": "Dripp by 3Dwizz x Reddit Collectible Avatars",
+      "sample_nft": "Dripp #45",
+      "metadata_url": "ipfs://QmS6MSTsdLqD8Ay91NMXrXBXQEweUWz4A2tAd87iDidzuk/44.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    },
+    {
+      "slug": "retro-by-3dwizz-x-reddit-collectible-avatars",
+      "name": "Retro by 3Dwizz x Reddit Collectible Avatars",
+      "sample_nft": "Retro #46",
+      "metadata_url": "ipfs://QmdjKqiXFvrcdtmwggcsFkbdVnpKg5uLeTBPKzXVgDrLYz/45.json",
+      "vrm_param": "",
+      "vrm_url": ""
+    }
+  ],
+  "error": [
+    [
+      "cryptoavatars-110876759",
+      "CryptoAvatars",
+      "no nfts"
+    ]
+  ]
+}

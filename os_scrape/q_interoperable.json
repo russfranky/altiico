@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-real-interoperable-og",
+      "name" : "The real Interoperable OG",
+      "image_url" : "https://i2c.seadn.io/zora/f39eb8a739d0424fbb421798dd3f238a/eb05455c5a5166e4af41aa2ac3b29c/65eb05455c5a5166e4af41aa2ac3b29c.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-real-interoperable-og"
+    }
+  } ]
+}

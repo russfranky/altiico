@@ -1,0 +1,143 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits",
+      "name" : "Meebits",
+      "image_url" : "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/036c8c2bed042a1588622c3173677f/2d036c8c2bed042a1588622c3173677f.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-ai-toys",
+      "name" : "Meebits AI Toys",
+      "image_url" : "https://i2c.seadn.io/collection/meebits-ai-toys/image_type_logo/a1c8dce6e35b937a7b1e21d502e9af/43a1c8dce6e35b937a7b1e21d502e9af.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-ai-toys"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-futbol-group-1",
+      "name" : "Meebits Futbol - Group 1",
+      "image_url" : "https://i2c.seadn.io/collection/meebits-futbol-group-1/image_type_logo/1ab8fb0d52169869ea47da157906d9/3c1ab8fb0d52169869ea47da157906d9.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-futbol-group-1"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "futbol2",
+      "name" : "Meebits Futbol Group Stage",
+      "image_url" : "https://i2c.seadn.io/ethereum/0x00139216da5f3482d9e319285c176b5260fee89e/398c4b1d009c737d3c9c9c049fca0e/92398c4b1d009c737d3c9c9c049fca0e.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/futbol2"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-pins-apechain",
+      "name" : "Meebits Pins",
+      "image_url" : "https://i2c.seadn.io/collection/meebits-pins-578977293/image_type_logo/ddd128bec4df03cd9f3b49a66f3d27/0bddd128bec4df03cd9f3b49a66f3d27.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-pins-apechain"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "playerzero-x-meebits",
+      "name" : "PlayerZero x Meebits",
+      "image_url" : "https://i2c.seadn.io/ethereum/3bfa4eae2ceb4a9484285f5aa05ccdc9/f4dd862db632907d5098254910ce53/e0f4dd862db632907d5098254910ce53.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/playerzero-x-meebits"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-futbol-legends",
+      "name" : "Meebits Futbol Legends",
+      "image_url" : "https://i2c.seadn.io/ethereum/0x13c748cf466282434c7e7483af1faa926030ef89/d0660f5d319202cb1d110d27476874/e8d0660f5d319202cb1d110d27476874.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-futbol-legends"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebsart",
+      "name" : "Meebits x Noper",
+      "image_url" : "https://i2c.seadn.io/ethereum/cb8c44fd896e4bc0a1a51fddaa52c748/6dda0ccdc357ff8795841fd4b96754/f96dda0ccdc357ff8795841fd4b96754.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebsart"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebsart-2",
+      "name" : "Meebits x Noper",
+      "image_url" : "https://i2c.seadn.io/ethereum/b729d7a5f93744558fcd99549f3376be/6dda0ccdc357ff8795841fd4b96754/f96dda0ccdc357ff8795841fd4b96754.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebsart-2"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-avatars",
+      "name" : "Meebits Avatars",
+      "image_url" : "https://i2c.seadn.io/ape_chain/0x0fbe2a65c53c92ae11da81dffdf21fcddcfd1391/fbdf66a32cd2dd4881b63889fd3eb3/1bfbdf66a32cd2dd4881b63889fd3eb3.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-avatars"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "meebits-x-anomalia",
+      "name" : "Meebits x Anomalia",
+      "image_url" : "https://i2c.seadn.io/collection/meebits-x-anomalia/image_type_logo/09c0b923f388cc843398d074c607a6/cb09c0b923f388cc843398d074c607a6.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/meebits-x-anomalia"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-meebits-podcast",
+      "name" : "The Meebits Podcast",
+      "image_url" : "https://i2c.seadn.io/base/3dc284d8216945b49a67bf39ccc56253/12967f454864d920d35bf9161a9e57/fc12967f454864d920d35bf9161a9e57.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-meebits-podcast"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "bayc-vs-meebits-1",
+      "name" : "BAYC vs MEEBITS",
+      "image_url" : "https://i2c.seadn.io/ape_chain/0x4a162f174aa931c5af3ae88a2020be60029f14ea/6add783671bcc9d75d61be4eb3dc5a/f26add783671bcc9d75d61be4eb3dc5a.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/bayc-vs-meebits-1"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "boredpunkmeebits",
+      "name" : "BoredPunkMeebits",
+      "image_url" : "https://i2c.seadn.io/ethereum/c4701add11ed4c678d7f622cdbb0aef0/779a3ab722f36b48313ee8cfe2ea52/4e779a3ab722f36b48313ee8cfe2ea52.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/boredpunkmeebits"
+    }
+  } ]
+}

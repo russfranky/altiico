@@ -1,0 +1,611 @@
+{
+  "3d-bored-ape-club": {
+    "status": "alive",
+    "code": "bKnQgnZ2gY",
+    "guild_name": "3D Bored Club",
+    "member_count": 3529,
+    "presence_count": 29,
+    "expires_at": null,
+    "url": "https://discord.gg/bKnQgnZ2gY"
+  },
+  "3dbears": {
+    "status": "alive",
+    "code": "2P2BtXvANH",
+    "guild_name": "Winter Bears",
+    "member_count": 8099,
+    "presence_count": 164,
+    "expires_at": null,
+    "url": "https://discord.gg/2P2BtXvANH"
+  },
+  "3d-invisible-friends": {
+    "status": "alive",
+    "code": "rndm",
+    "guild_name": "Random Character Collective",
+    "member_count": 117188,
+    "presence_count": 4457,
+    "expires_at": null,
+    "url": "https://discord.gg/rndm"
+  },
+  "3dkongz": {
+    "status": "dead",
+    "code": "5ZUPphnaC2",
+    "url": "https://discord.gg/5ZUPphnaC2"
+  },
+  "3dbirds": {
+    "status": "alive",
+    "code": "a8U3B6QXZz",
+    "guild_name": "3DBirds",
+    "member_count": 7892,
+    "presence_count": 25,
+    "expires_at": null,
+    "url": "https://discord.gg/a8U3B6QXZz"
+  },
+  "3dpunks": {
+    "status": "alive",
+    "code": "ajn2kBrWM7",
+    "guild_name": "3D Punks",
+    "member_count": 862,
+    "presence_count": 12,
+    "expires_at": null,
+    "url": "https://discord.gg/ajn2kBrWM7"
+  },
+  "adidasoriginals": {
+    "status": "alive",
+    "code": "adidas",
+    "guild_name": "adidas",
+    "member_count": 37009,
+    "presence_count": 2348,
+    "expires_at": null,
+    "url": "https://discord.gg/adidas"
+  },
+  "alpacadabraz-3d": {
+    "status": "dead",
+    "code": "alpacadabraz",
+    "url": "https://discord.gg/alpacadabraz"
+  },
+  "allstarz-psx": {
+    "status": "alive",
+    "code": "EtHTYnUdBZ",
+    "guild_name": "ALLSTARZ \u2730",
+    "member_count": 1430,
+    "presence_count": 162,
+    "expires_at": null,
+    "url": "https://discord.gg/EtHTYnUdBZ"
+  },
+  "anaglyph-3d-skulls": {
+    "status": "dead",
+    "code": "5n6xDSGhhT",
+    "url": "https://discord.gg/5n6xDSGhhT"
+  },
+  "arbidudesgenone": {
+    "status": "alive",
+    "code": "VCkNw3bWEH",
+    "guild_name": "ArbiDudes",
+    "member_count": 829,
+    "presence_count": 37,
+    "expires_at": null,
+    "url": "https://discord.gg/VCkNw3bWEH"
+  },
+  "avastar": {
+    "status": "alive",
+    "code": "avastars",
+    "guild_name": "Avastars",
+    "member_count": 163,
+    "presence_count": 152,
+    "expires_at": null,
+    "url": "https://discord.gg/avastars"
+  },
+  "bones-and-bananas-3d-airdrop": {
+    "status": "alive",
+    "code": "JFjHRbhDue",
+    "guild_name": "\ud83c\udf4cBones & Bananas\ud83c\udf4c",
+    "member_count": 2478,
+    "presence_count": 44,
+    "expires_at": null,
+    "url": "https://discord.gg/JFjHRbhDue"
+  },
+  "boomboxheads": {
+    "status": "dead",
+    "code": "qcsEg2DUfB",
+    "url": "https://discord.gg/qcsEg2DUfB"
+  },
+  "bourey-vs-bulley-bourverse-3": {
+    "status": "rate_limited",
+    "code": "K4rUhkAAXp",
+    "url": "https://discord.gg/K4rUhkAAXp"
+  },
+  "boxingboyz-metaverse": {
+    "status": "dead",
+    "code": "boxingboyz",
+    "url": "https://discord.gg/boxingboyz"
+  },
+  "carman-metaverse": {
+    "status": "rate_limited",
+    "code": "PNACJxD8Y5",
+    "url": "https://discord.gg/PNACJxD8Y5"
+  },
+  "catbotica-catboticans": {
+    "status": "rate_limited",
+    "code": "catbotica",
+    "url": "https://discord.gg/catbotica"
+  },
+  "cemr": {
+    "status": "rate_limited",
+    "code": "PwdAs6EZx5",
+    "url": "https://discord.gg/PwdAs6EZx5"
+  },
+  "chain-runners-nft": {
+    "status": "rate_limited",
+    "code": "f3sk2u4uKN",
+    "url": "https://discord.gg/f3sk2u4uKN"
+  },
+  "chinese-zodiac-metaverse-by-yassartlabs": {
+    "status": "rate_limited",
+    "code": "zFZU4qurMq",
+    "url": "https://discord.gg/zFZU4qurMq"
+  },
+  "clinique-x-daz3d": {
+    "status": "rate_limited",
+    "code": "daz3d",
+    "url": "https://discord.gg/daz3d"
+  },
+  "cool-cats-avatar-wearables": {
+    "status": "rate_limited",
+    "code": "coolcatsnft",
+    "url": "https://discord.gg/coolcatsnft"
+  },
+  "coolcats-x-reddit": {
+    "status": "rate_limited",
+    "code": "coolcatsnft",
+    "url": "https://discord.gg/coolcatsnft"
+  },
+  "crafted-avatars": {
+    "status": "rate_limited",
+    "code": "habbo",
+    "url": "https://discord.gg/habbo-nft"
+  },
+  "crypto-pills-3d-og-pillman": {
+    "status": "rate_limited",
+    "code": "cryptopills",
+    "url": "https://discord.gg/cryptopills"
+  },
+  "cryptoavatars": {
+    "status": "rate_limited",
+    "code": "cryptoavatars",
+    "url": "https://discord.gg/cryptoavatars"
+  },
+  "cryptoavatars-110876759": {
+    "status": "rate_limited",
+    "code": "cryptoavatars",
+    "url": "https://discord.gg/cryptoavatars"
+  },
+  "cyberbrokers": {
+    "status": "rate_limited",
+    "code": "cyberbrokers",
+    "url": "https://discord.gg/cyberbrokers"
+  },
+  "dd3dmoto": {
+    "status": "rate_limited",
+    "code": "dourdarcels",
+    "url": "https://discord.gg/dourdarcels"
+  },
+  "dickbuttverse": {
+    "status": "rate_limited",
+    "code": "VP3fGGFNAN",
+    "url": "https://discord.gg/VP3fGGFNAN"
+  },
+  "dendekaden-spirit-key-avatar": {
+    "status": "dead",
+    "code": "dendekaden",
+    "url": "https://discord.gg/dendekaden"
+  },
+  "dr-ethvils-3d-frankenpunks": {
+    "status": "rate_limited",
+    "code": "3d",
+    "url": "https://discord.gg/3d-frankenpunks-902778153729155082"
+  },
+  "dystopunks-3d": {
+    "status": "rate_limited",
+    "code": "Dystolabs",
+    "url": "https://discord.gg/Dystolabs"
+  },
+  "arconanobility": {
+    "status": "alive",
+    "code": "cBEyJqY",
+    "guild_name": "ARCONA XR METAVERSE",
+    "member_count": 1899,
+    "presence_count": 15,
+    "expires_at": null,
+    "url": "https://discord.gg/cBEyJqY"
+  },
+  "ecotars-3d": {
+    "status": "rate_limited",
+    "code": "ecotars",
+    "url": "https://discord.gg/ecotars"
+  },
+  "esnx-mecha": {
+    "status": "rate_limited",
+    "code": "elysiumshell",
+    "url": "https://discord.gg/elysiumshell"
+  },
+  "fly-frogs": {
+    "status": "rate_limited",
+    "code": "kfp4xftqKM",
+    "url": "https://discord.gg/kfp4xftqKM"
+  },
+  "forgottenruneswizardscult": {
+    "status": "rate_limited",
+    "code": "forgottenrunes",
+    "url": "https://discord.gg/forgottenrunes"
+  },
+  "fpxmetaverse": {
+    "status": "rate_limited",
+    "code": "invite",
+    "url": "https://discord.gg/invite/fpxmetaverse/"
+  },
+  "fuku-official": {
+    "status": "rate_limited",
+    "code": "jrnyclub",
+    "url": "https://discord.gg/jrnyclub"
+  },
+  "fvck-avatar-essence": {
+    "status": "rate_limited",
+    "code": "lvcidia",
+    "url": "https://discord.gg/lvcidia"
+  },
+  "gen-f": {
+    "status": "rate_limited",
+    "code": "flooz",
+    "url": "https://discord.com/invite/flooz-xyz-833775021696090192"
+  },
+  "future-realities-rojom-x-reddit-collectible-avatar": {
+    "status": "rate_limited",
+    "code": "rojom",
+    "url": "https://discord.gg/rojom"
+  },
+  "guardians-of-the-metaverse": {
+    "status": "rate_limited",
+    "code": "f3CJBTCW5p",
+    "url": "https://discord.gg/f3CJBTCW5p"
+  },
+  "grifters-by-xcopy": {
+    "status": "rate_limited",
+    "code": "y3TFzusNkt",
+    "url": "https://discord.gg/y3TFzusNkt"
+  },
+  "habbo-avatars": {
+    "status": "rate_limited",
+    "code": "habbo",
+    "url": "https://discord.gg/habbo-nft"
+  },
+  "journey-to-the-metaverse-genesis": {
+    "status": "rate_limited",
+    "code": "cc7YfmVcf8",
+    "url": "https://discord.gg/cc7YfmVcf8"
+  },
+  "jrny-metaverse-box": {
+    "status": "rate_limited",
+    "code": "jrnyclub",
+    "url": "https://discord.gg/jrnyclub"
+  },
+  "humans-metaverse": {
+    "status": "rate_limited",
+    "code": "humansmetaverse",
+    "url": "https://discord.gg/humansmetaverse"
+  },
+  "karafuru": {
+    "status": "rate_limited",
+    "code": "6676W7bHth",
+    "url": "https://discord.gg/6676W7bHth"
+  },
+  "kawaiimetacollage": {
+    "status": "rate_limited",
+    "code": "kmcollage",
+    "url": "https://discord.gg/kmcollage"
+  },
+  "lofi-originals-3d": {
+    "status": "rate_limited",
+    "code": "locommunitynft",
+    "url": "https://discord.gg/locommunitynft"
+  },
+  "lvcidiaavatars": {
+    "status": "rate_limited",
+    "code": "lvcidia",
+    "url": "https://discord.gg/lvcidia"
+  },
+  "meebits": {
+    "status": "rate_limited",
+    "code": "meebits",
+    "url": "https://discord.com/invite/meebits"
+  },
+  "meebits-ai-toys": {
+    "status": "rate_limited",
+    "code": "meebits",
+    "url": "https://discord.gg/meebits"
+  },
+  "metaanikizunaai": {
+    "status": "rate_limited",
+    "code": "TKMpdE6TkH",
+    "url": "https://discord.gg/TKMpdE6TkH"
+  },
+  "metaanigen": {
+    "status": "rate_limited",
+    "code": "TKMpdE6TkH",
+    "url": "https://discord.gg/TKMpdE6TkH"
+  },
+  "metahelmet": {
+    "status": "rate_limited",
+    "code": "h3JKVavUSA",
+    "url": "https://discord.gg/h3JKVavUSA"
+  },
+  "metaverse-access-card": {
+    "status": "rate_limited",
+    "code": "rvnudQDkaz",
+    "url": "https://discord.gg/rvnudQDkaz"
+  },
+  "metaverse-creatures": {
+    "status": "rate_limited",
+    "code": "8nA9tjc6AT",
+    "url": "https://discord.gg/8nA9tjc6AT"
+  },
+  "metaverse-marauders": {
+    "status": "rate_limited",
+    "code": "eWUPj9vfYJ",
+    "url": "https://discord.gg/eWUPj9vfYJ"
+  },
+  "metaversebuilder": {
+    "status": "rate_limited",
+    "code": "vHTJm5Qz",
+    "url": "https://discord.gg/vHTJm5Qz"
+  },
+  "metaverse-hq": {
+    "status": "rate_limited",
+    "code": "mvhq",
+    "url": "https://discord.gg/mvhq"
+  },
+  "metaversity-college-of-web3": {
+    "status": "rate_limited",
+    "code": "metaversityu",
+    "url": "https://discord.gg/metaversityu"
+  },
+  "metaverseplayers": {
+    "status": "rate_limited",
+    "code": "houseoffirst",
+    "url": "https://discord.gg/houseoffirst"
+  },
+  "misfitpixels": {
+    "status": "rate_limited",
+    "code": "kgM5QmuPJF",
+    "url": "https://discord.gg/kgM5QmuPJF"
+  },
+  "moon-ape-lab-3d": {
+    "status": "rate_limited",
+    "code": "moonapelab",
+    "url": "https://discord.gg/moonapelab"
+  },
+  "moonbirds": {
+    "status": "rate_limited",
+    "code": "moonbirds",
+    "url": "https://discord.gg/moonbirds"
+  },
+  "nfpets-daz3d": {
+    "status": "rate_limited",
+    "code": "daz3d",
+    "url": "https://discord.gg/daz3d"
+  },
+  "non-fungible-people-daz3d": {
+    "status": "rate_limited",
+    "code": "daz3d",
+    "url": "https://discord.gg/daz3d"
+  },
+  "nouns3d": {
+    "status": "rate_limited",
+    "code": "ZvCdPsuRkb",
+    "url": "https://discord.gg/ZvCdPsuRkb"
+  },
+  "og-meta-meeples-pfp": {
+    "status": "rate_limited",
+    "code": "ZZ9RdpJxY4",
+    "url": "https://discord.gg/ZZ9RdpJxY4"
+  },
+  "omnimorphs": {
+    "status": "rate_limited",
+    "code": "WGUggyezQy",
+    "url": "https://discord.gg/WGUggyezQy"
+  },
+  "onchainhom": {
+    "status": "rate_limited",
+    "code": "YnwdcZh878",
+    "url": "https://discord.gg/YnwdcZh878"
+  },
+  "pa-3d-printer": {
+    "status": "rate_limited",
+    "code": "we",
+    "url": "https://discord.gg/we-are-the-night"
+  },
+  "parallel-avatars": {
+    "status": "rate_limited",
+    "code": "paralleltcg",
+    "url": "https://discord.gg/paralleltcg"
+  },
+  "pets-for-metaverse": {
+    "status": "rate_limited",
+    "code": "2269ZNcu8h",
+    "url": "https://discord.gg/2269ZNcu8h"
+  },
+  "phettaverse-editions": {
+    "status": "rate_limited",
+    "code": "phettaverse",
+    "url": "https://discord.gg/phettaverse"
+  },
+  "pirates-of-the-metaverse-by-drip-studios": {
+    "status": "rate_limited",
+    "code": "tSNQgrV9z6",
+    "url": "https://discord.gg/tSNQgrV9z6"
+  },
+  "polka-city-3d-asset": {
+    "status": "rate_limited",
+    "code": "qNjGnsD3e4",
+    "url": "https://discord.gg/qNjGnsD3e4"
+  },
+  "rebirth-genesis-of-a-metaverse": {
+    "status": "rate_limited",
+    "code": "q2Xd7bwkNt",
+    "url": "https://discord.gg/q2Xd7bwkNt"
+  },
+  "retrodoges": {
+    "status": "rate_limited",
+    "code": "K9vXWxm8EG",
+    "url": "https://discord.gg/K9vXWxm8EG"
+  },
+  "role-for-metaverse": {
+    "status": "rate_limited",
+    "code": "2269ZNcu8h",
+    "url": "https://discord.gg/2269ZNcu8h"
+  },
+  "rugdollz-3d": {
+    "status": "rate_limited",
+    "code": "rugdollznft",
+    "url": "https://discord.gg/rugdollznft"
+  },
+  "steve-aoki-avatars": {
+    "status": "rate_limited",
+    "code": "steveaoki",
+    "url": "https://discord.gg/steveaoki"
+  },
+  "the-generative-electronic-museum-of-metaverse-art": {
+    "status": "rate_limited",
+    "code": "SJ9eXDV5QS",
+    "url": "https://discord.gg/SJ9eXDV5QS"
+  },
+  "the-mars-martians": {
+    "status": "rate_limited",
+    "code": "marslabs",
+    "url": "https://discord.gg/marslabs"
+  },
+  "the-other-avatars-by-saatchi-art": {
+    "status": "rate_limited",
+    "code": "qPX4tjMHk9",
+    "url": "https://discord.gg/qPX4tjMHk9"
+  },
+  "the-paradox-meta": {
+    "status": "rate_limited",
+    "code": "paradoxmetaverseofficial",
+    "url": "https://discord.gg/paradoxmetaverseofficial"
+  },
+  "the-soldiers-of-the-metaverse": {
+    "status": "rate_limited",
+    "code": "metaarmy",
+    "url": "https://discord.gg/metaarmy"
+  },
+  "tollan-universe-genesis-avatars": {
+    "status": "rate_limited",
+    "code": "tollan",
+    "url": "https://discord.gg/tollan-universe"
+  },
+  "toxic-skulls-club": {
+    "status": "rate_limited",
+    "code": "toxic",
+    "url": "https://discord.gg/toxic-skulls-club"
+  },
+  "united-metaverse-nation-umn": {
+    "status": "rate_limited",
+    "code": "BstaR9Zafy",
+    "url": "https://discord.gg/BstaR9Zafy"
+  },
+  "voxel-ville-avatars": {
+    "status": "rate_limited",
+    "code": "voxelville",
+    "url": "https://discord.gg/voxelville"
+  },
+  "woodies": {
+    "status": "rate_limited",
+    "code": "N89Bk3rU8z",
+    "url": "https://discord.gg/N89Bk3rU8z"
+  },
+  "ztx-genesis-homes": {
+    "status": "rate_limited",
+    "code": "ztx",
+    "url": "https://discord.gg/ztx"
+  },
+  "contract:0xea377cfd": {
+    "status": "rate_limited",
+    "code": "cunnqtDUkv",
+    "url": "https://discord.gg/cunnqtDUkv"
+  },
+  "contract:0xdb55584e": {
+    "status": "rate_limited",
+    "code": "rz6t3uP9hx",
+    "url": "https://discord.gg/rz6t3uP9hx"
+  },
+  "contract:0x1d20a51f": {
+    "status": "rate_limited",
+    "code": "HW5HY6k6c2",
+    "url": "https://discord.gg/HW5HY6k6c2"
+  },
+  "contract:0x19d84b2a": {
+    "status": "rate_limited",
+    "code": "u6WU8Ersut",
+    "url": "https://discord.gg/u6WU8Ersut"
+  },
+  "contract:0x495f9472": {
+    "status": "rate_limited",
+    "code": "M6MvmVRbuh",
+    "url": "https://discord.gg/M6MvmVRbuh"
+  },
+  "contract:0xc1def47c": {
+    "status": "rate_limited",
+    "code": "cryptoavatars",
+    "url": "https://discord.gg/cryptoavatars"
+  },
+  "contract:0x62eb144f": {
+    "status": "rate_limited",
+    "code": "adworld",
+    "url": "https://discord.gg/adworld"
+  },
+  "contract:0xc49a9ab3": {
+    "status": "rate_limited",
+    "code": "ChibiLabs",
+    "url": "https://discord.gg/ChibiLabs"
+  },
+  "contract:0x77372a4c": {
+    "status": "rate_limited",
+    "code": "akidcalledbeast",
+    "url": "https://discord.gg/akidcalledbeast"
+  },
+  "contract:0xccc441ac": {
+    "status": "rate_limited",
+    "code": "futureverse",
+    "url": "https://discord.gg/futureverse"
+  },
+  "contract:0x14c4471a": {
+    "status": "rate_limited",
+    "code": "fyat",
+    "url": "https://discord.gg/fyat-lux-894777019827625984"
+  },
+  "contract:0x35471f47": {
+    "status": "rate_limited",
+    "code": "futureverse",
+    "url": "https://discord.gg/futureverse"
+  },
+  "contract:0x86fc6f6c": {
+    "status": "rate_limited",
+    "code": "jadu",
+    "url": "https://discord.gg/jadu"
+  },
+  "contract:0x50e712b3": {
+    "status": "rate_limited",
+    "code": "ChnqesH22a",
+    "url": "https://discord.gg/ChnqesH22a"
+  },
+  "contract:0x49cf6f5d": {
+    "status": "rate_limited",
+    "code": "rtfkt",
+    "url": "https://discord.gg/rtfkt"
+  },
+  "contract:0x223ef063": {
+    "status": "rate_limited",
+    "code": "metashima",
+    "url": "https://discord.gg/metashima"
+  }
+}

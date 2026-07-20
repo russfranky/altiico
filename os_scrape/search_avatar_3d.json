@@ -1,0 +1,43 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "cryptoavatar3d",
+      "name" : "CryptoAvatar 3d",
+      "image_url" : "https://i2c.seadn.io/ethereum/630df1770bb0387f9b2e4c1c5db1e423/b01cd14b1cb1e6748366fc0a42794a/8db01cd14b1cb1e6748366fc0a42794a.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/cryptoavatar3d"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "dripp-by-3dwizz-x-reddit-collectible-avatars",
+      "name" : "Dripp by 3Dwizz x Reddit Collectible Avatars",
+      "image_url" : "https://i2c.seadn.io/polygon/f898bfed10cc48b7b2d27feb8f6e8d8b/36378baa205faeadbf5c7f08dcc35a/ff36378baa205faeadbf5c7f08dcc35a.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/dripp-by-3dwizz-x-reddit-collectible-avatars"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "retro-by-3dwizz-x-reddit-collectible-avatars",
+      "name" : "Retro by 3Dwizz x Reddit Collectible Avatars",
+      "image_url" : "https://i2c.seadn.io/polygon/4ed755dbdfde454db2d1d00c41013555/95cae3f8435cd671f20fdb10a0a12c/4295cae3f8435cd671f20fdb10a0a12c.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/retro-by-3dwizz-x-reddit-collectible-avatars"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "vorians-3d-avatars",
+      "name" : "Vorians - 3D Avatars",
+      "image_url" : "https://i2c.seadn.io/ape_chain/0x3c570ed12d51fa24cb32e1eb3746e705a829a821/8e88372fb96af24cc27d9cf181ba71/6b8e88372fb96af24cc27d9cf181ba71.avif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/vorians-3d-avatars"
+    }
+  } ]
+}

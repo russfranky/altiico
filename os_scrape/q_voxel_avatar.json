@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "voxel-ville-avatars",
+      "name" : "Voxel Ville Avatars",
+      "image_url" : "https://i2c.seadn.io/ethereum/1aedaf42f85e4d8496e698cec0faaa31/72275617e54aa845841ca29b0c0c22/7572275617e54aa845841ca29b0c0c22.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/voxel-ville-avatars"
+    }
+  } ]
+}

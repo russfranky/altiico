@@ -1,0 +1,23 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaanigen",
+      "name" : "MetaaniGEN",
+      "image_url" : "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/9eef987ccc5b177b3f5f98a297fe54/839eef987ccc5b177b3f5f98a297fe54.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaanigen"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaanikizunaai",
+      "name" : "Metaani x KizunaAI",
+      "image_url" : "https://i2c.seadn.io/ethereum/a63e2afabc464a4da00f0a08ccdb9b8b/fc04a5505022ec1cf9e31493cb0783/0dfc04a5505022ec1cf9e31493cb0783.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaanikizunaai"
+    }
+  } ]
+}

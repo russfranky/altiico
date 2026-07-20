@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "first-base-3d-pfp",
+      "name" : "First Base 3D PFP",
+      "image_url" : "https://i2c.seadn.io/base/d321c43670464d32916f8ea68e9eb0c7/ebb06b9076e68131965817fb9c1a4e/58ebb06b9076e68131965817fb9c1a4e.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/first-base-3d-pfp"
+    }
+  } ]
+}

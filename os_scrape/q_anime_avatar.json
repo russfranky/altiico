@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "endangered_animals_x_reddit_collectible_avatars",
+      "name" : "Endangered Animals x Reddit Collectible Avatars",
+      "image_url" : "https://i2c.seadn.io/polygon/0f5c6a9c07a64ea7a86e858502469de6/71b0233de2d2bb91b1aae9eddc78ca/7071b0233de2d2bb91b1aae9eddc78ca.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/endangered_animals_x_reddit_collectible_avatars"
+    }
+  } ]
+}

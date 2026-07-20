@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "boomboxheads-v2",
+    "os_name": "Boomboxheads V2",
+    "os_chain": "ethereum",
+    "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "vipe-heroes",
+    "os_name": "VIPE Heroes",
+    "os_chain": "ethereum",
+    "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "cyberbrokers",
+    "os_name": "CyberBrokers",
+    "os_chain": "ethereum",
+    "contract": "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+    "vrm_param": "vrm_url",
+    "vrm_url": "https://m.cyberbrokers.com/eth/mech/1/files/mech_1k.0.vrm"
+  },
+  {
+    "slug": "meebits",
+    "os_name": "Meebits",
+    "os_chain": "ethereum",
+    "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+    "vrm_param": "vrm",
+    "vrm_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438"
+  },
+  {
+    "slug": "metaanigen",
+    "os_name": "MetaaniGEN",
+    "os_chain": "ethereum",
+    "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "cryptoavatars",
+    "os_name": "CryptoAvatars",
+    "os_chain": "ethereum",
+    "contract": "0xbffd07cc4d32578fe3ccbf8bd0c5ffa8da3fc600",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "phettaverse-editions",
+    "os_name": "Phettaverse Editions",
+    "os_chain": "ethereum",
+    "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+    "vrm_param": "vrm_url",
+    "vrm_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
+  },
+  {
+    "slug": "misfit-pixels",
+    "os_name": "NOT FOUND",
+    "os_chain": "",
+    "contract": "0x618951345638caa062259cdbed445d4fb661b774",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "frutiger-anons",
+    "os_name": "Frutiger Anons",
+    "os_chain": "ethereum",
+    "contract": "0xbfD4F75A3C09c26e6CE9e67a257F6FBCe9F63088",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "retrodogesnft",
+    "os_name": "Retro Doges",
+    "os_chain": "ethereum",
+    "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
+    "vrm_param": "vrm_url",
+    "vrm_url": "https://nft.retrodoges.com/media/main/vrm/319.vrm"
+  },
+  {
+    "slug": "d-eyes-legends-by-coldie",
+    "os_name": "NOT FOUND",
+    "os_chain": "",
+    "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "chuddies-3d",
+    "os_name": "Chuddies: 3D",
+    "os_chain": "ethereum",
+    "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "forgottenruneswizardscult",
+    "os_name": "Forgotten Runes Wizards Cult",
+    "os_chain": "ethereum",
+    "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+    "vrm_param": "vrm",
+    "vrm_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm"
+  },
+  {
+    "slug": "dickbuttverse",
+    "os_name": "DickButtVerse",
+    "os_chain": "ethereum",
+    "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "pixelbeasts",
+    "os_name": "Pixelbeasts",
+    "os_chain": "ethereum",
+    "contract": "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab",
+    "vrm_param": "_url",
+    "vrm_url": "https://pixelbeasts3d.replit.app/beast/3064.vrm"
+  },
+  {
+    "slug": "allstarz-psx",
+    "os_name": "Allstarz PSX",
+    "os_chain": "ethereum",
+    "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "grifterssquaddies",
+    "os_name": "Grifters Squaddies",
+    "os_chain": "base",
+    "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "halloween-rising",
+    "os_name": "Halloween Rising",
+    "os_chain": "optimism",
+    "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+    "vrm_param": "",
+    "vrm_url": ""
+  },
+  {
+    "slug": "xmas-chibis",
+    "os_name": "Xmas Chibis",
+    "os_chain": "polygon",
+    "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+    "vrm_param": "",
+    "vrm_url": ""
+  }
+]

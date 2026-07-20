@@ -1,0 +1,503 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-hq",
+      "name" : "Metaverse HQ",
+      "image_url" : "https://i2c.seadn.io/ethereum/1b634b50bb554afe8d8c63a8cc79df25/64bbd20ccc526493ac15dbbc3d06d0/f564bbd20ccc526493ac15dbbc3d06d0.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-hq"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "jrny-metaverse-box",
+      "name" : "JRNY Metaverse Box",
+      "image_url" : "https://i2c.seadn.io/collection/jrny-metaverse-box/image/33388da9e611ebb56b5fb0370ffe8f/2833388da9e611ebb56b5fb0370ffe8f.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/jrny-metaverse-box"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "role-for-metaverse",
+      "name" : "Role for Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/5d657a95f0d74ab683e385521bad73d1/904f72904c803dd2899e2fd69cd028/46904f72904c803dd2899e2fd69cd028.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/role-for-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "adidasoriginals",
+      "name" : "adidas Originals Into the Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/b334aaa42d5c4416abc4dcbaf189e8e0/c8734567d261c36f986e35afeb1406/a5c8734567d261c36f986e35afeb1406.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/adidasoriginals"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-creatures",
+      "name" : "Metaverse Creatures",
+      "image_url" : "https://i2c.seadn.io/ethereum/1dc6efc4aca43fc6a48527b0934f0866/a508de405f984558f49b190ce564d1/46a508de405f984558f49b190ce564d1.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-creatures"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-access-card",
+      "name" : "Metaverse Access Card",
+      "image_url" : "https://i2c.seadn.io/ethereum/39fbedfc105646bc9a56a5174630bc56/69d334ea76fa2a3cd33bc461737062/b169d334ea76fa2a3cd33bc461737062.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-access-card"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "stargirlsalonmetaversestardrops",
+      "name" : "Stargirl Salon: Metaverse Stardrops",
+      "image_url" : "https://i2c.seadn.io/ape_chain/0x53e38a3bb5954cc7830bbc6f2520b61d01d95056/2345439880665a36b2626134cac36b/492345439880665a36b2626134cac36b.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/stargirlsalonmetaversestardrops"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "fancybearsmetaverse",
+      "name" : "Fancy Bears Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/43b81bbb60134dbaaffebbaa6b858df4/706034132465049d891144ebf2554c/7b706034132465049d891144ebf2554c.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/fancybearsmetaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-generative-electronic-museum-of-metaverse-art",
+      "name" : "GEMMA BY TRISTAN EATON",
+      "image_url" : "https://i2c.seadn.io/ethereum/94e48883a0d84cbfb234f2341adf82e4/1ef705363621aee831ac53fe4b0791/761ef705363621aee831ac53fe4b0791.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-generative-electronic-museum-of-metaverse-art"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "guardians-of-the-metaverse",
+      "name" : "Guardians of the Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/e7e50523b78f4e9ab18754fbcb9c558c/6398ddd4239376e987cf4078e37c38/b36398ddd4239376e987cf4078e37c38.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/guardians-of-the-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-soldiers-of-the-metaverse",
+      "name" : "The Soldiers Of The Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/dc78c389aeff414c9f6e37cfe42dc421/6a4f1595b5de19192c5163cdc90e05/ae6a4f1595b5de19192c5163cdc90e05.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-soldiers-of-the-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "pirates-of-the-metaverse-by-drip-studios",
+      "name" : "Pirates of the Metaverse by Drip Studios",
+      "image_url" : "https://i2c.seadn.io/ethereum/a135e97ce4bc4095be1df5528e1974e7/814c7b420c3446a6d49cd0033d3d7d/a5814c7b420c3446a6d49cd0033d3d7d.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/pirates-of-the-metaverse-by-drip-studios"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "onchainhom",
+      "name" : "OnChain Human Of Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/3bdef9101a5849e0842a8465228fab96/3631c7fd435ebee89c017b920deaad/8b3631c7fd435ebee89c017b920deaad.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/onchainhom"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "humans-metaverse",
+      "name" : "Humans Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/fb2b23060bce4139821889e8d3013166/7a89d9bbf0867b5354abc64b243b61/2b7a89d9bbf0867b5354abc64b243b61.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/humans-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-marauders",
+      "name" : "Metaverse Marauders",
+      "image_url" : "https://i2c.seadn.io/ethereum/a6246347871f4946930da96d28280455/9f6776306d1f63548975439703b6fb/319f6776306d1f63548975439703b6fb.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-marauders"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "timepieces-intothemetaverse",
+      "name" : "TIMEPieces: Into the Metaverse by Micah Johnson",
+      "image_url" : "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/9f3c2da8595b27cdcc135101bdb4cab2.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/timepieces-intothemetaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "pets-for-metaverse",
+      "name" : "Pets for Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/6a251521acce4a7e8a51c9c6ea3e79e2/ef23ba89c506777e2c9233adb187e1/caef23ba89c506777e2c9233adb187e1.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/pets-for-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-landscape-1-decentraland-parcel-81-17-by",
+      "name" : "Metaverse Landscape 1: Decentraland Parcel -81, -17 by Simon Denny",
+      "image_url" : "https://i2c.seadn.io/ethereum/791fc17d6c023044941a80712c8fab8a/7beed8a59543450cf8ecc75d5f8df7/fb7beed8a59543450cf8ecc75d5f8df7.avif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-landscape-1-decentraland-parcel-81-17-by"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "crazy-metaverse-kids",
+      "name" : "CRAZY METAVERSE KIDS - By MaNiC & Son",
+      "image_url" : "https://i2c.seadn.io/ethereum/0a9302c9f2e7444384ef7b3523437973/13161cd910dd88e04a36d4c6a95185/fa13161cd910dd88e04a36d4c6a95185.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/crazy-metaverse-kids"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "kawaiimetacollage",
+      "name" : "Kawaii Meta Collage - Opera Meets Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/8272f707a6f5455fa8868b4423e60357/7db6ec386cef80f4544f41aab230e6/987db6ec386cef80f4544f41aab230e6.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/kawaiimetacollage"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-mars-martians",
+      "name" : "The Martians: Metaverse",
+      "image_url" : "https://i2c.seadn.io/polygon/da459d4ec11f4ce3a0bf24bbe0270d33/d6077e3c50023969b63dc8d009d1f7/15d6077e3c50023969b63dc8d009d1f7.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-mars-martians"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metahelmet",
+      "name" : "Metaverse Travel Agency (M.T.A.)",
+      "image_url" : "https://i2c.seadn.io/ethereum/9d8203ec941648cf958c3bc01ada3e08/ce2f1bad65f253215079399ee9753b/45ce2f1bad65f253215079399ee9753b.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metahelmet"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "united-metaverse-nation-umn",
+      "name" : "United Metaverse Nation (UMN)",
+      "image_url" : "https://i2c.seadn.io/ethereum/7eab37ce2e744273bda2ff3298d4f5c1/e35eea6fbe83d56963c3ed16e3d71f/6fe35eea6fbe83d56963c3ed16e3d71f.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/united-metaverse-nation-umn"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "womenofthemetaverse",
+      "name" : "Women of the Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/4988a12c39c43800a148a6b7fddd52df/13b468bcac2d501fd41c3301aa4377/f613b468bcac2d501fd41c3301aa4377.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/womenofthemetaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "boxingboyz-metaverse",
+      "name" : "Boxing Boyz Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/55769a53bf3044528bb6bc5303788ba6/0d005b32220f7bfb1399f58e0b641b/160d005b32220f7bfb1399f58e0b641b.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/boxingboyz-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-geometries",
+      "name" : "Metaverse Geometries",
+      "image_url" : "https://i2c.seadn.io/shape/0x288fd77b9521080ea8737efa3c53eabeeb442614/0062d12de660ca707d93925be0c6a1/f40062d12de660ca707d93925be0c6a1.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-geometries"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-fractals",
+      "name" : "Metaverse Fractals",
+      "image_url" : "https://i2c.seadn.io/ethereum/d816eb60369f3685b91fda9448995c2e/2e833902d7ffa678d19c1a84be1819/7e2e833902d7ffa678d19c1a84be1819.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-fractals"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-metaverse-5",
+      "name" : "the 'metaverse'",
+      "image_url" : "https://i2c.seadn.io/ethereum/80987ad0be5244d4a955eaed972767ef/43f33ccb88a35013c78cb85b00f36d/1943f33ccb88a35013c78cb85b00f36d.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-metaverse-5"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverse-new-human",
+      "name" : "Metaverse New Human",
+      "image_url" : "https://i2c.seadn.io/collection/metaverse-new-human/image/ea8964e0fbf2450f930206c256830a/66ea8964e0fbf2450f930206c256830a.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverse-new-human"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "rebirth-genesis-of-a-metaverse",
+      "name" : "ReBirth: Genesis of a Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/9c8b263e82c74287d3303eeb7b14de31.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/rebirth-genesis-of-a-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "blueworld-v1",
+      "name" : "BlueWorld Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/beea675b9bfa4daca15ac0bdf1aaf967/a78030a4ce638ef6ffebedce3ad977/a0a78030a4ce638ef6ffebedce3ad977.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/blueworld-v1"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaversity-college-of-web3",
+      "name" : "Metaversity, College of Web3",
+      "image_url" : "https://i2c.seadn.io/ethereum/d9fd6454194046b2b31fc2ca2cf83580/25dd49ca430c679b79d07d3ecf824b/8f25dd49ca430c679b79d07d3ecf824b.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaversity-college-of-web3"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "carman-metaverse",
+      "name" : "CarMan_Metaverse",
+      "image_url" : "https://i2c.seadn.io/ethereum/34862d01c1844117a2735378b77684ef/e617255a8c1ed934ac814dde979096/2ee617255a8c1ed934ac814dde979096.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/carman-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "miss-metaverse-1",
+      "name" : "Miss Metaverse \uD83E\uDE9E\uD83D\uDCA1",
+      "image_url" : "https://i2c.seadn.io/ethereum/e3d640fb826b462cb80088e5832047ab/08ec59b44a6f24694f59e27e884962/aa08ec59b44a6f24694f59e27e884962.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/miss-metaverse-1"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-metaverse-i-created",
+      "name" : "The Metaverse I Created",
+      "image_url" : "https://i2c.seadn.io/collection/the-metaverse-i-created/image_type_logo/351244dc5712eb891f3f92c3c56d72/8a351244dc5712eb891f3f92c3c56d72.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-metaverse-i-created"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "pinkrod-metaverse-clean-air",
+      "name" : "Pinkrod Metaverse clean air",
+      "image_url" : "https://i2c.seadn.io/optimism/81618ec990754f698642abda6a0914ff/6066062e53e635b7151b14cd67daf9/566066062e53e635b7151b14cd67daf9.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/pinkrod-metaverse-clean-air"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "coca-cola-metaverse-vending-machine",
+      "name" : "Coca-Cola Metaverse Vending Machine - Christmas 2022",
+      "image_url" : "https://i2c.seadn.io/polygon/c074abdaf1974049ba9f057362000189/85c27c585de009d58e5e3a59ff2624/6d85c27c585de009d58e5e3a59ff2624.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/coca-cola-metaverse-vending-machine"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "clinique-x-daz3d",
+      "name" : "Clinique x Daz 3D - Metaverse More Like Us",
+      "image_url" : "https://i2c.seadn.io/polygon/8d89572dd88b4a0e9af04eaa078fd4df/618d45c40af558e28d91c40c2ced07/bc618d45c40af558e28d91c40c2ced07.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/clinique-x-daz3d"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "firestartermetaversechampion",
+      "name" : "Firestarter Metaverse Champion",
+      "image_url" : "https://i2c.seadn.io/polygon/4f5fd198e26e4330bf09239953f91adb/4ead759f569f910ec3c0dcb45d4a46/704ead759f569f910ec3c0dcb45d4a46.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/firestartermetaversechampion"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaverseplayers",
+      "name" : "Metaverse Players (MVP)",
+      "image_url" : "https://i2c.seadn.io/ethereum/a38efae9873e4474a12ca83860dc8807/f5247fbcfa05f980fddc8fea83a797/e1f5247fbcfa05f980fddc8fea83a797.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaverseplayers"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "fpxmetaverse",
+      "name" : "FPX METAVERSE",
+      "image_url" : "https://i2c.seadn.io/ethereum/3b38fb525d4441549ccde4bc12d83780/01a4142cded154a5a1bc7694f7dcaf/3501a4142cded154a5a1bc7694f7dcaf.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/fpxmetaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "mintverse-virtual-metaverse",
+      "name" : "Mintverse - Virtual Metaverse",
+      "image_url" : "https://i2c.seadn.io/polygon/7fc1d23f22384a6f947b865986233a06/e5a0eea8d26144361bc7a04b439ec7/2ee5a0eea8d26144361bc7a04b439ec7.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/mintverse-virtual-metaverse"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "journey-to-the-metaverse-genesis",
+      "name" : "Journey to the Metaverse(Genesis)",
+      "image_url" : "https://i2c.seadn.io/ethereum/647cdd3aec124089b57795324567cf45/4901c636e1ef3e6ce9abd8a19a6375/4d4901c636e1ef3e6ce9abd8a19a6375.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/journey-to-the-metaverse-genesis"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "chinese-zodiac-metaverse-by-yassartlabs",
+      "name" : "Chinese Zodiac Metaverse by YassartLabs",
+      "image_url" : "https://i2c.seadn.io/polygon/5730125f24df4c19b448354e6500cd73/e1f01b5c8b28cbfa4333165f07007c/7de1f01b5c8b28cbfa4333165f07007c.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/chinese-zodiac-metaverse-by-yassartlabs"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-ghost-of-metaverse-future-february-8-2023-wip",
+      "name" : "\uD83D\uDC7B\uD83D\uDD79️\uD83E\uDD16 The Ghost of Metaverse Future! \uD83D\uDC7B\uD83D\uDD79️\uD83E\uDD16- February 8, 2023 WIP",
+      "image_url" : "https://i2c.seadn.io/optimism/91586109b5eb424b81fb61ea4e4c5db9/bb3ddf9dd35ec45208039b031e9737/f2bb3ddf9dd35ec45208039b031e9737.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-ghost-of-metaverse-future-february-8-2023-wip"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "cemr",
+      "name" : "Crypto Eggs Of Metaverse Reality (CEMR)",
+      "image_url" : "https://i2c.seadn.io/polygon/8f1fa71649b33f8b8845b5a406c7996d/b0d653380d44f8eb9ea1a377c3c3d1/16b0d653380d44f8eb9ea1a377c3c3d1.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/cemr"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "arconanobility",
+      "name" : "Arcona XR Metaverse Nobility Titles",
+      "image_url" : "https://i2c.seadn.io/ethereum/92e7f4b2ddd234859b3f38aa9378f949/89f289589753b8b8f328c6b78c0ce0/5489f289589753b8b8f328c6b78c0ce0.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/arconanobility"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "acesso-metaverso-da-marca-x",
+      "name" : "ACESSO METAVERSO DA MARCA X",
+      "image_url" : "https://i2c.seadn.io/matic/0x81c74e90d7e615d170e59c54f9a195bc31305635/2cdcae6e6fffe4886cc08528ead680/532cdcae6e6fffe4886cc08528ead680.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/acesso-metaverso-da-marca-x"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "metaversebuilder",
+      "name" : "MetaverseBuilder",
+      "image_url" : "https://i2c.seadn.io/ethereum/7909df6ac8d2338ba0551ee482d46fb6/317c1e8eac410916bcc86246e2d37b/27317c1e8eac410916bcc86246e2d37b.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/metaversebuilder"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "the-paradox-meta",
+      "name" : "The Paradox Metaverse Official Collection",
+      "image_url" : "https://i2c.seadn.io/ethereum/10032a940c194f589bcf858f6e52c6c0/1f04742bfb016e6cc3490543ff0316/e41f04742bfb016e6cc3490543ff0316.jpeg",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/the-paradox-meta"
+    }
+  } ]
+}

@@ -1,0 +1,860 @@
+#!/usr/bin/env python3
+"""superyeti — unified CLI for the VRM/3D avatar collection index.
+
+Usage:
+  sy                              list all collections (compact)
+  sy ls                           same as above
+  sy show <name>                  full detail for one collection
+  sy find <query>                 search by name/contract/slug/creator
+  sy find --tier A --chain base   filter by attributes
+  sy os                           list OpenSea candidates
+  sy os <query>                   search candidates
+  sy avatars <query>              search avatars
+  sy stats                        index statistics + data completeness
+  sy audit                        find missing data (gaps)
+  sy images                       check for broken image URLs
+  sy images --fix                 re-fetch broken images from OpenSea
+  sy enrich                       run all enrichment scripts
+  sy enrich --only supply         run one enrichment script
+  sy build                        rebuild DB + HTML from scratch
+  sy db                           open sqlite3 shell
+  sy schema                       print DB schema
+  sy sql <query>                  run raw SQL, print as table
+  sy sql --json <query>           run raw SQL, print as JSON
+
+Shortcuts:
+  sy -A          same as: sy find --tier A
+  sy -B          same as: sy find --tier B
+  sy -C          same as: sy find --tier C
+  sy -g          same as: sy find --license green
+  sy -d          same as: sy find --discord none   (no discord)
+  sy -v          same as: sy find --nft-type generative
+"""
+import sqlite3, argparse, json, sys, os, subprocess, urllib.request, ssl, time
+from pathlib import Path
+
+BASE = Path(__file__).parent.resolve()
+DB = BASE / "vrm_index.db"
+KEY_FILE = Path(os.path.expanduser("~/.opensea/api_key"))
+
+# ─── DB helpers ──────────────────────────────────────────────────────────────
+
+def conn():
+    c = sqlite3.connect(str(DB))
+    c.row_factory = sqlite3.Row
+    return c
+
+def get_columns(table):
+    c = conn()
+    cols = [r[1] for r in c.execute(f"PRAGMA table_info({table})")]
+    c.close()
+    return cols
+
+# ─── Display helpers ─────────────────────────────────────────────────────────
+
+def truncate(s, n):
+    s = str(s or '')
+    return s[:n-1] + '…' if len(s) > n else s
+
+def fmt_supply(c):
+    ms = c.get('mint_status', '') or ''
+    total = c.get('total_supply')
+    max_s = c.get('max_supply')
+    icons = {'capped':'🔒','likely_capped':'🔒~','ongoing':'🟢','no_max_supply':'❓','unknown':'?'}
+    icon = icons.get(ms, '—')
+    t = f"{total:,}" if total else '?'
+    s = f"{icon} {t}"
+    if max_s: s += f"/{max_s:,}"
+    if ms == 'ongoing' and c.get('mint_progress'):
+        s += f" ({c['mint_progress']}%)"
+    return s
+
+def fmt_nft_type(c):
+    t = c.get('nft_type', 'unknown') or 'unknown'
+    icons = {'generative':'🎲','1of1_series':'🎨','1of1_art':'🖼','numbered':'🔢',
+             'no_traits':'∅','mixed':'🔀','unknown':'❓'}
+    return f"{icons.get(t,'?')} {t}"
+
+def fmt_license(c):
+    lic = c.get('license_category', '') or ''
+    return {'green':'🟢','yellow':'🟡','red':'🔴'}.get(lic, '?')
+
+def fmt_social(c):
+    ds = c.get('discord_status', '') or ''
+    di = {'alive':'✓','dead':'✗','rate_limited':'⏳','error':'?'}.get(ds, '—')
+    ti = '𝕏' if c.get('twitter_username') else '—'
+    return f"{di}{ti}"
+
+def fmt_url(c):
+    us = c.get('url_status', '') or ''
+    return {'alive':'✓','dead':'✗','error':'?'}.get(us, '—')
+
+def fmt_contracts(c):
+    contracts = c.get('contracts', [])
+    if contracts:
+        s = ' '.join(f"{ct['address'][:8]}..({ct['chain'][:3]})" for ct in contracts[:3])
+        if len(contracts) > 3: s += f" +{len(contracts)-3}"
+        return s
+    return truncate(c.get('contract') or '—', 14)
+
+# ─── Commands ────────────────────────────────────────────────────────────────
+
+def cmd_list(args):
+    """List collections with key fields."""
+    c = conn()
+    sql = "SELECT * FROM collections WHERE 1=1"
+    params = []
+    if args.query:
+        sql += " AND (name LIKE ? OR contract LIKE ? OR opensea_slug LIKE ? OR creator LIKE ?)"
+        p = f"%{args.query}%"
+        params.extend([p, p, p, p])
+    if args.tier:
+        sql += " AND tier = ?"
+        params.append(args.tier)
+    if args.chain:
+        sql += " AND chain = ?"
+        params.append(args.chain)
+    if args.license:
+        sql += " AND license_category = ?"
+        params.append(args.license)
+    if args.contract:
+        sql += " AND contract LIKE ?"
+        params.append(f"%{args.contract}%")
+    if args.discord == "none":
+        sql += " AND (discord_url IS NULL OR discord_url = '')"
+    elif args.discord:
+        sql += " AND discord_status = ?"
+        params.append(args.discord)
+    if args.mint:
+        sql += " AND mint_status = ?"
+        params.append(args.mint)
+    if args.nft_type:
+        sql += " AND nft_type = ?"
+        params.append(args.nft_type)
+    if args.since:
+        sql += " AND release_date >= ?"
+        params.append(args.since)
+    if args.until:
+        sql += " AND release_date <= ?"
+        params.append(args.until)
+    if args.no_image:
+        sql += " AND (image_url IS NULL OR image_url = '')"
+    if args.no_supply:
+        sql += " AND (total_supply IS NULL OR total_supply = '')"
+    sql += " ORDER BY name"
+    rows = [dict(r) for r in c.execute(sql, params)]
+    for r in rows:
+        r['contracts'] = [dict(ct) for ct in c.execute(
+            "SELECT address, chain, is_primary FROM contracts WHERE collection_id=? ORDER BY is_primary DESC",
+            (r['id'],))]
+    c.close()
+
+    if args.json:
+        print(json.dumps(rows, indent=2, default=str))
+        return
+    if not rows:
+        print("No collections found.")
+        return
+
+    # Compact table
+    hdr = f"{'Collection':<32} {'T':<2} {'Released':<11} {'Chain':<9} {'L':<2} {'URL':<3} {'Soc':<3} {'Supply':<18} {'Type':<14} {'Av':<4} {'Contracts'}"
+    print(hdr)
+    print("-" * len(hdr))
+    for c in rows:
+        print(f"{truncate(c['name'],32):<32} {c['tier'] or '?':<2} {c.get('release_date') or '?':<11} "
+              f"{truncate(c['chain'] or '?',9):<9} {fmt_license(c):<2} {fmt_url(c):<3} {fmt_social(c):<3} "
+              f"{fmt_supply(c):<18} {fmt_nft_type(c):<14} {c.get('avatar_count') or '-':<4} {fmt_contracts(c)}")
+    print(f"\n{len(rows)} collection(s)")
+
+def cmd_show(args):
+    """Show full detail for one collection."""
+    if not args.query or not args.query.strip():
+        print("Usage: sy show <name>  (e.g. sy show clonex)")
+        return
+    c = conn()
+    # Try name match, then slug, then contract, then id
+    row = c.execute("SELECT * FROM collections WHERE name LIKE ? ORDER BY name", (f"%{args.query}%",)).fetchone()
+    if not row:
+        row = c.execute("SELECT * FROM collections WHERE opensea_slug LIKE ? OR id LIKE ? OR contract LIKE ?",
+                        (f"%{args.query}%", f"%{args.query}%", f"%{args.query}%")).fetchone()
+    if not row:
+        print(f"Not found: {args.query}")
+        c.close()
+        return
+    r = dict(row)
+    r['contracts'] = [dict(ct) for ct in c.execute(
+        "SELECT * FROM contracts WHERE collection_id=? ORDER BY is_primary DESC", (r['id'],))]
+    avatars = [dict(a) for a in c.execute(
+        "SELECT id, name, model_file_url, format, thumbnail_url FROM avatars WHERE collection_id=? ORDER BY name LIMIT 20",
+        (r['id'],))]
+    avatar_count = c.execute("SELECT COUNT(*) FROM avatars WHERE collection_id=?", (r['id'],)).fetchone()[0]
+    c.close()
+
+    if args.json:
+        r['avatars'] = avatars
+        print(json.dumps(r, indent=2, default=str))
+        return
+
+    # Pretty print
+    def kv(label, val, indent=0):
+        pad = "  " * indent
+        v = str(val) if val is not None and val != '' else '—'
+        if len(v) > 80: v = v[:77] + '…'
+        print(f"{pad}{label:<22} {v}")
+
+    print(f"\n{'='*70}")
+    print(f"  {r['name']}")
+    print(f"{'='*70}")
+    kv("ID", r['id'])
+    kv("Tier", r['tier'])
+    kv("Chain", r['chain'])
+    kv("Contract", r['contract'])
+    kv("OpenSea slug", r['opensea_slug'])
+    kv("Release date", r.get('release_date'))
+    kv("License", f"{fmt_license(r)} {r.get('vrm_license','')}")
+    kv("Commercial use", r.get('commercial_use'))
+    kv("Allowed user", r.get('allowed_user'))
+    kv("Redistribution", r.get('redistribution'))
+    kv("Creator", r.get('creator'))
+    kv("Source", r.get('source'))
+    kv("Project URL", r.get('project_url'))
+    kv("OpenSea URL", f"https://opensea.io/collection/{r['opensea_slug']}" if r.get('opensea_slug') else '—')
+    kv("Discord", r.get('discord_url'))
+    kv("Discord status", f"{r.get('discord_status','')} ({r.get('discord_members',0):,} members)" if r.get('discord_status') == 'alive' else r.get('discord_status'))
+    kv("Twitter", f"@{r['twitter_username']}" if r.get('twitter_username') else '—')
+    kv("URL status", r.get('url_status'))
+    kv("Wayback", f"{r.get('wayback_snapshots',0)} snapshots" if r.get('wayback_available') else '—')
+    kv("Total supply", fmt_supply(r))
+    kv("NFT type", fmt_nft_type(r))
+    kv("Avg traits", r.get('avg_traits'))
+    kv("Trait types", r.get('trait_types_count'))
+    kv("Uniqueness", r.get('uniqueness_ratio'))
+    kv("VRM param", r.get('vrm_param'))
+    kv("VRM URL (HTTPS)", r.get('vrm_url_https'))
+    kv("Image", r.get('image_url'))
+    kv("Banner", r.get('banner_image_url'))
+    kv("Sample NFT", r.get('sample_nft_name'))
+    kv("Sample NFT img", r.get('sample_nft_image'))
+    kv("Metadata URL", r.get('sample_metadata_url'))
+    kv("Avatar count", avatar_count)
+    kv("Notes", r.get('notes'))
+    kv("Description", r.get('description'))
+    # OpenSea API sweep fields
+    print()
+    kv("Unique holders", f"{r.get('num_owners',0):,}" if r.get('num_owners') else '—')
+    kv("Floor price", f"{r.get('floor_price')} {r.get('floor_price_symbol','')}" if r.get('floor_price') else '—')
+    kv("Total volume", f"{r.get('total_volume'):,.2f} {r.get('floor_price_symbol','')}" if r.get('total_volume') else '—')
+    kv("Total sales", f"{r.get('total_sales',0):,}" if r.get('total_sales') else '—')
+    kv("Category", r.get('category'))
+    kv("Safelist", r.get('safelist_status'))
+    kv("Owner address", r.get('owner_address'))
+    kv("Royalty", f"{r.get('royalty_fee')}%" if r.get('royalty_fee') else '—')
+    kv("Rarity", r.get('rarity_strategy'))
+    kv("Instagram", r.get('instagram_username'))
+    kv("Telegram", r.get('telegram_url'))
+
+    if r['contracts']:
+        print(f"\n  Contracts:")
+        for ct in r['contracts']:
+            pri = "★" if ct.get('is_primary') else " "
+            print(f"    {pri} {ct['address']} ({ct['chain']}) {ct.get('token_standard','')}")
+
+    if avatars:
+        print(f"\n  Avatars ({avatar_count} total, showing {len(avatars)}):")
+        for a in avatars:
+            print(f"    {a['name'] or a['id']:<30} {a.get('format','')} {truncate(a.get('model_file_url',''),40)}")
+
+    print()
+
+def cmd_os(args):
+    """List/search OpenSea candidates."""
+    c = conn()
+    sql = "SELECT * FROM opensea_candidates WHERE 1=1"
+    params = []
+    if args.query:
+        sql += " AND (slug LIKE ? OR name LIKE ? OR contract LIKE ?)"
+        p = f"%{args.query}%"
+        params.extend([p, p, p])
+    if args.status:
+        sql += " AND status = ?"
+        params.append(args.status)
+    if args.nft_type:
+        sql += " AND nft_type = ?"
+        params.append(args.nft_type)
+    if args.mint:
+        sql += " AND mint_status = ?"
+        params.append(args.mint)
+    if args.no_image:
+        sql += " AND (image_url IS NULL OR image_url = '')"
+    sql += " ORDER BY slug"
+    rows = [dict(r) for r in c.execute(sql, params)]
+    c.close()
+
+    if args.json:
+        print(json.dumps(rows, indent=2, default=str))
+        return
+    if not rows:
+        print("No OpenSea candidates found.")
+        return
+
+    hdr = f"{'Slug':<38} {'Name':<28} {'Released':<11} {'Chain':<8} {'VRM':<6} {'URL':<3} {'Soc':<3} {'Supply':<16} {'Type':<12}"
+    print(hdr)
+    print("-" * len(hdr))
+    for r in rows:
+        us = r.get('url_status', '') or ''
+        ui = {'alive':'✓','dead':'✗','error':'?'}.get(us, '—')
+        ds = r.get('discord_status', '') or ''
+        di = {'alive':'✓','dead':'✗','rate_limited':'⏳','error':'?'}.get(ds, '—')
+        ti = '𝕏' if r.get('twitter_username') else '—'
+        soc = f"{di}{ti}"
+        vrm = 'VRM' if r.get('vrm_url') or r.get('vrm_url_https') else '—'
+        print(f"{truncate(r['slug'],38):<38} {truncate(r['name'] or r['slug'],28):<28} "
+              f"{r.get('release_date') or '?':<11} {truncate(r.get('chain','?'),8):<8} {vrm:<6} {ui:<3} {soc:<3} "
+              f"{fmt_supply(r):<16} {fmt_nft_type(r):<12}")
+    print(f"\n{len(rows)} candidate(s)")
+
+def cmd_avatars(args):
+    """Search avatars."""
+    c = conn()
+    sql = "SELECT a.*, c.name as collection_name FROM avatars a LEFT JOIN collections c ON a.collection_id = c.id WHERE 1=1"
+    params = []
+    if args.query:
+        sql += " AND (a.name LIKE ? OR a.collection_id LIKE ? OR a.model_file_url LIKE ?)"
+        p = f"%{args.query}%"
+        params.extend([p, p, p])
+    sql += " ORDER BY a.collection_id, a.name"
+    if not args.all:
+        sql += " LIMIT 50"
+    rows = [dict(r) for r in c.execute(sql, params)]
+    c.close()
+
+    if args.json:
+        print(json.dumps(rows, indent=2, default=str))
+        return
+    if not rows:
+        print("No avatars found.")
+        return
+
+    print(f"{'Collection':<28} {'Avatar':<30} {'Format':<8} {'URL'}")
+    print("-" * 100)
+    for a in rows:
+        print(f"{truncate(a.get('collection_name',''),28):<28} {truncate(a.get('name',''),30):<30} "
+              f"{a.get('format','') or '?':<8} {truncate(a.get('model_file_url',''),50)}")
+    total = c.execute("SELECT COUNT(*) FROM avatars").fetchone()[0] if not args.all else len(rows)
+    print(f"\n{len(rows)} avatar(s)" + (f" (showing first 50 of {total}, use --all for all)" if not args.all and len(rows) == 50 else ""))
+
+def cmd_stats(args):
+    """Show index statistics + data completeness."""
+    c = conn()
+    total = c.execute("SELECT COUNT(*) FROM collections").fetchone()[0]
+    os_total = c.execute("SELECT COUNT(*) FROM opensea_candidates").fetchone()[0]
+    av_total = c.execute("SELECT COUNT(*) FROM avatars").fetchone()[0]
+
+    if args.json:
+        import json
+        data = {'collections': total, 'opensea_candidates': os_total, 'avatars': av_total}
+        data['by_tier'] = {r['tier'] or '?': r['n'] for r in c.execute("SELECT tier, COUNT(*) as n FROM collections GROUP BY tier")}
+        data['by_chain'] = {r['chain'] or '?': r['n'] for r in c.execute("SELECT chain, COUNT(*) as n FROM collections GROUP BY chain")}
+        data['by_license'] = {r['license_category'] or '?': r['n'] for r in c.execute("SELECT license_category, COUNT(*) as n FROM collections GROUP BY license_category")}
+        data['by_nft_type'] = {r['nft_type'] or '?': r['n'] for r in c.execute("SELECT nft_type, COUNT(*) as n FROM collections GROUP BY nft_type")}
+        data['by_mint_status'] = {r['mint_status'] or '?': r['n'] for r in c.execute("SELECT mint_status, COUNT(*) as n FROM collections GROUP BY mint_status")}
+        fields = ['image_url','banner_image_url','project_url','total_supply','max_supply',
+                  'mint_status','nft_type','avg_traits','vrm_url_https','discord_url',
+                  'twitter_username','release_date','license_category','creator','description',
+                  'num_owners','floor_price','category','safelist_status','royalty_fee']
+        data['completeness'] = {}
+        for f in fields:
+            missing = c.execute(f"SELECT COUNT(*) FROM collections WHERE {f} IS NULL OR {f} = '' OR {f} = 'unknown'").fetchone()[0]
+            data['completeness'][f] = {'have': total - missing, 'missing': missing, 'pct': (total - missing) * 100 // total if total else 0}
+        data['discord'] = {'alive': c.execute("SELECT COUNT(*) FROM collections WHERE discord_status='alive'").fetchone()[0],
+                           'dead': c.execute("SELECT COUNT(*) FROM collections WHERE discord_status='dead'").fetchone()[0],
+                           'members': c.execute("SELECT SUM(discord_members) FROM collections WHERE discord_status='alive'").fetchone()[0] or 0}
+        print(json.dumps(data, indent=2))
+        c.close()
+        return
+
+    print(f"\n{'='*50}")
+    print(f"  superyeti index — statistics")
+    print(f"{'='*50}")
+    print(f"  Collections:       {total}")
+    print(f"  OpenSea candidates: {os_total}")
+    print(f"  Avatars:           {av_total}")
+
+    print(f"\n  Collections by tier:")
+    for r in c.execute("SELECT tier, COUNT(*) as n FROM collections GROUP BY tier ORDER BY n DESC"):
+        print(f"    {r['tier'] or '?':<12} {r['n']}")
+
+    print(f"\n  Collections by chain:")
+    for r in c.execute("SELECT chain, COUNT(*) as n FROM collections GROUP BY chain ORDER BY n DESC"):
+        print(f"    {r['chain'] or '?':<12} {r['n']}")
+
+    print(f"\n  Collections by license:")
+    for r in c.execute("SELECT license_category, COUNT(*) as n FROM collections GROUP BY license_category ORDER BY n DESC"):
+        print(f"    {r['license_category'] or '?':<12} {r['n']}")
+
+    print(f"\n  Collections by NFT type:")
+    for r in c.execute("SELECT nft_type, COUNT(*) as n FROM collections GROUP BY nft_type ORDER BY n DESC"):
+        print(f"    {r['nft_type'] or '?':<12} {r['n']}")
+
+    print(f"\n  Collections by mint status:")
+    for r in c.execute("SELECT mint_status, COUNT(*) as n FROM collections GROUP BY mint_status ORDER BY n DESC"):
+        print(f"    {r['mint_status'] or '?':<12} {r['n']}")
+
+    print(f"\n  OpenSea candidates by status:")
+    for r in c.execute("SELECT status, COUNT(*) as n FROM opensea_candidates GROUP BY status ORDER BY n DESC"):
+        print(f"    {r['status'] or '?':<12} {r['n']}")
+
+    # Data completeness
+    print(f"\n  Data completeness (collections):")
+    fields = ['image_url','banner_image_url','project_url','total_supply','max_supply',
+              'mint_status','nft_type','avg_traits','vrm_url_https','discord_url',
+              'twitter_username','release_date','license_category','creator','description',
+              'num_owners','floor_price','category','safelist_status','royalty_fee']
+    print(f"    {'Field':<22} {'Have':>5} {'Miss':>5} {'%':>4}")
+    print(f"    {'-'*40}")
+    for f in fields:
+        missing = c.execute(f"SELECT COUNT(*) FROM collections WHERE {f} IS NULL OR {f} = '' OR {f} = 'unknown'").fetchone()[0]
+        have = total - missing
+        pct = have * 100 // total if total else 0
+        bar = '█' * (pct // 10)
+        print(f"    {f:<22} {have:>5} {missing:>5} {pct:>3}% {bar}")
+
+    # Discord summary
+    alive = c.execute("SELECT COUNT(*) FROM collections WHERE discord_status='alive'").fetchone()[0]
+    dead = c.execute("SELECT COUNT(*) FROM collections WHERE discord_status='dead'").fetchone()[0]
+    members = c.execute("SELECT SUM(discord_members) FROM collections WHERE discord_status='alive'").fetchone()[0] or 0
+    print(f"\n  Discord: {alive} alive ({members:,} members), {dead} dead")
+
+    c.close()
+
+def cmd_audit(args):
+    """Find data gaps."""
+    c = conn()
+    total = c.execute("SELECT COUNT(*) FROM collections").fetchone()[0]
+
+    print(f"\n{'='*60}")
+    print(f"  Data audit — missing fields")
+    print(f"{'='*60}")
+
+    # For each field, list collections missing it
+    fields = [
+        ('image_url', 'Image'),
+        ('banner_image_url', 'Banner'),
+        ('project_url', 'Project URL'),
+        ('total_supply', 'Total supply'),
+        ('mint_status', 'Mint status'),
+        ('nft_type', 'NFT type'),
+        ('release_date', 'Release date'),
+        ('license_category', 'License'),
+        ('creator', 'Creator'),
+        ('description', 'Description'),
+        ('discord_url', 'Discord'),
+        ('twitter_username', 'Twitter'),
+        ('contract', 'Contract'),
+        ('opensea_slug', 'OpenSea slug'),
+    ]
+
+    for field, label in fields:
+        missing = c.execute(
+            f"SELECT name, contract, chain, source FROM collections "
+            f"WHERE {field} IS NULL OR {field} = '' OR {field} = 'unknown' "
+            f"ORDER BY name"
+        ).fetchall()
+        if not missing:
+            print(f"\n  {label}: all present ✓")
+            continue
+        pct = len(missing) * 100 // total
+        print(f"\n  {label}: {len(missing)} missing ({pct}%)")
+        if len(missing) <= 15:
+            for r in missing:
+                ct = truncate(r['contract'] or 'NONE', 10)
+                print(f"    {truncate(r['name'],28):<29} contract={ct:<10} chain={r['chain'] or '?':<10} src={r['source']}")
+        else:
+            for r in missing[:8]:
+                ct = truncate(r['contract'] or 'NONE', 10)
+                print(f"    {truncate(r['name'],28):<29} contract={ct:<10} chain={r['chain'] or '?':<10} src={r['source']}")
+            print(f"    ... and {len(missing)-8} more")
+
+    c.close()
+
+def cmd_images(args):
+    """Check for broken image URLs, optionally fix them."""
+    c = conn()
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    def check_url(url, timeout=6):
+        if not url: return 'none'
+        try:
+            req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
+                ct = r.headers.get('Content-Type', '?')
+                if 'image' not in ct and 'svg' not in ct:
+                    return f'not-image:{ct}'
+                return 'ok'
+        except Exception as e:
+            return f'fail:{type(e).__name__}'
+
+    broken = []
+    for table, name_col in [('collections', 'name'), ('opensea_candidates', 'slug')]:
+        for field in ['image_url', 'banner_image_url']:
+            for r in c.execute(f"SELECT {name_col} as name, {field} as url FROM {table} WHERE {field} IS NOT NULL AND {field} != ''"):
+                s = check_url(r['url'])
+                if s not in ('ok', 'none'):
+                    broken.append({'table': table, 'name': r['name'], 'field': field, 'url': r['url'], 'status': s})
+                    print(f"  ✗ {table}/{r['name'][:20]:21} {field:<12} {s}")
+                time.sleep(0.02)
+
+    if not broken:
+        print("All images OK ✓")
+        c.close()
+        return
+
+    print(f"\n{len(broken)} broken images found.")
+
+    if args.fix:
+        print("\nFixing from OpenSea API...")
+        try:
+            key = KEY_FILE.read_text().strip()
+        except:
+            print("No OpenSea API key found at ~/.opensea/api_key")
+            c.close()
+            return
+
+        CHAIN_MAP = {'ethereum':'ethereum','polygon':'matic','base':'base','optimism':'optimism','shape':'shape'}
+        fixed = 0
+        for b in broken:
+            # Get contract/slug for this row
+            if b['table'] == 'collections':
+                row = c.execute("SELECT contract, chain, opensea_slug FROM collections WHERE name=?", (b['name'],)).fetchone()
+            else:
+                row = c.execute("SELECT contract, chain, slug FROM opensea_candidates WHERE slug=?", (b['name'],)).fetchone()
+            if not row:
+                continue
+            contract = row['contract']
+            chain = CHAIN_MAP.get(row['chain'] or 'ethereum', 'ethereum')
+            slug = row['opensea_slug'] if b['table'] == 'collections' else row['slug']
+
+            # Fetch from OpenSea
+            cd = None
+            if slug and ' ' not in slug:
+                try:
+                    req = urllib.request.Request(
+                        f"https://api.opensea.io/api/v2/collections/{slug}",
+                        headers={"X-API-KEY": key, "User-Agent": "superyeti/1.0"})
+                    with urllib.request.urlopen(req, timeout=15) as r:
+                        cd = json.load(r)
+                except: pass
+                time.sleep(0.15)
+            if not cd and contract and len(contract) >= 20:
+                # Resolve slug from contract
+                try:
+                    req = urllib.request.Request(
+                        f"https://api.opensea.io/api/v2/chain/{chain}/contract/{contract}/nfts?limit=1",
+                        headers={"X-API-KEY": key, "User-Agent": "superyeti/1.0"})
+                    with urllib.request.urlopen(req, timeout=15) as r:
+                        nd = json.load(r)
+                    if nd.get('nfts'):
+                        resolved = nd['nfts'][0].get('collection', '')
+                        if resolved:
+                            req2 = urllib.request.Request(
+                                f"https://api.opensea.io/api/v2/collections/{resolved}",
+                                headers={"X-API-KEY": key, "User-Agent": "superyeti/1.0"})
+                            with urllib.request.urlopen(req2, timeout=15) as r2:
+                                cd = json.load(r2)
+                except: pass
+                time.sleep(0.15)
+
+            if cd:
+                new_url = cd.get(b['field'].replace('image_url','image_url').replace('banner_image_url','banner_image_url'), '')
+                # Map field names
+                if b['field'] == 'image_url':
+                    new_url = cd.get('image_url', '')
+                elif b['field'] == 'banner_image_url':
+                    new_url = cd.get('banner_image_url', '')
+                    # Skip video banners
+                    if new_url and ('.mp4' in new_url.lower() or 'stream.mux.com' in new_url):
+                        new_url = ''
+                if new_url:
+                    c.execute(f"UPDATE {b['table']} SET {b['field']}=? WHERE {name_col_for(b['table'])}=?",
+                              (new_url, b['name']))
+                    fixed += 1
+                    print(f"  ✓ Fixed {b['name'][:25]} → {new_url[:50]}")
+        c.commit()
+        print(f"\nFixed {fixed}/{len(broken)}")
+    c.close()
+
+def name_col_for(table):
+    return 'name' if table == 'collections' else 'slug'
+
+def cmd_enrich(args):
+    """Run enrichment scripts."""
+    scripts = {
+        'supply': 'check_supply.py',
+        'traits': 'check_traits.py',
+        'previews': 'fetch_previews.py',
+        'discord': 'check_discord.py',
+        'urls': 'check_opensea_urls.py',
+        'vrm': 'check_vrm_v2.py',
+    }
+    if args.only:
+        if args.only not in scripts:
+            print(f"Unknown: {args.only}. Available: {', '.join(scripts)}")
+            return
+        run = [args.only]
+    else:
+        run = list(scripts.keys())
+
+    for name in run:
+        script = scripts[name]
+        path = BASE / script
+        if not path.exists():
+            print(f"  ✗ {script} not found")
+            continue
+        print(f"\n{'='*50}")
+        print(f"  Running {script}...")
+        print(f"{'='*50}")
+        result = subprocess.run([sys.executable, str(path)], cwd=str(BASE))
+        if result.returncode != 0:
+            print(f"  ✗ {script} failed (exit {result.returncode})")
+
+def cmd_build(args):
+    """Rebuild DB + HTML."""
+    print("Rebuilding database + HTML...")
+    result = subprocess.run([sys.executable, str(BASE / "build_index.py")], cwd=str(BASE))
+    if result.returncode == 0 and not args.no_html:
+        print("\nOpening index.html...")
+        subprocess.run(['open', str(BASE / 'index.html')])
+
+def cmd_schema(args):
+    """Print DB schema."""
+    c = conn()
+    for table in ['collections', 'opensea_candidates', 'avatars', 'contracts']:
+        print(f"\n-- {table}")
+        for r in c.execute(f"PRAGMA table_info({table})"):
+            print(f"  {r[1]:<28} {r[2]}")
+    c.close()
+
+def cmd_sql(args):
+    """Run raw SQL, print as table."""
+    c = conn()
+    try:
+        rows = [dict(r) for r in c.execute(args.query)]
+    except Exception as e:
+        print(f"SQL error: {e}")
+        c.close()
+        return
+    c.close()
+    if not rows:
+        print("(no rows)")
+        return
+    if args.json:
+        print(json.dumps(rows, indent=2, default=str))
+        return
+    cols = list(rows[0].keys())
+    widths = {col: max(len(col), max(len(str(r.get(col,''))) for r in rows[:50])) for col in cols}
+    # Cap column widths
+    for col in cols:
+        widths[col] = min(widths[col], 40)
+    print(" | ".join(col.ljust(widths[col]) for col in cols))
+    print("-+-".join("-" * widths[col] for col in cols))
+    for r in rows:
+        print(" | ".join(truncate(str(r.get(col,'')), widths[col]).ljust(widths[col]) for col in cols))
+    print(f"\n{len(rows)} row(s)")
+
+def cmd_db(args):
+    """Open sqlite3 shell."""
+    os.execvp('sqlite3', ['sqlite3', str(DB)])
+
+# ─── Arg parsing ─────────────────────────────────────────────────────────────
+
+def build_parser():
+    p = argparse.ArgumentParser(prog='sy', description='superyeti VRM index CLI', add_help=True)
+    sub = p.add_subparsers(dest='command', metavar='[command]')
+
+    # ls / list (default)
+    p_ls = sub.add_parser('ls', help='List collections')
+    p_ls.add_argument('query', nargs='?', default=None)
+    p_ls.add_argument('--tier', '-t', default=None, choices=['A','B','C','arweave','infra','not_vrm'])
+    p_ls.add_argument('--chain', '-c', default=None, choices=['ethereum','polygon','base','optimism','arbitrum','ape_chain','shape','multi','arweave'])
+    p_ls.add_argument('--license', '-l', default=None, choices=['green','yellow','red','unknown'])
+    p_ls.add_argument('--contract', default=None)
+    p_ls.add_argument('--discord', default=None, choices=['alive','dead','rate_limited','error','none'])
+    p_ls.add_argument('--mint', default=None, choices=['capped','likely_capped','ongoing','no_max_supply','unknown'])
+    p_ls.add_argument('--nft-type', '--nt', dest='nft_type', default=None, choices=['generative','1of1_series','1of1_art','numbered','no_traits','mixed','unknown'])
+    p_ls.add_argument('--since', default=None)
+    p_ls.add_argument('--until', default=None)
+    p_ls.add_argument('--no-image', action='store_true')
+    p_ls.add_argument('--no-supply', action='store_true')
+    p_ls.add_argument('--json', action='store_true')
+
+    # show
+    p_show = sub.add_parser('show', help='Show full detail for one collection')
+    p_show.add_argument('query')
+    p_show.add_argument('--json', action='store_true')
+
+    # find (alias for ls)
+    p_find = sub.add_parser('find', help='Search/filter collections')
+    p_find.add_argument('query', nargs='?', default=None)
+    p_find.add_argument('--tier', '-t', default=None, choices=['A','B','C','arweave','infra','not_vrm'])
+    p_find.add_argument('--chain', '-c', default=None, choices=['ethereum','polygon','base','optimism','arbitrum','ape_chain','shape','multi','arweave'])
+    p_find.add_argument('--license', '-l', default=None, choices=['green','yellow','red','unknown'])
+    p_find.add_argument('--contract', default=None)
+    p_find.add_argument('--discord', default=None, choices=['alive','dead','rate_limited','error','none'])
+    p_find.add_argument('--mint', default=None, choices=['capped','likely_capped','ongoing','no_max_supply','unknown'])
+    p_find.add_argument('--nft-type', '--nt', dest='nft_type', default=None, choices=['generative','1of1_series','1of1_art','numbered','no_traits','mixed','unknown'])
+    p_find.add_argument('--since', default=None)
+    p_find.add_argument('--until', default=None)
+    p_find.add_argument('--no-image', action='store_true')
+    p_find.add_argument('--no-supply', action='store_true')
+    p_find.add_argument('--json', action='store_true')
+
+    # os
+    p_os = sub.add_parser('os', help='List/search OpenSea candidates')
+    p_os.add_argument('query', nargs='?', default=None)
+    p_os.add_argument('--status', '-s', default=None)
+    p_os.add_argument('--nft-type', '--nt', dest='nft_type', default=None)
+    p_os.add_argument('--mint', default=None)
+    p_os.add_argument('--no-image', action='store_true')
+    p_os.add_argument('--json', action='store_true')
+
+    # avatars
+    p_av = sub.add_parser('avatars', help='Search avatars')
+    p_av.add_argument('query', nargs='?', default=None)
+    p_av.add_argument('--all', action='store_true')
+    p_av.add_argument('--json', action='store_true')
+
+    # stats
+    p_stats = sub.add_parser('stats', help='Index statistics + data completeness')
+    p_stats.add_argument('--json', action='store_true')
+
+    # audit
+    sub.add_parser('audit', help='Find missing data (gaps)')
+
+    # images
+    p_img = sub.add_parser('images', help='Check/fix broken image URLs')
+    p_img.add_argument('--fix', action='store_true')
+
+    # enrich
+    p_en = sub.add_parser('enrich', help='Run enrichment scripts')
+    p_en.add_argument('--only', default=None, choices=['supply','traits','previews','discord','urls','vrm'])
+
+    # build
+    p_build = sub.add_parser('build', help='Rebuild DB + HTML')
+    p_build.add_argument('--no-html', action='store_true')
+
+    # schema
+    sub.add_parser('schema', help='Print DB schema')
+
+    # sql
+    p_sql = sub.add_parser('sql', help='Run raw SQL query')
+    p_sql.add_argument('query')
+    p_sql.add_argument('--json', action='store_true')
+
+    # db
+    sub.add_parser('db', help='Open sqlite3 shell')
+
+    # Shortcuts (top-level flags)
+    p.add_argument('-A', action='store_const', dest='shortcut', const='A')
+    p.add_argument('-B', action='store_const', dest='shortcut', const='B')
+    p.add_argument('-C', action='store_const', dest='shortcut', const='C')
+    p.add_argument('-g', action='store_const', dest='shortcut', const='green')
+    p.add_argument('-d', action='store_const', dest='shortcut', const='no-discord')
+    p.add_argument('-v', action='store_const', dest='shortcut', const='generative')
+
+    return p
+
+def main():
+    # Pre-process argv
+    VALID_COMMANDS = {'ls','show','find','os','avatars','stats','audit','images','enrich','build','schema','sql','db'}
+    SHORTCUT_FLAGS = {'-A','-B','-C','-g','-d','-v'}
+    argv = sys.argv[1:]
+
+    # If first arg is a shortcut flag, insert 'ls' after the shortcut flags
+    if argv and argv[0] in SHORTCUT_FLAGS:
+        # Find where shortcut flags end
+        i = 0
+        while i < len(argv) and argv[i] in SHORTCUT_FLAGS:
+            i += 1
+        argv = argv[:i] + ['ls'] + argv[i:]
+    # If first arg isn't a known subcommand or flag, treat as `show <name>`
+    elif argv and argv[0] not in VALID_COMMANDS and not argv[0].startswith('-'):
+        argv = ['show'] + argv
+
+    p = build_parser()
+    args, unknown = p.parse_known_args(argv)
+
+    # If first unknown arg looks like a collection name (not a flag), treat as `show <name>`
+    if not args.command and not getattr(args, 'shortcut', None) and unknown:
+        query = ' '.join(unknown)
+        args.command = 'show'
+        args.query = query
+        args.json = False
+    # Handle shortcuts: set command to ls with appropriate filter
+    sc = getattr(args, 'shortcut', None)
+    if sc:
+        args.command = 'ls'
+        # Only set defaults for attributes that don't already exist from --flags
+        for attr, default in [('tier',None),('chain',None),('license',None),('contract',None),
+                              ('discord',None),('mint',None),('nft_type',None),
+                              ('since',None),('until',None)]:
+            if not hasattr(args, attr) or getattr(args, attr) is None:
+                setattr(args, attr, default)
+        for attr, default in [('no_image',False),('no_supply',False),('json',False)]:
+            if not hasattr(args, attr):
+                setattr(args, attr, default)
+        if not hasattr(args, 'query'):
+            args.query = None
+        if sc in ('A','B','C'):
+            args.tier = sc
+        elif sc == 'green':
+            args.license = 'green'
+        elif sc == 'no-discord':
+            args.discord = 'none'
+        elif sc == 'generative':
+            args.nft_type = 'generative'
+
+    # If no subcommand and no shortcut, default to ls
+    if not args.command:
+        args.command = 'ls'
+        args.query = None
+        # Ensure ls attributes exist
+        for attr in ['tier','chain','license','contract','discord','mint','nft_type','since','until']:
+            if not hasattr(args, attr):
+                setattr(args, attr, None)
+        for attr in ['no_image','no_supply','json']:
+            if not hasattr(args, attr):
+                setattr(args, attr, False)
+
+    cmd = args.command or 'ls'
+
+    if cmd == 'ls' or cmd == 'find':
+        cmd_list(args)
+    elif cmd == 'show':
+        cmd_show(args)
+    elif cmd == 'os':
+        cmd_os(args)
+    elif cmd == 'avatars':
+        cmd_avatars(args)
+    elif cmd == 'stats':
+        cmd_stats(args)
+    elif cmd == 'audit':
+        cmd_audit(args)
+    elif cmd == 'images':
+        cmd_images(args)
+    elif cmd == 'enrich':
+        cmd_enrich(args)
+    elif cmd == 'build':
+        cmd_build(args)
+    elif cmd == 'schema':
+        cmd_schema(args)
+    elif cmd == 'sql':
+        cmd_sql(args)
+    elif cmd == 'db':
+        cmd_db(args)
+    else:
+        p.print_help()
+
+if __name__ == "__main__":
+    main()

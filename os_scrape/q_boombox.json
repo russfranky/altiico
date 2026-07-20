@@ -1,0 +1,23 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "boomboxheads-legends",
+      "name" : "Boomboxheads Legends",
+      "image_url" : "https://i2c.seadn.io/ethereum/cfb2d148c467364183a2fb769bd47608/3648358d489b760d86e3e295ce49f8/113648358d489b760d86e3e295ce49f8.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/boomboxheads-legends"
+    }
+  }, {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "boomboxheads",
+      "name" : "BOOMBOXHEADS",
+      "image_url" : "https://i2c.seadn.io/ethereum/31cc8f4ecf2947aaae05f4321523160d/45350b0cb69094f4b3174b97873150/5f45350b0cb69094f4b3174b97873150.gif",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/boomboxheads"
+    }
+  } ]
+}

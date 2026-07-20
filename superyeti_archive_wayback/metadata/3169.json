@@ -1,0 +1,35 @@
+{
+  "name": "Super Yeti #3169",
+  "description": "SuperYeti is a 3D collection of randomized characters created through a standard ERC-721 contract and backed by IPFS file storage and registered on the Ethereum Blockchain. Future implementation of a multiplayer, play-to-earn game where SuperYetis own land, breed and compete with one another to protect the Yetiverse. You can learn more at www.superyeti.co",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Off Green"
+    },
+    {
+      "trait_type": "Fur Color",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Eye Color",
+      "value": " Black"
+    },
+    {
+      "trait_type": "Face",
+      "value": "Frog"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "DSLR, Bitcoin, Cowboy Hat, Snow Gloves, Cowboy Boots"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Master"
+    },
+    {
+      "trait_type": "Track",
+      "value": "Photographer"
+    }
+  ],
+  "image": "https://web.archive.org/web/20210615202612/https://defra.mypinata.cloud/ipfs/QmYpzq4LMFojGhCRkdJ6vQbfVBLRo6Cwbea23b6G7xhDcy"
+}

@@ -1,0 +1,13 @@
+{
+  "results" : [ {
+    "type" : "collection",
+    "collection" : {
+      "collection" : "cyberbrokers",
+      "name" : "CyberBrokers",
+      "image_url" : "https://i2c.seadn.io/ethereum/d1839286b596401a83a5b77901677529/1263ee327373d92346ff44c129dc40/571263ee327373d92346ff44c129dc40.png",
+      "is_disabled" : false,
+      "is_nsfw" : false,
+      "opensea_url" : "https://opensea.io/collection/cyberbrokers"
+    }
+  } ]
+}
