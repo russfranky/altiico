@@ -1,0 +1,48 @@
+# OpenSea Shared Storefront Collection Overrides
+#
+# OpenSea's shared storefront contract (ERC-1155) hosts assets from many
+# different collections under a single contract address. Because the contract
+# address alone cannot identify a collection, this file provides explicit
+# override records that map each shared-storefront collection tracked by
+# superyeti to its OpenSea slug and a representative token ID.
+#
+# The representative_token_id fields are intentionally left as null and are
+# expected to be filled in by a resolver script that queries the OpenSea API.
+#
+# provenance: "manual" indicates these records were authored by hand from
+# known database state and should be trusted over contract-address-only
+# lookups.
+
+shared_storefront_contracts:
+  - "0x495f947276749ce646f68ac8c248420045cb7b5e"
+
+collections:
+  - collection_id: pixelbeasts
+    name: PixelBeasts
+    chain: ethereum
+    contract: "0x495f947276749ce646f68ac8c248420045cb7b5e"
+    opensea_slug: pixelbeasts
+    representative_token_id: null # TODO: resolve via OpenSea API
+    canonical_image: "https://i2c.seadn.io/collection/pixelbeasts/image/c0c371523b31aec1a3cabd6db62ef1/6cc0c371523b31aec1a3cabd6db62ef1.png"
+    provenance: manual
+    notes: "Shared storefront ERC-1155; contract alone does not identify collection"
+
+  - collection_id: chametheon
+    name: Chametheon
+    chain: ethereum
+    contract: "0x495f947276749ce646f68ac8c248420045cb7b5e"
+    opensea_slug: chametheon
+    representative_token_id: null # TODO: resolve via OpenSea API
+    canonical_image: null
+    provenance: manual
+    notes: "Shared storefront ERC-1155; contract alone does not identify collection"
+
+  - collection_id: cyberanimedoll-avatar
+    name: "CyberAnimeDOLL: Avatar"
+    chain: ethereum
+    contract: "0x495f947276749ce646f68ac8c248420045cb7b5e"
+    opensea_slug: cyberanimedoll-avatar
+    representative_token_id: null # TODO: resolve via OpenSea API
+    canonical_image: null
+    provenance: manual
+    notes: "Shared storefront ERC-1155; contract alone does not identify collection"
