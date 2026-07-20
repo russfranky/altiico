@@ -1,0 +1,31 @@
+# Cache TTL policy for OpenSea API v2 enrichment.
+# Scripts read TTLs from this file instead of hard-coding constants.
+# All values in seconds.
+
+opensea:
+  collection_meta: 2592000              # 30 days — slug, name, description, category, links are stable
+  collection_image: 2592000             # 30 days — image URL changes infrequently
+  collection_image_url_permanent: true  # URL cached indefinitely by content hash
+  total_supply_active: 86400            # 24 hours for active/ongoing collections
+  total_supply_closed: 604800           # 7 days for closed/capped collections
+  num_owners: 21600                     # 6 hours — moderately dynamic
+  floor_price: 3600                     # 1 hour for UI market data
+  floor_price_static: 21600             # 6 hours for static catalog builds
+  one_day_volume: 3600                  # 1 hour
+  seven_day_volume: 21600               # 6 hours
+  thirty_day_volume: 21600              # 6 hours
+  total_volume: 86400                   # 24 hours — slow-moving
+  token_metadata_immutable: -1          # permanent by CID/transaction ID — -1 means "never expires"
+  token_metadata_mutable: 86400         # 24 hours with ETag/Last-Modified
+  negative_result: 86400                # 24 hours — cache 404s to avoid re-querying missing collections
+  rate_limited: -2                      # -2 means "respect Retry-After header, then exponential backoff"
+  server_error: -2                      # same as rate_limited — respect Retry-After/backoff
+
+other_sources:
+  ipfs_immutable: -1                    # permanent by CID
+  arweave_immutable: -1                 # permanent by transaction ID
+  github_raw: 86400                     # 24 hours
+
+defaults:
+  default_ttl: 86400                    # 24 hours fallback
+  stale_warning_threshold: 172800       # 48 hours — warn in UI if data older than this
