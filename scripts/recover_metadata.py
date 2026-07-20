@@ -16,7 +16,7 @@ from urllib.parse import urlparse
 
 BASE = Path(__file__).parent
 DB = BASE / "vrm_index.db"
-CACHE = BASE / "os_scrape" / "wayback_metadata.json"
+CACHE = BASE / "data" / "os_scrape" / "wayback_metadata.json"
 
 def wayback_availability(url):
     """Check if Wayback has a snapshot of this URL."""

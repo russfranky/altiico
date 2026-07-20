@@ -97,7 +97,7 @@ def main():
             print(f"  [{i+1}/{len(slugs)}] {len(social)} fetched", file=sys.stderr)
         time.sleep(0.15)
 
-    json.dump(social, open(BASE / "os_scrape" / "social_links.json", "w"), indent=2)
+    json.dump(social, open(BASE / "data" / "os_scrape" / "social_links.json", "w"), indent=2)
     print(f"\nFetched social links for {len(social)} slug-based collections", file=sys.stderr)
 
     # Phase 1b: Fetch social links for contract-based collections (no slug)
@@ -155,7 +155,7 @@ def main():
                 print(f"  [{done}/{len(discord_urls)}] {icon} {slug} → {result['status']}", file=sys.stderr)
             time.sleep(0.5)  # be gentle with Discord API
 
-    json.dump(discord_status, open(BASE / "os_scrape" / "discord_status.json", "w"), indent=2)
+    json.dump(discord_status, open(BASE / "data" / "os_scrape" / "discord_status.json", "w"), indent=2)
 
     # Phase 3: Update database
     conn = sqlite3.connect(str(DB))

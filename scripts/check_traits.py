@@ -206,7 +206,7 @@ def main():
         time.sleep(0.15)
 
     # Save
-    json.dump(results, open(BASE / "os_scrape" / "trait_data.json", "w"), indent=2)
+    json.dump(results, open(BASE / "data" / "os_scrape" / "trait_data.json", "w"), indent=2)
 
     # Update DB
     conn = sqlite3.connect(str(DB))

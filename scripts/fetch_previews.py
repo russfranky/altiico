@@ -73,12 +73,12 @@ def main():
 
     # Also get VRM URLs from known_vrm_verified.json
     vrm_urls = {}
-    kv_path = BASE / "os_scrape" / "known_vrm_verified.json"
+    kv_path = BASE / "data" / "os_scrape" / "known_vrm_verified.json"
     if kv_path.exists():
         for e in json.load(open(kv_path)):
             if e.get('vrm_url'):
                 vrm_urls[e['slug']] = e['vrm_url']
-    vcr_path = BASE / "os_scrape" / "vrm_check_results.json"
+    vcr_path = BASE / "data" / "os_scrape" / "vrm_check_results.json"
     if vcr_path.exists():
         d = json.load(open(vcr_path))
         for e in d.get('vrm', []):
@@ -161,7 +161,7 @@ def main():
             print(f"  [{i+1}/{len(slugs)}] images: {with_img}, nft imgs: {with_nft}, vrm urls: {with_vrm}", file=sys.stderr)
 
     # Save results
-    json.dump(results, open(BASE / "os_scrape" / "preview_images.json", "w"), indent=2)
+    json.dump(results, open(BASE / "data" / "os_scrape" / "preview_images.json", "w"), indent=2)
 
     # Update database
     conn = sqlite3.connect(str(DB))

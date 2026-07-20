@@ -8,7 +8,7 @@ from pathlib import Path
 
 BASE = Path(__file__).parent
 DB = BASE / "vrm_index.db"
-DETAILS = BASE / "os_scrape" / "collection_details.json"
+DETAILS = BASE / "data" / "os_scrape" / "collection_details.json"
 OSK = os.path.expanduser("~/.opensea/api_key")
 
 def os_fetch(url):

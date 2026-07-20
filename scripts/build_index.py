@@ -16,9 +16,9 @@ Outputs:
 import json, re, sqlite3, os, glob, html, hashlib, sys
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB_PATH = BASE / "vrm_index.db"
-HTML_PATH = BASE / "index.html"
+BASE = Path(__file__).parent.parent
+DB_PATH = BASE / "data" / "vrm_index.db"
+HTML_PATH = BASE / "static" / "index.html"
 
 def _is_video_url(url):
     """Detect video URLs that can't be used in <img> tags."""
@@ -211,7 +211,7 @@ def clean_contract(s):
 
 def parse_markdown():
     """Parse the tier tables and licensing tables from vrm_collections.md."""
-    lines = (BASE / "vrm_collections.md").read_text().split('\n')
+    lines = (BASE / "data" / "vrm_collections.md").read_text().split('\n')
     collections = []
 
     # Map section headers to tier + chain
@@ -446,7 +446,7 @@ def parse_markdown():
 
 def parse_toxsam():
     """Parse toxsam_projects.json and per-project avatar manifests."""
-    projects = json.load(open(BASE / "toxsam_projects.json"))
+    projects = json.load(open(BASE / "data" / "cache" / "toxsam_projects.json"))
     avatars = []
 
     for p in projects:
@@ -477,7 +477,7 @@ def parse_opensea():
     candidates = []
 
     # vrm_check_results.json
-    vcr_path = BASE / "os_scrape" / "vrm_check_results.json"
+    vcr_path = BASE / "data" / "os_scrape" / "vrm_check_results.json"
     if vcr_path.exists():
         d = json.load(open(vcr_path))
         for e in d.get('vrm', []):
@@ -506,7 +506,7 @@ def parse_opensea():
             })
 
     # known_vrm_verified.json
-    kv_path = BASE / "os_scrape" / "known_vrm_verified.json"
+    kv_path = BASE / "data" / "os_scrape" / "known_vrm_verified.json"
     if kv_path.exists():
         d = json.load(open(kv_path))
         for e in d:
@@ -528,7 +528,7 @@ def parse_opensea():
                 })
 
     # Search result files — collect all unique slugs with their query source
-    for f in sorted(glob.glob(str(BASE / "os_scrape" / "q_*.json"))):
+    for f in sorted(glob.glob(str(BASE / "data" / "os_scrape" / "q_*.json"))):
         query = Path(f).stem.replace('q_', '')
         d = json.load(open(f))
         for r in d.get('results', []):
@@ -565,7 +565,7 @@ def parse_url_status():
 
 def parse_collection_details():
     """Load os_scrape/collection_details.json — release dates and all contracts per collection."""
-    path = BASE / "os_scrape" / "collection_details.json"
+    path = BASE / "data" / "os_scrape" / "collection_details.json"
     if not path.exists():
         return {}
     d = json.load(open(path))
@@ -575,8 +575,8 @@ def parse_collection_details():
 
 def parse_social_links():
     """Load os_scrape/social_links.json and discord_status.json."""
-    social_path = BASE / "os_scrape" / "social_links.json"
-    discord_path = BASE / "os_scrape" / "discord_status.json"
+    social_path = BASE / "data" / "os_scrape" / "social_links.json"
+    discord_path = BASE / "data" / "os_scrape" / "discord_status.json"
     social = json.load(open(social_path)) if social_path.exists() else {}
     discord = json.load(open(discord_path)) if discord_path.exists() else {}
     return social, discord
@@ -585,7 +585,7 @@ def parse_social_links():
 
 def parse_preview_images():
     """Load os_scrape/preview_images.json — collection images, sample NFT images, VRM HTTPS URLs."""
-    path = BASE / "os_scrape" / "preview_images.json"
+    path = BASE / "data" / "os_scrape" / "preview_images.json"
     if not path.exists():
         return {}
     return json.load(open(path))
@@ -594,7 +594,7 @@ def parse_preview_images():
 
 def parse_collection_meta():
     """Load os_scrape/collection_meta.json — descriptions, num_owners, floor_price, etc."""
-    path = BASE / "os_scrape" / "collection_meta.json"
+    path = BASE / "data" / "os_scrape" / "collection_meta.json"
     if not path.exists():
         return {}
     return json.load(open(path))
@@ -603,7 +603,7 @@ def parse_collection_meta():
 
 def parse_supply_data():
     """Load os_scrape/supply_data.json — total_supply, max_supply, mint_status."""
-    path = BASE / "os_scrape" / "supply_data.json"
+    path = BASE / "data" / "os_scrape" / "supply_data.json"
     if not path.exists():
         return {}
     return json.load(open(path))
@@ -612,7 +612,7 @@ def parse_supply_data():
 
 def parse_trait_data():
     """Load os_scrape/trait_data.json — avg_traits, nft_type, uniqueness_ratio."""
-    path = BASE / "os_scrape" / "trait_data.json"
+    path = BASE / "data" / "os_scrape" / "trait_data.json"
     if not path.exists():
         return {}
     return json.load(open(path))
@@ -621,7 +621,7 @@ def parse_trait_data():
 
 def parse_a3ac():
     """Parse os_scrape/a3ac_parsed.json for 3D avatar collections from the A3AC registry."""
-    path = BASE / "os_scrape" / "a3ac_parsed.json"
+    path = BASE / "data" / "os_scrape" / "a3ac_parsed.json"
     if not path.exists():
         return []
     return json.load(open(path))
@@ -630,7 +630,7 @@ def parse_a3ac():
 
 def parse_research_candidates():
     """Parse os_scrape/research_candidates.json for 3D avatar collections found via deep research."""
-    path = BASE / "os_scrape" / "research_candidates.json"
+    path = BASE / "data" / "os_scrape" / "research_candidates.json"
     if not path.exists():
         return []
     return json.load(open(path))

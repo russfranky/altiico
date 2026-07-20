@@ -232,7 +232,7 @@ def main():
             print(f"  [{i+1}/{len(slugs)}] capped: {capped}, ongoing: {ongoing}", file=sys.stderr)
 
     # Save
-    json.dump(results, open(BASE / "os_scrape" / "supply_data.json", "w"), indent=2)
+    json.dump(results, open(BASE / "data" / "os_scrape" / "supply_data.json", "w"), indent=2)
 
     # Update DB
     conn = sqlite3.connect(str(DB))

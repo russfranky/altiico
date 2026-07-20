@@ -84,7 +84,7 @@ def check_collection(slug):
 def main():
     slugs = []
     import glob
-    for f in sorted(glob.glob("os_scrape/q_*.json")) + sorted(glob.glob("os_scrape/search_*.json")):
+    for f in sorted(glob.glob("data/os_scrape/q_*.json")) + sorted(glob.glob("data/os_scrape/search_*.json")):
         try:
             d = json.load(open(f))
         except: continue
@@ -121,7 +121,7 @@ def main():
         else:
             results["no_vrm"].append(entry)
         time.sleep(0.8)  # respect rate limit (60/min)
-    json.dump(results, open("os_scrape/vrm_check_results.json","w"), indent=2)
+    json.dump(results, open("data/os_scrape/vrm_check_results.json","w"), indent=2)
     print(f"\nDone. VRM: {len(results['vrm'])}, mentions: {len(results['mentions'])}, no_vrm: {len(results['no_vrm'])}, error: {len(results['error'])}", file=sys.stderr)
 
 if __name__ == "__main__":

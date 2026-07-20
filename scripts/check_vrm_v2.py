@@ -43,7 +43,7 @@ def check_meta(meta):
         return ("mentions", "")
     return None
 
-d = json.load(open("os_scrape/vrm_check_results.json"))
+d = json.load(open("data/os_scrape/vrm_check_results.json"))
 no_vrm = d["no_vrm"]
 print(f"Re-checking {len(no_vrm)} no_vrm collections with public IPFS gateway...", file=sys.stderr)
 
@@ -79,6 +79,6 @@ d["vrm"].extend(new_vrm)
 d["mentions"].extend(new_mentions)
 d["no_vrm"] = still_no
 
-json.dump(d, open("os_scrape/vrm_check_results_v2.json", "w"), indent=2)
+json.dump(d, open("data/os_scrape/vrm_check_results_v2.json", "w"), indent=2)
 print(f"\nDone. New VRM: {len(new_vrm)}, new mentions: {len(new_mentions)}, still no: {len(still_no)}", file=sys.stderr)
 print(f"Total VRM: {len(d['vrm'])}, total mentions: {len(d['mentions'])}", file=sys.stderr)

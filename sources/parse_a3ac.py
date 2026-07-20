@@ -18,7 +18,7 @@ from pathlib import Path
 
 BASE = Path(__file__).parent
 DB = BASE / "vrm_index.db"
-README = BASE / "os_scrape" / "a3ac_readme.md"
+README = BASE / "data" / "os_scrape" / "a3ac_readme.md"
 
 def parse_table(md_text):
     """Parse markdown table rows into dicts."""
@@ -78,7 +78,7 @@ def extract_vrm_param(cell):
 
 def main():
     if not README.exists():
-        print("README not found. Run: curl -sS https://raw.githubusercontent.com/itsmetamike/awesome-3D-avatar-collections/main/README.md -o os_scrape/a3ac_readme.md", file=sys.stderr)
+        print("README not found. Run: curl -sS https://raw.githubusercontent.com/itsmetamike/awesome-3D-avatar-collections/main/README.md -o data/os_scrape/a3ac_readme.md", file=sys.stderr)
         return
 
     md = README.read_text()
@@ -110,7 +110,7 @@ def main():
         })
 
     # Save parsed data
-    json.dump(entries, open(BASE / "os_scrape" / "a3ac_parsed.json", "w"), indent=2)
+    json.dump(entries, open(BASE / "data" / "os_scrape" / "a3ac_parsed.json", "w"), indent=2)
 
     # Cross-reference with DB
     conn = sqlite3.connect(str(DB))

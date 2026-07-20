@@ -8,14 +8,14 @@ Fetch comprehensive collection data from OpenSea API in a single sweep:
     volume/sales, 1d/7d/30d intervals
 
 Uses slug when available, otherwise resolves slug from contract address.
-Caches to os_scrape/collection_meta.json so re-runs are fast.
+Caches to data/os_scrape/collection_meta.json so re-runs are fast.
 """
 import json, os, sqlite3, time, urllib.request, urllib.error
 from pathlib import Path
 
 BASE = Path(__file__).parent
 DB = BASE / "vrm_index.db"
-CACHE_PATH = BASE / "os_scrape" / "collection_meta.json"
+CACHE_PATH = BASE / "data" / "os_scrape" / "collection_meta.json"
 OSK = open(os.path.expanduser("~/.opensea/api_key")).read().strip()
 
 CHAIN_MAP = {
