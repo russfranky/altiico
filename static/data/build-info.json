@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-21T00:11:01.548517+00:00",
+  "schema_version": 1,
+  "files": {
+    "summary": "catalog-summary.b37ca96805fb.json",
+    "collections": "collections.f14631111965.json",
+    "opensea": "opensea-candidates.cd56ce2ad8db.json",
+    "avatars": [
+      "avatars-00.f09d4e042f4f.json",
+      "avatars-01.e0e2852e2add.json",
+      "avatars-02.dbb59a57b693.json",
+      "avatars-03.f94fed3cb3e2.json",
+      "avatars-04.a4b28296459f.json",
+      "avatars-05.c8a96cc0b2bd.json",
+      "avatars-06.50b5b81f9f40.json",
+      "avatars-07.e7746eefa274.json",
+      "avatars-08.b4bf92011475.json"
+    ]
+  }
+}

@@ -1,0 +1,363 @@
+# License normalization mapping.
+#
+# This is the single source of truth for translating raw license terms (from
+# embedded VRM metadata, collection-level fields, Creative Commons codes, and
+# a16z "Can't Be Evil" variants) into the normalized permission dimensions
+# stored in the license_dimensions table (migration 010).
+#
+# scripts/normalize_licenses.py loads this file and applies it; nothing is
+# hard-coded in Python. To adjust a mapping, edit this file and re-run the
+# normalizer.
+#
+# Dimension vocabulary:
+#   use_scope          everyone | holder | explicitly_licensed | author | unknown
+#   commercial_scope   none | personal_non_profit | personal_profit | corporation | unknown
+#   credit             required | unnecessary | unknown
+#   boolean dims       0/1 (omitted = unspecified / NULL)
+#     redistribute_original, modify, redistribute_modified, corporate_use,
+#     terminates_on_transfer, hate_speech_termination
+#
+# Each mapping entry is a partial dimensions dict. Entries may also carry a
+# `reason_codes` list appended to the row's reason_codes.
+#
+# Boolean values are written as YAML integers (1/0). VRM 1.0 boolean meta
+# fields are looked up by their lowercase string form ("true"/"false").
+
+# ─── VRM 0.x ─────────────────────────────────────────────────────────────────
+# Field names preserve the intentional misspellings from the VRM 0.x spec.
+vrm_0x:
+  allowedUserName:
+    Everyone:
+      use_scope: everyone
+    ExplicitlyLicensedPerson:
+      use_scope: explicitly_licensed
+    OnlyAuthor:
+      use_scope: author
+      reason_codes:
+        - AUTHOR_ONLY
+  commercialUssageName:
+    Allow:
+      commercial_scope: personal_profit
+    Disallow:
+      commercial_scope: none
+      reason_codes:
+        - NO_COMMERCIAL
+  licenseName:
+    CC0:
+      use_scope: everyone
+      commercial_scope: personal_profit
+      credit: unnecessary
+      redistribute_original: 1
+      modify: 1
+      redistribute_modified: 1
+    CC_BY:
+      use_scope: everyone
+      commercial_scope: personal_profit
+      credit: required
+      redistribute_original: 1
+      modify: 1
+      redistribute_modified: 1
+    CC_BY_NC:
+      use_scope: everyone
+      commercial_scope: personal_non_profit
+      credit: required
+      redistribute_original: 1
+      modify: 1
+      redistribute_modified: 1
+      reason_codes:
+        - NON_COMMERCIAL
+    CC_BY_SA:
+      use_scope: everyone
+      commercial_scope: personal_profit
+      credit: required
+      redistribute_original: 1
+      modify: 1
+      redistribute_modified: 1
+    CC_BY_ND:
+      use_scope: everyone
+      commercial_scope: personal_profit
+      credit: required
+      redistribute_original: 1
+      modify: 0
+      redistribute_modified: 0
+      reason_codes:
+        - NO_DERIVATIVES
+    CC_BY_NC_SA:
+      use_scope: everyone
+      commercial_scope: personal_non_profit
+      credit: required
+      redistribute_original: 1
+      modify: 1
+      redistribute_modified: 1
+      reason_codes:
+        - NON_COMMERCIAL
+    CC_BY_NC_ND:
+      use_scope: everyone
+      commercial_scope: personal_non_profit
+      credit: required
+      redistribute_original: 1
+      modify: 0
+      redistribute_modified: 0
+      reason_codes:
+        - NON_COMMERCIAL
+        - NO_DERIVATIVES
+    Redistribution_Prohibited:
+      use_scope: everyone
+      redistribute_original: 0
+      modify: 1
+      redistribute_modified: 0
+      reason_codes:
+        - REDISTRIBUTION_PROHIBITED
+    Other: {}
+
+# ─── VRM 1.0 ─────────────────────────────────────────────────────────────────
+# Restrictive defaults apply to any field omitted from the embedded meta.
+vrm_1_0:
+  defaults:
+    avatarPermission: onlyAuthor
+    commercialUsage: personalNonProfit
+    creditNotation: required
+    allowRedistribution: false
+    modification: prohibited
+    allowExcessivelyViolentUsage: false
+    allowExcessivelySexualUsage: false
+    allowPoliticalOrReligiousUsage: false
+    allowAntisocialOrHateUsage: false
+  avatarPermission:
+    onlyAuthor:
+      use_scope: author
+      reason_codes:
+        - AUTHOR_ONLY
+    onlySeparatelyLicensedPerson:
+      use_scope: explicitly_licensed
+      reason_codes:
+        - EXPLICITLY_LICENSED
+    everyone:
+      use_scope: everyone
+  commercialUsage:
+    personalNonProfit:
+      commercial_scope: personal_non_profit
+      reason_codes:
+        - NON_COMMERCIAL
+    personalProfit:
+      commercial_scope: personal_profit
+    corporation:
+      commercial_scope: corporation
+      corporate_use: 1
+  creditNotation:
+    required:
+      credit: required
+    unnecessary:
+      credit: unnecessary
+  allowRedistribution:
+    "true":
+      redistribute_original: 1
+    "false":
+      redistribute_original: 0
+      reason_codes:
+        - REDISTRIBUTION_PROHIBITED
+  modification:
+    prohibited:
+      modify: 0
+      redistribute_modified: 0
+      reason_codes:
+        - MODIFICATION_PROHIBITED
+    allowModification:
+      modify: 1
+      redistribute_modified: 0
+    allowModificationRedistribution:
+      modify: 1
+      redistribute_modified: 1
+
+# ─── Creative Commons (canonical hyphenated codes) ───────────────────────────
+creative_commons:
+  CC0:
+    use_scope: everyone
+    commercial_scope: personal_profit
+    credit: unnecessary
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+  CC-BY:
+    use_scope: everyone
+    commercial_scope: personal_profit
+    credit: required
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+  CC-BY-NC:
+    use_scope: everyone
+    commercial_scope: personal_non_profit
+    credit: required
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+    reason_codes:
+      - NON_COMMERCIAL
+  CC-BY-SA:
+    use_scope: everyone
+    commercial_scope: personal_profit
+    credit: required
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+  CC-BY-ND:
+    use_scope: everyone
+    commercial_scope: personal_profit
+    credit: required
+    redistribute_original: 1
+    modify: 0
+    redistribute_modified: 0
+    reason_codes:
+      - NO_DERIVATIVES
+  CC-BY-NC-SA:
+    use_scope: everyone
+    commercial_scope: personal_non_profit
+    credit: required
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+    reason_codes:
+      - NON_COMMERCIAL
+  CC-BY-NC-ND:
+    use_scope: everyone
+    commercial_scope: personal_non_profit
+    credit: required
+    redistribute_original: 1
+    modify: 0
+    redistribute_modified: 0
+    reason_codes:
+      - NON_COMMERCIAL
+      - NO_DERIVATIVES
+
+# ─── a16z "Can't Be Evil" licenses (6 variants) ──────────────────────────────
+a16z_cbe:
+  PUBLIC:
+    use_scope: everyone
+    commercial_scope: corporation
+    credit: unnecessary
+    redistribute_original: 1
+    modify: 1
+    redistribute_modified: 1
+    corporate_use: 1
+  EXCLUSIVE:
+    use_scope: holder
+    commercial_scope: corporation
+    corporate_use: 1
+    terminates_on_transfer: 1
+    redistribute_original: 0
+    modify: 1
+    redistribute_modified: 0
+    reason_codes:
+      - HOLDER_ONLY
+      - REDISTRIBUTION_PROHIBITED
+  COMMERCIAL:
+    use_scope: holder
+    commercial_scope: corporation
+    corporate_use: 1
+    redistribute_original: 0
+    modify: 1
+    redistribute_modified: 0
+    reason_codes:
+      - HOLDER_ONLY
+      - REDISTRIBUTION_PROHIBITED
+  COMMERCIAL-NO-HATE:
+    use_scope: holder
+    commercial_scope: corporation
+    corporate_use: 1
+    hate_speech_termination: 1
+    redistribute_original: 0
+    modify: 1
+    redistribute_modified: 0
+    reason_codes:
+      - HOLDER_ONLY
+      - REDISTRIBUTION_PROHIBITED
+      - HATE_SPEECH_TERMINATION
+  PERSONAL:
+    use_scope: holder
+    commercial_scope: none
+    redistribute_original: 0
+    modify: 0
+    redistribute_modified: 0
+    reason_codes:
+      - HOLDER_ONLY
+      - NO_COMMERCIAL
+      - PERSONAL_ONLY
+  PERSONAL-NO-HATE:
+    use_scope: holder
+    commercial_scope: none
+    hate_speech_termination: 1
+    redistribute_original: 0
+    modify: 0
+    redistribute_modified: 0
+    reason_codes:
+      - HOLDER_ONLY
+      - NO_COMMERCIAL
+      - PERSONAL_ONLY
+      - HATE_SPEECH_TERMINATION
+
+# ─── External URL recognition ────────────────────────────────────────────────
+# A URL whose substring matches `pattern` resolves to the named license under
+# the given section. License keys are "section:code", e.g. "creative_commons:CC0".
+url_patterns:
+  - pattern: "creativecommons.org/publicdomain/zero"
+    license: creative_commons:CC0
+  - pattern: "creativecommons.org/licenses/by/4.0"
+    license: creative_commons:CC-BY
+  - pattern: "creativecommons.org/licenses/by-nc/4.0"
+    license: creative_commons:CC-BY-NC
+  - pattern: "creativecommons.org/licenses/by-sa/4.0"
+    license: creative_commons:CC-BY-SA
+  - pattern: "creativecommons.org/licenses/by-nd/4.0"
+    license: creative_commons:CC-BY-ND
+  - pattern: "creativecommons.org/licenses/by-nc-sa/4.0"
+    license: creative_commons:CC-BY-NC-SA
+  - pattern: "creativecommons.org/licenses/by-nc-nd/4.0"
+    license: creative_commons:CC-BY-NC-ND
+  - pattern: "a16z.com/cant-be-evil/public"
+    license: a16z_cbe:PUBLIC
+  - pattern: "a16z.com/cant-be-evil/exclusive"
+    license: a16z_cbe:EXCLUSIVE
+  - pattern: "a16z.com/cant-be-evil/commercial-no-hate"
+    license: a16z_cbe:COMMERCIAL-NO-HATE
+  - pattern: "a16z.com/cant-be-evil/commercial"
+    license: a16z_cbe:COMMERCIAL
+  - pattern: "a16z.com/cant-be-evil/personal-no-hate"
+    license: a16z_cbe:PERSONAL-NO-HATE
+  - pattern: "a16z.com/cant-be-evil/personal"
+    license: a16z_cbe:PERSONAL
+
+# ─── Color derivation rules ──────────────────────────────────────────────────
+# Evaluated in order; the first matching rule wins. Within a rule, `conditions`
+# all must match and `conditions_any` matches if any one matches. Scalar values
+# compare equality; list values match if the dimension is in the list. A rule
+# with `default: true` always matches and is the fallback (gray). Unknown /
+# NULL dimensions never satisfy an equality condition, so a rule that requires
+# a concrete value will not match when data is missing — that is intentional:
+# unknown data must never resolve to green.
+color_rules:
+  - color: green
+    description: "everyone + redistribute + modify + commercial allowed"
+    conditions:
+      use_scope: everyone
+      redistribute_original: 1
+      modify: 1
+      commercial_scope:
+        - personal_profit
+        - corporation
+  - color: yellow
+    description: "holder/explicitly-licensed, non-commercial, or no redistribution"
+    conditions_any:
+      - use_scope:
+          - holder
+          - explicitly_licensed
+      - commercial_scope: personal_non_profit
+      - redistribute_original: 0
+      - corporate_use: 1
+  - color: red
+    description: "no commercial use at all"
+    conditions:
+      commercial_scope: none
+  - color: gray
+    description: "unknown / insufficient data"
+    default: true
