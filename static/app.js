@@ -447,3 +447,18 @@ document.addEventListener('keydown', e => {
     console.error(err);
   }
 })();
+
+// ─── Service worker registration (offline cache for hashed static files) ────
+// Only register on https or localhost — never on file:// or other origins.
+if ('serviceWorker' in navigator) {
+  const swScope = location.protocol === 'https:' || location.hostname === 'localhost'
+    ? './sw.js'
+    : null;
+  if (swScope) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register(swScope).catch((err) => {
+        console.warn('sw registration failed:', err);
+      });
+    });
+  }
+}

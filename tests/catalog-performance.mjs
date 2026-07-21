@@ -103,6 +103,34 @@ assert(
   `at least 1 collection card (got ${Array.isArray(cards) ? cards.length : 0})`,
 );
 
+// --- 5. service worker present and parseable ---
+console.log("\n[5] service worker");
+import { existsSync, statSync } from "node:fs";
+const swPath = join(STATIC, "sw.js");
+assert(existsSync(swPath), "static/sw.js exists");
+if (existsSync(swPath)) {
+  const swSize = statSync(swPath).size;
+  assert(swSize < 10_000, `sw.js < 10KB (got ${(swSize / 1024).toFixed(1)}KB)`);
+  // Syntax check via new Function (throws on parse error).
+  const swSrc = readFileSync(swPath, "utf8");
+  let parseOk = false;
+  try {
+    // Strip the self/addEventListener references by wrapping in a function;
+    // we only care that the file parses, not that it runs in Node.
+    new Function("self", "caches", "fetch", swSrc);
+    parseOk = true;
+  } catch (e) {
+    console.error(`  sw.js parse error: ${e.message}`);
+  }
+  assert(parseOk, "sw.js parses as valid JS");
+  // Registration snippet must be present in app.js.
+  const appJs = readFileSync(join(STATIC, "app.js"), "utf8");
+  assert(
+    appJs.includes("serviceWorker") && appJs.includes("sw.js"),
+    "app.js registers the service worker",
+  );
+}
+
 // --- summary ---
 console.log(`\n${failures === 0 ? "ALL PASS" : `${failures} FAILURE(S)`}`);
 process.exit(failures === 0 ? 0 : 1);
