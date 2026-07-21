@@ -49,7 +49,7 @@ def write_hashed(output_dir: Path, logical_name: str, data: dict) -> str:
 
 
 def query_collections(conn) -> list:
-    """Query all collections with contracts joined."""
+    """Query all collections with contracts and license dimensions joined."""
     collections = [dict(r) for r in conn.execute(
         "SELECT * FROM collections ORDER BY name"
     )]
@@ -69,8 +69,40 @@ def query_collections(conn) -> list:
             "is_primary": r["is_primary"],
         })
 
+    # Load license dimensions for enrichment of the license badge
+    license_map: dict[str, dict] = {}
+    for r in conn.execute(
+        "SELECT collection_id, color, reason_codes, confidence, "
+        "use_scope, commercial_scope, credit, "
+        "redistribute_original, modify, redistribute_modified "
+        "FROM license_dimensions"
+    ):
+        cid = r["collection_id"]
+        import json as _json
+        reason_codes = []
+        raw_rc = r["reason_codes"]
+        if raw_rc:
+            try:
+                reason_codes = _json.loads(raw_rc)
+            except (ValueError, TypeError):
+                reason_codes = []
+        license_map[cid] = {
+            "license_color": r["color"],
+            "reason_codes": reason_codes,
+            "license_confidence": r["confidence"],
+            "use_scope": r["use_scope"],
+            "commercial_scope": r["commercial_scope"],
+            "credit": r["credit"],
+            "redistribute_original": r["redistribute_original"],
+            "modify": r["modify"],
+            "redistribute_modified": r["redistribute_modified"],
+        }
+
     for c in collections:
         c["contracts"] = contracts_map.get(c["id"], [])
+        ld = license_map.get(c["id"])
+        if ld:
+            c.update(ld)
 
     return collections
 
@@ -216,16 +248,30 @@ def main():
     files["avatars"] = avatar_files
 
     # Write build-info.json (unhashed, short TTL)
+    # Preserve market_data_as_of from enrich_opensea.py if a prior build-info
+    # exists — enrich_opensea.py writes it, and build_catalog.py must not
+    # drop it when regenerating the file list.
+    build_info_path = output_dir / "build-info.json"
+    prior_market_data_as_of = None
+    if build_info_path.exists():
+        try:
+            prior = json.loads(build_info_path.read_text(encoding="utf-8"))
+            prior_market_data_as_of = prior.get("market_data_as_of")
+        except (json.JSONDecodeError, OSError):
+            pass
+
     build_info = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "schema_version": SCHEMA_VERSION,
         "files": files,
     }
-    build_info_path = output_dir / "build-info.json"
+    if prior_market_data_as_of:
+        build_info["market_data_as_of"] = prior_market_data_as_of
     build_info_path.write_text(
         json.dumps(build_info, indent=2), encoding="utf-8"
     )
-    print(f"  build-info.json")
+    print(f"  build-info.json"
+          + (f"  (market_data_as_of={prior_market_data_as_of})" if prior_market_data_as_of else ""))
 
     total_size = sum(
         f.stat().st_size for f in output_dir.glob("*.json")

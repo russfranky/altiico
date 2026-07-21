@@ -45,6 +45,79 @@ def get_range(url: str, start: int, end: int, timeout: float = 30.0) -> bytes:
     raise RuntimeError(f"HTTP request failed with status {status}")
 
 
+def parse_glb_header(header: bytes) -> tuple[int, int, int, int]:
+    """Parse a 20-byte GLB header + first chunk header.
+
+    Returns (magic, version, total_length, json_length, chunk_type).
+    """
+    if len(header) < 20:
+        raise ValueError(f"Header too short: {len(header)} bytes, need 20")
+    magic, version, total_length = struct.unpack("<III", header[0:12])
+    json_length, chunk_type = struct.unpack("<II", header[12:20])
+    return magic, version, total_length, json_length, chunk_type
+
+
+def extract_vrm_from_gltf(gltf: dict, source_url: str, total_length: int) -> Dict[str, Any]:
+    """Extract VRM metadata from a parsed glTF JSON dict.
+
+    Returns a dict with keys: vrm_spec, raw_meta, total_length, source_url.
+    Raises ValueError if the glTF has no VRM extension.
+    """
+    extensions: Optional[Dict[str, Any]] = gltf.get("extensions")
+    if not extensions:
+        raise ValueError("GLB has no VRM extension")
+
+    # VRM 1.0
+    vrmc = extensions.get("VRMC_vrm")
+    if vrmc is not None:
+        meta = vrmc.get("meta")
+        return {
+            "vrm_spec": "1.0",
+            "raw_meta": meta,
+            "total_length": total_length,
+            "source_url": source_url,
+        }
+
+    # VRM 0.x
+    vrm0 = extensions.get("VRM")
+    if vrm0 is not None:
+        meta = vrm0.get("meta")
+        return {
+            "vrm_spec": "0.x",
+            "raw_meta": meta,
+            "total_length": total_length,
+            "source_url": source_url,
+        }
+
+    raise ValueError("GLB has no VRM extension")
+
+
+def parse_glb(data: bytes, source_url: str = "<bytes>") -> Dict[str, Any]:
+    """Parse a complete GLB byte buffer and extract VRM metadata.
+
+    This is the testable core of the extractor — no HTTP involved. Tests can
+    read a fixture file and call this directly.
+    """
+    magic, version, total_length, json_length, chunk_type = parse_glb_header(data[:20])
+
+    if magic != GLB_MAGIC:
+        raise ValueError(
+            f"Not a GLB file: magic 0x{magic:08X} != expected 0x{GLB_MAGIC:08X}"
+        )
+    if version != GLB_VERSION_2:
+        raise ValueError(
+            f"Unsupported GLB version {version}, expected {GLB_VERSION_2}"
+        )
+    if chunk_type != JSON_CHUNK_TYPE:
+        raise ValueError(
+            f"First chunk is not JSON: type 0x{chunk_type:08X} != expected 0x{JSON_CHUNK_TYPE:08X}"
+        )
+
+    json_bytes = data[20 : 20 + json_length]
+    gltf = json.loads(json_bytes.decode("utf-8").rstrip("\x00 \t\r\n"))
+    return extract_vrm_from_gltf(gltf, source_url, total_length)
+
+
 def fetch_vrm_meta(url: str, timeout: float = 30.0, max_full_bytes: int = 2_000_000) -> Dict[str, Any]:
     """Fetch VRM metadata from a GLB file using two HTTP range requests.
 
@@ -54,8 +127,7 @@ def fetch_vrm_meta(url: str, timeout: float = 30.0, max_full_bytes: int = 2_000_
     # Step 1: fetch the GLB header + first chunk header (bytes 0-19).
     header = get_range(url, 0, 19, timeout=timeout)
 
-    magic, version, total_length = struct.unpack("<III", header[0:12])
-    json_length, chunk_type = struct.unpack("<II", header[12:20])
+    magic, version, total_length, json_length, chunk_type = parse_glb_header(header)
 
     if magic != GLB_MAGIC:
         raise ValueError(
@@ -73,34 +145,7 @@ def fetch_vrm_meta(url: str, timeout: float = 30.0, max_full_bytes: int = 2_000_
     # Step 2: fetch the JSON chunk (bytes 20 to 20+json_length-1).
     json_bytes = get_range(url, 20, 20 + json_length - 1, timeout=timeout)
     gltf = json.loads(json_bytes.decode("utf-8"))
-
-    extensions: Optional[Dict[str, Any]] = gltf.get("extensions")
-    if not extensions:
-        raise ValueError("GLB has no VRM extension")
-
-    # VRM 1.0
-    vrmc = extensions.get("VRMC_vrm")
-    if vrmc is not None:
-        meta = vrmc.get("meta")
-        return {
-            "vrm_spec": "1.0",
-            "raw_meta": meta,
-            "total_length": total_length,
-            "source_url": url,
-        }
-
-    # VRM 0.x
-    vrm0 = extensions.get("VRM")
-    if vrm0 is not None:
-        meta = vrm0.get("meta")
-        return {
-            "vrm_spec": "0.x",
-            "raw_meta": meta,
-            "total_length": total_length,
-            "source_url": url,
-        }
-
-    raise ValueError("GLB has no VRM extension")
+    return extract_vrm_from_gltf(gltf, url, total_length)
 
 
 def fetch_vrm_meta_safe(url: str, **kwargs: Any) -> Dict[str, Any]:

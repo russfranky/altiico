@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://superyeti.example/schema/vrm-meta-v1.schema.json",
+  "title": "VRM Metadata v1",
+  "description": "Normalized VRM metadata extracted from a GLB file's first JSON chunk via partial-GLB extraction (scripts/extract_vrm_meta.py). This schema describes the output of parse_glb / fetch_vrm_meta, preserving raw embedded meta while recording extraction provenance.",
+  "type": "object",
+  "required": ["vrm_spec", "raw_meta", "total_length", "source_url"],
+  "properties": {
+    "vrm_spec": {
+      "type": "string",
+      "enum": ["0.x", "1.0"],
+      "description": "VRM specification version detected from the GLB extension key (VRM = 0.x, VRMC_vrm = 1.0)."
+    },
+    "raw_meta": {
+      "description": "The raw meta object from the GLB JSON chunk, preserved verbatim. For VRM 0.x this is gltf.extensions.VRM.meta; for VRM 1.0 this is gltf.extensions.VRMC_vrm.meta. Null if the GLB has a VRM extension but no meta sub-object.",
+      "oneOf": [
+        { "type": "object" },
+        { "type": "null" }
+      ]
+    },
+    "total_length": {
+      "type": "integer",
+      "description": "Total GLB file length in bytes, from the GLB header."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL the metadata was extracted from. For parse_glb this is the caller-supplied identifier; for fetch_vrm_meta this is the HTTP URL."
+    },
+    "parse_error": {
+      "type": ["string", "null"],
+      "description": "Present only when extraction failed (fetch_vrm_meta_safe wrapper). Null or absent on success."
+    }
+  },
+  "$defs": {
+    "VRM0xMeta": {
+      "description": "Raw meta shape for VRM 0.x (gltf.extensions.VRM.meta). Field names preserve the intentional misspellings from the 0.x spec.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "version": { "type": "string" },
+        "author": { "type": "string" },
+        "contactInformation": { "type": "string" },
+        "reference": { "type": "string" },
+        "texture": { "type": "integer" },
+        "allowedUserName": {
+          "type": "string",
+          "enum": ["OnlyAuthor", "ExplicitlyLicensedPerson", "Everyone"]
+        },
+        "violentUssageName": { "type": "string", "enum": ["Allow", "Disallow"] },
+        "sexualUssageName": { "type": "string", "enum": ["Allow", "Disallow"] },
+        "commercialUssageName": { "type": "string", "enum": ["Allow", "Disallow"] },
+        "otherPermissionUrl": { "type": "string" },
+        "licenseName": {
+          "type": "string",
+          "enum": [
+            "Redistribution_Prohibited",
+            "CC0",
+            "CC_BY",
+            "CC_BY_NC",
+            "CC_BY_SA",
+            "CC_BY_NC_SA",
+            "CC_BY_ND",
+            "CC_BY_NC_ND",
+            "Other"
+          ]
+        },
+        "otherLicenseUrl": { "type": "string" }
+      }
+    },
+    "VRM10Meta": {
+      "description": "Raw meta shape for VRM 1.0 (gltf.extensions.VRMC_vrm.meta). Required fields per spec: name, authors, licenseUrl. Omitted fields use restrictive defaults.",
+      "type": "object",
+      "required": ["name", "authors", "licenseUrl"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "authors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "copyrightInformation": { "type": "string" },
+        "contactInformation": { "type": "string" },
+        "references": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "thirdPartyLicenses": { "type": "string" },
+        "thumbnailImage": { "type": "integer" },
+        "licenseUrl": { "type": "string" },
+        "avatarPermission": {
+          "type": "string",
+          "enum": ["onlyAuthor", "onlySeparatelyLicensedPerson", "everyone"]
+        },
+        "commercialUsage": {
+          "type": "string",
+          "enum": ["personalNonProfit", "personalProfit", "corporation"]
+        },
+        "creditNotation": {
+          "type": "string",
+          "enum": ["required", "unnecessary"]
+        },
+        "allowRedistribution": { "type": "boolean" },
+        "modification": {
+          "type": "string",
+          "enum": ["prohibited", "allowModification", "allowModificationRedistribution"]
+        },
+        "allowExcessivelyViolentUsage": { "type": "boolean" },
+        "allowExcessivelySexualUsage": { "type": "boolean" },
+        "allowPoliticalOrReligiousUsage": { "type": "boolean" },
+        "allowAntisocialOrHateUsage": { "type": "boolean" },
+        "otherLicenseUrl": { "type": "string" }
+      }
+    }
+  }
+}

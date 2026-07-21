@@ -39,7 +39,26 @@ async function loadCollections() {
   document.getElementById('stat-dc-dead').textContent = s.dc_dead ?? 0;
   document.getElementById('stat-capped').textContent = s.capped ?? 0;
   document.getElementById('stat-ongoing').textContent = s.ongoing ?? 0;
+  checkStaleStats();
   filter();
+}
+
+function checkStaleStats() {
+  // Warn if market_data_as_of is older than 48 hours (stale_warning_threshold
+  // from config/cache_policy.yaml). The warning is shown in the header stats.
+  const asOf = BUILD_INFO && BUILD_INFO.market_data_as_of;
+  if (!asOf) return;
+  const ageMs = Date.now() - new Date(asOf).getTime();
+  const STALE_THRESHOLD_MS = 48 * 60 * 60 * 1000;  // 48 hours
+  const el = document.getElementById('stat-stale');
+  if (!el) return;
+  if (ageMs > STALE_THRESHOLD_MS) {
+    const hours = Math.floor(ageMs / (60 * 60 * 1000));
+    el.textContent = `⚠ market data ${hours}h old`;
+    el.style.display = '';
+  } else {
+    el.style.display = 'none';
+  }
 }
 
 async function loadOpensea() {
@@ -73,9 +92,19 @@ function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'
 
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
 
-function licenseBadge(cat) {
+function licenseBadge(cat, c) {
   const map = { green: '🟢 CC0', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '?' };
-  return badge(cat || 'unknown', map[cat] || '?');
+  const label = map[cat] || '?';
+  if (!c) return badge(cat || 'unknown', label);
+  // Build tooltip with reason codes and confidence
+  const rc = c.reason_codes || [];
+  const conf = c.license_confidence || 'unknown';
+  const confLabel = { embedded: 'embedded', collection: 'collection', manual: 'manual', unknown: 'unknown', legacy: 'legacy' }[conf] || conf;
+  const parts = [label];
+  if (rc.length) parts.push(rc.join(', '));
+  parts.push(`[${confLabel}]`);
+  const title = parts.join(' — ');
+  return `<span class="badge badge-${cat || 'unknown'}" title="${esc(title)}">${esc(label)}</span>`;
 }
 
 function tierBadge(tier) {
@@ -166,7 +195,7 @@ function filter() {
     <td>${tierBadge(c.tier)}</td>
     <td class="mono">${esc(c.release_date || '?')}</td>
     <td>${esc(c.chain || '?')}${(c.contracts||[]).length > 1 ? ` <span class="count">(${(c.contracts||[]).length})</span>` : ''}</td>
-    <td>${licenseBadge(c.license_category)}</td>
+    <td>${licenseBadge(c.license_category, c)}</td>
     <td>${esc(c.vrm_license || '?')}</td>
     <td>${contracts || (c.contract ? `<a href="https://etherscan.io/address/${c.contract}" target="_blank" class="mono">${c.contract.slice(0,6)}..${c.contract.slice(-4)}</a>` : '—')}</td>
     <td>${c.opensea_slug ? `<a href="https://opensea.io/collection/${c.opensea_slug}" target="_blank">${esc(c.opensea_slug)}</a>` : (c.project_url ? `<a href="${c.project_url}" target="_blank">🌐</a>` : '—')}</td>
