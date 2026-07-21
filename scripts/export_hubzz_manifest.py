@@ -77,11 +77,20 @@ def _standard(token_standard: str | None) -> str:
 
 def _caip_id(chain: str | None, token_standard: str | None, contract: str | None,
              is_erc1155_shared: bool = False) -> str | None:
-    """Build a CAIP-19-style asset id, e.g. eip155:1/erc721:0xabc..."""
+    """Build a CAIP-19-style asset id, e.g. eip155:1/erc721:0xabc...
+
+    Non-EVM chains (solana, arweave) map to non-numeric chain ids and do not
+    fit the eip155 namespace; return None so the caller falls back to the
+    superyeti collection slug id. The schema's id pattern requires a numeric
+    chain reference after ``eip155:``, so emitting ``eip155:solana/...`` would
+    fail validation.
+    """
     if not contract:
         return None
     cid = _chain_id(chain)
     if cid is None:
+        return None
+    if not cid.isdigit():
         return None
     ns = _standard(token_standard)
     asset = f"eip155:{cid}/{ns}:{contract}"
