@@ -1,0 +1,203 @@
+# Discovery leads — known projects, identifiers, and aggregators to investigate
+# for VRM-bearing NFT collections.
+#
+# This file is the review queue for sources that cannot be imported
+# mechanically (no public registry, no API, ToS-restricted, or
+# aggregator-of-aggregators). Each lead carries a review_state so a human can
+# triage; scripts do not auto-import from this file.
+#
+# review_state vocabulary:
+#   pending        — not yet investigated
+#   investigating  — actively being checked (claim ticket in notes)
+#   confirmed      — verified as a VRM NFT collection and added to vrm_index.db
+#                    (collection_id field links back to the DB row)
+#   rejected       — investigated, not a VRM NFT collection (see reason)
+#   excluded       — explicitly excluded by policy (see reason)
+#   blocked        — ToS / legal / technical barrier prevents inclusion
+#
+# provenance field on confirmed leads mirrors the collections.source column.
+#
+# Last triage pass: 2026-07-20.
+
+# ─── VRM Consortium ──────────────────────────────────────────────────────────
+# The VRM Consortium (vrm-consortium.org) is the industry body that maintains
+# the VRM format. Member organizations are leads because any member that ships
+# avatars is a candidate for NFT-native VRM distribution. The consortium
+# publishes a member list but does not publish which members sell NFTs — that
+# linkage must be made by hand.
+# Source: https://vrm-consortium.org/about/members/  (verify before relying)
+vrm_consortium:
+  - name: Pixiv Inc.
+    url: https://pixiv.co.jp/
+    role: VRM 0.x co-author; operates VRoid Hub
+    review_state: blocked
+    reason: VRoid Hub ToS prohibits NFT usage (see vroid_hub section)
+    notes: Parent of VRoid Studio; NFT linkage is policy-blocked, not technical.
+
+  - name: Cluster, Inc.
+    url: https://cluster.world/
+    role: Metaverse platform; VRM avatars
+    review_state: investigating
+    claim_ticket: 2026-07-15
+    notes: Cluster sells avatar items in-app; check whether any are NFT-minted
+      on a public chain. In-app currency items are not NFTs and should be
+      rejected, not excluded.
+
+  - name: HoloModels (Cover Corp)
+    url: https://hololive.hololivepro.com/
+    role: VTuber agency; VRM-compatible rigging
+    review_state: rejected
+    reason: Talent avatars are not sold as NFTs; merchandise is off-chain.
+    investigated_at: 2026-07-12
+
+  - name: Castoo
+    url: https://castoo.jp/
+    role: Avatar clothing platform; VRM-compatible
+    review_state: pending
+    notes: Check for any NFT-minted wearable line.
+
+  - name: Synthesia-style avatar vendors
+    url: null
+    role: Generic category — multiple members
+    review_state: pending
+    notes: Several consortium members are enterprise avatar vendors with no
+      NFT product. Enumerate and reject individually before closing the
+      consortium pass.
+
+# ─── Hyperfy ─────────────────────────────────────────────────────────────────
+# Hyperfy (hyperfy.io) is a metaverse platform with native VRM avatar support.
+# Worlds and avatars may be minted by third parties; Hyperfy itself does not
+# run a central collection registry. Leads are world/project names to check
+# for an associated NFT collection.
+hyperfy:
+  - name: Hyperfy Pass
+    url: https://hyperfy.io/
+    review_state: confirmed
+    collection_id: null  # TODO: insert collection_id once added to DB
+    provenance: research-opensea
+    notes: Access-pass NFT; not itself an avatar collection but gates avatar
+      minting. Track as infrastructure, not as an avatar collection.
+
+  - name: Hyperfy Worlds (operator-minted)
+    url: null
+    review_state: pending
+    notes: Worlds are minted by operators on Ethereum/Base. Check whether any
+      world ships a VRM avatar alongside the world token. Sample 10 worlds
+      from OpenSea before deciding whether to enumerate further.
+
+  - name: Community avatar drops
+    url: null
+    review_state: pending
+    notes: "Hyperfy Discord has an avatar-drops channel. Manual review only —
+      Discord scraping is out of scope for this repo."
+
+# ─── VRoid Hub ───────────────────────────────────────────────────────────────
+# VRoid Hub (vroid.com/en/hub) is Pixiv's hosted VRM avatar platform and the
+# largest single repository of VRM files. It is policy-excluded as a source
+# because the ToS prohibits NFT usage of avatars hosted there.
+#
+# VRoid Hub IDs are recorded here so that if a project claims "VRM avatars
+# available on VRoid Hub" we can cross-check and reject the NFT claim.
+vroid_hub:
+  - policy: excluded
+    reason: VRoid Hub ToS section 5 prohibits redistribution, including as
+      NFTs, of avatars uploaded to the platform.
+    source: https://vroid.com/en/hub/terms
+    last_verified: 2026-07-10
+
+  - project: CryptoAvatars
+    vroid_hub_id: null
+    review_state: rejected
+    reason: CryptoAvatars hosts VRM on its own API (api.cryptoavatars.io),
+      not VRoid Hub. Listed here only to record that the VRoid Hub check was
+      performed and returned no match.
+    investigated_at: 2026-07-12
+
+  - project: Open Source Avatars (ToxSam)
+    vroid_hub_id: null
+    review_state: rejected
+    reason: OSA hosts CC0 VRM on GitHub, not VRoid Hub. VRoid Hub check
+      returned no match.
+    investigated_at: 2026-07-12
+
+# ─── DappRadar ───────────────────────────────────────────────────────────────
+# DappRadar (dappradar.com) is an aggregator of dapp and NFT collection
+# rankings. It is a lead source, not a primary source: any collection
+# discovered via DappRadar must be re-verified against on-chain metadata
+# before inclusion. DappRadar category pages of interest are listed below.
+#
+# DappRadar has no public API; leads are URL stubs to category pages that
+# must be scraped manually or via the agent-browser tool.
+dappradar:
+  - page: NFT Collections — 3D Avatars
+    url: https://dappradar.com/nft-collections
+    review_state: pending
+    notes: No dedicated "3D avatar" category filter; use the general
+      collections ranking and filter by name keywords (VRM, avatar, 3D).
+      Cap manual review at 50 entries per pass.
+
+  - page: Metaverse dapps
+    url: https://dappradar.com/metaverse
+    review_state: pending
+    notes: Metaverse dapps may ship avatar NFTs. Cross-reference any hit
+      against the collections table before adding a lead.
+
+  - specific_lead: Holoworld AI (AVA)
+    url: https://holoworld.com/
+    chain: solana
+    review_state: investigating
+    claim_ticket: 2026-07-15
+    notes: AI 3D agents on Solana. Confirm whether the avatar asset is a VRM
+      file stored on IPFS/Arweave and whether it is referenced from token
+      metadata. If yes, route through sources/solana_metaplex.py.
+
+  - specific_lead: Mocaverse
+    url: https://mocaverse.xyz/
+    chain: ethereum
+    review_state: investigating
+    claim_ticket: 2026-07-15
+    notes: 8,888 3D avatars. Confirm VRM presence in token metadata before
+      promoting from lead to candidate.
+
+  - specific_lead: Torque Squad
+    url: https://torquesquad.io/
+    chain: unknown
+    review_state: pending
+    notes: 8,888 3D racing avatars. Site status unknown; check Wayback if
+      dead.
+
+  - specific_lead: PlayerZero
+    url: https://playerzero.me/
+    chain: base
+    review_state: pending
+    notes: RPM-compatible avatars on Base. RPM is not VRM — reject if no
+      VRM export is exposed in metadata.
+
+  - specific_lead: Drifters
+    url: https://tpldrifters.com/
+    chain: base
+    review_state: pending
+    notes: 3D customizable avatars on Base. Check for VRM in metadata.
+
+  - specific_lead: CLAYPUNKS
+    url: https://claypunks.xyz/
+    chain: unknown
+    review_state: pending
+    notes: VRM (VTuber) avatars. Chain unknown — check OpenSea and Magic Eden.
+
+# ─── Review pass log ─────────────────────────────────────────────────────────
+# Append-only record of triage passes. A pass is closed when every lead
+# present at the start of the pass has a terminal review_state (confirmed,
+# rejected, excluded, or blocked).
+review_passes:
+  - pass_id: 2026-07-12
+    scope: vrm_consortium + vroid_hub cross-check
+    closed: true
+    notes: HoloModels rejected; VRoid Hub policy exclusion recorded;
+      remaining consortium members moved to investigating/pending.
+
+  - pass_id: 2026-07-15
+    scope: dappradar specific leads
+    closed: false
+    notes: Holoworld AI and Mocaverse claim tickets issued; remaining
+      dappradar leads still pending.
