@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
+  "title": "Avatar Manifest v1",
+  "type": "object",
+  "required": ["schema", "version", "generated_at", "collections"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Collection"
+      }
+    }
+  },
+  "$defs": {
+    "Collection": {
+      "type": "object",
+      "required": ["id", "name", "tier", "resolution"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "CAIP-style identifier, e.g. eip155:1/erc721:0x1234... or eip155:1/erc1155:0x.../token_id. Collections without an on-chain contract may use a plain slug id.",
+          "pattern": "^[a-z0-9]+:[0-9]+/[a-z0-9_]+:0x[a-fA-F0-9]+(/token_id)?$|^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string",
+          "enum": ["A", "B", "C"]
+        },
+        "identifiers": {
+          "type": "object",
+          "properties": {
+            "chain": {
+              "type": "string"
+            },
+            "chain_id": {
+              "type": "string"
+            },
+            "standard": {
+              "type": "string"
+            },
+            "contract": {
+              "type": "string"
+            },
+            "opensea_slug": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "token_id": {
+          "type": "object",
+          "properties": {
+            "format": {
+              "type": "string",
+              "enum": ["decimal", "hex"]
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pad": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "resolution": {
+          "$ref": "#/$defs/Resolution"
+        },
+        "license": {
+          "$ref": "#/$defs/License"
+        },
+        "optimized_asset": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "template": {
+              "type": "string"
+            }
+          },
+          "required": ["provider", "template"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "Resolution": {
+      "type": "object",
+      "required": ["strategy"],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "direct_url",
+            "url_template",
+            "token_map",
+            "token_metadata",
+            "ipfs_path",
+            "arweave_path",
+            "vroid_hub",
+            "authenticated_api",
+            "unavailable"
+          ]
+        },
+        "map_url": {
+          "type": "string"
+        },
+        "template": {
+          "type": "string"
+        },
+        "metadata_url": {
+          "type": "object",
+          "properties": {
+            "template": {
+              "type": "string"
+            }
+          },
+          "required": ["template"],
+          "additionalProperties": false
+        },
+        "vrm_pointer": {
+          "type": "object",
+          "properties": {
+            "json_pointer_candidates": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "required_mime": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "fallback": {
+          "$ref": "#/$defs/Resolution"
+        },
+        "variables": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "License": {
+      "type": "object",
+      "properties": {
+        "use_scope": {
+          "type": "string",
+          "enum": ["everyone", "holder", "explicitly_licensed", "author", "unknown"]
+        },
+        "commercial_scope": {
+          "type": "string",
+          "enum": ["none", "personal_non_profit", "personal_profit", "corporation", "unknown"]
+        },
+        "credit": {
+          "type": "string",
+          "enum": ["required", "unnecessary", "unknown"]
+        },
+        "redistribute_original": {
+          "type": "boolean"
+        },
+        "modify": {
+          "type": "boolean"
+        },
+        "redistribute_modified": {
+          "type": "boolean"
+        },
+        "corporate_use": {
+          "type": "boolean"
+        },
+        "terminates_on_transfer": {
+          "type": "boolean"
+        },
+        "hate_speech_termination": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

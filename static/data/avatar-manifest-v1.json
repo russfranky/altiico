@@ -1,0 +1,1628 @@
+{
+  "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
+  "version": "1.0.0",
+  "generated_at": "2026-07-21T00:03:18Z",
+  "collections": [
+    {
+      "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "name": "Allstarz PSX",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+        "opensea_slug": "allstarz-psx"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://allstarz.world/api/metadata/{token_id}.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "name": "Boomboxheads V2",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+        "opensea_slug": "boomboxheads-v2"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "ipfs://bafybeibe4axqsukdfeuy4fnrtti4dko7ph3fopl6xkr3tsdyp3zhhl5eyu/{id}.vrm"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+      "name": "Chuddies",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+        "opensea_slug": "chuddie"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/bafybeiebycjasqhzuomax77otu7koswj5p4awgmw3hrgjk2vh4xiriv5a4/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x892848074ddea461a15f337250da3ce55580ca85",
+      "name": "CyberBrokers (Genesis Mechs)",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
+        "opensea_slug": "cyberbrokers"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://m.cyberbrokers.com/eth/mech/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "personal_profit",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+      "name": "DEyes Legends by Coldie",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+        "opensea_slug": "coldie"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/bafybeih5g36ula4wzw6dmoso6tbimzh2dbfurcqzvv5mbosl5jdjhkzkxu/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+      "name": "DickButtVerse",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+        "opensea_slug": "dickbuttverse"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://dickbuttverse.sfo3.digitaloceanspaces.com/json/{token_id}.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "none",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
+      "name": "Fly Frogs",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
+        "opensea_slug": "fly-frogs"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/QmRdNB3Q6Q5gVWnduBmxNZb4p9zKFmM3Qx3tohBb8B2KRK/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+      "name": "Forgotten Runes Wizard Cult",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+        "opensea_slug": "forgottenruneswizardscult"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm"
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
+      "name": "Frutiger Anons",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
+        "opensea_slug": "frutiger-anons"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://d1kgk9u8ytew77.cloudfront.net/ipfs/QmT64bM8LTCwtNGmj5mrh7V9oHmzKwwVyygTD1mjNqaGGX/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "holder",
+        "commercial_scope": "personal_profit",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": true,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:8453/erc721:0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
+      "name": "Grifters Squaddies",
+      "tier": "A",
+      "identifiers": {
+        "chain": "base",
+        "chain_id": "8453",
+        "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
+        "opensea_slug": "grifterssquaddies"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:10/erc721:0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+      "name": "Halloween Rising",
+      "tier": "A",
+      "identifiers": {
+        "chain": "optimism",
+        "chain_id": "10",
+        "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+        "opensea_slug": "halloween-rising"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "personal_profit",
+        "credit": "unknown",
+        "redistribute_original": true,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "name": "Meebits",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+        "opensea_slug": "meebits"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "api.meebits.app/v2/3d/larvalabs_vrm/{id}"
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "personal_profit",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xa467ab9447afa5db0c70325348d810d2058dde18",
+      "name": "MetaaniGEN",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
+        "opensea_slug": "metaanigen"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/QmTiW6V5AG3tVJuewTV2NX1yqFJzLb28MpS7ctTHnPzKXT/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "author",
+        "commercial_scope": "none",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x618951345638caa062259cdbed445d4fb661b774",
+      "name": "MisfitPIXELS",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x618951345638caa062259cdbed445d4fb661b774",
+        "opensea_slug": "misfitpixels"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/QmarCNTJJYahzZKFjFfZVcpLAhMNV5VwWN8bsqiKsCVAc7/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": false,
+        "modify": true,
+        "redistribute_modified": false,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:360/erc721:0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+      "name": "NeonGlitch86 Collection (Shape side)",
+      "tier": "A",
+      "identifiers": {
+        "chain": "shape",
+        "chain_id": "360",
+        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+        "opensea_slug": "gary-grifter"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x1459c170e940e52628d9917c85772f7e897e7c0c",
+      "name": "OG Meta Meeples PFP",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
+        "opensea_slug": "og-meta-meeples-pfp"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/bafybeib6ii2hpiknnyyinrbywmulnjnznwxpwsubigneip54tzdus66xpi/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+      "name": "Phettaverse Editions",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+        "opensea_slug": "phettaverse-editions"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://r2bmscw2ynzlpao5vnnalb5c5gfeu72jfecj23gbupjsxuhvzpjq.arweave.net/joLJCtrDcreB3ataBYei6YpKf0kpBJ1swaPTK9D1y9M"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "name": "PixelBeasts",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "opensea_slug": "pixelbeasts"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "pixelbeasts3d.replit.app/beast/{id}.vrm"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unknown",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "polygonlow",
+      "name": "PolygonLow",
+      "tier": "A",
+      "identifiers": {
+        "chain": "polygon",
+        "chain_id": "137"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xeeecde100b55f135a40ca9d92a52bd7723235814",
+      "name": "RetroDoges",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
+        "opensea_slug": "retrodogesnft"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "nft.retrodoges.com/media/main/vrm/{id}.vrm"
+      },
+      "license": {
+        "use_scope": "author",
+        "commercial_scope": "none",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:8453/erc721:0x59202483529a11642a43578a6ee77ca4ec24f930",
+      "name": "ToxSam (Base side)",
+      "tier": "A",
+      "identifiers": {
+        "chain": "base",
+        "chain_id": "8453",
+        "contract": "0x59202483529a11642a43578a6ee77ca4ec24f930",
+        "opensea_slug": "unidentified-contract-999a9bae-f696-4641-96fa-25c2"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x3999877754904d8542ad1845d368fa01a5e6e9a5",
+      "name": "VIPE Heroes",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
+        "opensea_slug": "vipe-heroes"
+      },
+      "resolution": {
+        "strategy": "url_template",
+        "template": "ipfs://QmZzox35J5WfXVUuTbQo2LmLFHoPd6Z4BeJByABTtKo4yP/default_{id}.vrm"
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "personal_profit",
+        "credit": "required",
+        "redistribute_original": false,
+        "modify": true,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "vipe-heroes-genesis",
+      "name": "VIPE Heroes Genesis",
+      "tier": "A",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "personal_profit",
+        "credit": "required",
+        "redistribute_original": false,
+        "modify": true,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:137/erc721:0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+      "name": "Xmas Chibis",
+      "tier": "A",
+      "identifiers": {
+        "chain": "polygon",
+        "chain_id": "137",
+        "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+        "opensea_slug": "xmas-chibis"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "explicitly_licensed",
+        "commercial_scope": "personal_profit",
+        "credit": "unknown",
+        "redistribute_original": true,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "100avatars-r1",
+      "name": "100Avatars R1",
+      "tier": "B",
+      "identifiers": {},
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "100avatars-r2",
+      "name": "100Avatars R2",
+      "tier": "B",
+      "identifiers": {},
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "100avatars-r3",
+      "name": "100Avatars R3",
+      "tier": "B",
+      "identifiers": {},
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xf3e778f839934fc819cfa1040aabacecba01e049",
+      "name": "Avastars",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
+        "opensea_slug": "avastar"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://avastars.io/metadata/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xcbd19f85965127bba4534bf21bf50008f054e54e",
+      "name": "Bourey vs Bulley: Bourverse",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
+        "opensea_slug": "bourey-vs-bulley-bourverse-3"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://cdn-api.niftykit.com/reveal/clk12ewde0001l70fazx72b9v/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x97597002980134bea46250aa0510c9b90d87a587",
+      "name": "Chain Runners",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
+        "opensea_slug": "chain-runners-nft"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://api.chainrunners.xyz/tokens/metadata/7377?dna=88139304937318087132996501001466473218219287739283605434348817608818020113833"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "name": "Chametheon",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "cryptoavatars",
+      "name": "CryptoAvatars",
+      "tier": "B",
+      "identifiers": {
+        "chain": "multi",
+        "contract": "0xbffd07cc4d32578fe3ccbf8bd0c5ffa8da3fc600",
+        "opensea_slug": "cryptoavatars"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://api.cryptoavatars.io/v1/opensea/assets/1/0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "name": "CyberAnimeDOLL: Avatar",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+      "name": "Elysium Shell: Next - Mecha",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+        "opensea_slug": "esnx-mecha"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+      "name": "Immadegen (VOID)",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "opensea_slug": "visitors-of-imma-degen"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://void-explorer.netlify.app/void_metadata/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x773f02bbb852920099931f332089f3fadfbfa4b6",
+      "name": "MONA Avatars",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
+        "opensea_slug": "mona-avatars"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/bafkreifp76wypxjwzv2uprkqb4aaiuan4avlva3dyxxqiq5sofxdprmckm"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "metatravelers",
+      "name": "MetaTravelers",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "opensea_slug": "metatravelers"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:137/erc721:0xcdffc2fae679814913305c13edb86fe7967dbeea",
+      "name": "NeonGlitch86 Collection (Polygon side)",
+      "tier": "B",
+      "identifiers": {
+        "chain": "polygon",
+        "chain_id": "137",
+        "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
+        "opensea_slug": "ng86shape"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+      "name": "Nouns",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+        "opensea_slug": "nouns"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://nouns.wtf/explore"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
+      "name": "Omnimorphs",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
+        "opensea_slug": "omnimorphs"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x0e58adde284e95fa591cd3904452b12356570251",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
+        "opensea_slug": "rstlss-claire-silver"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://rstlss-content.xyz/claire/metadata/{token_id}.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+      "name": "The Dask",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+        "opensea_slug": "dask-dead-army-skeleton-klub"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://theklubrises.mypinata.cloud/ipfs/QmXQMrhqwJ2vJFbxCjJfZBZ7GTfrCwUJzJhJcPnQv9fdRf/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "toxsam",
+      "name": "ToxSam",
+      "tier": "B",
+      "identifiers": {
+        "chain": "multi",
+        "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
+      "name": "Toxic Skulls Club",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
+        "opensea_slug": "toxic-skulls-club"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://tsc.nftapi.art/meta/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+      "name": "Voltz",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+        "opensea_slug": "voltz-avatars"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://voltz.me/en/voltz-vault"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+      "name": "Wassies",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+        "opensea_slug": "bywassies"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://fruuydfac2a4b4v5rip3ovqv5gg2sbaqgcgwnbnztlbt7xed7ela.arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/4050.json/"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+      "name": "Woodies",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+        "opensea_slug": "woodies"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://ipfs.io/ipfs/QmRWhj1Gnv2LLJiLpCMGbdi3PPe9VTp5VHzsTpmSg4iCRy/{token_id}/metadata.json"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    }
+  ]
+}
