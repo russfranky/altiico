@@ -182,6 +182,43 @@ for collections already in the DB.
   as VRM-bearing if a token-metadata VRM pointer validates via
   partial-GLB extraction. The script's docstring states this explicitly.
 
+### `sources/nftscan.py` — NFTScan Linea + Polygon zkEVM sweep
+
+Uses NFTScan's EVM index to search Linea and Polygon zkEVM collection
+names/descriptions for VRM and 3D-avatar terms, then samples token metadata
+for VRM-looking URLs. NFTScan requires `NFTSCAN_API_KEY`; the script does
+not run during tests and imports only rows whose VRM pointer validates via
+partial-GLB extraction.
+
+- **NFT ownership**: **proves** for returned contracts. NFTScan indexes
+  on-chain EVM collections on the requested chain.
+- **VRM existence**: **proves only when `--validate` succeeds**. Search hits
+  and `.vrm`-looking strings are leads until `extract_vrm_meta.py` confirms
+  a VRM extension in the binary.
+- **Metadata linkage**: **proves only when `--validate` succeeds** because
+  the validated URL came from token metadata fetched for the collection.
+- **License**: does not contribute directly. License terms come from the
+  validated VRM binary or later license normalization.
+- **Marketing-only**: **yes, by default**. Name/description matches are
+  leads only; `--import` skips unvalidated candidates.
+
+### `sources/objkt.py` — objkt Tezos metadata sweep
+
+Uses objkt's public GraphQL API to search Tezos token names/descriptions and
+scan token metadata for VRM-looking URLs. It treats Tezos as a non-EVM chain
+(`chain_namespace = 'tezos'`) and imports only validated VRM hits.
+
+- **NFT ownership**: **proves** for returned FA2 contract + token id pairs.
+  objkt indexes public Tezos NFT data.
+- **VRM existence**: **proves only when `--validate` succeeds** via
+  partial-GLB extraction.
+- **Metadata linkage**: **proves only when `--validate` succeeds** because
+  the URL came from Tezos token metadata.
+- **License**: does not contribute directly. License terms come from the
+  validated VRM binary or later license normalization.
+- **Marketing-only**: **yes, by default**. Search hits are leads only;
+  `--import` skips unvalidated candidates.
+
 ### `scripts/normalize_licenses.py` + `config/license-mapping.yaml` — license normalizer
 
 Translates raw license terms from embedded VRM metadata, collection-level

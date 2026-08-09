@@ -187,12 +187,17 @@ marketing-only).
 
 ## Remaining work (P3, lowest priority)
 
-- `sources/nftscan.py` — sweep Linea + Polygon zkEVM
-- `sources/objkt.py` — Tezos metadata scan; require VRM binary validation
 - `static/catalog-worker.js` — only if perf tests show >50ms long tasks
   (they don't — p75 is ~2ms)
 - Top/trending discovery endpoints in `enrich_opensea.py` (§4 P2 of research doc)
 - Per-chain `last_checked_at` on cross-chain leads
+
+Completed P3 source scanners:
+
+- `sources/nftscan.py` — Linea + Polygon zkEVM sweep; imports only validated
+  binary VRM hits.
+- `sources/objkt.py` — Tezos metadata scan; imports only validated binary
+  VRM hits.
 
 **Do NOT add sql.js or IndexedDB** at 74/4,062 records.
 
