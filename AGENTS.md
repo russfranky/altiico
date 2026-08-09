@@ -203,15 +203,47 @@ Completed P3 source scanners:
 
 ## Hubzz-side handoff (out of this repo)
 
-The manifest at `static/data/avatar-manifest-v1.json` is the handoff
-contract. Hubzz needs to:
+> **Corrected 2026-08-09 against pre-alpha `origin/main`.** The prior version of
+> this section described a `getAvatarManifest()` / `matchCollection()` /
+> `resolveAvatar()` client API and a `ResolvedAvatar` type. Those symbols exist
+> NOWHERE in the pre-alpha repo (verified by grep on `origin/main`). Do not
+> build against them. The real consumer surfaces are below.
 
-1. Replace `AvatarApiClient.getOptimizedMap()` with `getAvatarManifest()` +
-   `matchCollection()` + `resolveAvatar()`
-2. Preserve `getOptimizedMap()` as a compat adapter
-3. `AvatarVRMManager` accepts `ResolvedAvatar` with URL, hash, license/access
-   mode, fallback reason
-4. Add signed holder-gated VRM delivery for collections where
-   redistribution is prohibited
-5. Regenerate `~/.understand-anything/knowledge-graph.json` after adding
-   manifest/resolver nodes
+Pre-alpha has TWO avatar surfaces, and this catalog feeds the first:
+
+1. **`packages/avatars` registry (the real catalog consumer).** An R2-backed
+   set registry — `collections/index.json` seeded by
+   `packages/avatars/api/src/scripts/seed-registry.ts`, plus `avatars.db` and a
+   locked canonical Zod schema (`packages/avatars/schema/src/avatar.ts`,
+   `SCHEMA_VERSION = 1`). The seed is 8 hardcoded sets and its own handoff note
+   flags "superyeti has 1 junk row → needs re-ingest; vipe/grifters/100avatars
+   pending". **This catalog is the authoritative superset.**
+   `scripts/export_avatars_registry.py` emits
+   `static/data/avatars-registry.json` in that registry shape so avatar-api can
+   re-ingest cleanly. It obeys the schema's two locked rules:
+   - `chain` is a fixed enum {ethereum, zora, polygon, base, optimism,
+     arbitrum} or `null`; storage providers (arweave/ipfs) go in
+     `storage_provider`, NEVER in `chain` (the schema calls that conflation
+     "the bug in the current API").
+   - Off-enum chains (shape, "multi") are nulled and listed under `unmapped`
+     for a human, never coerced.
+
+2. **Client `AvatarApiClient.getOptimizedMap()`** (`packages/client/...`) — a
+   flat `Record<tokenId, r2VrmUrl>` served at
+   `.../files/collections/retrodoges/optimized.json`, plus a hardcoded
+   `FALLBACK_VRM_URL`. RetroDoges-specific; the client resolves a VRM URL by
+   regex-swapping via this map. It consumes those OPTIMIZED R2 URLs, which this
+   catalog does not host, so the catalog cannot produce that file directly —
+   only the registry that tells avatar-api WHICH sets to optimize.
+
+3. **Server gating** (`packages/server/src/Messages/SetAvatar.ts`) — a VRM must
+   canonicalize to `altii.co` (be re-ingested), and if
+   `avatar-api /avatar-sets/<slug>.purchase_gated === true` the user must own
+   the NFT (Moralis wallet scan; fail-OPEN, "economics not security"). The
+   registry export therefore carries `purchase_gated` per set.
+
+**Known data conflicts to resolve before a live re-ingest** (catalog vs
+pre-alpha seed):
+- RetroDoges: catalog says `Redistribution_Prohibited` (gated); seed says
+  `CC0` (open). One is wrong.
+- Grifters Squaddies: catalog says chain `base`; seed says `zora`.
