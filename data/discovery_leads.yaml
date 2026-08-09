@@ -185,6 +185,33 @@ dappradar:
     review_state: pending
     notes: VRM (VTuber) avatars. Chain unknown — check OpenSea and Magic Eden.
 
+# ─── Programmatic VRM sources (2026-08-09 ecosystem pass) ────────────────────
+# Machine-readable VRM sources surfaced by the VRM ecosystem research pass.
+# Both expose VRM files programmatically, but neither is NFT-native, so each
+# lead must confirm on-chain linkage before promotion. See docs/vrm-ecosystem.md.
+programmatic_sources:
+  - name: VIPE (vipe.io)
+    url: https://vipe.io/
+    api: https://vipe.io/  # public endpoint schema not published; needs inspection
+    format: vrm
+    review_state: pending
+    notes: VRM-native web builder; edits VRM license meta in-browser and serves
+      avatars via an API to Hyperfy / Upstreet / OnCyber. VIPE collections are
+      already mirrored inside the OSA registry (sources/opensourceavatars.py),
+      so dedupe against OSA before adding any VIPE-direct records. Inspect the
+      API only if OSA coverage is incomplete.
+
+  - name: VIVERSE Avatar SDK (HTC)
+    url: https://docs.viverse.com/developer-tools/avatar-sdk
+    api: https://sdk-api.viverse.com/
+    format: vrm
+    review_state: pending
+    notes: getPublicAvatarList() / getPublicAvatarById(id) return objects with a
+      vrmUrl field — a machine-readable public-avatar list. Public avatars are
+      NOT necessarily NFTs; treat as a tier-B (VRM-exists) source at most, and
+      reject records with no on-chain token linkage. Auth required for user
+      avatars; do not attempt to enumerate those.
+
 # ─── Review pass log ─────────────────────────────────────────────────────────
 # Append-only record of triage passes. A pass is closed when every lead
 # present at the start of the pass has a terminal review_state (confirmed,
@@ -201,3 +228,10 @@ review_passes:
     closed: false
     notes: Holoworld AI and Mocaverse claim tickets issued; remaining
       dappradar leads still pending.
+
+  - pass_id: 2026-08-09
+    scope: VRM ecosystem research pass (spec + tooling + registries)
+    closed: false
+    notes: Added VIPE and VIVERSE Avatar SDK as programmatic-source leads;
+      confirmed sources/opensourceavatars.py already targets the canonical OSA
+      projects.json manifest. Findings recorded in docs/vrm-ecosystem.md.

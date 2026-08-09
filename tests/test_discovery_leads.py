@@ -22,15 +22,19 @@ if str(_REPO_ROOT) not in sys.path:
 
 LEADS_PATH = _REPO_ROOT / "data" / "discovery_leads.yaml"
 
-# Sections expected by the methodology. A missing section means a triage
-# category was silently dropped.
-EXPECTED_SECTIONS = {
+# Lead sections (lists of triage entries). review_passes is a log, not a lead
+# list, so it is validated separately.
+LEAD_SECTIONS = (
     "vrm_consortium",
     "hyperfy",
     "vroid_hub",
     "dappradar",
-    "review_passes",
-}
+    "programmatic_sources",
+)
+
+# Sections expected by the methodology. A missing section means a triage
+# category was silently dropped.
+EXPECTED_SECTIONS = set(LEAD_SECTIONS) | {"review_passes"}
 
 TERMINAL_STATES = {"confirmed", "rejected", "excluded", "blocked"}
 VALID_STATES = TERMINAL_STATES | {"pending", "investigating"}
@@ -52,7 +56,7 @@ def test_top_level_sections(leads):
 def test_review_state_vocabulary(leads):
     """Every lead must use a state from the documented vocabulary."""
     bad = []
-    for section in ("vrm_consortium", "hyperfy", "vroid_hub", "dappradar"):
+    for section in LEAD_SECTIONS:
         for entry in leads[section]:
             # vroid_hub carries a top-level policy entry without review_state;
             # entries that have a `policy` key are policy declarations, not
@@ -69,7 +73,7 @@ def test_confirmed_leads_link_to_db(leads):
     """A confirmed lead must record its collection_id (null allowed until
     the DB row is inserted, but the key must be present)."""
     missing = []
-    for section in ("vrm_consortium", "hyperfy", "vroid_hub", "dappradar"):
+    for section in LEAD_SECTIONS:
         for entry in leads[section]:
             if entry.get("review_state") == "confirmed":
                 if "collection_id" not in entry:
@@ -80,7 +84,7 @@ def test_confirmed_leads_link_to_db(leads):
 def test_rejected_or_excluded_have_reason(leads):
     """Terminal negative states must record why, so the decision is auditable."""
     missing = []
-    for section in ("vrm_consortium", "hyperfy", "vroid_hub", "dappradar"):
+    for section in LEAD_SECTIONS:
         for entry in leads[section]:
             if entry.get("review_state") in {"rejected", "excluded", "blocked"}:
                 if not entry.get("reason"):

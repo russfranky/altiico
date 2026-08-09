@@ -32,7 +32,7 @@ data/         SQLite DB, YAML configs (overrides, discovery leads), research not
 static/       Static HTML catalog + hashed JSON data + schemas
 migrations/   Plain SQL migrations (006–010; 001–005 predate the restructure)
 config/       cache_policy.yaml, license-mapping.yaml
-docs/         license-methodology.md, source-provenance.md
+docs/         license-methodology.md, source-provenance.md, vrm-ecosystem.md
 tests/        pytest + catalog-performance.mjs
 sy            Unified CLI
 ```

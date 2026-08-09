@@ -30,6 +30,7 @@ from scripts.extract_vrm_meta import (  # noqa: E402
     fetch_vrm_meta,
     parse_glb,
     parse_glb_header,
+    summarize_meta,
 )
 
 FIXTURE_DIR = _REPO_ROOT / "tests" / "fixtures" / "vrm"
@@ -240,6 +241,43 @@ def test_fetch_vrm_meta_malformed_raises():
     with patch("scripts.extract_vrm_meta.get_range", side_effect=mock_get_range):
         with pytest.raises(ValueError, match="Not a GLB file"):
             fetch_vrm_meta("https://example.com/bad.glb")
+
+
+# ─── summarize_meta: spec-aware field mapping ──────────────────────────────
+
+
+def test_summarize_meta_0x_reads_misspelled_fields():
+    data = _fixture("vrm_0x_minimal.glb")
+    result = parse_glb(data)
+    summary = summarize_meta(result["raw_meta"], "0.x")
+    assert summary["title"] == "Test VRM 0.x"
+    assert summary["author"] == "TestAuthor"
+    assert summary["license"] == "CC0"
+    assert summary["allowed_user"] == "Everyone"
+    assert summary["commercial"] == "Allow"
+
+
+def test_summarize_meta_1_0_reads_correct_fields():
+    """VRM 1.0 uses name/authors[]/licenseUrl — the 0.x field names are absent."""
+    data = _fixture("vrm_1_0_minimal.glb")
+    result = parse_glb(data)
+    summary = summarize_meta(result["raw_meta"], "1.0")
+    assert summary["title"] == "Test VRM 1.0"
+    # authors[] is joined into a single author string
+    assert summary["author"] == "TestAuthor"
+    # license comes from licenseUrl, never licenseName, on 1.0
+    assert summary["license"] == result["raw_meta"]["licenseUrl"]
+    assert summary["allowed_user"] == "everyone"
+    assert summary["commercial"] == "personalProfit"
+    assert summary["redistribution"] is True
+
+
+def test_summarize_meta_1_0_does_not_fall_back_to_0x_names():
+    """A 1.0 meta lacking 0.x names must still yield author + license."""
+    meta = {"name": "N", "authors": ["A", "B"], "licenseUrl": "https://vrm.dev/licenses/1.0/"}
+    summary = summarize_meta(meta, "1.0")
+    assert summary["author"] == "A, B"
+    assert summary["license"] == "https://vrm.dev/licenses/1.0/"
 
 
 # ─── real fixture cross-check ──────────────────────────────────────────────

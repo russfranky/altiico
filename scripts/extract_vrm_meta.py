@@ -92,6 +92,41 @@ def extract_vrm_from_gltf(gltf: dict, source_url: str, total_length: int) -> Dic
     raise ValueError("GLB has no VRM extension")
 
 
+def summarize_meta(meta: Dict[str, Any], vrm_spec: Optional[str]) -> Dict[str, Any]:
+    """Reduce a raw VRM meta block to a spec-aware, flat summary.
+
+    VRM 0.x and VRM 1.0 use different field names for the same concepts
+    (e.g. 0.x ``author`` / ``licenseName`` vs 1.0 ``authors[]`` / ``licenseUrl``),
+    so the summary must branch on ``vrm_spec``. See docs/vrm-ecosystem.md.
+    """
+    if vrm_spec == "1.0":
+        authors = meta.get("authors")
+        author = ", ".join(authors) if isinstance(authors, list) else authors
+        return {
+            "title": meta.get("name"),
+            "author": author,
+            "license": meta.get("licenseUrl"),
+            "allowed_user": meta.get("avatarPermission"),
+            "commercial": meta.get("commercialUsage"),
+            "sexual": meta.get("allowExcessivelySexualUsage"),
+            "violent": meta.get("allowExcessivelyViolentUsage"),
+            "credit": meta.get("creditNotation"),
+            "modification": meta.get("modification"),
+            "redistribution": meta.get("allowRedistribution"),
+        }
+    # VRM 0.x (field names carry the intentional spec misspellings).
+    return {
+        "title": meta.get("title"),
+        "author": meta.get("author"),
+        "license": meta.get("licenseName"),
+        "allowed_user": meta.get("allowedUserName"),
+        "commercial": meta.get("commercialUssageName"),
+        "sexual": meta.get("sexualUssageName"),
+        "violent": meta.get("violentUssageName"),
+        "other_license_url": meta.get("otherLicenseUrl"),
+    }
+
+
 def parse_glb(data: bytes, source_url: str = "<bytes>") -> Dict[str, Any]:
     """Parse a complete GLB byte buffer and extract VRM metadata.
 
@@ -188,13 +223,7 @@ def main() -> None:
             "parse_error": result.get("parse_error"),
         }
         if isinstance(meta, dict):
-            summary["title"] = meta.get("title") or meta.get("name")
-            summary["author"] = meta.get("author")
-            summary["license"] = meta.get("licenseName") or meta.get("license")
-            summary["allowed_user"] = meta.get("allowedUserName")
-            summary["commercial"] = meta.get("commercialUssageName") or meta.get("commercialUsage")
-            summary["sexual"] = meta.get("sexualUssageName") or meta.get("sexualUsage")
-            summary["violent"] = meta.get("violentUssageName") or meta.get("violentUsage")
+            summary.update(summarize_meta(meta, result.get("vrm_spec")))
         output = summary
 
     json.dump(output, sys.stdout, ensure_ascii=False, indent=2)
