@@ -242,8 +242,14 @@ Pre-alpha has TWO avatar surfaces, and this catalog feeds the first:
    the NFT (Moralis wallet scan; fail-OPEN, "economics not security"). The
    registry export therefore carries `purchase_gated` per set.
 
-**Known data conflicts to resolve before a live re-ingest** (catalog vs
-pre-alpha seed):
-- RetroDoges: catalog says `Redistribution_Prohibited` (gated); seed says
-  `CC0` (open). One is wrong.
-- Grifters Squaddies: catalog says chain `base`; seed says `zora`.
+**Data reconciliation vs pre-alpha seed** (owner-confirmed 2026-08-09):
+- RetroDoges: **CC0** (public domain — full commercial use, derivatives, no
+  attribution, non-holders may use). Catalog corrected in
+  `migrations/011_retrodoges_cc0_correction.sql` (was wrongly
+  `Redistribution_Prohibited` / gated, likely from embedded VRM meta); the
+  pre-alpha seed was already CC0.
+- Grifters Squaddies: chain is **Base**, license **CC0** (ToxSam × Vipe.io).
+  The catalog is correct; the pre-alpha `seed-registry.ts` entry
+  (`source: "zora"`) is the wrong one and should be changed to `base`.
+  Note: reported set size (~4,200) exceeds the catalog's recorded
+  `avatar_count` 812 / `total_supply` 1453 — unverified, left as-is.

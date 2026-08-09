@@ -1,7 +1,7 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-09T22:51:45Z",
+  "generated_at": "2026-08-09T23:48:49Z",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -307,14 +307,14 @@
       "slug": "retrodogesnft",
       "name": "RetroDoges",
       "description": "RetroDoges NFT is a Collection of 6969 Unique RetroDoge NFTs on the ETHEREUM blockchain.\r\nA tribute to 80’s and early 90’s Pop Culture & Nostalgia.\r\nOur roadmap is simple : \"Art is Timeless… the Future is Retro.\"\r\nThe artwork of RetroDoges is released under the CC0 licence.",
-      "license": "All Rights Reserved",
+      "license": "CC0",
       "chain": "ethereum",
       "storage_provider": "self-host",
       "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
       "banner": "https://i2c.seadn.io/ethereum/fd6e147b4043451b8910e3305441fefc/7289ba792daffeef185e0a93f76e57/3b7289ba792daffeef185e0a93f76e57.jpeg?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/fd6e147b4043451b8910e3305441fefc/13e1d341d63ad1decd3b4daed24264/b813e1d341d63ad1decd3b4daed24264.png",
       "avatar_count": 6969,
-      "purchase_gated": true,
+      "purchase_gated": false,
       "status": "staged",
       "tier": "A"
     },

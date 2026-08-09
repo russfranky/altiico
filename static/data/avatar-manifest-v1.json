@@ -1,7 +1,7 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-07-21T00:34:04Z",
+  "generated_at": "2026-08-09T23:48:47Z",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -705,15 +705,15 @@
         "template": "nft.retrodoges.com/media/main/vrm/{id}.vrm"
       },
       "license": {
-        "use_scope": "author",
-        "commercial_scope": "none",
-        "credit": "unknown",
-        "redistribute_original": false,
-        "modify": false,
-        "redistribute_modified": false,
-        "corporate_use": false,
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
         "terminates_on_transfer": false,
-        "hate_speech_termination": false
+        "hate_speech_termination": true
       }
     },
     {
