@@ -116,6 +116,35 @@ python tests/fixtures/generate_vrm_fixtures.py
 - **No git remote, no deploy config, no CI.** The catalog is served
   locally; `static/` is the deployable artifact if a host is added.
 
+## Deploy (Vercel)
+
+The `static/` directory is the deployable artifact — a self-contained static
+site (relative asset paths, service worker, jsDelivr CDN for the three.js VRM
+viewer). No build step.
+
+- `vercel.json` (repo root): `outputDirectory: "static"` (no build), plus
+  cache headers — content-hashed `/data/*.<hash>.json` are `immutable`;
+  `build-info.json` / `avatar-manifest-v1.json` / `avatars-registry.json`,
+  `sw.js`, and the app shell are `must-revalidate`; `sw.js` gets
+  `Service-Worker-Allowed: /`.
+- `.vercelignore`: root-anchored excludes so the Python pipeline, the SQLite
+  DB, caches, and `venv/` are not uploaded. `static/data/` is kept (the leading
+  slash on `/data/` anchors to the repo root only).
+
+Deploy:
+
+```bash
+# One-off from the CLI (needs `npm i -g vercel` + `vercel login`):
+vercel --prod
+
+# Or: import the GitHub repo in the Vercel dashboard. If not using vercel.json,
+# set Framework Preset = Other and Root Directory = static.
+```
+
+To refresh the published data, regenerate under `static/` and redeploy:
+`python scripts/build_catalog.py && python scripts/export_hubzz_manifest.py
+--validate && python scripts/export_avatars_registry.py`.
+
 ## Commit message convention
 
 ```

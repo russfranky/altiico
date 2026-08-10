@@ -1,0 +1,19 @@
+# Vercel serves only static/ (vercel.json outputDirectory). Exclude the Python
+# pipeline, the SQLite DB, caches, and the venv from the upload. Paths are
+# root-anchored (leading slash) so static/data/ is NOT matched by /data/.
+/venv/
+/data/
+/scripts/
+/sources/
+/migrations/
+/tests/
+/config/
+/docs/
+/.pytest_cache/
+/sy
+/requirements.txt
+/AGENTS.md
+__pycache__/
+*.pyc
+*.db
+.DS_Store
