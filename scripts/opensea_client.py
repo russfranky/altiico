@@ -49,8 +49,10 @@ class OpenSeaClient:
 
     async def _get_session(self) -> aiohttp.ClientSession:
         if self._session is None or self._session.closed:
+            # NB: no base_url — newer aiohttp requires it to end with '/', which
+            # conflicts with our leading-slash request paths. _request prepends
+            # BASE_URL to the full URL instead.
             self._session = aiohttp.ClientSession(
-                base_url=BASE_URL,
                 headers=self._headers,
                 timeout=aiohttp.ClientTimeout(total=30),
             )
@@ -83,8 +85,9 @@ class OpenSeaClient:
         while True:
             attempt += 1
             try:
+                full_url = url if url.startswith("http") else BASE_URL + url
                 async with session.request(
-                    method, url, params=params, json=json_body
+                    method, full_url, params=params, json=json_body
                 ) as resp:
                     remaining = resp.headers.get("X-RateLimit-Remaining")
                     limit = resp.headers.get("X-RateLimit-Limit")

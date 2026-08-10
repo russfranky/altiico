@@ -38,12 +38,20 @@
       "notes": "Second-biggest readiness blocker. Re-assess from embedded VRM meta + external URLs; verify sources for the ones still unknown."
     },
     {
-      "id": "refresh-opensea-key",
-      "title": "Refresh the expired OpenSea API key to re-enrich banners/pfps/socials/descriptions",
+      "id": "opensea-enrichment",
+      "title": "OpenSea enrichment (banners/pfps/socials/descriptions/stats)",
+      "status": "done",
+      "blocked": false,
+      "depends_on": [],
+      "notes": "RESOLVED: the key is NOT expired. GET /collections/{slug} + /collections list return 200. Fixed 3 real bugs that made it look dead: aiohttp base_url must end in '/' (opensea_client), Cache used under async-with without __aenter__ (enrich_opensea), and enrich_all used the tier-gated POST /collections/batch -> now per-slug GET. OpenSea returns a MISLEADING 'API key has expired' for (a) tier-gated endpoints (batch, per-token /nfts) and (b) unknown slugs. Run `python scripts/enrich_opensea.py --force` to refresh (slow: rate-limited 120/min)."
+    },
+    {
+      "id": "fix-bad-opensea-slugs",
+      "title": "Fix collections whose opensea_slug is an internal id (e.g. 'retrodogesnft')",
       "status": "todo",
-      "blocked": true,
-      "reason": "~/.opensea/api_key is expired ('API key has expired'). A fresh key unlocks the enrichment path for completeness criteria (banner/pfp/social/desc).",
-      "depends_on": []
+      "blocked": false,
+      "depends_on": [],
+      "notes": "Some opensea_slug values are our internal collection id, not the real OpenSea slug, so enrichment 401s ('expired') for them. Resolve the true slug via the contract (GET /chain/{chain}/contract/{addr}) or resolve_opensea_collections.py, then re-enrich."
     },
     {
       "id": "reservoir-discovery",

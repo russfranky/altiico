@@ -130,6 +130,12 @@ class Cache:
     def __exit__(self, *exc: Any) -> None:
         self.close()
 
+    async def __aenter__(self) -> "Cache":
+        return self.__enter__()
+
+    async def __aexit__(self, *exc: Any) -> None:
+        self.__exit__(*exc)
+
     # ----------------------------------------------------------------- read
 
     def get_cached(self, key: str) -> tuple[Optional[dict[str, Any]], bool]:
@@ -530,16 +536,22 @@ async def enrich_all(
 
     _log(f"[enrich] {len(slugs)} collections with slugs")
 
-    # 2. Batch metadata refresh.
+    # 2. Per-slug metadata refresh. POST /collections/batch is gated to paid API
+    #    tiers (it 401s "API key has expired" on the standard key), so refresh
+    #    each collection via GET /collections/{slug}, which works fine.
     if not stats_only and slugs:
-        await batch_enrich_meta(
-            client,
-            cache,
-            slugs,
-            id_by_slug=id_by_slug,
-            ttl_meta=ttl_meta,
-            force=force,
-        )
+        for slug in slugs:
+            try:
+                await enrich_collection(
+                    client,
+                    cache,
+                    id_by_slug.get(slug, ""),
+                    slug,
+                    ttl_meta=ttl_meta,
+                    force=force,
+                )
+            except Exception as e:  # noqa: BLE001
+                _log(f"[enrich] meta failed for {slug}: {e}")
 
     # 3. Per-slug stats refresh (cannot be batched by OpenSea).
     latest_market_ts: Optional[str] = None
