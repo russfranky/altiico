@@ -91,6 +91,26 @@ Enums:
 See `docs/license-methodology.md` for how these map to the normalized
 nine-dimension model, and `config/license-mapping.yaml` for the mapping table.
 
+> ### ⚠️ Embedded VRM meta is often an untouched exporter default
+> Measured 2026-08-10 by extracting embedded meta from every live VRM in the
+> catalog (stored in the `vrm_metadata` table):
+>
+> | Collection | Embedded license | Reality |
+> |---|---|---|
+> | **RetroDoges** | `Redistribution_Prohibited / OnlyAuthor / Disallow` | **CC0** (owner-confirmed) |
+> | NeonGlitch86 (Shape) | `CC0 / Everyone / Allow` | CC0 — agrees ✅ |
+> | MisfitPIXELS | `Redistribution_Prohibited / OnlyAuthor / Disallow` | genuinely restricted |
+> | NeonGlitch86 (Polygon) | VRM 1.0 `onlyAuthor / personalNonProfit` | genuinely restricted |
+>
+> `Redistribution_Prohibited / OnlyAuthor / Disallow` is the **default VRoid
+> Studio export**, so it appears on files whose collection is actually open.
+> RetroDoges is the proof: its embedded meta contradicts its confirmed CC0.
+>
+> **Rule:** never auto-promote embedded meta over a confirmed collection-level
+> license. Treat embedded meta as *corroborating* evidence — strong when it is
+> permissive (an author had to change the default to say CC0), weak when it is
+> the restrictive default (indistinguishable from "never configured").
+
 ## Tooling (reads/validates VRM meta without a full engine)
 
 | Repo | URL | Note |
