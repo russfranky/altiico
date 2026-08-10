@@ -116,6 +116,32 @@ python tests/fixtures/generate_vrm_fixtures.py
 - **No git remote, no deploy config, no CI.** The catalog is served
   locally; `static/` is the deployable artifact if a host is added.
 
+## UX + scope guardrails (read before adding ANY feature or UI)
+
+Invoke the `avoid-feature-creep` skill before adding a feature, and
+`ui-ux-pro-max` before building or restyling UI. Both are installed globally.
+
+This section exists because of documented failures in this repo. Do not repeat
+them:
+
+1. **Do not invent the goal.** This is a RESEARCH tool for finding and vetting
+   VRM avatar collections. It is NOT an onboarding pipeline. A previous session
+   invented a "hubzz-ingress readiness" objective nobody asked for and built a
+   scorecard, a presence sync, an owner-decision system, and a scheduled loop
+   around it. If you find yourself building toward a goal the user never stated,
+   stop and ask.
+2. **Never surface internal state as the interface.** Tier A/B/C, `ok_vrm`,
+   `readiness N/8`, `hubzz_status` are pipeline vocabulary. A researcher opening
+   this page wants: what is this collection, can I see it, can I use it, does
+   the file work. Translate, or leave it out.
+3. **The user's stated need outranks your model of it.** When asked "are they
+   reachable", answer reachability — do not ship a license filter instead.
+4. **One task, finished, before the next.** Half-finished features across many
+   surfaces read as a hodgepodge and are worth less than one that works.
+5. **Verify against the artifact, not the code.** Render it, screenshot it,
+   click it. A feature that "should work" has repeatedly not worked here (the
+   VRM viewer hung for a whole session while being reported as present).
+
 ## Credits
 
 This catalog depends on upstream curation — see `CREDITS.md`. Chiefly
