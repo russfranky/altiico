@@ -19,6 +19,7 @@ Usage:
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
@@ -270,6 +271,29 @@ def main():
     build_info_path.write_text(
         json.dumps(build_info, indent=2), encoding="utf-8"
     )
+
+    # Prune superseded content-hashed files. Every run emits a new hash, so
+    # without this the directory accumulates stale copies of every logical file
+    # — which bloats the deploy, lets the SW serve dead data, and slows the
+    # catalog-performance parse test (it parses every collections-*.json it
+    # finds; 8 stale copies took p75 from ~2ms to 81ms).
+    keep = {build_info_path.name}
+    for val in files.values():
+        if isinstance(val, list):
+            keep.update(val)
+        else:
+            keep.add(val)
+    pruned = 0
+    for path in output_dir.glob("*.json"):
+        name = path.name
+        if name in keep:
+            continue
+        # Only touch content-hashed artifacts we generate: <logical>.<12hex>.json
+        if re.fullmatch(r".+\.[0-9a-f]{12}\.json", name):
+            path.unlink()
+            pruned += 1
+    if pruned:
+        print(f"  pruned {pruned} superseded hashed file(s)")
     print(f"  build-info.json"
           + (f"  (market_data_as_of={prior_market_data_as_of})" if prior_market_data_as_of else ""))
 
