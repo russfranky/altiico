@@ -17,7 +17,7 @@
       "title": "Re-host / re-pin the 72 dead VRMs (the #1 readiness blocker)",
       "status": "todo",
       "blocked": true,
-      "reason": "Needs a ruling: where do we re-host? (R2/altii.co like the hubzz pipeline, or pin to a paid IPFS service). This is the biggest lever — 72/74 sets fail vrm_ok only because the file is unreachable.",
+      "reason": "Needs a ruling: where do we re-host? (R2/altii.co like the hubzz pipeline, or pin to a paid IPFS service). This is the biggest lever \u2014 72/74 sets fail vrm_ok only because the file is unreachable.",
       "depends_on": []
     },
     {
@@ -50,7 +50,7 @@
       "title": "Merge duplicate rows: vipe-heroes + vipe-heroes-genesis are the same collection",
       "status": "todo",
       "blocked": true,
-      "reason": "Needs a human ruling — merging changes collection identity. Evidence: contract 0x3999877754904d8542ad1845d368fa01a5e6e9a5 is on-chain 'VIPE Heroes' (VPH, totalSupply 3000). Our `vipe-heroes` row holds that contract but no avatars; `vipe-heroes-genesis` holds the 3000 avatars but no contract (so it fails identity_ok). pre-alpha's seed-registry.ts calls the same contract 'VIPE Heroes Genesis'. Decide the surviving id/name, then move avatars + contract onto it.",
+      "reason": "Needs a human ruling \u2014 merging changes collection identity. Evidence: contract 0x3999877754904d8542ad1845d368fa01a5e6e9a5 is on-chain 'VIPE Heroes' (VPH, totalSupply 3000). Our `vipe-heroes` row holds that contract but no avatars; `vipe-heroes-genesis` holds the 3000 avatars but no contract (so it fails identity_ok). pre-alpha's seed-registry.ts calls the same contract 'VIPE Heroes Genesis'. Decide the surviving id/name, then move avatars + contract onto it.",
       "depends_on": []
     },
     {
@@ -59,7 +59,7 @@
       "status": "done",
       "blocked": false,
       "depends_on": [],
-      "notes": "The avatars table (from the Open Source Avatars registry) already held 4,062 direct model_file_url VRM links while collections were still marked no_url — the on-chain/OpenSea discovery paths never looked there. scripts/promote_avatar_vrm_urls.py validates a candidate and lifts it to the collection. Promoted 3: 100Avatars R1 (arweave), ToxSam (pinata), VIPE Heroes Genesis (dweb.link)."
+      "notes": "The avatars table (from the Open Source Avatars registry) already held 4,062 direct model_file_url VRM links while collections were still marked no_url \u2014 the on-chain/OpenSea discovery paths never looked there. scripts/promote_avatar_vrm_urls.py validates a candidate and lifts it to the collection. Promoted 3: 100Avatars R1 (arweave), ToxSam (pinata), VIPE Heroes Genesis (dweb.link)."
     },
     {
       "id": "fix-bad-opensea-slugs",
@@ -83,7 +83,17 @@
       "status": "todo",
       "blocked": true,
       "reason": "Adding a new collection to the catalog needs a human ruling (L1 gate). The loop proposes; the human approves.",
-      "depends_on": ["arweave-vrm-sweep"]
+      "depends_on": [
+        "arweave-vrm-sweep"
+      ]
+    },
+    {
+      "id": "candidate-pool-exhausted",
+      "title": "OpenSea candidate backlog is exhausted \u2014 discovery needs a new intake source",
+      "status": "done",
+      "blocked": false,
+      "depends_on": [],
+      "notes": "Re-tested the 216 opensea_candidates with the CURRENT pipeline (better scanner, UA-fixed reachability, IPFS gateway fallback) because the old 'no_vrm' verdicts predated those fixes. Two independent passes, both 0 new VRM collections: (a) metadata_url rescan of 168 -> 133 no_vrm_pointer, 35 metadata_error; (b) fresh on-chain tokenURI scan of 147 -> 75 no_vrm_pointer, 56 no_tokenuri, 15 metadata_error, 1 pointer_unreachable. The 6 candidates marked 'vrm' are all already in the catalog. CONCLUSION: re-mining existing pools (OSA, awesome-3D, VIPE mirror, OpenSea candidates) is done. New collections require a NEW intake source at scale \u2014 see reservoir-discovery and arweave-vrm-sweep. scripts/rescan_candidates.py is reusable for future candidate batches."
     }
   ]
 }
