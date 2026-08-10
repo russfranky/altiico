@@ -46,6 +46,22 @@
       "notes": "RESOLVED: the key is NOT expired. GET /collections/{slug} + /collections list return 200. Fixed 3 real bugs that made it look dead: aiohttp base_url must end in '/' (opensea_client), Cache used under async-with without __aenter__ (enrich_opensea), and enrich_all used the tier-gated POST /collections/batch -> now per-slug GET. OpenSea returns a MISLEADING 'API key has expired' for (a) tier-gated endpoints (batch, per-token /nfts) and (b) unknown slugs. Run `python scripts/enrich_opensea.py --force` to refresh (slow: rate-limited 120/min)."
     },
     {
+      "id": "merge-vipe-duplicate",
+      "title": "Merge duplicate rows: vipe-heroes + vipe-heroes-genesis are the same collection",
+      "status": "todo",
+      "blocked": true,
+      "reason": "Needs a human ruling — merging changes collection identity. Evidence: contract 0x3999877754904d8542ad1845d368fa01a5e6e9a5 is on-chain 'VIPE Heroes' (VPH, totalSupply 3000). Our `vipe-heroes` row holds that contract but no avatars; `vipe-heroes-genesis` holds the 3000 avatars but no contract (so it fails identity_ok). pre-alpha's seed-registry.ts calls the same contract 'VIPE Heroes Genesis'. Decide the surviving id/name, then move avatars + contract onto it.",
+      "depends_on": []
+    },
+    {
+      "id": "promote-avatar-vrm-urls",
+      "title": "Promote per-avatar model_file_url to collections lacking a VRM",
+      "status": "done",
+      "blocked": false,
+      "depends_on": [],
+      "notes": "The avatars table (from the Open Source Avatars registry) already held 4,062 direct model_file_url VRM links while collections were still marked no_url — the on-chain/OpenSea discovery paths never looked there. scripts/promote_avatar_vrm_urls.py validates a candidate and lifts it to the collection. Promoted 3: 100Avatars R1 (arweave), ToxSam (pinata), VIPE Heroes Genesis (dweb.link)."
+    },
+    {
       "id": "fix-bad-opensea-slugs",
       "title": "Fix collections whose opensea_slug is an internal id (e.g. 'retrodogesnft')",
       "status": "todo",
