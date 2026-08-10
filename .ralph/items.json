@@ -1,0 +1,65 @@
+{
+  "intent": "Map existing VRMs and drive collections to hubzz-ingress readiness.",
+  "level": "L1",
+  "items": [
+    {
+      "id": "map-refresh",
+      "title": "Refresh the VRM map: reachability + discovery + readiness + build",
+      "status": "todo",
+      "recurring": true,
+      "blocked": false,
+      "depends_on": [],
+      "run": "scripts/loop_iterate.sh",
+      "notes": "The deterministic core. Re-runs every iteration; catches VRMs that died or came back, discovers new VRM URLs, re-scores readiness. ~0 tokens."
+    },
+    {
+      "id": "rehost-dead-vrms",
+      "title": "Re-host / re-pin the 72 dead VRMs (the #1 readiness blocker)",
+      "status": "todo",
+      "blocked": true,
+      "reason": "Needs a ruling: where do we re-host? (R2/altii.co like the hubzz pipeline, or pin to a paid IPFS service). This is the biggest lever — 72/74 sets fail vrm_ok only because the file is unreachable.",
+      "depends_on": []
+    },
+    {
+      "id": "arweave-vrm-sweep",
+      "title": "Arweave GraphQL sweep for VRM files, validated by the extractor",
+      "status": "todo",
+      "blocked": false,
+      "depends_on": [],
+      "notes": "Prototype proved the pipeline (query -> partial-GLB validate). Refine the tag filter: reverse-engineer a known VRM tx's tags (100avatars is on Arweave), then query that convention instead of the noisy model/gltf-binary content-type. Land hits as proposed leads (blocked for human ruling)."
+    },
+    {
+      "id": "fill-unknown-licenses",
+      "title": "Resolve the 50 unknown/red licenses (license_ok blocker)",
+      "status": "todo",
+      "blocked": false,
+      "depends_on": [],
+      "run": "scripts/normalize_licenses.py --force",
+      "notes": "Second-biggest readiness blocker. Re-assess from embedded VRM meta + external URLs; verify sources for the ones still unknown."
+    },
+    {
+      "id": "refresh-opensea-key",
+      "title": "Refresh the expired OpenSea API key to re-enrich banners/pfps/socials/descriptions",
+      "status": "todo",
+      "blocked": true,
+      "reason": "~/.opensea/api_key is expired ('API key has expired'). A fresh key unlocks the enrichment path for completeness criteria (banner/pfp/social/desc).",
+      "depends_on": []
+    },
+    {
+      "id": "reservoir-discovery",
+      "title": "Enumerate more VRM collections via an indexer (Reservoir/Alchemy/Moralis)",
+      "status": "todo",
+      "blocked": true,
+      "reason": "Needs an indexer API key ruling. The server uses Moralis; a Reservoir key would let sources/reservoir.py enumerate candidates to feed the discovery loop.",
+      "depends_on": []
+    },
+    {
+      "id": "add-new-collections",
+      "title": "Propose brand-new VRM collections found by the sweeps",
+      "status": "todo",
+      "blocked": true,
+      "reason": "Adding a new collection to the catalog needs a human ruling (L1 gate). The loop proposes; the human approves.",
+      "depends_on": ["arweave-vrm-sweep"]
+    }
+  ]
+}

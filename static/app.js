@@ -26,6 +26,7 @@ async function loadCollections() {
     fetchJSON('data/' + info.files.collections),
   ]);
   DATA.collections = collectionsData.collections || [];
+  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1).length);
   const s = summary.stats || {};
   setStat('stat-collections', s.collections ?? DATA.collections.length);
   setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
@@ -189,7 +190,10 @@ function applyCollectionFilters() {
   const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
   const fStatus = (document.getElementById('f-status') || {}).value || '';
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
+  const fReady = (document.getElementById('f-ready') || {}).value || '';
   let rows = DATA.collections.filter(c => {
+    if (fReady === 'ready' && c.ready !== 1) return false;
+    if (fReady === 'near' && !(c.readiness_score >= 6 && c.ready !== 1)) return false;
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
@@ -241,6 +245,15 @@ function statusSelect(id, i) {
   const cur = (RESEARCH[id] && RESEARCH[id].status) || '';
   const opts = STATUSES.map(s => `<option value="${s.v}"${s.v === cur ? ' selected' : ''}>${s.label}</option>`).join('');
   return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
+}
+
+function readinessBadge(c) {
+  if (c.ready === 1) return '<span class="badge rdy-ready" title="All critical criteria met — ready for hubzz ingress">✅ hubzz-ready</span>';
+  if (c.readiness_score == null) return '';
+  let crit = c.readiness_criteria;
+  if (typeof crit === 'string') { try { crit = JSON.parse(crit); } catch { crit = null; } }
+  const missing = crit ? ['vrm_ok', 'license_ok', 'identity_ok'].filter(k => !crit[k]) : [];
+  return `<span class="badge rdy-partial" title="Readiness ${c.readiness_score}/8${missing.length ? ' — missing: ' + missing.join(', ') : ''}">◐ ${c.readiness_score}/8</span>`;
 }
 
 function vrmReachBadge(c) {
@@ -295,7 +308,7 @@ function collectionCard(c, i) {
         <span class="ccard-name">${esc(c.name)}</span>
         ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
       </div>
-      <div class="ccard-badges">${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
+      <div class="ccard-badges">${readinessBadge(c)}${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
       ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
       ${desc}
       ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}
