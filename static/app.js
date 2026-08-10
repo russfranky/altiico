@@ -87,38 +87,8 @@ async function loadAvatars() {
 // ─── Shared helpers ─────────────────────────────────────────────────────────
 let sortKey = 'name', sortAsc = true, sortKeyOS = 'slug', sortAscOS = true;
 let currentTab = 'collections';
-let collectionsViewMode = 'cards';
 let _collRows = [];
 let _osRows = [];
-
-// ─── Research state: bookmarks / status / notes (persisted in localStorage) ──
-const RESEARCH_KEY = 'vrmcat_research_v1';
-const STATUSES = [
-  { v: '', label: '— status —', dot: 'var(--text-muted)' },
-  { v: 'shortlist', label: 'Shortlist', dot: 'var(--warning)' },
-  { v: 'onboard', label: 'Use it', dot: 'var(--success)' },
-  { v: 'reviewing', label: 'Reviewing', dot: 'var(--accent-2)' },
-  { v: 'pass', label: 'Pass', dot: 'var(--error)' },
-];
-let RESEARCH = {};
-try { RESEARCH = JSON.parse(localStorage.getItem(RESEARCH_KEY) || '{}'); } catch { RESEARCH = {}; }
-function saveResearch() { try { localStorage.setItem(RESEARCH_KEY, JSON.stringify(RESEARCH)); } catch {} }
-function rec(id) { return RESEARCH[id] || (RESEARCH[id] = {}); }
-function isBookmarked(id) { return !!(RESEARCH[id] && RESEARCH[id].bm); }
-function bookmarkCount() { return Object.values(RESEARCH).filter(r => r.bm).length; }
-function toggleBookmark(id) { const r = rec(id); r.bm = !r.bm; saveResearch(); refreshBookmarkUi(); }
-function setStatus(id, v) { rec(id).status = v; saveResearch(); refreshBookmarkUi(); }
-function editNote(id, name) {
-  const r = rec(id);
-  const v = prompt('Note for ' + (name || id) + ':', r.note || '');
-  if (v === null) return;
-  r.note = v.trim(); saveResearch();
-  if (currentTab === 'collections') filter();
-}
-function refreshBookmarkUi() {
-  const el = document.getElementById('bm-count'); if (el) el.textContent = bookmarkCount();
-  if (currentTab === 'collections') filter();
-}
 
 function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
@@ -230,14 +200,6 @@ function onSearch() {
 }
 function debounceFilter() { onSearch(); }
 
-function setCollectionsView(mode) {
-  collectionsViewMode = mode;
-  document.getElementById('vm-cards').classList.toggle('active', mode === 'cards');
-  document.getElementById('vm-table').classList.toggle('active', mode === 'table');
-  document.getElementById('collectionsGrid').style.display = mode === 'cards' ? '' : 'none';
-  document.getElementById('collectionsTableWrap').style.display = mode === 'table' ? '' : 'none';
-  filter();
-}
 
 function applyCollectionFilters() {
   const q = document.getElementById('search').value.toLowerCase();
@@ -246,7 +208,6 @@ function applyCollectionFilters() {
   const fLicense = document.getElementById('f-license').value;
   const fMint = document.getElementById('f-mint').value;
   const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
-  const fStatus = (document.getElementById('f-status') || {}).value || '';
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
   let rows = DATA.collections.filter(c => {
     if (fTier && c.tier !== fTier) return false;
@@ -256,8 +217,6 @@ function applyCollectionFilters() {
     if (fVrm === 'live' && c.vrm_check_status !== 'ok_vrm') return false;
     if (fVrm === 'dead' && c.vrm_reachable !== 0) return false;
     if (fVrm === 'nourl' && c.vrm_check_status !== 'no_url') return false;
-    if (fStatus === '__bm') { if (!isBookmarked(c.id)) return false; }
-    else if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
     if (q) {
       const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description, c.curated_description, c.vipe_category].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
@@ -283,21 +242,12 @@ function filter() {
   _collRows = rows;
   document.getElementById('collCount').innerHTML = `<b>${rows.length}</b> of ${DATA.collections.length} collections`;
   document.getElementById('emptyState').style.display = rows.length ? 'none' : 'block';
-  if (collectionsViewMode === 'cards') {
-    document.getElementById('collectionsGrid').innerHTML = rows.map((c, i) => collectionCard(c, i)).join('');
-  } else {
-    renderCollectionTable(rows);
-  }
+  document.getElementById('collectionsGrid').innerHTML = rows.map((c, i) => collectionCard(c, i)).join('');
 }
 
 function isVideoUrl(u) { return !!u && (u.includes('.mp4') || u.includes('stream.mux.com') || u.includes('.m3u8')); }
 
 
-function statusSelect(id, i) {
-  const cur = (RESEARCH[id] && RESEARCH[id].status) || '';
-  const opts = STATUSES.map(s => `<option value="${s.v}"${s.v === cur ? ' selected' : ''}>${s.label}</option>`).join('');
-  return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
-}
 
 
 
@@ -349,8 +299,6 @@ function collectionCard(c, i) {
     ? `<button class="vrm-btn" data-vrm="${i}">View</button>`
     : `<button class="vrm-btn ghost" disabled>—</button>`;
   const descText = c.curated_description || c.description || '';
-  const starred = isBookmarked(id);
-  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<span class="crow-note" data-note="${i}" title="${esc(RESEARCH[id].note)}">note</span>` : '';
 
   return `<div class="crow">
     <div class="crow-thumb" data-img="${i}">${thumb}</div>
@@ -361,7 +309,6 @@ function collectionCard(c, i) {
         ${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}
         ${c.vipe_category ? `<span class="chip vipe-cat">${esc(c.vipe_category)}</span>` : ''}
         ${chainChips(c)}
-        ${note}
       </div>
       <div class="crow-line2">
         ${facts.length ? `<span class="crow-facts">${facts.join(' · ')}</span>` : ''}
@@ -371,33 +318,10 @@ function collectionCard(c, i) {
     <div class="crow-actions">
       ${collLinks(c)}
       ${vrmBtn}
-      <button class="note-btn" data-note="${i}" title="Add a note">Note</button>
     </div>
   </div>`;
 }
 
-function renderCollectionTable(rows) {
-  document.getElementById('collectionsBody').innerHTML = rows.map((c, i) => {
-    const src = c.image_url || c.sample_nft_image;
-    const img = src
-      ? `<img class="thumb" loading="lazy" src="${esc(src)}" alt="" data-img="${i}" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🖼</span>'">`
-      : '<span class="thumb-placeholder">🖼</span>';
-    const sup = supplyText(c) || '—';
-    const vrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">View</button>` : '—';
-    return `<tr>
-      <td>${img}</td>
-      <td><b style="color:var(--text-primary)">${esc(c.name)}</b>${c.creator ? `<br><span class="mono">${esc(c.creator)}</span>` : ''}</td>
-      <td>${esc(c.chain || '—')}</td>
-      <td>${licenseBadge(c.license_category, c)}</td>
-      <td class="mono">${esc(c.vrm_license || '—')}</td>
-      <td>${sup}</td>
-      <td class="mono">${c.floor_price ? c.floor_price.toFixed(2) + ' ' + esc(c.floor_price_symbol || '') : '—'}</td>
-      <td class="mono">${c.avatar_count ? c.avatar_count.toLocaleString() : '—'}</td>
-      <td>${collLinks(c)}</td>
-      <td>${vrmBtn}</td>
-    </tr>`;
-  }).join('');
-}
 
 // ─── Avatars view ────────────────────────────────────────────────────────────
 
@@ -420,18 +344,10 @@ function switchTab(tab) {
 function wireDelegation() {
   const collView = document.getElementById('collectionsView');
   collView.addEventListener('click', e => {
-    const bm = e.target.closest('[data-bm]');
-    if (bm) { e.stopPropagation(); const c = _collRows[+bm.dataset.bm]; if (c) toggleBookmark(c.id); return; }
-    const nb = e.target.closest('[data-note]');
-    if (nb) { const c = _collRows[+nb.dataset.note]; if (c) editNote(c.id, c.name); return; }
     const v = e.target.closest('[data-vrm]');
     if (v) { const c = _collRows[+v.dataset.vrm]; if (c && c.vrm_url_https) openVrmViewer(c.vrm_url_https, c.name, c.vrm_url_https); return; }
     const im = e.target.closest('[data-img]');
     if (im) { const c = _collRows[+im.dataset.img]; if (c) { const src = c.image_url || c.sample_nft_image || c.banner_image_url; if (src && !isVideoUrl(src)) showImg(src, c.name, isVideoUrl(c.banner_image_url) ? null : c.banner_image_url); } }
-  });
-  collView.addEventListener('change', e => {
-    const s = e.target.closest('[data-status]');
-    if (s) { const c = _collRows[+s.dataset.status]; if (c) setStatus(c.id, s.value); }
   });
 }
 
@@ -710,7 +626,6 @@ document.addEventListener('keydown', e => {
 
 // ─── Init ────────────────────────────────────────────────────────────────────
 wireDelegation();
-{ const bc = document.getElementById('bm-count'); if (bc) bc.textContent = bookmarkCount(); }
 (async () => {
   try {
     await loadBuildInfo();

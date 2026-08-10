@@ -84,29 +84,8 @@
   <div id="collectionsView">
     <div class="result-bar">
       <span class="result-count" id="collCount"></span>
-      <div class="viewmode">
-        <button class="vm-btn active" id="vm-cards" onclick="setCollectionsView('cards')">List</button>
-        <button class="vm-btn" id="vm-table" onclick="setCollectionsView('table')">Table</button>
-      </div>
     </div>
     <div class="card-grid" id="collectionsGrid"></div>
-    <div class="table-wrap" id="collectionsTableWrap" style="display:none">
-      <table id="collectionsTable">
-        <thead><tr>
-          <th></th>
-          <th onclick="sort('name')">Collection</th>
-          <th onclick="sort('chain')">Chain</th>
-          <th onclick="sort('license_category')">License</th>
-          <th onclick="sort('vrm_license')">VRM License</th>
-          <th onclick="sort('total_supply')">Supply</th>
-          <th onclick="sort('floor_price')">Floor</th>
-          <th onclick="sort('avatar_count')">Avatars</th>
-          <th>Links</th>
-          <th>VRM</th>
-        </tr></thead>
-        <tbody id="collectionsBody"></tbody>
-      </table>
-    </div>
     <div class="empty" id="emptyState" style="display:none">No collections match your filters.</div>
   </div>
 
