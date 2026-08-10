@@ -474,12 +474,18 @@ function showVrmError(msg) {
   err.textContent = msg;
   err.classList.add('active');
 }
+// The viewer ES module runs in its own scope — expose the error hook to it.
+window._showVrmError = showVrmError;
 
 function openVrmViewer(vrmUrl, name, footerInfo) {
   if (!vrmUrl) { alert('No VRM URL available for this collection.'); return; }
   document.getElementById('vrmModalTitle').textContent = 'VRM Viewer — ' + (name || '');
   document.getElementById('vrmModal').classList.add('active');
-  document.getElementById('vrmLoading').classList.add('active');
+  const loadingEl = document.getElementById('vrmLoading');
+  loadingEl.textContent = 'Loading VRM…';
+  loadingEl.classList.add('active');
+  // The canvas container has zero size until the modal is displayed.
+  if (window._vrmResize) requestAnimationFrame(() => window._vrmResize());
   document.getElementById('vrmError').classList.remove('active');
   document.getElementById('vrmFooterInfo').textContent = footerInfo || '';
   document.getElementById('vrmFooterLink').href = vrmUrl;
@@ -489,92 +495,166 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
   } else {
     const s = document.createElement('script');
     s.type = 'module';
+    // three-vrm v3 API, mirroring packages/avatars/lab VRMViewer.tsx:
+    //   GLTFLoader.register(VRMLoaderPlugin) -> gltf.userData.vrm
+    //   removeUnnecessaryVertices + combineSkeletons (guarded)
+    //   rotateVRM0() so VRM 0.x models face the camera
+    //   deepDispose(vrm.scene) on teardown
     s.textContent = `
-      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-      import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
-      import { VRM, VRMUtils } from 'https://cdn.jsdelivr.net/npm/@pixiv/three-vrm@3.3.2/+esm';
+      // Bare specifiers — resolved by the import map in index.html so three and
+      // three-vrm share a single three instance.
+      import * as THREE from 'three';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import { VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 
-      let scene = null, renderer = null, camera = null, model = null;
+      let scene = null, renderer = null, camera = null, controls = null, currentVrm = null, clock = null;
+
+      function disposeCurrent() {
+        if (currentVrm) {
+          scene.remove(currentVrm.scene);
+          VRMUtils.deepDispose(currentVrm.scene);
+          currentVrm = null;
+        }
+      }
+
+      function frameModel(vrm) {
+        // Fit the camera to the model's bounding box so any avatar scale works.
+        const box = new THREE.Box3().setFromObject(vrm.scene);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        const height = size.y || 1.6;
+        const dist = height * 1.9;
+        camera.position.set(0, center.y + height * 0.06, dist);
+        camera.near = Math.max(0.01, dist / 100);
+        camera.far = dist * 40;
+        camera.updateProjectionMatrix();
+        controls.target.set(0, center.y, 0);
+        controls.update();
+      }
+
+      function resize() {
+        const c = document.getElementById('vrmCanvasContainer');
+        if (!c || !renderer || !camera) return;
+        const w = c.clientWidth, h = c.clientHeight;
+        if (!w || !h) return;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      }
+      window.addEventListener('resize', resize);
+      window._vrmResize = resize;
 
       window._initVrmScene = function(vrmUrl) {
         const canvas = document.getElementById('vrmCanvas');
         const container = document.getElementById('vrmCanvasContainer');
-        const w = container.clientWidth, h = container.clientHeight;
+        const w = container.clientWidth || 800, h = container.clientHeight || 500;
 
         if (!scene) {
           scene = new THREE.Scene();
-          scene.background = new THREE.Color(0x0D0D0F);
+          clock = new THREE.Clock();
           camera = new THREE.PerspectiveCamera(30, w / h, 0.1, 100);
-          camera.position.set(0, 1.3, 4);
-          camera.lookAt(0, 1.3, 0);
-          renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-          renderer.setPixelRatio(window.devicePixelRatio);
-          renderer.setSize(w, h);
-          const amb = new THREE.AmbientLight(0xffffff, 0.9);
-          scene.add(amb);
-          const dir = new THREE.DirectionalLight(0xffffff, 0.5);
-          dir.position.set(1, 2, 1);
+          renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          renderer.setSize(w, h, false);
+          renderer.outputColorSpace = THREE.SRGBColorSpace;
+          scene.add(new THREE.AmbientLight(0xffffff, 2.0));
+          const dir = new THREE.DirectionalLight(0xffffff, 1.6);
+          dir.position.set(1, 2, 2);
           scene.add(dir);
+          const rim = new THREE.DirectionalLight(0x8899ff, 0.7);
+          rim.position.set(-2, 1, -2);
+          scene.add(rim);
+          controls = new OrbitControls(camera, renderer.domElement);
+          controls.enableDamping = true;
+          controls.dampingFactor = 0.1;
+          controls.minDistance = 0.3;
+          controls.maxDistance = 40;
 
-          let theta = 0, phi = 0.1, isDragging = false, lastX = 0, lastY = 0;
-          canvas.addEventListener('mousedown', e => { isDragging = true; lastX = e.clientX; lastY = e.clientY; });
-          window.addEventListener('mouseup', () => { isDragging = false; });
-          window.addEventListener('mousemove', e => {
-            if (!isDragging) return;
-            theta -= (e.clientX - lastX) * 0.01;
-            phi = Math.max(-0.5, Math.min(0.8, phi + (e.clientY - lastY) * 0.01));
-            lastX = e.clientX; lastY = e.clientY;
-            const r = camera.position.length();
-            camera.position.set(r * Math.sin(theta) * Math.cos(phi), 1.3 + r * Math.sin(phi), r * Math.cos(theta) * Math.cos(phi));
-            camera.lookAt(0, 1.3, 0);
-          });
-          canvas.addEventListener('wheel', e => {
-            e.preventDefault();
-            const r = Math.max(1.5, Math.min(10, camera.position.length() + e.deltaY * 0.005));
-            camera.position.setLength(r);
-          });
-        } else if (model) {
-          scene.remove(model);
-          VRMUtils.deepDispose(model);
-          model = null;
+          const render = () => {
+            requestAnimationFrame(render);
+            const dt = clock.getDelta();
+            if (currentVrm) currentVrm.update(dt);
+            if (controls) controls.update();
+            renderer.render(scene, camera);
+          };
+          render();
         }
+        resize();
+        disposeCurrent();
 
         const loader = new GLTFLoader();
-        loader.load(vrmUrl, (gltf) => {
-          VRM.from(gltf.scene).then((vrm) => {
-            model = gltf.scene;
-            scene.add(model);
-            VRMUtils.removeUnnecessaryVertices(gltf.scene);
+        loader.crossOrigin = 'anonymous';
+        loader.register((parser) => new VRMLoaderPlugin(parser));
 
-            vrm.humanoid?.resetNormalizedPose();
-            if (vrm.humanoid) { vrm.humanoid.setNormalizedPose(); }
-
-            const meta = vrm.meta;
-            if (meta) {
-              const metaName = meta.name || meta.title || 'Unknown';
-              document.getElementById('vrmFooterInfo').textContent =
-                'VRM: ' + metaName + ' | Author: ' + (meta.authors || meta.author || '?');
+        loader.load(
+          vrmUrl,
+          (gltf) => {
+            const vrm = gltf.userData.vrm;
+            if (!vrm) {
+              window._showVrmError('This file loaded but contains no VRM extension (plain glTF/GLB).');
+              return;
             }
+            try { VRMUtils.removeUnnecessaryVertices(gltf.scene); } catch (e) {}
+            try { VRMUtils.combineSkeletons(gltf.scene); } catch (e) {}
+            // VRM 0.x faces -Z; rotate so the avatar faces the camera.
+            try { VRMUtils.rotateVRM0(vrm); } catch (e) {}
+            vrm.scene.traverse((o) => { o.frustumCulled = false; });
 
+            currentVrm = vrm;
+            scene.add(vrm.scene);
+            frameModel(vrm);
+
+            const m = vrm.meta || {};
+            const title = m.name || m.title || '';
+            const author = Array.isArray(m.authors) ? m.authors.join(', ') : (m.author || '');
+            const spec = m.metaVersion === '1' || m.licenseUrl ? 'VRM 1.0' : 'VRM 0.x';
+            const bits = [spec];
+            if (title) bits.push(title);
+            if (author) bits.push('by ' + author);
+            const lic = m.licenseName || m.licenseUrl;
+            if (lic) bits.push(String(lic));
+            document.getElementById('vrmFooterInfo').textContent = bits.join(' · ');
             document.getElementById('vrmLoading').classList.remove('active');
-
-            if (vrmAnimId) cancelAnimationFrame(vrmAnimId);
-            const clock = new THREE.Clock();
-            function animate() {
-              vrmAnimId = requestAnimationFrame(animate);
-              const delta = clock.getDelta();
-              if (model) vrm.update(delta);
-              renderer.render(scene, camera);
+          },
+          (prog) => {
+            if (prog && prog.total) {
+              const pct = Math.round((prog.loaded / prog.total) * 100);
+              const el = document.getElementById('vrmLoading');
+              if (el) el.textContent = 'Loading VRM… ' + pct + '%';
+            } else if (prog && prog.loaded) {
+              const el = document.getElementById('vrmLoading');
+              if (el) el.textContent = 'Loading VRM… ' + Math.round(prog.loaded / 1024) + ' KB';
             }
-            animate();
-          }).catch(err => {
-            showVrmError('Failed to parse VRM: ' + err.message);
-          });
-        }, undefined, (err) => {
-          showVrmError('Failed to load VRM file. The IPFS gateway may be slow or the file may be unavailable. Try the direct link below.');
-        });
+          },
+          (err) => {
+            window._showVrmError('Could not load this VRM: ' + ((err && err.message) || 'network or CORS error') +
+              '. The host may block cross-origin requests — use the direct link below.');
+          }
+        );
       };
 
+      window._vrmDispose = disposeCurrent;
+      // Debug hook: deterministic proof of what is actually in the scene.
+      window._vrmState = function() {
+        if (!currentVrm) return { loaded: false };
+        const box = new THREE.Box3().setFromObject(currentVrm.scene);
+        const size = box.getSize(new THREE.Vector3());
+        let meshes = 0, visible = 0;
+        currentVrm.scene.traverse((o) => { if (o.isMesh || o.isSkinnedMesh) { meshes++; if (o.visible) visible++; } });
+        return {
+          loaded: true, meshes, visible,
+          height: +size.y.toFixed(2), width: +size.x.toFixed(2),
+          camY: +camera.position.y.toFixed(2), camZ: +camera.position.z.toFixed(2),
+          targetY: +controls.target.y.toFixed(2),
+          inFrustum: (function () {
+            camera.updateMatrixWorld();
+            const m = new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+            return new THREE.Frustum().setFromProjectionMatrix(m).intersectsBox(box);
+          })(),
+          canvas: renderer.domElement.width + 'x' + renderer.domElement.height,
+        };
+      };
       window._vrmViewerReady = true;
       if (window._pendingVrmUrl) {
         const url = window._pendingVrmUrl;
@@ -590,6 +670,9 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
 function closeVrmModal() {
   document.getElementById('vrmModal').classList.remove('active');
   if (vrmAnimId) { cancelAnimationFrame(vrmAnimId); vrmAnimId = null; }
+  // Free GPU memory: official deepDispose + drop the ref (lab lifecycle contract).
+  if (window._vrmDispose) window._vrmDispose();
+  document.getElementById('vrmError').classList.remove('active');
 }
 
 document.addEventListener('keydown', e => {
