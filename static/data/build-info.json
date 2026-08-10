@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-10T02:26:50.503141+00:00",
+  "generated_at": "2026-08-10T02:31:47.235791+00:00",
   "schema_version": 1,
   "files": {
     "summary": "catalog-summary.7d489542a799.json",
-    "collections": "collections.cf223234b317.json",
+    "collections": "collections.b278842cf94b.json",
     "opensea": "opensea-candidates.cd56ce2ad8db.json",
     "avatars": [
       "avatars-00.f09d4e042f4f.json",
