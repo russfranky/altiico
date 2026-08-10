@@ -125,8 +125,13 @@ function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
 
 function licenseBadge(cat, c) {
-  const map = { green: '🟢 CC0', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '? Unknown' };
-  const label = map[cat] || '? Unknown';
+  // Colour comes from the traffic-light category; the text is the ACTUAL licence
+  // name when we have one. Previously both were rendered, so "🟢 CC0" sat next to
+  // a second "CC0" badge saying the same thing.
+  const dot = { green: '🟢', yellow: '🟡', red: '🔴', unknown: '?' }[cat] || '?';
+  const generic = { green: 'Open', yellow: 'Holder', red: 'Restricted', unknown: 'Unknown' }[cat] || 'Unknown';
+  const real = (c && c.vrm_license || '').trim();
+  const label = `${dot} ${real || generic}`;
   if (!c) return badge(cat || 'unknown', label);
   const rc = c.reason_codes || [];
   const conf = c.license_confidence || 'unknown';
@@ -167,8 +172,7 @@ function onSearch() {
   clearTimeout(_filterTimer);
   _filterTimer = setTimeout(() => {
     if (currentTab === 'collections') filter();
-    else if (currentTab === 'avatars') filterAvatars();
-    else filterOS();
+      else filterOS();
   }, 150);
 }
 function debounceFilter() { onSearch(); }
@@ -250,8 +254,8 @@ function statusSelect(id, i) {
 function vrmReachBadge(c) {
   const s = c.vrm_check_status;
   if (s === 'ok_vrm') {
-    const kb = c.vrm_check_bytes ? ' ' + Math.round(c.vrm_check_bytes / 1024) + 'KB' : '';
-    return `<span class="badge vrm-live" title="VRM fetched & valid (${esc(c.vrm_check_url || '')})">🟢 VRM live${kb}</span>`;
+    const mb = c.vrm_check_bytes ? (c.vrm_check_bytes / 1048576).toFixed(1) + ' MB' : '';
+    return `<span class="badge vrm-live" title="One sample VRM was fetched and parsed OK${mb ? ' — that file is ' + mb : ''}. Source: ${esc(c.vrm_check_url || '')}">🟢 VRM live${mb ? ' · ' + mb + '/file' : ''}</span>`;
   }
   if (s === 'reachable_not_vrm') return '<span class="badge vrm-warn" title="File reachable but not a valid VRM/GLB">🟡 not a VRM</span>';
   if (s === 'no_url') return '<span class="badge vrm-none" title="No VRM URL on record — unknown where the VRM lives">⚫ no VRM URL</span>';
@@ -269,9 +273,26 @@ function collectionCard(c, i) {
     : `<div class="crow-fallback">${letter}</div>`;
 
   const facts = [];
+  if (c.release_date) facts.push(`<span title="Launch date">${esc(String(c.release_date).slice(0, 7))}</span>`);
   if (c.chain) facts.push(esc(c.chain));
-  const sup = supplyText(c); if (sup) facts.push(sup);
-  if (c.avatar_count) facts.push(`${c.avatar_count.toLocaleString()} avatars`);
+
+  // ONE size number. `supply` is how big the collection is; `files` is how many
+  // VRM files we actually hold and checked. They are usually identical, so they
+  // are merged — and only split when we genuinely hold a subset.
+  const supply = c.total_supply || null;
+  const files = c.avatars_total || 0;
+  const okFiles = c.avatars_reachable || 0;
+  if (supply) facts.push(supplyText(c));
+  else if (files) facts.push(`${files.toLocaleString()} files`);
+  if (files) {
+    const allOk = okFiles === files;
+    const cls = allOk ? 'av-all' : 'av-part';
+    const subset = supply && files < supply;
+    const label = allOk
+      ? (subset ? `${files.toLocaleString()} checked · all reachable` : 'all reachable')
+      : `${okFiles.toLocaleString()}/${files.toLocaleString()} files reachable`;
+    facts.push(`<span class="${cls}" title="Every individual VRM file we hold for this collection was fetched and verified">${label}</span>`);
+  }
   if (c.floor_price) facts.push(`floor ${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}`);
 
   const vrmBtn = c.vrm_url_https
@@ -470,10 +491,7 @@ function switchTab(tab) {
   currentTab = tab;
   document.querySelectorAll('#viewSwitch .seg').forEach(b => b.classList.toggle('active', b.dataset.view === tab));
   document.getElementById('collectionsView').style.display = tab === 'collections' ? '' : 'none';
-  document.getElementById('avatarsView').style.display = tab === 'avatars' ? '' : 'none';
-  if (tab === 'collections') filter();
-  else if (tab === 'avatars') filterAvatars();
-  else filterOS();
+  filter();
 }
 
 // Event delegation: VRM buttons + image previews (no fragile inline handlers).

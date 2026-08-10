@@ -306,3 +306,5 @@ tr:hover td { background: var(--bg-surface); }
   .crow-actions { width: 100%; justify-content: flex-end; }
   .crow-desc { display: none; }
 }
+.av-all { color: var(--success); }
+.av-part { color: var(--warning); }

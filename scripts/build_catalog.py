@@ -99,8 +99,22 @@ def query_collections(conn) -> list:
             "redistribute_modified": r["redistribute_modified"],
         }
 
+    # Roll per-avatar reachability up to the collection: the research question is
+    # "are this collection's files reachable", not "browse 4,274 avatars".
+    avatar_reach: dict[str, dict] = {}
+    for r in conn.execute(
+        "SELECT collection_id, COUNT(*) n, "
+        "SUM(CASE WHEN reachable=1 THEN 1 ELSE 0 END) ok, "
+        "SUM(CASE WHEN reachable=0 THEN 1 ELSE 0 END) bad "
+        "FROM avatars GROUP BY collection_id"
+    ):
+        avatar_reach[r["collection_id"]] = {
+            "avatars_total": r["n"], "avatars_reachable": r["ok"], "avatars_dead": r["bad"],
+        }
+
     for c in collections:
         c["contracts"] = contracts_map.get(c["id"], [])
+        c.update(avatar_reach.get(c["id"], {}))
         ld = license_map.get(c["id"])
         if ld:
             c.update(ld)
