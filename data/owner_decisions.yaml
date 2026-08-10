@@ -1,0 +1,24 @@
+# Owner decisions — the human's call on individual collections.
+#
+# The readiness scorecard proposes; the owner disposes. A collection listed here
+# is removed from the "NEW & ready to onboard" surface regardless of how well it
+# scores, so a rejected set never resurfaces on the next loop iteration.
+#
+# decision vocabulary:
+#   exclude   — do not onboard. Keep the record (it is still useful research),
+#               but never present it as an onboarding candidate.
+#   include   — force-surface even if scoring would hide it.
+#   defer     — not now; revisit later (stays visible, flagged).
+#
+# Applied by scripts/apply_owner_decisions.py into collections.owner_decision.
+# Edit this file, re-run the script (the loop does it every iteration).
+
+decisions:
+  - id: xmas-chibis
+    name: Xmas Chibis
+    decision: exclude
+    reason: Owner declined 2026-08-10 — not using this set.
+  - id: halloween-rising
+    name: Halloween Rising
+    decision: exclude
+    reason: Owner declined 2026-08-10 — not using this set.

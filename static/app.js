@@ -26,7 +26,7 @@ async function loadCollections() {
     fetchJSON('data/' + info.files.collections),
   ]);
   DATA.collections = collectionsData.collections || [];
-  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1 && c.hubzz_status === 'absent').length);
+  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1 && c.hubzz_status === 'absent' && c.owner_decision !== 'exclude').length);
   const s = summary.stats || {};
   setStat('stat-collections', s.collections ?? DATA.collections.length);
   setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
@@ -192,7 +192,8 @@ function applyCollectionFilters() {
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
   const fReady = (document.getElementById('f-ready') || {}).value || '';
   let rows = DATA.collections.filter(c => {
-    if (fReady === 'ready' && !(c.ready === 1 && c.hubzz_status === 'absent')) return false;
+    if (fReady === 'ready' && !(c.ready === 1 && c.hubzz_status === 'absent' && c.owner_decision !== 'exclude')) return false;
+    if (fReady === 'declined' && c.owner_decision !== 'exclude') return false;
     if (fReady === 'inhubzz' && c.hubzz_status === 'absent') return false;
     if (fReady === 'near' && !(c.readiness_score >= 6 && c.ready !== 1)) return false;
     if (fTier && c.tier !== fTier) return false;
@@ -259,6 +260,8 @@ function hubzzBadge(c) {
 function readinessBadge(c) {
   // A set that is already in Hubzz is NOT an onboarding target — say so instead
   // of advertising it as "ready".
+  if (c.owner_decision === 'exclude')
+    return `<span class="badge rdy-excl" title="${esc(c.owner_decision_reason || 'Owner declined')}">🚫 declined</span>`;
   if (c.ready === 1 && c.hubzz_status === 'absent')
     return '<span class="badge rdy-ready" title="Meets every criterion and is NOT yet in Hubzz — onboard this">✅ NEW · ready</span>';
   if (c.ready === 1) return '<span class="badge rdy-done" title="Meets every criterion but is already in Hubzz">✔ ready (already in)</span>';

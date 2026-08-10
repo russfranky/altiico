@@ -11,6 +11,8 @@ LOG=.ralph/loop-run-log.md
 echo "== VRM-map iterate $TS =="
 $PY scripts/check_vrm_reachable.py --tier A,B --now "$TS"        2>&1 | tail -2
 $PY scripts/discover_vrm_urls.py   --tiers A,B,C --now "$TS"     2>&1 | tail -3
+$PY scripts/sync_hubzz_status.py                                      2>&1 | tail -2
+$PY scripts/apply_owner_decisions.py                                  2>&1 | tail -1
 $PY scripts/score_readiness.py     --tiers A,B,C --now "$TS"     2>&1 | tail -4
 $PY scripts/build_catalog.py                                    2>&1 | tail -1
 READY=$(sqlite3 data/vrm_index.db "SELECT COUNT(*) FROM collections WHERE ready=1;")
