@@ -352,8 +352,7 @@ function collectionCard(c, i) {
   const starred = isBookmarked(id);
   const note = (RESEARCH[id] && RESEARCH[id].note) ? `<span class="crow-note" data-note="${i}" title="${esc(RESEARCH[id].note)}">note</span>` : '';
 
-  return `<div class="crow${starred ? ' bookmarked' : ''}">
-    <button class="crow-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
+  return `<div class="crow">
     <div class="crow-thumb" data-img="${i}">${thumb}</div>
     <div class="crow-main">
       <div class="crow-line1">
@@ -372,7 +371,6 @@ function collectionCard(c, i) {
     <div class="crow-actions">
       ${collLinks(c)}
       ${vrmBtn}
-      ${statusSelect(id, i)}
       <button class="note-btn" data-note="${i}" title="Add a note">Note</button>
     </div>
   </div>`;
@@ -414,7 +412,6 @@ function sortOS(key) { if (sortKeyOS === key) sortAscOS = !sortAscOS; else { sor
 
 function switchTab(tab) {
   currentTab = tab;
-  document.querySelectorAll('#viewSwitch .seg').forEach(b => b.classList.toggle('active', b.dataset.view === tab));
   document.getElementById('collectionsView').style.display = tab === 'collections' ? '' : 'none';
   filter();
 }
