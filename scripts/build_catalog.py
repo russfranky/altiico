@@ -273,6 +273,24 @@ def main():
         json.dumps(build_info, indent=2), encoding="utf-8"
     )
 
+    # Stamp the service-worker cache version with this build's identity.
+    # Without this the SW kept serving a stale app shell and shipped UI changes
+    # were invisible to anyone who had visited before.
+    sw_path = output_dir.parent / "sw.js"
+    if sw_path.exists():
+        sw = sw_path.read_text(encoding="utf-8")
+        # Hash the DATA manifest *and* the app shell — a UI-only change must
+        # invalidate the cache too, which is the case that originally broke.
+        shell = b"".join((output_dir.parent / f).read_bytes()
+                         for f in ("index.html", "app.js", "app.css")
+                         if (output_dir.parent / f).exists())
+        stamp = hash_content(json.dumps(files, sort_keys=True).encode("utf-8") + shell)
+        sw_new = re.sub(r"const CACHE_VERSION = '[^']*';",
+                        f"const CACHE_VERSION = '{stamp}';", sw, count=1)
+        if sw_new != sw:
+            sw_path.write_text(sw_new, encoding="utf-8")
+            print(f"  sw.js CACHE_VERSION -> {stamp}")
+
     # Prune superseded content-hashed files. Every run emits a new hash, so
     # without this the directory accumulates stale copies of every logical file
     # — which bloats the deploy, lets the SW serve dead data, and slows the

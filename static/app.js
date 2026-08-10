@@ -245,28 +245,7 @@ function statusSelect(id, i) {
   return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
 }
 
-function hubzzBadge(c) {
-  if (c.hubzz_status === 'onboarded')
-    return `<span class="badge hz-in" title="Already live in Hubzz as '${esc(c.hubzz_slug || '')}' (${c.hubzz_optimized}/${c.hubzz_rows} optimized) — nothing to do">🏠 in Hubzz</span>`;
-  if (c.hubzz_status === 'partial')
-    return `<span class="badge hz-part" title="In Hubzz as '${esc(c.hubzz_slug || '')}' but only ${c.hubzz_optimized}/${c.hubzz_rows} optimized — needs finishing">◑ partial (${c.hubzz_optimized}/${c.hubzz_rows})</span>`;
-  return '';
-}
 
-function readinessBadge(c) {
-  // A set that is already in Hubzz is NOT an onboarding target — say so instead
-  // of advertising it as "ready".
-  if (c.owner_decision === 'exclude')
-    return `<span class="badge rdy-excl" title="${esc(c.owner_decision_reason || 'Owner declined')}">🚫 declined</span>`;
-  if (c.ready === 1 && c.hubzz_status === 'absent')
-    return '<span class="badge rdy-ready" title="Meets every criterion and is NOT yet in Hubzz — onboard this">✅ NEW · ready</span>';
-  if (c.ready === 1) return '<span class="badge rdy-done" title="Meets every criterion but is already in Hubzz">✔ ready (already in)</span>';
-  if (c.readiness_score == null) return '';
-  let crit = c.readiness_criteria;
-  if (typeof crit === 'string') { try { crit = JSON.parse(crit); } catch { crit = null; } }
-  const missing = crit ? ['vrm_ok', 'license_ok', 'identity_ok'].filter(k => !crit[k]) : [];
-  return `<span class="badge rdy-partial" title="Readiness ${c.readiness_score}/8${missing.length ? ' — missing: ' + missing.join(', ') : ''}">◐ ${c.readiness_score}/8</span>`;
-}
 
 function vrmReachBadge(c) {
   const s = c.vrm_check_status;
@@ -347,7 +326,6 @@ function renderCollectionTable(rows) {
     return `<tr>
       <td>${img}</td>
       <td><b style="color:var(--text-primary)">${esc(c.name)}</b>${c.creator ? `<br><span class="mono">${esc(c.creator)}</span>` : ''}</td>
-      <td>${tierBadge(c.tier)}</td>
       <td>${esc(c.chain || '—')}</td>
       <td>${licenseBadge(c.license_category, c)}</td>
       <td class="mono">${esc(c.vrm_license || '—')}</td>

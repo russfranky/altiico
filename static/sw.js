@@ -17,7 +17,8 @@
 // The cache is versioned by CACHE_VERSION. Bump and the install step purges
 // old caches.
 
-const CACHE_VERSION = 'v1';
+// Stamped by scripts/build_catalog.py on every build — never edit by hand.
+const CACHE_VERSION = '566d2944d03e';
 const CACHE_NAME = `superyeti-${CACHE_VERSION}`;
 const APP_SHELL = [
   './',
@@ -81,7 +82,19 @@ self.addEventListener('fetch', (event) => {
   const isAppShell = url.origin === self.location.origin &&
     (url.pathname === './' || url.pathname === '/' ||
      APP_SHELL.includes('./' + url.pathname.replace(/^\//, '')));
-  if (isAppShell || FONTS.test(url.origin)) {
+  if (isAppShell) {
+    // Network-first: the shell changes on every deploy, so a cached copy must
+    // never win. Cache is the offline fallback only.
+    event.respondWith(
+      fetch(req).then((resp) => {
+        const copy = resp.clone();
+        caches.open(CACHE_NAME).then((c) => c.put(req, copy));
+        return resp;
+      }).catch(() => caches.match(req))
+    );
+    return;
+  }
+  if (FONTS.test(url.origin)) {
     event.respondWith(
       caches.match(req).then((cached) => {
         const network = fetch(req).then((resp) => {
