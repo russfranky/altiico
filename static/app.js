@@ -262,55 +262,46 @@ function vrmReachBadge(c) {
 function collectionCard(c, i) {
   const id = c.id;
   const letter = esc((c.name || '?').trim().charAt(0).toUpperCase() || '?');
-  // Real banner only if it's an image (Mux/mp4 video banners can't render in <img>);
-  // otherwise fall back to the real pfp as a full-cover hero, then a gradient letter.
-  const realBanner = (c.banner_image_url && !isVideoUrl(c.banner_image_url)) ? c.banner_image_url : null;
-  const pfpSrc = c.image_url || c.sample_nft_image;
-  const heroSrc = realBanner || pfpSrc;
-  const hero = heroSrc
-    ? `<img loading="lazy" src="${esc(heroSrc)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'${letter}'}))">`
-    : `<div class="fallback">${letter}</div>`;
-  // Overlapping pfp circle only when the hero is a distinct banner image.
-  const pfp = (realBanner && pfpSrc)
-    ? `<img class="ccard-pfp" loading="lazy" src="${esc(pfpSrc)}" alt="" onerror="this.style.display='none'">`
-    : '';
-  const chips = [];
-  if (c.chain) chips.push(`<span class="chip"><span class="k">⛓</span> ${esc(c.chain)}</span>`);
-  const sup = supplyText(c); if (sup) chips.push(`<span class="chip">${sup}</span>`);
-  if (c.floor_price) chips.push(`<span class="chip"><span class="k">floor</span> <b>${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}</b></span>`);
-  if (c.avatar_count) chips.push(`<span class="chip"><span class="k">avatars</span> <b>${c.avatar_count.toLocaleString()}</b></span>`);
-  if (c.vipe_category) chips.push(`<span class="chip vipe-cat" title="VIPE platform category">${esc(c.vipe_category)}</span>`);
-  if (c.vipe_assets_3d) chips.push(`<span class="chip" title="How this collection ships 3D (VIPE)">${esc(c.vipe_assets_3d)}</span>`);
+  const art = c.image_url || c.sample_nft_image ||
+              ((c.banner_image_url && !isVideoUrl(c.banner_image_url)) ? c.banner_image_url : null);
+  const thumb = art
+    ? `<img loading="lazy" src="${esc(art)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'crow-fallback',textContent:'${letter}'}))">`
+    : `<div class="crow-fallback">${letter}</div>`;
+
+  const facts = [];
+  if (c.chain) facts.push(esc(c.chain));
+  const sup = supplyText(c); if (sup) facts.push(sup);
+  if (c.avatar_count) facts.push(`${c.avatar_count.toLocaleString()} avatars`);
+  if (c.floor_price) facts.push(`floor ${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}`);
+
   const vrmBtn = c.vrm_url_https
-    ? `<button class="vrm-btn" data-vrm="${i}">▶ View VRM</button>`
-    : `<button class="vrm-btn ghost" disabled>No VRM</button>`;
-  const vrmLic = c.vrm_license ? ` <span class="badge badge-unknown">${esc(c.vrm_license)}</span>` : '';
-  const descText = c.curated_description || c.description;
-  const desc = descText ? `<p class="ccard-desc">${esc(descText)}</p>` : '';
-  const socials = socialLinks(c);
-  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<div class="ccard-note" data-note="${i}" title="Edit note">📝 ${esc(RESEARCH[id].note)}</div>` : '';
+    ? `<button class="vrm-btn" data-vrm="${i}">▶ VRM</button>`
+    : `<button class="vrm-btn ghost" disabled>—</button>`;
+  const descText = c.curated_description || c.description || '';
   const starred = isBookmarked(id);
-  return `<div class="ccard${starred ? ' bookmarked' : ''}">
-    <div class="ccard-banner" data-img="${i}">
-      ${hero}
-      <button class="bm-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
-      ${pfp}
+  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<span class="crow-note" data-note="${i}" title="${esc(RESEARCH[id].note)}">📝</span>` : '';
+
+  return `<div class="crow${starred ? ' bookmarked' : ''}">
+    <button class="crow-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
+    <div class="crow-thumb" data-img="${i}">${thumb}</div>
+    <div class="crow-main">
+      <div class="crow-line1">
+        <span class="crow-name">${esc(c.name)}</span>
+        ${c.creator ? `<span class="crow-creator">${esc(c.creator)}</span>` : ''}
+        ${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}
+        ${c.vipe_category ? `<span class="chip vipe-cat">${esc(c.vipe_category)}</span>` : ''}
+        ${note}
+      </div>
+      <div class="crow-line2">
+        ${facts.length ? `<span class="crow-facts">${facts.join(' · ')}</span>` : ''}
+        ${descText ? `<span class="crow-desc">${esc(descText)}</span>` : ''}
+      </div>
     </div>
-    <div class="ccard-body">
-      <div class="ccard-title">
-        <span class="ccard-name">${esc(c.name)}</span>
-        ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
-      </div>
-      <div class="ccard-badges">${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
-      ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
-      ${desc}
-      ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}
-      ${note}
-      <div class="ccard-foot">
-        ${vrmBtn}
-        ${statusSelect(id, i)}
-        <button class="note-btn" data-note="${i}" title="Add note">📝</button>
-      </div>
+    <div class="crow-actions">
+      ${collLinks(c)}
+      ${vrmBtn}
+      ${statusSelect(id, i)}
+      <button class="note-btn" data-note="${i}" title="Note">📝</button>
     </div>
   </div>`;
 }
