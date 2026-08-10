@@ -27,9 +27,18 @@ def get_range(url: str, start: int, end: int, timeout: float = 30.0) -> bytes:
     response is larger than the requested range, returns only the requested bytes.
     Raises RuntimeError on other HTTP errors.
     """
+    # A browser-like User-Agent is REQUIRED: ipfs.io, Cloudflare-fronted hosts and
+    # several NFT CDNs return 403 to header-less urllib requests. Without this the
+    # reachability checker reports live VRMs as dead (measured 2026-08-10: 8 of 12
+    # "dead" URLs returned 206 once a UA was sent).
     headers = {
         "Range": f"bytes={start}-{end}",
         "Accept-Encoding": "identity",
+        "User-Agent": (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+        ),
+        "Accept": "*/*",
     }
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 - user-supplied URL
