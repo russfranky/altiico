@@ -70,6 +70,12 @@
         <option value="ongoing">🟢 Ongoing</option>
         <option value="no_max_supply">❓ No max</option>
       </select>
+      <select id="f-vrm" onchange="filter()" title="VRM reachability">
+        <option value="">Any VRM</option>
+        <option value="live">🟢 VRM live</option>
+        <option value="dead">🔴 VRM dead</option>
+        <option value="nourl">⚫ No VRM URL</option>
+      </select>
       <select id="f-bookmark" onchange="filter()" title="Bookmarks">
         <option value="">All</option>
         <option value="bookmarked">★ Bookmarked</option>

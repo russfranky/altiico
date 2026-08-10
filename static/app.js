@@ -188,11 +188,15 @@ function applyCollectionFilters() {
   const fMint = document.getElementById('f-mint').value;
   const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
   const fStatus = (document.getElementById('f-status') || {}).value || '';
+  const fVrm = (document.getElementById('f-vrm') || {}).value || '';
   let rows = DATA.collections.filter(c => {
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
     if (fMint && (c.mint_status || '') !== fMint) return false;
+    if (fVrm === 'live' && c.vrm_check_status !== 'ok_vrm') return false;
+    if (fVrm === 'dead' && c.vrm_reachable !== 0) return false;
+    if (fVrm === 'nourl' && c.vrm_check_status !== 'no_url') return false;
     if (fBookmark === 'bookmarked' && !isBookmarked(c.id)) return false;
     if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
     if (q) {
@@ -239,6 +243,18 @@ function statusSelect(id, i) {
   return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
 }
 
+function vrmReachBadge(c) {
+  const s = c.vrm_check_status;
+  if (s === 'ok_vrm') {
+    const kb = c.vrm_check_bytes ? ' ' + Math.round(c.vrm_check_bytes / 1024) + 'KB' : '';
+    return `<span class="badge vrm-live" title="VRM fetched & valid (${esc(c.vrm_check_url || '')})">🟢 VRM live${kb}</span>`;
+  }
+  if (s === 'reachable_not_vrm') return '<span class="badge vrm-warn" title="File reachable but not a valid VRM/GLB">🟡 not a VRM</span>';
+  if (s === 'no_url') return '<span class="badge vrm-none" title="No VRM URL on record — unknown where the VRM lives">⚫ no VRM URL</span>';
+  if (c.vrm_reachable === 0) return `<span class="badge vrm-dead" title="Unreachable: ${esc(s || '')}${c.vrm_check_http ? ' ' + c.vrm_check_http : ''}">🔴 VRM dead</span>`;
+  return '';
+}
+
 function collectionCard(c, i) {
   const id = c.id;
   const letter = esc((c.name || '?').trim().charAt(0).toUpperCase() || '?');
@@ -279,7 +295,7 @@ function collectionCard(c, i) {
         <span class="ccard-name">${esc(c.name)}</span>
         ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
       </div>
-      <div class="ccard-badges">${licenseBadge(c.license_category, c)}${vrmLic}</div>
+      <div class="ccard-badges">${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
       ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
       ${desc}
       ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}

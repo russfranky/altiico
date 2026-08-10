@@ -232,3 +232,9 @@ tr:hover td { background: var(--bg-surface); }
 .note-btn:hover { border-color: var(--border-hover); }
 .ccard-note { font-size: 11px; color: var(--warning); background: rgba(229,184,73,0.08); border: 1px solid rgba(229,184,73,0.22); border-radius: 8px; padding: 5px 9px; cursor: pointer;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* VRM reachability badges */
+.badge.vrm-live { background: rgba(76,195,138,0.16); color: var(--success); }
+.badge.vrm-warn { background: rgba(229,184,73,0.16); color: var(--warning); }
+.badge.vrm-dead { background: rgba(255,107,107,0.16); color: var(--error); }
+.badge.vrm-none { background: var(--bg-surface); color: var(--text-muted); }
