@@ -519,17 +519,23 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
       }
 
       function frameModel(vrm) {
-        // Fit the camera to the model's bounding box so any avatar scale works.
+        // Fit by bounding SPHERE + fov so any avatar shape/scale is fully framed
+        // with margin (a box-height heuristic put the camera inside wide models).
         const box = new THREE.Box3().setFromObject(vrm.scene);
-        const size = box.getSize(new THREE.Vector3());
-        const center = box.getCenter(new THREE.Vector3());
-        const height = size.y || 1.6;
-        const dist = height * 1.9;
-        camera.position.set(0, center.y + height * 0.06, dist);
-        camera.near = Math.max(0.01, dist / 100);
-        camera.far = dist * 40;
+        const sphere = box.getBoundingSphere(new THREE.Sphere());
+        const center = sphere.center;
+        const radius = Math.max(sphere.radius, 0.05);
+        const vFov = THREE.MathUtils.degToRad(camera.fov);
+        const fitV = radius / Math.sin(vFov / 2);
+        const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+        const fitH = radius / Math.sin(hFov / 2);
+        const dist = Math.max(fitV, fitH) * 1.25;  // 25% margin
+        camera.position.set(0, center.y, dist);
+        camera.near = Math.max(0.01, dist / 500);
+        camera.far = dist * 50;
         camera.updateProjectionMatrix();
-        controls.target.set(0, center.y, 0);
+        controls.target.copy(center);
+        controls.target.x = 0;
         controls.update();
       }
 
@@ -544,6 +550,22 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
       }
       window.addEventListener('resize', resize);
       window._vrmResize = resize;
+
+      // Public IPFS gateways 504/429 constantly (a production load failed on
+      // ipfs.io). Build an ordered candidate list so one dead gateway is not a
+      // dead avatar — mirrors the fallback in scripts/check_vrm_reachable.py.
+      function urlCandidates(u) {
+        const out = [u];
+        const m = /\\/ipfs\\/([A-Za-z0-9]+)(\\/.*)?$/.exec(u);
+        if (m) {
+          const cid = m[1], path = m[2] || '';
+          for (const gw of ['https://ipfs.io', 'https://dweb.link', 'https://cloudflare-ipfs.com', 'https://gateway.pinata.cloud']) {
+            const alt = gw + '/ipfs/' + cid + path;
+            if (!out.includes(alt)) out.push(alt);
+          }
+        }
+        return out;
+      }
 
       window._initVrmScene = function(vrmUrl) {
         const canvas = document.getElementById('vrmCanvas');
@@ -587,8 +609,10 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
         loader.crossOrigin = 'anonymous';
         loader.register((parser) => new VRMLoaderPlugin(parser));
 
-        loader.load(
-          vrmUrl,
+        const candidates = urlCandidates(vrmUrl);
+        let attempt = 0;
+        const tryLoad = () => loader.load(
+          candidates[attempt],
           (gltf) => {
             const vrm = gltf.userData.vrm;
             if (!vrm) {
@@ -605,15 +629,21 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
             scene.add(vrm.scene);
             frameModel(vrm);
 
+            // Several VRMs carry the literal string "undefined" in meta fields —
+            // treat those as empty rather than printing them.
+            const clean = (v) => {
+              const s = Array.isArray(v) ? v.filter(Boolean).join(', ') : (v == null ? '' : String(v));
+              return (!s || s === 'undefined' || s === 'null') ? '' : s;
+            };
             const m = vrm.meta || {};
-            const title = m.name || m.title || '';
-            const author = Array.isArray(m.authors) ? m.authors.join(', ') : (m.author || '');
-            const spec = m.metaVersion === '1' || m.licenseUrl ? 'VRM 1.0' : 'VRM 0.x';
+            const title = clean(m.name) || clean(m.title);
+            const author = clean(m.authors) || clean(m.author);
+            const spec = (m.metaVersion === '1' || m.licenseUrl) ? 'VRM 1.0' : 'VRM 0.x';
             const bits = [spec];
             if (title) bits.push(title);
             if (author) bits.push('by ' + author);
-            const lic = m.licenseName || m.licenseUrl;
-            if (lic) bits.push(String(lic));
+            const lic = clean(m.licenseName) || clean(m.licenseUrl);
+            if (lic) bits.push(lic);
             document.getElementById('vrmFooterInfo').textContent = bits.join(' · ');
             document.getElementById('vrmLoading').classList.remove('active');
           },
@@ -628,10 +658,19 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
             }
           },
           (err) => {
+            attempt++;
+            if (attempt < candidates.length) {
+              const el = document.getElementById('vrmLoading');
+              if (el) el.textContent = 'Gateway failed — trying mirror ' + attempt + '…';
+              tryLoad();
+              return;
+            }
             window._showVrmError('Could not load this VRM: ' + ((err && err.message) || 'network or CORS error') +
+              (candidates.length > 1 ? ' (tried ' + candidates.length + ' gateways)' : '') +
               '. The host may block cross-origin requests — use the direct link below.');
           }
         );
+        tryLoad();
       };
 
       window._vrmDispose = disposeCurrent;
