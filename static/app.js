@@ -26,7 +26,7 @@ async function loadCollections() {
     fetchJSON('data/' + info.files.collections),
   ]);
   DATA.collections = collectionsData.collections || [];
-  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1 && c.hubzz_status === 'absent' && c.owner_decision !== 'exclude').length);
+  setStat('stat-ready', DATA.collections.filter(c => c.vrm_check_status === 'ok_vrm').length);
   const s = summary.stats || {};
   setStat('stat-collections', s.collections ?? DATA.collections.length);
   setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
@@ -184,19 +184,14 @@ function setCollectionsView(mode) {
 
 function applyCollectionFilters() {
   const q = document.getElementById('search').value.toLowerCase();
-  const fTier = document.getElementById('f-tier').value;
+  const fTier = (document.getElementById('f-tier') || {}).value || '';
   const fChain = document.getElementById('f-chain').value;
   const fLicense = document.getElementById('f-license').value;
   const fMint = document.getElementById('f-mint').value;
   const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
   const fStatus = (document.getElementById('f-status') || {}).value || '';
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
-  const fReady = (document.getElementById('f-ready') || {}).value || '';
   let rows = DATA.collections.filter(c => {
-    if (fReady === 'ready' && !(c.ready === 1 && c.hubzz_status === 'absent' && c.owner_decision !== 'exclude')) return false;
-    if (fReady === 'declined' && c.owner_decision !== 'exclude') return false;
-    if (fReady === 'inhubzz' && c.hubzz_status === 'absent') return false;
-    if (fReady === 'near' && !(c.readiness_score >= 6 && c.ready !== 1)) return false;
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
@@ -320,7 +315,6 @@ function collectionCard(c, i) {
     <div class="ccard-banner" data-img="${i}">
       ${hero}
       <button class="bm-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
-      <div class="ccard-tier">${tierBadge(c.tier)}</div>
       ${pfp}
     </div>
     <div class="ccard-body">
@@ -328,7 +322,7 @@ function collectionCard(c, i) {
         <span class="ccard-name">${esc(c.name)}</span>
         ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
       </div>
-      <div class="ccard-badges">${readinessBadge(c)}${hubzzBadge(c)}${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
+      <div class="ccard-badges">${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
       ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
       ${desc}
       ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}
@@ -508,7 +502,6 @@ function switchTab(tab) {
   document.querySelectorAll('#viewSwitch .seg').forEach(b => b.classList.toggle('active', b.dataset.view === tab));
   document.getElementById('collectionsView').style.display = tab === 'collections' ? '' : 'none';
   document.getElementById('avatarsView').style.display = tab === 'avatars' ? '' : 'none';
-  document.getElementById('openseaView').style.display = tab === 'opensea' ? '' : 'none';
   if (tab === 'collections') filter();
   else if (tab === 'avatars') filterAvatars();
   else filterOS();
@@ -539,12 +532,6 @@ function wireDelegation() {
   });
   document.getElementById('avatarsView').addEventListener('change', e => {
     if (e.target.id === 'f-av-collection' || e.target.id === 'f-av-license') filterAvatars();
-  });
-  document.getElementById('openseaView').addEventListener('click', e => {
-    const v = e.target.closest('[data-vrm]');
-    if (v) { const c = _osRows[+v.dataset.vrm]; if (c && c.vrm_url_https) openVrmViewer(c.vrm_url_https, c.name, c.vrm_url_https); return; }
-    const im = e.target.closest('[data-osimg]');
-    if (im) { const c = _osRows[+im.dataset.osimg]; if (c && c.image_url) showImg(c.image_url, c.name, c.banner_image_url); }
   });
 }
 
