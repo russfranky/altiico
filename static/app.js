@@ -90,6 +90,7 @@ let currentTab = 'collections';
 let collectionsViewMode = 'cards';
 let _collRows = [];
 let _osRows = [];
+let _avRows = [];
 
 // ─── Research state: bookmarks / status / notes (persisted in localStorage) ──
 const RESEARCH_KEY = 'vrmcat_research_v1';
@@ -366,28 +367,93 @@ function renderCollectionTable(rows) {
 }
 
 // ─── Avatars view ────────────────────────────────────────────────────────────
-function filterAvatars() {
+function collById(id) {
+  if (!window._collIndex) {
+    window._collIndex = {};
+    for (const c of DATA.collections) window._collIndex[c.id] = c;
+  }
+  return window._collIndex[id] || {};
+}
+
+const LICENSE_LABEL = { green: '🟢 CC0 / open', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '? Unknown' };
+
+let _avPage = 0;
+const AV_PAGE = 200;
+
+function avatarFilters() {
+  const q = (document.getElementById('search').value || '').toLowerCase();
+  const fc = (document.getElementById('f-av-collection') || {}).value || '';
+  const fl = (document.getElementById('f-av-license') || {}).value || '';
+  return DATA.avatars.filter(a => {
+    if (fc && a.collection_id !== fc) return false;
+    if (fl) {
+      const cat = collById(a.collection_id).license_category || 'unknown';
+      if (fl === 'open' && cat !== 'green') return false;
+      if (fl !== 'open' && cat !== fl) return false;
+    }
+    if (q) {
+      const hay = [a.name, a.collection_id, a.description].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function populateAvatarCollectionFilter() {
+  const sel = document.getElementById('f-av-collection');
+  if (!sel || sel.dataset.filled) return;
+  const counts = {};
+  for (const a of DATA.avatars) counts[a.collection_id] = (counts[a.collection_id] || 0) + 1;
+  const opts = Object.entries(counts).sort((x, y) => y[1] - x[1])
+    .map(([id, n]) => `<option value="${esc(id)}">${esc(collById(id).name || id)} (${n})</option>`).join('');
+  sel.innerHTML = '<option value="">All collections</option>' + opts;
+  sel.dataset.filled = '1';
+}
+
+function filterAvatars(resetPage = true) {
   if (!_avatarsLoaded) {
     document.getElementById('avatarGrid').innerHTML = '<div class="loading-msg">Loading avatars…</div>';
     loadAvatars();
     return;
   }
-  const q = (document.getElementById('search').value || '').toLowerCase();
-  let rows = DATA.avatars.filter(a => {
-    if (!q) return true;
-    const hay = [a.name, a.collection_id, a.description, a.model_file_url].join(' ').toLowerCase();
-    return hay.includes(q);
-  });
-  const shown = rows.slice(0, 600);
+  populateAvatarCollectionFilter();
+  if (resetPage) _avPage = 0;
+  const rows = avatarFilters();
+  _avRows = rows;
+  const shown = rows.slice(0, (_avPage + 1) * AV_PAGE);
+  const openCount = rows.filter(a => (collById(a.collection_id).license_category) === 'green').length;
   document.getElementById('avatarCount').innerHTML =
-    `<b>${shown.length}</b> of ${DATA.avatars.length} avatars${rows.length > shown.length ? ' (showing first 600)' : ''}`;
-  document.getElementById('avatarGrid').innerHTML = shown.map(a => `<div class="avatar-card">
-    <div class="thumb-box">${a.thumbnail_url ? `<img loading="lazy" src="${esc(a.thumbnail_url)}" alt="" onerror="this.parentNode.textContent='🖼'">` : '🖼'}</div>
-    <h4>${esc(a.name || '—')}</h4>
-    <div class="mono">${esc(a.collection_id || '')}</div>
-    ${a.model_file_url ? `<a href="${esc(a.model_file_url)}" target="_blank" rel="noopener">Download VRM ↓</a>` : ''}
-  </div>`).join('');
+    `<b>${rows.length.toLocaleString()}</b> avatars${rows.length !== DATA.avatars.length ? ' of ' + DATA.avatars.length.toLocaleString() : ''}` +
+    ` · <span style="color:var(--success)">${openCount.toLocaleString()} CC0/open</span>` +
+    ` · showing ${shown.length.toLocaleString()}`;
+
+  document.getElementById('avatarGrid').innerHTML = shown.map((a, i) => {
+    const c = collById(a.collection_id);
+    const cat = c.license_category || 'unknown';
+    const lic = LICENSE_LABEL[cat] || LICENSE_LABEL.unknown;
+    return `<div class="avatar-card">
+      <div class="thumb-box" data-avpreview="${i}" title="Preview VRM in 3D">
+        ${a.thumbnail_url ? `<img loading="lazy" src="${esc(a.thumbnail_url)}" alt="" onerror="this.parentNode.textContent='🖼'">` : '🖼'}
+        <span class="av-play">▶</span>
+      </div>
+      <h4 title="${esc(a.name || '')}">${esc(a.name || '—')}</h4>
+      <div class="av-coll">${esc(c.name || a.collection_id)}</div>
+      <div class="av-row">
+        <span class="badge badge-${cat}" title="License of the parent collection">${lic}</span>
+      </div>
+      <div class="av-actions">
+        <button class="av-btn" data-avpreview="${i}">▶ 3D</button>
+        <button class="av-btn" data-avcopy="${i}" title="Copy VRM URL">⧉</button>
+        <a class="av-btn" href="${esc(a.model_file_url)}" target="_blank" rel="noopener" title="Open/download VRM">↓</a>
+      </div>
+    </div>`;
+  }).join('');
+
+  const more = document.getElementById('avMore');
+  if (more) more.style.display = shown.length < rows.length ? '' : 'none';
 }
+
+function avatarsShowMore() { _avPage++; filterAvatars(false); }
 
 // ─── OpenSea candidates view ─────────────────────────────────────────────────
 function filterOS() {
@@ -455,6 +521,15 @@ function wireDelegation() {
   collView.addEventListener('change', e => {
     const s = e.target.closest('[data-status]');
     if (s) { const c = _collRows[+s.dataset.status]; if (c) setStatus(c.id, s.value); }
+  });
+  document.getElementById('avatarsView').addEventListener('click', e => {
+    const p = e.target.closest('[data-avpreview]');
+    if (p) { const a = _avRows[+p.dataset.avpreview]; if (a) openVrmViewer(a.model_file_url, a.name || a.collection_id, a.model_file_url); return; }
+    const cp = e.target.closest('[data-avcopy]');
+    if (cp) { const a = _avRows[+cp.dataset.avcopy]; if (a) { navigator.clipboard.writeText(a.model_file_url); cp.textContent = '✓'; setTimeout(() => cp.textContent = '⧉', 1200); } }
+  });
+  document.getElementById('avatarsView').addEventListener('change', e => {
+    if (e.target.id === 'f-av-collection' || e.target.id === 'f-av-license') filterAvatars();
   });
   document.getElementById('openseaView').addEventListener('click', e => {
     const v = e.target.closest('[data-vrm]');

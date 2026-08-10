@@ -254,3 +254,20 @@ tr:hover td { background: var(--bg-surface); }
 .badge.rdy-done { background: var(--bg-surface); color: var(--text-muted); }
 .badge.rdy-excl { background: rgba(255,107,107,0.14); color: var(--error); }
 .chip.vipe-cat { background: rgba(255,255,11,0.10); color: #e9e26a; border: 1px solid rgba(255,255,11,0.22); border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 600; }
+
+/* Avatars research grid */
+.avatar-card .thumb-box { position: relative; cursor: pointer; }
+.av-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: #fff; background: rgba(0,0,0,0.45); opacity: 0; transition: opacity .15s; }
+.avatar-card .thumb-box:hover .av-play { opacity: 1; }
+.av-coll { font-size: 10px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.av-row { margin-top: 6px; }
+.av-row .badge { font-size: 10px; padding: 2px 7px; }
+.av-actions { display: flex; gap: 4px; margin-top: 8px; }
+.av-btn { flex: 0 0 auto; padding: 5px 9px; font-size: 11px; border-radius: 7px; border: 1px solid var(--border-default);
+  background: var(--bg-surface); color: var(--text-secondary); cursor: pointer; font-family: inherit;
+  display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.av-btn:hover { border-color: var(--border-hover); color: var(--text-primary); opacity: 1; }
+.av-actions .av-btn:first-child { flex: 1; color: var(--accent-2); border-color: rgba(124,107,255,0.3); }
+#f-av-collection, #f-av-license { margin-left: auto; }
+#f-av-license { margin-left: 8px; }
