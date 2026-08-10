@@ -34,7 +34,7 @@ import sqlite3, argparse, json, sys, os, subprocess, urllib.request, ssl, time
 from pathlib import Path
 
 BASE = Path(__file__).parent.resolve()
-DB = BASE / "vrm_index.db"
+DB = BASE / "data" / "vrm_index.db"
 KEY_FILE = Path(os.path.expanduser("~/.opensea/api_key"))
 
 # ─── DB helpers ──────────────────────────────────────────────────────────────
@@ -326,6 +326,7 @@ def cmd_avatars(args):
     if not args.all:
         sql += " LIMIT 50"
     rows = [dict(r) for r in c.execute(sql, params)]
+    total = c.execute("SELECT COUNT(*) FROM avatars").fetchone()[0] if not args.all else len(rows)
     c.close()
 
     if args.json:
@@ -340,7 +341,6 @@ def cmd_avatars(args):
     for a in rows:
         print(f"{truncate(a.get('collection_name',''),28):<28} {truncate(a.get('name',''),30):<30} "
               f"{a.get('format','') or '?':<8} {truncate(a.get('model_file_url',''),50)}")
-    total = c.execute("SELECT COUNT(*) FROM avatars").fetchone()[0] if not args.all else len(rows)
     print(f"\n{len(rows)} avatar(s)" + (f" (showing first 50 of {total}, use --all for all)" if not args.all and len(rows) == 50 else ""))
 
 def cmd_stats(args):
