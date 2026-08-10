@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-10T02:31:47.235791+00:00",
+  "generated_at": "2026-08-10T04:33:16.785848+00:00",
   "schema_version": 1,
   "files": {
     "summary": "catalog-summary.7d489542a799.json",
-    "collections": "collections.b278842cf94b.json",
+    "collections": "collections.1a4856269096.json",
     "opensea": "opensea-candidates.cd56ce2ad8db.json",
     "avatars": [
       "avatars-00.f09d4e042f4f.json",
@@ -17,5 +17,5 @@
       "avatars-08.b4bf92011475.json"
     ]
   },
-  "market_data_as_of": "2026-07-19T10:00:00+00:00"
+  "market_data_as_of": "2026-08-10T03:41:56.898188+00:00"
 }
