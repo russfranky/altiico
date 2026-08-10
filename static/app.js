@@ -90,16 +90,15 @@ let currentTab = 'collections';
 let collectionsViewMode = 'cards';
 let _collRows = [];
 let _osRows = [];
-let _avRows = [];
 
 // ─── Research state: bookmarks / status / notes (persisted in localStorage) ──
 const RESEARCH_KEY = 'vrmcat_research_v1';
 const STATUSES = [
   { v: '', label: '— status —', dot: 'var(--text-muted)' },
-  { v: 'shortlist', label: '⭐ Shortlist', dot: 'var(--warning)' },
-  { v: 'onboard', label: '✅ To onboard', dot: 'var(--success)' },
-  { v: 'reviewing', label: '🔍 Reviewing', dot: 'var(--accent-2)' },
-  { v: 'pass', label: '🚫 Pass', dot: 'var(--error)' },
+  { v: 'shortlist', label: 'Shortlist', dot: 'var(--warning)' },
+  { v: 'onboard', label: 'Use it', dot: 'var(--success)' },
+  { v: 'reviewing', label: 'Reviewing', dot: 'var(--accent-2)' },
+  { v: 'pass', label: 'Pass', dot: 'var(--error)' },
 ];
 let RESEARCH = {};
 try { RESEARCH = JSON.parse(localStorage.getItem(RESEARCH_KEY) || '{}'); } catch { RESEARCH = {}; }
@@ -126,12 +125,11 @@ function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)
 
 function licenseBadge(cat, c) {
   // Colour comes from the traffic-light category; the text is the ACTUAL licence
-  // name when we have one. Previously both were rendered, so "🟢 CC0" sat next to
+  // name when we have one. Previously both were rendered, so the colour badge sat next to
   // a second "CC0" badge saying the same thing.
-  const dot = { green: '🟢', yellow: '🟡', red: '🔴', unknown: '?' }[cat] || '?';
   const generic = { green: 'Open', yellow: 'Holder', red: 'Restricted', unknown: 'Unknown' }[cat] || 'Unknown';
   const real = (c && c.vrm_license || '').trim();
-  const label = `${dot} ${real || generic}`;
+  const label = real || generic;
   if (!c) return badge(cat || 'unknown', label);
   const rc = c.reason_codes || [];
   const conf = c.license_confidence || 'unknown';
@@ -149,22 +147,77 @@ function tierBadge(tier) {
 function supplyText(c) {
   if (!c.total_supply) return null;
   const ms = c.mint_status;
-  let icon = '❓';
-  if (ms === 'capped' || ms === 'likely_capped') icon = '🔒';
-  else if (ms === 'ongoing') icon = '🟢';
-  return `${icon} ${c.total_supply.toLocaleString()}`;
+  const note = ms === 'ongoing' ? ' (minting)' : '';
+  return `${c.total_supply.toLocaleString()}${note}`;
+}
+
+// Block explorer per chain — every contract link used to point at etherscan.io,
+// which is simply wrong for the 16 collections that are not on Ethereum.
+const EXPLORERS = {
+  ethereum: ['https://etherscan.io/address/', 'Etherscan'],
+  base: ['https://basescan.org/address/', 'BaseScan'],
+  polygon: ['https://polygonscan.com/address/', 'PolygonScan'],
+  optimism: ['https://optimistic.etherscan.io/address/', 'Optimistic Etherscan'],
+  arbitrum: ['https://arbiscan.io/address/', 'Arbiscan'],
+  shape: ['https://shapescan.xyz/address/', 'ShapeScan'],
+  ape_chain: ['https://apescan.io/address/', 'ApeScan'],
+  zora: ['https://explorer.zora.energy/address/', 'Zora Explorer'],
+};
+
+function explorerFor(chain, addr) {
+  const e = EXPLORERS[(chain || '').toLowerCase()];
+  return e ? { url: e[0] + addr, name: e[1] } : null;
+}
+
+// Where the VRM actually lives, derived from the verified URL.
+function storageOf(c) {
+  const u = c.vrm_check_url || c.vrm_url_https || c.vrm_url_pattern || '';
+  if (!u) return null;
+  const low = u.toLowerCase();
+  const cid = /\/ipfs\/([A-Za-z0-9]+)/.exec(u);
+  if (low.startsWith('ipfs://') || cid) {
+    return { kind: 'IPFS', icon: '', href: cid ? 'https://ipfs.io/ipfs/' + cid[1] : u,
+             detail: cid ? cid[1] : u };
+  }
+  const ar = /arweave\.net\/([A-Za-z0-9_-]{43})/.exec(u);
+  if (ar || low.startsWith('ar://')) {
+    const tx = ar ? ar[1] : u.slice(5);
+    return { kind: 'Arweave', icon: '', href: 'https://viewblock.io/arweave/tx/' + tx, detail: tx };
+  }
+  if (low.includes('githubusercontent') || low.includes('github.com'))
+    return { kind: 'GitHub', icon: '', href: u, detail: u };
+  try { return { kind: new URL(u).hostname.replace(/^www\./, ''), icon: '', href: u, detail: u }; }
+  catch { return null; }
 }
 
 function collLinks(c) {
   const out = [];
-  if (c.opensea_slug) out.push(`<a class="icon-link" href="https://opensea.io/collection/${encodeURIComponent(c.opensea_slug)}" target="_blank" rel="noopener" title="OpenSea">⛵</a>`);
-  if (c.project_url) out.push(`<a class="icon-link" href="${esc(c.project_url)}" target="_blank" rel="noopener" title="Website">🌐</a>`);
-  if (c.twitter_username) out.push(`<a class="icon-link" href="https://twitter.com/${esc(c.twitter_username)}" target="_blank" rel="noopener" title="@${esc(c.twitter_username)}">𝕏</a>`);
-  if (c.discord_url && c.discord_status === 'alive') out.push(`<a class="icon-link" href="${esc(c.discord_url)}" target="_blank" rel="noopener" title="Discord">💬</a>`);
-  const ct = c.contract || ((c.contracts || [])[0] || {}).address;
-  if (ct) out.push(`<a class="icon-link mono" href="https://etherscan.io/address/${esc(ct)}" target="_blank" rel="noopener" title="${esc(ct)}">⧉</a>`);
+  if (c.opensea_slug) out.push(`<a class="icon-link" href="https://opensea.io/collection/${encodeURIComponent(c.opensea_slug)}" target="_blank" rel="noopener" title="OpenSea">OS</a>`);
+  if (c.project_url) out.push(`<a class="icon-link" href="${esc(c.project_url)}" target="_blank" rel="noopener" title="Website">Web</a>`);
+  if (c.twitter_username) out.push(`<a class="icon-link" href="https://twitter.com/${esc(c.twitter_username)}" target="_blank" rel="noopener" title="@${esc(c.twitter_username)}">X</a>`);
+  if (c.discord_url && c.discord_status === 'alive') out.push(`<a class="icon-link" href="${esc(c.discord_url)}" target="_blank" rel="noopener" title="Discord">DC</a>`);
   return out.join('');
 }
+
+// Contract + storage, shown as readable chips rather than a mystery icon.
+function chainChips(c) {
+  const out = [];
+  const contracts = (c.contracts && c.contracts.length)
+    ? c.contracts
+    : (c.contract ? [{ address: c.contract, chain: c.chain }] : []);
+  for (const ct of contracts.slice(0, 2)) {
+    const addr = ct.address; if (!addr) continue;
+    const ex = explorerFor(ct.chain || c.chain, addr);
+    const short = addr.slice(0, 6) + '…' + addr.slice(-4);
+    out.push(ex
+      ? `<a class="chip chip-link" href="${esc(ex.url)}" target="_blank" rel="noopener" title="${esc(addr)} — open on ${esc(ex.name)}">${esc(short)}</a>`
+      : `<span class="chip" title="${esc(addr)} — no explorer configured for ${esc(ct.chain || c.chain || 'this chain')}">${esc(short)}</span>`);
+  }
+  const st = storageOf(c);
+  if (st) out.push(`<a class="chip chip-link" href="${esc(st.href)}" target="_blank" rel="noopener" title="VRM files stored on ${esc(st.kind)} — ${esc(st.detail)}">${esc(st.kind)}</a>`);
+  return out.join('');
+}
+
 
 // ─── Filtering + collection rendering ────────────────────────────────────────
 let _filterTimer = null;
@@ -203,18 +256,23 @@ function applyCollectionFilters() {
     if (fVrm === 'live' && c.vrm_check_status !== 'ok_vrm') return false;
     if (fVrm === 'dead' && c.vrm_reachable !== 0) return false;
     if (fVrm === 'nourl' && c.vrm_check_status !== 'no_url') return false;
-    if (fBookmark === 'bookmarked' && !isBookmarked(c.id)) return false;
-    if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
+    if (fStatus === '__bm') { if (!isBookmarked(c.id)) return false; }
+    else if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
     if (q) {
       const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description, c.curated_description, c.vipe_category].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
   });
+  const sortSel = (document.getElementById('f-sort') || {}).value || 'name';
+  const VRM_RANK = { ok_vrm: 0, reachable_not_vrm: 1, no_url: 3 };
   rows.sort((a, b) => {
-    let va = a[sortKey], vb = b[sortKey];
-    if (typeof va === 'number' || typeof vb === 'number') return sortAsc ? (va || 0) - (vb || 0) : (vb || 0) - (va || 0);
-    return sortAsc ? String(va || '').localeCompare(String(vb || '')) : String(vb || '').localeCompare(String(va || ''));
+    if (sortSel === 'vrm') return (VRM_RANK[a.vrm_check_status] ?? 2) - (VRM_RANK[b.vrm_check_status] ?? 2)
+                                || String(a.name).localeCompare(String(b.name));
+    if (sortSel === 'release_date') return String(b.release_date || '').localeCompare(String(a.release_date || ''));
+    if (sortSel === 'total_supply') return (b.total_supply || 0) - (a.total_supply || 0);
+    if (sortSel === 'avatars_total') return (b.avatars_total || 0) - (a.avatars_total || 0);
+    return String(a.name || '').localeCompare(String(b.name || ''));
   });
   return rows;
 }
@@ -234,14 +292,6 @@ function filter() {
 
 function isVideoUrl(u) { return !!u && (u.includes('.mp4') || u.includes('stream.mux.com') || u.includes('.m3u8')); }
 
-function socialLinks(c) {
-  const out = [];
-  if (c.twitter_username) out.push(`<a class="soc" href="https://twitter.com/${esc(c.twitter_username)}" target="_blank" rel="noopener">𝕏 ${esc(c.twitter_username)}</a>`);
-  if (c.discord_url && c.discord_status === 'alive') out.push(`<a class="soc" href="${esc(c.discord_url)}" target="_blank" rel="noopener">💬 Discord${c.discord_members ? ' ' + c.discord_members.toLocaleString() : ''}</a>`);
-  if (c.project_url) out.push(`<a class="soc" href="${esc(c.project_url)}" target="_blank" rel="noopener">🌐 Site</a>`);
-  if (c.opensea_slug) out.push(`<a class="soc" href="https://opensea.io/collection/${encodeURIComponent(c.opensea_slug)}" target="_blank" rel="noopener">⛵ OpenSea</a>`);
-  return out.join('');
-}
 
 function statusSelect(id, i) {
   const cur = (RESEARCH[id] && RESEARCH[id].status) || '';
@@ -255,11 +305,11 @@ function vrmReachBadge(c) {
   const s = c.vrm_check_status;
   if (s === 'ok_vrm') {
     const mb = c.vrm_check_bytes ? (c.vrm_check_bytes / 1048576).toFixed(1) + ' MB' : '';
-    return `<span class="badge vrm-live" title="One sample VRM was fetched and parsed OK${mb ? ' — that file is ' + mb : ''}. Source: ${esc(c.vrm_check_url || '')}">🟢 VRM live${mb ? ' · ' + mb + '/file' : ''}</span>`;
+    return `<span class="badge vrm-live" title="One sample VRM was fetched and parsed OK${mb ? ' — that file is ' + mb : ''}. Source: ${esc(c.vrm_check_url || '')}">VRM verified${mb ? ' · ' + mb : ''}</span>`;
   }
-  if (s === 'reachable_not_vrm') return '<span class="badge vrm-warn" title="File reachable but not a valid VRM/GLB">🟡 not a VRM</span>';
-  if (s === 'no_url') return '<span class="badge vrm-none" title="No VRM URL on record — unknown where the VRM lives">⚫ no VRM URL</span>';
-  if (c.vrm_reachable === 0) return `<span class="badge vrm-dead" title="Unreachable: ${esc(s || '')}${c.vrm_check_http ? ' ' + c.vrm_check_http : ''}">🔴 VRM dead</span>`;
+  if (s === 'reachable_not_vrm') return '<span class="badge vrm-warn" title="File reachable but not a valid VRM/GLB">Not a VRM</span>';
+  if (s === 'no_url') return '<span class="badge vrm-none" title="No VRM URL on record — unknown where the VRM lives">No VRM URL</span>';
+  if (c.vrm_reachable === 0) return `<span class="badge vrm-dead" title="Unreachable: ${esc(s || '')}${c.vrm_check_http ? ' ' + c.vrm_check_http : ''}">Unreachable</span>`;
   return '';
 }
 
@@ -296,11 +346,11 @@ function collectionCard(c, i) {
   if (c.floor_price) facts.push(`floor ${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}`);
 
   const vrmBtn = c.vrm_url_https
-    ? `<button class="vrm-btn" data-vrm="${i}">▶ VRM</button>`
+    ? `<button class="vrm-btn" data-vrm="${i}">View</button>`
     : `<button class="vrm-btn ghost" disabled>—</button>`;
   const descText = c.curated_description || c.description || '';
   const starred = isBookmarked(id);
-  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<span class="crow-note" data-note="${i}" title="${esc(RESEARCH[id].note)}">📝</span>` : '';
+  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<span class="crow-note" data-note="${i}" title="${esc(RESEARCH[id].note)}">note</span>` : '';
 
   return `<div class="crow${starred ? ' bookmarked' : ''}">
     <button class="crow-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
@@ -311,6 +361,7 @@ function collectionCard(c, i) {
         ${c.creator ? `<span class="crow-creator">${esc(c.creator)}</span>` : ''}
         ${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}
         ${c.vipe_category ? `<span class="chip vipe-cat">${esc(c.vipe_category)}</span>` : ''}
+        ${chainChips(c)}
         ${note}
       </div>
       <div class="crow-line2">
@@ -322,7 +373,7 @@ function collectionCard(c, i) {
       ${collLinks(c)}
       ${vrmBtn}
       ${statusSelect(id, i)}
-      <button class="note-btn" data-note="${i}" title="Note">📝</button>
+      <button class="note-btn" data-note="${i}" title="Add a note">Note</button>
     </div>
   </div>`;
 }
@@ -334,7 +385,7 @@ function renderCollectionTable(rows) {
       ? `<img class="thumb" loading="lazy" src="${esc(src)}" alt="" data-img="${i}" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🖼</span>'">`
       : '<span class="thumb-placeholder">🖼</span>';
     const sup = supplyText(c) || '—';
-    const vrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">▶</button>` : '—';
+    const vrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">View</button>` : '—';
     return `<tr>
       <td>${img}</td>
       <td><b style="color:var(--text-primary)">${esc(c.name)}</b>${c.creator ? `<br><span class="mono">${esc(c.creator)}</span>` : ''}</td>
@@ -351,138 +402,12 @@ function renderCollectionTable(rows) {
 }
 
 // ─── Avatars view ────────────────────────────────────────────────────────────
-function collById(id) {
-  if (!window._collIndex) {
-    window._collIndex = {};
-    for (const c of DATA.collections) window._collIndex[c.id] = c;
-  }
-  return window._collIndex[id] || {};
-}
 
-const LICENSE_LABEL = { green: '🟢 CC0 / open', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '? Unknown' };
 
-let _avPage = 0;
-const AV_PAGE = 200;
 
-function avatarFilters() {
-  const q = (document.getElementById('search').value || '').toLowerCase();
-  const fc = (document.getElementById('f-av-collection') || {}).value || '';
-  const fl = (document.getElementById('f-av-license') || {}).value || '';
-  return DATA.avatars.filter(a => {
-    if (fc && a.collection_id !== fc) return false;
-    if (fl) {
-      if (fl === 'reachable' && a.reachable !== 1) return false;
-      if (fl === 'unreachable' && a.reachable !== 0) return false;
-      if (fl === 'unchecked' && a.reachable !== null && a.reachable !== undefined) return false;
-    }
-    if (q) {
-      const hay = [a.name, a.collection_id, a.description].join(' ').toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
-}
 
-function populateAvatarCollectionFilter() {
-  const sel = document.getElementById('f-av-collection');
-  if (!sel || sel.dataset.filled) return;
-  const counts = {};
-  for (const a of DATA.avatars) counts[a.collection_id] = (counts[a.collection_id] || 0) + 1;
-  const opts = Object.entries(counts).sort((x, y) => y[1] - x[1])
-    .map(([id, n]) => `<option value="${esc(id)}">${esc(collById(id).name || id)} (${n})</option>`).join('');
-  sel.innerHTML = '<option value="">All collections</option>' + opts;
-  sel.dataset.filled = '1';
-}
 
-function filterAvatars(resetPage = true) {
-  if (!_avatarsLoaded) {
-    document.getElementById('avatarGrid').innerHTML = '<div class="loading-msg">Loading avatars…</div>';
-    loadAvatars();
-    return;
-  }
-  populateAvatarCollectionFilter();
-  if (resetPage) _avPage = 0;
-  const rows = avatarFilters();
-  _avRows = rows;
-  const shown = rows.slice(0, (_avPage + 1) * AV_PAGE);
-  const live = rows.filter(a => a.reachable === 1).length;
-  const dead = rows.filter(a => a.reachable === 0).length;
-  const unchecked = rows.length - live - dead;
-  document.getElementById('avatarCount').innerHTML =
-    `<b>${rows.length.toLocaleString()}</b> avatars` +
-    ` · <span style="color:var(--success)">🟢 ${live.toLocaleString()} reachable</span>` +
-    ` · <span style="color:var(--error)">🔴 ${dead.toLocaleString()} unreachable</span>` +
-    (unchecked ? ` · <span style="color:var(--text-muted)">${unchecked.toLocaleString()} unchecked</span>` : '') +
-    ` · showing ${shown.length.toLocaleString()}`;
 
-  document.getElementById('avatarGrid').innerHTML = shown.map((a, i) => {
-    const c = collById(a.collection_id);
-    const cat = c.license_category || 'unknown';
-    const lic = LICENSE_LABEL[cat] || LICENSE_LABEL.unknown;
-    return `<div class="avatar-card">
-      <div class="thumb-box" data-avpreview="${i}" title="Preview VRM in 3D">
-        ${a.thumbnail_url ? `<img loading="lazy" src="${esc(a.thumbnail_url)}" alt="" onerror="this.parentNode.textContent='🖼'">` : '🖼'}
-        <span class="av-play">▶</span>
-      </div>
-      <h4 title="${esc(a.name || '')}">${esc(a.name || '—')}</h4>
-      <div class="av-coll">${esc(c.name || a.collection_id)}</div>
-      <div class="av-row">
-        ${a.reachable === 1
-          ? `<span class="badge vrm-live" title="VRM file served OK (${esc(a.check_status || '')})">🟢 reachable</span>`
-          : a.reachable === 0
-            ? `<span class="badge vrm-dead" title="Not served: ${esc(a.check_status || '')}${a.check_http ? ' ' + a.check_http : ''}">🔴 ${esc(a.check_status || 'unreachable')}</span>`
-            : `<span class="badge badge-unknown" title="Not yet checked">· unchecked</span>`}
-        <span class="badge badge-${cat}" title="License of the parent collection">${lic}</span>
-      </div>
-      <div class="av-actions">
-        <button class="av-btn" data-avpreview="${i}">▶ 3D</button>
-        <button class="av-btn" data-avcopy="${i}" title="Copy VRM URL">⧉</button>
-        <a class="av-btn" href="${esc(a.model_file_url)}" target="_blank" rel="noopener" title="Open/download VRM">↓</a>
-      </div>
-    </div>`;
-  }).join('');
-
-  const more = document.getElementById('avMore');
-  if (more) more.style.display = shown.length < rows.length ? '' : 'none';
-}
-
-function avatarsShowMore() { _avPage++; filterAvatars(false); }
-
-// ─── OpenSea candidates view ─────────────────────────────────────────────────
-function filterOS() {
-  if (!_openseaLoaded) {
-    document.getElementById('osBody').innerHTML = '<tr><td colspan="9" class="loading-msg">Loading OpenSea candidates…</td></tr>';
-    loadOpensea();
-    return;
-  }
-  const q = document.getElementById('search').value.toLowerCase();
-  let rows = DATA.opensea.filter(c => {
-    if (q) { const hay = [c.slug, c.name, c.contract, c.vrm_url].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
-    return true;
-  });
-  rows.sort((a, b) => {
-    let va = a[sortKeyOS] || '', vb = b[sortKeyOS] || '';
-    return sortAscOS ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
-  });
-  _osRows = rows;
-  document.getElementById('osBody').innerHTML = rows.map((c, i) => {
-    const osImg = c.image_url
-      ? `<img class="thumb" loading="lazy" src="${esc(c.image_url)}" alt="" data-osimg="${i}" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🖼</span>'">`
-      : '<span class="thumb-placeholder">🖼</span>';
-    const osVrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">▶ VRM</button>` : '—';
-    return `<tr>
-      <td>${osImg}</td>
-      <td>${c.slug ? `<a href="https://opensea.io/collection/${encodeURIComponent(c.slug)}" target="_blank" rel="noopener">${esc(c.slug)}</a>` : '—'}</td>
-      <td>${esc(c.name || '—')}</td>
-      <td>${esc(c.chain || '—')}</td>
-      <td>${badge(c.status === 'vrm' ? 'green' : c.status === 'no_vrm' ? 'unknown' : 'yellow', c.status || '?')}</td>
-      <td class="mono">${esc(c.vrm_param || '—')}</td>
-      <td>${osVrmBtn}</td>
-      <td class="mono">${c.contract ? `<a href="https://etherscan.io/address/${esc(c.contract)}" target="_blank" rel="noopener">${c.contract.slice(0, 8)}…</a>` : '—'}</td>
-      <td class="mono">${esc(c.source_query || '—')}</td>
-    </tr>`;
-  }).join('');
-}
 
 function sort(key) { if (sortKey === key) sortAsc = !sortAsc; else { sortKey = key; sortAsc = true; } filter(); }
 function sortOS(key) { if (sortKeyOS === key) sortAscOS = !sortAscOS; else { sortKeyOS = key; sortAscOS = true; } filterOS(); }
@@ -510,15 +435,6 @@ function wireDelegation() {
   collView.addEventListener('change', e => {
     const s = e.target.closest('[data-status]');
     if (s) { const c = _collRows[+s.dataset.status]; if (c) setStatus(c.id, s.value); }
-  });
-  document.getElementById('avatarsView').addEventListener('click', e => {
-    const p = e.target.closest('[data-avpreview]');
-    if (p) { const a = _avRows[+p.dataset.avpreview]; if (a) openVrmViewer(a.model_file_url, a.name || a.collection_id, a.model_file_url); return; }
-    const cp = e.target.closest('[data-avcopy]');
-    if (cp) { const a = _avRows[+cp.dataset.avcopy]; if (a) { navigator.clipboard.writeText(a.model_file_url); cp.textContent = '✓'; setTimeout(() => cp.textContent = '⧉', 1200); } }
-  });
-  document.getElementById('avatarsView').addEventListener('change', e => {
-    if (e.target.id === 'f-av-collection' || e.target.id === 'f-av-license') filterAvatars();
   });
 }
 

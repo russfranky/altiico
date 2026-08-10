@@ -308,3 +308,7 @@ tr:hover td { background: var(--bg-surface); }
 }
 .av-all { color: var(--success); }
 .av-part { color: var(--warning); }
+.chip-link { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 999px;
+  padding: 2px 8px; font-size: 10.5px; color: var(--text-secondary); font-family: 'SF Mono',Monaco,monospace;
+  white-space: nowrap; }
+.chip-link:hover { border-color: var(--border-hover); color: var(--text-primary); opacity: 1; }

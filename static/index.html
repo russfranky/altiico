@@ -29,11 +29,11 @@
       <div class="stat-pills">
         <span class="pill">Collections <b id="stat-collections">0</b></span>
         <span class="pill">Avatars <b id="stat-avatars">0</b></span>
-        <span class="pill g">🟢 <b id="stat-green">0</b></span>
-        <span class="pill y">🟡 <b id="stat-yellow">0</b></span>
-        <span class="pill r">🔴 <b id="stat-red">0</b></span>
-        <span class="pill g" title="Collections with a verified-reachable VRM">🟢 VRM live <b id="stat-ready">0</b></span>
-        <span class="pill" style="border-color:rgba(124,107,255,0.35)">★ <b id="bm-count">0</b></span>
+        <span class="pill g" title="Open / CC0 licences">Open <b id="stat-green">0</b></span>
+        <span class="pill y" title="Holder-gated licences">Holder <b id="stat-yellow">0</b></span>
+        <span class="pill r" title="Restricted licences">Restricted <b id="stat-red">0</b></span>
+        <span class="pill g" title="Collections with a verified-reachable VRM">VRM verified <b id="stat-ready">0</b></span>
+        <span class="pill" style="border-color:rgba(124,107,255,0.35)" title="Bookmarked">Saved <b id="bm-count">0</b></span>
         <span class="pill" id="stat-stale" style="display:none"></span>
       </div>
       <!-- secondary stats kept for the loader; not surfaced in the header -->
@@ -46,7 +46,7 @@
 
     <div class="controls">
       <div class="search-wrap">
-        <input type="text" id="search" placeholder="Search collections, contracts, slugs, creators…" oninput="onSearch()">
+        <input type="text" id="search" placeholder="Search collections, contracts, creators, descriptions…" oninput="onSearch()">
       </div>
       <select id="f-chain" onchange="filter()" title="Chain">
         <option value="">All chains</option>
@@ -54,48 +54,46 @@
         <option value="base">Base</option>
         <option value="optimism">Optimism</option>
         <option value="polygon">Polygon</option>
+        <option value="arbitrum">Arbitrum</option>
         <option value="shape">Shape</option>
-        <option value="solana">Solana</option>
-        <option value="arweave">Arweave</option>
+        <option value="ape_chain">ApeChain</option>
         <option value="multi">Multi-chain</option>
       </select>
-      <select id="f-license" onchange="filter()" title="License">
-        <option value="">All licenses</option>
-        <option value="green">🟢 Open (CC0)</option>
-        <option value="yellow">🟡 Holder-based</option>
-        <option value="red">🔴 Restricted</option>
+      <select id="f-license" onchange="filter()" title="Licence">
+        <option value="">All licences</option>
+        <option value="green">Open / CC0</option>
+        <option value="yellow">Holder-gated</option>
+        <option value="red">Restricted</option>
         <option value="unknown">Unknown</option>
       </select>
-      <select id="f-mint" onchange="filter()" title="Supply">
-        <option value="">Any supply</option>
-        <option value="capped">🔒 Capped</option>
-        <option value="likely_capped">🔒 Likely capped</option>
-        <option value="ongoing">🟢 Ongoing</option>
-        <option value="no_max_supply">❓ No max</option>
+      <select id="f-vrm" onchange="filter()" title="VRM file status">
+        <option value="">Any VRM status</option>
+        <option value="live">Verified</option>
+        <option value="dead">Unreachable</option>
+        <option value="nourl">No VRM URL</option>
       </select>
-      <select id="f-vrm" onchange="filter()" title="VRM reachability">
-        <option value="">Any VRM</option>
-        <option value="live">🟢 VRM live</option>
-        <option value="dead">🔴 VRM dead</option>
-        <option value="nourl">⚫ No VRM URL</option>
+      <select id="f-status" onchange="filter()" title="Your research state">
+        <option value="">Any research state</option>
+        <option value="__bm">Bookmarked</option>
+        <option value="shortlist">Shortlist</option>
+        <option value="onboard">Use it</option>
+        <option value="reviewing">Reviewing</option>
+        <option value="pass">Pass</option>
       </select>
-      <select id="f-bookmark" onchange="filter()" title="Bookmarks">
-        <option value="">All bookmarks</option>
-        <option value="bookmarked">★ Bookmarked</option>
+      <select id="f-sort" onchange="filter()" title="Sort">
+        <option value="name">Sort: Name</option>
+        <option value="release_date">Sort: Launch date</option>
+        <option value="total_supply">Sort: Supply</option>
+        <option value="vrm">Sort: VRM status</option>
+        <option value="avatars_total">Sort: Files indexed</option>
       </select>
-      <select id="f-status" onchange="filter()" title="Research status">
-        <option value="">All statuses</option>
-        <option value="shortlist">⭐ Shortlist</option>
-        <option value="onboard">✅ To onboard</option>
-        <option value="reviewing">🔍 Reviewing</option>
-        <option value="pass">🚫 Pass</option>
-      </select>
-      <!-- kept for filter() compatibility; hidden secondary filters -->
-      <select id="f-url" onchange="filter()" style="display:none"><option value=""></option></select>
-      <select id="f-discord" onchange="filter()" style="display:none"><option value=""></option></select>
-      <select id="f-nfttype" onchange="filter()" style="display:none"><option value=""></option></select>
+      <select id="f-bookmark" style="display:none"><option value=""></option></select>
+      <select id="f-mint" style="display:none"><option value=""></option></select>
+      <select id="f-url" style="display:none"><option value=""></option></select>
+      <select id="f-discord" style="display:none"><option value=""></option></select>
+      <select id="f-nfttype" style="display:none"><option value=""></option></select>
+      <select id="f-tier" style="display:none"><option value=""></option></select>
     </div>
-
     <div class="controls">
       <div class="segmented" id="viewSwitch">
         <button class="seg active" data-view="collections" onclick="switchTab('collections')">Collections</button>
@@ -110,8 +108,8 @@
     <div class="result-bar">
       <span class="result-count" id="collCount"></span>
       <div class="viewmode">
-        <button class="vm-btn active" id="vm-cards" onclick="setCollectionsView('cards')">☰ List</button>
-        <button class="vm-btn" id="vm-table" onclick="setCollectionsView('table')">▦ Table</button>
+        <button class="vm-btn active" id="vm-cards" onclick="setCollectionsView('cards')">List</button>
+        <button class="vm-btn" id="vm-table" onclick="setCollectionsView('table')">Table</button>
       </div>
     </div>
     <div class="card-grid" id="collectionsGrid"></div>
