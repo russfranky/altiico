@@ -21,6 +21,7 @@
         <span class="pill g">🟢 <b id="stat-green">0</b></span>
         <span class="pill y">🟡 <b id="stat-yellow">0</b></span>
         <span class="pill r">🔴 <b id="stat-red">0</b></span>
+        <span class="pill" style="border-color:rgba(124,107,255,0.35)">★ <b id="bm-count">0</b></span>
         <span class="pill" id="stat-stale" style="display:none"></span>
       </div>
       <!-- secondary stats kept for the loader; not surfaced in the header -->
@@ -68,6 +69,17 @@
         <option value="likely_capped">🔒 Likely capped</option>
         <option value="ongoing">🟢 Ongoing</option>
         <option value="no_max_supply">❓ No max</option>
+      </select>
+      <select id="f-bookmark" onchange="filter()" title="Bookmarks">
+        <option value="">All</option>
+        <option value="bookmarked">★ Bookmarked</option>
+      </select>
+      <select id="f-status" onchange="filter()" title="Research status">
+        <option value="">All statuses</option>
+        <option value="shortlist">⭐ Shortlist</option>
+        <option value="onboard">✅ To onboard</option>
+        <option value="reviewing">🔍 Reviewing</option>
+        <option value="pass">🚫 Pass</option>
       </select>
       <!-- kept for filter() compatibility; hidden secondary filters -->
       <select id="f-url" onchange="filter()" style="display:none"><option value=""></option></select>

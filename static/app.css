@@ -210,3 +210,25 @@ tr:hover td { background: var(--bg-surface); }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--bg-hover); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Research layer: description, socials, bookmark, status, notes ────────── */
+.ccard-foot { flex-wrap: wrap; }
+.ccard-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.45; margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ccard-socials { display: flex; flex-wrap: wrap; gap: 6px; }
+.soc { font-size: 11px; color: var(--text-secondary); background: var(--bg-surface); border: 1px solid var(--border-default); padding: 3px 9px; border-radius: 999px; }
+.soc:hover { border-color: var(--border-hover); color: var(--text-primary); opacity: 1; }
+.bm-star { position: absolute; top: 8px; left: 8px; width: 30px; height: 30px; border-radius: 9px; border: none;
+  background: rgba(0,0,0,0.45); color: #fff; font-size: 16px; cursor: pointer; backdrop-filter: blur(4px); transition: all .15s; line-height: 1; z-index: 2; }
+.bm-star:hover { background: rgba(0,0,0,0.7); transform: scale(1.08); }
+.bm-star.on { color: var(--warning); }
+.ccard.bookmarked { border-color: rgba(124,107,255,0.55); box-shadow: 0 0 0 1px rgba(124,107,255,0.28); }
+.status-sel { font-size: 11px; padding: 6px 7px; border-radius: 8px; background: var(--bg-surface); border: 1px solid var(--border-default); color: var(--text-secondary); max-width: 140px; cursor: pointer; font-family: inherit; }
+.status-sel.status-shortlist { border-color: var(--warning); color: var(--warning); }
+.status-sel.status-onboard { border-color: var(--success); color: var(--success); }
+.status-sel.status-reviewing { border-color: var(--accent-2); color: var(--accent-2); }
+.status-sel.status-pass { border-color: var(--error); color: var(--error); }
+.note-btn { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 8px; padding: 6px 9px; cursor: pointer; font-size: 12px; }
+.note-btn:hover { border-color: var(--border-hover); }
+.ccard-note { font-size: 11px; color: var(--warning); background: rgba(229,184,73,0.08); border: 1px solid rgba(229,184,73,0.22); border-radius: 8px; padding: 5px 9px; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

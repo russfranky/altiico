@@ -90,6 +90,35 @@ let collectionsViewMode = 'cards';
 let _collRows = [];
 let _osRows = [];
 
+// ─── Research state: bookmarks / status / notes (persisted in localStorage) ──
+const RESEARCH_KEY = 'vrmcat_research_v1';
+const STATUSES = [
+  { v: '', label: '— status —', dot: 'var(--text-muted)' },
+  { v: 'shortlist', label: '⭐ Shortlist', dot: 'var(--warning)' },
+  { v: 'onboard', label: '✅ To onboard', dot: 'var(--success)' },
+  { v: 'reviewing', label: '🔍 Reviewing', dot: 'var(--accent-2)' },
+  { v: 'pass', label: '🚫 Pass', dot: 'var(--error)' },
+];
+let RESEARCH = {};
+try { RESEARCH = JSON.parse(localStorage.getItem(RESEARCH_KEY) || '{}'); } catch { RESEARCH = {}; }
+function saveResearch() { try { localStorage.setItem(RESEARCH_KEY, JSON.stringify(RESEARCH)); } catch {} }
+function rec(id) { return RESEARCH[id] || (RESEARCH[id] = {}); }
+function isBookmarked(id) { return !!(RESEARCH[id] && RESEARCH[id].bm); }
+function bookmarkCount() { return Object.values(RESEARCH).filter(r => r.bm).length; }
+function toggleBookmark(id) { const r = rec(id); r.bm = !r.bm; saveResearch(); refreshBookmarkUi(); }
+function setStatus(id, v) { rec(id).status = v; saveResearch(); refreshBookmarkUi(); }
+function editNote(id, name) {
+  const r = rec(id);
+  const v = prompt('Note for ' + (name || id) + ':', r.note || '');
+  if (v === null) return;
+  r.note = v.trim(); saveResearch();
+  if (currentTab === 'collections') filter();
+}
+function refreshBookmarkUi() {
+  const el = document.getElementById('bm-count'); if (el) el.textContent = bookmarkCount();
+  if (currentTab === 'collections') filter();
+}
+
 function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
 
@@ -157,11 +186,15 @@ function applyCollectionFilters() {
   const fChain = document.getElementById('f-chain').value;
   const fLicense = document.getElementById('f-license').value;
   const fMint = document.getElementById('f-mint').value;
+  const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
+  const fStatus = (document.getElementById('f-status') || {}).value || '';
   let rows = DATA.collections.filter(c => {
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
     if (fMint && (c.mint_status || '') !== fMint) return false;
+    if (fBookmark === 'bookmarked' && !isBookmarked(c.id)) return false;
+    if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
     if (q) {
       const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
@@ -189,15 +222,38 @@ function filter() {
   }
 }
 
+function isVideoUrl(u) { return !!u && (u.includes('.mp4') || u.includes('stream.mux.com') || u.includes('.m3u8')); }
+
+function socialLinks(c) {
+  const out = [];
+  if (c.twitter_username) out.push(`<a class="soc" href="https://twitter.com/${esc(c.twitter_username)}" target="_blank" rel="noopener">𝕏 ${esc(c.twitter_username)}</a>`);
+  if (c.discord_url && c.discord_status === 'alive') out.push(`<a class="soc" href="${esc(c.discord_url)}" target="_blank" rel="noopener">💬 Discord${c.discord_members ? ' ' + c.discord_members.toLocaleString() : ''}</a>`);
+  if (c.project_url) out.push(`<a class="soc" href="${esc(c.project_url)}" target="_blank" rel="noopener">🌐 Site</a>`);
+  if (c.opensea_slug) out.push(`<a class="soc" href="https://opensea.io/collection/${encodeURIComponent(c.opensea_slug)}" target="_blank" rel="noopener">⛵ OpenSea</a>`);
+  return out.join('');
+}
+
+function statusSelect(id, i) {
+  const cur = (RESEARCH[id] && RESEARCH[id].status) || '';
+  const opts = STATUSES.map(s => `<option value="${s.v}"${s.v === cur ? ' selected' : ''}>${s.label}</option>`).join('');
+  return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
+}
+
 function collectionCard(c, i) {
+  const id = c.id;
   const letter = esc((c.name || '?').trim().charAt(0).toUpperCase() || '?');
-  const banner = c.banner_image_url
-    ? `<img loading="lazy" src="${esc(c.banner_image_url)}" alt="" onerror="this.style.display='none'">`
-    : `<div class="fallback">${letter}</div>`;
+  // Real banner only if it's an image (Mux/mp4 video banners can't render in <img>);
+  // otherwise fall back to the real pfp as a full-cover hero, then a gradient letter.
+  const realBanner = (c.banner_image_url && !isVideoUrl(c.banner_image_url)) ? c.banner_image_url : null;
   const pfpSrc = c.image_url || c.sample_nft_image;
-  const pfp = pfpSrc
-    ? `<img class="ccard-pfp" loading="lazy" src="${esc(pfpSrc)}" alt="" onerror="this.outerHTML='<div class=&quot;ccard-pfp fallback-pfp&quot;>🖼</div>'">`
-    : `<div class="ccard-pfp fallback-pfp">🖼</div>`;
+  const heroSrc = realBanner || pfpSrc;
+  const hero = heroSrc
+    ? `<img loading="lazy" src="${esc(heroSrc)}" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'${letter}'}))">`
+    : `<div class="fallback">${letter}</div>`;
+  // Overlapping pfp circle only when the hero is a distinct banner image.
+  const pfp = (realBanner && pfpSrc)
+    ? `<img class="ccard-pfp" loading="lazy" src="${esc(pfpSrc)}" alt="" onerror="this.style.display='none'">`
+    : '';
   const chips = [];
   if (c.chain) chips.push(`<span class="chip"><span class="k">⛓</span> ${esc(c.chain)}</span>`);
   const sup = supplyText(c); if (sup) chips.push(`<span class="chip">${sup}</span>`);
@@ -207,9 +263,14 @@ function collectionCard(c, i) {
     ? `<button class="vrm-btn" data-vrm="${i}">▶ View VRM</button>`
     : `<button class="vrm-btn ghost" disabled>No VRM</button>`;
   const vrmLic = c.vrm_license ? ` <span class="badge badge-unknown">${esc(c.vrm_license)}</span>` : '';
-  return `<div class="ccard">
+  const desc = c.description ? `<p class="ccard-desc">${esc(c.description)}</p>` : '';
+  const socials = socialLinks(c);
+  const note = (RESEARCH[id] && RESEARCH[id].note) ? `<div class="ccard-note" data-note="${i}" title="Edit note">📝 ${esc(RESEARCH[id].note)}</div>` : '';
+  const starred = isBookmarked(id);
+  return `<div class="ccard${starred ? ' bookmarked' : ''}">
     <div class="ccard-banner" data-img="${i}">
-      ${banner}
+      ${hero}
+      <button class="bm-star${starred ? ' on' : ''}" data-bm="${i}" title="Bookmark">${starred ? '★' : '☆'}</button>
       <div class="ccard-tier">${tierBadge(c.tier)}</div>
       ${pfp}
     </div>
@@ -220,7 +281,14 @@ function collectionCard(c, i) {
       </div>
       <div class="ccard-badges">${licenseBadge(c.license_category, c)}${vrmLic}</div>
       ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
-      <div class="ccard-foot">${vrmBtn}<div class="ccard-links">${collLinks(c)}</div></div>
+      ${desc}
+      ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}
+      ${note}
+      <div class="ccard-foot">
+        ${vrmBtn}
+        ${statusSelect(id, i)}
+        <button class="note-btn" data-note="${i}" title="Add note">📝</button>
+      </div>
     </div>
   </div>`;
 }
@@ -325,11 +393,20 @@ function switchTab(tab) {
 
 // Event delegation: VRM buttons + image previews (no fragile inline handlers).
 function wireDelegation() {
-  document.getElementById('collectionsView').addEventListener('click', e => {
+  const collView = document.getElementById('collectionsView');
+  collView.addEventListener('click', e => {
+    const bm = e.target.closest('[data-bm]');
+    if (bm) { e.stopPropagation(); const c = _collRows[+bm.dataset.bm]; if (c) toggleBookmark(c.id); return; }
+    const nb = e.target.closest('[data-note]');
+    if (nb) { const c = _collRows[+nb.dataset.note]; if (c) editNote(c.id, c.name); return; }
     const v = e.target.closest('[data-vrm]');
     if (v) { const c = _collRows[+v.dataset.vrm]; if (c && c.vrm_url_https) openVrmViewer(c.vrm_url_https, c.name, c.vrm_url_https); return; }
     const im = e.target.closest('[data-img]');
-    if (im) { const c = _collRows[+im.dataset.img]; if (c) { const src = c.image_url || c.sample_nft_image || c.banner_image_url; if (src) showImg(src, c.name, c.banner_image_url); } }
+    if (im) { const c = _collRows[+im.dataset.img]; if (c) { const src = c.image_url || c.sample_nft_image || c.banner_image_url; if (src && !isVideoUrl(src)) showImg(src, c.name, isVideoUrl(c.banner_image_url) ? null : c.banner_image_url); } }
+  });
+  collView.addEventListener('change', e => {
+    const s = e.target.closest('[data-status]');
+    if (s) { const c = _collRows[+s.dataset.status]; if (c) setStatus(c.id, s.value); }
   });
   document.getElementById('openseaView').addEventListener('click', e => {
     const v = e.target.closest('[data-vrm]');
@@ -492,6 +569,7 @@ document.addEventListener('keydown', e => {
 
 // ─── Init ────────────────────────────────────────────────────────────────────
 wireDelegation();
+{ const bc = document.getElementById('bm-count'); if (bc) bc.textContent = bookmarkCount(); }
 (async () => {
   try {
     await loadBuildInfo();
