@@ -17,6 +17,8 @@ async function loadBuildInfo() {
   return BUILD_INFO;
 }
 
+function setStat(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+
 async function loadCollections() {
   const info = BUILD_INFO || await loadBuildInfo();
   const [summary, collectionsData] = await Promise.all([
@@ -24,28 +26,25 @@ async function loadCollections() {
     fetchJSON('data/' + info.files.collections),
   ]);
   DATA.collections = collectionsData.collections || [];
-  // Populate header stats from summary
   const s = summary.stats || {};
-  document.getElementById('stat-collections').textContent = s.collections ?? DATA.collections.length;
-  document.getElementById('stat-avatars').textContent = s.avatars ?? 0;
-  document.getElementById('stat-os').textContent = s.os ?? 0;
-  document.getElementById('stat-green').textContent = s.green ?? 0;
-  document.getElementById('stat-yellow').textContent = s.yellow ?? 0;
-  document.getElementById('stat-red').textContent = s.red ?? 0;
-  document.getElementById('stat-alive').textContent = s.alive ?? 0;
-  document.getElementById('stat-dead').textContent = s.dead ?? 0;
-  document.getElementById('stat-wayback').textContent = s.wayback ?? 0;
-  document.getElementById('stat-dc-alive').textContent = s.dc_alive ?? 0;
-  document.getElementById('stat-dc-dead').textContent = s.dc_dead ?? 0;
-  document.getElementById('stat-capped').textContent = s.capped ?? 0;
-  document.getElementById('stat-ongoing').textContent = s.ongoing ?? 0;
+  setStat('stat-collections', s.collections ?? DATA.collections.length);
+  setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
+  setStat('stat-os', s.os ?? 0);
+  setStat('stat-green', s.green ?? 0);
+  setStat('stat-yellow', s.yellow ?? 0);
+  setStat('stat-red', s.red ?? 0);
+  setStat('stat-alive', s.alive ?? 0);
+  setStat('stat-dead', s.dead ?? 0);
+  setStat('stat-wayback', s.wayback ?? 0);
+  setStat('stat-dc-alive', s.dc_alive ?? 0);
+  setStat('stat-dc-dead', s.dc_dead ?? 0);
+  setStat('stat-capped', s.capped ?? 0);
+  setStat('stat-ongoing', s.ongoing ?? 0);
   checkStaleStats();
   filter();
 }
 
 function checkStaleStats() {
-  // Warn if market_data_as_of is older than 48 hours (stale_warning_threshold
-  // from config/cache_policy.yaml). The warning is shown in the header stats.
   const asOf = BUILD_INFO && BUILD_INFO.market_data_as_of;
   if (!asOf) return;
   const ageMs = Date.now() - new Date(asOf).getTime();
@@ -84,219 +83,260 @@ async function loadAvatars() {
   filterAvatars();
 }
 
-// ─── App logic (filter, sort, render, modals) ────────────────────────────────
+// ─── Shared helpers ─────────────────────────────────────────────────────────
 let sortKey = 'name', sortAsc = true, sortKeyOS = 'slug', sortAscOS = true;
 let currentTab = 'collections';
+let collectionsViewMode = 'cards';
+let _collRows = [];
+let _osRows = [];
 
-function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }
-
+function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
 
 function licenseBadge(cat, c) {
-  const map = { green: '🟢 CC0', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '?' };
-  const label = map[cat] || '?';
+  const map = { green: '🟢 CC0', yellow: '🟡 Holder', red: '🔴 Restricted', unknown: '? Unknown' };
+  const label = map[cat] || '? Unknown';
   if (!c) return badge(cat || 'unknown', label);
-  // Build tooltip with reason codes and confidence
   const rc = c.reason_codes || [];
   const conf = c.license_confidence || 'unknown';
-  const confLabel = { embedded: 'embedded', collection: 'collection', manual: 'manual', unknown: 'unknown', legacy: 'legacy' }[conf] || conf;
   const parts = [label];
   if (rc.length) parts.push(rc.join(', '));
-  parts.push(`[${confLabel}]`);
-  const title = parts.join(' — ');
-  return `<span class="badge badge-${cat || 'unknown'}" title="${esc(title)}">${esc(label)}</span>`;
+  parts.push(`[${conf}]`);
+  return `<span class="badge badge-${cat || 'unknown'}" title="${esc(parts.join(' — '))}">${esc(label)}</span>`;
 }
 
 function tierBadge(tier) {
-  const map = { A: 'A', B: 'B', C: 'C', arweave: 'Arweave', infra: 'Infra', not_vrm: 'Not VRM' };
+  const map = { A: 'Tier A', B: 'Tier B', C: 'Tier C', arweave: 'Arweave', infra: 'Infra', not_vrm: 'Not VRM' };
   return badge(`tier-${tier || 'unknown'}`, map[tier] || tier || '?');
 }
 
-let _filterTimer = null;
-function debounceFilter() { clearTimeout(_filterTimer); _filterTimer = setTimeout(filter, 150); }
+function supplyText(c) {
+  if (!c.total_supply) return null;
+  const ms = c.mint_status;
+  let icon = '❓';
+  if (ms === 'capped' || ms === 'likely_capped') icon = '🔒';
+  else if (ms === 'ongoing') icon = '🟢';
+  return `${icon} ${c.total_supply.toLocaleString()}`;
+}
 
-function filter() {
-  if (currentTab !== 'collections') return;
+function collLinks(c) {
+  const out = [];
+  if (c.opensea_slug) out.push(`<a class="icon-link" href="https://opensea.io/collection/${encodeURIComponent(c.opensea_slug)}" target="_blank" rel="noopener" title="OpenSea">⛵</a>`);
+  if (c.project_url) out.push(`<a class="icon-link" href="${esc(c.project_url)}" target="_blank" rel="noopener" title="Website">🌐</a>`);
+  if (c.twitter_username) out.push(`<a class="icon-link" href="https://twitter.com/${esc(c.twitter_username)}" target="_blank" rel="noopener" title="@${esc(c.twitter_username)}">𝕏</a>`);
+  if (c.discord_url && c.discord_status === 'alive') out.push(`<a class="icon-link" href="${esc(c.discord_url)}" target="_blank" rel="noopener" title="Discord">💬</a>`);
+  const ct = c.contract || ((c.contracts || [])[0] || {}).address;
+  if (ct) out.push(`<a class="icon-link mono" href="https://etherscan.io/address/${esc(ct)}" target="_blank" rel="noopener" title="${esc(ct)}">⧉</a>`);
+  return out.join('');
+}
+
+// ─── Filtering + collection rendering ────────────────────────────────────────
+let _filterTimer = null;
+function onSearch() {
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(() => {
+    if (currentTab === 'collections') filter();
+    else if (currentTab === 'avatars') filterAvatars();
+    else filterOS();
+  }, 150);
+}
+function debounceFilter() { onSearch(); }
+
+function setCollectionsView(mode) {
+  collectionsViewMode = mode;
+  document.getElementById('vm-cards').classList.toggle('active', mode === 'cards');
+  document.getElementById('vm-table').classList.toggle('active', mode === 'table');
+  document.getElementById('collectionsGrid').style.display = mode === 'cards' ? '' : 'none';
+  document.getElementById('collectionsTableWrap').style.display = mode === 'table' ? '' : 'none';
+  filter();
+}
+
+function applyCollectionFilters() {
   const q = document.getElementById('search').value.toLowerCase();
   const fTier = document.getElementById('f-tier').value;
   const fChain = document.getElementById('f-chain').value;
   const fLicense = document.getElementById('f-license').value;
-  const fUrl = document.getElementById('f-url').value;
-  const fDiscord = document.getElementById('f-discord').value;
   const fMint = document.getElementById('f-mint').value;
   let rows = DATA.collections.filter(c => {
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
-    if (fUrl === 'wayback') { if (!c.wayback_available) return false; }
-    else if (fUrl && (c.url_status || '') !== fUrl) return false;
-    if (fDiscord === 'none') { if (c.discord_url) return false; }
-    else if (fDiscord && (c.discord_status || '') !== fDiscord) return false;
-    if (fMint === 'capped') { if (c.mint_status !== 'capped') return false; }
-    else if (fMint === 'likely_capped') { if (c.mint_status !== 'likely_capped') return false; }
-    else if (fMint === 'ongoing') { if (c.mint_status !== 'ongoing') return false; }
-    else if (fMint === 'no_max_supply') { if (c.mint_status !== 'no_max_supply') return false; }
-    const fNftType = document.getElementById('f-nfttype').value;
-    if (fNftType && (c.nft_type || 'unknown') !== fNftType) return false;
+    if (fMint && (c.mint_status || '') !== fMint) return false;
     if (q) {
-      const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description]
-        .join(' ').toLowerCase();
+      const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
   });
   rows.sort((a, b) => {
-    let va = a[sortKey] || '', vb = b[sortKey] || '';
-    if (typeof va === 'number') return sortAsc ? va - vb : vb - va;
-    return sortAsc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+    let va = a[sortKey], vb = b[sortKey];
+    if (typeof va === 'number' || typeof vb === 'number') return sortAsc ? (va || 0) - (vb || 0) : (vb || 0) - (va || 0);
+    return sortAsc ? String(va || '').localeCompare(String(vb || '')) : String(vb || '').localeCompare(String(va || ''));
   });
-  const tbody = document.getElementById('collectionsBody');
-  tbody.innerHTML = rows.map(c => {
-    const us = c.url_status;
-    const urlIcon = us === 'alive' ? '✓' : us === 'dead' ? '✗' : us === 'error' ? '?' : '—';
-    const urlColor = us === 'alive' ? '#56d364' : us === 'dead' ? '#f85149' : '#8b949e';
-    const wbLink = c.wayback_available ? ` <a href="https://web.archive.org/web/*/opensea.io/collection/${c.opensea_slug}" target="_blank" title="${c.wayback_snapshots} snapshots">📦</a>` : '';
-    const contracts = (c.contracts || []).map(ct => {
-      const explorer = ct.chain === 'polygon' ? 'polygonscan' : ct.chain === 'base' ? 'basescan' : ct.chain === 'optimism' ? 'optimistic.etherscan' : 'etherscan';
-      return `<a href="https://${explorer}.io/address/${ct.address}" target="_blank" class="mono" title="${ct.chain}">${ct.address.slice(0,6)}..${ct.address.slice(-4)}</a>`;
-    }).join(' ');
-    const ds = c.discord_status;
-    let dIcon = '—', dColor = '#8b949e', dTitle = '';
-    if (ds === 'alive') { dIcon = '✓'; dColor = '#56d364'; dTitle = `${c.discord_members||0} members`; }
-    else if (ds === 'dead') { dIcon = '✗'; dColor = '#f85149'; dTitle = 'invite expired/revoked'; }
-    else if (ds === 'rate_limited') { dIcon = '⏳'; dColor = '#d29922'; dTitle = 'rate limited'; }
-    else if (ds === 'error') { dIcon = '?'; dColor = '#8b949e'; }
-    const dLink = c.discord_url && ds === 'alive' ? `<a href="${c.discord_url}" target="_blank" style="color:${dColor}" title="${dTitle}">${dIcon}</a>` : `<span style="color:${dColor}" title="${dTitle}">${dIcon}</span>`;
-    const tw = c.twitter_username ? ` <a href="https://twitter.com/${c.twitter_username}" target="_blank" title="@${c.twitter_username}">𝕏</a>` : '';
-    const img = c.image_url ? `<img class="thumb" loading="lazy" src="${c.image_url}" alt="${esc(c.name)}" onclick="showImg('${c.image_url}','${esc(c.name)}','${c.banner_image_url || ''}')" onerror="this.outerHTML='<span class=\'thumb-placeholder\'>🖼</span>'">` : '<span class="thumb-placeholder">🖼</span>';
-    const vrmBtn = c.vrm_url_https ? `<button class="vrm-btn" onclick="openVrmViewer('${c.vrm_url_https}','${esc(c.name)}','${esc(c.vrm_url_https)}')" title="View VRM in 3D">▶ VRM</button>` : (c.vrm_url_pattern ? '📋' : '—');
-    // Supply/mint status
-    const ms = c.mint_status;
-    let supplyCell = '—';
-    if (c.total_supply) {
-      let icon = '❓', color = 'var(--text-muted)', title = '';
-      if (ms === 'capped') { icon = '🔒'; color = 'var(--success)'; title = 'Mint complete'; }
-      else if (ms === 'likely_capped') { icon = '🔒'; color = 'var(--text-muted)'; title = 'Likely capped (>1yr old)'; }
-      else if (ms === 'ongoing') { icon = '🟢'; color = 'var(--warning)'; title = `Ongoing: ${c.mint_progress||0}% minted`; }
-      else if (ms === 'no_max_supply') { icon = '❓'; color = 'var(--text-muted)'; title = 'No max supply found'; }
-      const maxStr = c.max_supply ? `<span class="mono" style="color:var(--text-muted)">/${c.max_supply}</span>` : '';
-      const progStr = ms === 'ongoing' ? ` <span style="color:var(--warning);font-size:11px">(${c.mint_progress||0}%)</span>` : '';
-      supplyCell = `<span style="color:${color}" title="${title}">${icon}</span> <b style="color:var(--text-primary)">${c.total_supply.toLocaleString()}</b>${maxStr}${progStr}`;
-    }
-    // NFT type
-    const nftIcons = {generative:'🎲', '1of1_series':'🎨', '1of1_art':'🖼', numbered:'🔢', no_traits:'∅', mixed:'🔀', unknown:'❓'};
-    const nftLabels = {generative:'Generative', '1of1_series':'1/1 Series', '1of1_art':'1/1 Art', numbered:'Numbered', no_traits:'No Traits', mixed:'Mixed', unknown:'?'};
-    const nt = c.nft_type || 'unknown';
-    const nftTitle = nftLabels[nt] + (c.avg_traits ? ` — ${c.avg_traits} avg traits, ${c.trait_types_count||0} types` : '');
-    const nftCell = `<span title="${nftTitle}">${nftIcons[nt]||'❓'}</span>`;
-    return `<tr>
-    <td>${img}</td>
-    <td><b>${esc(c.name)}</b>${c.creator ? `<br><span class="mono">${esc(c.creator)}</span>` : ''}</td>
-    <td>${tierBadge(c.tier)}</td>
-    <td class="mono">${esc(c.release_date || '?')}</td>
-    <td>${esc(c.chain || '?')}${(c.contracts||[]).length > 1 ? ` <span class="count">(${(c.contracts||[]).length})</span>` : ''}</td>
-    <td>${licenseBadge(c.license_category, c)}</td>
-    <td>${esc(c.vrm_license || '?')}</td>
-    <td>${contracts || (c.contract ? `<a href="https://etherscan.io/address/${c.contract}" target="_blank" class="mono">${c.contract.slice(0,6)}..${c.contract.slice(-4)}</a>` : '—')}</td>
-    <td>${c.opensea_slug ? `<a href="https://opensea.io/collection/${c.opensea_slug}" target="_blank">${esc(c.opensea_slug)}</a>` : (c.project_url ? `<a href="${c.project_url}" target="_blank">🌐</a>` : '—')}</td>
-    <td style="color:${urlColor}">${urlIcon}${wbLink}</td>
-    <td>${dLink}${tw}</td>
-    <td>${supplyCell}</td>
-    <td class="mono">${c.num_owners ? c.num_owners.toLocaleString() : '—'}</td>
-    <td class="mono">${c.floor_price ? `${c.floor_price.toFixed(3)} ${esc(c.floor_price_symbol || '')}` : '—'}</td>
-    <td class="mono">${c.total_volume ? c.total_volume.toLocaleString(undefined, {maximumFractionDigits:0}) : '—'}</td>
-    <td>${esc(c.category || '—')}</td>
-    <td>${c.safelist_status === 'verified' ? '<span style="color:var(--success)">✓</span>' : c.safelist_status === 'approved' ? '<span style="color:var(--warning)">~</span>' : '—'}</td>
-    <td>${nftCell}</td>
-    <td>${c.avatar_count || '—'}</td>
-    <td>${vrmBtn}</td>
-    <td class="url-cell mono" title="${esc(c.vrm_url_pattern)}">${esc(c.vrm_url_pattern || '—')}</td>
-  </tr>
-    ${c.description ? `<tr class="desc-row"><td colspan="20" class="desc-cell">${esc(c.description.slice(0,200))}${c.description.length > 200 ? '…' : ''}</td></tr>` : ''}`}).join('');
-  document.getElementById('emptyState').style.display = rows.length ? 'none' : 'block';
-  document.getElementById('collectionsTable').style.display = rows.length ? '' : 'none';
+  return rows;
 }
 
+function filter() {
+  if (currentTab !== 'collections') return;
+  const rows = applyCollectionFilters();
+  _collRows = rows;
+  document.getElementById('collCount').innerHTML = `<b>${rows.length}</b> of ${DATA.collections.length} collections`;
+  document.getElementById('emptyState').style.display = rows.length ? 'none' : 'block';
+  if (collectionsViewMode === 'cards') {
+    document.getElementById('collectionsGrid').innerHTML = rows.map((c, i) => collectionCard(c, i)).join('');
+  } else {
+    renderCollectionTable(rows);
+  }
+}
+
+function collectionCard(c, i) {
+  const letter = esc((c.name || '?').trim().charAt(0).toUpperCase() || '?');
+  const banner = c.banner_image_url
+    ? `<img loading="lazy" src="${esc(c.banner_image_url)}" alt="" onerror="this.style.display='none'">`
+    : `<div class="fallback">${letter}</div>`;
+  const pfpSrc = c.image_url || c.sample_nft_image;
+  const pfp = pfpSrc
+    ? `<img class="ccard-pfp" loading="lazy" src="${esc(pfpSrc)}" alt="" onerror="this.outerHTML='<div class=&quot;ccard-pfp fallback-pfp&quot;>🖼</div>'">`
+    : `<div class="ccard-pfp fallback-pfp">🖼</div>`;
+  const chips = [];
+  if (c.chain) chips.push(`<span class="chip"><span class="k">⛓</span> ${esc(c.chain)}</span>`);
+  const sup = supplyText(c); if (sup) chips.push(`<span class="chip">${sup}</span>`);
+  if (c.floor_price) chips.push(`<span class="chip"><span class="k">floor</span> <b>${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}</b></span>`);
+  if (c.avatar_count) chips.push(`<span class="chip"><span class="k">avatars</span> <b>${c.avatar_count.toLocaleString()}</b></span>`);
+  const vrmBtn = c.vrm_url_https
+    ? `<button class="vrm-btn" data-vrm="${i}">▶ View VRM</button>`
+    : `<button class="vrm-btn ghost" disabled>No VRM</button>`;
+  const vrmLic = c.vrm_license ? ` <span class="badge badge-unknown">${esc(c.vrm_license)}</span>` : '';
+  return `<div class="ccard">
+    <div class="ccard-banner" data-img="${i}">
+      ${banner}
+      <div class="ccard-tier">${tierBadge(c.tier)}</div>
+      ${pfp}
+    </div>
+    <div class="ccard-body">
+      <div class="ccard-title">
+        <span class="ccard-name">${esc(c.name)}</span>
+        ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
+      </div>
+      <div class="ccard-badges">${licenseBadge(c.license_category, c)}${vrmLic}</div>
+      ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
+      <div class="ccard-foot">${vrmBtn}<div class="ccard-links">${collLinks(c)}</div></div>
+    </div>
+  </div>`;
+}
+
+function renderCollectionTable(rows) {
+  document.getElementById('collectionsBody').innerHTML = rows.map((c, i) => {
+    const src = c.image_url || c.sample_nft_image;
+    const img = src
+      ? `<img class="thumb" loading="lazy" src="${esc(src)}" alt="" data-img="${i}" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🖼</span>'">`
+      : '<span class="thumb-placeholder">🖼</span>';
+    const sup = supplyText(c) || '—';
+    const vrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">▶</button>` : '—';
+    return `<tr>
+      <td>${img}</td>
+      <td><b style="color:var(--text-primary)">${esc(c.name)}</b>${c.creator ? `<br><span class="mono">${esc(c.creator)}</span>` : ''}</td>
+      <td>${tierBadge(c.tier)}</td>
+      <td>${esc(c.chain || '—')}</td>
+      <td>${licenseBadge(c.license_category, c)}</td>
+      <td class="mono">${esc(c.vrm_license || '—')}</td>
+      <td>${sup}</td>
+      <td class="mono">${c.floor_price ? c.floor_price.toFixed(2) + ' ' + esc(c.floor_price_symbol || '') : '—'}</td>
+      <td class="mono">${c.avatar_count ? c.avatar_count.toLocaleString() : '—'}</td>
+      <td>${collLinks(c)}</td>
+      <td>${vrmBtn}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Avatars view ────────────────────────────────────────────────────────────
 function filterAvatars() {
   if (!_avatarsLoaded) {
-    document.getElementById('avatarGrid').innerHTML = '<div class="loading-msg">Loading avatars...</div>';
+    document.getElementById('avatarGrid').innerHTML = '<div class="loading-msg">Loading avatars…</div>';
     loadAvatars();
     return;
   }
-  const q = (document.getElementById('avatarSearch')?.value || '').toLowerCase();
+  const q = (document.getElementById('search').value || '').toLowerCase();
   let rows = DATA.avatars.filter(a => {
     if (!q) return true;
     const hay = [a.name, a.collection_id, a.description, a.model_file_url].join(' ').toLowerCase();
     return hay.includes(q);
-  }).slice(0, 500);
-  document.getElementById('avatarCount').textContent = `${rows.length} of ${DATA.avatars.length} shown`;
-  document.getElementById('avatarGrid').innerHTML = rows.map(a => `<div class="avatar-card">
-    ${a.thumbnail_url ? `<img src="${esc(a.thumbnail_url)}" loading="lazy" alt="${esc(a.name || a.collection_id)}" onerror="this.style.display='none'">` : ''}
-    <h4>${esc(a.name)}</h4>
-    <div class="mono">${esc(a.collection_id)}</div>
-    ${a.model_file_url ? `<a href="${esc(a.model_file_url)}" target="_blank">Download VRM</a>` : ''}
+  });
+  const shown = rows.slice(0, 600);
+  document.getElementById('avatarCount').innerHTML =
+    `<b>${shown.length}</b> of ${DATA.avatars.length} avatars${rows.length > shown.length ? ' (showing first 600)' : ''}`;
+  document.getElementById('avatarGrid').innerHTML = shown.map(a => `<div class="avatar-card">
+    <div class="thumb-box">${a.thumbnail_url ? `<img loading="lazy" src="${esc(a.thumbnail_url)}" alt="" onerror="this.parentNode.textContent='🖼'">` : '🖼'}</div>
+    <h4>${esc(a.name || '—')}</h4>
+    <div class="mono">${esc(a.collection_id || '')}</div>
+    ${a.model_file_url ? `<a href="${esc(a.model_file_url)}" target="_blank" rel="noopener">Download VRM ↓</a>` : ''}
   </div>`).join('');
 }
 
+// ─── OpenSea candidates view ─────────────────────────────────────────────────
 function filterOS() {
   if (!_openseaLoaded) {
-    document.getElementById('osBody').innerHTML = '<tr><td colspan="12" class="loading-msg">Loading OpenSea candidates...</td></tr>';
+    document.getElementById('osBody').innerHTML = '<tr><td colspan="9" class="loading-msg">Loading OpenSea candidates…</td></tr>';
     loadOpensea();
     return;
   }
   const q = document.getElementById('search').value.toLowerCase();
   let rows = DATA.opensea.filter(c => {
-    if (q) {
-      const hay = [c.slug, c.name, c.contract, c.vrm_url].join(' ').toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
+    if (q) { const hay = [c.slug, c.name, c.contract, c.vrm_url].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
     return true;
   });
   rows.sort((a, b) => {
     let va = a[sortKeyOS] || '', vb = b[sortKeyOS] || '';
     return sortAscOS ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
   });
-  document.getElementById('osBody').innerHTML = rows.map(c => {
-    const us = c.url_status;
-    const urlIcon = us === 'alive' ? '✓' : us === 'dead' ? '✗' : us === 'error' ? '?' : '—';
-    const urlColor = us === 'alive' ? '#56d364' : us === 'dead' ? '#f85149' : '#8b949e';
-    const wbLink = c.wayback_available ? ` <a href="https://web.archive.org/web/*/opensea.io/collection/${c.slug}" target="_blank" title="${c.wayback_snapshots} snapshots">📦</a>` : '';
-    const ds = c.discord_status;
-    let dIcon = '—', dColor = '#8b949e', dTitle = '';
-    if (ds === 'alive') { dIcon = '✓'; dColor = '#56d364'; dTitle = `${c.discord_members||0} members`; }
-    else if (ds === 'dead') { dIcon = '✗'; dColor = '#f85149'; dTitle = 'expired/revoked'; }
-    else if (ds === 'rate_limited') { dIcon = '⏳'; dColor = '#d29922'; }
-    const osImg = c.image_url ? `<img class="thumb" src="${c.image_url}" alt="${esc(c.name)}" onclick="showImg('${c.image_url}','${esc(c.name)}','${c.banner_image_url || ''}')" onerror="this.outerHTML='<span class=\'thumb-placeholder\'>🖼</span>'">` : '<span class="thumb-placeholder">🖼</span>';
-    const osVrmBtn = c.vrm_url_https ? `<button class="vrm-btn" onclick="openVrmViewer('${c.vrm_url_https}','${esc(c.name)}','${esc(c.vrm_url_https)}')">▶ VRM</button>` : '—';
-    const osTw = c.twitter_username ? ` <a href="https://twitter.com/${c.twitter_username}" target="_blank" title="@${c.twitter_username}">𝕏</a>` : '';
+  _osRows = rows;
+  document.getElementById('osBody').innerHTML = rows.map((c, i) => {
+    const osImg = c.image_url
+      ? `<img class="thumb" loading="lazy" src="${esc(c.image_url)}" alt="" data-osimg="${i}" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🖼</span>'">`
+      : '<span class="thumb-placeholder">🖼</span>';
+    const osVrmBtn = c.vrm_url_https ? `<button class="vrm-btn" data-vrm="${i}">▶ VRM</button>` : '—';
     return `<tr>
-    <td>${osImg}</td>
-    <td>${c.slug ? `<a href="https://opensea.io/collection/${c.slug}" target="_blank">${esc(c.slug)}</a>` : '—'}</td>
-    <td>${esc(c.name)}</td>
-    <td class="mono">${esc(c.release_date || '?')}</td>
-    <td>${esc(c.chain || '?')}</td>
-    <td>${badge(c.status === 'vrm' ? 'green' : c.status === 'no_vrm' ? 'unknown' : 'yellow', c.status)}</td>
-    <td style="color:${urlColor}">${urlIcon}${wbLink}</td>
-    <td style="color:${dColor}" title="${dTitle}">${dIcon}${osTw}</td>
-    <td class="mono">${esc(c.vrm_param || '—')}</td>
-    <td>${osVrmBtn}</td>
-    <td class="mono">${c.contract ? `<a href="https://etherscan.io/address/${c.contract}" target="_blank">${c.contract.slice(0,8)}..</a>` : '—'}</td>
-    <td class="mono">${esc(c.source_query || '—')}</td>
-  </tr>`}).join('');
+      <td>${osImg}</td>
+      <td>${c.slug ? `<a href="https://opensea.io/collection/${encodeURIComponent(c.slug)}" target="_blank" rel="noopener">${esc(c.slug)}</a>` : '—'}</td>
+      <td>${esc(c.name || '—')}</td>
+      <td>${esc(c.chain || '—')}</td>
+      <td>${badge(c.status === 'vrm' ? 'green' : c.status === 'no_vrm' ? 'unknown' : 'yellow', c.status || '?')}</td>
+      <td class="mono">${esc(c.vrm_param || '—')}</td>
+      <td>${osVrmBtn}</td>
+      <td class="mono">${c.contract ? `<a href="https://etherscan.io/address/${esc(c.contract)}" target="_blank" rel="noopener">${c.contract.slice(0, 8)}…</a>` : '—'}</td>
+      <td class="mono">${esc(c.source_query || '—')}</td>
+    </tr>`;
+  }).join('');
 }
 
-function sort(key) { sortKey = key; sortAsc = !sortAsc; filter(); }
-function sortOS(key) { sortKeyOS = key; sortAscOS = !sortAscOS; filterOS(); }
+function sort(key) { if (sortKey === key) sortAsc = !sortAsc; else { sortKey = key; sortAsc = true; } filter(); }
+function sortOS(key) { if (sortKeyOS === key) sortAscOS = !sortAscOS; else { sortKeyOS = key; sortAscOS = true; } filterOS(); }
 
 function switchTab(tab) {
   currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  document.querySelectorAll('#viewSwitch .seg').forEach(b => b.classList.toggle('active', b.dataset.view === tab));
   document.getElementById('collectionsView').style.display = tab === 'collections' ? '' : 'none';
   document.getElementById('avatarsView').style.display = tab === 'avatars' ? '' : 'none';
   document.getElementById('openseaView').style.display = tab === 'opensea' ? '' : 'none';
-  if (tab === 'avatars') filterAvatars();
-  if (tab === 'opensea') filterOS();
+  if (tab === 'collections') filter();
+  else if (tab === 'avatars') filterAvatars();
+  else filterOS();
+}
+
+// Event delegation: VRM buttons + image previews (no fragile inline handlers).
+function wireDelegation() {
+  document.getElementById('collectionsView').addEventListener('click', e => {
+    const v = e.target.closest('[data-vrm]');
+    if (v) { const c = _collRows[+v.dataset.vrm]; if (c && c.vrm_url_https) openVrmViewer(c.vrm_url_https, c.name, c.vrm_url_https); return; }
+    const im = e.target.closest('[data-img]');
+    if (im) { const c = _collRows[+im.dataset.img]; if (c) { const src = c.image_url || c.sample_nft_image || c.banner_image_url; if (src) showImg(src, c.name, c.banner_image_url); } }
+  });
+  document.getElementById('openseaView').addEventListener('click', e => {
+    const v = e.target.closest('[data-vrm]');
+    if (v) { const c = _osRows[+v.dataset.vrm]; if (c && c.vrm_url_https) openVrmViewer(c.vrm_url_https, c.name, c.vrm_url_https); return; }
+    const im = e.target.closest('[data-osimg]');
+    if (im) { const c = _osRows[+im.dataset.osimg]; if (c && c.image_url) showImg(c.image_url, c.name, c.banner_image_url); }
+  });
 }
 
 // ─── Image preview modal ───────────────────────────────────────────────────
@@ -307,15 +347,9 @@ function showImg(url, name, bannerUrl) {
   const label = document.getElementById('imgModalLabel');
   img.src = url;
   img.alt = name || '';
-  // Handle video banners (OpenSea allows .mp4 banners)
   const isVideo = bannerUrl && (bannerUrl.includes('.mp4') || bannerUrl.includes('stream.mux.com'));
-  if (bannerUrl && !isVideo) {
-    banner.src = bannerUrl;
-    banner.style.display = '';
-  } else {
-    banner.style.display = 'none';
-    banner.src = '';
-  }
+  if (bannerUrl && !isVideo) { banner.src = bannerUrl; banner.style.display = ''; }
+  else { banner.style.display = 'none'; banner.src = ''; }
   label.textContent = name || '';
   document.getElementById('imgModal').classList.add('active');
 }
@@ -326,7 +360,6 @@ function closeImgModal() {
 }
 
 // ─── VRM viewer modal (Three.js + @pixiv/three-vrm via ES modules) ──────────
-// The VRM viewer is loaded as an ES module. Functions are exposed on window.
 let vrmAnimId = null;
 
 function showVrmError(msg) {
@@ -348,7 +381,6 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
   if (window._vrmViewerReady) {
     window._initVrmScene(vrmUrl);
   } else {
-    // Load the ES module script
     const s = document.createElement('script');
     s.type = 'module';
     s.textContent = `
@@ -378,7 +410,6 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
           dir.position.set(1, 2, 1);
           scene.add(dir);
 
-          // Orbit controls via mouse
           let theta = 0, phi = 0.1, isDragging = false, lastX = 0, lastY = 0;
           canvas.addEventListener('mousedown', e => { isDragging = true; lastX = e.clientX; lastY = e.clientY; });
           window.addEventListener('mouseup', () => { isDragging = false; });
@@ -409,12 +440,8 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
             scene.add(model);
             VRMUtils.removeUnnecessaryVertices(gltf.scene);
 
-            // Reset pose
             vrm.humanoid?.resetNormalizedPose();
-            // Face forward
-            if (vrm.humanoid) {
-              vrm.humanoid.setNormalizedPose();
-            }
+            if (vrm.humanoid) { vrm.humanoid.setNormalizedPose(); }
 
             const meta = vrm.meta;
             if (meta) {
@@ -443,7 +470,6 @@ function openVrmViewer(vrmUrl, name, footerInfo) {
       };
 
       window._vrmViewerReady = true;
-      // If a URL is already queued, init now
       if (window._pendingVrmUrl) {
         const url = window._pendingVrmUrl;
         window._pendingVrmUrl = null;
@@ -460,29 +486,26 @@ function closeVrmModal() {
   if (vrmAnimId) { cancelAnimationFrame(vrmAnimId); vrmAnimId = null; }
 }
 
-// Escape to close modals
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeVrmModal(); closeImgModal(); }
 });
 
-// ─── Init: fetch build-info, then load collections + summary ────────────────
+// ─── Init ────────────────────────────────────────────────────────────────────
+wireDelegation();
 (async () => {
   try {
     await loadBuildInfo();
     await loadCollections();
   } catch (err) {
-    document.getElementById('collectionsBody').innerHTML =
-      `<tr><td colspan="21" class="loading-msg">Failed to load catalog data: ${esc(err.message)}<br>Run <code>python scripts/build_catalog.py</code> to generate data files.</td></tr>`;
+    document.getElementById('collectionsGrid').innerHTML =
+      `<div class="loading-msg">Failed to load catalog data: ${esc(err.message)}<br>Run <code>python scripts/build_catalog.py</code> to generate data files.</div>`;
     console.error(err);
   }
 })();
 
 // ─── Service worker registration (offline cache for hashed static files) ────
-// Only register on https or localhost — never on file:// or other origins.
 if ('serviceWorker' in navigator) {
-  const swScope = location.protocol === 'https:' || location.hostname === 'localhost'
-    ? './sw.js'
-    : null;
+  const swScope = location.protocol === 'https:' || location.hostname === 'localhost' ? './sw.js' : null;
   if (swScope) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register(swScope).catch((err) => {

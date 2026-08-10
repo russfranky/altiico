@@ -3,173 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VRM NFT Collection Index</title>
+<title>VRM Collection Index</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 <header>
-  <h1>VRM <span>Collection Index</span></h1>
-  <div class="stats">
-    <span>Collections: <b id="stat-collections">0</b></span>
-    <span>Avatars: <b id="stat-avatars">0</b></span>
-    <span>OpenSea candidates: <b id="stat-os">0</b></span>
-    <span>🟢 <b id="stat-green">0</b></span>
-    <span>🟡 <b id="stat-yellow">0</b></span>
-    <span>🔴 <b id="stat-red">0</b></span>
-    <span>URLs: ✓<b id="stat-alive">0</b> ✗<b id="stat-dead">0</b> 📦<b id="stat-wayback">0</b></span>
-    <span>Discord: ✓<b id="stat-dc-alive">0</b> ✗<b id="stat-dc-dead">0</b></span>
-    <span>🔒<b id="stat-capped">0</b> 🟢<b id="stat-ongoing">0</b></span>
-    <span id="stat-stale" style="display:none;color:var(--warning)"></span>
+  <div class="header-inner">
+    <div class="header-top">
+      <h1><span class="logo">◆</span> VRM <span>Collection Index</span></h1>
+      <div class="stat-pills">
+        <span class="pill">Collections <b id="stat-collections">0</b></span>
+        <span class="pill">Avatars <b id="stat-avatars">0</b></span>
+        <span class="pill">OpenSea <b id="stat-os">0</b></span>
+        <span class="pill g">🟢 <b id="stat-green">0</b></span>
+        <span class="pill y">🟡 <b id="stat-yellow">0</b></span>
+        <span class="pill r">🔴 <b id="stat-red">0</b></span>
+        <span class="pill" id="stat-stale" style="display:none"></span>
+      </div>
+      <!-- secondary stats kept for the loader; not surfaced in the header -->
+      <div style="display:none" aria-hidden="true">
+        <span id="stat-alive"></span><span id="stat-dead"></span><span id="stat-wayback"></span>
+        <span id="stat-dc-alive"></span><span id="stat-dc-dead"></span>
+        <span id="stat-capped"></span><span id="stat-ongoing"></span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Search collections, contracts, slugs, creators…" oninput="onSearch()">
+      </div>
+      <select id="f-tier" onchange="filter()" title="Tier">
+        <option value="">All tiers</option>
+        <option value="A">A — VRM in metadata</option>
+        <option value="B">B — VRM off-chain</option>
+        <option value="C">C — WIP</option>
+        <option value="arweave">Arweave-native</option>
+        <option value="infra">Infrastructure</option>
+        <option value="not_vrm">Not VRM</option>
+      </select>
+      <select id="f-chain" onchange="filter()" title="Chain">
+        <option value="">All chains</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="base">Base</option>
+        <option value="optimism">Optimism</option>
+        <option value="polygon">Polygon</option>
+        <option value="shape">Shape</option>
+        <option value="solana">Solana</option>
+        <option value="arweave">Arweave</option>
+        <option value="multi">Multi-chain</option>
+      </select>
+      <select id="f-license" onchange="filter()" title="License">
+        <option value="">All licenses</option>
+        <option value="green">🟢 Open (CC0)</option>
+        <option value="yellow">🟡 Holder-based</option>
+        <option value="red">🔴 Restricted</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <select id="f-mint" onchange="filter()" title="Supply">
+        <option value="">Any supply</option>
+        <option value="capped">🔒 Capped</option>
+        <option value="likely_capped">🔒 Likely capped</option>
+        <option value="ongoing">🟢 Ongoing</option>
+        <option value="no_max_supply">❓ No max</option>
+      </select>
+      <!-- kept for filter() compatibility; hidden secondary filters -->
+      <select id="f-url" onchange="filter()" style="display:none"><option value=""></option></select>
+      <select id="f-discord" onchange="filter()" style="display:none"><option value=""></option></select>
+      <select id="f-nfttype" onchange="filter()" style="display:none"><option value=""></option></select>
+    </div>
+
+    <div class="controls">
+      <div class="segmented" id="viewSwitch">
+        <button class="seg active" data-view="collections" onclick="switchTab('collections')">Collections</button>
+        <button class="seg" data-view="avatars" onclick="switchTab('avatars')">Avatars</button>
+        <button class="seg" data-view="opensea" onclick="switchTab('opensea')">OpenSea Candidates</button>
+      </div>
+    </div>
   </div>
 </header>
-<div class="controls">
-  <input type="text" id="search" placeholder="Search collections, contracts, slugs..." oninput="debounceFilter()">
-  <label>Tier:
-    <select id="f-tier" onchange="filter()">
-      <option value="">All</option>
-      <option value="A">A — VRM in metadata</option>
-      <option value="B">B — VRM off-chain</option>
-      <option value="C">C — WIP</option>
-      <option value="arweave">Arweave-native</option>
-      <option value="infra">Infrastructure</option>
-      <option value="not_vrm">Not VRM</option>
-    </select>
-  </label>
-  <label>Chain:
-    <select id="f-chain" onchange="filter()">
-      <option value="">All</option>
-      <option value="ethereum">Ethereum</option>
-      <option value="base">Base</option>
-      <option value="optimism">Optimism</option>
-      <option value="polygon">Polygon</option>
-      <option value="shape">Shape</option>
-      <option value="solana">Solana</option>
-      <option value="arweave">Arweave</option>
-      <option value="multi">Multi-chain</option>
-    </select>
-  </label>
-  <label>License:
-    <select id="f-license" onchange="filter()">
-      <option value="">All</option>
-      <option value="green">🟢 No permission (CC0)</option>
-      <option value="yellow">🟡 Holder-based</option>
-      <option value="red">🔴 Permission required</option>
-      <option value="unknown">Unknown</option>
-    </select>
-  </label>
-  <label>URL:
-    <select id="f-url" onchange="filter()">
-      <option value="">All</option>
-      <option value="alive">✓ Alive</option>
-      <option value="dead">✗ Dead</option>
-      <option value="error">? Error</option>
-      <option value="wayback">📦 Has Wayback</option>
-    </select>
-  </label>
-  <label>Discord:
-    <select id="f-discord" onchange="filter()">
-      <option value="">All</option>
-      <option value="alive">✓ Alive</option>
-      <option value="dead">✗ Dead</option>
-      <option value="none">— None</option>
-    </select>
-  </label>
-  <label>Supply:
-    <select id="f-mint" onchange="filter()">
-      <option value="">All</option>
-      <option value="capped">🔒 Capped</option>
-      <option value="likely_capped">🔒 Likely capped</option>
-      <option value="ongoing">🟢 Ongoing</option>
-      <option value="no_max_supply">❓ No max</option>
-    </select>
-  </label>
-  <label>Type:
-    <select id="f-nfttype" onchange="filter()">
-      <option value="">All</option>
-      <option value="generative">🎲 Generative</option>
-      <option value="1of1_series">🎨 1/1 Series</option>
-      <option value="1of1_art">🖼 1/1 Art</option>
-      <option value="numbered">🔢 Numbered</option>
-      <option value="no_traits">∅ No Traits</option>
-    </select>
-  </label>
-</div>
-<div class="tab-bar">
-  <div class="tab active" onclick="switchTab('collections')">Collections</div>
-  <div class="tab" onclick="switchTab('avatars')">Avatars</div>
-  <div class="tab" onclick="switchTab('opensea')">OpenSea Candidates</div>
-</div>
+
 <main>
+  <!-- Collections -->
   <div id="collectionsView">
-    <table id="collectionsTable">
-      <thead>
-        <tr>
-          <th>Preview</th>
+    <div class="result-bar">
+      <span class="result-count" id="collCount"></span>
+      <div class="viewmode">
+        <button class="vm-btn active" id="vm-cards" onclick="setCollectionsView('cards')">▦ Cards</button>
+        <button class="vm-btn" id="vm-table" onclick="setCollectionsView('table')">☰ Table</button>
+      </div>
+    </div>
+    <div class="card-grid" id="collectionsGrid"></div>
+    <div class="table-wrap" id="collectionsTableWrap" style="display:none">
+      <table id="collectionsTable">
+        <thead><tr>
+          <th></th>
           <th onclick="sort('name')">Collection</th>
           <th onclick="sort('tier')">Tier</th>
-          <th onclick="sort('release_date')">Released</th>
-          <th onclick="sort('chain')">Chain(s)</th>
+          <th onclick="sort('chain')">Chain</th>
           <th onclick="sort('license_category')">License</th>
           <th onclick="sort('vrm_license')">VRM License</th>
-          <th>Contract(s)</th>
-          <th>OpenSea</th>
-          <th onclick="sort('url_status')">URL</th>
-          <th onclick="sort('discord_status')">Social</th>
-          <th onclick="sort('total_supply')">Total</th>
-          <th onclick="sort('num_owners')">Holders</th>
+          <th onclick="sort('total_supply')">Supply</th>
           <th onclick="sort('floor_price')">Floor</th>
-          <th onclick="sort('total_volume')">Volume</th>
-          <th onclick="sort('category')">Category</th>
-          <th onclick="sort('safelist_status')">Verified</th>
-          <th onclick="sort('nft_type')">Type</th>
           <th onclick="sort('avatar_count')">Avatars</th>
+          <th>Links</th>
           <th>VRM</th>
-          <th>VRM URL pattern</th>
-        </tr>
-      </thead>
-      <tbody id="collectionsBody"></tbody>
-    </table>
-  </div>
-  <div id="avatarsView">
-    <div class="controls" style="border:none;padding:0 0 12px 0">
-      <input type="text" id="avatarSearch" placeholder="Search avatars by name or collection..." oninput="filterAvatars()">
-      <span class="count" id="avatarCount"></span>
+        </tr></thead>
+        <tbody id="collectionsBody"></tbody>
+      </table>
     </div>
+    <div class="empty" id="emptyState" style="display:none">No collections match your filters.</div>
+  </div>
+
+  <!-- Avatars -->
+  <div id="avatarsView" style="display:none">
+    <div class="result-bar"><span class="result-count" id="avatarCount"></span></div>
     <div class="avatar-grid" id="avatarGrid"></div>
   </div>
-  <div id="openseaView">
-    <table id="osTable">
-      <thead>
-        <tr>
-          <th>Preview</th>
+
+  <!-- OpenSea candidates -->
+  <div id="openseaView" style="display:none">
+    <div class="table-wrap">
+      <table id="osTable">
+        <thead><tr>
+          <th></th>
           <th onclick="sortOS('slug')">Slug</th>
           <th onclick="sortOS('name')">Name</th>
-          <th onclick="sortOS('release_date')">Released</th>
           <th onclick="sortOS('chain')">Chain</th>
           <th onclick="sortOS('status')">VRM</th>
-          <th onclick="sortOS('url_status')">URL</th>
-          <th onclick="sortOS('discord_status')">Social</th>
           <th>VRM param</th>
-          <th>VRM</th>
+          <th>View</th>
           <th>Contract</th>
           <th>Found via</th>
-        </tr>
-      </thead>
-      <tbody id="osBody"></tbody>
-    </table>
+        </tr></thead>
+        <tbody id="osBody"></tbody>
+      </table>
+    </div>
   </div>
 </main>
-<div class="empty" id="emptyState" style="display:none">No results match your filters.</div>
 
 <!-- Image preview modal -->
 <div id="imgModal" onclick="closeImgModal()">
   <button id="imgModalClose" onclick="closeImgModal()">&times;</button>
   <div id="imgModalContent">
-    <img id="imgModalBanner" src="" style="display:none">
-    <img id="imgModalImg" src="">
+    <img id="imgModalBanner" src="" style="display:none" alt="">
+    <img id="imgModalImg" src="" alt="">
     <div id="imgModalLabel"></div>
   </div>
 </div>
@@ -183,7 +163,7 @@
     </div>
     <div id="vrmCanvasContainer">
       <canvas id="vrmCanvas"></canvas>
-      <div id="vrmLoading">Loading VRM...</div>
+      <div id="vrmLoading">Loading VRM…</div>
       <div id="vrmError"></div>
     </div>
     <div id="vrmModalFooter">
