@@ -251,5 +251,8 @@ Pre-alpha has TWO avatar surfaces, and this catalog feeds the first:
 - Grifters Squaddies: chain is **Base**, license **CC0** (ToxSam × Vipe.io).
   The catalog is correct; the pre-alpha `seed-registry.ts` entry
   (`source: "zora"`) is the wrong one and should be changed to `base`.
-  Note: reported set size (~4,200) exceeds the catalog's recorded
-  `avatar_count` 812 / `total_supply` 1453 — unverified, left as-is.
+  Count verified on-chain (`migrations/012`): the Base contract
+  `0xa94c652c…` (name "Grifters Squaddies", GRFT) reports `totalSupply = 1453`
+  — that is canon (the ~4,200 figure did not verify; the old 812 was a partial
+  index). The `0xc1374b80…` claim contract is a different token ("Nifty Island
+  Creations") and is NOT the Grifters contract.

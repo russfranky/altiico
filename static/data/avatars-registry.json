@@ -1,7 +1,7 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-09T23:48:49Z",
+  "generated_at": "2026-08-10T00:04:41Z",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -148,7 +148,7 @@
       "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
       "banner": "https://i2c.seadn.io/base/315b5ff7474349e5b6f649e16f212e92/0859c0a7d18c1df81b1bbd03adc2dc/aa0859c0a7d18c1df81b1bbd03adc2dc.png?fit=inside",
       "pfp": "https://i2c.seadn.io/base/315b5ff7474349e5b6f649e16f212e92/f3c280a13f427b6b13199b2b207ccc/46f3c280a13f427b6b13199b2b207ccc.png",
-      "avatar_count": 812,
+      "avatar_count": 1453,
       "purchase_gated": false,
       "status": "staged",
       "tier": "A"
