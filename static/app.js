@@ -26,7 +26,7 @@ async function loadCollections() {
     fetchJSON('data/' + info.files.collections),
   ]);
   DATA.collections = collectionsData.collections || [];
-  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1).length);
+  setStat('stat-ready', DATA.collections.filter(c => c.ready === 1 && c.hubzz_status === 'absent').length);
   const s = summary.stats || {};
   setStat('stat-collections', s.collections ?? DATA.collections.length);
   setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
@@ -192,7 +192,8 @@ function applyCollectionFilters() {
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
   const fReady = (document.getElementById('f-ready') || {}).value || '';
   let rows = DATA.collections.filter(c => {
-    if (fReady === 'ready' && c.ready !== 1) return false;
+    if (fReady === 'ready' && !(c.ready === 1 && c.hubzz_status === 'absent')) return false;
+    if (fReady === 'inhubzz' && c.hubzz_status === 'absent') return false;
     if (fReady === 'near' && !(c.readiness_score >= 6 && c.ready !== 1)) return false;
     if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
@@ -247,8 +248,20 @@ function statusSelect(id, i) {
   return `<select class="status-sel status-${cur || 'none'}" data-status="${i}" onclick="event.stopPropagation()">${opts}</select>`;
 }
 
+function hubzzBadge(c) {
+  if (c.hubzz_status === 'onboarded')
+    return `<span class="badge hz-in" title="Already live in Hubzz as '${esc(c.hubzz_slug || '')}' (${c.hubzz_optimized}/${c.hubzz_rows} optimized) — nothing to do">🏠 in Hubzz</span>`;
+  if (c.hubzz_status === 'partial')
+    return `<span class="badge hz-part" title="In Hubzz as '${esc(c.hubzz_slug || '')}' but only ${c.hubzz_optimized}/${c.hubzz_rows} optimized — needs finishing">◑ partial (${c.hubzz_optimized}/${c.hubzz_rows})</span>`;
+  return '';
+}
+
 function readinessBadge(c) {
-  if (c.ready === 1) return '<span class="badge rdy-ready" title="All critical criteria met — ready for hubzz ingress">✅ hubzz-ready</span>';
+  // A set that is already in Hubzz is NOT an onboarding target — say so instead
+  // of advertising it as "ready".
+  if (c.ready === 1 && c.hubzz_status === 'absent')
+    return '<span class="badge rdy-ready" title="Meets every criterion and is NOT yet in Hubzz — onboard this">✅ NEW · ready</span>';
+  if (c.ready === 1) return '<span class="badge rdy-done" title="Meets every criterion but is already in Hubzz">✔ ready (already in)</span>';
   if (c.readiness_score == null) return '';
   let crit = c.readiness_criteria;
   if (typeof crit === 'string') { try { crit = JSON.parse(crit); } catch { crit = null; } }
@@ -308,7 +321,7 @@ function collectionCard(c, i) {
         <span class="ccard-name">${esc(c.name)}</span>
         ${c.creator ? `<span class="ccard-creator">by ${esc(c.creator)}</span>` : ''}
       </div>
-      <div class="ccard-badges">${readinessBadge(c)}${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
+      <div class="ccard-badges">${readinessBadge(c)}${hubzzBadge(c)}${vrmReachBadge(c)}${licenseBadge(c.license_category, c)}${vrmLic}</div>
       ${chips.length ? `<div class="ccard-chips">${chips.join('')}</div>` : ''}
       ${desc}
       ${socials ? `<div class="ccard-socials">${socials}</div>` : ''}

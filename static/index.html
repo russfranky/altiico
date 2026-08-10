@@ -33,7 +33,7 @@
         <span class="pill g">🟢 <b id="stat-green">0</b></span>
         <span class="pill y">🟡 <b id="stat-yellow">0</b></span>
         <span class="pill r">🔴 <b id="stat-red">0</b></span>
-        <span class="pill g" title="Sets ready for hubzz ingress">✅ <b id="stat-ready">0</b></span>
+        <span class="pill g" title="Ready to onboard AND not already in Hubzz">✅ new <b id="stat-ready">0</b></span>
         <span class="pill" style="border-color:rgba(124,107,255,0.35)">★ <b id="bm-count">0</b></span>
         <span class="pill" id="stat-stale" style="display:none"></span>
       </div>
@@ -51,7 +51,8 @@
       </div>
       <select id="f-ready" onchange="filter()" title="Hubzz-ingress readiness">
         <option value="">Any readiness</option>
-        <option value="ready">✅ Hubzz-ready</option>
+        <option value="ready">✅ NEW &amp; ready (not in Hubzz)</option>
+        <option value="inhubzz">🏠 Already in Hubzz</option>
         <option value="near">🔸 Near-ready (6+/8)</option>
       </select>
       <select id="f-tier" onchange="filter()" title="Tier">
