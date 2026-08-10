@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-08-10T15:57:27.411716+00:00",
+  "generated_at": "2026-08-10T16:27:38.723135+00:00",
   "schema_version": 1,
   "files": {
     "summary": "catalog-summary.b70ffb5af281.json",
     "collections": "collections.cb6ee7b4cd6e.json",
     "opensea": "opensea-candidates.cd56ce2ad8db.json",
     "avatars": [
-      "avatars-00.a408fdbca780.json",
-      "avatars-01.a3ef5c9644dd.json",
-      "avatars-02.752dc965996f.json",
-      "avatars-03.4ed8e352f923.json",
-      "avatars-04.9af7a93f78f9.json",
-      "avatars-05.bc43c0e58e13.json",
-      "avatars-06.2172adabcf59.json",
-      "avatars-07.90e89be65574.json",
-      "avatars-08.843ebe97d643.json"
+      "avatars-00.1ce5f88e294f.json",
+      "avatars-01.5f4b205bcede.json",
+      "avatars-02.dce203875f05.json",
+      "avatars-03.6f001ece24cf.json",
+      "avatars-04.747ed8e8a1aa.json",
+      "avatars-05.0956e3c22f34.json",
+      "avatars-06.65f56fb6a157.json",
+      "avatars-07.8372221d5985.json",
+      "avatars-08.37c075a994e8.json"
     ]
   },
   "market_data_as_of": "2026-08-10T03:41:56.898188+00:00"

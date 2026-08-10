@@ -119,7 +119,8 @@ def query_avatars(conn) -> list:
     """Query all avatars (subset of columns matching original build_html)."""
     return [dict(r) for r in conn.execute(
         "SELECT id, collection_id, name, description, "
-        "model_file_url, format, thumbnail_url "
+        "model_file_url, format, thumbnail_url, "
+        "reachable, check_status, checked_at "
         "FROM avatars ORDER BY collection_id, name"
     )]
 

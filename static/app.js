@@ -387,9 +387,9 @@ function avatarFilters() {
   return DATA.avatars.filter(a => {
     if (fc && a.collection_id !== fc) return false;
     if (fl) {
-      const cat = collById(a.collection_id).license_category || 'unknown';
-      if (fl === 'open' && cat !== 'green') return false;
-      if (fl !== 'open' && cat !== fl) return false;
+      if (fl === 'reachable' && a.reachable !== 1) return false;
+      if (fl === 'unreachable' && a.reachable !== 0) return false;
+      if (fl === 'unchecked' && a.reachable !== null && a.reachable !== undefined) return false;
     }
     if (q) {
       const hay = [a.name, a.collection_id, a.description].join(' ').toLowerCase();
@@ -421,10 +421,14 @@ function filterAvatars(resetPage = true) {
   const rows = avatarFilters();
   _avRows = rows;
   const shown = rows.slice(0, (_avPage + 1) * AV_PAGE);
-  const openCount = rows.filter(a => (collById(a.collection_id).license_category) === 'green').length;
+  const live = rows.filter(a => a.reachable === 1).length;
+  const dead = rows.filter(a => a.reachable === 0).length;
+  const unchecked = rows.length - live - dead;
   document.getElementById('avatarCount').innerHTML =
-    `<b>${rows.length.toLocaleString()}</b> avatars${rows.length !== DATA.avatars.length ? ' of ' + DATA.avatars.length.toLocaleString() : ''}` +
-    ` · <span style="color:var(--success)">${openCount.toLocaleString()} CC0/open</span>` +
+    `<b>${rows.length.toLocaleString()}</b> avatars` +
+    ` · <span style="color:var(--success)">🟢 ${live.toLocaleString()} reachable</span>` +
+    ` · <span style="color:var(--error)">🔴 ${dead.toLocaleString()} unreachable</span>` +
+    (unchecked ? ` · <span style="color:var(--text-muted)">${unchecked.toLocaleString()} unchecked</span>` : '') +
     ` · showing ${shown.length.toLocaleString()}`;
 
   document.getElementById('avatarGrid').innerHTML = shown.map((a, i) => {
@@ -439,6 +443,11 @@ function filterAvatars(resetPage = true) {
       <h4 title="${esc(a.name || '')}">${esc(a.name || '—')}</h4>
       <div class="av-coll">${esc(c.name || a.collection_id)}</div>
       <div class="av-row">
+        ${a.reachable === 1
+          ? `<span class="badge vrm-live" title="VRM file served OK (${esc(a.check_status || '')})">🟢 reachable</span>`
+          : a.reachable === 0
+            ? `<span class="badge vrm-dead" title="Not served: ${esc(a.check_status || '')}${a.check_http ? ' ' + a.check_http : ''}">🔴 ${esc(a.check_status || 'unreachable')}</span>`
+            : `<span class="badge badge-unknown" title="Not yet checked">· unchecked</span>`}
         <span class="badge badge-${cat}" title="License of the parent collection">${lic}</span>
       </div>
       <div class="av-actions">
