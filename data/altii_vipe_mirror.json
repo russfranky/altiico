@@ -1,0 +1,329 @@
+{
+  "_source": "VIPE platform mirror (altiiData) \u2014 packages/avatars/lab/src/data/altiiData.ts in HubzzInc/pre-alpha",
+  "_provenance": "Curated by the Hubzz/altii.co team from a Wayback mirror of vipe.io. Vendored 2026-08-10 so this repo does not depend on the pre-alpha checkout.",
+  "_credit": "VIPE platform (vipe.io, defunct) collection curation; mirror assembled by the altii.co team.",
+  "collections": [
+    {
+      "name": "VIPE Heroes",
+      "items": "3,000",
+      "banner": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/VIPEHeroes/VIPE_Heroes_Cover_2400x1600_V2.webp",
+      "pfp": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/VIPEHeroes_Opensea_icon_400x400.jpg",
+      "assets3D": "3D Ready",
+      "category": "Genesis Collections",
+      "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
+      "description": "The 3,000-piece Genesis collection that pioneered the Virtual Identity Protocol.",
+      "metadataParam": "asset",
+      "opensource": {
+        "registry": "https://opensourceavatars.com",
+        "projectsJson": "https://raw.githubusercontent.com/ToxSam/open-source-avatars/main/data/projects.json"
+      }
+    },
+    {
+      "name": "Avastars",
+      "items": "25,700",
+      "banner": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/Avastars/Avastars_2400x1600.webp",
+      "pfp": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/Avastars/Avastars_400x400.jpg",
+      "assets3D": "3D Ready",
+      "category": "Classic Meta",
+      "contract": "0xF12b5dd48171122709282363198fA019488b14a9",
+      "description": "Generative art on the Ethereum blockchain. Fully on-chain SVGs and metadata.",
+      "metadataParam": "vrm"
+    },
+    {
+      "name": "SuperYeti",
+      "items": "10,000",
+      "banner": "https://web.archive.org/web/20230325202804im_/https://images.squarespace-cdn.com/content/v1/6078a567cd564058f99c3281/07d98dfe-6028-4581-bc5a-543e1f336bc6/yeti-bomber-banner-03.jpg",
+      "pfp": "https://web.archive.org/web/20230325202804im_/https://images.squarespace-cdn.com/content/v1/6078a567cd564058f99c3281/029401cc-8156-4dc8-b117-d1d27ac41b4f/superyeti_icon_white_padding.png",
+      "assets3D": "GLB",
+      "category": "Metaverse Ready",
+      "contract": "0x3F0785095A660fEe131eEbcD5aa243e529C21786",
+      "description": "The world's first 10,000 3D generative NFT collection."
+    },
+    {
+      "name": "CryptoAvatars",
+      "items": "Various",
+      "banner": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/web_300x248_CA.jpg",
+      "pfp": "https://web.archive.org/web/20230922060200im_/https://storage.cryptoavatars.io/marketingImages/web_profile_CA-2.jpg",
+      "assets3D": "3D Ready \u00b7 FBX",
+      "category": "Avatar Standard",
+      "contract": "0xfeb56aaf59f8c17300f4d8306365a491b05b6602",
+      "description": "A collection of unique 3D avatars for the open metaverse. Born from Polygonal Mind's 100 Avatars and Avatar Garden \u2014 the VRChat space that housed the series.",
+      "opensource": {
+        "repo": "https://github.com/PolygonalMind/initiative-opensource-release",
+        "caWorld": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230518",
+        "avatarGarden": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230426.1"
+      }
+    },
+    {
+      "name": "Forgotten Runes",
+      "items": "10,000",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "3D Ready",
+      "category": "The Great Archive",
+      "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+      "description": "Every Wizard has a soul. Fully on-chain metadata and decentralized storytelling.",
+      "metadataParam": "vrm"
+    },
+    {
+      "name": "CloneX",
+      "items": "20,000",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "GLB",
+      "category": "Fashion Meta",
+      "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+      "description": "High-end avatars created by RTFKT and Takashi Murakami."
+    },
+    {
+      "name": "Meebits",
+      "items": "20,000",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "Voxel \u00b7 T-Pose",
+      "category": "Voxel Meta",
+      "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "description": "3D voxel characters for virtual worlds and games.",
+      "metadataParam": "vrm"
+    },
+    {
+      "name": "altiico",
+      "items": "10,000",
+      "banner": "https://2-crypto.s3.amazonaws.com/the-beeings/gallery/Bee.png",
+      "pfp": "https://2-crypto.s3.amazonaws.com/the-beeings/logo.png",
+      "assets3D": "Coming Soon",
+      "category": "Curated Collections",
+      "contract": "0x5a642e2d5f378d2dd44044eb7d21e4a5f3b4dc6a",
+      "description": "Generative honey bees for the metaverse. Community-driven collection with on-chain metadata."
+    },
+    {
+      "name": "Azuki",
+      "items": "10,000",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "GLB",
+      "category": "Fashion Meta",
+      "contract": "0xED5AF388653567Af2F388E6224dC7C4b3241C544",
+      "description": "A collection of 10,000 avatars that give you membership access to The Garden."
+    },
+    {
+      "name": "Bored Ape Yacht Club",
+      "items": "10,000",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "GLB",
+      "category": "Classic Meta",
+      "contract": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+      "description": "A collection of 10,000 unique Bored Ape NFTs on the Ethereum blockchain."
+    },
+    {
+      "name": "Cryptoadz by Gremplin",
+      "items": "7,077",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "GLB",
+      "category": "Classic Meta",
+      "contract": "0x1CB1A5e65610AEFF2551A50f76a87a7d3fB649C6",
+      "description": "Small, anthropomorphic beings that exist on the Ethereum blockchain."
+    },
+    {
+      "name": "100 Avatars",
+      "items": "200",
+      "banner": "https://raw.githubusercontent.com/PolygonalMind/initiative-opensource-release/main/images/100AvatarsR1_Cover.jpg",
+      "pfp": "https://raw.githubusercontent.com/PolygonalMind/initiative-opensource-release/main/images/100AvatarsR2_Cover.jpg",
+      "assets3D": "3D Ready \u00b7 FBX \u00b7 VXR",
+      "category": "Curated Collections",
+      "contract": "",
+      "description": "CC0 character packs by Polygonal Mind. R1 (2018) and R2 (2020) \u2014 1-avatar-per-day series. Themes: Aliens, Monsters, Adventurers, Christmas, Food. Available as .fbx, .vrm, .vxr. First step towards CryptoAvatars.",
+      "opensource": {
+        "repo": "https://github.com/PolygonalMind/initiative-opensource-release",
+        "original": "https://www.100avatars.com/",
+        "sketchfabR1": "https://sketchfab.com/3d-models/100-avatars-r1-cc0-character-pack-c96f3ac9e8ee4bc192809e4a64bddfc2",
+        "sketchfabR2": "https://sketchfab.com/3d-models/100-avatars-r2-cc0-character-pack-80cb24ac52cb4e839930aaa12314f716",
+        "release": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230412.1",
+        "registry": "https://opensourceavatars.com"
+      }
+    },
+    {
+      "name": "3dnotjpegs",
+      "items": "Various",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "3D Ready",
+      "category": "Metaverse Ready",
+      "contract": "",
+      "description": "3D avatars for the metaverse. Focus on VRM interoperability across VRChat, Hyperfy, Spatial, and open virtual worlds."
+    },
+    {
+      "name": "Nouns",
+      "items": "Daily",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "3D Ready",
+      "category": "Curated Collections",
+      "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+      "description": "OneNoun every day, forever. CC0. VRM avatars for the open metaverse."
+    },
+    {
+      "name": "Boomboxheads V2",
+      "items": "Various",
+      "banner": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "pfp": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIj5JbWFnZSBVbmF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=",
+      "assets3D": "3D Ready \u00b7 GLB",
+      "category": "Metaverse Ready",
+      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "description": "VRM avatars. Metadata: vrm_url / description (GLB)."
+    }
+  ],
+  "awesome3dCollections": [
+    {
+      "name": "Nouns",
+      "url": "https://nouns.wtf/",
+      "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+      "vrm": true
+    },
+    {
+      "name": "Voltz",
+      "url": "https://voltz.me/en/",
+      "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+      "vrm": true
+    },
+    {
+      "name": "Cyberbrokers Genesis Mechs",
+      "url": "https://www.cyberbrokers.com/",
+      "contract": "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+      "vrm": true,
+      "metadataParam": "vrm_url / files:glb"
+    },
+    {
+      "name": "Boomboxheads V2",
+      "url": "https://gm3.github.io/boomboxheads-v2/",
+      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "vrm": true,
+      "metadataParam": "vrm_url / description"
+    },
+    {
+      "name": "Allstarz PSX",
+      "url": "https://allstarz.world/",
+      "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "vrm": true,
+      "metadataParam": "vrm_url"
+    },
+    {
+      "name": "Woodies",
+      "url": "https://woodiesofficial.com/",
+      "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+      "vrm": true
+    },
+    {
+      "name": "DickButt Verse",
+      "url": "https://www.dickbuttverse.com/",
+      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+      "vrm": true,
+      "metadataParam": "vrm_url / animation_url"
+    },
+    {
+      "name": "PixelBeasts",
+      "url": "https://www.pixelbeasts.co/",
+      "contract": "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab",
+      "vrm": true,
+      "metadataParam": "model/vrm"
+    }
+  ],
+  "openSourceAvatarsProjects": [
+    {
+      "id": "100avatars-r1",
+      "name": "100Avatars R1",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com"
+    },
+    {
+      "id": "100avatars-r2",
+      "name": "100Avatars R2",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com"
+    },
+    {
+      "id": "100avatars-r3",
+      "name": "100Avatars R3",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com"
+    },
+    {
+      "id": "vipe-heroes-genesis",
+      "name": "VIPE Heroes Genesis",
+      "license": "CC-BY",
+      "url": "https://opensourceavatars.com",
+      "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5"
+    },
+    {
+      "id": "grifters-squaddies",
+      "name": "Grifters Squaddies",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com",
+      "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c"
+    },
+    {
+      "id": "toxsam",
+      "name": "ToxSam",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com"
+    },
+    {
+      "id": "halloween-rising",
+      "name": "Halloween Rising",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com",
+      "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647"
+    },
+    {
+      "id": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "license": "CC0",
+      "url": "https://opensourceavatars.com",
+      "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483"
+    }
+  ],
+  "opensourceResources": [
+    {
+      "label": "100 Avatars R1 & R2",
+      "href": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230412.1",
+      "description": "Character packs \u00b7 VRM, FBX, VXR"
+    },
+    {
+      "label": "Avatar Garden",
+      "href": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230426.1",
+      "description": "VRChat space \u00b7 130 assets"
+    },
+    {
+      "label": "CA World",
+      "href": "https://github.com/PolygonalMind/initiative-opensource-release/releases/tag/230518",
+      "description": "CryptoAvatars world \u00b7 65 elements"
+    },
+    {
+      "label": "Cryptoavatars Retro Booth",
+      "href": "https://github.com/PolygonalMind/initiative-opensource-release",
+      "description": "CC0 asset pack"
+    },
+    {
+      "label": "Initiative repo",
+      "href": "https://github.com/PolygonalMind/initiative-opensource-release",
+      "description": "All packs \u00b7 CC0"
+    },
+    {
+      "label": "Awesome 3D Avatar Collections",
+      "href": "https://github.com/itsmetamike/awesome-3D-avatar-collections",
+      "description": "VRM collections index"
+    },
+    {
+      "label": "Open Source Avatars",
+      "href": "https://opensourceavatars.com",
+      "description": "Free VRM registry \u00b7 CC0/CC-BY"
+    },
+    {
+      "label": "Open Source Avatars (repo)",
+      "href": "https://github.com/ToxSam/open-source-avatars",
+      "description": "projects.json \u00b7 avatars/*.json"
+    }
+  ]
+}

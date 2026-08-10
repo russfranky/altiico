@@ -37,6 +37,19 @@ every contract to reconstruct.
 
 **Importer:** `sources/awesome_3d_avatar_collections.py`.
 
+### VIPE platform mirror — altii.co team
+- Reconstructed from a Wayback Machine mirror of **vipe.io** (now defunct) by the
+  Hubzz / altii.co team; canonical copy lives at
+  `packages/avatars/lab/src/data/altiiData.ts` in `HubzzInc/pre-alpha`.
+- Vendored here as `data/altii_vipe_mirror.json`; importer `sources/vipe_mirror.py`.
+
+**What we use:** VIPE's own curation of 3D-avatar collections — its taxonomy
+(Genesis Collections, Classic Meta, Metaverse Ready, Avatar Standard, Fashion
+Meta, Voxel Meta, The Great Archive, Curated Collections), how each collection
+ships 3D (`3D Ready`, `GLB`, `Voxel · T-Pose`, …), hand-written descriptions,
+curated banner/pfp art, and the metadata field holding the VRM (`asset`/`vrm`).
+This is editorial work no API exposes.
+
 ### VRM specification — VRM Consortium / vrm-c
 - https://github.com/vrm-c/vrm-specification — the 0.x and VRMC_vrm-1.0 schemas
   behind our metadata extractor and license normalization

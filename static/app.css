@@ -253,3 +253,4 @@ tr:hover td { background: var(--bg-surface); }
 .badge.hz-part { background: rgba(229,184,73,0.16); color: var(--warning); }
 .badge.rdy-done { background: var(--bg-surface); color: var(--text-muted); }
 .badge.rdy-excl { background: rgba(255,107,107,0.14); color: var(--error); }
+.chip.vipe-cat { background: rgba(255,255,11,0.10); color: #e9e26a; border: 1px solid rgba(255,255,11,0.22); border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 600; }

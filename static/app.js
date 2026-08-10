@@ -206,7 +206,7 @@ function applyCollectionFilters() {
     if (fBookmark === 'bookmarked' && !isBookmarked(c.id)) return false;
     if (fStatus && ((RESEARCH[c.id] && RESEARCH[c.id].status) || '') !== fStatus) return false;
     if (q) {
-      const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description].join(' ').toLowerCase();
+      const hay = [c.name, c.contract, c.opensea_slug, c.vrm_license, c.creator, c.notes, c.description, c.curated_description, c.vipe_category].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -304,11 +304,14 @@ function collectionCard(c, i) {
   const sup = supplyText(c); if (sup) chips.push(`<span class="chip">${sup}</span>`);
   if (c.floor_price) chips.push(`<span class="chip"><span class="k">floor</span> <b>${c.floor_price.toFixed(2)} ${esc(c.floor_price_symbol || '')}</b></span>`);
   if (c.avatar_count) chips.push(`<span class="chip"><span class="k">avatars</span> <b>${c.avatar_count.toLocaleString()}</b></span>`);
+  if (c.vipe_category) chips.push(`<span class="chip vipe-cat" title="VIPE platform category">${esc(c.vipe_category)}</span>`);
+  if (c.vipe_assets_3d) chips.push(`<span class="chip" title="How this collection ships 3D (VIPE)">${esc(c.vipe_assets_3d)}</span>`);
   const vrmBtn = c.vrm_url_https
     ? `<button class="vrm-btn" data-vrm="${i}">▶ View VRM</button>`
     : `<button class="vrm-btn ghost" disabled>No VRM</button>`;
   const vrmLic = c.vrm_license ? ` <span class="badge badge-unknown">${esc(c.vrm_license)}</span>` : '';
-  const desc = c.description ? `<p class="ccard-desc">${esc(c.description)}</p>` : '';
+  const descText = c.curated_description || c.description;
+  const desc = descText ? `<p class="ccard-desc">${esc(descText)}</p>` : '';
   const socials = socialLinks(c);
   const note = (RESEARCH[id] && RESEARCH[id].note) ? `<div class="ccard-note" data-note="${i}" title="Edit note">📝 ${esc(RESEARCH[id].note)}</div>` : '';
   const starred = isBookmarked(id);
