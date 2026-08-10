@@ -2,10 +2,9 @@
 // static data files.
 //
 // Caching strategy:
-//   - Content-hashed JSON (avatars-*.json, collections.*.json,
-//     opensea-candidates.*.json, catalog-summary.*.json): cache-first,
-//     indefinite. The filename changes when content changes, so a cached
-//     copy is always valid for its filename.
+//   - Content-hashed JSON (collections.*.json): cache-first, indefinite. The
+//     filename changes when content changes, so a cached copy is always
+//     valid for its filename.
 //   - build-info.json: network-first, fall back to cache. This is the
 //     pointer to the hashed files and must be fresh; offline falls back to
 //     the last known pointer.
@@ -18,7 +17,7 @@
 // old caches.
 
 // Stamped by scripts/build_catalog.py on every build — never edit by hand.
-const CACHE_VERSION = '0cae6b5149dd';
+const CACHE_VERSION = 'ef0844109168';
 const CACHE_NAME = `superyeti-${CACHE_VERSION}`;
 const APP_SHELL = [
   './',
@@ -29,7 +28,7 @@ const APP_SHELL = [
 
 // Content-hashed data files match these patterns. The hash is the 12-hex
 // segment before .json (see scripts/build_catalog.py).
-const HASHED_JSON = /\/data\/(?:avatars-\d+|collections|opensea-candidates|catalog-summary)\.[0-9a-f]{12}\.json$/;
+const HASHED_JSON = /\/data\/collections\.[0-9a-f]{12}\.json$/;
 const BUILD_INFO = /\/data\/build-info\.json$/;
 const FONTS = /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//;
 

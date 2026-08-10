@@ -1,10 +1,6 @@
 // ─── Data loading (lazy, content-hashed JSON files) ──────────────────────────
-let DATA = { collections: [], opensea: [], avatars: [] };
+let DATA = { collections: [] };
 let BUILD_INFO = null;
-let _openseaLoaded = false;
-let _openseaLoading = false;
-let _avatarsLoaded = false;
-let _avatarsLoading = false;
 
 async function fetchJSON(path) {
   const resp = await fetch(path);
@@ -17,78 +13,15 @@ async function loadBuildInfo() {
   return BUILD_INFO;
 }
 
-function setStat(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
-
 async function loadCollections() {
   const info = BUILD_INFO || await loadBuildInfo();
-  const [summary, collectionsData] = await Promise.all([
-    fetchJSON('data/' + info.files.summary),
-    fetchJSON('data/' + info.files.collections),
-  ]);
-  DATA.collections = collectionsData.collections || [];
-  setStat('stat-ready', DATA.collections.filter(c => c.vrm_check_status === 'ok_vrm').length);
-  const s = summary.stats || {};
-  setStat('stat-collections', s.collections ?? DATA.collections.length);
-  setStat('stat-avatars', (s.avatars ?? 0).toLocaleString());
-  setStat('stat-os', s.os ?? 0);
-  setStat('stat-green', s.green ?? 0);
-  setStat('stat-yellow', s.yellow ?? 0);
-  setStat('stat-red', s.red ?? 0);
-  setStat('stat-alive', s.alive ?? 0);
-  setStat('stat-dead', s.dead ?? 0);
-  setStat('stat-wayback', s.wayback ?? 0);
-  setStat('stat-dc-alive', s.dc_alive ?? 0);
-  setStat('stat-dc-dead', s.dc_dead ?? 0);
-  setStat('stat-capped', s.capped ?? 0);
-  setStat('stat-ongoing', s.ongoing ?? 0);
-  checkStaleStats();
+  const data = await fetchJSON('data/' + info.files.collections);
+  DATA.collections = data.collections || [];
   filter();
 }
 
-function checkStaleStats() {
-  const asOf = BUILD_INFO && BUILD_INFO.market_data_as_of;
-  if (!asOf) return;
-  const ageMs = Date.now() - new Date(asOf).getTime();
-  const STALE_THRESHOLD_MS = 48 * 60 * 60 * 1000;  // 48 hours
-  const el = document.getElementById('stat-stale');
-  if (!el) return;
-  if (ageMs > STALE_THRESHOLD_MS) {
-    const hours = Math.floor(ageMs / (60 * 60 * 1000));
-    el.textContent = `⚠ market data ${hours}h old`;
-    el.style.display = '';
-  } else {
-    el.style.display = 'none';
-  }
-}
-
-async function loadOpensea() {
-  if (_openseaLoaded || _openseaLoading) return;
-  _openseaLoading = true;
-  const info = BUILD_INFO || await loadBuildInfo();
-  const data = await fetchJSON('data/' + info.files.opensea);
-  DATA.opensea = data.candidates || [];
-  _openseaLoaded = true;
-  _openseaLoading = false;
-  filterOS();
-}
-
-async function loadAvatars() {
-  if (_avatarsLoaded || _avatarsLoading) return;
-  _avatarsLoading = true;
-  const info = BUILD_INFO || await loadBuildInfo();
-  const shards = info.files.avatars || [];
-  const results = await Promise.all(shards.map(s => fetchJSON('data/' + s)));
-  DATA.avatars = results.flatMap(r => r.avatars || []);
-  _avatarsLoaded = true;
-  _avatarsLoading = false;
-  filterAvatars();
-}
-
 // ─── Shared helpers ─────────────────────────────────────────────────────────
-let sortKey = 'name', sortAsc = true, sortKeyOS = 'slug', sortAscOS = true;
-let currentTab = 'collections';
 let _collRows = [];
-let _osRows = [];
 
 function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
 function badge(cls, text) { return `<span class="badge badge-${cls}">${esc(text)}</span>`; }
@@ -107,11 +40,6 @@ function licenseBadge(cat, c) {
   if (rc.length) parts.push(rc.join(', '));
   parts.push(`[${conf}]`);
   return `<span class="badge badge-${cat || 'unknown'}" title="${esc(parts.join(' — '))}">${esc(label)}</span>`;
-}
-
-function tierBadge(tier) {
-  const map = { A: 'Tier A', B: 'Tier B', C: 'Tier C', arweave: 'Arweave', infra: 'Infra', not_vrm: 'Not VRM' };
-  return badge(`tier-${tier || 'unknown'}`, map[tier] || tier || '?');
 }
 
 function supplyText(c) {
@@ -193,27 +121,17 @@ function chainChips(c) {
 let _filterTimer = null;
 function onSearch() {
   clearTimeout(_filterTimer);
-  _filterTimer = setTimeout(() => {
-    if (currentTab === 'collections') filter();
-      else filterOS();
-  }, 150);
+  _filterTimer = setTimeout(filter, 150);
 }
-function debounceFilter() { onSearch(); }
-
 
 function applyCollectionFilters() {
   const q = document.getElementById('search').value.toLowerCase();
-  const fTier = (document.getElementById('f-tier') || {}).value || '';
   const fChain = document.getElementById('f-chain').value;
   const fLicense = document.getElementById('f-license').value;
-  const fMint = document.getElementById('f-mint').value;
-  const fBookmark = (document.getElementById('f-bookmark') || {}).value || '';
   const fVrm = (document.getElementById('f-vrm') || {}).value || '';
   let rows = DATA.collections.filter(c => {
-    if (fTier && c.tier !== fTier) return false;
     if (fChain && c.chain !== fChain) return false;
     if (fLicense && (c.license_category || 'unknown') !== fLicense) return false;
-    if (fMint && (c.mint_status || '') !== fMint) return false;
     if (fVrm === 'live' && c.vrm_check_status !== 'ok_vrm') return false;
     if (fVrm === 'dead' && c.vrm_reachable !== 0) return false;
     if (fVrm === 'nourl' && c.vrm_check_status !== 'no_url') return false;
@@ -237,7 +155,6 @@ function applyCollectionFilters() {
 }
 
 function filter() {
-  if (currentTab !== 'collections') return;
   const rows = applyCollectionFilters();
   _collRows = rows;
   document.getElementById('collCount').innerHTML = `<b>${rows.length}</b> of ${DATA.collections.length} collections`;
@@ -322,23 +239,6 @@ function collectionCard(c, i) {
   </div>`;
 }
 
-
-// ─── Avatars view ────────────────────────────────────────────────────────────
-
-
-
-
-
-
-
-function sort(key) { if (sortKey === key) sortAsc = !sortAsc; else { sortKey = key; sortAsc = true; } filter(); }
-function sortOS(key) { if (sortKeyOS === key) sortAscOS = !sortAscOS; else { sortKeyOS = key; sortAscOS = true; } filterOS(); }
-
-function switchTab(tab) {
-  currentTab = tab;
-  document.getElementById('collectionsView').style.display = tab === 'collections' ? '' : 'none';
-  filter();
-}
 
 // Event delegation: VRM buttons + image previews (no fragile inline handlers).
 function wireDelegation() {

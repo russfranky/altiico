@@ -1,13 +1,8 @@
 {
-  "generated_at": "2026-08-10T19:36:58.062140+00:00",
+  "generated_at": "2026-08-10T20:25:31.136553+00:00",
   "schema_version": 1,
   "files": {
-    "summary": "catalog-summary.1a0e7aeefd05.json",
-    "collections": "collections.8be05f08709f.json",
-    "opensea": "opensea-candidates.cd56ce2ad8db.json",
-    "avatars": [
-      "avatars-00.74df15fa4077.json"
-    ]
+    "collections": "collections.8be05f08709f.json"
   },
   "market_data_as_of": "2026-08-10T03:41:56.898188+00:00"
 }

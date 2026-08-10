@@ -6,8 +6,7 @@
 //   - JSON.parse + index < 50ms p75
 //   - ≤74 collection cards rendered initially
 //
-// "Initial JSON" = the files app.js fetches on load: catalog-summary + collections.
-// Avatar shards are lazy-loaded on tab switch and excluded from initial payload.
+// "Initial JSON" = the file app.js fetches on load: collections.
 //
 // Run: node tests/catalog-performance.mjs
 // (pytest doesn't collect .mjs; run directly or wire into CI separately.)
@@ -48,9 +47,8 @@ assert(html.length < 50_000, `index.html < 50KB (got ${(html.length / 1024).toFi
 
 // --- 2. initial JSON payload compressed ---
 console.log("\n[2] initial JSON payload (gzip)");
-const summaryFiles = find("catalog-summary", ".json");
 const collectionFiles = find("collections", ".json");
-const initialFiles = [...summaryFiles, ...collectionFiles];
+const initialFiles = [...collectionFiles];
 let totalRaw = 0;
 let totalGz = 0;
 for (const f of initialFiles) {

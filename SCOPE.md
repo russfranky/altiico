@@ -12,13 +12,13 @@ You can open the page, browse real avatar art, preview any avatar in 3D, and
 know whether its VRM file is reachable — without reading a database.
 
 ## In scope (v1)
-- **Collections** — art, name, description, license, supply, links, VRM status.
-- **Avatars** — 4,274 individual VRMs: thumbnail, collection, **reachability**,
-  3D preview, direct file link.
+- **Collections** — art, name, description, license, supply, links, VRM status,
+  each rolled up with its own avatar-reachability count. One dense list, one view.
 - **VRM viewer** — loads any VRM in the browser and shows its embedded metadata.
 - **Search** across names, contracts, creators, descriptions.
-- **Bookmarks + notes** — the research surface the owner asked for.
-- **Reachability checking** — collection-level and per-avatar.
+- **Reachability checking** — collection-level and rolled up from per-avatar checks.
+- Four plain-language filters (chain, licence, VRM status, sort) — no research
+  state, no annotation. The catalog is read-only.
 
 ## Explicitly out of scope
 - **Hubzz onboarding / ingestion.** Never asked for. Inventing it produced a
@@ -49,3 +49,9 @@ know whether its VRM file is reachable — without reading a database.
 | Tier badge (`Tier A/B/C`) | Pipeline vocabulary; supply + VRM status say more |
 | OpenSea Candidates tab | 216 leads, all proven non-VRM — noise |
 | Scheduled daily loop | Automation for a goal that no longer exists |
+| Avatars tab (4,274-row browser) | Duplicated collection data one row at a time |
+| Header stat row (collections/avatars/open/holder/restricted/verified/saved) | Decoration, not a research question |
+| Tab bar | One view left; a switch with one position is not a switch |
+| Bookmark star, status dropdown, notes | Unused localStorage research-state layer |
+| Table view + List/Table toggle | Same fields as the list, denser in the list |
+| **Backend for all of the above** — `loadOpensea`/`loadAvatars`/`switchTab`/`sort`/`sortOS` (dead, no callers), `catalog-summary.json` + `opensea-candidates.json` + `avatars-*.json` exports (216 + 4,274 rows nothing fetched), 7 hidden dummy filter `<select>`s | Cutting the UI and leaving the code/data behind it is the same mistake as building the wrong thing — it still ships and still needs reading |

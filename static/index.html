@@ -24,15 +24,6 @@
 <body>
 <header>
   <div class="header-inner">
-    <!-- stat ids kept (hidden) so the data loader has somewhere to write -->
-    <div style="display:none" aria-hidden="true">
-      <span id="stat-collections"></span><span id="stat-avatars"></span><span id="stat-os"></span>
-      <span id="stat-green"></span><span id="stat-yellow"></span><span id="stat-red"></span>
-      <span id="stat-ready"></span><span id="bm-count"></span><span id="stat-stale"></span>
-      <span id="stat-alive"></span><span id="stat-dead"></span><span id="stat-wayback"></span>
-      <span id="stat-dc-alive"></span><span id="stat-dc-dead"></span>
-      <span id="stat-capped"></span><span id="stat-ongoing"></span>
-    </div>
     <div class="controls">
       <div class="search-wrap">
         <input type="text" id="search" placeholder="Search collections, contracts, creators, descriptions…" oninput="onSearch()">
@@ -61,7 +52,6 @@
         <option value="dead">Unreachable</option>
         <option value="nourl">No VRM URL</option>
       </select>
-      <select id="f-status" style="display:none"><option value=""></option></select>
       <select id="f-sort" onchange="filter()" title="Sort">
         <option value="name">Sort: Name</option>
         <option value="release_date">Sort: Launch date</option>
@@ -69,12 +59,6 @@
         <option value="vrm">Sort: VRM status</option>
         <option value="avatars_total">Sort: Files indexed</option>
       </select>
-      <select id="f-bookmark" style="display:none"><option value=""></option></select>
-      <select id="f-mint" style="display:none"><option value=""></option></select>
-      <select id="f-url" style="display:none"><option value=""></option></select>
-      <select id="f-discord" style="display:none"><option value=""></option></select>
-      <select id="f-nfttype" style="display:none"><option value=""></option></select>
-      <select id="f-tier" style="display:none"><option value=""></option></select>
     </div>
   </div>
 </header>
