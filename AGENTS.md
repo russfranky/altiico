@@ -116,6 +116,15 @@ python tests/fixtures/generate_vrm_fixtures.py
 - **No git remote, no deploy config, no CI.** The catalog is served
   locally; `static/` is the deployable artifact if a host is added.
 
+## Credits
+
+This catalog depends on upstream curation — see `CREDITS.md`. Chiefly
+**ToxSam** (github.com/toxsam/open-source-avatars — supplies 4,274 avatar
+records and the direct VRM links) and **itsmetamike**
+(github.com/itsmetamike/awesome-3D-avatar-collections — the collection table and
+its "Metadata Param" column mapping where each collection's VRM lives). Credit
+them in anything derived from this data.
+
 ## Deploy (Vercel)
 
 The `static/` directory is the deployable artifact — a self-contained static

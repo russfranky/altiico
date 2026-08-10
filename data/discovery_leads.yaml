@@ -235,3 +235,38 @@ review_passes:
     notes: Added VIPE and VIVERSE Avatar SDK as programmatic-source leads;
       confirmed sources/opensourceavatars.py already targets the canonical OSA
       projects.json manifest. Findings recorded in docs/vrm-ecosystem.md.
+
+# ─── awesome-3D-avatar-collections gap (2026-08-10) ──────────────────────────
+# Source: https://github.com/itsmetamike/awesome-3D-avatar-collections (credit:
+# itsmetamike). Parsed its collection table: 46 collections, 34 marked VRM ✔.
+# These 5 contracts are NOT in our catalog. Several look like alternate/second
+# contracts for projects we already track — confirm on-chain before adding, and
+# do NOT create a duplicate collection row.
+# NOTE: the README's sample metadata URLs are largely stale (404/timeout as of
+# 2026-08-10), so its "Metadata Param" column is the durable value, not the URLs.
+awesome_3d_missing_contracts:
+  - name: Cyberbrokers Genesis Mechs
+    contract: "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6"
+    vrm_param: "VRM: vrm_url / GLB: files:glb"
+    review_state: pending
+    notes: We track "CyberBrokers (Genesis Mechs)" under a different contract — verify which is canonical.
+  - name: RetroDoge
+    contract: "0x682270ffb81db5834b4049dbf20fe2395568ac22"
+    vrm_param: "VRM: vrm_url"
+    review_state: pending
+    notes: We track RetroDoges at 0xeeecde100b55f135a40ca9d92a52bd7723235814 — possible second contract.
+  - name: Chuddies
+    contract: "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
+    vrm_param: "VRM: vrm_url"
+    review_state: pending
+    notes: Chuddies is in the catalog without this contract — adding it would enable on-chain discovery.
+  - name: PixelBeasts (Beastopia)
+    contract: "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab"
+    vrm_param: "VRM: model/vrm"
+    review_state: pending
+    notes: We track PixelBeasts under a different contract.
+  - name: Muhammad Ali - The Next Legends - Boxers
+    contract: "0x6bca6de2dbdc4e0d41f7273011785ea16ba47182"
+    vrm_param: null
+    review_state: pending
+    notes: Genuinely absent from the catalog; README marks no 3D-avatar metadata field.

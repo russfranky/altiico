@@ -30,6 +30,7 @@ LEAD_SECTIONS = (
     "vroid_hub",
     "dappradar",
     "programmatic_sources",
+    "awesome_3d_missing_contracts",
 )
 
 # Sections expected by the methodology. A missing section means a triage

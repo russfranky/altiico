@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-08-10T13:20:55.680385+00:00",
+  "generated_at": "2026-08-10T13:45:16.503969+00:00",
   "schema_version": 1,
   "files": {
-    "summary": "catalog-summary.70f20141a9f5.json",
-    "collections": "collections.a2a7b2aeed40.json",
+    "summary": "catalog-summary.78ea38cfc48b.json",
+    "collections": "collections.01edb4101059.json",
     "opensea": "opensea-candidates.cd56ce2ad8db.json",
     "avatars": [
-      "avatars-00.f09d4e042f4f.json",
-      "avatars-01.e0e2852e2add.json",
-      "avatars-02.dbb59a57b693.json",
-      "avatars-03.f94fed3cb3e2.json",
-      "avatars-04.a4b28296459f.json",
-      "avatars-05.c8a96cc0b2bd.json",
-      "avatars-06.50b5b81f9f40.json",
-      "avatars-07.e7746eefa274.json",
-      "avatars-08.b4bf92011475.json"
+      "avatars-00.a408fdbca780.json",
+      "avatars-01.a3ef5c9644dd.json",
+      "avatars-02.752dc965996f.json",
+      "avatars-03.4ed8e352f923.json",
+      "avatars-04.9af7a93f78f9.json",
+      "avatars-05.bc43c0e58e13.json",
+      "avatars-06.2172adabcf59.json",
+      "avatars-07.90e89be65574.json",
+      "avatars-08.843ebe97d643.json"
     ]
   },
   "market_data_as_of": "2026-08-10T03:41:56.898188+00:00"
