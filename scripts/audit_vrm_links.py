@@ -77,7 +77,15 @@ def _columns(conn: sqlite3.Connection, table: str) -> set[str]:
 
 
 def _looks_like_url(value: str) -> bool:
-    return value.strip().lower().startswith(_URL_PREFIXES)
+    raw = value.strip()
+    if not raw.lower().startswith(_URL_PREFIXES):
+        return False
+    if any(character.isspace() for character in raw):
+        return False
+    parts = urllib.parse.urlsplit(raw)
+    if parts.scheme.lower() in {"http", "https"}:
+        return bool(parts.hostname)
+    return bool(parts.netloc or parts.path)
 
 
 def _has_template(value: str) -> bool:

@@ -6,10 +6,10 @@ Commit: `df1707dc7ca35276960b11b8eb0befd064ad66c7`
 
 ## Outcome
 
-- Unique concrete VRM links: **201**
-- Raw references across DB and JSON artifacts: **1002**
+- Unique concrete VRM links: **198**
+- Raw references across DB and JSON artifacts: **999**
 - Valid VRM binaries: **188**
-- Broken or unverified links: **13**
+- Broken or unverified links: **10**
 - Invalid URI references: **0**
 - Full validated bytes: **1,092,848,604**
 
@@ -22,13 +22,13 @@ Commit: `df1707dc7ca35276960b11b8eb0befd064ad66c7`
 | `healthy_with_transport_degradation` | 30 |
 | `non_vrm_glb` | 3 |
 | `not_glb` | 1 |
-| `transient_transport_failure` | 8 |
+| `transient_transport_failure` | 5 |
 
 ## Collection coverage
 
 | Collection | Links | Healthy | Problems |
 |---|---:|---:|---:|
-| `<unbound>` | 5 | 2 | 3 |
+| `<unbound>` | 2 | 2 | 0 |
 | `NeonGlitch86 Collection (Shape side)` | 1 | 1 | 0 |
 | `NeonGlitch86-collection` | 12 | 9 | 3 |
 | `a3ac-0x14c447` | 1 | 0 | 1 |
@@ -53,11 +53,8 @@ Commit: `df1707dc7ca35276960b11b8eb0befd064ad66c7`
 
 | Severity | Classification | Collection | Canonical URL | Primary error or note |
 |---|---|---|---|---|
-| warning | `transient_transport_failure` | `unbound` | `https://allstarz.world (same vrm for all tokens)/` | DNS resolution failed for allstarz.world (same vrm for all tokens): [Errno -2] Name or service … |
 | error | `non_vrm_glb` | `voltz` | `https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325` | GLB has no extensions object |
 | error | `non_vrm_glb` | `a3ac-0xc49a9a` | `https://cdn.chibilabs.dev/apes/GLBs/1.glb` | GLB has no extensions object |
-| warning | `transient_transport_failure` | `unbound` | `https://digitaloceanspaces per-token/` | DNS resolution failed for digitaloceanspaces per-token: [Errno -2] Name or service not known |
-| warning | `transient_transport_failure` | `unbound` | `https://ipfs per-token/` | DNS resolution failed for ipfs per-token: [Errno -2] Name or service not known |
 | warning | `transient_transport_failure` | `cyberbrokers` | `https://m.cyberbrokers.com/eth/mech/1/files/mech_1k.0.vrm` | timeout fetching https://m.cyberbrokers.com/eth/mech/1/files/mech_1k.0.vrm |
 | error | `access_blocked` | `phettaverse-editions` | `https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.v…` | HTTP 403 for https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVu… |
 | error | `not_glb` | `pixelbeasts` | `https://pixelbeasts3d.replit.app/beast/3064.vrm` | asset is not a GLB 2.0 file with a JSON first chunk |

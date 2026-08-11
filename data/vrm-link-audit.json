@@ -26,10 +26,10 @@
     "data/staging_validation_report.json"
   ],
   "summary": {
-    "unique_concrete_links": 201,
-    "raw_references": 1002,
+    "unique_concrete_links": 198,
+    "raw_references": 999,
     "valid_vrm_links": 188,
-    "broken_or_unverified_links": 13,
+    "broken_or_unverified_links": 10,
     "invalid_uri_references": 0,
     "classification_counts": {
       "access_blocked": 1,
@@ -37,15 +37,15 @@
       "healthy_with_transport_degradation": 30,
       "non_vrm_glb": 3,
       "not_glb": 1,
-      "transient_transport_failure": 8
+      "transient_transport_failure": 5
     },
     "severity_counts": {
       "error": 5,
       "info": 158,
-      "warning": 38
+      "warning": 35
     },
     "scheme_counts": {
-      "https": 21,
+      "https": 18,
       "ipfs": 180
     },
     "network_requests_observed": 1764,
@@ -54,12 +54,11 @@
   "collections": [
     {
       "collection_id": "<unbound>",
-      "unique_links": 5,
+      "unique_links": 2,
       "healthy_links": 2,
-      "problem_links": 3,
+      "problem_links": 0,
       "classification_counts": {
-        "healthy": 2,
-        "transient_transport_failure": 3
+        "healthy": 2
       }
     },
     {
@@ -402,64 +401,6 @@
   ],
   "results": [
     {
-      "canonical_url": "https://allstarz.world (same vrm for all tokens)/",
-      "scheme": "https",
-      "classification": "transient_transport_failure",
-      "severity": "warning",
-      "recommendation": "Retry from another run and consider pinning or adding an independent gateway before changing the canonical URI.",
-      "raw_urls": [
-        "https://allstarz.world (same VRM for all tokens)"
-      ],
-      "origins": [
-        "json:static/data/collections.849cc604c2d1.json:$.collections[2].vrm_check_url"
-      ],
-      "collection_ids": [],
-      "avatar_ids": [],
-      "token_ids": [],
-      "reference_count": 1,
-      "references": [
-        {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[2].vrm_check_url",
-          "raw_url": "https://allstarz.world (same VRM for all tokens)",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        }
-      ],
-      "transport_probes": [
-        {
-          "transport_url": "https://allstarz.world (same vrm for all tokens)/",
-          "ok": false,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for allstarz.world (same vrm for all tokens): [Errno -2] Name or service not known",
-          "latency_seconds": 0.006,
-          "network_requests": 0
-        }
-      ],
-      "validation": null,
-      "validation_errors": [
-        {
-          "attempt": 1,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for allstarz.world (same vrm for all tokens): [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.001
-        },
-        {
-          "attempt": 2,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for allstarz.world (same vrm for all tokens): [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.0
-        }
-      ]
-    },
-    {
       "canonical_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
       "scheme": "https",
       "classification": "healthy",
@@ -708,122 +649,6 @@
         "latency_seconds": 0.093
       },
       "validation_errors": []
-    },
-    {
-      "canonical_url": "https://digitaloceanspaces per-token/",
-      "scheme": "https",
-      "classification": "transient_transport_failure",
-      "severity": "warning",
-      "recommendation": "Retry from another run and consider pinning or adding an independent gateway before changing the canonical URI.",
-      "raw_urls": [
-        "https://digitaloceanspaces per-token"
-      ],
-      "origins": [
-        "json:static/data/collections.849cc604c2d1.json:$.collections[16].vrm_check_url"
-      ],
-      "collection_ids": [],
-      "avatar_ids": [],
-      "token_ids": [],
-      "reference_count": 1,
-      "references": [
-        {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[16].vrm_check_url",
-          "raw_url": "https://digitaloceanspaces per-token",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        }
-      ],
-      "transport_probes": [
-        {
-          "transport_url": "https://digitaloceanspaces per-token/",
-          "ok": false,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for digitaloceanspaces per-token: [Errno -2] Name or service not known",
-          "latency_seconds": 0.004,
-          "network_requests": 0
-        }
-      ],
-      "validation": null,
-      "validation_errors": [
-        {
-          "attempt": 1,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for digitaloceanspaces per-token: [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.0
-        },
-        {
-          "attempt": 2,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for digitaloceanspaces per-token: [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.0
-        }
-      ]
-    },
-    {
-      "canonical_url": "https://ipfs per-token/",
-      "scheme": "https",
-      "classification": "transient_transport_failure",
-      "severity": "warning",
-      "recommendation": "Retry from another run and consider pinning or adding an independent gateway before changing the canonical URI.",
-      "raw_urls": [
-        "https://ipfs per-token"
-      ],
-      "origins": [
-        "json:static/data/collections.849cc604c2d1.json:$.collections[15].vrm_check_url"
-      ],
-      "collection_ids": [],
-      "avatar_ids": [],
-      "token_ids": [],
-      "reference_count": 1,
-      "references": [
-        {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[15].vrm_check_url",
-          "raw_url": "https://ipfs per-token",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        }
-      ],
-      "transport_probes": [
-        {
-          "transport_url": "https://ipfs per-token/",
-          "ok": false,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for ipfs per-token: [Errno -2] Name or service not known",
-          "latency_seconds": 0.003,
-          "network_requests": 0
-        }
-      ],
-      "validation": null,
-      "validation_errors": [
-        {
-          "attempt": 1,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for ipfs per-token: [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.0
-        },
-        {
-          "attempt": 2,
-          "retryable": true,
-          "error_class": "dns_or_conn",
-          "error": "DNS resolution failed for ipfs per-token: [Errno -2] Name or service not known",
-          "network_requests": 0,
-          "retry_after": null,
-          "latency_seconds": 0.002
-        }
-      ]
     },
     {
       "canonical_url": "https://m.cyberbrokers.com/eth/mech/1/files/mech_1k.0.vrm",
@@ -25959,5 +25784,10 @@
         }
       ]
     }
-  ]
+  ],
+  "report_correction": {
+    "kind": "descriptive_pseudo_url_filter",
+    "removed_entries": 3,
+    "network_measurements_reused": true
+  }
 }
