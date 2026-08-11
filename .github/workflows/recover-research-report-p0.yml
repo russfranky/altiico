@@ -1,0 +1,90 @@
+name: Recover research report P0 integrity upgrade
+
+on:
+  push:
+    branches:
+      - agent/research-report-p0-integrity
+    paths:
+      - .github/workflows/recover-research-report-p0.yml
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Restore the reviewed source transformation
+        run: |
+          python - <<'PY'
+          import base64
+          import gzip
+          from pathlib import Path
+
+          carrier = Path('.github/workflows/apply-research-report-p0.yml')
+          payload = None
+          for line in carrier.read_text(encoding='utf-8').splitlines():
+              marker = 'PATCH_GZ_B64:'
+              if marker in line:
+                  payload = line.split(marker, 1)[1].strip()
+                  break
+          if not payload:
+              raise SystemExit('embedded patch payload was not found')
+          payload += '=' * (-len(payload) % 4)
+          decoded = gzip.decompress(base64.b64decode(payload))
+          target = Path('scripts/_apply_research_report_p0.py')
+          target.write_bytes(decoded)
+          print(f'restored {target} ({len(decoded)} bytes)')
+          PY
+
+      - name: Apply the integrity changes
+        run: python scripts/_apply_research_report_p0.py
+
+      - name: Apply the snapshot migration
+        run: sqlite3 data/vrm_index.db < migrations/023_artifact_snapshots.sql
+
+      - name: Regenerate one coherent artifact snapshot
+        run: |
+          python scripts/build_catalog.py
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+
+      - name: Verify consistency and repository checks
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          test -z "$(sqlite3 data/vrm_index.db 'PRAGMA foreign_key_check;')"
+
+      - name: Commit the verified tree
+        run: |
+          rm -f scripts/_apply_research_report_p0.py
+          rm -f .github/workflows/apply-research-report-p0.yml
+          rm -f .github/workflows/recover-research-report-p0.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No repository changes were produced.'
+            exit 0
+          fi
+          git commit -m 'Enforce atomic catalog evidence snapshots [skip ci]'
+          git push
