@@ -1,5 +1,4 @@
-name: Audit every VRM link
-# Normalize legacy IPFS subdomain URLs before measuring the catalog.
+name: Audit and repair VRM links
 
 on:
   push:
@@ -36,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Normalize IPFS subdomain gateways
+      - name: Normalize legacy IPFS gateway URLs and add an independent fallback
         run: |
           python - <<'PY'
           import re
@@ -45,10 +44,45 @@ jobs:
 
           uri_path = Path('scripts/crawler/uri.py')
           text = uri_path.read_text(encoding='utf-8')
-          text = text.replace(
-              '    "cloudflare-ipfs.com",\n}',
-              '    "cloudflare-ipfs.com",\n    "w3s.link",\n}',
+
+          hosts = dedent('''\
+          IPFS_GATEWAY_HOSTS = {
+              "ipfs.io",
+              "gateway.ipfs.io",
+              "dweb.link",
+              "nftstorage.link",
+              "w3s.link",
+              "gateway.pinata.cloud",
+              "cloudflare-ipfs.com",
+          }
+          ''')
+          text, count = re.subn(
+              r'IPFS_GATEWAY_HOSTS = \{.*?\n\}',
+              hosts.rstrip(),
+              text,
+              count=1,
+              flags=re.S,
           )
+          if count != 1:
+              raise SystemExit('IPFS gateway host block changed')
+
+          gateways = dedent('''\
+          IPFS_GATEWAYS = (
+              "https://ipfs.io/ipfs/",
+              "https://dweb.link/ipfs/",
+              "https://nftstorage.link/ipfs/",
+          )
+          ''')
+          text, count = re.subn(
+              r'IPFS_GATEWAYS = \(.*?\n\)',
+              gateways.rstrip(),
+              text,
+              count=1,
+              flags=re.S,
+          )
+          if count != 1:
+              raise SystemExit('IPFS transport block changed')
+
           replacement = dedent('''\
           def _gateway_to_ipfs(url: str) -> str | None:
               parts = urllib.parse.urlsplit(url)
@@ -75,8 +109,8 @@ jobs:
                       return None
 
                   raw_path = parts.path.lstrip("/")
-                  # Some legacy registry rows redundantly repeat /ipfs/CID/ even
-                  # though the CID is already present in the subdomain.
+                  # Legacy rows sometimes repeat /ipfs/CID/ even though the CID
+                  # is already present in the gateway subdomain.
                   duplicate = f"ipfs/{identifier}"
                   if raw_path == duplicate:
                       raw_path = ""
@@ -89,17 +123,16 @@ jobs:
                   out += f"?{parts.query}"
               return out
           ''')
-          pattern = r'def _gateway_to_ipfs\(url: str\) -> str \| None:\n.*?\n\ndef _gateway_to_arweave'
-          updated, count = re.subn(
-              pattern,
+          text, count = re.subn(
+              r'def _gateway_to_ipfs\(url: str\) -> str \| None:\n.*?\n\ndef _gateway_to_arweave',
               replacement.rstrip() + '\n\ndef _gateway_to_arweave',
               text,
               count=1,
               flags=re.S,
           )
           if count != 1:
-              raise SystemExit('IPFS gateway canonicalizer shape changed')
-          uri_path.write_text(updated, encoding='utf-8')
+              raise SystemExit('IPFS gateway canonicalizer changed')
+          uri_path.write_text(text, encoding='utf-8')
 
           test_path = Path('tests/test_recursive_crawler.py')
           tests = test_path.read_text(encoding='utf-8')
@@ -122,20 +155,50 @@ jobs:
               assert canonicalize_uri(
                   f"https://{cid}.ipfs.w3s.link/ipfs/{cid}/Avatar.vrm"
               ) == f"ipfs://{cid}/Avatar.vrm"
+
+
+          def test_ipfs_transport_candidates_include_independent_fallback():
+              candidates = transport_candidates("ipfs://bafybeiexample/Avatar.vrm")
+              assert candidates == [
+                  "https://ipfs.io/ipfs/bafybeiexample/Avatar.vrm",
+                  "https://dweb.link/ipfs/bafybeiexample/Avatar.vrm",
+                  "https://nftstorage.link/ipfs/bafybeiexample/Avatar.vrm",
+              ]
           ''')
           if 'test_canonicalize_ipfs_subdomain_gateway' not in tests:
               if anchor not in tests:
                   raise SystemExit('recursive crawler URI test shape changed')
               tests = tests.replace(anchor, anchor + addition, 1)
-              test_path.write_text(tests, encoding='utf-8')
+          elif 'test_ipfs_transport_candidates_include_independent_fallback' not in tests:
+              tests += addition[addition.index('\ndef test_ipfs_transport_candidates'):]
+          test_path.write_text(tests, encoding='utf-8')
           PY
 
-      - name: Validate auditor and URI normalization
+      - name: Verify URI handling
         run: |
-          python -m py_compile scripts/audit_vrm_links.py scripts/crawler/uri.py
+          python -m py_compile scripts/audit_vrm_links.py \
+            scripts/run_staging_validation_pass.py scripts/crawler/uri.py
           python -m pytest tests/test_recursive_crawler.py -q
 
-      - name: Audit concrete VRM links
+      - name: Replay binary validation on the current snapshot
+        run: |
+          python scripts/run_staging_validation_pass.py \
+            --db data/vrm_index.db \
+            --report data/staging_validation_report.json \
+            --markdown-report docs/staging-validation-latest.md \
+            --request-budget 3000 \
+            --timeout 25 \
+            --max-attempts 2 \
+            --workers 4
+
+      - name: Regenerate one coherent artifact snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
+      - name: Audit every concrete VRM link
         run: |
           python scripts/audit_vrm_links.py \
             --db data/vrm_index.db \
@@ -145,15 +208,66 @@ jobs:
             --timeout 20 \
             --max-attempts 2
 
-      - name: Commit fixes and measured audit report
+      - name: Verify repository and generated artifacts
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          test -z "$(sqlite3 data/vrm_index.db 'PRAGMA foreign_key_check;')"
+
+      - name: Print audit summaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          audit = json.loads(Path('data/vrm-link-audit.json').read_text())
+          validation = json.loads(Path('data/staging_validation_report.json').read_text())
+          print('VRM LINK AUDIT')
+          print(json.dumps(audit['summary'], indent=2))
+          print('\nVALIDATION REPLAY')
+          print(json.dumps({
+              'seeded_unique_asset_tasks': validation['seeded_unique_asset_tasks'],
+              'before': validation['before'],
+              'after': validation['after'],
+              'delta': validation['delta'],
+              'staging_after': validation['staging_after'],
+          }, indent=2))
+          print('\nUNRESOLVED LINKS')
+          for item in audit['results']:
+              if item['classification'] not in {'healthy', 'healthy_with_transport_degradation'}:
+                  print(json.dumps({
+                      'classification': item['classification'],
+                      'collections': item['collection_ids'],
+                      'url': item['canonical_url'],
+                      'validation': item.get('validation'),
+                      'errors': item.get('validation_errors'),
+                  }, ensure_ascii=False))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vrm-link-audit
+          path: |
+            data/vrm-link-audit.json
+            data/staging_validation_report.json
+            docs/vrm-link-audit-latest.md
+            docs/staging-validation-latest.md
+
+      - name: Commit repaired evidence and reports
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add scripts/crawler/uri.py tests/test_recursive_crawler.py \
-            data/vrm-link-audit.json docs/vrm-link-audit-latest.md
+            data/vrm_index.db data/staging_validation_report.json \
+            data/vrm-link-audit.json docs/staging-validation-latest.md \
+            docs/vrm-link-audit-latest.md docs/hubzz-prealpha-staging.md \
+            static/data static/sw.js
           if git diff --cached --quiet; then
-            echo 'Audit report already current.'
+            echo 'Validation evidence and audit reports are already current.'
             exit 0
           fi
-          git commit -m 'Normalize IPFS links and audit VRM inventory [skip ci]'
+          git commit -m 'Repair and revalidate VRM link inventory [skip ci]'
           git push
