@@ -1,0 +1,87 @@
+name: Live VRM discovery
+
+on:
+  push:
+    branches:
+      - agent/live-vrm-discovery
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-vrm-discovery-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Enable curated sample metadata seeds
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/run_live_discovery.py')
+          text = path.read_text(encoding='utf-8')
+          target_needle = '                notes=str(raw.get("notes") or ""),\n                resolution=resolution,\n'
+          target_replacement = '                notes=str(raw.get("notes") or ""),\n                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),\n                resolution=resolution,\n'
+          if target_replacement not in text:
+              if target_needle not in text:
+                  raise SystemExit('live discovery target parser changed; refusing an unsafe patch')
+              text = text.replace(target_needle, target_replacement, 1)
+
+          sample_needle = '            token_ids = sampler.sample(target, token_limit)\n'
+          sample_replacement = '            token_ids = (_dedupe([*target.token_ids, *_extract_numeric_tail(target.sample_metadata_url)])[:token_limit] if target.sample_metadata_url else sampler.sample(target, token_limit))\n'
+          if sample_replacement not in text:
+              if sample_needle not in text:
+                  raise SystemExit('live discovery sampler changed; refusing an unsafe patch')
+              text = text.replace(sample_needle, sample_replacement, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Run live contract-driven discovery
+        run: |
+          python scripts/run_live_discovery.py \
+            --db data/vrm_index.db \
+            --targets data/live_discovery_targets.yaml \
+            --report data/live_discovery_report.json \
+            --markdown-report docs/live-discovery-latest.md \
+            --build
+
+      - name: Verify crawler and catalog
+        run: |
+          python -m pytest tests/test_recursive_crawler.py -q
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+
+      - name: Commit measured results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/run_live_discovery.py data/vrm_index.db \
+            data/live_discovery_report.json docs/live-discovery-latest.md \
+            static/data static/sw.js
+          if git diff --cached --quiet; then
+            echo 'No persisted discovery changes.'
+            exit 0
+          fi
+          git commit -m 'Run live recursive VRM discovery [skip ci]'
+          git push

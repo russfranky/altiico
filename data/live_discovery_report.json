@@ -1,0 +1,144 @@
+{
+  "run_id": 1,
+  "started_at": "2026-08-11T00:36:34Z",
+  "finished_at": "2026-08-11T00:38:14.251606+00:00",
+  "summary": {
+    "run_id": 1,
+    "status": "completed",
+    "requests_used": 21,
+    "task_counts": {
+      "done": 11,
+      "permanent_error": 2
+    },
+    "observations": 19,
+    "materialized_collections": 1
+  },
+  "token_discovery_requests": 0,
+  "before": {
+    "collections": 65,
+    "collections_with_vrm_url": 17,
+    "collections_validated_vrm": 11,
+    "contracts": 64,
+    "validated_vrm_assets": 4
+  },
+  "after": {
+    "collections": 65,
+    "collections_with_vrm_url": 18,
+    "collections_validated_vrm": 12,
+    "contracts": 65,
+    "validated_vrm_assets": 5
+  },
+  "delta": {
+    "collections": 0,
+    "collections_validated_vrm": 1,
+    "collections_with_vrm_url": 1,
+    "contracts": 1,
+    "validated_vrm_assets": 1
+  },
+  "created_collections": [],
+  "attached_contracts": [
+    "chuddie:ethereum:0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
+  ],
+  "hits": [
+    {
+      "collection_id": "chuddie",
+      "seed_source": "a3ac-missing-contract",
+      "task_id": 13,
+      "task_kind": "asset",
+      "token_id": null,
+      "canonical_url": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+      "transport_url": "https://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq.ipfs.dweb.link/127.vrm",
+      "vrm_spec": "0.x",
+      "total_length": 449908,
+      "json_path": "",
+      "source_url": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+      "confidence": 1.0
+    },
+    {
+      "collection_id": "chuddie",
+      "seed_source": "a3ac-missing-contract:sample_metadata",
+      "task_id": 13,
+      "task_kind": "asset",
+      "token_id": null,
+      "canonical_url": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+      "transport_url": "https://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq.ipfs.dweb.link/127.vrm",
+      "vrm_spec": "0.x",
+      "total_length": 449908,
+      "json_path": "",
+      "source_url": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+      "confidence": 1.0
+    }
+  ],
+  "targets": [
+    {
+      "key": "config:0:ethereum:0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+      "name": "CyberBrokers Genesis Mechs alternate contract",
+      "collection_id": "cyberbrokers",
+      "chain": "ethereum",
+      "contract": "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+      "source": "a3ac-missing-contract",
+      "create_collection": false,
+      "token_ids": [
+        1
+      ],
+      "vrm_param": "vrm_url / files.glb",
+      "notes": "Curated A3AC lead. Attach as an alternate contract only after a token-linked VRM validates.",
+      "sample_metadata_url": "https://m.cyberbrokers.com/eth/mech/1",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:CyberBrokers"
+    },
+    {
+      "key": "config:1:ethereum:0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+      "name": "Chuddies missing contract",
+      "collection_id": "chuddie",
+      "chain": "ethereum",
+      "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+      "source": "a3ac-missing-contract",
+      "create_collection": false,
+      "token_ids": [
+        127
+      ],
+      "vrm_param": "vrm_url",
+      "notes": "Curated A3AC lead. Existing catalog row lacks this contract.",
+      "sample_metadata_url": "ipfs://bafybeiebycjasqhzuomax77otu7koswj5p4awgmw3hrgjk2vh4xiriv5a4/127",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:Chuddies"
+    },
+    {
+      "key": "config:2:ethereum:0xd539a3a5edb713e6587e559a9d007ffff92bd9ab",
+      "name": "PixelBeasts Beastopia alternate contract",
+      "collection_id": "pixelbeasts",
+      "chain": "ethereum",
+      "contract": "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab",
+      "source": "a3ac-missing-contract",
+      "create_collection": false,
+      "token_ids": [
+        3064
+      ],
+      "vrm_param": "model/vrm",
+      "notes": "Curated A3AC lead. Attach only if token metadata proves the association.",
+      "sample_metadata_url": "https://www.pixelbeasts.xyz/token/3064",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:PixelBeasts"
+    },
+    {
+      "key": "config:3:ethereum:0x6bca6de2dbdc4e0d41f7273011785ea16ba47182",
+      "name": "Muhammad Ali - The Next Legends - Boxers",
+      "collection_id": "live-muhammad-ali-boxers",
+      "chain": "ethereum",
+      "contract": "0x6bca6de2dbdc4e0d41f7273011785ea16ba47182",
+      "source": "a3ac-missing-contract",
+      "create_collection": true,
+      "token_ids": [],
+      "vrm_param": "",
+      "notes": "Absent from the catalog. Create only if a recursively discovered token asset validates as VRM.",
+      "sample_metadata_url": "https://api-locker-room.thenextlegends.xyz/meta/0x8efa8f502e2ec6d698d540fee384a6e2e707e98b6169ae3e24d60c6ba3d55021",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "proposed-new"
+    }
+  ]
+}
