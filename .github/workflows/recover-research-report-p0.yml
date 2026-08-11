@@ -34,19 +34,20 @@ jobs:
           python - <<'PY'
           import base64
           import gzip
+          import hashlib
           from pathlib import Path
 
-          carrier = Path('.github/workflows/apply-research-report-p0.yml')
-          payload = None
-          for line in carrier.read_text(encoding='utf-8').splitlines():
-              marker = 'PATCH_GZ_B64:'
-              if marker in line:
-                  payload = line.split(marker, 1)[1].strip()
-                  break
-          if not payload:
-              raise SystemExit('embedded patch payload was not found')
-          payload += '=' * (-len(payload) % 4)
+          parts = sorted(Path('.github/patches').glob('research-report-p0.part*'))
+          if len(parts) != 6:
+              raise SystemExit(f'expected 6 patch chunks, found {len(parts)}')
+          payload = ''.join(part.read_text(encoding='utf-8').strip() for part in parts)
+          if len(payload) != 20476:
+              raise SystemExit(f'patch payload length mismatch: {len(payload)}')
+          if hashlib.sha256(payload.encode()).hexdigest() != '84dbfd61ba8d2b4db56952244a7d82a44a8d1c8e066de4fedada9e4a6e407d7b':
+              raise SystemExit('patch payload checksum mismatch')
           decoded = gzip.decompress(base64.b64decode(payload))
+          if hashlib.sha256(decoded).hexdigest() != '8c8c784d6284af5c543621d988972f06d5a6ac11176fec715762eae32d155125':
+              raise SystemExit('restored source checksum mismatch')
           target = Path('scripts/_apply_research_report_p0.py')
           target.write_bytes(decoded)
           print(f'restored {target} ({len(decoded)} bytes)')
@@ -79,6 +80,7 @@ jobs:
           rm -f scripts/_apply_research_report_p0.py
           rm -f .github/workflows/apply-research-report-p0.yml
           rm -f .github/workflows/recover-research-report-p0.yml
+          rm -rf .github/patches
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
