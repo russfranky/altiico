@@ -83,42 +83,6 @@ jobs:
           WHERE collection_id = 'chuddie' AND namespace = 'opensea_slug';
           SQL
 
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path('scripts/verify_catalog_consistency.py')
-          text = path.read_text(encoding='utf-8')
-          old = '''        contract = _norm_contract(row["contract"])
-          if contract is None:
-              found = conn.execute(
-                  """
-                  SELECT address FROM contracts
-                  WHERE collection_id=?
-                  ORDER BY is_primary DESC, rowid ASC
-                  LIMIT 1
-                  """,
-                  (cid,),
-              ).fetchone()
-              contract = _norm_contract(found["address"]) if found else None
-          '''
-          new = '''        found = conn.execute(
-              """
-              SELECT address FROM contracts
-              WHERE collection_id=?
-              ORDER BY is_primary DESC, rowid ASC
-              LIMIT 1
-              """,
-              (cid,),
-          ).fetchone()
-          contract = _norm_contract(found["address"]) if found else None
-          if contract is None:
-              contract = _norm_contract(row["contract"])
-          '''
-          if old not in text:
-              raise SystemExit('consistency verifier shape changed')
-          path.write_text(text.replace(old, new, 1), encoding='utf-8')
-          PY
-
       - name: Apply the snapshot migration
         run: sqlite3 data/vrm_index.db < migrations/023_artifact_snapshots.sql
 
