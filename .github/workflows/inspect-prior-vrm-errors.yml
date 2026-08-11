@@ -1,11 +1,7 @@
-name: Inspect prior VRM validation errors
+name: Inspect VRM validation errors
 
 on:
-  push:
-    branches:
-      - agent/vrm-link-audit
-    paths:
-      - .github/workflows/inspect-prior-vrm-errors.yml
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,28 +11,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: agent/binary-validate-staging-inventory
 
-      - name: Print failed asset tasks from validation run 2
+      - name: Print unresolved tasks from the latest staging validation run
         run: |
           sqlite3 -header -column data/vrm_index.db <<'SQL'
-          SELECT id, started_at, finished_at, status, requests_used,
-                 root_seed_count, config_json
-          FROM crawl_runs
-          WHERE id=2;
-
+          WITH target AS (
+              SELECT id
+              FROM crawl_runs
+              WHERE json_extract(config_json, '$.command') = 'run_staging_validation_pass.py'
+              ORDER BY id DESC
+              LIMIT 1
+          )
           SELECT
               t.id,
               t.canonical_key,
               t.state,
               t.attempts,
               t.last_error,
-              group_concat(NULLIF(b.collection_id, ''), ',') AS collections,
-              group_concat(NULLIF(b.avatar_id, ''), ',') AS avatars
+              group_concat(DISTINCT NULLIF(b.collection_id, '')) AS collections,
+              group_concat(DISTINCT NULLIF(b.avatar_id, '')) AS avatars
           FROM crawl_tasks t
           LEFT JOIN crawl_bindings b ON b.task_id=t.id
-          WHERE t.run_id=2
+          WHERE t.run_id=(SELECT id FROM target)
             AND t.state != 'done'
           GROUP BY t.id
           ORDER BY t.state, t.canonical_key;
