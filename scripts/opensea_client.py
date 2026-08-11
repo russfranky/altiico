@@ -196,6 +196,23 @@ class OpenSeaClient:
             _log(f"[opensea] rate bucket nearly empty, sleeping {wait:.1f}s until reset")
             await self._sleep(wait)
 
+    async def search(
+        self,
+        query: str,
+        *,
+        chain: Optional[str] = None,
+        asset_type: str = "collection",
+        limit: int = 50,
+    ) -> dict[str, Any]:
+        params: dict[str, Any] = {
+            "query": query,
+            "asset_types": asset_type,
+            "limit": max(1, min(int(limit), 50)),
+        }
+        if chain:
+            params["chains"] = CHAIN_MAP.get(chain, chain)
+        return await self._request("GET", "/search", params=params)
+
     async def get_collection(self, slug: str) -> dict[str, Any]:
         return await self._request("GET", f"/collections/{slug}")
 
@@ -211,9 +228,9 @@ class OpenSeaClient:
         )
 
     async def get_collection_nfts(
-        self, slug: str, cursor: Optional[str] = None
+        self, slug: str, cursor: Optional[str] = None, *, limit: int = 100
     ) -> dict[str, Any]:
-        params: dict[str, Any] = {"limit": 100}
+        params: dict[str, Any] = {"limit": max(1, min(int(limit), 100))}
         if cursor:
             params["next"] = cursor
         return await self._request("GET", f"/collection/{slug}/nfts", params=params)
