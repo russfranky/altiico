@@ -185,6 +185,16 @@ jobs:
               if count != 1:
                   raise SystemExit('validation pending-query shape changed')
           validation_path.write_text(validation, encoding='utf-8')
+
+          audit_path = Path('scripts/audit_vrm_links.py')
+          audit = audit_path.read_text(encoding='utf-8')
+          old_database = '"database": str(args.db.relative_to(_ROOT)),'
+          new_database = '"database": str(args.db.resolve().relative_to(_ROOT)),'
+          if new_database not in audit:
+              if old_database not in audit:
+                  raise SystemExit('audit database display shape changed')
+              audit = audit.replace(old_database, new_database, 1)
+          audit_path.write_text(audit, encoding='utf-8')
           PY
 
       - name: Verify URI and validation handling
@@ -214,7 +224,7 @@ jobs:
       - name: Audit every concrete VRM link
         run: |
           python scripts/audit_vrm_links.py \
-            --db data/vrm_index.db \
+            --db "$PWD/data/vrm_index.db" \
             --json-report data/vrm-link-audit.json \
             --markdown-report docs/vrm-link-audit-latest.md \
             --workers 6 \
@@ -273,11 +283,12 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/crawler/uri.py scripts/run_staging_validation_pass.py \
-            tests/test_recursive_crawler.py data/vrm_index.db \
-            data/staging_validation_report.json data/vrm-link-audit.json \
-            docs/staging-validation-latest.md docs/vrm-link-audit-latest.md \
-            docs/hubzz-prealpha-staging.md static/data static/sw.js
+          git add scripts/audit_vrm_links.py scripts/crawler/uri.py \
+            scripts/run_staging_validation_pass.py tests/test_recursive_crawler.py \
+            data/vrm_index.db data/staging_validation_report.json \
+            data/vrm-link-audit.json docs/staging-validation-latest.md \
+            docs/vrm-link-audit-latest.md docs/hubzz-prealpha-staging.md \
+            static/data static/sw.js
           if git diff --cached --quiet; then
             echo 'Validation evidence and audit reports are already current.'
             exit 0
