@@ -1,0 +1,53 @@
+# Direct metadata paths from the canonical A3AC registry that still lack a
+# successful binary validation in the catalog. No broad keyword crawl.
+policy:
+  max_depth: 5
+  request_budget: 300
+  max_tasks: 2000
+  max_attempts: 2
+  timeout: 20
+  max_document_bytes: 2000000
+  max_vrm_json_bytes: 4000000
+  max_links_per_document: 200
+
+token_sample_limit: 2
+
+auto_existing:
+  enabled: false
+
+targets:
+  - name: Allstarz PSX
+    chain: ethereum
+    contract: "0x6120991c423f3566753d3c6c91a5b50d7d2461b4"
+    match_names: ["Allstarz PSX"]
+    token_ids: [886]
+    sample_metadata_url: "https://allstarz.world/api/metadata/886.json"
+    vrm_param: "vrm_url"
+    source: "a3ac-direct-validation"
+
+  - name: Boomboxheads V2
+    chain: ethereum
+    contract: "0xb67ff46dfde55ad2fe05881433e5687fd1000312"
+    match_names: ["Boomboxheads V2"]
+    token_ids: [20]
+    sample_metadata_url: "ipfs://bafybeigkxvps67dtm236jbso622r5qrb4pxqne2yn3jmtmsdjbuaffr5xy/20"
+    vrm_param: "vrm_url"
+    source: "a3ac-direct-validation"
+
+  - name: CyberBrokers Genesis Mechs
+    chain: ethereum
+    contract: "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6"
+    match_names: ["CyberBrokers", "CyberBrokers (Genesis Mechs)"]
+    token_ids: [1]
+    sample_metadata_url: "https://m.cyberbrokers.com/eth/mech/1"
+    vrm_param: "vrm_url / files.glb"
+    source: "a3ac-direct-validation"
+
+  - name: DEyes Legends by Coldie
+    chain: ethereum
+    contract: "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e"
+    match_names: ["DEyes Legends by Coldie"]
+    token_ids: [26]
+    sample_metadata_url: "ipfs://bafybeih5g36ula4wzw6dmoso6tbimzh2dbfurcqzvv5mbosl5jdjhkzkxu/26"
+    vrm_param: "vrm_url"
+    source: "a3ac-direct-validation"
