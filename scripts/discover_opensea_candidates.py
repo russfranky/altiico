@@ -92,23 +92,25 @@ def _candidate_score(row: dict[str, Any], query: str) -> int:
 
 
 def _direct_candidates(nft: dict[str, Any]) -> list[dict[str, Any]]:
-    found: list[dict[str, Any]] = []
+    out: list[dict[str, Any]] = []
     for key in ("animation_url", "display_animation_url"):
         value = nft.get(key)
         if not isinstance(value, str) or not value.strip():
             continue
         lower = value.lower().split("?", 1)[0].split("#", 1)[0]
         if lower.endswith(MODEL_EXTENSIONS) or key == "animation_url":
-            found.append({
+            out.append({
                 "path": f"opensea.{key}", "field": key, "url": value.strip(),
                 "reason": "opensea_media",
             })
-    return found
+    return out
 
 
 def _validate(url: str, timeout: float) -> dict[str, Any]:
-    policy = CrawlPolicy(timeout=timeout, max_attempts=2, max_vrm_bytes=64 * 1024 * 1024)
-    loader = NetworkLoader(None, policy)
+    loader = NetworkLoader(
+        None,
+        CrawlPolicy(timeout=timeout, max_attempts=2, max_vrm_bytes=64 * 1024 * 1024),
+    )
     try:
         result = loader.validate_vrm(canonicalize_uri(url))
         return {
@@ -123,7 +125,9 @@ def _validate(url: str, timeout: float) -> dict[str, Any]:
         }
     except Exception as exc:  # noqa: BLE001
         return {
-            "canonical_url": url, "valid": False, "status": "validation_error",
+            "canonical_url": url,
+            "valid": False,
+            "status": "validation_error",
             "error": f"{type(exc).__name__}: {exc}"[:500],
         }
 
@@ -144,7 +148,7 @@ def _inspect_nft(nft: dict[str, Any], timeout: float) -> dict[str, Any]:
         except Exception as exc:  # noqa: BLE001
             metadata_error = f"{type(exc).__name__}: {exc}"[:500]
 
-    out_candidates: list[dict[str, Any]] = []
+    model_candidates: list[dict[str, Any]] = []
     validations: list[dict[str, Any]] = []
     seen: set[str] = set()
     for candidate in candidates:
@@ -160,11 +164,13 @@ def _inspect_nft(nft: dict[str, Any], timeout: float) -> dict[str, Any]:
             "metadata_url": metadata_url,
             "token_id": token_id,
         }
-        out_candidates.append(record)
+        model_candidates.append(record)
         validation = _validate(url, timeout)
         validation.update({
-            "field": record["field"], "path": record["path"],
-            "reason": record["reason"], "metadata_url": metadata_url,
+            "field": record["field"],
+            "path": record["path"],
+            "reason": record["reason"],
+            "metadata_url": metadata_url,
             "token_id": token_id,
         })
         validations.append(validation)
@@ -174,9 +180,64 @@ def _inspect_nft(nft: dict[str, Any], timeout: float) -> dict[str, Any]:
         "metadata_url": metadata_url,
         "metadata_fetched": metadata_fetched,
         "metadata_error": metadata_error,
-        "candidates": out_candidates,
+        "model_candidates": model_candidates,
         "validations": validations,
     }
+
+
+async def _inspect_collection(
+    lead: dict[str, Any],
+    client: OpenSeaClient,
+    args: argparse.Namespace,
+    gate: asyncio.Semaphore,
+    index: int,
+    total: int,
+) -> None:
+    async with gate:
+        try:
+            data = await client.get_collection_nfts(lead["slug"], limit=args.sample)
+            nfts = data.get("nfts") or []
+        except Exception as exc:  # noqa: BLE001
+            lead["errors"].append(f"collection_nfts: {type(exc).__name__}: {exc}"[:500])
+            return
+        if not isinstance(nfts, list):
+            return
+        nfts = [n for n in nfts if isinstance(n, dict)]
+        lead["nfts_sampled"] = len(nfts)
+
+        inspected = await asyncio.gather(*(
+            asyncio.to_thread(_inspect_nft, nft, args.timeout) for nft in nfts
+        ))
+        seen_candidates: set[str] = set()
+        seen_valid: set[str] = set()
+        for result in inspected:
+            if result["metadata_fetched"]:
+                lead["metadata_documents"] += 1
+            if result["metadata_error"]:
+                lead["metadata_fetch_errors"] += 1
+                lead["errors"].append(
+                    f"metadata {result['token_id']}: {result['metadata_error']}"
+                )
+            for candidate in result["model_candidates"]:
+                url = candidate["url"]
+                if url not in seen_candidates:
+                    seen_candidates.add(url)
+                    lead["model_candidates"].append(candidate)
+            for validation in result["validations"]:
+                key = validation.get("canonical_url") or ""
+                if validation.get("valid"):
+                    if key and key not in seen_valid:
+                        seen_valid.add(key)
+                        lead["validated_vrms"].append(validation)
+                else:
+                    lead["rejected_model_candidates"].append(validation)
+
+        if lead["validated_vrms"]:
+            print(
+                f"[{index}/{total}] VRM HIT {lead['name']} ({lead['slug']}): "
+                f"{len(lead['validated_vrms'])}",
+                file=sys.stderr,
+            )
 
 
 async def discover(args: argparse.Namespace) -> dict[str, Any]:
@@ -185,14 +246,14 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
     chains = [c.strip() for c in args.chains.split(",") if c.strip()]
     leads: dict[str, dict[str, Any]] = {}
     search_requests = 0
-    metadata_documents_fetched = 0
-    metadata_fetch_errors = 0
 
     try:
         for query in queries:
             for chain in chains:
                 try:
-                    data = await client.search(query, chain=chain, asset_type="collection", limit=args.search_limit)
+                    data = await client.search(
+                        query, chain=chain, asset_type="collection", limit=args.search_limit
+                    )
                     search_requests += 1
                 except Exception as exc:  # noqa: BLE001
                     print(f"search failed query={query!r} chain={chain}: {exc}", file=sys.stderr)
@@ -206,92 +267,71 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                     slug = _slug(row)
                     if not slug:
                         continue
-                    item = leads.setdefault(slug, {
-                        "slug": slug, "name": _text(row.get("name")) or slug,
-                        "description": _text(row.get("description")), "contract": _contract(row),
-                        "queries": set(), "chains": set(), "score": 0,
-                        "nfts_sampled": 0, "metadata_documents": 0,
-                        "model_candidates": [], "validated_vrms": [],
-                        "rejected_model_candidates": [], "errors": [],
+                    lead = leads.setdefault(slug, {
+                        "slug": slug,
+                        "name": _text(row.get("name")) or slug,
+                        "description": _text(row.get("description")),
+                        "contract": _contract(row),
+                        "queries": set(),
+                        "chains": set(),
+                        "score": 0,
+                        "nfts_sampled": 0,
+                        "metadata_documents": 0,
+                        "metadata_fetch_errors": 0,
+                        "model_candidates": [],
+                        "validated_vrms": [],
+                        "rejected_model_candidates": [],
+                        "errors": [],
                     })
-                    item["queries"].add(query)
-                    item["chains"].add(chain)
-                    item["score"] = max(item["score"], _candidate_score(row, query))
+                    lead["queries"].add(query)
+                    lead["chains"].add(chain)
+                    lead["score"] = max(lead["score"], _candidate_score(row, query))
 
-        ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[: args.max_collections]
-        print(f"OpenSea search produced {len(leads)} unique collection leads; inspecting {len(ranked)}", file=sys.stderr)
-
-        for idx, lead in enumerate(ranked, 1):
-            try:
-                data = await client.get_collection_nfts(lead["slug"], limit=args.sample)
-                nfts = data.get("nfts") or []
-            except Exception as exc:  # noqa: BLE001
-                lead["errors"].append(f"collection_nfts: {type(exc).__name__}: {exc}"[:500])
-                continue
-            if not isinstance(nfts, list):
-                continue
-            nfts = [n for n in nfts if isinstance(n, dict)]
-            lead["nfts_sampled"] = len(nfts)
-
-            inspected = await asyncio.gather(*(
-                asyncio.to_thread(_inspect_nft, nft, args.timeout) for nft in nfts
-            ))
-            seen_candidates: set[str] = set()
-            seen_valid: set[str] = set()
-            for result in inspected:
-                if result["metadata_fetched"]:
-                    metadata_documents_fetched += 1
-                    lead["metadata_documents"] += 1
-                if result["metadata_error"]:
-                    metadata_fetch_errors += 1
-                    lead["errors"].append(
-                        f"metadata {result['token_id']}: {result['metadata_error']}"
-                    )
-                for candidate in result["candidates"]:
-                    url = candidate["url"]
-                    if url not in seen_candidates:
-                        seen_candidates.add(url)
-                        lead["model_candidates"].append(candidate)
-                for validation in result["validations"]:
-                    key = validation.get("canonical_url") or ""
-                    if validation.get("valid"):
-                        if key and key not in seen_valid:
-                            seen_valid.add(key)
-                            lead["validated_vrms"].append(validation)
-                    else:
-                        lead["rejected_model_candidates"].append(validation)
-            if lead["validated_vrms"]:
-                print(f"[{idx}/{len(ranked)}] VRM HIT {lead['name']} ({lead['slug']}): {len(lead['validated_vrms'])}", file=sys.stderr)
+        ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[:args.max_collections]
+        print(
+            f"OpenSea search produced {len(leads)} unique collection leads; "
+            f"inspecting {len(ranked)}",
+            file=sys.stderr,
+        )
+        collection_gate = asyncio.Semaphore(args.collection_concurrency)
+        await asyncio.gather(*(
+            _inspect_collection(lead, client, args, collection_gate, i, len(ranked))
+            for i, lead in enumerate(ranked, 1)
+        ))
     finally:
         await client.close()
 
-    ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[: args.max_collections]
+    ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[:args.max_collections]
     for lead in ranked:
         lead["queries"] = sorted(lead["queries"])
         lead["chains"] = sorted(lead["chains"])
         lead["model_candidates"] = lead["model_candidates"][:200]
         lead["rejected_model_candidates"] = lead["rejected_model_candidates"][:200]
 
-    valid = [v for x in ranked for v in x["validated_vrms"]]
-    rejected = [v for x in ranked for v in x["rejected_model_candidates"]]
+    valid = [v for lead in ranked for v in lead["validated_vrms"]]
+    rejected = [v for lead in ranked for v in lead["rejected_model_candidates"]]
     summary = {
         "search_requests": search_requests,
-        "queries": len(queries), "chains": len(chains),
-        "unique_collection_leads": len(leads), "collections_inspected": len(ranked),
-        "nfts_sampled": sum(x["nfts_sampled"] for x in ranked),
-        "metadata_documents_fetched": metadata_documents_fetched,
-        "metadata_fetch_errors": metadata_fetch_errors,
-        "collections_with_model_candidates": sum(bool(x["model_candidates"]) for x in ranked),
-        "model_candidates": sum(len(x["model_candidates"]) for x in ranked),
-        "collections_with_validated_vrms": sum(bool(x["validated_vrms"]) for x in ranked),
+        "queries": len(queries),
+        "chains": len(chains),
+        "unique_collection_leads": len(leads),
+        "collections_inspected": len(ranked),
+        "nfts_sampled": sum(lead["nfts_sampled"] for lead in ranked),
+        "metadata_documents_fetched": sum(lead["metadata_documents"] for lead in ranked),
+        "metadata_fetch_errors": sum(lead["metadata_fetch_errors"] for lead in ranked),
+        "collections_with_model_candidates": sum(bool(lead["model_candidates"]) for lead in ranked),
+        "model_candidates": sum(len(lead["model_candidates"]) for lead in ranked),
+        "collections_with_validated_vrms": sum(bool(lead["validated_vrms"]) for lead in ranked),
         "validated_vrms": len(valid),
         "rejected_model_candidates": len(rejected),
-        "error_collections": sum(bool(x["errors"]) for x in ranked),
+        "error_collections": sum(bool(lead["errors"]) for lead in ranked),
         "validation_statuses": dict(Counter(v["status"] for v in [*valid, *rejected])),
     }
     return {
-        "schema": "opensea-high-recall-discovery-v3",
-        "generated_at": utc_now(), "summary": summary, "collections": ranked,
+        "schema": "opensea-high-recall-discovery-v4",
+        "generated_at": utc_now(),
+        "summary": summary,
+        "collections": ranked,
     }
 
 
@@ -303,7 +343,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--search-limit", type=int, default=50)
     ap.add_argument("--sample", type=int, default=8)
     ap.add_argument("--max-collections", type=int, default=500)
-    ap.add_argument("--timeout", type=float, default=12.0)
+    ap.add_argument("--collection-concurrency", type=int, default=4)
+    ap.add_argument("--timeout", type=float, default=10.0)
     args = ap.parse_args(argv)
 
     if not os.getenv("OPENSEA_API_KEY") and not (Path.home() / ".opensea" / "api_key").exists():
