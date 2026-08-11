@@ -39,13 +39,21 @@ jobs:
 
           path = Path('scripts/run_live_discovery.py')
           text = path.read_text(encoding='utf-8')
-          needle = '                notes=str(raw.get("notes") or ""),\n                resolution=resolution,\n'
-          replacement = '                notes=str(raw.get("notes") or ""),\n                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),\n                resolution=resolution,\n'
-          if replacement not in text:
-              if needle not in text:
-                  raise SystemExit('live discovery runner shape changed; refusing an unsafe patch')
-              text = text.replace(needle, replacement, 1)
-              path.write_text(text, encoding='utf-8')
+          target_needle = '                notes=str(raw.get("notes") or ""),\n                resolution=resolution,\n'
+          target_replacement = '                notes=str(raw.get("notes") or ""),\n                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),\n                resolution=resolution,\n'
+          if target_replacement not in text:
+              if target_needle not in text:
+                  raise SystemExit('live discovery target parser changed; refusing an unsafe patch')
+              text = text.replace(target_needle, target_replacement, 1)
+
+          sample_needle = '            token_ids = sampler.sample(target, token_limit)\n'
+          sample_replacement = '            token_ids = (_dedupe([*target.token_ids, *_extract_numeric_tail(target.sample_metadata_url)])[:token_limit] if target.sample_metadata_url else sampler.sample(target, token_limit))\n'
+          if sample_replacement not in text:
+              if sample_needle not in text:
+                  raise SystemExit('live discovery sampler changed; refusing an unsafe patch')
+              text = text.replace(sample_needle, sample_replacement, 1)
+
+          path.write_text(text, encoding='utf-8')
           PY
 
       - name: Run live contract-driven discovery
