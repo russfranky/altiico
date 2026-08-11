@@ -18,17 +18,10 @@ from typing import Any, Awaitable, Callable, Optional
 
 import aiohttp
 
+from scripts.chain_registry import OPENSEA_CHAIN_MAP as CHAIN_MAP
+
 BASE_URL = "https://api.opensea.io/api/v2"
 
-CHAIN_MAP: dict[str, str] = {
-    "ethereum": "ethereum",
-    "polygon": "matic",
-    "base": "base",
-    "optimism": "optimism",
-    "shape": "shape",
-    "arbitrum": "arbitrum",
-    "sepolia": "sepolia",
-}
 
 MAX_ATTEMPTS = 6
 MAX_SINGLE_RETRY_DELAY = 60.0
