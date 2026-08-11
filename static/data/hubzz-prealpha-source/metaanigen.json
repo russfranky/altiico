@@ -1,9 +1,11 @@
 {
   "schema": "hubzz-prealpha-source-avatars-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T00:53:57Z",
+  "generatedAt": "2026-08-11T01:03:35Z",
   "setSlug": "metaanigen",
   "count": 1,
+  "reachableCount": 1,
+  "binaryValidatedCount": 1,
   "avatars": [
     {
       "id": "2051",
@@ -12,7 +14,9 @@
       "originalSourceUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
       "transportUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
       "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xa467ab9447afa5db0c70325348d810d2058dde18/62b3e138636c8f7331cc40d14d5b51/5962b3e138636c8f7331cc40d14d5b51.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "collection_sample_binary",
       "checkedAt": "2026-08-10T13:47:53Z",
       "checkStatus": "ok_vrm",
       "vrmSpec": null,

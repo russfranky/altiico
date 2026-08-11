@@ -1,20 +1,21 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T00:53:57Z",
+  "generatedAt": "2026-08-11T01:03:35Z",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
   },
   "summary": {
     "catalogSets": 65,
-    "stageableSets": 12,
+    "stageableSets": 11,
     "bulkReadySets": 2,
-    "partialReadySets": 1,
+    "partialReadySets": 0,
     "previewReadySets": 9,
-    "deferredSets": 53,
-    "sourceAvatars": 158,
-    "openLicenseSets": 1,
+    "deferredSets": 54,
+    "sourceAvatars": 149,
+    "binaryValidatedSourceAvatars": 9,
+    "openLicenseSets": 0,
     "gatedSets": 3,
     "licenseReviewSets": 8
   },
@@ -45,11 +46,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/halloween-rising.json",
         "count": 60,
-        "mode": "enumerated"
+        "mode": "enumerated",
+        "reachableCount": 60,
+        "binaryValidatedCount": 0,
+        "validationScope": "collection_binary_plus_avatar_reachability"
       },
       "coverage": {
         "knownAvatars": 60,
-        "validatedSourceAvatars": 60,
+        "reachableSourceAvatars": 60,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 60,
         "coverageRatio": 1.0
       },
@@ -60,7 +65,9 @@
         "fileSizeOriginal": 5719796,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": null,
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "license_requires_review"
@@ -92,11 +99,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/xmas-chibis.json",
         "count": 80,
-        "mode": "enumerated"
+        "mode": "enumerated",
+        "reachableCount": 80,
+        "binaryValidatedCount": 0,
+        "validationScope": "collection_binary_plus_avatar_reachability"
       },
       "coverage": {
         "knownAvatars": 80,
-        "validatedSourceAvatars": 80,
+        "reachableSourceAvatars": 80,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 80,
         "coverageRatio": 1.0
       },
@@ -107,49 +118,11 @@
         "fileSizeOriginal": 3315368,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": null,
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": []
-    },
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "NeonGlitch86-collection",
-        "name": "NeonGlitch86 Collection",
-        "description": "Collections of avatars Created by NeonGlitch86",
-        "chain": "ethereum",
-        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-        "storageProvider": "self-host",
-        "ingestSource": "ethereum",
-        "license": "CC0",
-        "author": "NeonGlitch86",
-        "copyright": null,
-        "mintDate": null,
-        "totalMints": 0,
-        "bannerUrl": null,
-        "pfpUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
-        "purchaseGated": false,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 9
-      },
-      "stageClass": "partial_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/NeonGlitch86-collection.json",
-        "count": 9,
-        "mode": "enumerated"
-      },
-      "coverage": {
-        "knownAvatars": 12,
-        "validatedSourceAvatars": 9,
-        "catalogSupply": 0,
-        "coverageRatio": 0.75
-      },
-      "sampleEvidence": null,
-      "warnings": [
-        "partial_avatar_inventory",
-        "missing_banner"
-      ]
     },
     {
       "set": {
@@ -177,11 +150,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/avastars.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 26617,
         "coverageRatio": 3.8e-05
       },
@@ -192,7 +169,9 @@
         "fileSizeOriginal": 13950876,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "10574",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -206,7 +185,7 @@
         "name": "Chuddies",
         "description": "Chuddies are 5,000 sweetiepilled generative pfpNFTS, a love letter to gaming and internet culture filled with nostalgia.\n\nDiscord: https://discord.gg/BBW7e54P99\nMint: https://www.scatter.art/chuddies?tab=mint\nTwitter: https://twitter.com/chuddieswow",
         "chain": "ethereum",
-        "contract": "0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+        "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
         "storageProvider": "ipfs",
         "ingestSource": "ethereum",
         "license": "Scatter (Remilia ecosystem)",
@@ -225,11 +204,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/chuddie.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 4875,
         "coverageRatio": 0.000205
       },
@@ -240,7 +223,9 @@
         "fileSizeOriginal": 449908,
         "validatedAt": "2026-08-11T00:37:40Z",
         "tokenId": null,
-        "source": "a3ac-missing-contract"
+        "source": "a3ac-missing-contract",
+        "chain": "ethereum",
+        "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
       },
       "warnings": [
         "sample_only",
@@ -273,11 +258,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/forgottenruneswizardscult.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 9944,
         "coverageRatio": 0.000101
       },
@@ -288,7 +277,9 @@
         "fileSizeOriginal": 3207404,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "7362",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -321,11 +312,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/frutiger-anons.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 400,
         "coverageRatio": 0.0025
       },
@@ -336,7 +331,9 @@
         "fileSizeOriginal": 347668,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "4",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only"
@@ -368,11 +365,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/meebits.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 20000,
         "coverageRatio": 5e-05
       },
@@ -383,7 +384,9 @@
         "fileSizeOriginal": 718232,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "17438",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -416,11 +419,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/metaanigen.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 1354,
         "coverageRatio": 0.000739
       },
@@ -431,7 +438,9 @@
         "fileSizeOriginal": 921444,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "2051",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only"
@@ -463,11 +472,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/misfitpixels.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 1000,
         "coverageRatio": 0.001
       },
@@ -478,7 +491,9 @@
         "fileSizeOriginal": 146868,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": "9",
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -511,11 +526,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/neonglitch86-collection-polygon-side.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 41,
         "coverageRatio": 0.02439
       },
@@ -526,7 +545,9 @@
         "fileSizeOriginal": 1590520,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": null,
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -560,11 +581,15 @@
       "sourceAssets": {
         "path": "hubzz-prealpha-source/phettaverse-editions.json",
         "count": 1,
-        "mode": "validated_sample"
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "catalogSupply": 371,
         "coverageRatio": 0.002695
       },
@@ -575,7 +600,9 @@
         "fileSizeOriginal": 1698236,
         "validatedAt": "2026-08-10T13:47:53Z",
         "tokenId": null,
-        "source": "collection-validation"
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
       },
       "warnings": [
         "sample_only",
@@ -588,7 +615,7 @@
       "slug": "a3ac-0x77372a",
       "name": "a KID called BEAST",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -600,7 +627,8 @@
         "chain": "ethereum",
         "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -609,7 +637,7 @@
       "slug": "a3ac-0x62eb14",
       "name": "AdWorld",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -621,7 +649,8 @@
         "chain": "ethereum",
         "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -630,7 +659,7 @@
       "slug": "research-0xaad35c",
       "name": "Akutars",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -642,7 +671,8 @@
         "chain": "ethereum",
         "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -651,7 +681,7 @@
       "slug": "allstarz-psx",
       "name": "Allstarz PSX",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -663,7 +693,8 @@
         "chain": "ethereum",
         "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "error"
       }
@@ -672,7 +703,7 @@
       "slug": "research-0xc1fcf3",
       "name": "Arbibots",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -684,7 +715,8 @@
         "chain": "arbitrum",
         "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -693,7 +725,7 @@
       "slug": "research-0x1ac7a2",
       "name": "ArbiDudesGenOne",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -705,7 +737,8 @@
         "chain": "arbitrum",
         "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -714,7 +747,7 @@
       "slug": "boomboxheads-v2",
       "name": "Boomboxheads V2",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [],
       "facts": {
@@ -724,7 +757,8 @@
         "chain": "ethereum",
         "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "timeout"
       }
@@ -733,7 +767,7 @@
       "slug": "bourey-vs-bulley-bourverse",
       "name": "Bourey vs Bulley: Bourverse",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -745,7 +779,8 @@
         "chain": "ethereum",
         "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -754,7 +789,7 @@
       "slug": "chain-runners",
       "name": "Chain Runners",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -766,7 +801,8 @@
         "chain": "ethereum",
         "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -775,7 +811,7 @@
       "slug": "chametheon",
       "name": "Chametheon",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -789,7 +825,8 @@
         "chain": "ethereum",
         "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -798,7 +835,7 @@
       "slug": "a3ac-0xc49a9a",
       "name": "Chibi Apes",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -810,7 +847,8 @@
         "chain": "ethereum",
         "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "reachable_not_vrm"
       }
@@ -820,7 +858,7 @@
       "name": "CryptoAvatars",
       "reasons": [
         "unsupported_chain:multi",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -832,7 +870,8 @@
         "chain": "multi",
         "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -841,7 +880,7 @@
       "slug": "cyberanimedoll-avatar",
       "name": "CyberAnimeDOLL: Avatar",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -855,7 +894,8 @@
         "chain": "ethereum",
         "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -864,7 +904,7 @@
       "slug": "cyberbrokers",
       "name": "CyberBrokers",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -876,7 +916,8 @@
         "chain": "ethereum",
         "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "timeout"
       }
@@ -885,7 +926,7 @@
       "slug": "coldie",
       "name": "DEyes Legends by Coldie",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [],
       "facts": {
@@ -895,7 +936,8 @@
         "chain": "ethereum",
         "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "error"
       }
@@ -904,7 +946,7 @@
       "slug": "dickbuttverse",
       "name": "DickButtVerse",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [],
       "facts": {
@@ -914,7 +956,8 @@
         "chain": "ethereum",
         "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "error"
       }
@@ -923,7 +966,7 @@
       "slug": "elysium-shell-next-mecha",
       "name": "Elysium Shell: Next - Mecha",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -935,7 +978,8 @@
         "chain": "ethereum",
         "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -944,7 +988,7 @@
       "slug": "research-0x369156",
       "name": "Flooz GEN F",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -956,7 +1000,8 @@
         "chain": "ethereum",
         "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -965,7 +1010,7 @@
       "slug": "a3ac-0xccc441",
       "name": "FLUF World",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -977,7 +1022,8 @@
         "chain": "ethereum",
         "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -986,7 +1032,7 @@
       "slug": "fly-frogs",
       "name": "Fly Frogs",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -998,7 +1044,8 @@
         "chain": "ethereum",
         "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1008,7 +1055,7 @@
       "name": "FUKU",
       "reasons": [
         "unsupported_chain:ape_chain",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -1022,7 +1069,8 @@
         "chain": "ape_chain",
         "contract": "0x1bcbd0d45d35bbbe514bec8cb9e48c51835a6d8c",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1031,7 +1079,7 @@
       "slug": "a3ac-0x14c447",
       "name": "FyatLux",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1043,7 +1091,8 @@
         "chain": "ethereum",
         "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "http_403"
       }
@@ -1052,7 +1101,7 @@
       "slug": "immadegen-void",
       "name": "Immadegen (VOID)",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1064,7 +1113,8 @@
         "chain": "ethereum",
         "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1073,7 +1123,7 @@
       "slug": "a3ac-0x86fc6f",
       "name": "Jadu AVA",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1085,7 +1135,8 @@
         "chain": "ethereum",
         "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1094,7 +1145,7 @@
       "slug": "research-0xd2F668",
       "name": "Karafuru 3D",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1106,7 +1157,8 @@
         "chain": "ethereum",
         "contract": "0xd2F668a8461D6761115dAF8Aeb3cDf5F40C532C6",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1115,7 +1167,7 @@
       "slug": "a3ac-0x223ef0",
       "name": "Metashima - Lightning",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1127,7 +1179,8 @@
         "chain": "ethereum",
         "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1137,7 +1190,7 @@
       "name": "MetaTravelers",
       "reasons": [
         "missing_contract",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1149,7 +1202,8 @@
         "chain": "ethereum",
         "contract": null,
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1159,7 +1213,7 @@
       "name": "Metaverse Stardrop",
       "reasons": [
         "unsupported_chain:ape_chain",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -1173,7 +1227,8 @@
         "chain": "ape_chain",
         "contract": "0x53e38a3bb5954cc7830bbc6f2520b61d01d95056",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1182,7 +1237,7 @@
       "slug": "research-0x1142c6",
       "name": "mferverse: OG mfers",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1194,7 +1249,8 @@
         "chain": "base",
         "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1203,7 +1259,7 @@
       "slug": "mona-avatars",
       "name": "MONA Avatars",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1215,7 +1271,8 @@
         "chain": "ethereum",
         "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1224,7 +1281,7 @@
       "slug": "research-0x235817",
       "name": "Moonbirds",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1236,9 +1293,32 @@
         "chain": "ethereum",
         "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "missing_banner"
+      ],
+      "facts": {
+        "slug": "NeonGlitch86-collection",
+        "name": "NeonGlitch86 Collection",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+        "knownAvatars": 12,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
       }
     },
     {
@@ -1257,7 +1337,8 @@
         "chain": "shape",
         "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": true,
         "vrmCheckStatus": "ok_vrm"
       }
@@ -1266,7 +1347,7 @@
       "slug": "research-0x92133e",
       "name": "Non-Fungible People",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1278,7 +1359,8 @@
         "chain": "ethereum",
         "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1287,7 +1369,7 @@
       "slug": "nouns",
       "name": "Nouns",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1299,7 +1381,8 @@
         "chain": "ethereum",
         "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1308,7 +1391,7 @@
       "slug": "og-meta-meeples-pfp",
       "name": "OG Meta Meeples PFP",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1320,7 +1403,8 @@
         "chain": "ethereum",
         "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1329,7 +1413,7 @@
       "slug": "omnimorphs",
       "name": "Omnimorphs",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1341,7 +1425,8 @@
         "chain": "ethereum",
         "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1351,7 +1436,7 @@
       "name": "PAPE",
       "reasons": [
         "unsupported_chain:ape_chain",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -1365,7 +1450,8 @@
         "chain": "ape_chain",
         "contract": "0xA7aE1BBFA1EE713AcF2A240Cd5Fff184685f5304",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1374,7 +1460,7 @@
       "slug": "research-0x0fc3dd",
       "name": "Parallel Avatars",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1386,7 +1472,8 @@
         "chain": "ethereum",
         "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1395,7 +1482,7 @@
       "slug": "a3ac-0x35471f",
       "name": "PartyBear",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1407,7 +1494,8 @@
         "chain": "ethereum",
         "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1416,7 +1504,7 @@
       "slug": "pixelbeasts",
       "name": "PixelBeasts",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "missing_banner"
@@ -1428,7 +1516,8 @@
         "chain": "ethereum",
         "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "reachable_not_vrm"
       }
@@ -1438,7 +1527,7 @@
       "name": "PolygonLow",
       "reasons": [
         "missing_contract",
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
@@ -1452,7 +1541,8 @@
         "chain": "polygon",
         "contract": null,
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1461,7 +1551,7 @@
       "slug": "rstlss-x-claire-silver-pixelgeist",
       "name": "RSTLSS x Claire Silver: Pixelgeist",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1473,7 +1563,8 @@
         "chain": "ethereum",
         "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1482,7 +1573,7 @@
       "slug": "a3ac-0x49cf6f",
       "name": "RTFKT CloneX",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1494,7 +1585,8 @@
         "chain": "ethereum",
         "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1503,7 +1595,7 @@
       "slug": "the-dask",
       "name": "The Dask",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1515,7 +1607,8 @@
         "chain": "ethereum",
         "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1524,7 +1617,7 @@
       "slug": "a3ac-0x50e712",
       "name": "The Modz",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1536,7 +1629,8 @@
         "chain": "ethereum",
         "contract": "0x50e712b3a260d7639179e8277836253461418f23",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1545,7 +1639,7 @@
       "slug": "a3ac-0xaaf03a",
       "name": "The Seekers",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1557,7 +1651,8 @@
         "chain": "ethereum",
         "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1566,7 +1661,7 @@
       "slug": "toxic-skulls-club",
       "name": "Toxic Skulls Club",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1578,7 +1673,8 @@
         "chain": "ethereum",
         "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1587,7 +1683,7 @@
       "slug": "research-0x324F60",
       "name": "VeeFriends Series 2",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1599,7 +1695,8 @@
         "chain": "base",
         "contract": "0x324F60bA2d1815EF649DCc73559172305F5dd02c",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1608,7 +1705,7 @@
       "slug": "research-0x631086",
       "name": "Virtuals Waifus",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1620,7 +1717,8 @@
         "chain": "base",
         "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }
@@ -1629,7 +1727,7 @@
       "slug": "voltz",
       "name": "Voltz",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1641,7 +1739,8 @@
         "chain": "ethereum",
         "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "reachable_not_vrm"
       }
@@ -1650,7 +1749,7 @@
       "slug": "wassies",
       "name": "Wassies",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1662,7 +1761,8 @@
         "chain": "ethereum",
         "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1671,7 +1771,7 @@
       "slug": "woodies",
       "name": "Woodies",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1683,7 +1783,8 @@
         "chain": "ethereum",
         "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
       }
@@ -1692,7 +1793,7 @@
       "slug": "research-0x35373e",
       "name": "ZTX Genesis Homes",
       "reasons": [
-        "no_validated_vrm"
+        "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review"
@@ -1704,7 +1805,8 @@
         "chain": "arbitrum",
         "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
         "knownAvatars": 0,
-        "validatedSourceAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
       }

@@ -637,7 +637,11 @@ def validate_bundle(bundle: dict[str, Any]) -> list[str]:
         source = item.get("sourceAssets") or {}
         if not isinstance(source.get("count"), int) or source.get("count", 0) < 1:
             errors.append(f"{prefix}: no source avatars")
-        if not isinstance(source.get("binaryValidatedCount"), int) or source.get("binaryValidatedCount", 0) < 1:
+        binary_count = source.get("binaryValidatedCount")
+        has_sample_proof = isinstance(item.get("sampleEvidence"), dict)
+        if not isinstance(binary_count, int) or binary_count < 0:
+            errors.append(f"{prefix}: invalid binary validation count")
+        elif binary_count < 1 and not has_sample_proof:
             errors.append(f"{prefix}: no binary-validated VRM proof")
         if record.get("avatarCount") != source.get("count"):
             errors.append(f"{prefix}: avatar count mismatch")

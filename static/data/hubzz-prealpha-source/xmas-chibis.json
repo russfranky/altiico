@@ -1,9 +1,11 @@
 {
   "schema": "hubzz-prealpha-source-avatars-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T00:53:57Z",
+  "generatedAt": "2026-08-11T01:03:35Z",
   "setSlug": "xmas-chibis",
   "count": 80,
+  "reachableCount": 80,
+  "binaryValidatedCount": 0,
   "avatars": [
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/1",
@@ -11,9 +13,13 @@
       "name": "Elel Silverbell",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar01_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/10",
@@ -21,9 +27,13 @@
       "name": "Clara Nutcracker",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar10_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/11",
@@ -31,9 +41,13 @@
       "name": "Whisker Eggnog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar11_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/12",
@@ -41,9 +55,13 @@
       "name": "Piney Tinselbaun",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar12_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/13",
@@ -51,9 +69,13 @@
       "name": "Nick North",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar13_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/14",
@@ -61,9 +83,13 @@
       "name": "Krampus Wreath",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar14_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/15",
@@ -71,9 +97,13 @@
       "name": "Cookie Gingerbread",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar15_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/16",
@@ -81,9 +111,13 @@
       "name": "Snore Stocking",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar16_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/17",
@@ -91,9 +125,13 @@
       "name": "Fael Silverbell",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar01_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/18",
@@ -101,9 +139,13 @@
       "name": "Mocha Chestnut",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar02_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/19",
@@ -111,9 +153,13 @@
       "name": "Joy Garland",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar03_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/2",
@@ -121,9 +167,13 @@
       "name": "Paws Chestnut",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar02_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/20",
@@ -131,9 +181,13 @@
       "name": "Dasher Kringle",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar04_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/21",
@@ -141,9 +195,13 @@
       "name": "Snowy Claus",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar05_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/22",
@@ -151,9 +209,13 @@
       "name": "Twinkle Yulelog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar06_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/23",
@@ -161,9 +223,13 @@
       "name": "Sprout Poinsenttia",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar07_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/24",
@@ -171,9 +237,13 @@
       "name": "Glacia Yuletide",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar08_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/25",
@@ -181,9 +251,13 @@
       "name": "Cotton Cranberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar09_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/26",
@@ -191,9 +265,13 @@
       "name": "Crunch Nutcracker",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar10_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/27",
@@ -201,9 +279,13 @@
       "name": "Gnarly Eggnog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar11_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/28",
@@ -211,9 +293,13 @@
       "name": "Spruce Tinselbaun",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar12_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/29",
@@ -221,9 +307,13 @@
       "name": "Kris North",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar13_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/3",
@@ -231,9 +321,13 @@
       "name": "Holy Garland",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar03_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/30",
@@ -241,9 +335,13 @@
       "name": "Bram Wreath",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar14_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/31",
@@ -251,9 +349,13 @@
       "name": "Snap Gingerbread",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar15_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/32",
@@ -261,9 +363,13 @@
       "name": "Dream Stocking",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Cold.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar16_Cold_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/33",
@@ -271,9 +377,13 @@
       "name": "Iriel Silverbell",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar01_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/34",
@@ -281,9 +391,13 @@
       "name": "Toffee Chestnut",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar02_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/35",
@@ -291,9 +405,13 @@
       "name": "Jingle Garland",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar03_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/36",
@@ -301,9 +419,13 @@
       "name": "Dancer Kringle",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar04_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/37",
@@ -311,9 +433,13 @@
       "name": "Chilly Claus",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar05_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/38",
@@ -321,9 +447,13 @@
       "name": "Milo Yulelog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar06_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/39",
@@ -331,9 +461,13 @@
       "name": "Jolly Poinsenttia",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar07_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/4",
@@ -341,9 +475,13 @@
       "name": "Comet Kringle",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar04_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/40",
@@ -351,9 +489,13 @@
       "name": "Icelyn Yuletide",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar08_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/41",
@@ -361,9 +503,13 @@
       "name": "Binky Cranberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar09_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/42",
@@ -371,9 +517,13 @@
       "name": "Creak Nutcracker",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar10_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/43",
@@ -381,9 +531,13 @@
       "name": "Rizzo Eggnog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar11_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/44",
@@ -391,9 +545,13 @@
       "name": "Festy Tinselbaun",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar12_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/45",
@@ -401,9 +559,13 @@
       "name": "Merry North",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar13_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/46",
@@ -411,9 +573,13 @@
       "name": "Vex Wreath",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar14_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/47",
@@ -421,9 +587,13 @@
       "name": "Munch Gingerbread",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar15_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/48",
@@ -431,9 +601,13 @@
       "name": "Snooze Stocking",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Warm.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar16_Warm_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/49",
@@ -441,9 +615,13 @@
       "name": "Nael Silverbell",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar01_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/5",
@@ -451,9 +629,13 @@
       "name": "Frosty Claus",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar05_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/50",
@@ -461,9 +643,13 @@
       "name": "Fluff Chestnut",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar02_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/51",
@@ -471,9 +657,13 @@
       "name": "Noel Garland",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar03_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/52",
@@ -481,9 +671,13 @@
       "name": "Rudolph Kringle",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar04_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/53",
@@ -491,9 +685,13 @@
       "name": "Snowball  Claus",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar05_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/54",
@@ -501,9 +699,13 @@
       "name": "Fawn Yulelog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar06_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/55",
@@ -511,9 +713,13 @@
       "name": "Bells Poinsenttia",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar07_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/56",
@@ -521,9 +727,13 @@
       "name": "Snowelle Yuletide",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar08_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/57",
@@ -531,9 +741,13 @@
       "name": "Snuggle Cranberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar09_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/58",
@@ -541,9 +755,13 @@
       "name": "Tink Nutcracker",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar10_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/59",
@@ -551,9 +769,13 @@
       "name": "Squeak Eggnog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar11_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/6",
@@ -561,9 +783,13 @@
       "name": "Merry Yulelog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar06_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/60",
@@ -571,9 +797,13 @@
       "name": "Firry Tinselbaun",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar12_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/61",
@@ -581,9 +811,13 @@
       "name": "Carol North",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar13_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/62",
@@ -591,9 +825,13 @@
       "name": "Rook Wreath",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar14_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/63",
@@ -601,9 +839,13 @@
       "name": "Zing Gingerbread",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar15_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/64",
@@ -611,9 +853,13 @@
       "name": "Slumb Stocking",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Xmas.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar16_Xmas_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/65",
@@ -621,9 +867,13 @@
       "name": "Vael Silverbell",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar01_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/66",
@@ -631,9 +881,13 @@
       "name": "Cupcake Chestnut",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar02_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/67",
@@ -641,9 +895,13 @@
       "name": "Hope Garland",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar03_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/68",
@@ -651,9 +909,13 @@
       "name": "Cupid Kringle",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar04_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/69",
@@ -661,9 +923,13 @@
       "name": "Frosty Jr Claus",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar05_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/7",
@@ -671,9 +937,13 @@
       "name": "Pip Poinsenttia",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar07_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/70",
@@ -681,9 +951,13 @@
       "name": "Berry Yulelog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar06_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/71",
@@ -691,9 +965,13 @@
       "name": "Candy Poinsenttia",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar07_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/72",
@@ -701,9 +979,13 @@
       "name": "Chill Yuletide",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar08_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/73",
@@ -711,9 +993,13 @@
       "name": "Hopper Cranberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar09_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/74",
@@ -721,9 +1007,13 @@
       "name": "Nutsy Nutcracker",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar10_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/75",
@@ -731,9 +1021,13 @@
       "name": "Scuttle Eggnog",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar11_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/76",
@@ -741,9 +1035,13 @@
       "name": "Tinsel Tinselbaun",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar12_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/77",
@@ -751,9 +1049,13 @@
       "name": "John North",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar13_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/78",
@@ -761,9 +1063,13 @@
       "name": "Hex Wreath",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar14_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/79",
@@ -771,9 +1077,13 @@
       "name": "Chip Gingerbread",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar15_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/8",
@@ -781,9 +1091,13 @@
       "name": "Crystal Yuletide",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar08_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/80",
@@ -791,9 +1105,13 @@
       "name": "Doze Stocking",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Pastel.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar16_Pastel_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/9",
@@ -801,9 +1119,13 @@
       "name": "Thumper Cranberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Neutral.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/Qmcy2yaDm9PxvG3VTmFrUNJJKgDHYAv3DshjAn1GBRDAsp/Avatar09_Neutral_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     }
   ]
 }

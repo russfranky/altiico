@@ -1,9 +1,11 @@
 {
   "schema": "hubzz-prealpha-source-avatars-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T00:53:57Z",
+  "generatedAt": "2026-08-11T01:03:35Z",
   "setSlug": "halloween-rising",
   "count": 60,
+  "reachableCount": 60,
+  "binaryValidatedCount": 0,
   "avatars": [
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/1",
@@ -11,9 +13,13 @@
       "name": "Mocking Spit: Strawberry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/10",
@@ -21,9 +27,13 @@
       "name": "Wendigo: Creamy",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Cream.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_Cream_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/11",
@@ -31,9 +41,13 @@
       "name": "Mocking Spit: Mint",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/12",
@@ -41,9 +55,13 @@
       "name": "Esktix: Fresh",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/13",
@@ -51,9 +69,13 @@
       "name": "Mimic Slime: Cherry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/14",
@@ -61,9 +83,13 @@
       "name": "Harvester: Orchad",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/15",
@@ -71,9 +97,13 @@
       "name": "Wendigo: Snow",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_White.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_White_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/16",
@@ -81,9 +111,13 @@
       "name": "Mocking Spit: Tomato",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/17",
@@ -91,9 +125,13 @@
       "name": "Esktix: Peach",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/18",
@@ -101,9 +139,13 @@
       "name": "Mimic Slime: Orange",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Orange.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Orange_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/19",
@@ -111,9 +153,13 @@
       "name": "Harvester: Lavender",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/2",
@@ -121,9 +167,13 @@
       "name": "Esktix: Midnight",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Black.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Black_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/20",
@@ -131,9 +181,13 @@
       "name": "Wendigo: Woods",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/21",
@@ -141,9 +195,13 @@
       "name": "Mocking Spit: Tangerine",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Yellow.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Yellow_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/22",
@@ -151,9 +209,13 @@
       "name": "Esktix: Daylight",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Yellow.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Yellow_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/23",
@@ -161,9 +223,13 @@
       "name": "Mimic Slime: Water",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/24",
@@ -171,9 +237,13 @@
       "name": "Harvester: Spring",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/25",
@@ -181,9 +251,13 @@
       "name": "Wendigo: Cake",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/26",
@@ -191,9 +265,13 @@
       "name": "Mocking Spit: Blue Berry",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/27",
@@ -201,9 +279,13 @@
       "name": "Esktix: Clear Sky",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/28",
@@ -211,9 +293,13 @@
       "name": "Mimic Slime: Candy",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/29",
@@ -221,9 +307,13 @@
       "name": "Harvester: Winter",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/3",
@@ -231,9 +321,13 @@
       "name": "Mimic Slime: Jello",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/30",
@@ -241,9 +335,13 @@
       "name": "Wendigo: Star Sky",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Black.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_Black_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/31",
@@ -251,9 +349,13 @@
       "name": "Mocking Spit: Meatball",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/32",
@@ -261,9 +363,13 @@
       "name": "Esktix: Darkness",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Black.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Black_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/33",
@@ -271,9 +377,13 @@
       "name": "Mimic Slime: Classic",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/34",
@@ -281,9 +391,13 @@
       "name": "Harvester: Drought",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Brown.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Brown_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/35",
@@ -291,9 +405,13 @@
       "name": "Wendigo: Brownie",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Brown.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_Brown_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/36",
@@ -301,9 +419,13 @@
       "name": "Mocking Spit: Vinyard",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/37",
@@ -311,9 +433,13 @@
       "name": "Esktix: Neon",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/38",
@@ -321,9 +447,13 @@
       "name": "Mimic Slime: Oil",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/39",
@@ -331,9 +461,13 @@
       "name": "Harvester: Autumm",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/4",
@@ -341,9 +475,13 @@
       "name": "Harvester: Wheat",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Brown.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Brown_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/40",
@@ -351,9 +489,13 @@
       "name": "Wendigo: Blond",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Cream.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_Cream_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/41",
@@ -361,9 +503,13 @@
       "name": "Mocking Spit: Sea Sick",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/42",
@@ -371,9 +517,13 @@
       "name": "Esktix: Forest",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/43",
@@ -381,9 +531,13 @@
       "name": "Mimic Slime: Purge",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/44",
@@ -391,9 +545,13 @@
       "name": "Harvester: Floral",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/45",
@@ -401,9 +559,13 @@
       "name": "Wendigo: Taiga",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_White.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_White_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/46",
@@ -411,9 +573,13 @@
       "name": "Mocking Spit: Spicy",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/47",
@@ -421,9 +587,13 @@
       "name": "Esktix: Magma",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/48",
@@ -431,9 +601,13 @@
       "name": "Mimic Slime: Bile",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Orange.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Orange_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/49",
@@ -441,9 +615,13 @@
       "name": "Harvester: Summer",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/5",
@@ -451,9 +629,13 @@
       "name": "Wendigo: Chocolate",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Brown.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v1_Cute_Brown_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/50",
@@ -461,9 +643,13 @@
       "name": "Wendigo: Zombie",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/51",
@@ -471,9 +657,13 @@
       "name": "Mocking Spit: Sunny",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Yellow.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Yellow_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/52",
@@ -481,9 +671,13 @@
       "name": "Esktix: Plague",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Yellow.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Yellow_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/53",
@@ -491,9 +685,13 @@
       "name": "Mimic Slime: Clear",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/54",
@@ -501,9 +699,13 @@
       "name": "Harvester: Spring",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Green.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Green_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/55",
@@ -511,9 +713,13 @@
       "name": "Wendigo: Fae",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/56",
@@ -521,9 +727,13 @@
       "name": "Mocking Spit: Ice Age",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v2_Stylized_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/57",
@@ -531,9 +741,13 @@
       "name": "Esktix: Depths",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v2_Stylized_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/58",
@@ -541,9 +755,13 @@
       "name": "Mimic Slime: Party",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v2_Stylized_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/59",
@@ -551,9 +769,13 @@
       "name": "Harvester: Winter",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Blue.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v2_Stylized_Blue_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/6",
@@ -561,9 +783,13 @@
       "name": "Mocking Spit: Grape",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar01_v1_Cute_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/60",
@@ -571,9 +797,13 @@
       "name": "Wendigo: Hollow",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Black.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar05_v2_Stylized_Black_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/7",
@@ -581,9 +811,13 @@
       "name": "Esktix: Bouquet",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Pink.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar02_v1_Cute_Pink_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/8",
@@ -591,9 +825,13 @@
       "name": "Mimic Slime: Grape",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Purple.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar03_v1_Cute_Purple_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     },
     {
       "id": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647/9",
@@ -601,9 +839,13 @@
       "name": "Harvester: Radish",
       "originalSourceUrl": "https://dweb.link/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Red.vrm",
       "thumbnailUrl": "https://dweb.link/ipfs/QmbWYPAuKNsRUopszrvuNbL1Kkpzg5LaWW4jDVfrHc3oeB/Avatar04_v1_Cute_Red_r1.png",
-      "validated": true,
+      "reachable": true,
+      "vrmValidated": false,
+      "validationScope": "glb_reachability",
       "checkedAt": "2026-08-10T17:00:00Z",
-      "checkStatus": "ok_glb"
+      "checkStatus": "ok_glb",
+      "vrmSpec": null,
+      "fileSizeOriginal": null
     }
   ]
 }
