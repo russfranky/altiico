@@ -50,11 +50,14 @@ jobs:
 
       - name: Discover Robinhood Chain NFT VRMs
         run: |
+          # Robinhood's current Blockscout accepts the combined NFT filter on
+          # the first page but rejects its emitted next-page parameters. Scan
+          # that reliable page now; pagination is tracked as an adapter issue.
           python scripts/discover_blockscout_vrms.py \
             --chain robinhood \
             --output data/robinhood_vrm_discovery_report.json \
-            --max-contracts 250 \
-            --max-pages 5 \
+            --max-contracts 50 \
+            --max-pages 1 \
             --sample-instances 12 \
             --timeout 10
 
