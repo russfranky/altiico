@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 
 from scripts.catalog_snapshot import compute_snapshot_id, record_snapshot
-from scripts.verify_catalog_consistency import verify
+from scripts.verify_catalog_consistency import _canonical_contracts, verify
 
 
 def make_conn() -> sqlite3.Connection:
@@ -36,6 +36,28 @@ def test_snapshot_changes_when_canonical_data_changes():
     conn.execute("UPDATE collections SET name='One updated' WHERE id='one'")
     conn.commit()
     assert compute_snapshot_id(conn) != first
+    conn.close()
+
+
+def test_primary_contract_row_overrides_stale_collection_mirror():
+    conn = make_conn()
+    conn.executescript(
+        """
+        CREATE TABLE contracts (
+            collection_id TEXT,
+            address TEXT,
+            is_primary INTEGER
+        );
+        INSERT INTO contracts VALUES (
+            'one',
+            '0x2222222222222222222222222222222222222222',
+            1
+        );
+        """
+    )
+    canonical, slug_to_id = _canonical_contracts(conn)
+    assert canonical["one"] == "0x2222222222222222222222222222222222222222"
+    assert slug_to_id["one"] == "one"
     conn.close()
 
 
