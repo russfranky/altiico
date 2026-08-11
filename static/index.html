@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VRM Collection Index</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="dark">
+<title>VRM Catalog</title>
 <link rel="stylesheet" href="app.css">
 <!-- Import map for the VRM viewer. @pixiv/three-vrm's module build uses bare
-     `import * as THREE from "three"`, so the browser needs this mapping — and it
-     guarantees ONE three instance (two copies break the VRM loader plugin). -->
+     imports, so the browser needs one shared three instance. -->
 <script type="importmap">
 {
   "imports": {
@@ -24,81 +21,113 @@
 <body>
 <header>
   <div class="header-inner">
-    <div class="controls">
-      <div class="search-wrap">
-        <input type="text" id="search" placeholder="Search collections, contracts, creators, descriptions…" oninput="onSearch()">
+    <div class="catalog-intro">
+      <div>
+        <h1>VRM catalog</h1>
+        <p>Find NFT collections with working VRM files and clear usage terms.</p>
       </div>
-      <select id="f-chain" onchange="filter()" title="Chain">
-        <option value="">All chains</option>
-        <option value="ethereum">Ethereum</option>
-        <option value="base">Base</option>
-        <option value="optimism">Optimism</option>
-        <option value="polygon">Polygon</option>
-        <option value="arbitrum">Arbitrum</option>
-        <option value="shape">Shape</option>
-        <option value="ape_chain">ApeChain</option>
-        <option value="multi">Multi-chain</option>
-      </select>
-      <select id="f-license" onchange="filter()" title="Licence">
-        <option value="">All licences</option>
-        <option value="green">Open / CC0</option>
-        <option value="yellow">Holder-gated</option>
-        <option value="red">Restricted</option>
-        <option value="unknown">Unknown</option>
-      </select>
-      <select id="f-vrm" onchange="filter()" title="VRM file status">
-        <option value="">Any VRM status</option>
-        <option value="live">Verified</option>
-        <option value="dead">Unreachable</option>
-        <option value="nourl">No VRM URL</option>
-      </select>
-      <select id="f-sort" onchange="filter()" title="Sort">
-        <option value="name">Sort: Name</option>
-        <option value="release_date">Sort: Launch date</option>
-        <option value="total_supply">Sort: Supply</option>
-        <option value="vrm">Sort: VRM status</option>
-        <option value="avatars_total">Sort: Files indexed</option>
-      </select>
+    </div>
+
+    <div class="controls" role="search" aria-label="Catalog filters">
+      <label class="search-wrap">
+        <span class="sr-only">Search collections</span>
+        <input
+          type="search"
+          id="search"
+          placeholder="Search collections, creators, or contracts"
+          autocomplete="off"
+          spellcheck="false"
+          oninput="onSearch()"
+        >
+      </label>
+
+      <label>
+        <span class="sr-only">Filter by chain</span>
+        <select id="f-chain" onchange="filter()" aria-label="Filter by chain">
+          <option value="">All chains</option>
+          <option value="ethereum">Ethereum</option>
+          <option value="base">Base</option>
+          <option value="optimism">Optimism</option>
+          <option value="polygon">Polygon</option>
+          <option value="arbitrum">Arbitrum</option>
+          <option value="shape">Shape</option>
+          <option value="ape_chain">ApeChain</option>
+          <option value="multi">Multi-chain</option>
+        </select>
+      </label>
+
+      <label>
+        <span class="sr-only">Filter by license</span>
+        <select id="f-license" onchange="filter()" aria-label="Filter by license">
+          <option value="">All licenses</option>
+          <option value="green">Open / CC0</option>
+          <option value="yellow">Holder-gated</option>
+          <option value="red">Restricted</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </label>
+
+      <label>
+        <span class="sr-only">Filter by VRM status</span>
+        <select id="f-vrm" onchange="filter()" aria-label="Filter by VRM status">
+          <option value="">Any VRM status</option>
+          <option value="live">Verified</option>
+          <option value="dead">Unreachable</option>
+          <option value="nourl">No VRM URL</option>
+        </select>
+      </label>
+
+      <label>
+        <span class="sr-only">Sort collections</span>
+        <select id="f-sort" onchange="filter()" aria-label="Sort collections">
+          <option value="name">Sort: name</option>
+          <option value="release_date">Sort: launch date</option>
+          <option value="total_supply">Sort: supply</option>
+          <option value="vrm">Sort: VRM status</option>
+          <option value="avatars_total">Sort: files indexed</option>
+        </select>
+      </label>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Collections -->
-  <div id="collectionsView">
+  <section id="collectionsView" aria-labelledby="collectionsHeading">
+    <h2 id="collectionsHeading" class="sr-only">Collections</h2>
     <div class="result-bar">
-      <span class="result-count" id="collCount"></span>
+      <span class="result-count" id="collCount" aria-live="polite"></span>
     </div>
-    <div class="card-grid" id="collectionsGrid"></div>
-    <div class="empty" id="emptyState" style="display:none">No collections match your filters.</div>
-  </div>
-
+    <div class="card-grid" id="collectionsGrid">
+      <div class="loading-msg">Loading catalog…</div>
+    </div>
+    <div class="empty" id="emptyState" style="display:none">No collections match these filters.</div>
+  </section>
 </main>
 
 <footer class="site-credits">
-  Data curated by
-  <a href="https://github.com/toxsam/open-source-avatars" target="_blank" rel="noopener">Open Source Avatars (ToxSam)</a> ·
-  <a href="https://github.com/itsmetamike/awesome-3D-avatar-collections" target="_blank" rel="noopener">awesome-3D-avatar-collections (itsmetamike)</a> ·
-  VRM spec by <a href="https://github.com/vrm-c/vrm-specification" target="_blank" rel="noopener">vrm-c</a> ·
-  viewer by <a href="https://github.com/pixiv/three-vrm" target="_blank" rel="noopener">pixiv/three-vrm</a>
+  Curated with data from
+  <a href="https://github.com/toxsam/open-source-avatars" target="_blank" rel="noopener">Open Source Avatars</a>
+  and
+  <a href="https://github.com/itsmetamike/awesome-3D-avatar-collections" target="_blank" rel="noopener">awesome-3D-avatar-collections</a>.
+  VRM viewer by <a href="https://github.com/pixiv/three-vrm" target="_blank" rel="noopener">pixiv/three-vrm</a>.
 </footer>
 
-<!-- Image preview modal -->
-<div id="imgModal" onclick="closeImgModal()">
-  <button id="imgModalClose" onclick="closeImgModal()">&times;</button>
+<!-- Image preview -->
+<div id="imgModal" role="dialog" aria-modal="true" aria-label="Image preview" onclick="closeImgModal()">
+  <button id="imgModalClose" type="button" aria-label="Close image preview" onclick="closeImgModal()">×</button>
   <div id="imgModalContent">
-    <img id="imgModalBanner" src="" style="display:none" alt="">
+    <img id="imgModalBanner" src="" alt="">
     <img id="imgModalImg" src="" alt="">
     <div id="imgModalLabel"></div>
   </div>
 </div>
 
-<!-- VRM viewer modal -->
-<div id="vrmModal">
+<!-- VRM viewer -->
+<div id="vrmModal" role="dialog" aria-modal="true" aria-labelledby="vrmModalTitle">
   <div id="vrmModalContent">
     <div id="vrmModalHeader">
-      <h3 id="vrmModalTitle">VRM Viewer</h3>
-      <button id="vrmModalClose" onclick="closeVrmModal()">&times;</button>
+      <h3 id="vrmModalTitle">VRM viewer</h3>
+      <button id="vrmModalClose" type="button" aria-label="Close VRM viewer" onclick="closeVrmModal()">×</button>
     </div>
     <div id="vrmCanvasContainer">
       <canvas id="vrmCanvas"></canvas>
@@ -107,7 +136,7 @@
     </div>
     <div id="vrmModalFooter">
       <span id="vrmFooterInfo"></span>
-      <a id="vrmFooterLink" href="#" target="_blank">Open VRM file ↗</a>
+      <a id="vrmFooterLink" href="#" target="_blank" rel="noopener">Open file ↗</a>
     </div>
   </div>
 </div>
