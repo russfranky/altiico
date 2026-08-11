@@ -1,0 +1,84 @@
+name: Robinhood Chain VRM discovery
+
+on:
+  push:
+    branches:
+      - agent/opensea-high-recall-discovery
+    paths:
+      - scripts/chain_registry.py
+      - scripts/discover_blockscout_vrms.py
+      - .github/workflows/robinhood-vrm-discovery.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * 2'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: robinhood-vrm-discovery-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Verify adapter
+        run: |
+          python -m py_compile scripts/chain_registry.py scripts/discover_blockscout_vrms.py
+          python - <<'PY'
+          from scripts.chain_registry import get_chain
+          chain = get_chain('robinhood')
+          assert chain.chain_id == 4663
+          assert chain.rpc_urls == ('https://rpc.mainnet.chain.robinhood.com',)
+          assert chain.blockscout_api == 'https://robinhoodchain.blockscout.com/api/v2'
+          print(chain)
+          PY
+
+      - name: Discover Robinhood Chain NFT VRMs
+        run: |
+          # Start with a bounded top-of-index pass. Robinhood Blockscout's
+          # emitted pagination parameters currently fail on replay, so widening
+          # happens incrementally rather than turning indexer instability into
+          # a false negative for the chain.
+          python scripts/discover_blockscout_vrms.py \
+            --chain robinhood \
+            --output data/robinhood_vrm_discovery_report.json \
+            --max-contracts 10 \
+            --max-pages 1 \
+            --sample-instances 6 \
+            --timeout 6
+
+      - name: Print measured yield
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('data/robinhood_vrm_discovery_report.json').read_text())
+          print(json.dumps(report['summary'], indent=2))
+          print('\nCONTRACTS SCANNED')
+          for row in report['contracts']:
+              print(row['contract'], row.get('name'), row['instances_sampled'], len(row['model_candidates']))
+          print('\nVALIDATED VRM CONTRACTS')
+          for row in report['contracts']:
+              if row['validated_vrms']:
+                  print(row['contract'], row.get('name'), len(row['validated_vrms']))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: robinhood-vrm-discovery
+          path: data/robinhood_vrm_discovery_report.json

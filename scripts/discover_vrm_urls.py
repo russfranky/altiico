@@ -27,19 +27,11 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from scripts.chain_registry import EVM_RPCS as RPCS  # noqa: E402
 from scripts.discover_metadata_fields import scan_metadata  # noqa: E402
 from scripts.check_vrm_reachable import check_url  # noqa: E402
 
 # Public RPCs by catalog chain name (no key). First that answers wins.
-RPCS: dict[str, list[str]] = {
-    "ethereum": ["https://ethereum-rpc.publicnode.com", "https://eth.llamarpc.com"],
-    "base": ["https://base-rpc.publicnode.com", "https://mainnet.base.org"],
-    "polygon": ["https://polygon-bor-rpc.publicnode.com", "https://polygon-rpc.com"],
-    "optimism": ["https://optimism-rpc.publicnode.com", "https://mainnet.optimism.io"],
-    "arbitrum": ["https://arbitrum-one-rpc.publicnode.com"],
-    "shape": ["https://mainnet.shape.network"],
-    "ape_chain": ["https://apechain.calderachain.xyz/http"],
-}
 TOKENURI_SELECTOR = "0xc87b56dd"  # tokenURI(uint256)
 
 

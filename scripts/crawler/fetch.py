@@ -14,6 +14,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from typing import Any, Callable
 
+from scripts.chain_registry import EVM_RPCS
 from scripts.crawler.models import (
     CrawlPolicy,
     FetchResult,
@@ -36,15 +37,6 @@ UA = "vrm-catalog-recursive-crawler/1.0"
 _REDIRECT_CODES = {301, 302, 303, 307, 308}
 _CONTRACT_RE = re.compile(r"^0x[a-fA-F0-9]{40}$")
 
-EVM_RPCS: dict[str, tuple[str, ...]] = {
-    "ethereum": ("https://ethereum-rpc.publicnode.com", "https://eth.llamarpc.com"),
-    "base": ("https://base-rpc.publicnode.com", "https://mainnet.base.org"),
-    "polygon": ("https://polygon-bor-rpc.publicnode.com", "https://polygon-rpc.com"),
-    "optimism": ("https://optimism-rpc.publicnode.com", "https://mainnet.optimism.io"),
-    "arbitrum": ("https://arbitrum-one-rpc.publicnode.com",),
-    "shape": ("https://mainnet.shape.network",),
-    "ape_chain": ("https://apechain.calderachain.xyz/http",),
-}
 TOKEN_URI_SELECTOR = "0xc87b56dd"  # tokenURI(uint256)
 ERC1155_URI_SELECTOR = "0x0e89341c"  # uri(uint256)
 

@@ -1,0 +1,77 @@
+name: OpenSea high-recall VRM discovery
+
+on:
+  push:
+    branches:
+      - agent/opensea-high-recall-discovery
+  workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * 3,6'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opensea-high-recall-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Verify discovery code
+        run: |
+          python -m py_compile scripts/opensea_client.py \
+            scripts/discover_opensea_candidates.py \
+            scripts/discover_opensea_nfts.py
+          python -m pytest tests/test_opensea_client.py -q
+
+      - name: Require OpenSea credential
+        run: |
+          if [ -z "$OPENSEA_API_KEY" ]; then
+            echo 'OPENSEA_API_KEY is not configured in GitHub Actions secrets.' >&2
+            exit 2
+          fi
+
+      - name: Search NFT leads and scan metadata
+        run: |
+          python scripts/discover_opensea_nfts.py \
+            --output data/opensea_nft_discovery_report.json \
+            --search-limit 50 \
+            --max-nfts 100 \
+            --nft-concurrency 6 \
+            --timeout 10
+
+      - name: Print measured yield
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('data/opensea_nft_discovery_report.json').read_text())
+          print(json.dumps(report['summary'], indent=2))
+          print('\nVALIDATED VRM NFT HITS')
+          for row in report['nfts']:
+              if row['validated_vrms']:
+                  print(f"{row['key']}: {len(row['validated_vrms'])}")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opensea-nft-high-recall-discovery
+          path: data/opensea_nft_discovery_report.json
