@@ -248,6 +248,7 @@ def _load_explicit_targets(conn: sqlite3.Connection, config: dict[str, Any]) -> 
                 token_ids=[int(item) for item in (raw.get("token_ids") or [])],
                 vrm_param=str(raw.get("vrm_param") or ""),
                 notes=str(raw.get("notes") or ""),
+                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),
                 resolution=resolution,
             )
         )
@@ -499,7 +500,7 @@ def run(args: argparse.Namespace) -> int:
         discovery_requests = 0
         for target in targets:
             print(f"[seed] {target.name}: {target.chain}:{target.contract}", file=sys.stderr)
-            token_ids = sampler.sample(target, token_limit)
+            token_ids = (_dedupe([*target.token_ids, *_extract_numeric_tail(target.sample_metadata_url)])[:token_limit] if target.sample_metadata_url else sampler.sample(target, token_limit))
             target.token_ids = token_ids
             discovery_requests += target.token_discovery_requests
             if target.sample_metadata_url:
