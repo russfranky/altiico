@@ -65,12 +65,21 @@ jobs:
             --markdown-report docs/live-discovery-latest.md \
             --build
 
+      - name: Rebuild the complete artifact snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
       - name: Verify crawler and catalog
         run: |
+          python scripts/verify_catalog_consistency.py
           python -m pytest tests/test_recursive_crawler.py -q
           python -m pytest tests/ -q
           node tests/catalog-performance.mjs
-          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
 
       - name: Commit measured results
         run: |
@@ -78,7 +87,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add scripts/run_live_discovery.py data/vrm_index.db \
             data/live_discovery_report.json docs/live-discovery-latest.md \
-            static/data static/sw.js
+            docs/hubzz-prealpha-staging.md static/data static/sw.js
           if git diff --cached --quiet; then
             echo 'No persisted discovery changes.'
             exit 0

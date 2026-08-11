@@ -1,7 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-10T00:04:41Z",
+  "generated_at": "2026-08-11T18:21:39Z",
+  "snapshot_id": "vrmcat-v1-eb0cd1a4c2d769b0eb3a3845",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -40,7 +41,7 @@
       "license": "Unknown",
       "chain": "ethereum",
       "storage_provider": "self-host",
-      "contract": "0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+      "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
       "banner": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/e70e58fdece34aadec4f34e078e494/e4e70e58fdece34aadec4f34e078e494.gif",
       "avatar_count": 4875,
@@ -50,7 +51,7 @@
     },
     {
       "slug": "cyberbrokers",
-      "name": "CyberBrokers (Genesis Mechs)",
+      "name": "CyberBrokers",
       "description": "CyberBrokers is a first-of-its-kind art collectibles ecosystem centered around 10,001 unique and on-chain CyberBroker NFTs.",
       "license": "Unknown",
       "chain": "ethereum",
@@ -110,7 +111,7 @@
     },
     {
       "slug": "forgottenruneswizardscult",
-      "name": "Forgotten Runes Wizard Cult",
+      "name": "Forgotten Runes Wizards Cult",
       "description": "The Forgotten Runes Wizard's Cult is a collaborative legendarium. 10,000 unique Wizard NFTs, fully encoded on-chain. \r\n\r\n[Website](http://forgottenrunes.com) | [Discord](https://discord.gg/forgottenrunes) | [Twitter](https://twitter.com/forgottenrunes) | [Book of Lore](https://www.forgottenrunes.com/lore) | [Principles](https://www.forgottenrunes.com/posts/principles) | [Goodies](https://www.forgottenrunes.com/posts/goodies)\r\n\r\n[All Sister Collections](https://opensea.io/collection/forgottenrunes):\r\n\r\n[Sacred Flame](https://opensea.io/assets/0x31158181b4b91a423bfdc758fc3bf8735711f9c5/0) | [Forgotten Souls](https://opensea.io/collection/forgottensouls) | [Forgotten Ponies](https://opensea.io/collection/forgottenrunesponies)\r\n\r\nWizard NFT holders have not only the _image_, but the _character_ of that Wizard. Day by day, the Wizards in our collection come alive as our community builds lore, maps, stories, poems, art, and animation.\r\n\r\nJoin the Cult",
       "license": "Unknown",
       "chain": "ethereum",
@@ -135,21 +136,6 @@
       "pfp": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/fb845489b0fe91f776bcc5459ad75d/e3fb845489b0fe91f776bcc5459ad75d.gif",
       "avatar_count": 400,
       "purchase_gated": true,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
-      "slug": "grifterssquaddies",
-      "name": "Grifters Squaddies",
-      "description": "Grifters gonna grift!",
-      "license": "CC0",
-      "chain": "base",
-      "storage_provider": "self-host",
-      "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
-      "banner": "https://i2c.seadn.io/base/315b5ff7474349e5b6f649e16f212e92/0859c0a7d18c1df81b1bbd03adc2dc/aa0859c0a7d18c1df81b1bbd03adc2dc.png?fit=inside",
-      "pfp": "https://i2c.seadn.io/base/315b5ff7474349e5b6f649e16f212e92/f3c280a13f427b6b13199b2b207ccc/46f3c280a13f427b6b13199b2b207ccc.png",
-      "avatar_count": 1453,
-      "purchase_gated": false,
       "status": "staged",
       "tier": "A"
     },
@@ -220,7 +206,7 @@
       "license": "CC0",
       "chain": "ethereum",
       "storage_provider": "self-host",
-      "contract": null,
+      "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
       "banner": null,
       "pfp": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
       "avatar_count": null,
@@ -304,66 +290,6 @@
       "tier": "A"
     },
     {
-      "slug": "retrodogesnft",
-      "name": "RetroDoges",
-      "description": "RetroDoges NFT is a Collection of 6969 Unique RetroDoge NFTs on the ETHEREUM blockchain.\r\nA tribute to 80’s and early 90’s Pop Culture & Nostalgia.\r\nOur roadmap is simple : \"Art is Timeless… the Future is Retro.\"\r\nThe artwork of RetroDoges is released under the CC0 licence.",
-      "license": "CC0",
-      "chain": "ethereum",
-      "storage_provider": "self-host",
-      "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
-      "banner": "https://i2c.seadn.io/ethereum/fd6e147b4043451b8910e3305441fefc/7289ba792daffeef185e0a93f76e57/3b7289ba792daffeef185e0a93f76e57.jpeg?fit=inside",
-      "pfp": "https://i2c.seadn.io/ethereum/fd6e147b4043451b8910e3305441fefc/13e1d341d63ad1decd3b4daed24264/b813e1d341d63ad1decd3b4daed24264.png",
-      "avatar_count": 6969,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
-      "slug": "toxsam-base-side",
-      "name": "ToxSam (Base side)",
-      "description": null,
-      "license": "CC0",
-      "chain": "base",
-      "storage_provider": "self-host",
-      "contract": "0x59202483529a11642a43578a6ee77ca4ec24f930",
-      "banner": null,
-      "pfp": "https://i2c.seadn.io/base/0x59202483529a11642a43578a6ee77ca4ec24f930/2772ffe6742c1b378fe50f27fd919f/0b2772ffe6742c1b378fe50f27fd919f.png",
-      "avatar_count": 106,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
-      "slug": "vipe-heroes",
-      "name": "VIPE Heroes",
-      "description": "VIPE is the interoperable NFT 3D Avatar Marketplace. VIPE Heroes is VIPE’s Genesis Avatar Collection, launched with VIPE’s marketplace on June 1st 2023. With a supply of 3,000 avatars, users can log into https://vipe.io/heroes to reroll from a huge pool of avatar combinations, and choose to mint the one they like the most. Inspired by the classic anime style, with a twist, our Heroes are visually striking, with angular forms, stylized features, and exaggerated expressions. Use our Heroes (or any avatar on our platform) in games, metaverse platforms, vtubing apps, VR, AR and many more. Some popular metaverse platforms are OnCyber, Hyperfy and Monaverse. We use VRM and blockchain technologies to bring true ownership and interoperability over your digital identity. We develop the tools for any avatar listed on our platform to enjoy extra interoperability with connected platforms and apps. VIPE is powered by Polygonal Mind and CryptoAvatars.",
-      "license": "CC-BY",
-      "chain": "ethereum",
-      "storage_provider": "ipfs",
-      "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
-      "banner": "https://i2c.seadn.io/ethereum/a0d060f48f874685b1d4f3d37c313a54/29f66e5492c40bd190d6e858521e4f/cf29f66e5492c40bd190d6e858521e4f.jpeg?fit=inside",
-      "pfp": "https://i2c.seadn.io/ethereum/a0d060f48f874685b1d4f3d37c313a54/d3ef940fb05d2b946157c663b5fb78/d6d3ef940fb05d2b946157c663b5fb78.gif",
-      "avatar_count": 2779,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
-      "slug": "vipe-heroes-genesis",
-      "name": "VIPE Heroes Genesis",
-      "description": "Genesis PFP collection of VIPE NFT Avatar Marketplace. With interoperability, IP Commercial Rights and Customization.",
-      "license": "CC-BY",
-      "chain": "ethereum",
-      "storage_provider": "self-host",
-      "contract": null,
-      "banner": null,
-      "pfp": "https://dweb.link/ipfs/QmaZwAVGuf6zstdMBHt8zQRao6vS5huhjez1z6sRfxHfHL/VIPEHero_1_r1.png",
-      "avatar_count": 3000,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
       "slug": "xmas-chibis",
       "name": "Xmas Chibis",
       "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM avatars with 16 designs and 5 variations on Polygon.",
@@ -377,51 +303,6 @@
       "purchase_gated": true,
       "status": "staged",
       "tier": "A"
-    },
-    {
-      "slug": "100avatars-r1",
-      "name": "100Avatars R1",
-      "description": "The first 100 avatars series (001-100)",
-      "license": "CC0",
-      "chain": null,
-      "storage_provider": "self-host",
-      "contract": null,
-      "banner": null,
-      "pfp": "https://arweave.net/llxwUMPCfar71x4hLTU4f1-pcsYeGDUD4Gxm1dhWaDg",
-      "avatar_count": 100,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
-      "slug": "100avatars-r2",
-      "name": "100Avatars R2",
-      "description": "The second 100 avatars series (101-200)",
-      "license": "CC0",
-      "chain": null,
-      "storage_provider": "self-host",
-      "contract": null,
-      "banner": null,
-      "pfp": "https://arweave.net/PEr2Dv1Ds_Y_c4iXhLJwdA9GZHXC8CkK-QWipd17gOo",
-      "avatar_count": null,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
-      "slug": "100avatars-r3",
-      "name": "100Avatars R3",
-      "description": "The third 100 avatars series (201-300)",
-      "license": "CC0",
-      "chain": null,
-      "storage_provider": "self-host",
-      "contract": null,
-      "banner": null,
-      "pfp": "https://arweave.net/ykIvWqlTvC66lekANOqTgr7bqujwgOqrlmSzzLHhkJw",
-      "avatar_count": null,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
     },
     {
       "slug": "avastars",
@@ -649,21 +530,6 @@
       "tier": "B"
     },
     {
-      "slug": "toxsam",
-      "name": "ToxSam",
-      "description": "Collection of NFT avatars by ToxSam across Ethereum and Base networks",
-      "license": "Unknown",
-      "chain": null,
-      "storage_provider": "self-host",
-      "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
-      "banner": null,
-      "pfp": "https://gateway.pinata.cloud/ipfs/QmbFgSiuyBmcKDEHS3fonHM2EJQxiWmmr56crMKimcYf7m/orion_normal.png",
-      "avatar_count": 10,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
       "slug": "toxic-skulls-club",
       "name": "Toxic Skulls Club",
       "description": "Toxic Skulls Club is a community driven collection of 9,999 unique Toxic Skulls NFTs.\r\n\r\nBeing a Toxic Skulls Club holder grants you access to holders only benefits such as exclusive drops, events and more. Each Toxic Skull allows its holder to vote on experiences, future perks and utilities that will be paid by the Community Wallet.\r\n\r\nVisit www.ToxicSkullsClub.io for more details.\r\n\r\nStay Toxic!",
@@ -732,11 +598,6 @@
     },
     {
       "slug": "cryptoavatars",
-      "reason": "chain 'multi' not in pre-alpha ChainSchema enum",
-      "original_chain": "multi"
-    },
-    {
-      "slug": "toxsam",
       "reason": "chain 'multi' not in pre-alpha ChainSchema enum",
       "original_chain": "multi"
     }

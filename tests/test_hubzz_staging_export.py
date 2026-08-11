@@ -320,6 +320,7 @@ def test_bundle_validation_and_summary(tmp_path):
     )
     bundle = build_bundle(conn, tmp_path / "hubzz-prealpha-staging.json")
     assert validate_bundle(bundle) == []
+    assert bundle["snapshotId"].startswith("vrmcat-v1-")
     assert bundle["summary"]["stageableSets"] == 1
     assert bundle["summary"]["deferredSets"] == 1
     assert bundle["summary"]["binaryValidatedSourceAvatars"] == 1

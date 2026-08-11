@@ -18,6 +18,7 @@ class CrawlPolicy:
     lease_seconds: int = 300
     max_document_bytes: int = 2_000_000
     max_vrm_json_bytes: int = 4_000_000
+    max_vrm_bytes: int = 64 * 1024 * 1024
     max_links_per_document: int = 500
     max_redirects: int = 5
     mutable_ttl_seconds: int = 86_400
@@ -33,6 +34,7 @@ class CrawlPolicy:
             "lease_seconds": self.lease_seconds,
             "max_document_bytes": self.max_document_bytes,
             "max_vrm_json_bytes": self.max_vrm_json_bytes,
+            "max_vrm_bytes": self.max_vrm_bytes,
             "max_links_per_document": self.max_links_per_document,
             "max_redirects": self.max_redirects,
             "mutable_ttl_seconds": self.mutable_ttl_seconds,
@@ -96,6 +98,9 @@ class VrmValidation:
     content_sha256: str = ""
     network_requests: int = 0
     error: str = ""
+    observed_length: int | None = None
+    json_chunk_sha256: str = ""
+    extractor_version: str = "recursive-crawler-2"
 
 
 class CrawlError(RuntimeError):

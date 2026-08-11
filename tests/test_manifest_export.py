@@ -65,6 +65,7 @@ def test_manifest_validates_against_schema(manifest):
 def test_manifest_top_level_fields(manifest):
     assert manifest["schema"].startswith("http")
     assert manifest["version"].count(".") == 2  # semver-ish
+    assert manifest["snapshot_id"].startswith("vrmcat-v1-")
     assert "collections" in manifest and isinstance(manifest["collections"], list)
 
 

@@ -33,6 +33,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.catalog_snapshot import record_snapshot, snapshot_created_at
+except ModuleNotFoundError:
+    from catalog_snapshot import record_snapshot, snapshot_created_at
+
 REGISTRY_SCHEMA = "hubzz-avatars-registry-v1"
 
 # The pre-alpha ChainSchema enum (packages/avatars/schema/src/avatar.ts).
@@ -158,7 +163,7 @@ def build_entry(row: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | N
         "license": _license_label(row),
         "chain": chain,
         "storage_provider": _storage_provider(row),
-        "contract": _norm(row.get("contract")),
+        "contract": _norm(row.get("_canonical_contract")) or _norm(row.get("contract")),
         "banner": _norm(row.get("banner_image_url")),
         "pfp": _norm(row.get("image_url")) or _norm(row.get("sample_nft_image")),
         "avatar_count": _avatar_count(row),
@@ -201,7 +206,11 @@ def parse_tiers(raw: str) -> set[str]:
     return tiers
 
 
-def build_registry(rows: list[dict[str, Any]]) -> dict[str, Any]:
+def build_registry(
+    rows: list[dict[str, Any]],
+    snapshot_id: str | None = None,
+    generated_at: str | None = None,
+) -> dict[str, Any]:
     entries: list[dict[str, Any]] = []
     unmapped: list[dict[str, Any]] = []
     for row in rows:
@@ -212,7 +221,8 @@ def build_registry(rows: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "schema": REGISTRY_SCHEMA,
         "source": "vrm-catalog",
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": generated_at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "snapshot_id": snapshot_id,
         "collections": entries,
         "unmapped": unmapped,
     }
@@ -235,12 +245,30 @@ def main(argv: Iterable[str] | None = None) -> int:
 
     tiers = parse_tiers(args.tier)
     conn = sqlite3.connect(str(db_path))
+    conn.row_factory = sqlite3.Row
     try:
+        snapshot_id = record_snapshot(conn)
+        generated_at = snapshot_created_at(conn, snapshot_id)
         rows = load_collections(conn, tiers)
+        primary_contracts = {
+            str(item["collection_id"]): item["address"]
+            for item in conn.execute(
+                """
+                SELECT collection_id, address
+                FROM contracts
+                WHERE is_primary=1
+                ORDER BY collection_id, rowid
+                """
+            )
+        } if conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='contracts'"
+        ).fetchone() else {}
+        for row in rows:
+            row["_canonical_contract"] = primary_contracts.get(str(row["id"]))
     finally:
         conn.close()
 
-    registry = build_registry(rows)
+    registry = build_registry(rows, snapshot_id, generated_at)
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)

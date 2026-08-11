@@ -201,6 +201,7 @@ Co-Authored-By: Devin <158243242+devin-ai-integration[bot]@users.noreply.github.
    `python scripts/build_catalog.py` and verify `build-info.json` is sane.
 4. If you changed the manifest exporter:
    `python scripts/export_hubzz_manifest.py --validate`.
+5. Regenerate every projection and run `python scripts/verify_catalog_consistency.py`.
 
 ## DB schema overview
 

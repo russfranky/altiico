@@ -27,6 +27,11 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlsplit
 
+try:
+    from scripts.catalog_snapshot import record_snapshot, snapshot_created_at
+except ModuleNotFoundError:
+    from catalog_snapshot import record_snapshot, snapshot_created_at
+
 SCHEMA_NAME = "hubzz-prealpha-staging-v1"
 SCHEMA_VERSION = 1
 PREALPHA_CHAINS = {"ethereum", "zora", "polygon", "base", "optimism", "arbitrum"}
@@ -424,6 +429,7 @@ def stage_record(
     generated_at: str,
     assets_root: Path,
     discovery_contracts: dict[str, tuple[str, str]] | None = None,
+    snapshot_id: str | None = None,
 ) -> tuple[dict[str, Any] | None, dict[str, Any]]:
     discovery_contracts = discovery_contracts or {}
     collection_id = str(row["id"])
@@ -491,6 +497,7 @@ def stage_record(
         "schema": "hubzz-prealpha-source-avatars-v1",
         "schemaVersion": 1,
         "generatedAt": generated_at,
+        "snapshotId": snapshot_id,
         "setSlug": collection_id,
         "count": len(source_avatars),
         "reachableCount": sum(1 for item in source_avatars if item["reachable"]),
@@ -571,8 +578,10 @@ def build_bundle(
     conn: sqlite3.Connection,
     output_path: Path,
     discovery_contracts: dict[str, tuple[str, str]] | None = None,
+    snapshot_id: str | None = None,
 ) -> dict[str, Any]:
-    generated_at = utc_now()
+    snapshot_id = snapshot_id or record_snapshot(conn)
+    generated_at = snapshot_created_at(conn, snapshot_id)
     assets_root = output_path.parent / "hubzz-prealpha-source"
     assets_root.mkdir(parents=True, exist_ok=True)
     for stale in assets_root.glob("*.json"):
@@ -583,7 +592,7 @@ def build_bundle(
     rows = load_rows(conn)
     for row in rows:
         entry, deferred_entry = stage_record(
-            conn, row, generated_at, assets_root, discovery_contracts
+            conn, row, generated_at, assets_root, discovery_contracts, snapshot_id
         )
         if entry:
             stageable.append(entry)
@@ -611,6 +620,7 @@ def build_bundle(
         "schema": SCHEMA_NAME,
         "schemaVersion": SCHEMA_VERSION,
         "generatedAt": generated_at,
+        "snapshotId": snapshot_id,
         "source": {"repository": "russfranky/vrm-catalog", "database": "data/vrm_index.db"},
         "summary": summary,
         "sets": stageable,
@@ -622,6 +632,8 @@ def validate_bundle(bundle: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     if bundle.get("schema") != SCHEMA_NAME or bundle.get("schemaVersion") != SCHEMA_VERSION:
         errors.append("wrong staging schema or version")
+    if not isinstance(bundle.get("snapshotId"), str) or not bundle.get("snapshotId"):
+        errors.append("missing snapshotId")
     seen: set[str] = set()
     for index, item in enumerate(bundle.get("sets") or []):
         record = item.get("set") or {}
@@ -659,6 +671,7 @@ def write_markdown(bundle: dict[str, Any], path: Path) -> None:
         "# Hubzz pre-alpha staging bundle",
         "",
         f"Generated at: `{bundle['generatedAt']}`",
+        f"Snapshot: `{bundle['snapshotId']}`",
         "",
         "## Summary",
         "",

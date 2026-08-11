@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""Centralized OpenSea API v2 client with token-bucket rate limiting,
-Retry-After handling, and exponential backoff. All other scripts should
-import from here instead of re-implementing."""
+"""Centralized OpenSea API v2 client.
 
+Credentials are server-side only: ``OPENSEA_API_KEY`` is preferred, with
+``~/.opensea/api_key`` retained as a local-development fallback. Requests use a
+small concurrency gate, bounded retries, Retry-After handling, and correct Unix
+rate-reset arithmetic.
+"""
 from __future__ import annotations
 
 import asyncio
 import os
 import random
 import sys
+import time
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Awaitable, Callable, Optional
 
 import aiohttp
 
@@ -27,6 +31,8 @@ CHAIN_MAP: dict[str, str] = {
 }
 
 MAX_ATTEMPTS = 6
+MAX_SINGLE_RETRY_DELAY = 60.0
+MAX_CUMULATIVE_RETRY_DELAY = 180.0
 
 
 def _log(msg: str) -> None:
@@ -34,24 +40,39 @@ def _log(msg: str) -> None:
 
 
 class OpenSeaClient:
-    """Async OpenSea API v2 client with token-bucket rate limiting."""
+    """Async OpenSea API v2 client with bounded, rate-aware requests."""
 
-    def __init__(self, api_key_path: Optional[str] = None) -> None:
+    def __init__(
+        self,
+        api_key_path: Optional[str] = None,
+        *,
+        api_key: Optional[str] = None,
+        max_concurrency: int = 2,
+        sleeper: Callable[[float], Awaitable[None]] = asyncio.sleep,
+    ) -> None:
         path = Path(api_key_path) if api_key_path else Path.home() / ".opensea" / "api_key"
-        self._api_key = path.read_text().strip()
+        resolved = (api_key or os.environ.get("OPENSEA_API_KEY") or "").strip()
+        if not resolved and path.exists():
+            resolved = path.read_text(encoding="utf-8").strip()
+        if not resolved:
+            raise RuntimeError(
+                "OpenSea API key is not configured; set OPENSEA_API_KEY or "
+                f"create {path}"
+            )
+        if max_concurrency < 1:
+            raise ValueError("max_concurrency must be at least 1")
+        self._api_key = resolved
         self._headers = {
             "Accept": "application/json",
             "X-API-KEY": self._api_key,
+            "User-Agent": "vrm-catalog/1.0",
         }
         self._session: Optional[aiohttp.ClientSession] = None
-
-    # ------------------------------------------------------------------ session
+        self._semaphore = asyncio.Semaphore(max_concurrency)
+        self._sleep = sleeper
 
     async def _get_session(self) -> aiohttp.ClientSession:
         if self._session is None or self._session.closed:
-            # NB: no base_url — newer aiohttp requires it to end with '/', which
-            # conflicts with our leading-slash request paths. _request prepends
-            # BASE_URL to the full URL instead.
             self._session = aiohttp.ClientSession(
                 headers=self._headers,
                 timeout=aiohttp.ClientTimeout(total=30),
@@ -69,8 +90,6 @@ class OpenSeaClient:
     async def __aexit__(self, *exc: Any) -> None:
         await self.close()
 
-    # ----------------------------------------------------------------- requests
-
     async def _request(
         self,
         method: str,
@@ -79,113 +98,127 @@ class OpenSeaClient:
         params: Optional[dict[str, Any]] = None,
         json_body: Optional[dict[str, Any]] = None,
     ) -> Any:
-        """Issue a request with rate-limit awareness, 429 retry, and 5xx backoff."""
+        """Issue a request with finite retry and rate-limit budgets."""
         session = await self._get_session()
-        attempt = 0
-        while True:
-            attempt += 1
+        cumulative_retry_delay = 0.0
+
+        for attempt in range(1, MAX_ATTEMPTS + 1):
             try:
                 full_url = url if url.startswith("http") else BASE_URL + url
-                async with session.request(
-                    method, full_url, params=params, json=json_body
-                ) as resp:
-                    remaining = resp.headers.get("X-RateLimit-Remaining")
-                    limit = resp.headers.get("X-RateLimit-Limit")
-                    reset = resp.headers.get("X-RateLimit-Reset")
-                    status = resp.status
+                retry_delay: float | None = None
+                payload: Any = None
+                reset_after_success: str | None = None
 
-                    _log(
-                        f"[opensea] {method} {url} -> {status} "
-                        f"(remaining={remaining}/{limit})"
-                    )
-
-                    # Pre-emptive rate-limit sleep before yielding the response
-                    if remaining is not None:
-                        try:
-                            rem_int = int(remaining)
-                        except ValueError:
-                            rem_int = None
-                        if rem_int is not None and rem_int <= 1 and reset:
-                            await self._sleep_until_reset(reset)
-
-                    if status == 429:
-                        retry_after = resp.headers.get("Retry-After", "5")
-                        try:
-                            wait = float(retry_after)
-                        except ValueError:
-                            wait = 5.0
-                        wait += random.uniform(0, 1)
-                        _log(f"[opensea] 429 rate limited, sleeping {wait:.1f}s")
-                        await asyncio.sleep(wait)
-                        continue
-
-                    if 500 <= status < 600:
-                        if attempt >= MAX_ATTEMPTS:
-                            raise RuntimeError("OpenSea retry budget exhausted")
-                        backoff = (2 ** attempt) + random.uniform(0, 1)
-                        _log(f"[opensea] {status} server error, backoff {backoff:.1f}s")
-                        await asyncio.sleep(backoff)
-                        continue
-
-                    if status >= 400:
-                        body = await resp.text()
-                        raise RuntimeError(
-                            f"OpenSea API error {status} for {method} {url}: {body[:300]}"
+                async with self._semaphore:
+                    async with session.request(
+                        method, full_url, params=params, json=json_body
+                    ) as resp:
+                        remaining = resp.headers.get("X-RateLimit-Remaining")
+                        limit = resp.headers.get("X-RateLimit-Limit")
+                        reset = resp.headers.get("X-RateLimit-Reset")
+                        status = resp.status
+                        _log(
+                            f"[opensea] {method} {url} -> {status} "
+                            f"(attempt={attempt}/{MAX_ATTEMPTS}, remaining={remaining}/{limit})"
                         )
 
-                    return await resp.json()
+                        if status == 429:
+                            if attempt >= MAX_ATTEMPTS:
+                                body = await resp.text()
+                                raise RuntimeError(
+                                    f"OpenSea retry budget exhausted after HTTP 429: {body[:200]}"
+                                )
+                            retry_after = resp.headers.get("Retry-After", "5")
+                            try:
+                                retry_delay = float(retry_after)
+                            except (TypeError, ValueError):
+                                retry_delay = 5.0
+                            retry_delay = min(
+                                MAX_SINGLE_RETRY_DELAY,
+                                max(0.0, retry_delay) + random.uniform(0, 1),
+                            )
+                        elif 500 <= status < 600:
+                            if attempt >= MAX_ATTEMPTS:
+                                raise RuntimeError("OpenSea retry budget exhausted")
+                            retry_delay = min(
+                                MAX_SINGLE_RETRY_DELAY,
+                                (2**attempt) + random.uniform(0, 1),
+                            )
+                        elif status >= 400:
+                            body = await resp.text()
+                            raise RuntimeError(
+                                f"OpenSea API error {status} for {method} {url}: {body[:300]}"
+                            )
+                        else:
+                            payload = await resp.json()
+                            if remaining is not None and reset:
+                                try:
+                                    if int(remaining) <= 1:
+                                        reset_after_success = reset
+                                except ValueError:
+                                    pass
 
-            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
+                if retry_delay is not None:
+                    cumulative_retry_delay += retry_delay
+                    if cumulative_retry_delay > MAX_CUMULATIVE_RETRY_DELAY:
+                        raise RuntimeError("OpenSea cumulative retry delay budget exhausted")
+                    _log(f"[opensea] retrying after {retry_delay:.1f}s")
+                    await self._sleep(retry_delay)
+                    continue
+
+                if reset_after_success:
+                    await self._sleep_until_reset(reset_after_success)
+                return payload
+
+            except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
                 if attempt >= MAX_ATTEMPTS:
-                    raise RuntimeError("OpenSea retry budget exhausted") from e
-                backoff = (2 ** attempt) + random.uniform(0, 1)
-                _log(f"[opensea] {type(e).__name__}: {e}, backoff {backoff:.1f}s")
-                await asyncio.sleep(backoff)
+                    raise RuntimeError("OpenSea retry budget exhausted") from exc
+                delay = min(
+                    MAX_SINGLE_RETRY_DELAY,
+                    (2**attempt) + random.uniform(0, 1),
+                )
+                cumulative_retry_delay += delay
+                if cumulative_retry_delay > MAX_CUMULATIVE_RETRY_DELAY:
+                    raise RuntimeError("OpenSea cumulative retry delay budget exhausted") from exc
+                _log(f"[opensea] {type(exc).__name__}: {exc}, backoff {delay:.1f}s")
+                await self._sleep(delay)
+
+        raise RuntimeError("OpenSea retry budget exhausted")
 
     async def _sleep_until_reset(self, reset: str) -> None:
-        """Sleep until the epoch-second reset time given by X-RateLimit-Reset."""
+        """Sleep until OpenSea's Unix-epoch ``X-RateLimit-Reset`` value."""
         try:
             reset_ts = float(reset)
         except (TypeError, ValueError):
             return
-        wait = max(0.0, reset_ts - asyncio.get_event_loop().time())
+        wait = min(MAX_SINGLE_RETRY_DELAY, max(0.0, reset_ts - time.time()))
         if wait > 0:
             _log(f"[opensea] rate bucket nearly empty, sleeping {wait:.1f}s until reset")
-            await asyncio.sleep(wait)
-
-    # ------------------------------------------------------------------- public
+            await self._sleep(wait)
 
     async def get_collection(self, slug: str) -> dict[str, Any]:
-        """GET /collections/{slug} — collection metadata."""
         return await self._request("GET", f"/collections/{slug}")
 
     async def get_collection_stats(self, slug: str) -> dict[str, Any]:
-        """GET /collections/{slug}/stats — floor, volume, owner counts."""
         return await self._request("GET", f"/collections/{slug}/stats")
 
     async def get_nft(
         self, chain: str, contract: str, token_id: str
     ) -> dict[str, Any]:
-        """GET /chain/{chain}/contract/{contract}/nfts/{token_id} — single NFT."""
         os_chain = CHAIN_MAP.get(chain, chain)
         return await self._request(
-            "GET",
-            f"/chain/{os_chain}/contract/{contract}/nfts/{token_id}",
+            "GET", f"/chain/{os_chain}/contract/{contract}/nfts/{token_id}"
         )
 
     async def get_collection_nfts(
         self, slug: str, cursor: Optional[str] = None
     ) -> dict[str, Any]:
-        """GET /collection/{slug}/nfts — paginated NFT list (limit=100)."""
         params: dict[str, Any] = {"limit": 100}
         if cursor:
             params["next"] = cursor
-        return await self._request(
-            "GET", f"/collection/{slug}/nfts", params=params
-        )
+        return await self._request("GET", f"/collection/{slug}/nfts", params=params)
 
     async def batch_collections(self, slugs: list[str]) -> dict[str, Any]:
-        """POST /collections/batch — metadata for multiple slugs at once."""
         return await self._request(
             "POST", "/collections/batch", json_body={"slugs": slugs}
         )
@@ -193,18 +226,14 @@ class OpenSeaClient:
     async def get_contract_nfts(
         self, chain: str, contract: str, cursor: Optional[str] = None
     ) -> dict[str, Any]:
-        """GET /chain/{chain}/contract/{contract}/nfts — paginated NFT list (limit=100)."""
         os_chain = CHAIN_MAP.get(chain, chain)
         params: dict[str, Any] = {"limit": 100}
         if cursor:
             params["next"] = cursor
         return await self._request(
-            "GET",
-            f"/chain/{os_chain}/contract/{contract}/nfts",
-            params=params,
+            "GET", f"/chain/{os_chain}/contract/{contract}/nfts", params=params
         )
 
 
 def run_async(coro: Any) -> Any:
-    """Sync wrapper for CLI usage — runs a coroutine to completion."""
     return asyncio.run(coro)

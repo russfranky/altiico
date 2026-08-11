@@ -465,58 +465,80 @@ class NetworkLoader:
     def validate_vrm(self, value: str) -> VrmValidation:
         canonical = canonicalize_uri(value)
         requests = 0
+        transport_url = transport_candidates(canonical)[0]
+
+        def outcome(
+            *,
+            valid: bool,
+            status: str,
+            vrm_spec: str | None = None,
+            raw_meta: dict[str, Any] | None = None,
+            total_length: int | None = None,
+            content_sha256: str = "",
+            json_chunk_sha256: str = "",
+            observed_length: int | None = None,
+            error: str = "",
+        ) -> VrmValidation:
+            return VrmValidation(
+                canonical_url=canonical,
+                transport_url=transport_url,
+                valid=valid,
+                status=status,
+                vrm_spec=vrm_spec,
+                raw_meta=raw_meta,
+                total_length=total_length,
+                content_sha256=content_sha256,
+                network_requests=requests,
+                error=error,
+                observed_length=observed_length,
+                json_chunk_sha256=json_chunk_sha256,
+                extractor_version="recursive-crawler-2",
+            )
+
         try:
             header_result = self.fetch_range(canonical, 0, 19)
             requests += header_result.network_requests
+            transport_url = header_result.final_url
             header = header_result.body
             if len(header) < 20:
-                return VrmValidation(
-                    canonical,
-                    header_result.final_url,
-                    False,
-                    "invalid_glb",
-                    None,
-                    None,
-                    None,
-                    network_requests=requests,
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    observed_length=len(header),
                     error=f"header too short: {len(header)}",
                 )
+
             magic, version, total_length = struct.unpack("<III", header[:12])
             json_length, chunk_type = struct.unpack("<II", header[12:20])
             if magic != GLB_MAGIC or version != GLB_VERSION_2 or chunk_type != JSON_CHUNK_TYPE:
-                return VrmValidation(
-                    canonical,
-                    header_result.final_url,
-                    False,
-                    "not_glb",
-                    None,
-                    None,
-                    total_length,
-                    network_requests=requests,
+                return outcome(
+                    valid=False,
+                    status="not_glb",
+                    total_length=total_length,
                     error="asset is not a GLB 2.0 file with a JSON first chunk",
                 )
+            if total_length < 20 or total_length > self.policy.max_vrm_bytes:
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    total_length=total_length,
+                    error=(
+                        f"GLB declared length {total_length} exceeds "
+                        f"{self.policy.max_vrm_bytes} byte policy"
+                    ),
+                )
             if json_length <= 0 or json_length > self.policy.max_vrm_json_bytes:
-                return VrmValidation(
-                    canonical,
-                    header_result.final_url,
-                    False,
-                    "invalid_glb",
-                    None,
-                    None,
-                    total_length,
-                    network_requests=requests,
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    total_length=total_length,
                     error=f"GLB JSON chunk length {json_length} exceeds policy",
                 )
             if 20 + json_length > total_length:
-                return VrmValidation(
-                    canonical,
-                    header_result.final_url,
-                    False,
-                    "invalid_glb",
-                    None,
-                    None,
-                    total_length,
-                    network_requests=requests,
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    total_length=total_length,
                     error="GLB JSON chunk exceeds declared total length",
                 )
 
@@ -527,74 +549,97 @@ class NetworkLoader:
                 preferred_transport=header_result.final_url,
             )
             requests += json_result.network_requests
+            transport_url = json_result.final_url
             json_bytes = json_result.body
+            json_digest = hashlib.sha256(json_bytes).hexdigest()
             try:
                 gltf = json.loads(json_bytes.decode("utf-8").rstrip("\x00 \t\r\n"))
             except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-                return VrmValidation(
-                    canonical,
-                    json_result.final_url,
-                    False,
-                    "invalid_glb",
-                    None,
-                    None,
-                    total_length,
-                    hashlib.sha256(json_bytes).hexdigest(),
-                    requests,
-                    f"invalid GLB JSON: {exc}",
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    total_length=total_length,
+                    json_chunk_sha256=json_digest,
+                    error=f"invalid GLB JSON: {exc}",
                 )
 
             extensions = gltf.get("extensions") if isinstance(gltf, dict) else None
             if not isinstance(extensions, dict):
-                return VrmValidation(
-                    canonical,
-                    json_result.final_url,
-                    False,
-                    "valid_glb_not_vrm",
-                    None,
-                    None,
-                    total_length,
-                    hashlib.sha256(json_bytes).hexdigest(),
-                    requests,
-                    "GLB has no extensions object",
+                return outcome(
+                    valid=False,
+                    status="valid_glb_not_vrm",
+                    total_length=total_length,
+                    json_chunk_sha256=json_digest,
+                    error="GLB has no extensions object",
                 )
+
+            vrm_spec: str | None = None
+            raw_meta: dict[str, Any] | None = None
             if isinstance(extensions.get("VRMC_vrm"), dict):
                 block = extensions["VRMC_vrm"]
-                return VrmValidation(
-                    canonical,
-                    json_result.final_url,
-                    True,
-                    "valid_vrm",
-                    "1.0",
-                    block.get("meta") if isinstance(block.get("meta"), dict) else None,
-                    total_length,
-                    hashlib.sha256(json_bytes).hexdigest(),
-                    requests,
-                )
-            if isinstance(extensions.get("VRM"), dict):
+                vrm_spec = "1.0"
+                raw_meta = block.get("meta") if isinstance(block.get("meta"), dict) else None
+            elif isinstance(extensions.get("VRM"), dict):
                 block = extensions["VRM"]
-                return VrmValidation(
-                    canonical,
-                    json_result.final_url,
-                    True,
-                    "valid_vrm",
-                    "0.x",
-                    block.get("meta") if isinstance(block.get("meta"), dict) else None,
-                    total_length,
-                    hashlib.sha256(json_bytes).hexdigest(),
-                    requests,
+                vrm_spec = "0.x"
+                raw_meta = block.get("meta") if isinstance(block.get("meta"), dict) else None
+            else:
+                return outcome(
+                    valid=False,
+                    status="valid_glb_not_vrm",
+                    total_length=total_length,
+                    json_chunk_sha256=json_digest,
+                    error="GLB has no VRM or VRMC_vrm extension",
                 )
-            return VrmValidation(
+
+            # A valid extension is only structural proof. Fetch the complete,
+            # bounded binary so the catalog can identify exactly what Hubzz
+            # later mirrors or optimizes.
+            full_result = self.fetch_range(
                 canonical,
-                json_result.final_url,
-                False,
-                "valid_glb_not_vrm",
-                None,
-                None,
-                total_length,
-                hashlib.sha256(json_bytes).hexdigest(),
-                requests,
-                "GLB has no VRM or VRMC_vrm extension",
+                0,
+                total_length - 1,
+                preferred_transport=json_result.final_url,
+            )
+            requests += full_result.network_requests
+            transport_url = full_result.final_url
+            full_bytes = full_result.body
+            observed_length = len(full_bytes)
+            if observed_length != total_length:
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    vrm_spec=vrm_spec,
+                    raw_meta=raw_meta,
+                    total_length=total_length,
+                    observed_length=observed_length,
+                    json_chunk_sha256=json_digest,
+                    error=(
+                        f"complete binary length {observed_length} does not match "
+                        f"declared GLB length {total_length}"
+                    ),
+                )
+            if full_bytes[:20] != header:
+                return outcome(
+                    valid=False,
+                    status="invalid_glb",
+                    vrm_spec=vrm_spec,
+                    raw_meta=raw_meta,
+                    total_length=total_length,
+                    observed_length=observed_length,
+                    json_chunk_sha256=json_digest,
+                    error="complete binary header changed between range requests",
+                )
+
+            return outcome(
+                valid=True,
+                status="valid_vrm",
+                vrm_spec=vrm_spec,
+                raw_meta=raw_meta,
+                total_length=total_length,
+                observed_length=observed_length,
+                content_sha256=hashlib.sha256(full_bytes).hexdigest(),
+                json_chunk_sha256=json_digest,
             )
         except (RetryableCrawlError, PermanentCrawlError) as exc:
             exc.request_count += requests
