@@ -1,0 +1,198 @@
+name: Apply targeted VRM link repairs
+
+on:
+  push:
+    branches:
+      - agent/vrm-link-audit
+    paths:
+      - .github/workflows/apply-targeted-vrm-repairs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Recognize custom Pinata path gateways
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/crawler/uri.py')
+          text = path.read_text(encoding='utf-8')
+          old = '    if host in IPFS_GATEWAY_HOSTS:\n'
+          new = '    if host in IPFS_GATEWAY_HOSTS or host.endswith(".mypinata.cloud"):\n'
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('IPFS path-gateway predicate changed')
+              text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Apply measured database reconciliation
+        run: |
+          sqlite3 data/vrm_index.db < migrations/024_vrm_link_reconciliation.sql
+          python scripts/score_readiness.py \
+            --db data/vrm_index.db \
+            --now 2026-08-11T20:16:07Z
+
+      - name: Regenerate one coherent artifact snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
+      - name: Refresh the two affected audit measurements
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sqlite3
+          from pathlib import Path
+
+          from scripts.audit_vrm_links import (
+              _collection_summary,
+              _summarize,
+              audit_candidate,
+              collect_from_db,
+              collect_from_json,
+              utc_now,
+              write_markdown,
+          )
+          from scripts.crawler.models import CrawlPolicy
+
+          root = Path.cwd()
+          registry = {}
+          invalid = []
+          templates = []
+          with sqlite3.connect('data/vrm_index.db') as conn:
+              collect_from_db(conn, registry, invalid, templates)
+          scanned = collect_from_json(
+              [
+                  root / 'static' / 'data',
+                  root / 'data' / 'live_discovery_report.json',
+                  root / 'data' / 'staging_validation_report.json',
+              ],
+              registry,
+              invalid,
+              templates,
+          )
+
+          boombox = 'ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm'
+          old_boombox = 'ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm'
+          phettaverse = 'ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm'
+          old_phettaverse = 'https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm'
+          for target in (boombox, phettaverse):
+              if target not in registry:
+                  raise SystemExit(f'targeted canonical link missing from inventory: {target}')
+
+          policy = CrawlPolicy(
+              max_depth=0,
+              request_budget=100,
+              max_tasks=100,
+              max_attempts=2,
+              timeout=25,
+              max_document_bytes=2_000_000,
+              max_vrm_json_bytes=4_000_000,
+              max_vrm_bytes=64 * 1024 * 1024,
+              max_links_per_document=0,
+          )
+          fresh = [
+              audit_candidate(registry[boombox], policy, 2),
+              audit_candidate(registry[phettaverse], policy, 2),
+          ]
+
+          json_path = Path('data/vrm-link-audit.json')
+          markdown_path = Path('docs/vrm-link-audit-latest.md')
+          report = json.loads(json_path.read_text(encoding='utf-8'))
+          replace_urls = {boombox, old_boombox, phettaverse, old_phettaverse}
+          report['results'] = [
+              item for item in report['results']
+              if item.get('canonical_url') not in replace_urls
+          ] + fresh
+          report['results'].sort(key=lambda item: item['canonical_url'])
+
+          template_map = {
+              (item['template'], item['origin'], item.get('collection_id')): item
+              for item in templates
+          }
+          report['generated_at'] = utc_now()
+          report['snapshot_id'] = json.loads(
+              Path('static/data/build-info.json').read_text(encoding='utf-8')
+          ).get('snapshot_id')
+          report['commit_sha'] = os.environ.get('GITHUB_SHA') or ''
+          report['database'] = 'data/vrm_index.db'
+          report['scanned_json_files'] = scanned
+          report['invalid_references'] = sorted(
+              invalid,
+              key=lambda item: (
+                  str(item.get('collection_id') or ''), item['raw_url']
+              ),
+          )
+          report['templates_skipped'] = sorted(
+              template_map.values(),
+              key=lambda item: (
+                  str(item.get('collection_id') or ''),
+                  item['template'],
+                  item['origin'],
+              ),
+          )
+          report['summary'] = _summarize(
+              report['results'], report['invalid_references']
+          )
+          report['collections'] = _collection_summary(report['results'])
+          report['report_correction'] = {
+              'kind': 'targeted_canonical_link_reconciliation',
+              'fresh_measurements': [boombox, phettaverse],
+              'superseded_measurements': [old_boombox, old_phettaverse],
+              'unaffected_measurements_reused': True,
+          }
+          json_path.write_text(
+              json.dumps(report, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8',
+          )
+          write_markdown(report, markdown_path)
+          print(json.dumps(report['summary'], indent=2))
+          PY
+
+      - name: Verify repository and artifact integrity
+        run: |
+          python -m py_compile scripts/audit_vrm_links.py scripts/crawler/uri.py
+          python -m pytest tests/ -q
+          python scripts/verify_catalog_consistency.py
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          test -z "$(sqlite3 data/vrm_index.db 'PRAGMA foreign_key_check;')"
+
+      - name: Commit measured repairs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/crawler/uri.py data/vrm_index.db \
+            data/vrm-link-audit.json docs/vrm-link-audit-latest.md \
+            docs/hubzz-prealpha-staging.md static/data static/sw.js
+          if git diff --cached --quiet; then
+            echo 'Targeted repairs already current.'
+            exit 0
+          fi
+          git commit -m 'Reconcile measured Boombox and Phettaverse VRMs [skip ci]'
+          git push
