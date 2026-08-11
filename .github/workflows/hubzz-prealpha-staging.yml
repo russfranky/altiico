@@ -32,6 +32,29 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Reconcile set-level and per-avatar binary proof
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/export_hubzz_staging.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''        if not isinstance(source.get("binaryValidatedCount"), int) or source.get("binaryValidatedCount", 0) < 1:
+                      errors.append(f"{prefix}: no binary-validated VRM proof")
+          '''
+          new = '''        binary_count = source.get("binaryValidatedCount")
+                  has_sample_proof = isinstance(item.get("sampleEvidence"), dict)
+                  if not isinstance(binary_count, int) or binary_count < 0:
+                      errors.append(f"{prefix}: invalid binary validation count")
+                  elif binary_count < 1 and not has_sample_proof:
+                      errors.append(f"{prefix}: no binary-validated VRM proof")
+          '''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('staging validator shape changed; refusing an unsafe patch')
+              path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
       - name: Export conservative Hubzz staging bundle
         run: |
           python scripts/export_hubzz_staging.py \
@@ -51,12 +74,13 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add static/data/hubzz-prealpha-staging.json \
+          git add scripts/export_hubzz_staging.py \
+            static/data/hubzz-prealpha-staging.json \
             static/data/hubzz-prealpha-source \
             docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
             echo 'Staging artifacts already current.'
             exit 0
           fi
-          git commit -m 'Generate Hubzz pre-alpha staging bundle [skip ci]'
+          git commit -m 'Generate strict Hubzz pre-alpha staging bundle [skip ci]'
           git push
