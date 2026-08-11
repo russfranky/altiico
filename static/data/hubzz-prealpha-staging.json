@@ -1,22 +1,22 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T18:21:39Z",
-  "snapshotId": "vrmcat-v1-eb0cd1a4c2d769b0eb3a3845",
+  "generatedAt": "2026-08-11T20:24:18Z",
+  "snapshotId": "vrmcat-v1-2075d3173cece90b0e59bd0b",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
   },
   "summary": {
     "catalogSets": 65,
-    "stageableSets": 11,
+    "stageableSets": 13,
     "bulkReadySets": 2,
-    "partialReadySets": 0,
-    "previewReadySets": 9,
-    "deferredSets": 54,
-    "sourceAvatars": 149,
-    "binaryValidatedSourceAvatars": 9,
-    "openLicenseSets": 0,
+    "partialReadySets": 1,
+    "previewReadySets": 10,
+    "deferredSets": 52,
+    "sourceAvatars": 159,
+    "binaryValidatedSourceAvatars": 159,
+    "openLicenseSets": 2,
     "gatedSets": 3,
     "licenseReviewSets": 8
   },
@@ -49,24 +49,24 @@
         "count": 60,
         "mode": "enumerated",
         "reachableCount": 60,
-        "binaryValidatedCount": 0,
-        "validationScope": "collection_binary_plus_avatar_reachability"
+        "binaryValidatedCount": 60,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 60,
         "reachableSourceAvatars": 60,
-        "binaryValidatedSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 60,
         "catalogSupply": 60,
         "coverageRatio": 1.0
       },
       "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
-        "transportUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
-        "vrmSpec": null,
-        "fileSizeOriginal": 5719796,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Blue.vrm",
+        "transportUrl": "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar03_v2_Stylized_Blue.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 8300844,
+        "validatedAt": "2026-08-11T19:56:25Z",
         "tokenId": null,
-        "source": "collection-validation",
+        "source": "staging-inventory",
         "chain": null,
         "contract": null
       },
@@ -102,28 +102,82 @@
         "count": 80,
         "mode": "enumerated",
         "reachableCount": 80,
-        "binaryValidatedCount": 0,
-        "validationScope": "collection_binary_plus_avatar_reachability"
+        "binaryValidatedCount": 80,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 80,
         "reachableSourceAvatars": 80,
-        "binaryValidatedSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 80,
         "catalogSupply": 80,
         "coverageRatio": 1.0
       },
       "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
-        "transportUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
-        "vrmSpec": null,
-        "fileSizeOriginal": 3315368,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Neutral.vrm",
+        "transportUrl": "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar09_Neutral.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 4967260,
+        "validatedAt": "2026-08-11T19:59:01Z",
         "tokenId": null,
-        "source": "collection-validation",
+        "source": "staging-inventory",
         "chain": null,
         "contract": null
       },
       "warnings": []
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "NeonGlitch86-collection",
+        "name": "NeonGlitch86 Collection",
+        "description": "Collections of avatars Created by NeonGlitch86",
+        "chain": "ethereum",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "CC0",
+        "author": "NeonGlitch86",
+        "copyright": null,
+        "mintDate": null,
+        "totalMints": 0,
+        "bannerUrl": null,
+        "pfpUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
+        "purchaseGated": false,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 9
+      },
+      "stageClass": "partial_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/NeonGlitch86-collection.json",
+        "count": 9,
+        "mode": "enumerated",
+        "reachableCount": 9,
+        "binaryValidatedCount": 9,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 12,
+        "reachableSourceAvatars": 9,
+        "binaryValidatedSourceAvatars": 9,
+        "catalogSupply": 0,
+        "coverageRatio": 0.75
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 5565488,
+        "validatedAt": "2026-08-11T19:53:28Z",
+        "tokenId": null,
+        "source": "staging-inventory",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "partial_avatar_inventory",
+        "missing_banner"
+      ]
     },
     {
       "set": {
@@ -177,6 +231,59 @@
       "warnings": [
         "sample_only",
         "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "boomboxheads-v2",
+        "name": "Boomboxheads V2",
+        "description": "Boomboxheads V2 is a collection of 420 CC0 avatars on the Ethereum Network. They are 3d multi-format NFTs including artwork, a VRM avatar, and a posed GLB. The assets are available for public use under the CC0 license. This project was produced with boom-tools, an open-source project, running on Unity3d.",
+        "chain": "ethereum",
+        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "CC0",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2023-04-17",
+        "totalMints": 420,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/103cf6838291bc65ea81e7d60f5fb5/30103cf6838291bc65ea81e7d60f5fb5.jpeg?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/5c23cbb9bf2f31a4c33cad614c05aa/575c23cbb9bf2f31a4c33cad614c05aa.gif",
+        "purchaseGated": false,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/boomboxheads-v2.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 420,
+        "coverageRatio": 0.002381
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+        "transportUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 3139032,
+        "validatedAt": "2026-08-11T20:16:07Z",
+        "tokenId": "20",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only"
       ]
     },
     {
@@ -595,11 +702,11 @@
         "coverageRatio": 0.002695
       },
       "sampleEvidence": {
-        "canonicalUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-        "transportUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "canonicalUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "transportUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
         "vrmSpec": null,
         "fileSizeOriginal": 1698236,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "validatedAt": "2026-08-11T20:16:07Z",
         "tokenId": null,
         "source": "collection-validation",
         "chain": null,
@@ -742,26 +849,6 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
-      }
-    },
-    {
-      "slug": "boomboxheads-v2",
-      "name": "Boomboxheads V2",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [],
-      "facts": {
-        "slug": "boomboxheads-v2",
-        "name": "Boomboxheads V2",
-        "tier": "A",
-        "chain": "ethereum",
-        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "timeout"
       }
     },
     {
@@ -1298,28 +1385,6 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
-      }
-    },
-    {
-      "slug": "NeonGlitch86-collection",
-      "name": "NeonGlitch86 Collection",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "missing_banner"
-      ],
-      "facts": {
-        "slug": "NeonGlitch86-collection",
-        "name": "NeonGlitch86 Collection",
-        "tier": "A",
-        "chain": "ethereum",
-        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-        "knownAvatars": 12,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
       }
     },
     {

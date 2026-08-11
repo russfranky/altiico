@@ -1,0 +1,85 @@
+name: VRM link audit
+
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vrm-link-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Verify auditor
+        run: |
+          python -m py_compile scripts/audit_vrm_links.py
+          python -m pytest tests/test_vrm_link_audit.py tests/test_recursive_crawler.py -q
+
+      - name: Audit every concrete VRM link
+        run: |
+          python scripts/audit_vrm_links.py \
+            --db "$PWD/data/vrm_index.db" \
+            --json-report "$RUNNER_TEMP/vrm-link-audit.json" \
+            --markdown-report "$RUNNER_TEMP/vrm-link-audit.md" \
+            --workers 6 \
+            --timeout 20 \
+            --max-attempts 2
+
+      - name: Publish run summary
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report = json.loads(
+              (Path(os.environ['RUNNER_TEMP']) / 'vrm-link-audit.json').read_text()
+          )
+          summary = report['summary']
+          rows = [
+              '# VRM link audit',
+              '',
+              f"- Snapshot: `{report.get('snapshot_id') or 'unknown'}`",
+              f"- Unique concrete links: **{summary['unique_concrete_links']}**",
+              f"- Valid VRM binaries: **{summary['valid_vrm_links']}**",
+              f"- Broken or unverified: **{summary['broken_or_unverified_links']}**",
+              f"- Validated bytes: **{summary['validated_bytes']:,}**",
+              '',
+              '## Classification',
+              '',
+              '| Class | Count |',
+              '|---|---:|',
+          ]
+          rows.extend(
+              f"| `{name}` | {count} |"
+              for name, count in summary['classification_counts'].items()
+          )
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as handle:
+              handle.write('\n'.join(rows) + '\n')
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vrm-link-audit
+          path: |
+            ${{ runner.temp }}/vrm-link-audit.json
+            ${{ runner.temp }}/vrm-link-audit.md
+          retention-days: 30

@@ -166,10 +166,24 @@ def test_common_ipfs_double_prefix_is_normalized():
         "ipfs://BaSe58CID/path.json"
 
 
+def test_canonicalize_ipfs_subdomain_gateway():
+    assert canonicalize_uri(
+        "https://bafybeiexample.ipfs.dweb.link/127.vrm"
+    ) == "ipfs://bafybeiexample/127.vrm"
+
+
+def test_canonicalize_legacy_w3s_subdomain_gateway_with_duplicate_path():
+    cid = "bafybeiexample"
+    assert canonicalize_uri(
+        f"https://{cid}.ipfs.w3s.link/ipfs/{cid}/Avatar.vrm"
+    ) == f"ipfs://{cid}/Avatar.vrm"
+
+
 def test_ipfs_transport_candidates_do_not_change_cid_case():
     assert transport_candidates("ipfs://BaSe58CID/Avatar.vrm") == [
         "https://ipfs.io/ipfs/BaSe58CID/Avatar.vrm",
         "https://dweb.link/ipfs/BaSe58CID/Avatar.vrm",
+        "https://nftstorage.link/ipfs/BaSe58CID/Avatar.vrm",
     ]
 
 
