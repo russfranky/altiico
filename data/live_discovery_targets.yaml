@@ -1,6 +1,7 @@
 # High-signal live discovery targets. These are curated contract leads, not
 # marketplace keyword hits. A target may mutate catalog identity only after a
 # binary validates as VRM 0.x or VRM 1.0.
+# Execution revision: 1
 
 policy:
   max_depth: 5
