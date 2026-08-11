@@ -47,29 +47,32 @@ jobs:
               path.write_text(text.replace(old, new, 1), encoding='utf-8')
           PY
 
-      - name: Export conservative Hubzz staging bundle
+      - name: Export one coherent catalog snapshot
         run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
           python scripts/export_hubzz_staging.py \
             --db data/vrm_index.db \
             --output static/data/hubzz-prealpha-staging.json \
             --report docs/hubzz-prealpha-staging.md \
             --validate
+          python scripts/build_catalog.py
 
       - name: Verify staging and catalog
         run: |
+          python scripts/verify_catalog_consistency.py
           python -m pytest tests/test_hubzz_staging_export.py -q
           python -m pytest tests/ -q
           node tests/catalog-performance.mjs
-          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
 
       - name: Commit generated staging artifacts
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/export_hubzz_staging.py \
-            static/data/hubzz-prealpha-staging.json \
-            static/data/hubzz-prealpha-source \
-            docs/hubzz-prealpha-staging.md
+          git add scripts/export_hubzz_staging.py data/vrm_index.db \
+            static/data static/sw.js docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
             echo 'Staging artifacts already current.'
             exit 0
