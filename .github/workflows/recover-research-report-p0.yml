@@ -56,6 +56,83 @@ jobs:
       - name: Apply the integrity changes
         run: python scripts/_apply_research_report_p0.py
 
+      - name: Reconcile the validated Chuddies identity
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          migration = Path('migrations/023_artifact_snapshots.sql')
+          text = migration.read_text(encoding='utf-8')
+          needle = """ALTER TABLE vrm_metadata ADD COLUMN transport_url TEXT;
+
+CREATE INDEX IF NOT EXISTS idx_vrm_metadata_content_sha256
+    ON vrm_metadata(content_sha256);
+"""
+          replacement = """ALTER TABLE vrm_metadata ADD COLUMN transport_url TEXT;
+
+-- Reconcile the validated Chuddies deployment. The token-127 crawl established
+-- 0x6b67... as the canonical VRM-bearing contract. Preserve the former address
+-- as a non-primary historical association, but stop exporting it as identity.
+UPDATE collections
+SET contract = '0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9'
+WHERE id = 'chuddie';
+
+UPDATE contracts
+SET is_primary = CASE
+    WHEN lower(address) = '0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9' THEN 1
+    ELSE 0
+END
+WHERE collection_id = 'chuddie';
+
+UPDATE collection_identifiers
+SET value = '0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9',
+    contract = '0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9'
+WHERE collection_id = 'chuddie' AND namespace = 'contract_token';
+
+UPDATE collection_identifiers
+SET contract = '0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9'
+WHERE collection_id = 'chuddie' AND namespace = 'opensea_slug';
+
+CREATE INDEX IF NOT EXISTS idx_vrm_metadata_content_sha256
+    ON vrm_metadata(content_sha256);
+"""
+          if needle not in text:
+              raise SystemExit('snapshot migration shape changed')
+          migration.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+
+          verifier = Path('scripts/verify_catalog_consistency.py')
+          text = verifier.read_text(encoding='utf-8')
+          needle = '''        contract = _norm_contract(row["contract"])
+        if contract is None:
+            found = conn.execute(
+                """
+                SELECT address FROM contracts
+                WHERE collection_id=?
+                ORDER BY is_primary DESC, rowid ASC
+                LIMIT 1
+                """,
+                (cid,),
+            ).fetchone()
+            contract = _norm_contract(found["address"]) if found else None
+'''
+          replacement = '''        found = conn.execute(
+            """
+            SELECT address FROM contracts
+            WHERE collection_id=?
+            ORDER BY is_primary DESC, rowid ASC
+            LIMIT 1
+            """,
+            (cid,),
+        ).fetchone()
+        contract = _norm_contract(found["address"]) if found else None
+        if contract is None:
+            contract = _norm_contract(row["contract"])
+'''
+          if needle not in text:
+              raise SystemExit('consistency verifier shape changed')
+          verifier.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+          PY
+
       - name: Apply the snapshot migration
         run: sqlite3 data/vrm_index.db < migrations/023_artifact_snapshots.sql
 
@@ -80,6 +157,7 @@ jobs:
           rm -f scripts/_apply_research_report_p0.py
           rm -f .github/workflows/apply-research-report-p0.yml
           rm -f .github/workflows/recover-research-report-p0.yml
+          rm -f .github/workflows/inspect-chuddie-identity.yml
           rm -rf .github/patches
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
