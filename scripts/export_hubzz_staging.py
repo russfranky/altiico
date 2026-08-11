@@ -8,10 +8,11 @@ canonical served URLs, and publication. This exporter therefore emits:
 * source-avatar sidecars containing original VRM candidates
 * an explicit deferred queue with machine-readable blockers
 
-A set is stageable only when at least one VRM binary has been validated, either
-at collection level or on an individual avatar row. Unknown licensing is a
-warning, not a rights grant. Unsupported ownership chains are deferred instead
-of being silently coerced to null.
+A set is stageable only when at least one VRM binary has been validated at the
+collection or avatar level. Reachability-only avatar rows may expand a source
+inventory after collection-level VRM proof exists, but they are never mislabeled
+as individually VRM-validated. Unknown licensing is a warning, not a rights
+grant. Unsupported ownership chains are deferred instead of being coerced.
 """
 from __future__ import annotations
 
@@ -30,7 +31,7 @@ SCHEMA_NAME = "hubzz-prealpha-staging-v1"
 SCHEMA_VERSION = 1
 PREALPHA_CHAINS = {"ethereum", "zora", "polygon", "base", "optimism", "arbitrum"}
 STORAGE_ONLY_CHAINS = {"ipfs", "arweave"}
-VALID_AVATAR_STATUSES = {"ok_vrm", "ok_glb"}
+REACHABLE_AVATAR_STATUSES = {"ok_vrm", "ok_glb"}
 OWNER_EXCLUSIONS = {"declined", "excluded", "remove", "removed", "handled"}
 
 
@@ -43,6 +44,8 @@ class Evidence:
     validated_at: str | None
     token_id: str | None
     source: str
+    chain: str | None = None
+    contract: str | None = None
 
 
 def utc_now() -> str:
@@ -127,8 +130,10 @@ def purchase_gated(row: sqlite3.Row) -> bool | None:
     return None
 
 
-def map_chain(row: sqlite3.Row) -> tuple[str | None, str | None]:
-    chain = ((norm(row["chain"]) if "chain" in row.keys() else None) or "").lower()
+def map_chain(row: sqlite3.Row, evidence: Evidence | None = None) -> tuple[str | None, str | None]:
+    chain = ((evidence.chain if evidence else None) or (
+        norm(row["chain"]) if "chain" in row.keys() else None
+    ) or "").lower()
     if chain in PREALPHA_CHAINS:
         return chain, None
     if not chain or chain in STORAGE_ONLY_CHAINS:
@@ -161,9 +166,8 @@ def storage_provider(row: sqlite3.Row, evidence: Evidence | None) -> str:
     return "self-host"
 
 
-def ingest_source(row: sqlite3.Row) -> str:
+def ingest_source(row: sqlite3.Row, contract: str | None) -> str:
     source = ((norm(row["source"]) if "source" in row.keys() else None) or "").lower()
-    contract = norm(row["contract"]) if "contract" in row.keys() else None
     if contract:
         return "ethereum"
     if any(word in source for word in ("opensource", "open-source", "toxsam", "osa")):
@@ -171,7 +175,45 @@ def ingest_source(row: sqlite3.Row) -> str:
     return "manual"
 
 
-def latest_evidence(conn: sqlite3.Connection, collection_id: str, row: sqlite3.Row) -> Evidence | None:
+def load_discovery_contracts(path: Path | None) -> dict[str, tuple[str, str]]:
+    """Resolve the ownership contract proven by the latest live crawl report.
+
+    A catalog row may have several contracts. For sample-only staging, the set
+    contract must be the one whose metadata led to the validated VRM, not merely
+    whichever historical contract is marked primary.
+    """
+    if path is None or not path.exists():
+        return {}
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    hit_ids = {
+        str(hit.get("collection_id"))
+        for hit in (report.get("hits") or [])
+        if hit.get("collection_id")
+    }
+    candidates: dict[str, list[tuple[str, str]]] = {}
+    for target in report.get("targets") or []:
+        cid = norm(target.get("collection_id"))
+        chain = norm(target.get("chain"))
+        contract = norm(target.get("contract"))
+        if cid in hit_ids and chain and contract:
+            candidates.setdefault(cid, []).append((chain.lower(), contract.lower()))
+    return {
+        cid: values[0]
+        for cid, values in candidates.items()
+        if len(set(values)) == 1
+    }
+
+
+def latest_evidence(
+    conn: sqlite3.Connection,
+    collection_id: str,
+    row: sqlite3.Row,
+    discovery_contracts: dict[str, tuple[str, str]],
+) -> Evidence | None:
+    proven_chain, proven_contract = discovery_contracts.get(collection_id, (None, None))
     if table_exists(conn, "crawl_observations") and table_exists(conn, "crawl_bindings"):
         result = conn.execute(
             """
@@ -199,6 +241,8 @@ def latest_evidence(conn: sqlite3.Connection, collection_id: str, row: sqlite3.R
                     validated_at=norm(result["observed_at"]),
                     token_id=token_id_from(payload.get("token_id")),
                     source=norm(result["seed_source"]) or "recursive-crawler",
+                    chain=proven_chain,
+                    contract=proven_contract,
                 )
 
     status = norm(row["vrm_check_status"]) if "vrm_check_status" in row.keys() else None
@@ -212,8 +256,36 @@ def latest_evidence(conn: sqlite3.Connection, collection_id: str, row: sqlite3.R
             validated_at=norm(row["vrm_checked_at"]) if "vrm_checked_at" in row.keys() else None,
             token_id=token_id_from(row["sample_metadata_url"]) if "sample_metadata_url" in row.keys() else None,
             source="collection-validation",
+            chain=proven_chain,
+            contract=proven_contract,
         )
     return None
+
+
+def avatar_validation_map(conn: sqlite3.Connection, collection_id: str) -> dict[str, dict[str, Any]]:
+    if not (table_exists(conn, "avatar_vrm") and table_exists(conn, "vrm_metadata")):
+        return {}
+    rows = conn.execute(
+        """
+        SELECT av.avatar_id, av.vrm_source_url, vm.vrm_spec, vm.content_length,
+               vm.extracted_at
+        FROM avatar_vrm av
+        JOIN vrm_metadata vm ON vm.source_url=av.vrm_source_url
+        JOIN avatars a ON a.id=av.avatar_id
+        WHERE a.collection_id=? AND vm.parse_error IS NULL
+          AND vm.vrm_spec IS NOT NULL
+        """,
+        (collection_id,),
+    ).fetchall()
+    return {
+        str(item["avatar_id"]): {
+            "sourceUrl": norm(item["vrm_source_url"]),
+            "vrmSpec": norm(item["vrm_spec"]),
+            "fileSizeOriginal": item["content_length"] if isinstance(item["content_length"], int) else None,
+            "validatedAt": norm(item["extracted_at"]),
+        }
+        for item in rows
+    }
 
 
 def avatar_rows(conn: sqlite3.Connection, collection_id: str) -> list[dict[str, Any]]:
@@ -230,6 +302,7 @@ def avatar_rows(conn: sqlite3.Connection, collection_id: str) -> list[dict[str, 
         f"SELECT {', '.join(wanted)} FROM avatars WHERE collection_id=? ORDER BY id",
         (collection_id,),
     ).fetchall()
+    validated = avatar_validation_map(conn, collection_id)
     output: list[dict[str, Any]] = []
     seen_urls: set[str] = set()
     for item in rows:
@@ -237,9 +310,10 @@ def avatar_rows(conn: sqlite3.Connection, collection_id: str) -> list[dict[str, 
         if not url or url in seen_urls:
             continue
         reachable = ("reachable" in item.keys() and item["reachable"] == 1) or (
-            "check_status" in item.keys() and norm(item["check_status"]) in VALID_AVATAR_STATUSES
+            "check_status" in item.keys() and norm(item["check_status"]) in REACHABLE_AVATAR_STATUSES
         )
-        if not reachable:
+        validation = validated.get(str(item["id"]))
+        if not reachable and not validation:
             continue
         seen_urls.add(url)
         token_id = token_id_from(item["id"])
@@ -257,11 +331,19 @@ def avatar_rows(conn: sqlite3.Connection, collection_id: str) -> list[dict[str, 
                 "id": str(item["id"]),
                 "tokenId": token_id,
                 "name": norm(item["name"]) if "name" in item.keys() else None,
-                "originalSourceUrl": url,
+                "originalSourceUrl": validation.get("sourceUrl") if validation else url,
                 "thumbnailUrl": public_url(item["thumbnail_url"]) if "thumbnail_url" in item.keys() else None,
-                "validated": True,
-                "checkedAt": norm(item["checked_at"]) if "checked_at" in item.keys() else None,
-                "checkStatus": norm(item["check_status"]) if "check_status" in item.keys() else "reachable",
+                "reachable": bool(reachable or validation),
+                "vrmValidated": validation is not None,
+                "validationScope": "per_avatar_binary" if validation else "glb_reachability",
+                "checkedAt": validation.get("validatedAt") if validation else (
+                    norm(item["checked_at"]) if "checked_at" in item.keys() else None
+                ),
+                "checkStatus": "ok_vrm" if validation else (
+                    norm(item["check_status"]) if "check_status" in item.keys() else "reachable"
+                ),
+                "vrmSpec": validation.get("vrmSpec") if validation else None,
+                "fileSizeOriginal": validation.get("fileSizeOriginal") if validation else None,
             }
         )
     return output
@@ -273,7 +355,13 @@ def known_avatar_count(conn: sqlite3.Connection, collection_id: str) -> int:
     return int(conn.execute("SELECT COUNT(*) FROM avatars WHERE collection_id=?", (collection_id,)).fetchone()[0])
 
 
-def primary_contract(conn: sqlite3.Connection, row: sqlite3.Row) -> str | None:
+def primary_contract(
+    conn: sqlite3.Connection,
+    row: sqlite3.Row,
+    evidence: Evidence | None,
+) -> str | None:
+    if evidence and evidence.contract:
+        return evidence.contract
     if table_exists(conn, "contracts"):
         found = conn.execute(
             """
@@ -288,22 +376,25 @@ def primary_contract(conn: sqlite3.Connection, row: sqlite3.Row) -> str | None:
 
 
 def total_mints(row: sqlite3.Row) -> int | None:
+    saw_zero = False
     for key in ("total_supply", "max_supply", "avatar_count"):
         if key not in row.keys():
             continue
         value = row[key]
-        if isinstance(value, int) and value >= 0:
-            return value
         if isinstance(value, str) and value.isdigit():
-            return int(value)
-    return None
+            value = int(value)
+        if isinstance(value, int):
+            if value > 0:
+                return value
+            if value == 0:
+                saw_zero = True
+    return 0 if saw_zero else None
 
 
 def owner_excluded(row: sqlite3.Row) -> bool:
     if "owner_decision" not in row.keys():
         return False
-    value = ((norm(row["owner_decision"]) or "").lower())
-    return value in OWNER_EXCLUSIONS
+    return ((norm(row["owner_decision"]) or "").lower()) in OWNER_EXCLUSIONS
 
 
 def make_sample_avatar(row: sqlite3.Row, evidence: Evidence) -> dict[str, Any]:
@@ -317,7 +408,9 @@ def make_sample_avatar(row: sqlite3.Row, evidence: Evidence) -> dict[str, Any]:
         "originalSourceUrl": evidence.canonical_url or evidence.transport_url,
         "transportUrl": evidence.transport_url,
         "thumbnailUrl": public_url(row["sample_nft_image"]) if "sample_nft_image" in row.keys() else None,
-        "validated": True,
+        "reachable": True,
+        "vrmValidated": True,
+        "validationScope": "collection_sample_binary",
         "checkedAt": evidence.validated_at,
         "checkStatus": "ok_vrm",
         "vrmSpec": evidence.vrm_spec,
@@ -330,13 +423,19 @@ def stage_record(
     row: sqlite3.Row,
     generated_at: str,
     assets_root: Path,
+    discovery_contracts: dict[str, tuple[str, str]] | None = None,
 ) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+    discovery_contracts = discovery_contracts or {}
     collection_id = str(row["id"])
-    evidence = latest_evidence(conn, collection_id, row)
-    avatars = avatar_rows(conn, collection_id)
+    evidence = latest_evidence(conn, collection_id, row, discovery_contracts)
+    candidates = avatar_rows(conn, collection_id)
+    individually_validated = [item for item in candidates if item["vrmValidated"]]
     known = known_avatar_count(conn, collection_id)
-    chain, chain_blocker = map_chain(row)
-    contract = primary_contract(conn, row)
+    has_binary_proof = evidence is not None or bool(individually_validated)
+    if evidence is None:
+        candidates = individually_validated
+    chain, chain_blocker = map_chain(row, evidence)
+    contract = primary_contract(conn, row, evidence)
     blockers: list[str] = []
     warnings: list[str] = []
 
@@ -348,17 +447,17 @@ def stage_record(
         blockers.append(chain_blocker)
     if chain and not contract:
         blockers.append("missing_contract")
-    if not avatars and evidence is None:
-        blockers.append("no_validated_vrm")
-    if not avatars and evidence is not None:
+    if not has_binary_proof:
+        blockers.append("no_binary_validated_vrm")
+    if not candidates and evidence is not None:
         warnings.append("sample_only")
-    if known and 0 < len(avatars) < known:
+    if known and 0 < len(candidates) < known:
         warnings.append("partial_avatar_inventory")
     if purchase_gated(row) is None:
         warnings.append("license_requires_review")
-    if not public_url(row["banner_image_url"]) if "banner_image_url" in row.keys() else True:
+    if not (public_url(row["banner_image_url"]) if "banner_image_url" in row.keys() else None):
         warnings.append("missing_banner")
-    if not public_url(row["image_url"]) if "image_url" in row.keys() else True:
+    if not (public_url(row["image_url"]) if "image_url" in row.keys() else None):
         warnings.append("missing_pfp")
 
     facts = {
@@ -368,7 +467,8 @@ def stage_record(
         "chain": norm(row["chain"]) if "chain" in row.keys() else None,
         "contract": contract,
         "knownAvatars": known,
-        "validatedSourceAvatars": len(avatars),
+        "reachableSourceAvatars": len(candidates),
+        "binaryValidatedSourceAvatars": len(individually_validated),
         "collectionVrmValidated": evidence is not None,
         "vrmCheckStatus": norm(row["vrm_check_status"]) if "vrm_check_status" in row.keys() else None,
     }
@@ -376,9 +476,9 @@ def stage_record(
     if blockers:
         return None, deferred
 
-    if avatars:
-        source_avatars = avatars
-        stage_class = "bulk_ready" if known and len(avatars) == known else "partial_ready"
+    if candidates:
+        source_avatars = candidates
+        stage_class = "bulk_ready" if known and len(candidates) == known else "partial_ready"
     else:
         assert evidence is not None
         source_avatars = [make_sample_avatar(row, evidence)]
@@ -386,12 +486,15 @@ def stage_record(
 
     safe_slug = slug_safe(collection_id)
     asset_path = assets_root / f"{safe_slug}.json"
+    binary_count = sum(1 for item in source_avatars if item["vrmValidated"])
     asset_payload = {
         "schema": "hubzz-prealpha-source-avatars-v1",
         "schemaVersion": 1,
         "generatedAt": generated_at,
         "setSlug": collection_id,
         "count": len(source_avatars),
+        "reachableCount": sum(1 for item in source_avatars if item["reachable"]),
+        "binaryValidatedCount": binary_count,
         "avatars": source_avatars,
     }
     asset_path.parent.mkdir(parents=True, exist_ok=True)
@@ -405,7 +508,7 @@ def stage_record(
         "chain": chain,
         "contract": contract,
         "storageProvider": storage_provider(row, evidence),
-        "ingestSource": ingest_source(row),
+        "ingestSource": ingest_source(row, contract),
         "license": license_label(row),
         "author": norm(row["creator"]) if "creator" in row.keys() else None,
         "copyright": None,
@@ -420,17 +523,26 @@ def stage_record(
         "avatarCount": len(source_avatars),
     }
     coverage_total = total_mints(row) or known or len(source_avatars)
+    validation_scope = (
+        "per_avatar_binary"
+        if binary_count == len(source_avatars)
+        else "collection_binary_plus_avatar_reachability"
+    )
     entry = {
         "set": set_record,
         "stageClass": stage_class,
         "sourceAssets": {
             "path": f"hubzz-prealpha-source/{asset_path.name}",
             "count": len(source_avatars),
-            "mode": "enumerated" if avatars else "validated_sample",
+            "mode": "enumerated" if candidates else "validated_sample",
+            "reachableCount": len(source_avatars),
+            "binaryValidatedCount": binary_count,
+            "validationScope": validation_scope,
         },
         "coverage": {
             "knownAvatars": known,
-            "validatedSourceAvatars": len(avatars),
+            "reachableSourceAvatars": len(candidates),
+            "binaryValidatedSourceAvatars": len(individually_validated),
             "catalogSupply": total_mints(row),
             "coverageRatio": round(len(source_avatars) / coverage_total, 6) if coverage_total else None,
         },
@@ -442,6 +554,8 @@ def stage_record(
             "validatedAt": evidence.validated_at,
             "tokenId": evidence.token_id,
             "source": evidence.source,
+            "chain": evidence.chain,
+            "contract": evidence.contract,
         },
         "warnings": warnings,
     }
@@ -453,7 +567,11 @@ def load_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
     return conn.execute("SELECT * FROM collections ORDER BY name").fetchall()
 
 
-def build_bundle(conn: sqlite3.Connection, output_path: Path) -> dict[str, Any]:
+def build_bundle(
+    conn: sqlite3.Connection,
+    output_path: Path,
+    discovery_contracts: dict[str, tuple[str, str]] | None = None,
+) -> dict[str, Any]:
     generated_at = utc_now()
     assets_root = output_path.parent / "hubzz-prealpha-source"
     assets_root.mkdir(parents=True, exist_ok=True)
@@ -464,7 +582,9 @@ def build_bundle(conn: sqlite3.Connection, output_path: Path) -> dict[str, Any]:
     deferred: list[dict[str, Any]] = []
     rows = load_rows(conn)
     for row in rows:
-        entry, deferred_entry = stage_record(conn, row, generated_at, assets_root)
+        entry, deferred_entry = stage_record(
+            conn, row, generated_at, assets_root, discovery_contracts
+        )
         if entry:
             stageable.append(entry)
         else:
@@ -480,6 +600,9 @@ def build_bundle(conn: sqlite3.Connection, output_path: Path) -> dict[str, Any]:
         "previewReadySets": sum(1 for item in stageable if item["stageClass"] == "preview_ready"),
         "deferredSets": len(deferred),
         "sourceAvatars": sum(item["sourceAssets"]["count"] for item in stageable),
+        "binaryValidatedSourceAvatars": sum(
+            item["sourceAssets"]["binaryValidatedCount"] for item in stageable
+        ),
         "openLicenseSets": sum(1 for item in stageable if item["set"]["purchaseGated"] is False),
         "gatedSets": sum(1 for item in stageable if item["set"]["purchaseGated"] is True),
         "licenseReviewSets": sum(1 for item in stageable if item["set"]["purchaseGated"] is None),
@@ -514,6 +637,8 @@ def validate_bundle(bundle: dict[str, Any]) -> list[str]:
         source = item.get("sourceAssets") or {}
         if not isinstance(source.get("count"), int) or source.get("count", 0) < 1:
             errors.append(f"{prefix}: no source avatars")
+        if not isinstance(source.get("binaryValidatedCount"), int) or source.get("binaryValidatedCount", 0) < 1:
+            errors.append(f"{prefix}: no binary-validated VRM proof")
         if record.get("avatarCount") != source.get("count"):
             errors.append(f"{prefix}: avatar count mismatch")
         chain = record.get("chain")
@@ -537,20 +662,22 @@ def write_markdown(bundle: dict[str, Any], path: Path) -> None:
         f"- Bulk-ready sets: **{summary['bulkReadySets']}**",
         f"- Partial-inventory sets: **{summary['partialReadySets']}**",
         f"- Preview-ready sets: **{summary['previewReadySets']}**",
-        f"- Validated source avatars: **{summary['sourceAvatars']}**",
+        f"- Reachable source avatar candidates: **{summary['sourceAvatars']}**",
+        f"- Individually binary-validated source avatars: **{summary['binaryValidatedSourceAvatars']}**",
         f"- Deferred sets: **{summary['deferredSets']}**",
         "",
         "## Stageable sets",
         "",
-        "| Set | Class | Avatars | Chain | License gate | Warnings |",
-        "|---|---|---:|---|---|---|",
+        "| Set | Class | Sources | Binary proof | Chain | License gate | Warnings |",
+        "|---|---|---:|---:|---|---|---|",
     ]
     for item in bundle["sets"]:
         record = item["set"]
         gate = "open" if record["purchaseGated"] is False else "gated" if record["purchaseGated"] is True else "review"
         lines.append(
             f"| `{record['slug']}` | {item['stageClass']} | {record['avatarCount']} | "
-            f"{record['chain'] or 'none'} | {gate} | {', '.join(item['warnings']) or 'none'} |"
+            f"{item['sourceAssets']['binaryValidatedCount']} | {record['chain'] or 'none'} | "
+            f"{gate} | {', '.join(item['warnings']) or 'none'} |"
         )
     reason_counts: dict[str, int] = {}
     for item in bundle["deferred"]:
@@ -569,6 +696,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     parser.add_argument("--db", default=str(root / "data" / "vrm_index.db"))
     parser.add_argument("--output", default=str(root / "static" / "data" / "hubzz-prealpha-staging.json"))
     parser.add_argument("--report", default=str(root / "docs" / "hubzz-prealpha-staging.md"))
+    parser.add_argument("--discovery-report", default=str(root / "data" / "live_discovery_report.json"))
     parser.add_argument("--validate", action="store_true")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
@@ -578,10 +706,11 @@ def main(argv: Iterable[str] | None = None) -> int:
         return 2
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
+    discovery_contracts = load_discovery_contracts(Path(args.discovery_report))
     conn = sqlite3.connect(str(db_path))
     conn.row_factory = sqlite3.Row
     try:
-        bundle = build_bundle(conn, output)
+        bundle = build_bundle(conn, output, discovery_contracts)
     finally:
         conn.close()
     errors = validate_bundle(bundle)
@@ -594,7 +723,9 @@ def main(argv: Iterable[str] | None = None) -> int:
     summary = bundle["summary"]
     print(
         f"wrote {output}: {summary['stageableSets']} stageable sets, "
-        f"{summary['sourceAvatars']} source avatars, {summary['deferredSets']} deferred",
+        f"{summary['sourceAvatars']} source avatars, "
+        f"{summary['binaryValidatedSourceAvatars']} binary-validated, "
+        f"{summary['deferredSets']} deferred",
         file=sys.stderr,
     )
     return 0
