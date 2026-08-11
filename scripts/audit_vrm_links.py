@@ -243,9 +243,12 @@ def collect_from_db(
         if url_column:
             has_avatars = _table_exists(conn, "avatars")
             if has_avatars:
-                sql = """
+                token_expr = (
+                    "a.token_id" if "token_id" in avatar_columns else "NULL AS token_id"
+                )
+                sql = f"""
                     SELECT av.avatar_id, av.vrm_source_url,
-                           a.collection_id, a.token_id
+                           a.collection_id, {token_expr}
                     FROM avatar_vrm av
                     LEFT JOIN avatars a ON a.id=av.avatar_id
                     ORDER BY av.avatar_id, av.vrm_source_url
