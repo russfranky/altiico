@@ -1,0 +1,22 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T00:53:57Z",
+  "setSlug": "chuddie",
+  "count": 1,
+  "avatars": [
+    {
+      "id": "sample",
+      "tokenId": null,
+      "name": "Chuddie #1019",
+      "originalSourceUrl": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+      "transportUrl": "https://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq.ipfs.dweb.link/127.vrm",
+      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xe8979fdd9f050052e53a13257fe6218edd52c80a/7afb50eb5c0b5a559955128531a27b/777afb50eb5c0b5a559955128531a27b.png",
+      "validated": true,
+      "checkedAt": "2026-08-11T00:37:40Z",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": "0.x",
+      "fileSizeOriginal": 449908
+    }
+  ]
+}

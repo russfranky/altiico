@@ -1,0 +1,22 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T00:53:57Z",
+  "setSlug": "frutiger-anons",
+  "count": 1,
+  "avatars": [
+    {
+      "id": "4",
+      "tokenId": "4",
+      "name": "Frutiger Anons #137",
+      "originalSourceUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
+      "transportUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
+      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088/238eae79f93b324e57269eb153447f7c.gif",
+      "validated": true,
+      "checkedAt": "2026-08-10T13:47:53Z",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": null,
+      "fileSizeOriginal": 347668
+    }
+  ]
+}
