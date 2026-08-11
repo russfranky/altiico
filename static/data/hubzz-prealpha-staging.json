@@ -1,0 +1,1815 @@
+{
+  "schema": "hubzz-prealpha-staging-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T01:03:35Z",
+  "source": {
+    "repository": "russfranky/vrm-catalog",
+    "database": "data/vrm_index.db"
+  },
+  "summary": {
+    "catalogSets": 65,
+    "stageableSets": 11,
+    "bulkReadySets": 2,
+    "partialReadySets": 0,
+    "previewReadySets": 9,
+    "deferredSets": 54,
+    "sourceAvatars": 149,
+    "binaryValidatedSourceAvatars": 9,
+    "openLicenseSets": 0,
+    "gatedSets": 3,
+    "licenseReviewSets": 8
+  },
+  "sets": [
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "halloween-rising",
+        "name": "Halloween Rising",
+        "description": "Spooky Halloweenn avatars - 60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Released on the deprecated VIPE platform",
+        "chain": "optimism",
+        "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "Other (VIPE custom)",
+        "author": "Polygonal-Mind",
+        "copyright": null,
+        "mintDate": "2023-10-25",
+        "totalMints": 60,
+        "bannerUrl": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/5f5bdf8034ef6e9838f017d4ba22a5/3f5f5bdf8034ef6e9838f017d4ba22a5.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/54b3f4801301ca2c1d7c5dd9c76dfa/1754b3f4801301ca2c1d7c5dd9c76dfa.jpeg",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 60
+      },
+      "stageClass": "bulk_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/halloween-rising.json",
+        "count": 60,
+        "mode": "enumerated",
+        "reachableCount": 60,
+        "binaryValidatedCount": 0,
+        "validationScope": "collection_binary_plus_avatar_reachability"
+      },
+      "coverage": {
+        "knownAvatars": 60,
+        "reachableSourceAvatars": 60,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 60,
+        "coverageRatio": 1.0
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
+        "transportUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 5719796,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "xmas-chibis",
+        "name": "Xmas Chibis",
+        "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM avatars with 16 designs and 5 variations on Polygon.",
+        "chain": "polygon",
+        "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "All Rights Reserved",
+        "author": "Polygonal-Mind",
+        "copyright": null,
+        "mintDate": "2023-12-04",
+        "totalMints": 80,
+        "bannerUrl": "https://i2c.seadn.io/polygon/b0de9c9b33394903a7b3d73c26ebc997/b9bade10a0ec9c899711180c3fa13b/6bb9bade10a0ec9c899711180c3fa13b.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/matic/0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/f4c20b2f5163188ce83db681e1e30a/2af4c20b2f5163188ce83db681e1e30a.png",
+        "purchaseGated": true,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 80
+      },
+      "stageClass": "bulk_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/xmas-chibis.json",
+        "count": 80,
+        "mode": "enumerated",
+        "reachableCount": 80,
+        "binaryValidatedCount": 0,
+        "validationScope": "collection_binary_plus_avatar_reachability"
+      },
+      "coverage": {
+        "knownAvatars": 80,
+        "reachableSourceAvatars": 80,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 80,
+        "coverageRatio": 1.0
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
+        "transportUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 3315368,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": []
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "avastars",
+        "name": "Avastars",
+        "description": "Avastars (est. in Feb. 2020) are generative characters for the metaverse. Each one is unique and has their art and metadata stored on-chain. Avastars come licensed for use commercially by their owners. Collect Avastar Primes to make Replicants with their trait copies. IMPORTANT: When someone uses/burns a trait copy from an Avastar Prime, OpenSea shows “-Burned” after the trait name. ALWAYS CLICK ON A TRAIT TO SEE IF IT’S COPY IS BURNED BEFORE PURCHASE IF THIS IS IMPORTANT TO YOU. There is also a “MINT CONDITION” trait. All Avastars #0-25,199 are Avastar Primes. #25,200+ are Avastar Replicants. You cannot make a Replicant with another Replicant’s traits, and no 2 Avastar Primes or Replicants can ever be the same. You can also see whether an Avastar is a Prime or a Replicant under the “Wave” category. For more info, visit the Avastars Discord.",
+        "chain": "ethereum",
+        "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": null,
+        "author": null,
+        "copyright": null,
+        "mintDate": "2020-02-07",
+        "totalMints": 26617,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/2d0cdced8a604a7894157cd654fd270e/58f78e61b7e2d8d0885d45a5d55b2d/5258f78e61b7e2d8d0885d45a5d55b2d.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/2d0cdced8a604a7894157cd654fd270e/45c90aaac3da2ca86cbbf2cf8cc5bd/0f45c90aaac3da2ca86cbbf2cf8cc5bd.gif",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/avastars.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 26617,
+        "coverageRatio": 3.8e-05
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://ipfs.io/ipfs/QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_1.vrm",
+        "transportUrl": "https://ipfs.io/ipfs/QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_1.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 13950876,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "10574",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "chuddie",
+        "name": "Chuddies",
+        "description": "Chuddies are 5,000 sweetiepilled generative pfpNFTS, a love letter to gaming and internet culture filled with nostalgia.\n\nDiscord: https://discord.gg/BBW7e54P99\nMint: https://www.scatter.art/chuddies?tab=mint\nTwitter: https://twitter.com/chuddieswow",
+        "chain": "ethereum",
+        "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "Scatter (Remilia ecosystem)",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2023-06-26",
+        "totalMints": 4875,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/e70e58fdece34aadec4f34e078e494/e4e70e58fdece34aadec4f34e078e494.gif",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/chuddie.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 4875,
+        "coverageRatio": 0.000205
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+        "transportUrl": "https://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq.ipfs.dweb.link/127.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 449908,
+        "validatedAt": "2026-08-11T00:37:40Z",
+        "tokenId": null,
+        "source": "a3ac-missing-contract",
+        "chain": "ethereum",
+        "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "forgottenruneswizardscult",
+        "name": "Forgotten Runes Wizards Cult",
+        "description": "The Forgotten Runes Wizard's Cult is a collaborative legendarium. 10,000 unique Wizard NFTs, fully encoded on-chain. \r\n\r\n[Website](http://forgottenrunes.com) | [Discord](https://discord.gg/forgottenrunes) | [Twitter](https://twitter.com/forgottenrunes) | [Book of Lore](https://www.forgottenrunes.com/lore) | [Principles](https://www.forgottenrunes.com/posts/principles) | [Goodies](https://www.forgottenrunes.com/posts/goodies)\r\n\r\n[All Sister Collections](https://opensea.io/collection/forgottenrunes):\r\n\r\n[Sacred Flame](https://opensea.io/assets/0x31158181b4b91a423bfdc758fc3bf8735711f9c5/0) | [Forgotten Souls](https://opensea.io/collection/forgottensouls) | [Forgotten Ponies](https://opensea.io/collection/forgottenrunesponies)\r\n\r\nWizard NFT holders have not only the _image_, but the _character_ of that Wizard. Day by day, the Wizards in our collection come alive as our community builds lore, maps, stories, poems, art, and animation.\r\n\r\nJoin the Cult",
+        "chain": "ethereum",
+        "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "Holder commercial (cc5m)",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2021-06-29",
+        "totalMints": 9944,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/5c1e776de37f42508da92ed914f65016/3a1695a7f59eb5765b7ca0081c7f7c/9a3a1695a7f59eb5765b7ca0081c7f7c.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/5c1e776de37f42508da92ed914f65016/883bc556002107aacbbac7f65a1169/95883bc556002107aacbbac7f65a1169.png",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/forgottenruneswizardscult.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 9944,
+        "coverageRatio": 0.000101
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+        "transportUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 3207404,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "7362",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "frutiger-anons",
+        "name": "Frutiger Anons",
+        "description": "A collection of 400 VRM avatars inspired by anons meme folder.",
+        "chain": "ethereum",
+        "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "Scatter commercial merch license",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2023-07-19",
+        "totalMints": 400,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/572aabedff827fb6a391e9b86b6b54/34572aabedff827fb6a391e9b86b6b54.gif?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/fb845489b0fe91f776bcc5459ad75d/e3fb845489b0fe91f776bcc5459ad75d.gif",
+        "purchaseGated": true,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/frutiger-anons.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 400,
+        "coverageRatio": 0.0025
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
+        "transportUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 347668,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "4",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "meebits",
+        "name": "Meebits",
+        "description": "The Meebits are 20,000 unique 3D voxel characters, created by a custom generative algorithm, then registered on the Ethereum blockchain.",
+        "chain": "ethereum",
+        "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "Other (Yuga Labs)",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2021-05-03",
+        "totalMints": 20000,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/036c8c2bed042a1588622c3173677f/2d036c8c2bed042a1588622c3173677f.png",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/meebits.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 20000,
+        "coverageRatio": 5e-05
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+        "transportUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+        "vrmSpec": null,
+        "fileSizeOriginal": 718232,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "17438",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "metaanigen",
+        "name": "MetaaniGEN",
+        "description": "Metaani is CryptoArt Collaboration Avatar for metaverse",
+        "chain": "ethereum",
+        "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "All Rights Reserved",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2021-10-02",
+        "totalMints": 1354,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/f9ba6b040d52b6a6a53a1b79c27694/56f9ba6b040d52b6a6a53a1b79c27694.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/9eef987ccc5b177b3f5f98a297fe54/839eef987ccc5b177b3f5f98a297fe54.png",
+        "purchaseGated": true,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/metaanigen.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 1354,
+        "coverageRatio": 0.000739
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
+        "transportUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
+        "vrmSpec": null,
+        "fileSizeOriginal": 921444,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "2051",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "misfitpixels",
+        "name": "MisfitPIXELS",
+        "description": "Over 15 ETH total volume on original contract before migrating. 1k unique pixel misfits & 3d avatars to rule the blockchain & metaverse! Owning a misfit grants you access to interoperable 3d avatars, exclusive drops, gated community experiences, metaverse events, games & more! Each misfit token comes with non-exclusive IP rights to the likeness of the artwork. Additional project information can be found on https://misfitpixels.xyz",
+        "chain": "ethereum",
+        "contract": "0x618951345638caa062259cdbed445d4fb661b774",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": null,
+        "author": null,
+        "copyright": null,
+        "mintDate": "2023-06-06",
+        "totalMints": 1000,
+        "bannerUrl": "https://stream.mux.com/t8FE49Q1NCYDLeVTw6GO4fH5UaPz01ZyKO01gmelY8I01s/high.mp4",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/344041e704ad4005a6a82af9d2f11928/4dd63322c5277975b45c0d3fcfdc0f/4b4dd63322c5277975b45c0d3fcfdc0f.gif",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/misfitpixels.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 1000,
+        "coverageRatio": 0.001
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+        "transportUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 146868,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": "9",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "neonglitch86-collection-polygon-side",
+        "name": "NeonGlitch86 Collection (Polygon side)",
+        "description": null,
+        "chain": "polygon",
+        "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": null,
+        "author": null,
+        "copyright": null,
+        "mintDate": "2025-10-07",
+        "totalMints": 41,
+        "bannerUrl": null,
+        "pfpUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/neonglitch86-collection-polygon-side.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 41,
+        "coverageRatio": 0.02439
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 1590520,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review",
+        "missing_banner"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "phettaverse-editions",
+        "name": "Phettaverse Editions",
+        "description": "Each Phettaverse case can be many things embodied into one, but each case is the core of the Phettaverse storyline from the outside—a way for Phetta to document and keep track of every new being and event that takes place. \n\nSome may ask, what can you take away from these cases? In simple terms, they are moments in life—experiences, lessons, dreams, goals, and expression. What is life without these, and what is life without a way to share these with others?",
+        "chain": "ethereum",
+        "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "Commission-based",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2021-11-27",
+        "totalMints": 371,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/4cb97b5f3c244500be1a8fb2064dc675/be6917c67bb8b2a1fd2ca521bac5af/dbbe6917c67bb8b2a1fd2ca521bac5af.png?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/4cb97b5f3c244500be1a8fb2064dc675/82f99445b8543f278d707d2347c360/7082f99445b8543f278d707d2347c360.jpeg",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/phettaverse-editions.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 371,
+        "coverageRatio": 0.002695
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "transportUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 1698236,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only",
+        "license_requires_review"
+      ]
+    }
+  ],
+  "deferred": [
+    {
+      "slug": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x77372a",
+        "name": "a KID called BEAST",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0x62eb14",
+      "name": "AdWorld",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x62eb14",
+        "name": "AdWorld",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0xaad35c",
+      "name": "Akutars",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0xaad35c",
+        "name": "Akutars",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "allstarz-psx",
+      "name": "Allstarz PSX",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "allstarz-psx",
+        "name": "Allstarz PSX",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "error"
+      }
+    },
+    {
+      "slug": "research-0xc1fcf3",
+      "name": "Arbibots",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0xc1fcf3",
+        "name": "Arbibots",
+        "tier": "C",
+        "chain": "arbitrum",
+        "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0x1ac7a2",
+      "name": "ArbiDudesGenOne",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x1ac7a2",
+        "name": "ArbiDudesGenOne",
+        "tier": "C",
+        "chain": "arbitrum",
+        "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "boomboxheads-v2",
+      "name": "Boomboxheads V2",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [],
+      "facts": {
+        "slug": "boomboxheads-v2",
+        "name": "Boomboxheads V2",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "timeout"
+      }
+    },
+    {
+      "slug": "bourey-vs-bulley-bourverse",
+      "name": "Bourey vs Bulley: Bourverse",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "bourey-vs-bulley-bourverse",
+        "name": "Bourey vs Bulley: Bourverse",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "chain-runners",
+      "name": "Chain Runners",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "chain-runners",
+        "name": "Chain Runners",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "chametheon",
+      "name": "Chametheon",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "chametheon",
+        "name": "Chametheon",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0xc49a9a",
+        "name": "Chibi Apes",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "reachable_not_vrm"
+      }
+    },
+    {
+      "slug": "cryptoavatars",
+      "name": "CryptoAvatars",
+      "reasons": [
+        "unsupported_chain:multi",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "cryptoavatars",
+        "name": "CryptoAvatars",
+        "tier": "B",
+        "chain": "multi",
+        "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "cyberanimedoll-avatar",
+      "name": "CyberAnimeDOLL: Avatar",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "cyberanimedoll-avatar",
+        "name": "CyberAnimeDOLL: Avatar",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "cyberbrokers",
+      "name": "CyberBrokers",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "cyberbrokers",
+        "name": "CyberBrokers",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "timeout"
+      }
+    },
+    {
+      "slug": "coldie",
+      "name": "DEyes Legends by Coldie",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [],
+      "facts": {
+        "slug": "coldie",
+        "name": "DEyes Legends by Coldie",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "error"
+      }
+    },
+    {
+      "slug": "dickbuttverse",
+      "name": "DickButtVerse",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [],
+      "facts": {
+        "slug": "dickbuttverse",
+        "name": "DickButtVerse",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "error"
+      }
+    },
+    {
+      "slug": "elysium-shell-next-mecha",
+      "name": "Elysium Shell: Next - Mecha",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "elysium-shell-next-mecha",
+        "name": "Elysium Shell: Next - Mecha",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x369156",
+      "name": "Flooz GEN F",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x369156",
+        "name": "Flooz GEN F",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0xccc441",
+      "name": "FLUF World",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0xccc441",
+        "name": "FLUF World",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "fly-frogs",
+      "name": "Fly Frogs",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "fly-frogs",
+        "name": "Fly Frogs",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x1bcbd0",
+      "name": "FUKU",
+      "reasons": [
+        "unsupported_chain:ape_chain",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "research-0x1bcbd0",
+        "name": "FUKU",
+        "tier": "C",
+        "chain": "ape_chain",
+        "contract": "0x1bcbd0d45d35bbbe514bec8cb9e48c51835a6d8c",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0x14c447",
+      "name": "FyatLux",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x14c447",
+        "name": "FyatLux",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "http_403"
+      }
+    },
+    {
+      "slug": "immadegen-void",
+      "name": "Immadegen (VOID)",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "immadegen-void",
+        "name": "Immadegen (VOID)",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "a3ac-0x86fc6f",
+      "name": "Jadu AVA",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x86fc6f",
+        "name": "Jadu AVA",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0xd2F668",
+      "name": "Karafuru 3D",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0xd2F668",
+        "name": "Karafuru 3D",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xd2F668a8461D6761115dAF8Aeb3cDf5F40C532C6",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0x223ef0",
+      "name": "Metashima - Lightning",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x223ef0",
+        "name": "Metashima - Lightning",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "metatravelers",
+      "name": "MetaTravelers",
+      "reasons": [
+        "missing_contract",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "metatravelers",
+        "name": "MetaTravelers",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": null,
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x53e38a",
+      "name": "Metaverse Stardrop",
+      "reasons": [
+        "unsupported_chain:ape_chain",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "research-0x53e38a",
+        "name": "Metaverse Stardrop",
+        "tier": "C",
+        "chain": "ape_chain",
+        "contract": "0x53e38a3bb5954cc7830bbc6f2520b61d01d95056",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x1142c6",
+        "name": "mferverse: OG mfers",
+        "tier": "C",
+        "chain": "base",
+        "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "mona-avatars",
+      "name": "MONA Avatars",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "mona-avatars",
+        "name": "MONA Avatars",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x235817",
+      "name": "Moonbirds",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x235817",
+        "name": "Moonbirds",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "missing_banner"
+      ],
+      "facts": {
+        "slug": "NeonGlitch86-collection",
+        "name": "NeonGlitch86 Collection",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+        "knownAvatars": 12,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "NeonGlitch86 Collection (Shape side)",
+      "name": "NeonGlitch86 Collection (Shape side)",
+      "reasons": [
+        "unsupported_chain:shape"
+      ],
+      "warnings": [
+        "sample_only"
+      ],
+      "facts": {
+        "slug": "NeonGlitch86 Collection (Shape side)",
+        "name": "NeonGlitch86 Collection (Shape side)",
+        "tier": "A",
+        "chain": "shape",
+        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
+      }
+    },
+    {
+      "slug": "research-0x92133e",
+      "name": "Non-Fungible People",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x92133e",
+        "name": "Non-Fungible People",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "nouns",
+      "name": "Nouns",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "nouns",
+        "name": "Nouns",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "og-meta-meeples-pfp",
+      "name": "OG Meta Meeples PFP",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "og-meta-meeples-pfp",
+        "name": "OG Meta Meeples PFP",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "omnimorphs",
+      "name": "Omnimorphs",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "omnimorphs",
+        "name": "Omnimorphs",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0xA7aE1B",
+      "name": "PAPE",
+      "reasons": [
+        "unsupported_chain:ape_chain",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "research-0xA7aE1B",
+        "name": "PAPE",
+        "tier": "C",
+        "chain": "ape_chain",
+        "contract": "0xA7aE1BBFA1EE713AcF2A240Cd5Fff184685f5304",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0x0fc3dd",
+      "name": "Parallel Avatars",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x0fc3dd",
+        "name": "Parallel Avatars",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0x35471f",
+      "name": "PartyBear",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x35471f",
+        "name": "PartyBear",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "pixelbeasts",
+      "name": "PixelBeasts",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "missing_banner"
+      ],
+      "facts": {
+        "slug": "pixelbeasts",
+        "name": "PixelBeasts",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "reachable_not_vrm"
+      }
+    },
+    {
+      "slug": "polygonlow",
+      "name": "PolygonLow",
+      "reasons": [
+        "missing_contract",
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review",
+        "missing_banner",
+        "missing_pfp"
+      ],
+      "facts": {
+        "slug": "polygonlow",
+        "name": "PolygonLow",
+        "tier": "A",
+        "chain": "polygon",
+        "contract": null,
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "rstlss-x-claire-silver-pixelgeist",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "rstlss-x-claire-silver-pixelgeist",
+        "name": "RSTLSS x Claire Silver: Pixelgeist",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "a3ac-0x49cf6f",
+      "name": "RTFKT CloneX",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x49cf6f",
+        "name": "RTFKT CloneX",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "the-dask",
+      "name": "The Dask",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "the-dask",
+        "name": "The Dask",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "a3ac-0x50e712",
+      "name": "The Modz",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x50e712",
+        "name": "The Modz",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x50e712b3a260d7639179e8277836253461418f23",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "a3ac-0xaaf03a",
+      "name": "The Seekers",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0xaaf03a",
+        "name": "The Seekers",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "toxic-skulls-club",
+      "name": "Toxic Skulls Club",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "toxic-skulls-club",
+        "name": "Toxic Skulls Club",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x324F60",
+      "name": "VeeFriends Series 2",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x324F60",
+        "name": "VeeFriends Series 2",
+        "tier": "C",
+        "chain": "base",
+        "contract": "0x324F60bA2d1815EF649DCc73559172305F5dd02c",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0x631086",
+      "name": "Virtuals Waifus",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x631086",
+        "name": "Virtuals Waifus",
+        "tier": "C",
+        "chain": "base",
+        "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "voltz",
+      "name": "Voltz",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "voltz",
+        "name": "Voltz",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "reachable_not_vrm"
+      }
+    },
+    {
+      "slug": "wassies",
+      "name": "Wassies",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "wassies",
+        "name": "Wassies",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "woodies",
+      "name": "Woodies",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "woodies",
+        "name": "Woodies",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x35373e",
+        "name": "ZTX Genesis Homes",
+        "tier": "C",
+        "chain": "arbitrum",
+        "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    }
+  ]
+}

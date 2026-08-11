@@ -1,57 +1,81 @@
-# SCOPE — vrm-catalog
+# SCOPE: vrm-catalog
 
-Written per the `avoid-feature-creep` framework after an audit found most of the
-surface was built for a goal nobody set. Read this before adding anything.
+Updated 2026-08-11 after the owner explicitly asked for the catalog to support
+staging avatar sets in Hubzz pre-alpha. This supersedes the earlier statement
+that Hubzz staging was out of scope. The public catalog remains a research tool;
+the staging bundle is a separate machine-readable downstream artifact.
 
 ## Core problem
-A researcher needs to find VRM avatar collections and answer three questions
-fast: **what is this, can I see it, does the file actually work.**
+
+A researcher needs to find VRM avatar sets and answer three questions fast:
+**what is this, can I see it, does the file actually work.** The same evidence
+must be organized well enough to hand technically valid source avatars to Hubzz
+pre-alpha without pretending they are already optimized or published.
 
 ## Success criteria
-You can open the page, browse real avatar art, preview any avatar in 3D, and
-know whether its VRM file is reachable — without reading a database.
 
-## In scope (v1)
-- **Collections** — art, name, description, license, supply, links, VRM status,
-  each rolled up with its own avatar-reachability count. One dense list, one view.
-- **VRM viewer** — loads any VRM in the browser and shows its embedded metadata.
-- **Search** across names, contracts, creators, descriptions.
-- **Reachability checking** — collection-level and rolled up from per-avatar checks.
-- Four plain-language filters (chain, licence, VRM status, sort) — no research
-  state, no annotation. The catalog is read-only.
+1. The catalog grows through defensible NFT-to-VRM evidence.
+2. Every accepted VRM passes binary validation, not URL or keyword heuristics.
+3. A generated Hubzz staging bundle separates stageable sets from deferred sets.
+4. Every staged set has at least one validated source avatar and a canonical
+   `status: staged`, `listed: false` set record.
+5. Every deferred set has explicit blockers that can drive the next research pass.
+6. Unsupported chains, unknown licenses, and partial inventories are never
+   silently coerced into stronger claims.
+
+## In scope
+
+- **Collections**: art, name, description, license, supply, links, VRM status,
+  and rolled-up avatar reachability.
+- **VRM viewer**: loads a validated VRM in the browser and shows embedded metadata.
+- **Search and plain-language filters** for the research catalog.
+- **Reachability and binary VRM validation** at collection and avatar level.
+- **Targeted recursive discovery** from curated registries, known contracts,
+  token metadata, and explicit leads. Blind marketplace or storage sweeps remain
+  excluded unless a genuinely new intake source exists.
+- **Hubzz pre-alpha staging export** as a backend artifact only:
+  - canonical staged set records matching the pre-alpha schema
+  - source-avatar sidecars containing original validated VRM URLs
+  - coverage, license-review, and chain-mapping warnings
+  - an explicit deferred queue with machine-readable reasons
+- **A guarded Hubzz importer** that dry-runs by default and may merge staged set
+  rows into the Hubzz registry only with an explicit live flag and credentials.
 
 ## Explicitly out of scope
-- **Hubzz onboarding / ingestion.** Never asked for. Inventing it produced a
-  readiness scorecard, a presence sync, an owner-decision system and a scheduled
-  loop. Removed from the interface; the data columns stay, unused, rather than
-  risk a destructive migration.
-- **Marketplace/registry exports** (`avatar-manifest-v1`, `avatars-registry`).
-  Kept as scripts because they are already written and cost nothing to leave
-  alone; they are not part of the product and get no UI.
-- **Discovery sweeps.** Six vectors returned zero (see
-  `docs/discovery-findings.md`). Do not re-run without a new intake source.
-- **On-chain tool registries (ERC-8257 / Base).** Explicitly declined.
+
+- Publishing a set to Hubzz or claiming optimization is complete.
+- Uploading external VRMs as canonical served assets without the Hubzz optimizer.
+- Setting `listed: true` from catalog evidence.
+- Treating unknown licensing as permission.
+- Coercing unsupported ownership chains to `null` merely to pass a schema.
+- Replacing Hubzz's canonical avatar database, optimizer, moderation, or R2
+  manifest generator.
+- Adding staging state, readiness scores, or Hubzz pipeline vocabulary to the
+  public catalog interface.
 
 ## Non-negotiables
-- No pipeline vocabulary in the interface. `tier A/B/C`, `ok_vrm`,
-  `readiness N/8`, `hubzz_status` are internal. Translate them or leave them out.
-- Every feature must answer one of the three core questions. If it does not, it
-  does not ship.
-- Verify by rendering the artifact, not by reading the code.
 
-## What was cut in the 2026-08-10 audit
-| Cut | Why |
-|---|---|
-| "NEW & ready" stat + readiness filter | Serves onboarding, not research |
-| Readiness badge (`◐ N/8`, `✅ NEW · ready`) | Internal scoring leaked to the UI |
-| Hubzz presence badges (`🏠 in Hubzz`, `◑ partial`) | Onboarding state |
-| Declined badge + filter | Existed only to suppress onboarding candidates |
-| Tier badge (`Tier A/B/C`) | Pipeline vocabulary; supply + VRM status say more |
-| OpenSea Candidates tab | 216 leads, all proven non-VRM — noise |
-| Scheduled daily loop | Automation for a goal that no longer exists |
-| Avatars tab (4,274-row browser) | Duplicated collection data one row at a time |
-| Header stat row (collections/avatars/open/holder/restricted/verified/saved) | Decoration, not a research question |
-| Tab bar | One view left; a switch with one position is not a switch |
-| Bookmark star, status dropdown, notes | Unused localStorage research-state layer |
-| Table view + List/Table toggle | Same fields as the list, denser in the list |
-| **Backend for all of the above** — `loadOpensea`/`loadAvatars`/`switchTab`/`sort`/`sortOS` (dead, no callers), `catalog-summary.json` + `opensea-candidates.json` + `avatars-*.json` exports (216 + 4,274 rows nothing fetched), 7 hidden dummy filter `<select>`s | Cutting the UI and leaving the code/data behind it is the same mistake as building the wrong thing — it still ships and still needs reading |
+- The catalog UI stays focused on research. Staging output is a separate artifact.
+- A reachable GLB without `VRM` or `VRMC_vrm` is not a VRM.
+- A shared storefront contract is not a collection identity without token or slug evidence.
+- Names may suggest a match but never authorize an automatic merge by themselves.
+- Unknown means unknown. It never becomes open, green, ungated, or published.
+- Hubzz owns the canonical served URL. Catalog URLs are original-source provenance.
+- Every staging run reports before/after counts and exact evidence paths.
+- Verify the generated artifacts and downstream schema, not only the Python code.
+
+## Historical cuts that remain correct
+
+The 2026-08-10 UI audit removed readiness badges, Hubzz presence badges,
+bookmarks, notes, pipeline tiers, the OpenSea candidate view, the avatars browser,
+and duplicate table views. Those cuts remain correct. The owner has now requested
+a staging **artifact**, not a staging dashboard inside the research catalog.
+
+## Current handoff artifacts
+
+- `static/data/avatar-manifest-v1.json`: legacy resolver manifest.
+- `static/data/avatars-registry.json`: broad catalog projection, not a staging gate.
+- `static/data/hubzz-prealpha-staging.json`: conservative stageable/deferred bundle.
+- `static/data/hubzz-prealpha-source/*.json`: original validated source-avatar lists.
+- `docs/hubzz-prealpha-staging.md`: human-readable staging summary.
+- `data/live_discovery_report.json`: measured recursive discovery evidence.

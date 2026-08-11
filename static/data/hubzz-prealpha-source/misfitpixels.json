@@ -1,0 +1,26 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T01:03:35Z",
+  "setSlug": "misfitpixels",
+  "count": 1,
+  "reachableCount": 1,
+  "binaryValidatedCount": 1,
+  "avatars": [
+    {
+      "id": "9",
+      "tokenId": "9",
+      "name": "MisfitPIXELS #231",
+      "originalSourceUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+      "transportUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0x618951345638caa062259cdbed445d4fb661b774/ddd2509040d907c11ccc4cb9bd178d/15ddd2509040d907c11ccc4cb9bd178d.png",
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "collection_sample_binary",
+      "checkedAt": "2026-08-10T13:47:53Z",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": null,
+      "fileSizeOriginal": 146868
+    }
+  ]
+}

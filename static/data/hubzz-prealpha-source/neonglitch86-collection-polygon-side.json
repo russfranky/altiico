@@ -1,0 +1,26 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T01:03:35Z",
+  "setSlug": "neonglitch86-collection-polygon-side",
+  "count": 1,
+  "reachableCount": 1,
+  "binaryValidatedCount": 1,
+  "avatars": [
+    {
+      "id": "sample",
+      "tokenId": null,
+      "name": "NeonGlitch86 Collection (Polygon side) sample",
+      "originalSourceUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+      "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+      "thumbnailUrl": null,
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "collection_sample_binary",
+      "checkedAt": "2026-08-10T13:47:53Z",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": null,
+      "fileSizeOriginal": 1590520
+    }
+  ]
+}
