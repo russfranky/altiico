@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: vrm-link-audit-${{ github.ref }}
+  group: vrm-link-audit-v2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
