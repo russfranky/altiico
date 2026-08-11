@@ -1,4 +1,5 @@
 name: Audit every VRM link
+# Rerun after making database bindings schema-compatible.
 
 on:
   push:
