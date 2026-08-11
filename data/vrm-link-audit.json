@@ -1,16 +1,17 @@
 {
   "schema": "vrm-link-audit-v1",
-  "generated_at": "2026-08-11T20:06:14Z",
-  "snapshot_id": "vrmcat-v1-3d524aa7c7438555543098b6",
-  "commit_sha": "df1707dc7ca35276960b11b8eb0befd064ad66c7",
+  "generated_at": "2026-08-11T20:25:11Z",
+  "snapshot_id": "vrmcat-v1-2075d3173cece90b0e59bd0b",
+  "commit_sha": "670179eda96ff6b1b08c6d31f9bb28afcbec4b1c",
   "database": "data/vrm_index.db",
   "scanned_json_files": [
     "static/data/avatar-manifest-v1.json",
     "static/data/avatars-registry.json",
     "static/data/build-info.json",
-    "static/data/collections.849cc604c2d1.json",
+    "static/data/collections.261dc5d177bb.json",
     "static/data/hubzz-prealpha-source/NeonGlitch86-collection.json",
     "static/data/hubzz-prealpha-source/avastars.json",
+    "static/data/hubzz-prealpha-source/boomboxheads-v2.json",
     "static/data/hubzz-prealpha-source/chuddie.json",
     "static/data/hubzz-prealpha-source/forgottenruneswizardscult.json",
     "static/data/hubzz-prealpha-source/frutiger-anons.json",
@@ -26,39 +27,38 @@
     "data/staging_validation_report.json"
   ],
   "summary": {
-    "unique_concrete_links": 198,
-    "raw_references": 999,
-    "valid_vrm_links": 188,
-    "broken_or_unverified_links": 10,
+    "unique_concrete_links": 197,
+    "raw_references": 1004,
+    "valid_vrm_links": 189,
+    "broken_or_unverified_links": 8,
     "invalid_uri_references": 0,
     "classification_counts": {
-      "access_blocked": 1,
       "healthy": 158,
-      "healthy_with_transport_degradation": 30,
+      "healthy_with_transport_degradation": 31,
       "non_vrm_glb": 3,
       "not_glb": 1,
-      "transient_transport_failure": 5
+      "transient_transport_failure": 4
     },
     "severity_counts": {
-      "error": 5,
+      "error": 4,
       "info": 158,
       "warning": 35
     },
     "scheme_counts": {
-      "https": 18,
+      "https": 17,
       "ipfs": 180
     },
-    "network_requests_observed": 1764,
-    "validated_bytes": 1092848604
+    "network_requests_observed": 1755,
+    "validated_bytes": 1095987636
   },
   "collections": [
     {
       "collection_id": "<unbound>",
-      "unique_links": 2,
-      "healthy_links": 2,
+      "unique_links": 1,
+      "healthy_links": 1,
       "problem_links": 0,
       "classification_counts": {
-        "healthy": 2
+        "healthy": 1
       }
     },
     {
@@ -110,10 +110,10 @@
     {
       "collection_id": "boomboxheads-v2",
       "unique_links": 1,
-      "healthy_links": 0,
-      "problem_links": 1,
+      "healthy_links": 1,
+      "problem_links": 0,
       "classification_counts": {
-        "transient_transport_failure": 1
+        "healthy_with_transport_degradation": 1
       }
     },
     {
@@ -201,10 +201,10 @@
     {
       "collection_id": "phettaverse-editions",
       "unique_links": 1,
-      "healthy_links": 0,
-      "problem_links": 1,
+      "healthy_links": 1,
+      "problem_links": 0,
       "classification_counts": {
-        "access_blocked": 1
+        "healthy": 1
       }
     },
     {
@@ -245,7 +245,7 @@
     },
     {
       "template": "api.meebits.app/v2/3d/larvalabs_vrm/{id}",
-      "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[30].vrm_url_pattern",
+      "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[30].vrm_url_pattern",
       "collection_id": null
     },
     {
@@ -355,7 +355,7 @@
     },
     {
       "template": "ipfs://bafybeibe4axqsukdfeuy4fnrtti4dko7ph3fopl6xkr3tsdyp3zhhl5eyu/{id}.vrm",
-      "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[6].vrm_url_pattern",
+      "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[6].vrm_url_pattern",
       "collection_id": null
     },
     {
@@ -365,7 +365,7 @@
     },
     {
       "template": "nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
-      "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[22].vrm_url_pattern",
+      "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[22].vrm_url_pattern",
       "collection_id": null
     },
     {
@@ -375,7 +375,7 @@
     },
     {
       "template": "pixelbeasts3d.replit.app/beast/{id}.vrm",
-      "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[48].vrm_url_pattern",
+      "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[48].vrm_url_pattern",
       "collection_id": null
     },
     {
@@ -1051,98 +1051,6 @@
         "latency_seconds": 0.49
       },
       "validation_errors": []
-    },
-    {
-      "canonical_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-      "scheme": "https",
-      "classification": "access_blocked",
-      "severity": "error",
-      "recommendation": "The source is not publicly retrievable. Move the VRM to durable public storage or use an authorized server-side source.",
-      "raw_urls": [
-        "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
-      ],
-      "origins": [
-        "db:collections.vrm_url_https",
-        "json:static/data/collections.849cc604c2d1.json:$.collections[47].vrm_url_https",
-        "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].originalSourceUrl",
-        "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].transportUrl",
-        "json:static/data/hubzz-prealpha-staging.json:$.sets[11].sampleEvidence.canonicalUrl",
-        "json:static/data/hubzz-prealpha-staging.json:$.sets[11].sampleEvidence.transportUrl"
-      ],
-      "collection_ids": [
-        "phettaverse-editions"
-      ],
-      "avatar_ids": [
-        "sample"
-      ],
-      "token_ids": [],
-      "reference_count": 6,
-      "references": [
-        {
-          "origin": "db:collections.vrm_url_https",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": "phettaverse-editions",
-          "avatar_id": null,
-          "token_id": null
-        },
-        {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[47].vrm_url_https",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        },
-        {
-          "origin": "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].originalSourceUrl",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": "phettaverse-editions",
-          "avatar_id": "sample",
-          "token_id": null
-        },
-        {
-          "origin": "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].transportUrl",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": "phettaverse-editions",
-          "avatar_id": "sample",
-          "token_id": null
-        },
-        {
-          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[11].sampleEvidence.canonicalUrl",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        },
-        {
-          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[11].sampleEvidence.transportUrl",
-          "raw_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "collection_id": null,
-          "avatar_id": null,
-          "token_id": null
-        }
-      ],
-      "transport_probes": [
-        {
-          "transport_url": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "ok": false,
-          "retryable": false,
-          "error_class": "http_403",
-          "error": "HTTP 403 for https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "latency_seconds": 0.326,
-          "network_requests": 1
-        }
-      ],
-      "validation": null,
-      "validation_errors": [
-        {
-          "attempt": 1,
-          "retryable": false,
-          "error_class": "http_403",
-          "error": "HTTP 403 for https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-          "network_requests": 1,
-          "latency_seconds": 0.061
-        }
-      ]
     },
     {
       "canonical_url": "https://pixelbeasts3d.replit.app/beast/3064.vrm",
@@ -13198,44 +13106,79 @@
       "validation_errors": []
     },
     {
-      "canonical_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+      "canonical_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
       "scheme": "ipfs",
-      "classification": "transient_transport_failure",
+      "classification": "healthy_with_transport_degradation",
       "severity": "warning",
-      "recommendation": "Retry from another run and consider pinning or adding an independent gateway before changing the canonical URI.",
+      "recommendation": "Keep the canonical content URI and rely on multiple gateways; at least one transport is degraded.",
       "raw_urls": [
-        "https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
-        "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm"
+        "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm"
       ],
       "origins": [
         "db:collections.vrm_url_https",
-        "json:static/data/collections.849cc604c2d1.json:$.collections[6].vrm_check_url",
-        "json:static/data/collections.849cc604c2d1.json:$.collections[6].vrm_url_https"
+        "db:vrm_metadata.source_url",
+        "json:static/data/collections.261dc5d177bb.json:$.collections[6].vrm_url_https",
+        "json:static/data/hubzz-prealpha-source/boomboxheads-v2.json:$.avatars[0].originalSourceUrl",
+        "json:static/data/hubzz-prealpha-source/boomboxheads-v2.json:$.avatars[0].transportUrl",
+        "json:static/data/hubzz-prealpha-staging.json:$.sets[4].sampleEvidence.canonicalUrl",
+        "json:static/data/hubzz-prealpha-staging.json:$.sets[4].sampleEvidence.transportUrl"
       ],
       "collection_ids": [
         "boomboxheads-v2"
       ],
-      "avatar_ids": [],
-      "token_ids": [],
-      "reference_count": 3,
+      "avatar_ids": [
+        "20"
+      ],
+      "token_ids": [
+        "20"
+      ],
+      "reference_count": 7,
       "references": [
         {
           "origin": "db:collections.vrm_url_https",
-          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
           "collection_id": "boomboxheads-v2",
           "avatar_id": null,
           "token_id": null
         },
         {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[6].vrm_url_https",
-          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+          "origin": "db:vrm_metadata.source_url",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
           "collection_id": null,
           "avatar_id": null,
           "token_id": null
         },
         {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[6].vrm_check_url",
-          "raw_url": "https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+          "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[6].vrm_url_https",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-source/boomboxheads-v2.json:$.avatars[0].originalSourceUrl",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "collection_id": "boomboxheads-v2",
+          "avatar_id": "20",
+          "token_id": "20"
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-source/boomboxheads-v2.json:$.avatars[0].transportUrl",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "collection_id": "boomboxheads-v2",
+          "avatar_id": "20",
+          "token_id": "20"
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[4].sampleEvidence.canonicalUrl",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[4].sampleEvidence.transportUrl",
+          "raw_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
           "collection_id": null,
           "avatar_id": null,
           "token_id": null
@@ -13243,54 +13186,69 @@
       ],
       "transport_probes": [
         {
-          "transport_url": "https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+          "transport_url": "https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
           "ok": false,
           "retryable": true,
           "error_class": "timeout",
-          "error": "timeout fetching https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
-          "latency_seconds": 20.044,
+          "error": "timeout fetching https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "latency_seconds": 25.082,
           "network_requests": 1
         },
         {
-          "transport_url": "https://dweb.link/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
-          "ok": false,
-          "retryable": true,
-          "error_class": "timeout",
-          "error": "timeout fetching https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/386.vrm",
-          "latency_seconds": 20.194,
+          "transport_url": "https://dweb.link/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "ok": true,
+          "http_status": 206,
+          "content_type": "model/gltf-binary",
+          "bytes_observed": 20,
+          "glb_magic": true,
+          "magic_hex": "676c5446",
+          "latency_seconds": 0.228,
           "network_requests": 2
         },
         {
-          "transport_url": "https://nftstorage.link/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
-          "ok": false,
-          "retryable": true,
-          "error_class": "timeout",
-          "error": "timeout fetching https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/386.vrm",
-          "latency_seconds": 20.125,
+          "transport_url": "https://nftstorage.link/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+          "ok": true,
+          "http_status": 206,
+          "content_type": "model/gltf-binary",
+          "bytes_observed": 20,
+          "glb_magic": true,
+          "magic_hex": "676c5446",
+          "latency_seconds": 0.279,
           "network_requests": 3
         }
       ],
-      "validation": null,
-      "validation_errors": [
-        {
-          "attempt": 1,
-          "retryable": true,
-          "error_class": "timeout",
-          "error": "timeout fetching https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/386.vrm",
-          "network_requests": 6,
-          "retry_after": null,
-          "latency_seconds": 60.26
+      "validation": {
+        "canonical_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+        "transport_url": "https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/30.vrm",
+        "valid": true,
+        "status": "valid_vrm",
+        "vrm_spec": "0.x",
+        "raw_meta": {
+          "title": "Boomboxhead #31",
+          "version": "0.x",
+          "author": "Boomboxhead",
+          "contactInformation": "http://twitter.com/boomboxheads",
+          "reference": "https://github.com/gm3/boom-tools",
+          "allowedUserName": "Everyone",
+          "violentUssageName": "Allow",
+          "sexualUssageName": "Allow",
+          "commercialUssageName": "Allow",
+          "otherPermissionUrl": "",
+          "licenseName": "CC0",
+          "otherLicenseUrl": "",
+          "texture": 8
         },
-        {
-          "attempt": 2,
-          "retryable": true,
-          "error_class": "timeout",
-          "error": "timeout fetching https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/386.vrm",
-          "network_requests": 6,
-          "retry_after": null,
-          "latency_seconds": 60.277
-        }
-      ]
+        "total_length": 3139032,
+        "content_sha256": "5d18c11340e8674a08c6892ec3f6355c75aa939be2cd231d17f849a6ed234c83",
+        "network_requests": 5,
+        "error": "",
+        "observed_length": 3139032,
+        "json_chunk_sha256": "2f4d6a859b10a8ed05afb3b948f4fdf882b84d5ab4dc08881f4bded4c2dda5c8",
+        "extractor_version": "recursive-crawler-2",
+        "attempts": 1,
+        "latency_seconds": 25.355
+      },
+      "validation_errors": []
     },
     {
       "canonical_url": "ipfs://QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_1.vrm",
@@ -21751,19 +21709,80 @@
       "severity": "info",
       "recommendation": "No repair required.",
       "raw_urls": [
-        "https://ipfs.io/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
+        "https://ipfs.io/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
       ],
       "origins": [
-        "json:static/data/collections.849cc604c2d1.json:$.collections[47].vrm_check_url"
+        "db:collections.vrm_url_https",
+        "db:vrm_metadata.source_url",
+        "json:static/data/collections.261dc5d177bb.json:$.collections[47].vrm_check_url",
+        "json:static/data/collections.261dc5d177bb.json:$.collections[47].vrm_url_https",
+        "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].originalSourceUrl",
+        "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].transportUrl",
+        "json:static/data/hubzz-prealpha-staging.json:$.sets[12].sampleEvidence.canonicalUrl",
+        "json:static/data/hubzz-prealpha-staging.json:$.sets[12].sampleEvidence.transportUrl"
       ],
-      "collection_ids": [],
-      "avatar_ids": [],
+      "collection_ids": [
+        "phettaverse-editions"
+      ],
+      "avatar_ids": [
+        "sample"
+      ],
       "token_ids": [],
-      "reference_count": 1,
+      "reference_count": 8,
       "references": [
         {
-          "origin": "json:static/data/collections.849cc604c2d1.json:$.collections[47].vrm_check_url",
+          "origin": "db:collections.vrm_url_https",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": "phettaverse-editions",
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "db:vrm_metadata.source_url",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[47].vrm_url_https",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/collections.261dc5d177bb.json:$.collections[47].vrm_check_url",
           "raw_url": "https://ipfs.io/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].originalSourceUrl",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": "phettaverse-editions",
+          "avatar_id": "sample",
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-source/phettaverse-editions.json:$.avatars[0].transportUrl",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": "phettaverse-editions",
+          "avatar_id": "sample",
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[12].sampleEvidence.canonicalUrl",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+          "collection_id": null,
+          "avatar_id": null,
+          "token_id": null
+        },
+        {
+          "origin": "json:static/data/hubzz-prealpha-staging.json:$.sets[12].sampleEvidence.transportUrl",
+          "raw_url": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
           "collection_id": null,
           "avatar_id": null,
           "token_id": null
@@ -21778,7 +21797,7 @@
           "bytes_observed": 20,
           "glb_magic": true,
           "magic_hex": "676c5446",
-          "latency_seconds": 0.082,
+          "latency_seconds": 0.052,
           "network_requests": 1
         },
         {
@@ -21789,7 +21808,7 @@
           "bytes_observed": 20,
           "glb_magic": true,
           "magic_hex": "676c5446",
-          "latency_seconds": 0.229,
+          "latency_seconds": 0.181,
           "network_requests": 2
         },
         {
@@ -21800,7 +21819,7 @@
           "bytes_observed": 20,
           "glb_magic": true,
           "magic_hex": "676c5446",
-          "latency_seconds": 0.158,
+          "latency_seconds": 0.265,
           "network_requests": 3
         }
       ],
@@ -21832,7 +21851,7 @@
         "json_chunk_sha256": "338795f2fe3b29cbd51fc0d5fd34a4e9a6a6424570e633b695fd7b0826593439",
         "extractor_version": "recursive-crawler-2",
         "attempts": 1,
-        "latency_seconds": 0.16
+        "latency_seconds": 0.255
       },
       "validation_errors": []
     },
@@ -25786,8 +25805,15 @@
     }
   ],
   "report_correction": {
-    "kind": "descriptive_pseudo_url_filter",
-    "removed_entries": 3,
-    "network_measurements_reused": true
+    "kind": "targeted_canonical_link_reconciliation",
+    "fresh_measurements": [
+      "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+      "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
+    ],
+    "superseded_measurements": [
+      "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/386.vrm",
+      "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
+    ],
+    "unaffected_measurements_reused": true
   }
 }

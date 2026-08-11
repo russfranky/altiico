@@ -1,22 +1,22 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T19:59:01Z",
-  "snapshotId": "vrmcat-v1-3d524aa7c7438555543098b6",
+  "generatedAt": "2026-08-11T20:24:18Z",
+  "snapshotId": "vrmcat-v1-2075d3173cece90b0e59bd0b",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
   },
   "summary": {
     "catalogSets": 65,
-    "stageableSets": 12,
+    "stageableSets": 13,
     "bulkReadySets": 2,
     "partialReadySets": 1,
-    "previewReadySets": 9,
-    "deferredSets": 53,
-    "sourceAvatars": 158,
-    "binaryValidatedSourceAvatars": 158,
-    "openLicenseSets": 1,
+    "previewReadySets": 10,
+    "deferredSets": 52,
+    "sourceAvatars": 159,
+    "binaryValidatedSourceAvatars": 159,
+    "openLicenseSets": 2,
     "gatedSets": 3,
     "licenseReviewSets": 8
   },
@@ -231,6 +231,59 @@
       "warnings": [
         "sample_only",
         "license_requires_review"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "boomboxheads-v2",
+        "name": "Boomboxheads V2",
+        "description": "Boomboxheads V2 is a collection of 420 CC0 avatars on the Ethereum Network. They are 3d multi-format NFTs including artwork, a VRM avatar, and a posed GLB. The assets are available for public use under the CC0 license. This project was produced with boom-tools, an open-source project, running on Unity3d.",
+        "chain": "ethereum",
+        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+        "storageProvider": "ipfs",
+        "ingestSource": "ethereum",
+        "license": "CC0",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2023-04-17",
+        "totalMints": 420,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/103cf6838291bc65ea81e7d60f5fb5/30103cf6838291bc65ea81e7d60f5fb5.jpeg?fit=inside",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/5c23cbb9bf2f31a4c33cad614c05aa/575c23cbb9bf2f31a4c33cad614c05aa.gif",
+        "purchaseGated": false,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "preview_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/boomboxheads-v2.json",
+        "count": 1,
+        "mode": "validated_sample",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "catalogSupply": 420,
+        "coverageRatio": 0.002381
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+        "transportUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 3139032,
+        "validatedAt": "2026-08-11T20:16:07Z",
+        "tokenId": "20",
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "sample_only"
       ]
     },
     {
@@ -649,11 +702,11 @@
         "coverageRatio": 0.002695
       },
       "sampleEvidence": {
-        "canonicalUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-        "transportUrl": "https://phettaverse.mypinata.cloud/ipfs/QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "canonicalUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
+        "transportUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
         "vrmSpec": null,
         "fileSizeOriginal": 1698236,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "validatedAt": "2026-08-11T20:16:07Z",
         "tokenId": null,
         "source": "collection-validation",
         "chain": null,
@@ -796,26 +849,6 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
-      }
-    },
-    {
-      "slug": "boomboxheads-v2",
-      "name": "Boomboxheads V2",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [],
-      "facts": {
-        "slug": "boomboxheads-v2",
-        "name": "Boomboxheads V2",
-        "tier": "A",
-        "chain": "ethereum",
-        "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "timeout"
       }
     },
     {

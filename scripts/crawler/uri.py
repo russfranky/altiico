@@ -100,7 +100,7 @@ def _gateway_to_ipfs(url: str) -> str | None:
     host = (parts.hostname or "").lower()
 
     # Path gateways: https://gateway.example/ipfs/CID/path
-    if host in IPFS_GATEWAY_HOSTS:
+    if host in IPFS_GATEWAY_HOSTS or host.endswith(".mypinata.cloud"):
         marker = "/ipfs/"
         idx = parts.path.find(marker)
         if idx < 0:
