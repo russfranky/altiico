@@ -56,6 +56,19 @@ jobs:
       - name: Apply the integrity changes
         run: python scripts/_apply_research_report_p0.py
 
+      - name: Stabilize the async test helper
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('tests/test_shared_storefront.py')
+          text = path.read_text(encoding='utf-8')
+          old = '    return asyncio.get_event_loop().run_until_complete(coro)'
+          new = '    return asyncio.run(coro)'
+          if old not in text:
+              raise SystemExit('shared-storefront helper shape changed')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
       - name: Reconcile the validated Chuddies identity
         run: |
           cat >> migrations/023_artifact_snapshots.sql <<'SQL'
