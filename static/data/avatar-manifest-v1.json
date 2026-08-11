@@ -1,7 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-08-09T23:48:47Z",
+  "generated_at": "2026-08-11T18:21:39Z",
+  "snapshot_id": "vrmcat-v1-eb0cd1a4c2d769b0eb3a3845",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -72,13 +73,13 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+      "id": "eip155:1/erc721:0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
       "name": "Chuddies",
       "tier": "A",
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0xe8979fdd9f050052e53a13257fe6218edd52c80a",
+        "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
         "opensea_slug": "chuddie"
       },
       "resolution": {
@@ -115,7 +116,7 @@
     },
     {
       "id": "eip155:1/erc721:0x892848074ddea461a15f337250da3ce55580ca85",
-      "name": "CyberBrokers (Genesis Mechs)",
+      "name": "CyberBrokers",
       "tier": "A",
       "identifiers": {
         "chain": "ethereum",
@@ -283,7 +284,7 @@
     },
     {
       "id": "eip155:1/erc721:0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
-      "name": "Forgotten Runes Wizard Cult",
+      "name": "Forgotten Runes Wizards Cult",
       "tier": "A",
       "identifiers": {
         "chain": "ethereum",
@@ -346,31 +347,6 @@
         "redistribute_modified": false,
         "corporate_use": false,
         "terminates_on_transfer": true,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "eip155:8453/erc721:0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
-      "name": "Grifters Squaddies",
-      "tier": "A",
-      "identifiers": {
-        "chain": "base",
-        "chain_id": "8453",
-        "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
-        "opensea_slug": "grifterssquaddies"
-      },
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
         "hate_speech_termination": true
       }
     },
@@ -510,12 +486,13 @@
       }
     },
     {
-      "id": "NeonGlitch86-collection",
+      "id": "eip155:1/erc721:0x776bd31ae5549eac9ed215b5db278229454d5bed",
       "name": "NeonGlitch86 Collection",
       "tier": "A",
       "identifiers": {
         "chain": "ethereum",
-        "chain_id": "1"
+        "chain_id": "1",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed"
       },
       "resolution": {
         "strategy": "unavailable"
@@ -691,106 +668,6 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0xeeecde100b55f135a40ca9d92a52bd7723235814",
-      "name": "RetroDoges",
-      "tier": "A",
-      "identifiers": {
-        "chain": "ethereum",
-        "chain_id": "1",
-        "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
-        "opensea_slug": "retrodogesnft"
-      },
-      "resolution": {
-        "strategy": "url_template",
-        "template": "nft.retrodoges.com/media/main/vrm/{id}.vrm"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "eip155:8453/erc721:0x59202483529a11642a43578a6ee77ca4ec24f930",
-      "name": "ToxSam (Base side)",
-      "tier": "A",
-      "identifiers": {
-        "chain": "base",
-        "chain_id": "8453",
-        "contract": "0x59202483529a11642a43578a6ee77ca4ec24f930",
-        "opensea_slug": "unidentified-contract-999a9bae-f696-4641-96fa-25c2"
-      },
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "eip155:1/erc721:0x3999877754904d8542ad1845d368fa01a5e6e9a5",
-      "name": "VIPE Heroes",
-      "tier": "A",
-      "identifiers": {
-        "chain": "ethereum",
-        "chain_id": "1",
-        "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
-        "opensea_slug": "vipe-heroes"
-      },
-      "resolution": {
-        "strategy": "url_template",
-        "template": "ipfs://QmZzox35J5WfXVUuTbQo2LmLFHoPd6Z4BeJByABTtKo4yP/default_{id}.vrm"
-      },
-      "license": {
-        "use_scope": "explicitly_licensed",
-        "commercial_scope": "personal_profit",
-        "credit": "required",
-        "redistribute_original": false,
-        "modify": true,
-        "redistribute_modified": false,
-        "corporate_use": false,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "vipe-heroes-genesis",
-      "name": "VIPE Heroes Genesis",
-      "tier": "A",
-      "identifiers": {
-        "chain": "ethereum",
-        "chain_id": "1"
-      },
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "unknown",
-        "commercial_scope": "personal_profit",
-        "credit": "required",
-        "redistribute_original": false,
-        "modify": true,
-        "redistribute_modified": false,
-        "corporate_use": false,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
       "id": "eip155:137/erc721:0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
       "name": "Xmas Chibis",
       "tier": "A",
@@ -811,66 +688,6 @@
         "modify": false,
         "redistribute_modified": false,
         "corporate_use": false,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "100avatars-r1",
-      "name": "100Avatars R1",
-      "tier": "B",
-      "identifiers": {},
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "100avatars-r2",
-      "name": "100Avatars R2",
-      "tier": "B",
-      "identifiers": {},
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
-      "id": "100avatars-r3",
-      "name": "100Avatars R3",
-      "tier": "B",
-      "identifiers": {},
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
         "terminates_on_transfer": false,
         "hate_speech_termination": true
       }
@@ -1008,7 +825,8 @@
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "opensea_slug": "chametheon"
       },
       "resolution": {
         "strategy": "unavailable"
@@ -1031,7 +849,7 @@
       "tier": "B",
       "identifiers": {
         "chain": "multi",
-        "contract": "0xbffd07cc4d32578fe3ccbf8bd0c5ffa8da3fc600",
+        "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
         "opensea_slug": "cryptoavatars"
       },
       "resolution": {
@@ -1073,7 +891,8 @@
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+        "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+        "opensea_slug": "cyberanimedoll-avatar"
       },
       "resolution": {
         "strategy": "unavailable"
@@ -1420,29 +1239,6 @@
             "application/octet-stream"
           ]
         }
-      },
-      "license": {
-        "use_scope": "unknown",
-        "commercial_scope": "unknown",
-        "credit": "unknown",
-        "redistribute_original": false,
-        "modify": false,
-        "redistribute_modified": false,
-        "corporate_use": false,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": false
-      }
-    },
-    {
-      "id": "toxsam",
-      "name": "ToxSam",
-      "tier": "B",
-      "identifiers": {
-        "chain": "multi",
-        "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1"
-      },
-      "resolution": {
-        "strategy": "unavailable"
       },
       "license": {
         "use_scope": "unknown",

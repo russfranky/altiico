@@ -21,6 +21,11 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
+try:
+    from scripts.catalog_snapshot import record_snapshot, snapshot_created_at
+except ModuleNotFoundError:  # direct `python scripts/build_catalog.py` execution
+    from catalog_snapshot import record_snapshot, snapshot_created_at
+
 BASE = Path(__file__).parent.parent
 DEFAULT_DB = BASE / "data" / "vrm_index.db"
 DEFAULT_OUTPUT = BASE / "static" / "data"
@@ -150,6 +155,8 @@ def main():
     conn.row_factory = sqlite3.Row
 
     print("Querying database...")
+    snapshot_id = record_snapshot(conn)
+    generated_at = snapshot_created_at(conn, snapshot_id)
     collections = query_collections(conn)
     conn.close()
 
@@ -160,7 +167,7 @@ def main():
     files: dict[str, str] = {}
 
     files["collections"] = write_hashed(
-        output_dir, "collections", {"collections": collections}
+        output_dir, "collections", {"snapshot_id": snapshot_id, "collections": collections}
     )
     print(f"  {files['collections']}")
 
@@ -178,8 +185,9 @@ def main():
             pass
 
     build_info = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": generated_at,
         "schema_version": SCHEMA_VERSION,
+        "snapshot_id": snapshot_id,
         "files": files,
     }
     if prior_market_data_as_of:
@@ -228,7 +236,7 @@ def main():
             pruned += 1
     if pruned:
         print(f"  pruned {pruned} superseded hashed file(s)")
-    print(f"  build-info.json"
+    print(f"  build-info.json  (snapshot_id={snapshot_id})"
           + (f"  (market_data_as_of={prior_market_data_as_of})" if prior_market_data_as_of else ""))
 
     total_size = sum(

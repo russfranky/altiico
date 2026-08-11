@@ -3,7 +3,13 @@
   "$id": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "title": "Avatar Manifest v1",
   "type": "object",
-  "required": ["schema", "version", "generated_at", "collections"],
+  "required": [
+    "schema",
+    "version",
+    "generated_at",
+    "collections",
+    "snapshot_id"
+  ],
   "properties": {
     "schema": {
       "type": "string",
@@ -22,12 +28,21 @@
       "items": {
         "$ref": "#/$defs/Collection"
       }
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^vrmcat-v1-[0-9a-f]{24}$"
     }
   },
   "$defs": {
     "Collection": {
       "type": "object",
-      "required": ["id", "name", "tier", "resolution"],
+      "required": [
+        "id",
+        "name",
+        "tier",
+        "resolution"
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -39,7 +54,11 @@
         },
         "tier": {
           "type": "string",
-          "enum": ["A", "B", "C"]
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ]
         },
         "identifiers": {
           "type": "object",
@@ -67,7 +86,10 @@
           "properties": {
             "format": {
               "type": "string",
-              "enum": ["decimal", "hex"]
+              "enum": [
+                "decimal",
+                "hex"
+              ]
             },
             "min": {
               "type": "integer",
@@ -100,7 +122,10 @@
               "type": "string"
             }
           },
-          "required": ["provider", "template"],
+          "required": [
+            "provider",
+            "template"
+          ],
           "additionalProperties": false
         }
       },
@@ -108,7 +133,9 @@
     },
     "Resolution": {
       "type": "object",
-      "required": ["strategy"],
+      "required": [
+        "strategy"
+      ],
       "properties": {
         "strategy": {
           "type": "string",
@@ -137,7 +164,9 @@
               "type": "string"
             }
           },
-          "required": ["template"],
+          "required": [
+            "template"
+          ],
           "additionalProperties": false
         },
         "vrm_pointer": {
@@ -173,15 +202,31 @@
       "properties": {
         "use_scope": {
           "type": "string",
-          "enum": ["everyone", "holder", "explicitly_licensed", "author", "unknown"]
+          "enum": [
+            "everyone",
+            "holder",
+            "explicitly_licensed",
+            "author",
+            "unknown"
+          ]
         },
         "commercial_scope": {
           "type": "string",
-          "enum": ["none", "personal_non_profit", "personal_profit", "corporation", "unknown"]
+          "enum": [
+            "none",
+            "personal_non_profit",
+            "personal_profit",
+            "corporation",
+            "unknown"
+          ]
         },
         "credit": {
           "type": "string",
-          "enum": ["required", "unnecessary", "unknown"]
+          "enum": [
+            "required",
+            "unnecessary",
+            "unknown"
+          ]
         },
         "redistribute_original": {
           "type": "boolean"

@@ -12,6 +12,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.catalog_snapshot import record_snapshot, snapshot_created_at
+except ModuleNotFoundError:
+    from catalog_snapshot import record_snapshot, snapshot_created_at
+
 MANIFEST_SCHEMA_URL = "https://superyeti.example/schema/avatar-manifest-v1.schema.json"
 MANIFEST_VERSION = "1.0.0"
 SCHEMA_PATH = "static/schema/avatar-manifest-v1.schema.json"
@@ -241,7 +246,11 @@ def build_resolution(row: dict[str, Any]) -> dict[str, Any]:
 # ─── identifiers ─────────────────────────────────────────────────────────────
 
 
-def build_identifiers(row: dict[str, Any], ci_rows: list[dict[str, Any]]) -> dict[str, Any]:
+def build_identifiers(
+    row: dict[str, Any],
+    ci_rows: list[dict[str, Any]],
+    primary_contract: str | None = None,
+) -> dict[str, Any]:
     """Assemble the identifiers object from the collections row plus
     collection_identifiers rows."""
     identifiers: dict[str, Any] = {}
@@ -252,13 +261,14 @@ def build_identifiers(row: dict[str, Any], ci_rows: list[dict[str, Any]]) -> dic
     if cid:
         identifiers["chain_id"] = cid
 
-    # Prefer a contract_token identifier row, fall back to collections.contract.
-    contract = None
+    # The canonical contracts table outranks historical identifier aliases.
+    contract = _norm(primary_contract)
     standard = None
-    for ci in ci_rows:
-        if ci["namespace"] == "contract_token" and ci.get("contract"):
-            contract = ci["contract"]
-            break
+    if not contract:
+        for ci in ci_rows:
+            if ci["namespace"] == "contract_token" and ci.get("contract"):
+                contract = ci["contract"]
+                break
     if not contract:
         contract = _norm(row.get("contract"))
     if contract:
@@ -325,7 +335,7 @@ def build_collection(
         "id": caip,
         "name": row["name"],
         "tier": tier,
-        "identifiers": build_identifiers(row, ci_rows),
+        "identifiers": build_identifiers(row, ci_rows, primary_contract),
         "resolution": build_resolution(row),
     }
 
@@ -463,6 +473,8 @@ def main(argv: Iterable[str] | None = None) -> int:
 
     conn = sqlite3.connect(str(db_path))
     try:
+        snapshot_id = record_snapshot(conn)
+        generated_at = snapshot_created_at(conn, snapshot_id)
         rows = load_collections(conn, tiers)
         collections: list[dict[str, Any]] = []
         for row in rows:
@@ -479,7 +491,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     manifest: dict[str, Any] = {
         "schema": MANIFEST_SCHEMA_URL,
         "version": MANIFEST_VERSION,
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": generated_at,
+        "snapshot_id": snapshot_id,
         "collections": collections,
     }
 

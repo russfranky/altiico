@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import socket
 import sqlite3
@@ -425,15 +426,18 @@ def test_avatar_binding_updates_linkage_and_reachability(store):
 # ---------------------------------------------------------- GLB / EVM helpers
 
 
-def make_glb(extensions: dict) -> bytes:
+def make_glb(extensions: dict, bin_payload: bytes = b"") -> bytes:
     payload = json.dumps(
         {"asset": {"version": "2.0"}, "extensions": extensions},
         separators=(",", ":"),
     ).encode()
-    padding = (-len(payload)) % 4
-    payload += b" " * padding
-    total = 20 + len(payload)
-    return struct.pack("<IIIII", 0x46546C67, 2, total, len(payload), 0x4E4F534A) + payload
+    payload += b" " * ((-len(payload)) % 4)
+    chunks = struct.pack("<II", len(payload), 0x4E4F534A) + payload
+    if bin_payload:
+        binary = bin_payload + b"\x00" * ((-len(bin_payload)) % 4)
+        chunks += struct.pack("<II", len(binary), 0x004E4942) + binary
+    total = 12 + len(chunks)
+    return struct.pack("<III", 0x46546C67, 2, total) + chunks
 
 
 class MemoryRangeLoader:
@@ -461,7 +465,10 @@ def test_partial_glb_validator_confirms_vrm_1():
     assert result.valid is True
     assert result.vrm_spec == "1.0"
     assert result.raw_meta == {"name": "Test", "authors": ["A"]}
-    assert result.network_requests == 2
+    assert result.network_requests == 3
+    assert result.observed_length == len(loader.blob)
+    assert result.content_sha256 == hashlib.sha256(loader.blob).hexdigest()
+    assert result.json_chunk_sha256
 
 
 def test_partial_glb_validator_rejects_non_vrm_glb():
@@ -469,6 +476,28 @@ def test_partial_glb_validator_rejects_non_vrm_glb():
     result = NetworkLoader.validate_vrm(loader, "https://cdn.example/model.glb")
     assert result.valid is False
     assert result.status == "valid_glb_not_vrm"
+
+def test_complete_vrm_hash_changes_when_only_binary_chunk_changes():
+    extensions = {"VRMC_vrm": {"meta": {"name": "Hash Test"}}}
+    first_loader = MemoryRangeLoader(make_glb(extensions, b"AAAA"))
+    second_loader = MemoryRangeLoader(make_glb(extensions, b"BBBB"))
+    first = NetworkLoader.validate_vrm(first_loader, "https://cdn.example/a.vrm")
+    second = NetworkLoader.validate_vrm(second_loader, "https://cdn.example/b.vrm")
+    assert first.valid and second.valid
+    assert first.json_chunk_sha256 == second.json_chunk_sha256
+    assert first.content_sha256 != second.content_sha256
+    assert first.content_sha256 == hashlib.sha256(first_loader.blob).hexdigest()
+    assert second.content_sha256 == hashlib.sha256(second_loader.blob).hexdigest()
+
+
+def test_declared_vrm_over_policy_is_rejected_before_complete_fetch():
+    blob = make_glb({"VRM": {"meta": {"title": "Large"}}}, b"A" * 64)
+    loader = MemoryRangeLoader(blob, CrawlPolicy(max_vrm_bytes=32))
+    result = NetworkLoader.validate_vrm(loader, "https://cdn.example/large.vrm")
+    assert result.valid is False
+    assert result.status == "invalid_glb"
+    assert result.network_requests == 1
+    assert "declared length" in result.error
 
 
 def test_evm_abi_string_decoder_and_erc1155_template():

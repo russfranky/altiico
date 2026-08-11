@@ -521,6 +521,7 @@ class CrawlStore:
         avatar_columns = self._columns("avatars") if self._table_exists("avatars") else set()
         has_vrm_metadata = self._table_exists("vrm_metadata")
         has_avatar_vrm = self._table_exists("avatar_vrm")
+        vrm_metadata_columns = self._columns("vrm_metadata") if has_vrm_metadata else set()
 
         rows = self.conn.execute(
             """
@@ -579,7 +580,10 @@ class CrawlStore:
                     if "vrm_check_status" in collection_columns:
                         updates["vrm_check_status"] = "ok_vrm"
                     if "vrm_check_bytes" in collection_columns:
-                        updates["vrm_check_bytes"] = validation.get("total_length")
+                        updates["vrm_check_bytes"] = (
+                            validation.get("observed_length")
+                            or validation.get("total_length")
+                        )
                     if "vrm_check_url" in collection_columns:
                         updates["vrm_check_url"] = transport_url
                     if "vrm_checked_at" in collection_columns:
@@ -617,27 +621,35 @@ class CrawlStore:
                     )
 
                 if has_vrm_metadata:
+                    metadata_values: dict[str, Any] = {
+                        "source_url": canonical_url,
+                        "extracted_at": stamp,
+                        "extractor_version": validation.get("extractor_version") or "recursive-crawler-2",
+                        "vrm_spec": validation.get("vrm_spec"),
+                        "vrm_meta_json": _json(validation.get("raw_meta")),
+                        "parse_error": None,
+                        "content_length": validation.get("observed_length") or validation.get("total_length"),
+                        "content_sha256": validation.get("content_sha256") or None,
+                        "json_chunk_sha256": validation.get("json_chunk_sha256") or None,
+                        "observed_content_length": validation.get("observed_length"),
+                        "transport_url": transport_url,
+                    }
+                    write_values = {
+                        name: value
+                        for name, value in metadata_values.items()
+                        if name in vrm_metadata_columns
+                    }
+                    names = list(write_values)
+                    update_names = [name for name in names if name != "source_url"]
+                    placeholders = ", ".join("?" for _ in names)
+                    update_clause = ", ".join(
+                        f"{name}=excluded.{name}" for name in update_names
+                    )
                     self.conn.execute(
-                        """
-                        INSERT INTO vrm_metadata
-                            (source_url, extracted_at, extractor_version, vrm_spec,
-                             vrm_meta_json, parse_error, content_length)
-                        VALUES (?, ?, 'recursive-crawler-1', ?, ?, NULL, ?)
-                        ON CONFLICT(source_url) DO UPDATE SET
-                            extracted_at=excluded.extracted_at,
-                            extractor_version=excluded.extractor_version,
-                            vrm_spec=excluded.vrm_spec,
-                            vrm_meta_json=excluded.vrm_meta_json,
-                            parse_error=NULL,
-                            content_length=excluded.content_length
-                        """,
-                        (
-                            canonical_url,
-                            stamp,
-                            validation.get("vrm_spec"),
-                            _json(validation.get("raw_meta")),
-                            validation.get("total_length"),
-                        ),
+                        f"INSERT INTO vrm_metadata ({', '.join(names)}) "
+                        f"VALUES ({placeholders}) "
+                        f"ON CONFLICT(source_url) DO UPDATE SET {update_clause}",
+                        tuple(write_values[name] for name in names),
                     )
 
                 avatar_id = row["avatar_id"]
