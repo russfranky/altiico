@@ -1,0 +1,68 @@
+# High-signal live discovery targets. These are curated contract leads, not
+# marketplace keyword hits. A target may mutate catalog identity only after a
+# binary validates as VRM 0.x or VRM 1.0.
+
+policy:
+  max_depth: 5
+  request_budget: 2500
+  max_tasks: 15000
+  max_attempts: 3
+  timeout: 20
+  max_document_bytes: 2000000
+  max_vrm_json_bytes: 4000000
+  max_links_per_document: 500
+
+token_sample_limit: 12
+
+auto_existing:
+  enabled: true
+  limit: 25
+  tiers: [A, B, C]
+
+targets:
+  - name: CyberBrokers Genesis Mechs alternate contract
+    chain: ethereum
+    contract: "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6"
+    match_names:
+      - "CyberBrokers (Genesis Mechs)"
+      - "CyberBrokers Genesis Mechs"
+    vrm_param: "vrm_url / files.glb"
+    source: "a3ac-missing-contract"
+    notes: "Curated A3AC lead. Attach as an alternate contract only after a token-linked VRM validates."
+
+  - name: Chuddies missing contract
+    chain: ethereum
+    contract: "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
+    match_names:
+      - "Chuddies"
+    vrm_param: "vrm_url"
+    source: "a3ac-missing-contract"
+    notes: "Curated A3AC lead. Existing catalog row lacks this contract."
+
+  - name: PixelBeasts Beastopia alternate contract
+    chain: ethereum
+    contract: "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab"
+    match_names:
+      - "PixelBeasts"
+      - "PixelBeasts (Beastopia)"
+    vrm_param: "model/vrm"
+    source: "a3ac-missing-contract"
+    notes: "Curated A3AC lead. Attach only if token metadata proves the association."
+
+  - name: Muhammad Ali - The Next Legends - Boxers
+    chain: ethereum
+    contract: "0x6bca6de2dbdc4e0d41f7273011785ea16ba47182"
+    create_collection: true
+    new_collection_id: "live-muhammad-ali-boxers"
+    source: "a3ac-missing-contract"
+    notes: "Absent from the catalog. Create only if a recursively discovered token asset validates as VRM."
+
+  # RetroDoge's alternate contract remains intentionally excluded because the
+  # owner previously removed that already-handled collection from this research
+  # catalog. Do not silently reintroduce it.
+  - name: RetroDoge alternate contract
+    chain: ethereum
+    contract: "0x682270ffb81db5834b4049dbf20fe2395568ac22"
+    enabled: false
+    source: "a3ac-missing-contract"
+    notes: "Owner-directed exclusion: already handled outside this catalog."
