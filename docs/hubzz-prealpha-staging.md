@@ -1,16 +1,16 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-08-11T01:03:35Z`
+Generated at: `2026-08-11T01:21:25Z`
 
 ## Summary
 
-- Stageable sets: **11**
+- Stageable sets: **12**
 - Bulk-ready sets: **2**
 - Partial-inventory sets: **0**
-- Preview-ready sets: **9**
-- Reachable source avatar candidates: **149**
-- Individually binary-validated source avatars: **9**
-- Deferred sets: **54**
+- Preview-ready sets: **10**
+- Reachable source avatar candidates: **150**
+- Individually binary-validated source avatars: **10**
+- Deferred sets: **53**
 
 ## Stageable sets
 
@@ -19,6 +19,7 @@ Generated at: `2026-08-11T01:03:35Z`
 | `halloween-rising` | bulk_ready | 60 | 0 | optimism | review | license_requires_review |
 | `xmas-chibis` | bulk_ready | 80 | 0 | polygon | gated | none |
 | `avastars` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
+| `boomboxheads-v2` | preview_ready | 1 | 1 | ethereum | open | sample_only |
 | `chuddie` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `forgottenruneswizardscult` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `frutiger-anons` | preview_ready | 1 | 1 | ethereum | gated | sample_only |
@@ -32,7 +33,7 @@ Generated at: `2026-08-11T01:03:35Z`
 
 | Reason | Sets |
 |---|---:|
-| `no_binary_validated_vrm` | 53 |
+| `no_binary_validated_vrm` | 52 |
 | `unsupported_chain:ape_chain` | 3 |
 | `missing_contract` | 2 |
 | `unsupported_chain:multi` | 1 |

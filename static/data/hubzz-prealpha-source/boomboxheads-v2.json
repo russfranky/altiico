@@ -1,0 +1,26 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T01:21:25Z",
+  "setSlug": "boomboxheads-v2",
+  "count": 1,
+  "reachableCount": 1,
+  "binaryValidatedCount": 1,
+  "avatars": [
+    {
+      "id": "sample",
+      "tokenId": null,
+      "name": "Boomboxhead #114",
+      "originalSourceUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+      "transportUrl": "https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/30.vrm",
+      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xb67ff46dfde55ad2fe05881433e5687fd1000312/27ebbf300bda437abbfe9ed8f612a93e.jpeg",
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "collection_sample_binary",
+      "checkedAt": "2026-08-11T01:20:42Z",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": "0.x",
+      "fileSizeOriginal": 3139032
+    }
+  ]
+}

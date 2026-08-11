@@ -1,0 +1,130 @@
+{
+  "run_id": 2,
+  "started_at": "2026-08-11T01:17:28Z",
+  "finished_at": "2026-08-11T01:21:25.277801+00:00",
+  "summary": {
+    "run_id": 2,
+    "status": "completed",
+    "requests_used": 34,
+    "task_counts": {
+      "done": 9,
+      "permanent_error": 6
+    },
+    "observations": 22,
+    "materialized_collections": 1
+  },
+  "token_discovery_requests": 0,
+  "before": {
+    "collections": 65,
+    "collections_with_vrm_url": 18,
+    "collections_validated_vrm": 12,
+    "contracts": 65,
+    "validated_vrm_assets": 5
+  },
+  "after": {
+    "collections": 65,
+    "collections_with_vrm_url": 18,
+    "collections_validated_vrm": 13,
+    "contracts": 65,
+    "validated_vrm_assets": 6
+  },
+  "delta": {
+    "collections": 0,
+    "collections_validated_vrm": 1,
+    "collections_with_vrm_url": 0,
+    "contracts": 0,
+    "validated_vrm_assets": 1
+  },
+  "created_collections": [],
+  "attached_contracts": [],
+  "hits": [
+    {
+      "collection_id": "boomboxheads-v2",
+      "seed_source": "a3ac-direct-validation",
+      "task_id": 32,
+      "task_kind": "asset",
+      "token_id": null,
+      "canonical_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+      "transport_url": "https://bafybeic2j2ldu6rp33e6ykbm2xkx2bpt5piddf5c5jl6dzneet2xdtgisq.ipfs.dweb.link/30.vrm",
+      "vrm_spec": "0.x",
+      "total_length": 3139032,
+      "json_path": "",
+      "source_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+      "confidence": 1.0
+    }
+  ],
+  "targets": [
+    {
+      "key": "config:0:ethereum:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "name": "Allstarz PSX",
+      "collection_id": "allstarz-psx",
+      "chain": "ethereum",
+      "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "source": "a3ac-direct-validation",
+      "create_collection": false,
+      "token_ids": [
+        886
+      ],
+      "vrm_param": "vrm_url",
+      "notes": "",
+      "sample_metadata_url": "https://allstarz.world/api/metadata/886.json",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:Allstarz PSX"
+    },
+    {
+      "key": "config:1:ethereum:0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "name": "Boomboxheads V2",
+      "collection_id": "boomboxheads-v2",
+      "chain": "ethereum",
+      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "source": "a3ac-direct-validation",
+      "create_collection": false,
+      "token_ids": [
+        20
+      ],
+      "vrm_param": "vrm_url",
+      "notes": "",
+      "sample_metadata_url": "ipfs://bafybeigkxvps67dtm236jbso622r5qrb4pxqne2yn3jmtmsdjbuaffr5xy/20",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:Boomboxheads V2"
+    },
+    {
+      "key": "config:2:ethereum:0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+      "name": "CyberBrokers Genesis Mechs",
+      "collection_id": "cyberbrokers",
+      "chain": "ethereum",
+      "contract": "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6",
+      "source": "a3ac-direct-validation",
+      "create_collection": false,
+      "token_ids": [
+        1
+      ],
+      "vrm_param": "vrm_url / files.glb",
+      "notes": "",
+      "sample_metadata_url": "https://m.cyberbrokers.com/eth/mech/1",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:CyberBrokers"
+    },
+    {
+      "key": "config:3:ethereum:0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+      "name": "DEyes Legends by Coldie",
+      "collection_id": "coldie",
+      "chain": "ethereum",
+      "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+      "source": "a3ac-direct-validation",
+      "create_collection": false,
+      "token_ids": [
+        26
+      ],
+      "vrm_param": "vrm_url",
+      "notes": "",
+      "sample_metadata_url": "ipfs://bafybeih5g36ula4wzw6dmoso6tbimzh2dbfurcqzvv5mbosl5jdjhkzkxu/26",
+      "total_supply": null,
+      "token_discovery_requests": 0,
+      "resolution": "exact-name:DEyes Legends by Coldie"
+    }
+  ]
+}
