@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Binary-validate the catalog's existing staging source inventory.
 
-This pass does not discover identities. It seeds every concrete collection and
-avatar URL already present, runs the recursive crawler's GLB/VRM validator,
+This pass does not discover identities. It validates every concrete avatar URL
+already present, records the same crawl evidence used by the recursive engine,
 materializes valid avatar_vrm links, regenerates the Hubzz staging bundle, and
 writes measured before/after reports.
+
+The general crawler remains deliberately sequential. This bounded inventory pass
+uses four workers because every task is an already-identified asset and the
+catalog previously measured four workers as a safe ceiling for shared gateways.
 """
 from __future__ import annotations
 
@@ -13,7 +17,9 @@ import json
 import sqlite3
 import subprocess
 import sys
-from dataclasses import asdict
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import asdict, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -22,9 +28,17 @@ _ROOT = Path(__file__).resolve().parent.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from scripts.crawler.engine import RecursiveCrawler  # noqa: E402
-from scripts.crawler.models import CrawlPolicy  # noqa: E402
+from scripts.crawler.fetch import NetworkLoader  # noqa: E402
+from scripts.crawler.models import (  # noqa: E402
+    Binding,
+    CrawlPolicy,
+    PermanentCrawlError,
+    RetryableCrawlError,
+    RunSummary,
+    VrmValidation,
+)
 from scripts.crawler.store import CrawlStore  # noqa: E402
+from scripts.crawler.uri import canonicalize_uri  # noqa: E402
 
 
 def now() -> str:
@@ -170,14 +184,177 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def pending_avatar_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
+    """Return concrete avatar URLs not already backed by parsed VRM metadata."""
+    return conn.execute(
+        """
+        SELECT a.id, a.collection_id, a.model_file_url
+        FROM avatars a
+        WHERE a.model_file_url IS NOT NULL AND a.model_file_url!=''
+          AND NOT EXISTS (
+              SELECT 1
+              FROM avatar_vrm av
+              JOIN vrm_metadata vm ON vm.source_url=av.vrm_source_url
+              WHERE av.avatar_id=a.id
+                AND vm.parse_error IS NULL
+                AND vm.vrm_spec IS NOT NULL
+          )
+        ORDER BY a.collection_id, a.id
+        """
+    ).fetchall()
+
+
+def validate_with_retries(
+    url: str,
+    policy: CrawlPolicy,
+    max_attempts: int,
+) -> tuple[VrmValidation | None, dict[str, Any] | None, int]:
+    """Validate one already-identified asset without sharing SQLite across threads."""
+    loader = NetworkLoader(None, policy)  # validate_vrm does not access the store
+    requests = 0
+    last_error: dict[str, Any] | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            result = loader.validate_vrm(url)
+            return replace(result, network_requests=requests + result.network_requests), None, requests + result.network_requests
+        except RetryableCrawlError as exc:
+            requests += exc.request_count
+            last_error = {
+                "class": exc.error_class,
+                "message": str(exc),
+                "retryable": True,
+                "attempts": attempt,
+            }
+            if attempt < max_attempts:
+                time.sleep(min(2 ** (attempt - 1), 2))
+        except PermanentCrawlError as exc:
+            requests += exc.request_count
+            return None, {
+                "class": exc.error_class,
+                "message": str(exc),
+                "retryable": False,
+                "attempts": attempt,
+            }, requests
+        except Exception as exc:  # defensive isolation for one URL
+            return None, {
+                "class": "internal_error",
+                "message": f"{type(exc).__name__}: {exc}",
+                "retryable": False,
+                "attempts": attempt,
+            }, requests
+    return None, last_error or {
+        "class": "validation_failed",
+        "message": "validation failed without a classified error",
+        "retryable": False,
+        "attempts": max_attempts,
+    }, requests
+
+
+def run_parallel_avatar_validation(
+    store: CrawlStore,
+    policy: CrawlPolicy,
+    *,
+    workers: int,
+    max_attempts: int,
+) -> tuple[RunSummary, int, int]:
+    """Validate unique asset URLs concurrently and write evidence serially."""
+    rows = pending_avatar_rows(store.conn)
+    run_id = store.create_run(
+        policy,
+        {
+            "command": "run_staging_validation_pass.py",
+            "mode": "bounded_parallel_assets",
+            "workers": workers,
+            "candidate_avatars": len(rows),
+        },
+    )
+    tasks: dict[int, str] = {}
+    for row in rows:
+        try:
+            canonical = canonicalize_uri(str(row["model_file_url"]))
+        except PermanentCrawlError:
+            continue
+        task_id = store.enqueue(
+            run_id,
+            kind="asset",
+            canonical_key=canonical,
+            payload={"url": canonical},
+            depth=0,
+            priority=10,
+            bindings=[
+                Binding(
+                    collection_id=str(row["collection_id"] or ""),
+                    avatar_id=str(row["id"]),
+                    seed_source="staging-inventory",
+                )
+            ],
+        )
+        tasks[task_id] = canonical
+    store.add_root_seed(run_id, len(tasks))
+    if not tasks:
+        store.finish_run(run_id, "completed")
+        return RunSummary(run_id=run_id, status="completed", requests_used=0), 0, 0
+
+    completed = 0
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as executor:
+        futures = {
+            executor.submit(validate_with_retries, url, policy, max_attempts): task_id
+            for task_id, url in tasks.items()
+        }
+        for future in as_completed(futures):
+            task_id = futures[future]
+            validation, error, requests = future.result()
+            store.increment_requests(run_id, requests)
+            if validation is not None:
+                predicate = "valid_vrm" if validation.valid else "asset_rejected"
+                store.observe(
+                    run_id,
+                    task_id,
+                    predicate,
+                    asdict(validation),
+                    source_url=validation.canonical_url,
+                    confidence=1.0,
+                    content_sha256=validation.content_sha256,
+                )
+                store.complete(task_id)
+            else:
+                assert error is not None
+                store.observe(
+                    run_id,
+                    task_id,
+                    "task_error",
+                    error,
+                    source_url=tasks[task_id],
+                    confidence=1.0,
+                )
+                store.permanent_error(task_id, str(error.get("message") or "validation failed"))
+            completed += 1
+            if completed % 25 == 0 or completed == len(tasks):
+                print(f"validated {completed}/{len(tasks)} unique asset URLs", file=sys.stderr)
+
+    store.finish_run(run_id, "completed")
+    materialized = store.materialize_valid_vrms(run_id)
+    run = store.get_run(run_id)
+    summary = RunSummary(
+        run_id=run_id,
+        status=str(run["status"]),
+        requests_used=int(run["requests_used"]),
+        task_counts=store.task_counts(run_id),
+        observations=store.observation_count(run_id),
+        materialized_collections=materialized,
+    )
+    return summary, materialized, len(tasks)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Binary-validate existing staging inventory")
     parser.add_argument("--db", default=str(_ROOT / "data" / "vrm_index.db"))
     parser.add_argument("--report", default=str(_ROOT / "data" / "staging_validation_report.json"))
     parser.add_argument("--markdown-report", default=str(_ROOT / "docs" / "staging-validation-latest.md"))
     parser.add_argument("--request-budget", type=int, default=1500)
-    parser.add_argument("--timeout", type=float, default=25.0)
+    parser.add_argument("--timeout", type=float, default=20.0)
     parser.add_argument("--max-attempts", type=int, default=2)
+    parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--build", action="store_true")
     args = parser.parse_args()
 
@@ -191,30 +368,23 @@ def main() -> int:
         store.ensure_schema()
         before = snapshot(store.conn)
         policy = CrawlPolicy(
-            max_depth=5,
+            max_depth=0,
             request_budget=args.request_budget,
             max_tasks=20_000,
             max_attempts=args.max_attempts,
             timeout=args.timeout,
             max_document_bytes=2_000_000,
             max_vrm_json_bytes=4_000_000,
-            max_links_per_document=500,
+            max_links_per_document=0,
         )
-        crawler = RecursiveCrawler(store, policy, logger=lambda message: print(message, file=sys.stderr))
-        run_id = crawler.new_run({"command": "run_staging_validation_pass.py", "include_avatars": True})
-        seeded = crawler.seed_existing_catalog(
-            run_id,
-            unresolved_only=True,
-            include_avatars=True,
+        summary, materialized, seeded = run_parallel_avatar_validation(
+            store,
+            policy,
+            workers=args.workers,
+            max_attempts=args.max_attempts,
         )
-        if seeded == 0:
-            store.finish_run(run_id, "failed", "no catalog URLs to validate")
-            print("error: no catalog URLs to validate", file=sys.stderr)
-            return 2
-        summary = crawler.run(run_id)
-        materialized = crawler.materialize(run_id)
         after = snapshot(store.conn)
-        hits = valid_hits(store.conn, run_id)
+        hits = valid_hits(store.conn, summary.run_id)
 
     staging_path = _ROOT / "static" / "data" / "hubzz-prealpha-staging.json"
     subprocess.run(
@@ -239,10 +409,11 @@ def main() -> int:
 
     delta = {key: after[key] - before[key] for key in before}
     report = {
-        "run_id": run_id,
+        "run_id": summary.run_id,
         "started_at": started,
         "finished_at": now(),
-        "seeded_tasks": seeded,
+        "seeded_unique_asset_tasks": seeded,
+        "workers": args.workers,
         "summary": {**asdict(summary), "materialized_collections": materialized},
         "before": before,
         "after": after,
@@ -255,7 +426,7 @@ def main() -> int:
     report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_markdown(report, Path(args.markdown_report))
     print(json.dumps(report, indent=2, ensure_ascii=False))
-    return 0 if summary.status in {"completed", "budget_exhausted"} else 1
+    return 0 if summary.status == "completed" else 1
 
 
 if __name__ == "__main__":
