@@ -945,7 +945,7 @@ def main() -> int:
         "generated_at": utc_now(),
         "snapshot_id": snapshot_id,
         "commit_sha": os.environ.get("GITHUB_SHA") or "",
-        "database": str(args.db.relative_to(_ROOT)),
+        "database": str(args.db.resolve().relative_to(_ROOT)),
         "scanned_json_files": scanned_json,
         "summary": _summarize(results, invalid),
         "collections": _collection_summary(results),

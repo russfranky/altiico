@@ -19,13 +19,17 @@ from scripts.crawler.models import DiscoveredLink, PermanentCrawlError
 
 IPFS_GATEWAY_HOSTS = {
     "ipfs.io",
+    "gateway.ipfs.io",
     "dweb.link",
+    "nftstorage.link",
+    "w3s.link",
     "gateway.pinata.cloud",
     "cloudflare-ipfs.com",
 }
 IPFS_GATEWAYS = (
     "https://ipfs.io/ipfs/",
     "https://dweb.link/ipfs/",
+    "https://nftstorage.link/ipfs/",
 )
 ARWEAVE_GATEWAY = "https://arweave.net/"
 
@@ -94,20 +98,41 @@ def _strip_default_port(parts: urllib.parse.SplitResult) -> str:
 def _gateway_to_ipfs(url: str) -> str | None:
     parts = urllib.parse.urlsplit(url)
     host = (parts.hostname or "").lower()
-    if host not in IPFS_GATEWAY_HOSTS:
-        return None
-    marker = "/ipfs/"
-    idx = parts.path.find(marker)
-    if idx < 0:
-        return None
-    suffix = parts.path[idx + len(marker):].lstrip("/")
-    if not suffix:
-        return None
-    path = f"ipfs://{suffix}"
-    if parts.query:
-        path += f"?{parts.query}"
-    return path
 
+    # Path gateways: https://gateway.example/ipfs/CID/path
+    if host in IPFS_GATEWAY_HOSTS:
+        marker = "/ipfs/"
+        idx = parts.path.find(marker)
+        if idx < 0:
+            return None
+        suffix = parts.path[idx + len(marker):].lstrip("/")
+        if not suffix:
+            return None
+    else:
+        # Subdomain gateways: https://CID.ipfs.gateway.example/path
+        identifier = None
+        for gateway_host in sorted(IPFS_GATEWAY_HOSTS, key=len, reverse=True):
+            marker = f".ipfs.{gateway_host}"
+            if host.endswith(marker):
+                identifier = host[:-len(marker)]
+                break
+        if not identifier:
+            return None
+
+        raw_path = parts.path.lstrip("/")
+        # Legacy rows sometimes repeat /ipfs/CID/ even though the CID
+        # is already present in the gateway subdomain.
+        duplicate = f"ipfs/{identifier}"
+        if raw_path == duplicate:
+            raw_path = ""
+        elif raw_path.startswith(duplicate + "/"):
+            raw_path = raw_path[len(duplicate) + 1:]
+        suffix = identifier + (f"/{raw_path}" if raw_path else "")
+
+    out = f"ipfs://{suffix}"
+    if parts.query:
+        out += f"?{parts.query}"
+    return out
 
 def _gateway_to_arweave(url: str) -> str | None:
     parts = urllib.parse.urlsplit(url)

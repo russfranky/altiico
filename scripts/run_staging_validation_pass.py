@@ -198,6 +198,7 @@ def pending_avatar_rows(conn: sqlite3.Connection) -> list[sqlite3.Row]:
               WHERE av.avatar_id=a.id
                 AND vm.parse_error IS NULL
                 AND vm.vrm_spec IS NOT NULL
+                AND COALESCE(vm.content_sha256, '') != ''
           )
         ORDER BY a.collection_id, a.id
         """
