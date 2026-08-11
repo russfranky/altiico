@@ -22,7 +22,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,16 +50,17 @@ jobs:
 
       - name: Discover Robinhood Chain NFT VRMs
         run: |
-          # Robinhood's current Blockscout accepts the combined NFT filter on
-          # the first page but rejects its emitted next-page parameters. Scan
-          # that reliable page now; pagination is tracked as an adapter issue.
+          # Start with a bounded top-of-index pass. Robinhood Blockscout's
+          # emitted pagination parameters currently fail on replay, so widening
+          # happens incrementally rather than turning indexer instability into
+          # a false negative for the chain.
           python scripts/discover_blockscout_vrms.py \
             --chain robinhood \
             --output data/robinhood_vrm_discovery_report.json \
-            --max-contracts 50 \
+            --max-contracts 10 \
             --max-pages 1 \
-            --sample-instances 12 \
-            --timeout 10
+            --sample-instances 6 \
+            --timeout 6
 
       - name: Print measured yield
         run: |
@@ -68,6 +69,9 @@ jobs:
           from pathlib import Path
           report = json.loads(Path('data/robinhood_vrm_discovery_report.json').read_text())
           print(json.dumps(report['summary'], indent=2))
+          print('\nCONTRACTS SCANNED')
+          for row in report['contracts']:
+              print(row['contract'], row.get('name'), row['instances_sampled'], len(row['model_candidates']))
           print('\nVALIDATED VRM CONTRACTS')
           for row in report['contracts']:
               if row['validated_vrms']:
