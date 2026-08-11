@@ -52,7 +52,7 @@ jobs:
           python scripts/discover_opensea_nfts.py \
             --output data/opensea_nft_discovery_report.json \
             --search-limit 50 \
-            --max-nfts 300 \
+            --max-nfts 100 \
             --nft-concurrency 6 \
             --timeout 10
 
