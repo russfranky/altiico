@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """High-recall OpenSea discovery for NFT collections that may expose VRM avatars.
 
-OpenSea is a lead generator only. Candidate NFT metadata is followed and scanned
-recursively, and nothing is counted as a VRM until the referenced bytes pass the
-catalog's GLB + VRM binary validator.
+OpenSea is a lead generator only. Token metadata is followed and scanned
+recursively. A candidate is counted as VRM only after the referenced bytes pass
+the catalog's GLB + VRM binary validator.
 """
 from __future__ import annotations
 
@@ -91,33 +91,24 @@ def _candidate_score(row: dict[str, Any], query: str) -> int:
     return score
 
 
-def _direct_model_candidates(nft: dict[str, Any]) -> list[dict[str, str]]:
-    """Return only actual model-like OpenSea fields, never metadata_url itself."""
-    found: list[dict[str, str]] = []
+def _direct_candidates(nft: dict[str, Any]) -> list[dict[str, Any]]:
+    found: list[dict[str, Any]] = []
     for key in ("animation_url", "display_animation_url"):
         value = nft.get(key)
         if not isinstance(value, str) or not value.strip():
             continue
         lower = value.lower().split("?", 1)[0].split("#", 1)[0]
         if lower.endswith(MODEL_EXTENSIONS) or key == "animation_url":
-            found.append({"path": f"opensea.{key}", "field": key, "url": value.strip(), "reason": "opensea_media"})
+            found.append({
+                "path": f"opensea.{key}", "field": key, "url": value.strip(),
+                "reason": "opensea_media",
+            })
     return found
 
 
-def _fetch_and_scan_metadata(nft: dict[str, Any], timeout: float) -> tuple[str, list[dict[str, Any]], str | None]:
-    metadata_url = _text(nft.get("metadata_url"))
-    if not metadata_url:
-        return "", [], None
-    try:
-        metadata = fetch_metadata(metadata_url, timeout=timeout)
-    except Exception as exc:  # noqa: BLE001
-        return metadata_url, [], f"{type(exc).__name__}: {exc}"[:500]
-    if not isinstance(metadata, (dict, list)):
-        return metadata_url, [], "metadata was not a JSON object or array"
-    return metadata_url, scan_metadata(metadata), None
-
-
-def _validate_vrm(url: str, loader: NetworkLoader) -> dict[str, Any]:
+def _validate(url: str, timeout: float) -> dict[str, Any]:
+    policy = CrawlPolicy(timeout=timeout, max_attempts=2, max_vrm_bytes=64 * 1024 * 1024)
+    loader = NetworkLoader(None, policy)
     try:
         result = loader.validate_vrm(canonicalize_uri(url))
         return {
@@ -132,17 +123,64 @@ def _validate_vrm(url: str, loader: NetworkLoader) -> dict[str, Any]:
         }
     except Exception as exc:  # noqa: BLE001
         return {
-            "canonical_url": url,
-            "valid": False,
-            "status": "validation_error",
+            "canonical_url": url, "valid": False, "status": "validation_error",
             "error": f"{type(exc).__name__}: {exc}"[:500],
         }
 
 
+def _inspect_nft(nft: dict[str, Any], timeout: float) -> dict[str, Any]:
+    token_id = _text(nft.get("identifier") or nft.get("token_id"))
+    metadata_url = _text(nft.get("metadata_url"))
+    candidates = _direct_candidates(nft)
+    metadata_error: str | None = None
+    metadata_fetched = False
+
+    if metadata_url:
+        try:
+            metadata = fetch_metadata(metadata_url, timeout=timeout)
+            metadata_fetched = True
+            if isinstance(metadata, (dict, list)):
+                candidates.extend(scan_metadata(metadata))
+        except Exception as exc:  # noqa: BLE001
+            metadata_error = f"{type(exc).__name__}: {exc}"[:500]
+
+    out_candidates: list[dict[str, Any]] = []
+    validations: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        url = _text(candidate.get("url"))
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        record = {
+            "field": _text(candidate.get("field")),
+            "path": _text(candidate.get("path")),
+            "reason": _text(candidate.get("reason")),
+            "url": url,
+            "metadata_url": metadata_url,
+            "token_id": token_id,
+        }
+        out_candidates.append(record)
+        validation = _validate(url, timeout)
+        validation.update({
+            "field": record["field"], "path": record["path"],
+            "reason": record["reason"], "metadata_url": metadata_url,
+            "token_id": token_id,
+        })
+        validations.append(validation)
+
+    return {
+        "token_id": token_id,
+        "metadata_url": metadata_url,
+        "metadata_fetched": metadata_fetched,
+        "metadata_error": metadata_error,
+        "candidates": out_candidates,
+        "validations": validations,
+    }
+
+
 async def discover(args: argparse.Namespace) -> dict[str, Any]:
     client = OpenSeaClient(max_concurrency=2)
-    policy = CrawlPolicy(timeout=args.timeout, max_attempts=2, max_vrm_bytes=64 * 1024 * 1024)
-    loader = NetworkLoader(None, policy)
     queries = [q.strip() for q in args.queries.split(",") if q.strip()]
     chains = [c.strip() for c in args.chains.split(",") if c.strip()]
     leads: dict[str, dict[str, Any]] = {}
@@ -169,13 +207,12 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                     if not slug:
                         continue
                     item = leads.setdefault(slug, {
-                        "slug": slug,
-                        "name": _text(row.get("name")) or slug,
-                        "description": _text(row.get("description")),
-                        "contract": _contract(row),
+                        "slug": slug, "name": _text(row.get("name")) or slug,
+                        "description": _text(row.get("description")), "contract": _contract(row),
                         "queries": set(), "chains": set(), "score": 0,
                         "nfts_sampled": 0, "metadata_documents": 0,
-                        "model_candidates": [], "validated_vrms": [], "errors": [],
+                        "model_candidates": [], "validated_vrms": [],
+                        "rejected_model_candidates": [], "errors": [],
                     })
                     item["queries"].add(query)
                     item["chains"].add(chain)
@@ -193,48 +230,36 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                 continue
             if not isinstance(nfts, list):
                 continue
+            nfts = [n for n in nfts if isinstance(n, dict)]
             lead["nfts_sampled"] = len(nfts)
-            seen_urls: set[str] = set()
-            for nft in nfts:
-                if not isinstance(nft, dict):
-                    continue
-                token_id = _text(nft.get("identifier") or nft.get("token_id"))
-                candidates = _direct_model_candidates(nft)
-                metadata_url, scanned, metadata_error = await asyncio.to_thread(
-                    _fetch_and_scan_metadata, nft, args.timeout
-                )
-                if metadata_url:
-                    if metadata_error:
-                        metadata_fetch_errors += 1
-                        lead["errors"].append(f"metadata {token_id}: {metadata_error}")
-                    else:
-                        metadata_documents_fetched += 1
-                        lead["metadata_documents"] += 1
-                        candidates.extend(scanned)
-                for candidate in candidates:
-                    url = _text(candidate.get("url"))
-                    if not url or url in seen_urls:
-                        continue
-                    seen_urls.add(url)
-                    record = {
-                        "field": _text(candidate.get("field")),
-                        "path": _text(candidate.get("path")),
-                        "reason": _text(candidate.get("reason")),
-                        "url": url,
-                        "metadata_url": metadata_url,
-                        "token_id": token_id,
-                    }
-                    lead["model_candidates"].append(record)
-                    validation = await asyncio.to_thread(_validate_vrm, url, loader)
-                    validation.update({
-                        "field": record["field"],
-                        "path": record["path"],
-                        "reason": record["reason"],
-                        "metadata_url": metadata_url,
-                        "token_id": token_id,
-                    })
+
+            inspected = await asyncio.gather(*(
+                asyncio.to_thread(_inspect_nft, nft, args.timeout) for nft in nfts
+            ))
+            seen_candidates: set[str] = set()
+            seen_valid: set[str] = set()
+            for result in inspected:
+                if result["metadata_fetched"]:
+                    metadata_documents_fetched += 1
+                    lead["metadata_documents"] += 1
+                if result["metadata_error"]:
+                    metadata_fetch_errors += 1
+                    lead["errors"].append(
+                        f"metadata {result['token_id']}: {result['metadata_error']}"
+                    )
+                for candidate in result["candidates"]:
+                    url = candidate["url"]
+                    if url not in seen_candidates:
+                        seen_candidates.add(url)
+                        lead["model_candidates"].append(candidate)
+                for validation in result["validations"]:
+                    key = validation.get("canonical_url") or ""
                     if validation.get("valid"):
-                        lead["validated_vrms"].append(validation)
+                        if key and key not in seen_valid:
+                            seen_valid.add(key)
+                            lead["validated_vrms"].append(validation)
+                    else:
+                        lead["rejected_model_candidates"].append(validation)
             if lead["validated_vrms"]:
                 print(f"[{idx}/{len(ranked)}] VRM HIT {lead['name']} ({lead['slug']}): {len(lead['validated_vrms'])}", file=sys.stderr)
     finally:
@@ -245,25 +270,29 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
         lead["queries"] = sorted(lead["queries"])
         lead["chains"] = sorted(lead["chains"])
         lead["model_candidates"] = lead["model_candidates"][:200]
+        lead["rejected_model_candidates"] = lead["rejected_model_candidates"][:200]
 
-    all_validations = [v for x in ranked for v in x["validated_vrms"]]
+    valid = [v for x in ranked for v in x["validated_vrms"]]
+    rejected = [v for x in ranked for v in x["rejected_model_candidates"]]
     summary = {
         "search_requests": search_requests,
-        "queries": len(queries),
-        "chains": len(chains),
-        "unique_collection_leads": len(leads),
-        "collections_inspected": len(ranked),
+        "queries": len(queries), "chains": len(chains),
+        "unique_collection_leads": len(leads), "collections_inspected": len(ranked),
         "nfts_sampled": sum(x["nfts_sampled"] for x in ranked),
         "metadata_documents_fetched": metadata_documents_fetched,
         "metadata_fetch_errors": metadata_fetch_errors,
         "collections_with_model_candidates": sum(bool(x["model_candidates"]) for x in ranked),
         "model_candidates": sum(len(x["model_candidates"]) for x in ranked),
         "collections_with_validated_vrms": sum(bool(x["validated_vrms"]) for x in ranked),
-        "validated_vrms": len(all_validations),
+        "validated_vrms": len(valid),
+        "rejected_model_candidates": len(rejected),
         "error_collections": sum(bool(x["errors"]) for x in ranked),
-        "validation_statuses": dict(Counter(v["status"] for v in all_validations)),
+        "validation_statuses": dict(Counter(v["status"] for v in [*valid, *rejected])),
     }
-    return {"schema": "opensea-high-recall-discovery-v2", "generated_at": utc_now(), "summary": summary, "collections": ranked}
+    return {
+        "schema": "opensea-high-recall-discovery-v3",
+        "generated_at": utc_now(), "summary": summary, "collections": ranked,
+    }
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -274,7 +303,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--search-limit", type=int, default=50)
     ap.add_argument("--sample", type=int, default=8)
     ap.add_argument("--max-collections", type=int, default=500)
-    ap.add_argument("--timeout", type=float, default=18.0)
+    ap.add_argument("--timeout", type=float, default=12.0)
     args = ap.parse_args(argv)
 
     if not os.getenv("OPENSEA_API_KEY") and not (Path.home() / ".opensea" / "api_key").exists():
