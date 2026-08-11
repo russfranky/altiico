@@ -29,16 +29,16 @@ jobs:
       - name: Show current rows
         run: |
           sqlite3 -header -column data/vrm_index.db <<'SQL'
-          SELECT id,name,contract,vrm_url_https,vrm_url_pattern,vrm_check_status,vrm_file_size
+          SELECT *
           FROM collections
           WHERE id IN ('boomboxheads-v2','phettaverse-editions');
 
-          SELECT id,collection_id,model_file_url,check_status,reachable
+          SELECT *
           FROM avatars
           WHERE collection_id IN ('boomboxheads-v2','phettaverse-editions')
           ORDER BY collection_id,id;
 
-          SELECT source_url,vrm_spec,parse_error,file_size,content_sha256,transport_url
+          SELECT *
           FROM vrm_metadata
           WHERE source_url LIKE '%QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5%'
              OR source_url LIKE '%QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7%'
