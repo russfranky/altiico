@@ -38,6 +38,7 @@ def make_db() -> sqlite3.Connection:
             creator TEXT,
             description TEXT,
             total_supply INTEGER,
+            max_supply INTEGER,
             avatar_count INTEGER,
             image_url TEXT,
             banner_image_url TEXT,
@@ -65,6 +66,19 @@ def make_db() -> sqlite3.Connection:
             check_status TEXT,
             checked_at TEXT,
             check_http INTEGER
+        );
+        CREATE TABLE vrm_metadata (
+            source_url TEXT PRIMARY KEY,
+            extracted_at TEXT,
+            extractor_version TEXT,
+            vrm_spec TEXT,
+            vrm_meta_json TEXT,
+            parse_error TEXT,
+            content_length INTEGER
+        );
+        CREATE TABLE avatar_vrm (
+            avatar_id TEXT PRIMARY KEY,
+            vrm_source_url TEXT
         );
         """
     )
@@ -112,17 +126,18 @@ def test_validated_sample_becomes_unlisted_preview(tmp_path):
     assert entry["set"]["listed"] is False
     assert entry["set"]["purchaseGated"] is False
     assert entry["sourceAssets"]["count"] == 1
+    assert entry["sourceAssets"]["binaryValidatedCount"] == 1
     conn.close()
 
 
-def test_reachable_avatar_inventory_becomes_bulk_ready(tmp_path):
+def test_reachable_inventory_uses_collection_binary_proof(tmp_path):
     conn = make_db()
     row = insert_collection(conn, avatar_count=2, total_supply=2)
     conn.executemany(
         """
         INSERT INTO avatars
             (id, collection_id, name, model_file_url, reachable, check_status)
-        VALUES (?, 'test-set', ?, ?, 1, 'ok_vrm')
+        VALUES (?, 'test-set', ?, ?, 1, 'ok_glb')
         """,
         [
             ("1", "One", "ipfs://bafy-one/1.vrm"),
@@ -135,6 +150,8 @@ def test_reachable_avatar_inventory_becomes_bulk_ready(tmp_path):
     assert entry["stageClass"] == "bulk_ready"
     assert entry["set"]["avatarCount"] == 2
     assert entry["coverage"]["coverageRatio"] == 1.0
+    assert entry["sourceAssets"]["binaryValidatedCount"] == 0
+    assert entry["sourceAssets"]["validationScope"] == "collection_binary_plus_avatar_reachability"
     conn.close()
 
 
@@ -148,7 +165,7 @@ def test_partial_inventory_is_labeled_not_overstated(tmp_path):
         VALUES (?, 'test-set', ?, ?, ?, ?)
         """,
         [
-            ("1", "One", "https://example.test/1.vrm", 1, "ok_vrm"),
+            ("1", "One", "https://example.test/1.vrm", 1, "ok_glb"),
             ("2", "Two", "https://example.test/2.vrm", 0, "http_404"),
             ("3", "Three", "https://example.test/3.vrm", 0, None),
         ],
@@ -159,6 +176,85 @@ def test_partial_inventory_is_labeled_not_overstated(tmp_path):
     assert entry["stageClass"] == "partial_ready"
     assert entry["set"]["avatarCount"] == 1
     assert "partial_avatar_inventory" in entry["warnings"]
+    conn.close()
+
+
+def test_reachable_glb_without_any_binary_vrm_proof_is_deferred(tmp_path):
+    conn = make_db()
+    row = insert_collection(
+        conn,
+        vrm_url_https=None,
+        vrm_check_status=None,
+        vrm_check_bytes=None,
+        vrm_checked_at=None,
+    )
+    conn.execute(
+        """
+        INSERT INTO avatars
+            (id, collection_id, name, model_file_url, reachable, check_status)
+        VALUES ('1', 'test-set', 'One', 'https://example.test/1.vrm', 1, 'ok_glb')
+        """
+    )
+    conn.commit()
+    entry, deferred = stage_record(conn, row, "2026-08-11T00:00:00Z", tmp_path)
+    assert entry is None
+    assert "no_binary_validated_vrm" in deferred["reasons"]
+    conn.close()
+
+
+def test_individually_validated_avatar_can_stage_without_collection_sample(tmp_path):
+    conn = make_db()
+    row = insert_collection(
+        conn,
+        vrm_url_https=None,
+        vrm_check_status=None,
+        vrm_check_bytes=None,
+        vrm_checked_at=None,
+    )
+    conn.execute(
+        """
+        INSERT INTO avatars
+            (id, collection_id, name, model_file_url, reachable, check_status)
+        VALUES ('1', 'test-set', 'One', 'ipfs://bafy/1.vrm', 1, 'ok_glb')
+        """
+    )
+    conn.execute(
+        """
+        INSERT INTO vrm_metadata
+            (source_url, extracted_at, extractor_version, vrm_spec, parse_error, content_length)
+        VALUES ('ipfs://bafy/1.vrm', '2026-08-11T00:00:00Z', 'test', '1.0', NULL, 900)
+        """
+    )
+    conn.execute("INSERT INTO avatar_vrm VALUES ('1', 'ipfs://bafy/1.vrm')")
+    conn.commit()
+    entry, deferred = stage_record(conn, row, "2026-08-11T00:00:00Z", tmp_path)
+    assert entry is not None
+    assert deferred["reasons"] == []
+    assert entry["sourceAssets"]["binaryValidatedCount"] == 1
+    assert entry["sourceAssets"]["validationScope"] == "per_avatar_binary"
+    conn.close()
+
+
+def test_evidence_contract_overrides_historical_primary(tmp_path):
+    conn = make_db()
+    old = "0x" + "1" * 40
+    proven = "0x" + "2" * 40
+    row = insert_collection(conn, contract=old)
+    conn.executemany(
+        "INSERT INTO contracts VALUES ('test-set', ?, 'ethereum', 'ERC-721', ?)",
+        [(old, 1), (proven, 0)],
+    )
+    conn.commit()
+    entry, _ = stage_record(
+        conn,
+        row,
+        "2026-08-11T00:00:00Z",
+        tmp_path,
+        {"test-set": ("ethereum", proven)},
+    )
+    assert entry is not None
+    assert entry["set"]["contract"] == proven
+    assert entry["sampleEvidence"]["contract"] == proven
     conn.close()
 
 
@@ -203,6 +299,15 @@ def test_unknown_license_stays_review_state(tmp_path):
     conn.close()
 
 
+def test_positive_avatar_count_wins_over_zero_supply(tmp_path):
+    conn = make_db()
+    row = insert_collection(conn, total_supply=0, avatar_count=9)
+    entry, _ = stage_record(conn, row, "2026-08-11T00:00:00Z", tmp_path)
+    assert entry is not None
+    assert entry["set"]["totalMints"] == 9
+    conn.close()
+
+
 def test_bundle_validation_and_summary(tmp_path):
     conn = make_db()
     insert_collection(conn, id="ready", name="Ready")
@@ -217,6 +322,7 @@ def test_bundle_validation_and_summary(tmp_path):
     assert validate_bundle(bundle) == []
     assert bundle["summary"]["stageableSets"] == 1
     assert bundle["summary"]["deferredSets"] == 1
+    assert bundle["summary"]["binaryValidatedSourceAvatars"] == 1
     assert bundle["sets"][0]["set"]["slug"] == "ready"
     assert bundle["deferred"][0]["slug"] == "blocked"
     conn.close()
