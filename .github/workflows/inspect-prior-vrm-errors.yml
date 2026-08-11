@@ -18,21 +18,14 @@ jobs:
         with:
           ref: agent/binary-validate-staging-inventory
 
-      - name: Print failed asset tasks from the latest validation run
+      - name: Print failed asset tasks from validation run 2
         run: |
           sqlite3 -header -column data/vrm_index.db <<'SQL'
-          SELECT id, started_at, finished_at, status, requests_used, root_seed_count
+          SELECT id, started_at, finished_at, status, requests_used,
+                 root_seed_count, config_json
           FROM crawl_runs
-          ORDER BY id DESC
-          LIMIT 5;
+          WHERE id=2;
 
-          WITH target AS (
-              SELECT id
-              FROM crawl_runs
-              WHERE json_extract(config_json, '$.purpose') = 'staging_binary_validation'
-              ORDER BY id DESC
-              LIMIT 1
-          )
           SELECT
               t.id,
               t.canonical_key,
@@ -43,7 +36,7 @@ jobs:
               group_concat(NULLIF(b.avatar_id, ''), ',') AS avatars
           FROM crawl_tasks t
           LEFT JOIN crawl_bindings b ON b.task_id=t.id
-          WHERE t.run_id=(SELECT id FROM target)
+          WHERE t.run_id=2
             AND t.state != 'done'
           GROUP BY t.id
           ORDER BY t.state, t.canonical_key;
