@@ -2,17 +2,16 @@
 """High-recall OpenSea discovery for NFT collections that may expose VRM avatars.
 
 OpenSea is used only to generate and enrich leads. Nothing discovered here is
-promoted into the canonical catalog until the referenced bytes pass GLB + VRM
+promoted into the canonical catalog until referenced bytes pass GLB + VRM
 validation through the recursive crawler.
 """
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
 import os
 import sys
-import time
-import urllib.parse
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,23 +27,11 @@ from scripts.crawler.models import CrawlPolicy  # noqa: E402
 from scripts.crawler.uri import canonicalize_uri  # noqa: E402
 
 DEFAULT_QUERIES = (
-    "VRM",
-    "VRM avatar",
-    "3D avatar",
-    "avatar 3D",
-    "metaverse avatar",
-    "GLB avatar",
-    "glTF avatar",
-    "PFP 3D",
-    "avatar NFT",
-    "collectible avatar",
-    "digital avatar",
-    "virtual avatar",
-    "metaverse ready",
+    "VRM", "VRM avatar", "3D avatar", "avatar 3D", "metaverse avatar",
+    "GLB avatar", "glTF avatar", "PFP 3D", "avatar NFT",
+    "collectible avatar", "digital avatar", "virtual avatar", "metaverse ready",
 )
-
 MODEL_EXTENSIONS = (".vrm", ".glb", ".gltf", ".fbx", ".usdz")
-STRONG_TERMS = ("vrm", "avatar", "metaverse", "3d", "gltf", "glb")
 
 
 def utc_now() -> str:
@@ -87,9 +74,7 @@ def _contract(row: dict[str, Any]) -> str:
 
 
 def _candidate_score(row: dict[str, Any], query: str) -> int:
-    blob = " ".join(
-        _text(row.get(k)) for k in ("name", "description", "collection", "slug")
-    ).lower()
+    blob = " ".join(_text(row.get(k)) for k in ("name", "description", "collection", "slug")).lower()
     score = 1
     if "vrm" in blob:
         score += 8
@@ -118,8 +103,7 @@ def _model_candidates(nft: dict[str, Any]) -> list[dict[str, str]]:
 
 def _validate_vrm(url: str, loader: NetworkLoader) -> dict[str, Any]:
     try:
-        canonical = canonicalize_uri(url)
-        result = loader.validate_vrm(canonical)
+        result = loader.validate_vrm(canonicalize_uri(url))
         return {
             "canonical_url": result.canonical_url,
             "transport_url": result.transport_url,
@@ -131,102 +115,89 @@ def _validate_vrm(url: str, loader: NetworkLoader) -> dict[str, Any]:
             "error": result.error,
         }
     except Exception as exc:  # noqa: BLE001
-        return {"canonical_url": url, "valid": False, "status": "validation_error", "error": f"{type(exc).__name__}: {exc}"[:500]}
+        return {
+            "canonical_url": url,
+            "valid": False,
+            "status": "validation_error",
+            "error": f"{type(exc).__name__}: {exc}"[:500],
+        }
 
 
-def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="Search OpenSea broadly for new VRM/avatar collection candidates.")
-    ap.add_argument("--output", default=str(_REPO_ROOT / "data" / "opensea_discovery_report.json"))
-    ap.add_argument("--queries", default=",".join(DEFAULT_QUERIES))
-    ap.add_argument("--chains", default="ethereum,polygon,base,arbitrum,optimism")
-    ap.add_argument("--search-limit", type=int, default=50)
-    ap.add_argument("--sample", type=int, default=8, help="NFTs sampled per collection")
-    ap.add_argument("--max-collections", type=int, default=500)
-    ap.add_argument("--timeout", type=float, default=18.0)
-    args = ap.parse_args(argv)
-
-    if not os.getenv("OPENSEA_API_KEY") and not (Path.home() / ".opensea" / "api_key").exists():
-        print("OpenSea credential missing: set OPENSEA_API_KEY or ~/.opensea/api_key", file=sys.stderr)
-        return 2
-
-    client = OpenSeaClient(timeout=args.timeout)
+async def discover(args: argparse.Namespace) -> dict[str, Any]:
+    client = OpenSeaClient(max_concurrency=2)
     policy = CrawlPolicy(timeout=args.timeout, max_attempts=2, max_vrm_bytes=64 * 1024 * 1024)
     loader = NetworkLoader(None, policy)
     queries = [q.strip() for q in args.queries.split(",") if q.strip()]
     chains = [c.strip() for c in args.chains.split(",") if c.strip()]
-
     leads: dict[str, dict[str, Any]] = {}
     search_requests = 0
-    for query in queries:
-        for chain in chains:
+
+    try:
+        for query in queries:
+            for chain in chains:
+                try:
+                    data = await client.search(query, chain=chain, asset_type="collection", limit=args.search_limit)
+                    search_requests += 1
+                except Exception as exc:  # noqa: BLE001
+                    print(f"search failed query={query!r} chain={chain}: {exc}", file=sys.stderr)
+                    continue
+                rows = data.get("collections") or data.get("results") or data.get("items") or []
+                if not isinstance(rows, list):
+                    continue
+                for row in rows:
+                    if not isinstance(row, dict):
+                        continue
+                    slug = _slug(row)
+                    if not slug:
+                        continue
+                    item = leads.setdefault(slug, {
+                        "slug": slug,
+                        "name": _text(row.get("name")) or slug,
+                        "description": _text(row.get("description")),
+                        "contract": _contract(row),
+                        "queries": set(), "chains": set(), "score": 0,
+                        "nfts_sampled": 0, "model_candidates": [],
+                        "validated_vrms": [], "errors": [],
+                    })
+                    item["queries"].add(query)
+                    item["chains"].add(chain)
+                    item["score"] = max(item["score"], _candidate_score(row, query))
+
+        ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[: args.max_collections]
+        print(f"OpenSea search produced {len(leads)} unique collection leads; inspecting {len(ranked)}", file=sys.stderr)
+
+        for idx, lead in enumerate(ranked, 1):
             try:
-                data = client.request_json(
-                    "/search",
-                    params={"query": query, "chains": chain, "asset_types": "collection", "limit": min(args.search_limit, 50)},
-                )
-                search_requests += 1
+                data = await client.get_collection_nfts(lead["slug"], limit=args.sample)
+                nfts = data.get("nfts") or []
             except Exception as exc:  # noqa: BLE001
-                print(f"search failed query={query!r} chain={chain}: {exc}", file=sys.stderr)
+                lead["errors"].append(f"collection_nfts: {type(exc).__name__}: {exc}"[:500])
                 continue
-            rows = data.get("collections") or data.get("results") or data.get("items") or []
-            if not isinstance(rows, list):
+            if not isinstance(nfts, list):
                 continue
-            for row in rows:
-                if not isinstance(row, dict):
+            lead["nfts_sampled"] = len(nfts)
+            seen_urls: set[str] = set()
+            for nft in nfts:
+                if not isinstance(nft, dict):
                     continue
-                slug = _slug(row)
-                if not slug:
-                    continue
-                item = leads.setdefault(slug, {
-                    "slug": slug,
-                    "name": _text(row.get("name")) or slug,
-                    "description": _text(row.get("description")),
-                    "contract": _contract(row),
-                    "queries": set(),
-                    "chains": set(),
-                    "score": 0,
-                    "nfts_sampled": 0,
-                    "model_candidates": [],
-                    "validated_vrms": [],
-                    "errors": [],
-                })
-                item["queries"].add(query)
-                item["chains"].add(chain)
-                item["score"] = max(item["score"], _candidate_score(row, query))
+                for candidate in _model_candidates(nft):
+                    url = candidate["url"]
+                    if url in seen_urls:
+                        continue
+                    seen_urls.add(url)
+                    record = {**candidate, "token_id": _text(nft.get("identifier") or nft.get("token_id"))}
+                    lead["model_candidates"].append(record)
+                    if ".vrm" in url.lower() or "vrm" in candidate["field"].lower():
+                        validation = await asyncio.to_thread(_validate_vrm, url, loader)
+                        validation.update({"field": candidate["field"], "token_id": record["token_id"]})
+                        if validation.get("valid"):
+                            lead["validated_vrms"].append(validation)
+            if lead["validated_vrms"]:
+                print(f"[{idx}/{len(ranked)}] VRM HIT {lead['name']} ({lead['slug']}): {len(lead['validated_vrms'])}", file=sys.stderr)
+    finally:
+        await client.close()
 
     ranked = sorted(leads.values(), key=lambda x: (-x["score"], x["slug"]))[: args.max_collections]
-    print(f"OpenSea search produced {len(leads)} unique collection leads; inspecting {len(ranked)}", file=sys.stderr)
-
-    for idx, lead in enumerate(ranked, 1):
-        slug = lead["slug"]
-        try:
-            data = client.request_json(f"/collection/{urllib.parse.quote(slug, safe='')}/nfts", params={"limit": min(args.sample, 50)})
-            nfts = data.get("nfts") or []
-        except Exception as exc:  # noqa: BLE001
-            lead["errors"].append(f"collection_nfts: {type(exc).__name__}: {exc}"[:500])
-            continue
-        if not isinstance(nfts, list):
-            continue
-        lead["nfts_sampled"] = len(nfts)
-        seen_urls: set[str] = set()
-        for nft in nfts:
-            if not isinstance(nft, dict):
-                continue
-            for candidate in _model_candidates(nft):
-                url = candidate["url"]
-                if url in seen_urls:
-                    continue
-                seen_urls.add(url)
-                record = {**candidate, "token_id": _text(nft.get("identifier") or nft.get("token_id"))}
-                lead["model_candidates"].append(record)
-                if ".vrm" in url.lower() or "vrm" in candidate["field"].lower():
-                    validation = _validate_vrm(url, loader)
-                    validation.update({"field": candidate["field"], "token_id": record["token_id"]})
-                    if validation.get("valid"):
-                        lead["validated_vrms"].append(validation)
-        if lead["validated_vrms"]:
-            print(f"[{idx}/{len(ranked)}] VRM HIT {lead['name']} ({slug}): {len(lead['validated_vrms'])}", file=sys.stderr)
-
     for lead in ranked:
         lead["queries"] = sorted(lead["queries"])
         lead["chains"] = sorted(lead["chains"])
@@ -246,16 +217,29 @@ def main(argv: list[str] | None = None) -> int:
         "error_collections": sum(bool(x["errors"]) for x in ranked),
         "validation_statuses": dict(Counter(v["status"] for x in ranked for v in x["validated_vrms"])),
     }
-    report = {
-        "schema": "opensea-high-recall-discovery-v1",
-        "generated_at": utc_now(),
-        "summary": summary,
-        "collections": ranked,
-    }
+    return {"schema": "opensea-high-recall-discovery-v1", "generated_at": utc_now(), "summary": summary, "collections": ranked}
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description="Search OpenSea broadly for new VRM/avatar collection candidates.")
+    ap.add_argument("--output", default=str(_REPO_ROOT / "data" / "opensea_discovery_report.json"))
+    ap.add_argument("--queries", default=",".join(DEFAULT_QUERIES))
+    ap.add_argument("--chains", default="ethereum,polygon,base,arbitrum,optimism")
+    ap.add_argument("--search-limit", type=int, default=50)
+    ap.add_argument("--sample", type=int, default=8)
+    ap.add_argument("--max-collections", type=int, default=500)
+    ap.add_argument("--timeout", type=float, default=18.0)
+    args = ap.parse_args(argv)
+
+    if not os.getenv("OPENSEA_API_KEY") and not (Path.home() / ".opensea" / "api_key").exists():
+        print("OpenSea credential missing: set OPENSEA_API_KEY or ~/.opensea/api_key", file=sys.stderr)
+        return 2
+
+    report = asyncio.run(discover(args))
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(json.dumps(summary, indent=2), file=sys.stderr)
+    print(json.dumps(report["summary"], indent=2), file=sys.stderr)
     return 0
 
 
