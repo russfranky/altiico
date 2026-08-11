@@ -11,6 +11,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import Counter
@@ -30,13 +32,44 @@ from scripts.discover_metadata_fields import scan_metadata  # noqa: E402
 
 MODEL_EXTENSIONS = (".vrm", ".glb", ".gltf")
 UA = "vrm-catalog-blockscout-discovery/1.0"
+RETRYABLE_HTTP = {422, 429, 500, 502, 503, 504}
 
 
-def _get_json(url: str, timeout: float) -> dict[str, Any]:
-    req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=timeout) as response:  # noqa: S310
-        value = json.loads(response.read().decode("utf-8"))
-    return value if isinstance(value, dict) else {}
+def _get_json(url: str, timeout: float, attempts: int = 4) -> dict[str, Any]:
+    """Fetch Blockscout JSON with a small bounded retry budget.
+
+    Some Blockscout instances intermittently return 422 or 5xx for valid list
+    queries while their index catches up. Treat those as transport/indexer
+    degradation, not permanent evidence about the underlying chain.
+    """
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as response:  # noqa: S310
+                value = json.loads(response.read().decode("utf-8"))
+            return value if isinstance(value, dict) else {}
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if exc.code not in RETRYABLE_HTTP or attempt >= attempts:
+                raise
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            try:
+                delay = float(retry_after) if retry_after else min(5.0, 0.75 * attempt)
+            except ValueError:
+                delay = min(5.0, 0.75 * attempt)
+            print(f"Blockscout HTTP {exc.code}; retry {attempt}/{attempts} after {delay:.2f}s", file=sys.stderr)
+            time.sleep(delay)
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_error = exc
+            if attempt >= attempts:
+                raise
+            delay = min(5.0, 0.75 * attempt)
+            print(f"Blockscout transport error; retry {attempt}/{attempts} after {delay:.2f}s: {exc}", file=sys.stderr)
+            time.sleep(delay)
+    if last_error:
+        raise last_error
+    return {}
 
 
 def _url(base: str, path: str, params: dict[str, Any] | None = None) -> str:
