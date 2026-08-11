@@ -1,23 +1,23 @@
 # High-signal live discovery targets. These are curated contract leads, not
 # marketplace keyword hits. A target may mutate catalog identity only after a
 # binary validates as VRM 0.x or VRM 1.0.
-# Execution revision: 2
+# Execution revision: 3
 
 policy:
   max_depth: 5
-  request_budget: 2500
-  max_tasks: 15000
-  max_attempts: 3
-  timeout: 20
+  request_budget: 800
+  max_tasks: 5000
+  max_attempts: 2
+  timeout: 15
   max_document_bytes: 2000000
   max_vrm_json_bytes: 4000000
   max_links_per_document: 500
 
-token_sample_limit: 12
+token_sample_limit: 5
 
 auto_existing:
-  enabled: true
-  limit: 25
+  enabled: false
+  limit: 0
   tiers: [A, B, C]
 
 targets:
@@ -25,6 +25,7 @@ targets:
     chain: ethereum
     contract: "0xb286ac8eff9f44e2c377c6770cad5fc78bff9ed6"
     match_names:
+      - "CyberBrokers"
       - "CyberBrokers (Genesis Mechs)"
       - "CyberBrokers Genesis Mechs"
     token_ids: [1]
