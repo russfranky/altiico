@@ -39,13 +39,8 @@ jobs:
 
           path = Path('scripts/run_live_discovery.py')
           text = path.read_text(encoding='utf-8')
-          needle = '''                notes=str(raw.get("notes") or ""),
-                resolution=resolution,
-'''
-          replacement = '''                notes=str(raw.get("notes") or ""),
-                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),
-                resolution=resolution,
-'''
+          needle = '                notes=str(raw.get("notes") or ""),\n                resolution=resolution,\n'
+          replacement = '                notes=str(raw.get("notes") or ""),\n                sample_metadata_url=str(raw.get("sample_metadata_url") or ""),\n                resolution=resolution,\n'
           if replacement not in text:
               if needle not in text:
                   raise SystemExit('live discovery runner shape changed; refusing an unsafe patch')
