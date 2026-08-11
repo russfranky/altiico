@@ -45,29 +45,36 @@ def _norm_contract(value: Any) -> str | None:
 
 
 def _canonical_contracts(conn: sqlite3.Connection) -> tuple[dict[str, str | None], dict[str, str]]:
+    """Resolve identity from the primary contracts row before legacy mirrors."""
     conn.row_factory = sqlite3.Row
     rows = conn.execute("SELECT id, contract, opensea_slug FROM collections").fetchall()
     contracts: dict[str, str | None] = {}
     slug_to_id: dict[str, str] = {}
     for row in rows:
         cid = str(row["id"])
-        contract = _norm_contract(row["contract"])
-        if contract is None:
-            found = conn.execute(
-                """
-                SELECT address FROM contracts
-                WHERE collection_id=?
-                ORDER BY is_primary DESC, rowid ASC
-                LIMIT 1
-                """,
-                (cid,),
-            ).fetchone()
-            contract = _norm_contract(found["address"]) if found else None
-        contracts[cid] = contract
+        found = conn.execute(
+            """
+            SELECT address FROM contracts
+            WHERE collection_id=?
+            ORDER BY is_primary DESC, rowid ASC
+            LIMIT 1
+            """,
+            (cid,),
+        ).fetchone()
+        primary_contract = _norm_contract(found["address"]) if found else None
+        contracts[cid] = primary_contract or _norm_contract(row["contract"])
         slug = str(row["opensea_slug"] or "").strip()
         if slug and slug not in slug_to_id:
             slug_to_id[slug] = cid
     return contracts, slug_to_id
+
+
+def _resolve_collection_id(
+    value: str,
+    canonical: dict[str, str | None],
+    slug_to_id: dict[str, str],
+) -> str | None:
+    return slug_to_id.get(value) or (value if value in canonical else None)
 
 
 def _check_contract(
@@ -120,16 +127,21 @@ def verify(db_path: Path, data_dir: Path, static_dir: Path) -> list[str]:
             _check_contract(errors, "collections", str(item["id"]), item.get("contract"), canonical)
 
     for item in registry.get("collections") or []:
-        if isinstance(item, dict) and item.get("slug"):
-            _check_contract(errors, "avatars-registry", str(item["slug"]), item.get("contract"), canonical)
+        if not isinstance(item, dict) or not item.get("slug"):
+            continue
+        slug = str(item["slug"])
+        cid = _resolve_collection_id(slug, canonical, slug_to_id)
+        if cid:
+            _check_contract(errors, "avatars-registry", cid, item.get("contract"), canonical)
 
     for item in staging.get("sets") or []:
         if not isinstance(item, dict):
             continue
         record = item.get("set") or {}
         slug = str(record.get("slug") or "")
-        if slug:
-            _check_contract(errors, "hubzz-staging", slug, record.get("contract"), canonical)
+        cid = _resolve_collection_id(slug, canonical, slug_to_id) if slug else None
+        if cid:
+            _check_contract(errors, "hubzz-staging", cid, record.get("contract"), canonical)
         source = item.get("sourceAssets") or {}
         sidecar_rel = source.get("path")
         if sidecar_rel:
