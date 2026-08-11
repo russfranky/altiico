@@ -31,6 +31,10 @@ assert(!/box-shadow\s*:/.test(css), "contains no drop shadows");
 assert(!/backdrop-filter\s*:/.test(css), "contains no backdrop blur");
 assert(html.includes('aria-label="Catalog filters"'), "filter surface has an accessible name");
 assert(html.includes('aria-live="polite"'), "result count announces updates");
+assert(html.includes('class="collection-list"'), "uses a collection list rather than a card grid");
+for (const id of ["search", "f-chain", "f-license", "f-vrm", "f-sort", "collectionsGrid", "emptyState", "vrmModal"]) {
+  assert(html.includes(`id="${id}"`), `keeps the app.js hook #${id}`);
+}
 assert(
   css.includes("grid-template-columns: 40px minmax(0, 1fr) auto"),
   "collection rows use one direct grid",
