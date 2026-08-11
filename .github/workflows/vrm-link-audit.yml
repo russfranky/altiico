@@ -57,11 +57,8 @@ jobs:
           }
           ''')
           text, count = re.subn(
-              r'IPFS_GATEWAY_HOSTS = \{.*?\n\}',
-              hosts.rstrip(),
-              text,
-              count=1,
-              flags=re.S,
+              r'IPFS_GATEWAY_HOSTS = \{.*?\n\}', hosts.rstrip(), text,
+              count=1, flags=re.S,
           )
           if count != 1:
               raise SystemExit('IPFS gateway host block changed')
@@ -74,11 +71,8 @@ jobs:
           )
           ''')
           text, count = re.subn(
-              r'IPFS_GATEWAYS = \(.*?\n\)',
-              gateways.rstrip(),
-              text,
-              count=1,
-              flags=re.S,
+              r'IPFS_GATEWAYS = \(.*?\n\)', gateways.rstrip(), text,
+              count=1, flags=re.S,
           )
           if count != 1:
               raise SystemExit('IPFS transport block changed')
@@ -126,9 +120,7 @@ jobs:
           text, count = re.subn(
               r'def _gateway_to_ipfs\(url: str\) -> str \| None:\n.*?\n\ndef _gateway_to_arweave',
               replacement.rstrip() + '\n\ndef _gateway_to_arweave',
-              text,
-              count=1,
-              flags=re.S,
+              text, count=1, flags=re.S,
           )
           if count != 1:
               raise SystemExit('IPFS gateway canonicalizer changed')
@@ -182,23 +174,16 @@ jobs:
 
           validation_path = Path('scripts/run_staging_validation_pass.py')
           validation = validation_path.read_text(encoding='utf-8')
-          old_pending = dedent('''\
-              WHERE av.avatar_id=a.id
-                AND vm.parse_error IS NULL
-                AND vm.vrm_spec IS NOT NULL
-          )
-          ''')
-          new_pending = dedent('''\
-              WHERE av.avatar_id=a.id
-                AND vm.parse_error IS NULL
-                AND vm.vrm_spec IS NOT NULL
-                AND COALESCE(vm.content_sha256, '') != ''
-          )
-          ''')
-          if new_pending not in validation:
-              if old_pending not in validation:
+          if "COALESCE(vm.content_sha256, '') != ''" not in validation:
+              validation, count = re.subn(
+                  r'(WHERE av\.avatar_id=a\.id\s+AND vm\.parse_error IS NULL\s+'
+                  r'AND vm\.vrm_spec IS NOT NULL)(\s+\))',
+                  r"\1\n                AND COALESCE(vm.content_sha256, '') != ''\2",
+                  validation,
+                  count=1,
+              )
+              if count != 1:
                   raise SystemExit('validation pending-query shape changed')
-              validation = validation.replace(old_pending, new_pending, 1)
           validation_path.write_text(validation, encoding='utf-8')
           PY
 
