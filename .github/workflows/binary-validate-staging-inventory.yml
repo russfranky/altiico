@@ -1,0 +1,65 @@
+name: Binary-validate staging inventory
+
+on:
+  push:
+    branches:
+      - agent/binary-validate-staging-inventory
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: binary-validate-staging-inventory-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Binary-validate all indexed staging sources
+        run: |
+          python scripts/run_staging_validation_pass.py \
+            --db data/vrm_index.db \
+            --report data/staging_validation_report.json \
+            --markdown-report docs/staging-validation-latest.md \
+            --request-budget 1500 \
+            --timeout 25 \
+            --max-attempts 2 \
+            --build
+
+      - name: Verify catalog and staging artifacts
+        run: |
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA integrity_check;'
+          python scripts/export_hubzz_staging.py --validate
+
+      - name: Commit measured validation results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/vrm_index.db data/staging_validation_report.json \
+            docs/staging-validation-latest.md docs/hubzz-prealpha-staging.md \
+            static/data static/sw.js
+          if git diff --cached --quiet; then
+            echo 'No new binary validation evidence.'
+            exit 0
+          fi
+          git commit -m 'Binary-validate Hubzz staging inventory [skip ci]'
+          git push
