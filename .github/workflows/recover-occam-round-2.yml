@@ -1,0 +1,62 @@
+name: Recover Occam UX round 2
+
+on:
+  push:
+    branches:
+      - agent/occam-catalog-ux-round-2
+    paths:
+      - .github/workflows/recover-occam-round-2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Restore staged files from the original payload
+        run: |
+          python - <<'PYCODE'
+          import base64
+          import gzip
+          import re
+          from pathlib import Path
+
+          source = Path('.github/workflows/apply-occam-round-2.yml').read_text()
+          files = {
+              'INDEX_GZ_B64': 'static/index.html',
+              'CSS_GZ_B64': 'static/app.css',
+              'APP_GZ_B64': 'static/app.js',
+              'TEST_GZ_B64': 'tests/catalog-ux.mjs',
+          }
+          for variable, path in files.items():
+              match = re.search(rf'^\s+{variable}:\s+(\S+)\s*$', source, re.MULTILINE)
+              if not match:
+                  raise RuntimeError(f'missing payload: {variable}')
+              encoded = match.group(1).strip()
+              encoded += '=' * (-len(encoded) % 4)
+              payload = base64.b64decode(encoded)
+              target = Path(path)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(gzip.decompress(payload))
+          PYCODE
+
+      - name: Verify static catalog
+        run: |
+          node --check static/app.js
+          node tests/catalog-ux.mjs
+          node tests/catalog-performance.mjs
+
+      - name: Commit verified files
+        run: |
+          rm .github/workflows/apply-occam-round-2.yml
+          rm .github/workflows/recover-occam-round-2.yml
+          git config user.name "ChatGPT"
+          git config user.email "noreply@openai.com"
+          git add static/index.html static/app.css static/app.js tests/catalog-ux.mjs .github/workflows/apply-occam-round-2.yml .github/workflows/recover-occam-round-2.yml
+          git commit -m "Tighten catalog scanning and viewer focus" -m "Collapse secondary filters, prioritize validated files, remove the redundant image modal, and pause the 3D render loop while closed.\n\nCo-Authored-By: ChatGPT <noreply@openai.com>"
+          git push origin HEAD:${{ github.ref_name }}
