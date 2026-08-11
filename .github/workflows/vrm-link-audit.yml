@@ -1,24 +1,24 @@
-name: Finalize VRM link audit report
+name: VRM link audit
 
 on:
-  push:
-    branches:
-      - agent/vrm-link-audit
-    paths:
-      - .github/workflows/vrm-link-audit.yml
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: vrm-link-audit-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  finalize:
-    if: github.actor != 'github-actions[bot]'
+  audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -28,92 +28,58 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Reject descriptive pseudo-URLs
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path('scripts/audit_vrm_links.py')
-          text = path.read_text(encoding='utf-8')
-          old = '''def _looks_like_url(value: str) -> bool:
-              return value.strip().lower().startswith(_URL_PREFIXES)
-          '''
-          old = '\n'.join(
-              line[14:] if line.startswith('              ') else line
-              for line in old.splitlines()
-          )
-          new = '''def _looks_like_url(value: str) -> bool:
-              raw = value.strip()
-              if not raw.lower().startswith(_URL_PREFIXES):
-                  return False
-              if any(character.isspace() for character in raw):
-                  return False
-              parts = urllib.parse.urlsplit(raw)
-              if parts.scheme.lower() in {"http", "https"}:
-                  return bool(parts.hostname)
-              return bool(parts.netloc or parts.path)
-          '''
-          new = '\n'.join(
-              line[14:] if line.startswith('              ') else line
-              for line in new.splitlines()
-          )
-          if new not in text:
-              if old not in text:
-                  raise SystemExit('URL predicate shape changed')
-              path.write_text(text.replace(old, new, 1), encoding='utf-8')
-          PY
-
-      - name: Verify URL filtering
+      - name: Verify auditor
         run: |
           python -m py_compile scripts/audit_vrm_links.py
-          python -m pytest tests/test_vrm_link_audit.py -q
+          python -m pytest tests/test_vrm_link_audit.py tests/test_recursive_crawler.py -q
 
-      - name: Remove false positives from the measured report
+      - name: Audit every concrete VRM link
+        run: |
+          python scripts/audit_vrm_links.py \
+            --db "$PWD/data/vrm_index.db" \
+            --json-report "$RUNNER_TEMP/vrm-link-audit.json" \
+            --markdown-report "$RUNNER_TEMP/vrm-link-audit.md" \
+            --workers 6 \
+            --timeout 20 \
+            --max-attempts 2
+
+      - name: Publish run summary
         run: |
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          from scripts.audit_vrm_links import (
-              _collection_summary,
-              _looks_like_url,
-              _summarize,
-              write_markdown,
+          report = json.loads(
+              (Path(os.environ['RUNNER_TEMP']) / 'vrm-link-audit.json').read_text()
           )
-
-          json_path = Path('data/vrm-link-audit.json')
-          markdown_path = Path('docs/vrm-link-audit-latest.md')
-          report = json.loads(json_path.read_text(encoding='utf-8'))
-          before = len(report['results'])
-          report['results'] = [
-              item for item in report['results']
-              if _looks_like_url(str(item.get('canonical_url') or ''))
+          summary = report['summary']
+          rows = [
+              '# VRM link audit',
+              '',
+              f"- Snapshot: `{report.get('snapshot_id') or 'unknown'}`",
+              f"- Unique concrete links: **{summary['unique_concrete_links']}**",
+              f"- Valid VRM binaries: **{summary['valid_vrm_links']}**",
+              f"- Broken or unverified: **{summary['broken_or_unverified_links']}**",
+              f"- Validated bytes: **{summary['validated_bytes']:,}**",
+              '',
+              '## Classification',
+              '',
+              '| Class | Count |',
+              '|---|---:|',
           ]
-          removed = before - len(report['results'])
-          if removed != 3:
-              raise SystemExit(f'expected to remove 3 pseudo-URLs, removed {removed}')
-          report['summary'] = _summarize(
-              report['results'], report.get('invalid_references') or []
+          rows.extend(
+              f"| `{name}` | {count} |"
+              for name, count in summary['classification_counts'].items()
           )
-          report['collections'] = _collection_summary(report['results'])
-          report['report_correction'] = {
-              'kind': 'descriptive_pseudo_url_filter',
-              'removed_entries': removed,
-              'network_measurements_reused': True,
-          }
-          json_path.write_text(
-              json.dumps(report, indent=2, ensure_ascii=False) + '\n',
-              encoding='utf-8',
-          )
-          write_markdown(report, markdown_path)
-          print(json.dumps(report['summary'], indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as handle:
+              handle.write('\n'.join(rows) + '\n')
           PY
 
-      - name: Commit corrected report
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add scripts/audit_vrm_links.py tests/test_vrm_link_audit.py \
-            data/vrm-link-audit.json docs/vrm-link-audit-latest.md
-          git commit -m 'Filter descriptive pseudo-URLs from VRM audit [skip ci]'
-          git push
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vrm-link-audit
+          path: |
+            ${{ runner.temp }}/vrm-link-audit.json
+            ${{ runner.temp }}/vrm-link-audit.md
+          retention-days: 30
