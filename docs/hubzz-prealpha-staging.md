@@ -1,23 +1,24 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-08-11T01:03:35Z`
+Generated at: `2026-08-11T01:38:52Z`
 
 ## Summary
 
-- Stageable sets: **11**
+- Stageable sets: **12**
 - Bulk-ready sets: **2**
-- Partial-inventory sets: **0**
+- Partial-inventory sets: **1**
 - Preview-ready sets: **9**
-- Reachable source avatar candidates: **149**
-- Individually binary-validated source avatars: **9**
-- Deferred sets: **54**
+- Reachable source avatar candidates: **158**
+- Individually binary-validated source avatars: **139**
+- Deferred sets: **53**
 
 ## Stageable sets
 
 | Set | Class | Sources | Binary proof | Chain | License gate | Warnings |
 |---|---|---:|---:|---|---|---|
-| `halloween-rising` | bulk_ready | 60 | 0 | optimism | review | license_requires_review |
-| `xmas-chibis` | bulk_ready | 80 | 0 | polygon | gated | none |
+| `halloween-rising` | bulk_ready | 60 | 60 | optimism | review | license_requires_review |
+| `xmas-chibis` | bulk_ready | 80 | 61 | polygon | gated | none |
+| `NeonGlitch86-collection` | partial_ready | 9 | 9 | ethereum | open | partial_avatar_inventory, missing_banner |
 | `avastars` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `chuddie` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `forgottenruneswizardscult` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
@@ -32,7 +33,7 @@ Generated at: `2026-08-11T01:03:35Z`
 
 | Reason | Sets |
 |---|---:|
-| `no_binary_validated_vrm` | 53 |
+| `no_binary_validated_vrm` | 52 |
 | `unsupported_chain:ape_chain` | 3 |
 | `missing_contract` | 2 |
 | `unsupported_chain:multi` | 1 |

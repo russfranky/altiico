@@ -1,21 +1,21 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T01:03:35Z",
+  "generatedAt": "2026-08-11T01:38:52Z",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
   },
   "summary": {
     "catalogSets": 65,
-    "stageableSets": 11,
+    "stageableSets": 12,
     "bulkReadySets": 2,
-    "partialReadySets": 0,
+    "partialReadySets": 1,
     "previewReadySets": 9,
-    "deferredSets": 54,
-    "sourceAvatars": 149,
-    "binaryValidatedSourceAvatars": 9,
-    "openLicenseSets": 0,
+    "deferredSets": 53,
+    "sourceAvatars": 158,
+    "binaryValidatedSourceAvatars": 139,
+    "openLicenseSets": 1,
     "gatedSets": 3,
     "licenseReviewSets": 8
   },
@@ -48,24 +48,24 @@
         "count": 60,
         "mode": "enumerated",
         "reachableCount": 60,
-        "binaryValidatedCount": 0,
-        "validationScope": "collection_binary_plus_avatar_reachability"
+        "binaryValidatedCount": 60,
+        "validationScope": "per_avatar_binary"
       },
       "coverage": {
         "knownAvatars": 60,
         "reachableSourceAvatars": 60,
-        "binaryValidatedSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 60,
         "catalogSupply": 60,
         "coverageRatio": 1.0
       },
       "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
-        "transportUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
-        "vrmSpec": null,
-        "fileSizeOriginal": 5719796,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Yellow.vrm",
+        "transportUrl": "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar01_v2_Stylized_Yellow.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 8742964,
+        "validatedAt": "2026-08-11T01:31:00Z",
         "tokenId": null,
-        "source": "collection-validation",
+        "source": "staging-inventory",
         "chain": null,
         "contract": null
       },
@@ -101,28 +101,82 @@
         "count": 80,
         "mode": "enumerated",
         "reachableCount": 80,
-        "binaryValidatedCount": 0,
+        "binaryValidatedCount": 61,
         "validationScope": "collection_binary_plus_avatar_reachability"
       },
       "coverage": {
         "knownAvatars": 80,
         "reachableSourceAvatars": 80,
-        "binaryValidatedSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 61,
         "catalogSupply": 80,
         "coverageRatio": 1.0
       },
       "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
-        "transportUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
-        "vrmSpec": null,
-        "fileSizeOriginal": 3315368,
-        "validatedAt": "2026-08-10T13:47:53Z",
+        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Pastel.vrm",
+        "transportUrl": "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Pastel.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 3659940,
+        "validatedAt": "2026-08-11T01:38:27Z",
         "tokenId": null,
-        "source": "collection-validation",
+        "source": "staging-inventory",
         "chain": null,
         "contract": null
       },
       "warnings": []
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "NeonGlitch86-collection",
+        "name": "NeonGlitch86 Collection",
+        "description": "Collections of avatars Created by NeonGlitch86",
+        "chain": "ethereum",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "CC0",
+        "author": "NeonGlitch86",
+        "copyright": null,
+        "mintDate": null,
+        "totalMints": 0,
+        "bannerUrl": null,
+        "pfpUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
+        "purchaseGated": false,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 9
+      },
+      "stageClass": "partial_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/NeonGlitch86-collection.json",
+        "count": 9,
+        "mode": "enumerated",
+        "reachableCount": 9,
+        "binaryValidatedCount": 9,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 12,
+        "reachableSourceAvatars": 9,
+        "binaryValidatedSourceAvatars": 9,
+        "catalogSupply": 0,
+        "coverageRatio": 0.75
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "vrmSpec": "0.x",
+        "fileSizeOriginal": 5565488,
+        "validatedAt": "2026-08-11T01:29:45Z",
+        "tokenId": null,
+        "source": "staging-inventory",
+        "chain": null,
+        "contract": null
+      },
+      "warnings": [
+        "partial_avatar_inventory",
+        "missing_banner"
+      ]
     },
     {
       "set": {
@@ -1297,28 +1351,6 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
-      }
-    },
-    {
-      "slug": "NeonGlitch86-collection",
-      "name": "NeonGlitch86 Collection",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "missing_banner"
-      ],
-      "facts": {
-        "slug": "NeonGlitch86-collection",
-        "name": "NeonGlitch86 Collection",
-        "tier": "A",
-        "chain": "ethereum",
-        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-        "knownAvatars": 12,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
       }
     },
     {
