@@ -5,6 +5,8 @@ on:
     branches:
       - agent/opensea-high-recall-discovery
   workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * 3,6'
 
 permissions:
   contents: read
