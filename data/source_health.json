@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-08-12T01:27:14.290061+00:00",
+  "moralis": {
+    "freshCrossReference": false,
+    "freshModelDiscovery": false,
+    "crossReferenceMode": "origin-main-last-good",
+    "modelDiscoveryMode": "origin-main-last-good",
+    "attemptSummary": {
+      "collectionsInspected": 58,
+      "collectionsWithErrors": 58,
+      "collectionsWithConflicts": 0,
+      "fieldComparisons": 348,
+      "fieldConflicts": 0,
+      "agreementByField": {
+        "banner_image_url": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        },
+        "floor_price": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        },
+        "image_url": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        },
+        "name": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        },
+        "num_owners": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        },
+        "total_supply": {
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
+        }
+      }
+    },
+    "modelAttemptSummary": {
+      "collectionsInspected": 58,
+      "collectionsWithErrors": 58,
+      "nftsWithSignals": 0,
+      "modelCandidates": 0,
+      "unsupportedMediaNfts": 0
+    }
+  }
+}

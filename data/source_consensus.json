@@ -1,6 +1,6 @@
 {
   "schema": "catalog-source-consensus-v1",
-  "generatedAt": "2026-08-12T01:21:14.550811+00:00",
+  "generatedAt": "2026-08-12T01:09:21.930695+00:00",
   "sourceReport": "data/source_cross_reference_report.json",
   "policy": {
     "immutableIdentity": "contract and chain require direct evidence; a marketplace index may corroborate but does not override validated discovery evidence",
@@ -956,7 +956,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.062313+00:00",
+      "observedAt": "2026-08-12T01:09:19.355740+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1033,7 +1033,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.062386+00:00",
+      "observedAt": "2026-08-12T01:09:19.355789+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1110,7 +1110,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.062443+00:00",
+      "observedAt": "2026-08-12T01:09:19.355825+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1187,7 +1187,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.236563+00:00",
+      "observedAt": "2026-08-12T01:09:19.732022+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1264,7 +1264,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.254428+00:00",
+      "observedAt": "2026-08-12T01:09:19.760005+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1341,7 +1341,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.274688+00:00",
+      "observedAt": "2026-08-12T01:09:19.789763+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1418,7 +1418,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.298196+00:00",
+      "observedAt": "2026-08-12T01:09:19.816446+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1495,7 +1495,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.324446+00:00",
+      "observedAt": "2026-08-12T01:09:19.848408+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1572,7 +1572,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.347393+00:00",
+      "observedAt": "2026-08-12T01:09:19.878284+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1649,7 +1649,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.367057+00:00",
+      "observedAt": "2026-08-12T01:09:19.950989+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1726,7 +1726,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.390268+00:00",
+      "observedAt": "2026-08-12T01:09:19.960867+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1803,7 +1803,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.407247+00:00",
+      "observedAt": "2026-08-12T01:09:20.196950+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1880,7 +1880,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.432836+00:00",
+      "observedAt": "2026-08-12T01:09:20.197915+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1957,7 +1957,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.454903+00:00",
+      "observedAt": "2026-08-12T01:09:20.238659+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2034,7 +2034,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.474710+00:00",
+      "observedAt": "2026-08-12T01:09:20.263355+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2111,7 +2111,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.495352+00:00",
+      "observedAt": "2026-08-12T01:09:20.297733+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2188,7 +2188,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.518964+00:00",
+      "observedAt": "2026-08-12T01:09:20.357364+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2265,7 +2265,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.543495+00:00",
+      "observedAt": "2026-08-12T01:09:20.370262+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2342,7 +2342,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.567174+00:00",
+      "observedAt": "2026-08-12T01:09:20.496730+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2419,7 +2419,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.583258+00:00",
+      "observedAt": "2026-08-12T01:09:20.659163+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2496,7 +2496,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.605377+00:00",
+      "observedAt": "2026-08-12T01:09:20.706343+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2573,7 +2573,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.635439+00:00",
+      "observedAt": "2026-08-12T01:09:20.708050+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2650,7 +2650,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.655759+00:00",
+      "observedAt": "2026-08-12T01:09:20.735642+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2727,7 +2727,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.680906+00:00",
+      "observedAt": "2026-08-12T01:09:20.762945+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2804,7 +2804,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.704531+00:00",
+      "observedAt": "2026-08-12T01:09:20.790679+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2881,7 +2881,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.760309+00:00",
+      "observedAt": "2026-08-12T01:09:20.822290+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2958,7 +2958,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.789378+00:00",
+      "observedAt": "2026-08-12T01:09:20.859979+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3035,7 +3035,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.823340+00:00",
+      "observedAt": "2026-08-12T01:09:20.906053+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3112,7 +3112,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.823891+00:00",
+      "observedAt": "2026-08-12T01:09:20.928974+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3189,7 +3189,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.850547+00:00",
+      "observedAt": "2026-08-12T01:09:20.980789+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3266,7 +3266,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.869122+00:00",
+      "observedAt": "2026-08-12T01:09:21.001176+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3343,7 +3343,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.892534+00:00",
+      "observedAt": "2026-08-12T01:09:21.037034+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3420,7 +3420,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.911909+00:00",
+      "observedAt": "2026-08-12T01:09:21.074988+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3497,7 +3497,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.931984+00:00",
+      "observedAt": "2026-08-12T01:09:21.105818+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3574,7 +3574,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.965290+00:00",
+      "observedAt": "2026-08-12T01:09:21.137142+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3651,7 +3651,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:13.995213+00:00",
+      "observedAt": "2026-08-12T01:09:21.166631+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3728,7 +3728,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.044964+00:00",
+      "observedAt": "2026-08-12T01:09:21.196905+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3805,7 +3805,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.045750+00:00",
+      "observedAt": "2026-08-12T01:09:21.229445+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3882,7 +3882,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.066115+00:00",
+      "observedAt": "2026-08-12T01:09:21.269162+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3959,7 +3959,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.086150+00:00",
+      "observedAt": "2026-08-12T01:09:21.292284+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4036,7 +4036,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.106855+00:00",
+      "observedAt": "2026-08-12T01:09:21.334165+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4113,7 +4113,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.131816+00:00",
+      "observedAt": "2026-08-12T01:09:21.357735+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4190,7 +4190,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.153177+00:00",
+      "observedAt": "2026-08-12T01:09:21.390324+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4267,7 +4267,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.173134+00:00",
+      "observedAt": "2026-08-12T01:09:21.419396+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4344,7 +4344,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.194475+00:00",
+      "observedAt": "2026-08-12T01:09:21.451573+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4421,7 +4421,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.214262+00:00",
+      "observedAt": "2026-08-12T01:09:21.482315+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4498,7 +4498,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.239815+00:00",
+      "observedAt": "2026-08-12T01:09:21.514254+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4575,7 +4575,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.262512+00:00",
+      "observedAt": "2026-08-12T01:09:21.554181+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4652,7 +4652,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.282857+00:00",
+      "observedAt": "2026-08-12T01:09:21.575951+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4729,7 +4729,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.305539+00:00",
+      "observedAt": "2026-08-12T01:09:21.605925+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4806,7 +4806,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.329510+00:00",
+      "observedAt": "2026-08-12T01:09:21.633224+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4883,7 +4883,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.349725+00:00",
+      "observedAt": "2026-08-12T01:09:21.660261+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4960,7 +4960,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.373350+00:00",
+      "observedAt": "2026-08-12T01:09:21.692286+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5037,7 +5037,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.412073+00:00",
+      "observedAt": "2026-08-12T01:09:21.729088+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5114,7 +5114,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.425867+00:00",
+      "observedAt": "2026-08-12T01:09:21.753942+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5191,7 +5191,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.443174+00:00",
+      "observedAt": "2026-08-12T01:09:21.780530+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5268,7 +5268,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.464968+00:00",
+      "observedAt": "2026-08-12T01:09:21.812698+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5345,7 +5345,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:21:14.486050+00:00",
+      "observedAt": "2026-08-12T01:09:21.843170+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
