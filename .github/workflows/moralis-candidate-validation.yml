@@ -106,6 +106,7 @@ jobs:
           staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
           hit_count=len(validation.get('validatedHits') or [])
           stage_by_slug={row['set']['slug']:row for row in staging['sets']}
+          rs=reconciliation['summary']
 
           conn=sqlite3.connect('data/vrm_index.db')
           proof_rows=conn.execute(
@@ -118,19 +119,20 @@ jobs:
 
           summary={
               'validation':validation['summary'],
-              'reconciliation':reconciliation['summary'],
+              'reconciliation':rs,
               'stageableSets':len(staging['sets']),
               'storedBinaryProofRows':proof_rows,
               'remainingReadyQueue':ready_queue,
               'dickButtVerse':stage_by_slug.get('dickbuttverse'),
           }
           print(json.dumps(summary,indent=2))
-          assert hit_count == reconciliation['summary']['binaryProofRowsStored']
-          assert proof_rows >= hit_count
+          assert hit_count == rs['binaryProofRowsStoredThisRun']
+          assert proof_rows >= rs['cumulativeBinaryProofRows']
           assert ready_queue == 0
-          for collection_id in reconciliation['summary']['collections']:
+          for collection_id in rs['collectionsThisRun']:
               assert collection_id in stage_by_slug
-          assert 'dickbuttverse' in stage_by_slug, 'measured DickButtVerse gain regressed'
+          assert 'dickbuttverse' in rs['cumulativeCollections'], 'measured DickButtVerse proof ledger regressed'
+          assert 'dickbuttverse' in stage_by_slug, 'measured DickButtVerse staging gain regressed'
           PY
 
       - name: Full repository verification
