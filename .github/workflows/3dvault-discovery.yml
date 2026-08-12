@@ -8,6 +8,7 @@ on:
     branches: [agent/3dvault-discovery, main]
     paths:
       - scripts/discover_3dvault.py
+      - scripts/enrich_3dvault_context.py
       - scripts/sync_3dvault_leads.py
       - .github/workflows/3dvault-discovery.yml
 
@@ -33,9 +34,11 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - name: Compile crawler
-        run: python -m py_compile scripts/discover_3dvault.py scripts/sync_3dvault_leads.py scripts/materialize_discovery_fields.py
+        run: python -m py_compile scripts/discover_3dvault.py scripts/enrich_3dvault_context.py scripts/sync_3dvault_leads.py scripts/materialize_discovery_fields.py
       - name: Crawl 3dvault relationship graph
-        run: python scripts/discover_3dvault.py --output data/3dvault_discovery.json --max-follow 50
+        run: |
+          python scripts/discover_3dvault.py --output data/3dvault_discovery.json --max-follow 50
+          python scripts/enrich_3dvault_context.py --report data/3dvault_discovery.json
       - name: Persist leads and reconcile known identity
         run: |
           python scripts/sync_3dvault_leads.py
