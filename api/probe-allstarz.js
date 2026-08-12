@@ -1,4 +1,4 @@
-const METADATA_URL = "https://ipfs.io/ipfs/bafybeib6ii2hpiknnyyinrbywmulnjnznwxpwsubigneip54tzdus66xpi/117";
+const PAGE_URL = "https://www.lucii.io";
 const FETCH_TIMEOUT_MS = 15_000;
 
 function jsonResponse(payload, status = 200) {
@@ -11,47 +11,33 @@ function jsonResponse(payload, status = 200) {
   });
 }
 
-function collectCandidateStrings(value, path = "$", out = []) {
-  if (typeof value === "string") {
-    const text = value.trim();
-    if (/vrm|\.glb(?:$|[?#])|\.vrm(?:$|[?#])|model|avatar|asset/i.test(path + " " + text)) {
-      out.push({ path, value: text });
-    }
-    return out;
-  }
-  if (Array.isArray(value)) {
-    value.forEach((item, index) => collectCandidateStrings(item, `${path}[${index}]`, out));
-    return out;
-  }
-  if (value && typeof value === "object") {
-    Object.entries(value).forEach(([key, item]) => collectCandidateStrings(item, `${path}.${key}`, out));
-  }
-  return out;
+function extractInterestingLinks(html) {
+  const matches = [...html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)].map((match) => match[1]);
+  return [...new Set(matches)].filter((value) => /vrm|meepl|avatar|model|download|asset/i.test(value)).slice(0, 100);
 }
 
 export async function GET() {
   const startedAt = Date.now();
   try {
-    const response = await fetch(METADATA_URL, {
+    const response = await fetch(PAGE_URL, {
       headers: {
-        accept: "application/json",
+        accept: "text/html,*/*",
         "user-agent": "vrm-catalog/1.0",
       },
       redirect: "follow",
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-    if (!response.ok) {
-      return jsonResponse({ ok: false, elapsedMs: Date.now() - startedAt, httpStatus: response.status }, 502);
-    }
-    const metadata = await response.json();
+    const html = await response.text();
     return jsonResponse({
-      ok: true,
+      ok: response.ok,
       elapsedMs: Date.now() - startedAt,
-      metadataUrl: METADATA_URL,
-      name: metadata?.name ?? null,
-      keys: Object.keys(metadata || {}).sort(),
-      candidates: collectCandidateStrings(metadata),
-    });
+      httpStatus: response.status,
+      finalUrl: response.url,
+      pageBytes: html.length,
+      containsMeeple: /meepl/i.test(html),
+      containsVrm: /vrm/i.test(html),
+      links: extractInterestingLinks(html),
+    }, response.ok ? 200 : 502);
   } catch (error) {
     return jsonResponse({
       ok: false,
