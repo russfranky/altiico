@@ -1,0 +1,1280 @@
+{
+  "schema": "dickbuttverse-inventory-probe-v1",
+  "generatedAt": "2026-08-12T19:05:14.001938+00:00",
+  "collection": {
+    "catalogId": "dickbuttverse",
+    "chain": "ethereum",
+    "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+    "catalogSupply": 5363,
+    "urlTemplate": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{token_id}.vrm"
+  },
+  "policy": "bounded coverage measurement only; structural checks are not promotion proof and sampled full validation does not establish complete inventory",
+  "summary": {
+    "knownBinaryProofsBeforeProbe": 25,
+    "structuralSampleSize": 96,
+    "structuralStatusCounts": {
+      "permanent_error": 1,
+      "structural_vrm": 95
+    },
+    "structuralVrmRate": 0.989583,
+    "fullValidationSampleSize": 24,
+    "fullValidationStatusCounts": {
+      "valid_vrm": 24
+    },
+    "fullValidVrmRate": 1.0,
+    "fullValidatedBytes": 26226644
+  },
+  "knownProvenIds": [
+    0,
+    1,
+    10,
+    100,
+    101,
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "structuralProbe": [
+    {
+      "tokenId": 0,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2928488,
+      "jsonChunkSha256": "9b64bdc7af7bb882a137326a3202170357f76be71e3b3dda0e88e56df2c8974c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1090948,
+      "jsonChunkSha256": "c3db4bf44ff08bee4b97dd16426e1e05946646a86c81488ec20ee338dc65de17",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 928924,
+      "jsonChunkSha256": "523fd64bf23685da3cf0ef9cd14a08826a81d9d573fb193238bf5a40f68fa592",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 10,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/10.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1038564,
+      "jsonChunkSha256": "f4a8d27069649fde9c75dce208b6e0b0e804ad7d7cd1ec9fedb7a256eebeb0cf",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/10.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 56,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/56.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2373892,
+      "jsonChunkSha256": "b9c888b2f8fbebbd5ebf0cfa77baa81ee04349f53ded117c801a6aa2a0eb6bf8",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/56.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 100,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/100.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 802948,
+      "jsonChunkSha256": "9de9f72750c62a5b75470bb344cd2caee4e593f25da228e38add7bc248548e66",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/100.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 113,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/113.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 521772,
+      "jsonChunkSha256": "1dbf971efc8830ba186a98aa13388fdbcbe6124cb532c59c0ed3c8162633f8c4",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/113.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 226,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/226.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 583388,
+      "jsonChunkSha256": "8feac5e3673dc0136c4936550b1e4a42c1f6a5caaa1d81095d0bbb36912d0ee1",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/226.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 339,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/339.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2595200,
+      "jsonChunkSha256": "5394f96d3e3353a1c5d1f25044baa74ad960b3e5c127cc774f339a6e683b25fe",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/339.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 395,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/395.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 803696,
+      "jsonChunkSha256": "4166522b86d913c58122f7d8dcda8f8173e8d17d29be8b51512e83b4ee6ef467",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/395.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 452,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/452.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 636604,
+      "jsonChunkSha256": "15b58354c2019c9e892e4865c8ab14bf797777152f3922432b9885754a35f329",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/452.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 508,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/508.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 753688,
+      "jsonChunkSha256": "3afa251c8dbcdbb310c486f3d3f121a5d036b42acb2bee2838b6cf1e10ef08d0",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/508.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 564,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/564.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 660848,
+      "jsonChunkSha256": "90bdc14b6e48db1769702a19e091ab8084fd86961180dcc6327da86f7b6cb43e",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/564.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 621,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/621.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1482524,
+      "jsonChunkSha256": "163bb74433b0360d5eb316baf91dc4fd02845ba2caad1443e80f35ed140f0e08",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/621.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 677,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/677.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 437260,
+      "jsonChunkSha256": "31c50e78b3dca5c3222cfd841abbc3ac36fc86f60bad7ccb188ad721b2b84f63",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/677.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 734,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/734.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 844896,
+      "jsonChunkSha256": "49250607d15a40a29bebc3a074d3b04e6d556a0a20e289be0ac529373121e5ec",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/734.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 790,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/790.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 536284,
+      "jsonChunkSha256": "cac0979bef7b4a22a11ec91d1dffb087769277b0c102962e266665bfed543612",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/790.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 847,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/847.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1068236,
+      "jsonChunkSha256": "9ea06a546868fe8193346bbe62df6918e8d83017657e1f3b868756e7a532082d",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/847.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 903,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/903.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1215716,
+      "jsonChunkSha256": "52795fd2c6271b84d5454fa8c2ec7400983defbb3e1a13acd017e1d6bfbc8f83",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/903.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 960,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/960.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1388160,
+      "jsonChunkSha256": "93a8312b4ea3e8d0332ed7565e45ef071040cd6cf500fd1ef81b6b34fd4844b0",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/960.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 999,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/999.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1531112,
+      "jsonChunkSha256": "5be8557227f976462fd567e884989b181ef3dcc6b27a084d4c88776a529138d8",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/999.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1000,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1000.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1165000,
+      "jsonChunkSha256": "a63f393f0343def4541ba6bfc4a03d28b9320b7222e49ad8fa93246cab157694",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1000.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1016,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1016.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 752236,
+      "jsonChunkSha256": "b09a0d739ab14a636e1f77accbcdeeeb380fe32e0c5729c5f1a292f204a020a1",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1016.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1072,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1072.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 548140,
+      "jsonChunkSha256": "54737a3c240394ff07a3076fc960ebbfd85bd1deacc3892cb9a2ab1180bbf49c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1072.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1129,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1129.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1097444,
+      "jsonChunkSha256": "536a29aad623505fbf4687dfa59ee6685a4df6782416bd75f5f3b6ffe17313c0",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1129.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1185,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1185.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1115312,
+      "jsonChunkSha256": "aaee44074fa3414fe1ae5348f5f8a7cbb9e2e9dc04578f322dabdcd753b076ea",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1185.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1242,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1242.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 587912,
+      "jsonChunkSha256": "2ea5d562144a03ba2a2d84795a9c510eb7938a858ec40a5b3c0f32bfb5cfb8c7",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1242.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1298,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1298.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1182308,
+      "jsonChunkSha256": "41788b32092af0581a20276a9e608176903fdb0cc7d7d86c75faff80d8da9043",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1298.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1355,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1355.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 675800,
+      "jsonChunkSha256": "8a2395b2f2e0db5c18450e6b8b7282645a9343b99efbcbd34d49d7ce6454eb79",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1355.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1411,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1411.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 925928,
+      "jsonChunkSha256": "5d2511ef128cc8ee4f46c2277446f58ae8876fc16e0299caadb3be0c170470e8",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1411.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1467,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1467.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 532392,
+      "jsonChunkSha256": "81f434930efd21c64c9b8107912eb0717b6fa948e9af369b3cf2bacde549d667",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1467.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1524,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1524.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1061920,
+      "jsonChunkSha256": "d953394a00c833af5331b80e05444f62559f7f5c6ea1b4a7e1df862f0dbffaf5",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1524.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1580,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1580.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2339656,
+      "jsonChunkSha256": "1db3d38d85ad5c91466fe7c9e2d745ad575726a3ea93c46b5baad78fa47374c9",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1580.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1637,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1637.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 930624,
+      "jsonChunkSha256": "467b19352f1c0535a7a9ac8697c471417345dd3b2400eb685aae10861e7dd129",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1637.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1693,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1693.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 615120,
+      "jsonChunkSha256": "16e486ec17768e8825ae9b8b0f185a6c174cda668c4d6f688ae094728e65a687",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1693.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1750,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1750.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1424860,
+      "jsonChunkSha256": "4aed84fa77eba5ae4617bcaa9c7c12696b244c74c3235187fdefbf118c7bb95a",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1750.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1806,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1806.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 545064,
+      "jsonChunkSha256": "4d6223b1a01e9ce21ebd4a585c63afe3241d4101e257494d5f351e127db7c601",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1806.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1863,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1863.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 548696,
+      "jsonChunkSha256": "2af78de5bd4cccac5778c4535e88428d16855a955f32a1af3e6827168ac977a6",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1863.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 1975,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1975.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 820516,
+      "jsonChunkSha256": "a0a60c731708a77521288d1e5021af2872ddb47dd9337337017ae5bef9298fa4",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1975.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2032,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2032.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 828500,
+      "jsonChunkSha256": "2e7d64661facedff41b5e3ef080be42350bc8273a550669f92ee4227d29b37ed",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2032.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2088,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2088.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1257628,
+      "jsonChunkSha256": "4c2defcf15d650a16e23387ae4c43f347e6847c3859107049672bd7af2c7e997",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2088.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2145,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2145.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 621064,
+      "jsonChunkSha256": "2d77bc70f335996fb3240565c0d2f80fdeee3a204609a955bcf71eb5194437fb",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2145.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2201,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2201.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 859508,
+      "jsonChunkSha256": "a11c9799a2cf4730ddecb82bb28f776d991179050e6c00c82983c17e57141d63",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2201.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2258,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2258.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 877696,
+      "jsonChunkSha256": "46832520d3c4438ecf0f5a1b26f4b18c2a04237810d66a0d76d705211a56d61f",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2258.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2314,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2314.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 822464,
+      "jsonChunkSha256": "1b9f5893fcab178c455f3feb6fa2215ea5055dd392ad71439fa7c9a93a6cbf7a",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2314.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2371,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2371.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1085076,
+      "jsonChunkSha256": "713e36eda8630107891130fea3ee540e0a78600e27703d070f70928c878f2d53",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2371.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2427,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2427.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 788488,
+      "jsonChunkSha256": "4dfc06b00da060beee80925a66f216c9082b88205cb07de78e5ad445ce2152bf",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2427.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2483,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2483.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 514584,
+      "jsonChunkSha256": "f92cdf55399ceccdababca73684ec4ef370471151d642b11fd51916be3600611",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2483.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2540,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2540.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 676496,
+      "jsonChunkSha256": "e70b151d9b5402be71fc72ec9aa6311f05172ad64eba0989eaf3443025a3fe90",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2540.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2596,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2596.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 586980,
+      "jsonChunkSha256": "81483701daf8a45f342b77affc414d62cea9ee54c33178d59ee7ee6d38607282",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2596.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2653,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2653.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1104900,
+      "jsonChunkSha256": "8d0b97c1ffacc3e229444eb32ffae58ce4aef9dc53ce26e3ac8aad06998e40b5",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2653.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2709,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2709.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 592856,
+      "jsonChunkSha256": "bfc0ea10bfd9d52d9abad2308d857d192bf501b2de32c96dd5beb5bbfecb45a1",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2709.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2766,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2766.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1081408,
+      "jsonChunkSha256": "4e957611f558efda1c831f4d3bcd27187a2ed0b4730c382ee0e0a89ac10c02a5",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2766.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2822,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2822.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1316636,
+      "jsonChunkSha256": "9b85da4ab6e68821c4557bf2c8f92cb808ef0fbb8248da145761c468177a3d5a",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2822.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2879,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2879.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 620876,
+      "jsonChunkSha256": "2863142469cc6aabcbd098703f27b933cfb0bff64c2ffd89033e804b48b2c324",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2879.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2935,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2935.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 403412,
+      "jsonChunkSha256": "ef66b64797b0e83b899a68329d89b1871488f77040fdb056379ef9450773ebc4",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2935.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 2991,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2991.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 940468,
+      "jsonChunkSha256": "a03858c9bccb7df9759f3b3e5b412d048bb44754168c3cf2c5a7709b2051c0b4",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2991.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3048,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3048.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 514384,
+      "jsonChunkSha256": "fa3a6d94409b54a297593d051f1f092c85d4956a02da562e6813f209b0fdb0a9",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3048.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3104,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3104.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 708556,
+      "jsonChunkSha256": "c0e994f54204871af5d374884efcb8ebcc0782061b5fc62609463790d7df9eba",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3104.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3161,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3161.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 667840,
+      "jsonChunkSha256": "17b281259793a2a73392869e86c49d5def9ff630d865dccd9c87793d3c756c6c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3161.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3217,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3217.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 988292,
+      "jsonChunkSha256": "afbb71db6efc933e2ca6e360bdc8732f1a1719d698487c648594bab8a86b6bda",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3217.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3274,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3274.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 879240,
+      "jsonChunkSha256": "d510f2ee6e0efd9054f1919fcce25850c0a9399126bc8f35465389eeaa04d894",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3274.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3330,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3330.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 665596,
+      "jsonChunkSha256": "d82e5b643e1170babde200c7ba6469728a336cf5dd3d853fcc6e3c0c35042728",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3330.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3387,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3387.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 799912,
+      "jsonChunkSha256": "b2bf528f2a15d751a837558d3df73f37da84ff2db8c793805672e051a9f9df1e",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3387.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3443,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3443.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1133152,
+      "jsonChunkSha256": "e5501f0e3035460ecd3ae5bb004c469b01a5e81d6bb76a37a344844e50dc750c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3443.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3499,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3499.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 693720,
+      "jsonChunkSha256": "2e49a978187b33322e4b8ef8b3a8e0af287064c1bd8df2cee14fe9977b2aa377",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3499.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3556,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3556.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 970316,
+      "jsonChunkSha256": "0f86ddd902f93f5eb0cc9971e55cbfce7473b5ef91a0f8c4a05e622c5773cc4c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3556.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3612,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3612.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 722544,
+      "jsonChunkSha256": "face8ef33cf7eb402ef51753af97e954a854b13bd6287ac213ac516583bd72a9",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3612.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3669,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3669.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1618644,
+      "jsonChunkSha256": "c484bcd1e31c3039f7847ca9a81258a71dee0873a6b30c4892cd81e3272d2dac",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3669.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3725,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3725.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 984492,
+      "jsonChunkSha256": "20977f0502cb1dae7d12c407fc4f55f0ce292801e7dc99d250fb395517a2ce25",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3725.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3782,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3782.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 640564,
+      "jsonChunkSha256": "cb2ff0730a57b2b8d134a5dc391d908adb854fc27afa6da7366a9353bc994e67",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3782.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3838,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3838.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 954776,
+      "jsonChunkSha256": "c45f9e65f84d12fbcaee307dae88089d5c70c69259482806cb5217e3540def9e",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3838.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3895,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3895.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2313368,
+      "jsonChunkSha256": "295611d1a51efd7c7bccad9b4bc7c16ed09fefbf200f5039e460061807c5b51d",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3895.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 3951,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3951.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2194900,
+      "jsonChunkSha256": "b5a14f821bacba9950a84fd30a8769bbc117d5bdd080961ec01769feec7411c9",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3951.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4007,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4007.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 606156,
+      "jsonChunkSha256": "1384c0a8fd3282eb6cb77cfbc04f3e0afc5a2cbb96f0ef4b3d55d5d5973cfe7b",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4007.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4064,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4064.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2472096,
+      "jsonChunkSha256": "91a207dd714b0e3ea15da74c17663f860bd7e314d84c9e4e4f113f86d8796795",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4064.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4177,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4177.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1057324,
+      "jsonChunkSha256": "0b06457de30f67c2aba3b4e82cae1d59aa9d6d566b013ea216732c55da561050",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4177.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4233,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4233.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 617780,
+      "jsonChunkSha256": "bef317b74a1795f4d0075c3b7cb43df4c292ade9fc413c2a2b1809cb172ebdf6",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4233.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4346,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4346.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 699208,
+      "jsonChunkSha256": "c50c79eb2ad757bd8f810b435bbc80fd121ef2ed9476ce988fd49f52d5e5da7f",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4346.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4402,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4402.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2548788,
+      "jsonChunkSha256": "a7d114edb149abbd14c7241e49c01422eb2789e7bcb2abffe23d9ffa023628ab",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4402.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4459,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4459.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1126660,
+      "jsonChunkSha256": "61c6ed876f2b38b885a1c5e51da082d0da0133d112d806bc4ff61216dd897ffe",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4459.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4515,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4515.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1078800,
+      "jsonChunkSha256": "2f0fb1c0507a4fa3014ab151488b55c2a10d2e6ffdfccb242669cad3465cf7db",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4515.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4572,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4572.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 939320,
+      "jsonChunkSha256": "19fcd6762dd5214f8bcc9eadcd678d25f9d107dca8373b98d3021387e916f9e3",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4572.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4628,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4628.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 759960,
+      "jsonChunkSha256": "ed59524f0fb5011c8ce57c436d62ab44f92ffaa0fbe6352056152ff8cd61eaaf",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4628.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4685,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4685.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 771712,
+      "jsonChunkSha256": "499e165f29621eba0cd3419184fc99ed4b60b39c016931cf45dd2a98ece4ab4c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4685.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4741,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4741.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1279292,
+      "jsonChunkSha256": "188492fdfdbfda856d718e562177df885d5a2b98513095fb90adfe7323a6c09e",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4741.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4798,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4798.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 742228,
+      "jsonChunkSha256": "6595bdccc78bd39d25e2118510a4111c2103fa11381659223df107cf9b06da5c",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4798.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4854,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4854.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1118484,
+      "jsonChunkSha256": "1aae3dccd15d69679713e3f13dccd23751202b5fae37dc8f0211f132246a9e20",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4854.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4910,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4910.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 845220,
+      "jsonChunkSha256": "3c8468d64913d240f42c22e9b5dc2e8115fab138171055573e8c283c3ec13fc4",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4910.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 4967,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4967.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1632208,
+      "jsonChunkSha256": "a7885e6a49d3a3b4246f5f3a4544b22929b4797a022ba7c61a85dcaef0e2072e",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4967.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5023,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5023.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 834600,
+      "jsonChunkSha256": "35045d444f8110c0a2754ceb3f504a370662bd417c26b1ac189532262f9196e3",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5023.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5080,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5080.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 1232204,
+      "jsonChunkSha256": "4b5980736788ea519c54bd7c5e211b69b0e4ddfc75942a32a3ebf51621594118",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5080.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5193,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5193.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2864880,
+      "jsonChunkSha256": "8e774efb941e2520fb68be43fbf782cff7357687a1d4a929099aef509626e00d",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5193.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5249,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5249.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2281844,
+      "jsonChunkSha256": "a964a277067293e7f63935c8320480091da42f74e8f3cf8f36f98e5195e8d2aa",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5249.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5306,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5306.vrm",
+      "status": "structural_vrm",
+      "vrmSpec": "0.x",
+      "totalLength": 2405580,
+      "jsonChunkSha256": "3b145d1e6870357a3c959a6753e5ebd875974f83f636a6da5e6cce3b223e6e2d",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5306.vrm",
+      "requests": 2
+    },
+    {
+      "tokenId": 5362,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5362.vrm",
+      "status": "permanent_error",
+      "requests": 1,
+      "errorClass": "http_404",
+      "error": "HTTP 404 for https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/5362.vrm"
+    }
+  ],
+  "fullValidation": [
+    {
+      "tokenId": 2,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "95648479bb5aab6ff01880fd33073d91cd6dfa0db3e7edbffac16109ff6bed9d",
+      "byteLength": 928924,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 226,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/226.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "07ab02d0b0147a3ecb38cb63e4790e0eb7fceb72f81b4762c76fcecf5e522d00",
+      "byteLength": 583388,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/226.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 395,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/395.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "dd87a09a77bf692eb9916fdc50156d1c5d416046060da7a1cd38be860d9e4565",
+      "byteLength": 803696,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/395.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 1072,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1072.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "07bc196c0b2d6b47afefa78fc2225627d53bd1924a87c9cfa33fe989eacc853a",
+      "byteLength": 548140,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1072.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 1185,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1185.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "9c2b100ede3734b883d435dd46d73fb0c7fca407411dd1bf2ca6436bace73c6f",
+      "byteLength": 1115312,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1185.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 1411,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1411.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "c38bdb5617cfdb003205fcbec2826a6790429049107ddaed69a2350e2b97db6c",
+      "byteLength": 925928,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1411.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 1524,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1524.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "0a41ba19a8f9746fa1720ccc2173d22a372ff896aac8a3a1e37ccf955bec327f",
+      "byteLength": 1061920,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1524.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 1750,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1750.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "454b10191f8ac8c6d65ab55eb8a96492315e0783a3fef4032546ccd72dd9e1fc",
+      "byteLength": 1424860,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1750.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2088,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2088.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "3a2a6485f56f2c874203d78587e7a14ee8c65d73750f7f8510bdf1835f78e656",
+      "byteLength": 1257628,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2088.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2371,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2371.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "5021677b9e891565bbec9f5b3b5cf637ab85797b74a00a6bf183adc9ca438aed",
+      "byteLength": 1085076,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2371.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2427,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2427.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "4d586a3455d5c7660d46843dd56ffad7f9ec7ec25ca492f7d7c5f032744df814",
+      "byteLength": 788488,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2427.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2596,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2596.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "7cbba13782265b2b187d43a4ae2460331d646f7e62a98d675e614585fe67f226",
+      "byteLength": 586980,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2596.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2653,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2653.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "162802f483ea1240e7bdfdc19cf20e2291e7b73225086d67bf84ab27dab49444",
+      "byteLength": 1104900,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2653.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 2879,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2879.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "90bb0db95fa8879c625ddf2a46ad27b02196cfd56e8d57eff68b0b2f85e224d7",
+      "byteLength": 620876,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/2879.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3048,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3048.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "4a31509aa1f0303af641956ee0a93477f31d0d4d043c686c8bb974cb66e6d1ba",
+      "byteLength": 514384,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3048.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3217,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3217.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "110e4e25f01b835632c9ec7ccea38a72e73f2c092f69a4037ac9ed3fc99e2bbd",
+      "byteLength": 988292,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3217.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3443,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3443.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "bd97963860ce415c09f5843b74e578865e8b4a17061769d5faf44a0978a4223d",
+      "byteLength": 1133152,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3443.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3612,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3612.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "70353209f1bf7b55e2896f1223b6f75a175257b03e549164b599285499988475",
+      "byteLength": 722544,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3612.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3782,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3782.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "ef8aaa9f2ba74a9183707fa186191fe35aef5d2c93c68eef84e314fd48326930",
+      "byteLength": 640564,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3782.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 3951,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3951.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "2bbcb0b66eed1ea1ed8e7546280484f5ecfbfb93d24c23fcf1fa29c365f98bd6",
+      "byteLength": 2194900,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/3951.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 4064,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4064.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "ae4046810fc51e321fd02d200428f60541997d4a769d96a453810f9f17b6a0c3",
+      "byteLength": 2472096,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4064.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 4177,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4177.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "43cdbb55153e94b8b36f735254e8cad2467182c9fea100f66d86b409c474033b",
+      "byteLength": 1057324,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4177.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 4402,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4402.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "a884bce2d181efb2afe9b01d927f57c5cbf28fbe7fb36bc26753770c5bf81b11",
+      "byteLength": 2548788,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4402.vrm",
+      "requests": 3,
+      "error": null
+    },
+    {
+      "tokenId": 4854,
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4854.vrm",
+      "status": "valid_vrm",
+      "vrmSpec": "0.x",
+      "sha256": "91d817a3725f0303604aba5074f1924da4ffb837110132dea9b9efe44793d564",
+      "byteLength": 1118484,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/4854.vrm",
+      "requests": 3,
+      "error": null
+    }
+  ]
+}
