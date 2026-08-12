@@ -1,14 +1,18 @@
 {
   "schema": "moralis-candidate-reconciliation-v1",
-  "generatedAt": "2026-08-12T18:43:32Z",
+  "generatedAt": "2026-08-12T18:56:42Z",
   "sourceReport": "data/moralis_candidate_validation.json",
-  "policy": "existing exact collection identity only; binary VRM proof required; no fuzzy collection creation and no avatar creation from bounded samples",
+  "policy": "existing exact collection identity only; binary VRM proof required; no fuzzy collection creation and no avatar creation from bounded samples; reconciled proof rows are retained cumulatively across recurring runs",
   "summary": {
-    "validatedHitsInput": 25,
-    "binaryProofRowsStored": 25,
-    "existingAvatarsLinked": 0,
-    "collectionsReconciled": 1,
-    "collections": [
+    "validatedHitsInput": 0,
+    "binaryProofRowsStoredThisRun": 0,
+    "cumulativeBinaryProofRows": 25,
+    "existingAvatarsLinkedThisRun": 0,
+    "cumulativeExistingAvatarsLinked": 0,
+    "collectionsReconciledThisRun": 0,
+    "collectionsThisRun": [],
+    "cumulativeCollectionsReconciled": 1,
+    "cumulativeCollections": [
       "dickbuttverse"
     ]
   },
