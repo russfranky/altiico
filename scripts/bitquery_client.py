@@ -99,14 +99,15 @@ class BitqueryClient:
     async def nft_inventory(self, chain: str, contract: str, *, limit: int = 25) -> dict[str, Any]:
         """Return recent NFT transfers for routine corroboration.
 
-        Deep historical inventory scans are intentionally separate because Bitquery
-        `limitBy` queries over combined history are much more expensive.
+        The repository's Bitquery plan currently exposes realtime data. Historical
+        archive/combined inventory scans stay a separate optional deep-discovery
+        mode so routine evidence refreshes remain plan-compatible and bounded.
         """
         query = """
         query NFTTransfers($network: evm_network!, $contract: String!, $limit: Int!) {
-          EVM(network: $network, dataset: combined) {
+          EVM(network: $network, dataset: realtime) {
             Transfers(
-              where: {Transfer: {Currency: {Fungible: false, SmartContract: {is: $contract}}}}
+              where: {Transfer: {Currency: {SmartContract: {is: $contract}}}}
               limit: {count: $limit}
               orderBy: {descending: Block_Time}
             ) {
@@ -119,8 +120,8 @@ class BitqueryClient:
                 Sender
                 Receiver
                 Amount
-                Success
-                Currency { Name Symbol SmartContract ProtocolName Fungible }
+                Type
+                Currency { Name Symbol SmartContract }
               }
             }
           }
