@@ -15,6 +15,7 @@ on:
       - scripts/build_source_consensus.py
       - scripts/discover_moralis_models.py
       - scripts/audit_etherscan_authority.py
+      - scripts/preserve_etherscan_evidence.py
       - scripts/audit_bitquery_evidence.py
       - scripts/build_authoritative_consensus.py
       - scripts/export_hubzz_staging.py
@@ -61,7 +62,8 @@ jobs:
         run: |
           python -m py_compile scripts/opensea_client.py scripts/moralis_client.py scripts/etherscan_client.py scripts/bitquery_client.py \
             scripts/cross_reference_sources.py scripts/build_source_consensus.py scripts/discover_moralis_models.py \
-            scripts/audit_etherscan_authority.py scripts/audit_bitquery_evidence.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
+            scripts/audit_etherscan_authority.py scripts/preserve_etherscan_evidence.py scripts/audit_bitquery_evidence.py \
+            scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
       - name: Refresh OpenSea collection media
         run: python scripts/enrich_opensea.py --meta-only --force
       - name: Refresh Moralis without destroying last-good evidence
@@ -152,8 +154,15 @@ jobs:
           print(json.dumps(health,indent=2))
           PY
           python scripts/build_source_consensus.py
-      - name: Audit Etherscan contract authority
-        run: python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
+      - name: Audit Etherscan contract authority without losing last-good evidence
+        run: |
+          mkdir -p /tmp/vrm-source-refresh
+          python scripts/audit_etherscan_authority.py --output /tmp/vrm-source-refresh/etherscan.json --concurrency 3 --collection-concurrency 3
+          python scripts/preserve_etherscan_evidence.py \
+            --fresh /tmp/vrm-source-refresh/etherscan.json \
+            --previous data/etherscan_authority_report.json \
+            --output data/etherscan_authority_report.json \
+            --health data/source_health.json
       - name: Audit Bitquery on-chain NFT evidence
         run: |
           python scripts/audit_bitquery_evidence.py --output data/bitquery_evidence_report.json --tokens 25 --concurrency 3 --collection-concurrency 3
@@ -185,6 +194,7 @@ jobs:
           assert authority['summary']['collections'] > 0
           assert bitquery['summary']['collectionsInspected'] > 0
           assert bitquery['summary']['collectionsObservedOnchain'] > 0, 'Bitquery produced no positive on-chain observations'
+          assert health['etherscan']['selectedCorroborated'] > 0, 'Etherscan retained no corroborated contract evidence'
           PY
       - name: Full repository verification
         run: |
