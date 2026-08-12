@@ -3,8 +3,9 @@
 
 This is intentionally narrow. It never creates collections and never matches by
 name. A hit must target an existing catalog ID whose chain+contract identity
-matches the validation report. Only rows with complete VRM binary proof are
-materialized into collection/avatar VRM fields and provenance tables.
+matches the validation report. Complete VRM proofs are stored in vrm_metadata,
+and an existing avatar is linked only when its model URL already matches the
+validated asset. New avatar rows are never invented from a bounded sample.
 """
 from __future__ import annotations
 
@@ -76,13 +77,6 @@ def identity_matches(conn: sqlite3.Connection, hit: dict[str, Any]) -> tuple[boo
     return False, "contract_mismatch"
 
 
-def avatar_id(hit: dict[str, Any]) -> str:
-    token_id = str(hit.get("tokenId") or "").strip()
-    if not token_id:
-        raise ValueError("validated hit is missing tokenId")
-    return f"{hit['catalogId']}:{token_id}"
-
-
 def upsert_dynamic(
     conn: sqlite3.Connection,
     table: str,
@@ -110,6 +104,60 @@ def upsert_dynamic(
     conn.execute(sql, tuple(clean[name] for name in names))
 
 
+def matching_existing_avatar(
+    conn: sqlite3.Connection,
+    collection_id: str,
+    canonical: str,
+    transport: str,
+) -> sqlite3.Row | None:
+    if not table_exists(conn, "avatars"):
+        return None
+    cols = columns(conn, "avatars")
+    if not {"id", "collection_id", "model_file_url"} <= cols:
+        return None
+    return conn.execute(
+        """
+        SELECT * FROM avatars
+        WHERE collection_id=? AND model_file_url IN (?, ?)
+        ORDER BY id LIMIT 1
+        """,
+        (collection_id, canonical, transport),
+    ).fetchone()
+
+
+def link_existing_avatar(
+    conn: sqlite3.Connection,
+    avatar: sqlite3.Row | None,
+    canonical: str,
+    transport: str,
+    stamp: str,
+) -> str | None:
+    if avatar is None:
+        return None
+    aid = str(avatar["id"])
+    avatar_cols = columns(conn, "avatars")
+    updates = {
+        "model_file_url": transport,
+        "reachable": 1,
+        "check_status": "ok_vrm",
+        "checked_at": stamp,
+    }
+    clean = {key: value for key, value in updates.items() if key in avatar_cols}
+    if clean:
+        conn.execute(
+            f"UPDATE avatars SET {', '.join(f'{key}=?' for key in clean)} WHERE id=?",
+            (*clean.values(), aid),
+        )
+    if table_exists(conn, "avatar_vrm"):
+        upsert_dynamic(
+            conn,
+            "avatar_vrm",
+            {"avatar_id": aid, "vrm_source_url": canonical},
+            "avatar_id",
+        )
+    return aid
+
+
 def reconcile_hit(
     conn: sqlite3.Connection, hit: dict[str, Any], stamp: str
 ) -> dict[str, Any]:
@@ -119,56 +167,8 @@ def reconcile_hit(
     if not ok:
         raise ValueError(f"identity rejected: {identity_mode}")
 
-    aid = avatar_id(hit)
     canonical = str(hit["canonical_url"])
     transport = str(hit.get("transport_url") or canonical)
-    existing_avatar = conn.execute(
-        "SELECT * FROM avatars WHERE id=?", (aid,)
-    ).fetchone()
-    if existing_avatar is not None:
-        if str(existing_avatar["collection_id"] or "") != str(hit["catalogId"]):
-            raise ValueError(f"avatar id collision for {aid}")
-        prior_url = str(existing_avatar["model_file_url"] or "").strip()
-        if prior_url and prior_url not in {canonical, transport}:
-            raise ValueError(f"avatar {aid} already has a different model URL")
-
-    metadata = {
-        "token_id": str(hit.get("tokenId")),
-        "token_uri": hit.get("tokenUri"),
-        "source": "moralis_model_discovery",
-        "source_path": hit.get("sourcePath"),
-        "chain": hit.get("chain"),
-        "contract": hit.get("contract"),
-        "binary_validation": {
-            "canonical_url": canonical,
-            "transport_url": transport,
-            "vrm_spec": hit.get("vrm_spec"),
-            "content_sha256": hit.get("sha256"),
-            "json_chunk_sha256": hit.get("json_chunk_sha256"),
-            "byte_length": hit.get("byte_length"),
-            "observed_at": hit.get("observedAt") or stamp,
-        },
-    }
-    avatar_values = {
-        "id": aid,
-        "collection_id": hit["catalogId"],
-        "name": f"{hit.get('name') or hit['catalogId']} #{hit.get('tokenId')}",
-        "model_file_url": transport,
-        "format": "vrm",
-        "is_public": 1,
-        "metadata_json": json.dumps(metadata, separators=(",", ":")),
-        "reachable": 1,
-        "check_status": "ok_vrm",
-        "checked_at": hit.get("observedAt") or stamp,
-    }
-    upsert_dynamic(
-        conn,
-        "avatars",
-        avatar_values,
-        "id",
-        protected_columns={"id", "collection_id"},
-    )
-
     vrm_values = {
         "source_url": canonical,
         "extracted_at": hit.get("observedAt") or stamp,
@@ -183,11 +183,16 @@ def reconcile_hit(
         "transport_url": transport,
     }
     upsert_dynamic(conn, "vrm_metadata", vrm_values, "source_url")
-    upsert_dynamic(
+
+    existing_avatar = matching_existing_avatar(
+        conn, str(hit["catalogId"]), canonical, transport
+    )
+    linked_avatar_id = link_existing_avatar(
         conn,
-        "avatar_vrm",
-        {"avatar_id": aid, "vrm_source_url": canonical},
-        "avatar_id",
+        existing_avatar,
+        canonical,
+        transport,
+        str(hit.get("observedAt") or stamp),
     )
 
     collection = conn.execute(
@@ -231,13 +236,13 @@ def reconcile_hit(
 
     return {
         "catalogId": hit["catalogId"],
-        "avatarId": aid,
-        "tokenId": str(hit.get("tokenId")),
+        "tokenId": str(hit.get("tokenId") or ""),
         "canonicalUrl": canonical,
         "sha256": hit["sha256"],
         "vrmSpec": hit["vrm_spec"],
         "byteLength": int(hit["byte_length"]),
         "identityMode": identity_mode,
+        "linkedExistingAvatarId": linked_avatar_id,
         "collectionUpdated": collection_updated,
     }
 
@@ -269,14 +274,19 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise
 
     collections = sorted({row["catalogId"] for row in reconciled})
+    linked = sum(bool(row["linkedExistingAvatarId"]) for row in reconciled)
     payload = {
         "schema": "moralis-candidate-reconciliation-v1",
         "generatedAt": stamp,
         "sourceReport": str(args.report.relative_to(ROOT)) if args.report.is_relative_to(ROOT) else str(args.report),
-        "policy": "existing exact collection identity only; binary VRM proof required; no fuzzy collection creation",
+        "policy": (
+            "existing exact collection identity only; binary VRM proof required; "
+            "no fuzzy collection creation and no avatar creation from bounded samples"
+        ),
         "summary": {
             "validatedHitsInput": len(hits),
-            "reconciledAvatars": len(reconciled),
+            "binaryProofRowsStored": len(reconciled),
+            "existingAvatarsLinked": linked,
             "collectionsReconciled": len(collections),
             "collections": collections,
         },
