@@ -20,7 +20,7 @@ jobs:
   refresh:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,8 +37,13 @@ jobs:
         run: python scripts/enrich_opensea.py --meta-only --force
       - name: Audit useful OpenSea read surfaces
         run: |
+          # Media refresh covers every known OpenSea slug. This capability audit
+          # uses a representative bounded slice because it fans out across
+          # collection, stats, traits, events, listings/offers, NFT metadata,
+          # metadata validation, and collection-by-NFT identity endpoints.
           python scripts/audit_opensea_surface.py \
             --output data/opensea_surface_report.json \
+            --limit 12 \
             --sample-nfts 2 \
             --concurrency 2 \
             --collection-concurrency 3
