@@ -23,6 +23,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: authoritative-multisource-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
   MORALIS_API_KEY: ${{ secrets.MORALIS_API_KEY }}
@@ -69,7 +73,7 @@ jobs:
         run: python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
       - name: Audit Bitquery on-chain NFT evidence
         run: |
-          python scripts/audit_bitquery_evidence.py --output data/bitquery_evidence_report.json --tokens 50 --concurrency 2 --collection-concurrency 2
+          python scripts/audit_bitquery_evidence.py --output data/bitquery_evidence_report.json --tokens 25 --concurrency 3 --collection-concurrency 3
           python scripts/build_authoritative_consensus.py
       - name: Regenerate Hubzz and catalog artifacts
         run: |
