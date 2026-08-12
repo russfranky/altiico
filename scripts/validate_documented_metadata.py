@@ -89,7 +89,13 @@ def parse_registry(text: str) -> list[dict[str, str]]:
     return rows
 
 
-def catalog_by_contract(db_path: Path) -> dict[str, dict[str, Any]]:
+def catalog_by_contract(db_path: Path) -> dict[str, dict[str, Any] | None]:
+    """Index only unambiguous primary catalog contract identities.
+
+    If more than one collection row shares the same contract, store ``None`` so
+    downstream selection cannot accidentally bind to whichever row was loaded
+    last. Shared storefront contracts require stronger token-level identity.
+    """
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     try:
@@ -99,10 +105,14 @@ def catalog_by_contract(db_path: Path) -> dict[str, dict[str, Any]]:
         ).fetchall()
     finally:
         conn.close()
-    out: dict[str, dict[str, Any]] = {}
+    out: dict[str, dict[str, Any] | None] = {}
     for row in rows:
         contract = str(row["contract"] or "").strip().lower()
-        if re.fullmatch(r"0x[a-f0-9]{40}", contract):
+        if not re.fullmatch(r"0x[a-f0-9]{40}", contract):
+            continue
+        if contract in out:
+            out[contract] = None
+        else:
             out[contract] = dict(row)
     return out
 
@@ -125,7 +135,7 @@ def stageable_contracts(staging: dict[str, Any]) -> set[str]:
 
 def select_targets(
     registry_rows: list[dict[str, str]],
-    catalog: dict[str, dict[str, Any]],
+    catalog: dict[str, dict[str, Any] | None],
     already_stageable: set[str],
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
     targets: list[dict[str, Any]] = []
@@ -150,7 +160,7 @@ def select_targets(
     return targets, {
         "registryRowsWithExplicitVrmField": len(registry_rows),
         "skippedAlreadyStageable": skipped_stageable,
-        "skippedMissingExactCatalogIdentity": missing_identity,
+        "skippedMissingOrAmbiguousExactIdentity": missing_identity,
         "selectedTargets": len(targets),
     }
 
@@ -301,7 +311,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "generatedAt": now_iso(),
         "source": str(args.registry.relative_to(ROOT) if args.registry.is_relative_to(ROOT) else args.registry),
         "policy": (
-            "curated registry metadata is lead evidence only; a hit requires exact contract identity "
+            "curated registry metadata is lead evidence only; a hit requires unambiguous exact contract identity "
             "plus complete GLB 2.0 VRM/VRMC_vrm validation with whole-file SHA-256"
         ),
         "summary": summarize(results, selection),
