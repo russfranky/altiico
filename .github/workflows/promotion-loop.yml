@@ -40,8 +40,12 @@ jobs:
         run: |
           python scripts/sync_discovery_to_db.py
           python scripts/materialize_discovery_fields.py
-      - name: Rebuild public catalog
-        run: python scripts/build_catalog.py
+      - name: Rebuild atomic catalog and Hubzz snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
       - name: Assert crawl evidence reached public payload
         run: |
           python - <<'PY'
@@ -77,7 +81,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/vrm_index.db static/data static/sw.js
+          git add data/vrm_index.db static/data static/sw.js docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
             echo 'Promotion/evidence materialization already current.'
             exit 0
