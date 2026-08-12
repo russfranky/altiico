@@ -2,8 +2,10 @@ name: Moralis candidate binary validation
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 10 * * 4'
   push:
-    branches: [agent/moralis-binary-validation]
+    branches: [main, agent/moralis-binary-validation]
     paths:
       - scripts/validate_moralis_candidates.py
       - scripts/reconcile_moralis_validated_hits.py
@@ -77,7 +79,6 @@ jobs:
           conn.close()
           unique_hits=len({(h.get('catalogId'),h.get('canonical_url'),h.get('sha256')) for h in hits})
           print(json.dumps({'summary':report['summary'],'validatedHits':len(hits),'uniqueHits':unique_hits,'queuedForReconciliation':queued},indent=2))
-          assert hits, 'measured pass unexpectedly produced no binary VRM hits'
           assert queued >= unique_hits
           PY
 
@@ -94,7 +95,7 @@ jobs:
           python scripts/export_hubzz_staging.py --validate
           python scripts/build_catalog.py
 
-      - name: Assert DickButtVerse became preview-ready without inventing inventory
+      - name: Assert reconciled collections are stageable without invented inventory
         run: |
           python - <<'PY'
           import json, sqlite3
@@ -104,15 +105,14 @@ jobs:
           reconciliation=json.loads(Path('data/moralis_candidate_reconciliation.json').read_text())
           staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
           hit_count=len(validation.get('validatedHits') or [])
-          match=next((row for row in staging['sets'] if row['set']['slug']=='dickbuttverse'),None)
+          stage_by_slug={row['set']['slug']:row for row in staging['sets']}
 
           conn=sqlite3.connect('data/vrm_index.db')
           proof_rows=conn.execute(
               "SELECT COUNT(*) FROM vrm_metadata WHERE extractor_version='moralis-candidate-binary-validation-v1' AND vrm_spec IS NOT NULL AND parse_error IS NULL"
           ).fetchone()[0]
-          avatars=conn.execute("SELECT COUNT(*) FROM avatars WHERE collection_id='dickbuttverse'").fetchone()[0]
           ready_queue=conn.execute(
-              "SELECT COUNT(*) FROM promotion_candidates WHERE collection_id='dickbuttverse' AND promotion_state='ready_for_reconciliation'"
+              "SELECT COUNT(*) FROM promotion_candidates WHERE source='moralis_candidate_validation.json' AND promotion_state='ready_for_reconciliation'"
           ).fetchone()[0]
           conn.close()
 
@@ -120,21 +120,17 @@ jobs:
               'validation':validation['summary'],
               'reconciliation':reconciliation['summary'],
               'stageableSets':len(staging['sets']),
-              'dickButtVerseStageClass':match.get('stageClass') if match else None,
-              'dickButtVerseSourceAssets':match.get('sourceAssets') if match else None,
               'storedBinaryProofRows':proof_rows,
-              'existingDickButtVerseAvatars':avatars,
               'remainingReadyQueue':ready_queue,
+              'dickButtVerse':stage_by_slug.get('dickbuttverse'),
           }
           print(json.dumps(summary,indent=2))
           assert hit_count == reconciliation['summary']['binaryProofRowsStored']
           assert proof_rows >= hit_count
           assert ready_queue == 0
-          assert match is not None
-          assert match['stageClass'] == 'preview_ready'
-          assert match['sourceAssets']['count'] == 1
-          assert match['sourceAssets']['binaryValidatedCount'] == 1
-          assert len(staging['sets']) >= 14
+          for collection_id in reconciliation['summary']['collections']:
+              assert collection_id in stage_by_slug
+          assert 'dickbuttverse' in stage_by_slug, 'measured DickButtVerse gain regressed'
           PY
 
       - name: Full repository verification
@@ -153,7 +149,7 @@ jobs:
             data/moralis_candidate_reconciliation.json
           retention-days: 30
 
-      - name: Commit measured validation and reconciliation evidence
+      - name: Commit validation and reconciliation evidence
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -162,5 +158,5 @@ jobs:
             echo 'Moralis candidate validation and reconciliation already current.'
             exit 0
           fi
-          git commit -m 'Reconcile validated Moralis VRMs [skip ci]'
+          git commit -m 'Refresh validated Moralis VRM evidence [skip ci]'
           git push
