@@ -1,0 +1,111 @@
+name: Moralis candidate binary validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/moralis-binary-validation]
+    paths:
+      - scripts/validate_moralis_candidates.py
+      - tests/test_validate_moralis_candidates.py
+      - data/moralis_model_discovery.json
+      - .github/workflows/moralis-candidate-validation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: moralis-candidate-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Verify candidate selector
+        run: |
+          python -m py_compile scripts/validate_moralis_candidates.py
+          python -m pytest tests/test_validate_moralis_candidates.py tests/test_recursive_crawler.py -q
+
+      - name: Binary-validate deferred Moralis model candidates
+        run: |
+          python scripts/validate_moralis_candidates.py \
+            --output data/moralis_candidate_validation.json \
+            --max-candidates 160 \
+            --workers 4 \
+            --timeout 20 \
+            --max-attempts 2
+
+      - name: Sync only binary-proven hits into reconciliation queue
+        run: |
+          python scripts/sync_discovery_to_db.py
+          python scripts/materialize_discovery_fields.py
+
+      - name: Assert promotion proof is complete
+        run: |
+          python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+
+          report=json.loads(Path('data/moralis_candidate_validation.json').read_text())
+          hits=report.get('validatedHits') or []
+          for hit in hits:
+              assert hit.get('status') == 'valid_vrm'
+              assert hit.get('vrm_spec')
+              assert hit.get('sha256') and len(hit['sha256']) == 64
+              assert hit.get('canonical_url')
+              assert hit.get('byte_length')
+
+          conn=sqlite3.connect('data/vrm_index.db')
+          queued=conn.execute(
+              "SELECT COUNT(*) FROM promotion_candidates WHERE source='moralis_candidate_validation.json' AND promotion_state='ready_for_reconciliation'"
+          ).fetchone()[0]
+          conn.close()
+          print(json.dumps({'summary':report['summary'],'validatedHits':len(hits),'queuedForReconciliation':queued},indent=2))
+          assert queued >= len({(h.get('catalogId'),h.get('canonical_url'),h.get('sha256')) for h in hits})
+          PY
+
+      - name: Rebuild one atomic public and Hubzz snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
+      - name: Full repository verification
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: moralis-candidate-validation
+          path: data/moralis_candidate_validation.json
+          retention-days: 30
+
+      - name: Commit measured validation evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/moralis_candidate_validation.json data/vrm_index.db static/data static/sw.js docs/hubzz-prealpha-staging.md
+          if git diff --cached --quiet; then
+            echo 'Moralis candidate validation already current.'
+            exit 0
+          fi
+          git commit -m 'Validate Moralis model candidates [skip ci]'
+          git push
