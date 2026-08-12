@@ -1,0 +1,164 @@
+name: Moralis candidate binary validation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 10 * * 4'
+  push:
+    branches: [main, agent/moralis-binary-validation]
+    paths:
+      - scripts/validate_moralis_candidates.py
+      - scripts/reconcile_moralis_validated_hits.py
+      - tests/test_validate_moralis_candidates.py
+      - tests/test_reconcile_moralis_validated_hits.py
+      - data/moralis_model_discovery.json
+      - .github/workflows/moralis-candidate-validation.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: moralis-candidate-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Verify candidate validation and reconciliation
+        run: |
+          python -m py_compile scripts/validate_moralis_candidates.py scripts/reconcile_moralis_validated_hits.py
+          python -m pytest tests/test_validate_moralis_candidates.py tests/test_reconcile_moralis_validated_hits.py tests/test_recursive_crawler.py -q
+
+      - name: Binary-validate deferred Moralis model candidates
+        run: |
+          python scripts/validate_moralis_candidates.py \
+            --output data/moralis_candidate_validation.json \
+            --max-candidates 160 \
+            --workers 4 \
+            --timeout 20 \
+            --max-attempts 2
+
+      - name: Sync only binary-proven hits into reconciliation queue
+        run: |
+          python scripts/sync_discovery_to_db.py
+          python scripts/materialize_discovery_fields.py
+
+      - name: Assert promotion proof is complete
+        run: |
+          python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+
+          report=json.loads(Path('data/moralis_candidate_validation.json').read_text())
+          hits=report.get('validatedHits') or []
+          for hit in hits:
+              assert hit.get('status') == 'valid_vrm'
+              assert hit.get('vrm_spec')
+              assert hit.get('sha256') and len(hit['sha256']) == 64
+              assert hit.get('canonical_url')
+              assert hit.get('byte_length')
+
+          conn=sqlite3.connect('data/vrm_index.db')
+          queued=conn.execute(
+              "SELECT COUNT(*) FROM promotion_candidates WHERE source='moralis_candidate_validation.json' AND promotion_state='ready_for_reconciliation'"
+          ).fetchone()[0]
+          conn.close()
+          unique_hits=len({(h.get('catalogId'),h.get('canonical_url'),h.get('sha256')) for h in hits})
+          print(json.dumps({'summary':report['summary'],'validatedHits':len(hits),'uniqueHits':unique_hits,'queuedForReconciliation':queued},indent=2))
+          assert queued >= unique_hits
+          PY
+
+      - name: Reconcile exact existing collection identity
+        run: |
+          python scripts/reconcile_moralis_validated_hits.py \
+            --output data/moralis_candidate_reconciliation.json
+          python scripts/materialize_discovery_fields.py
+
+      - name: Rebuild one atomic public and Hubzz snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
+      - name: Assert reconciled collections are stageable without invented inventory
+        run: |
+          python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+
+          validation=json.loads(Path('data/moralis_candidate_validation.json').read_text())
+          reconciliation=json.loads(Path('data/moralis_candidate_reconciliation.json').read_text())
+          staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
+          hit_count=len(validation.get('validatedHits') or [])
+          stage_by_slug={row['set']['slug']:row for row in staging['sets']}
+          rs=reconciliation['summary']
+
+          conn=sqlite3.connect('data/vrm_index.db')
+          proof_rows=conn.execute(
+              "SELECT COUNT(*) FROM vrm_metadata WHERE extractor_version='moralis-candidate-binary-validation-v1' AND vrm_spec IS NOT NULL AND parse_error IS NULL"
+          ).fetchone()[0]
+          ready_queue=conn.execute(
+              "SELECT COUNT(*) FROM promotion_candidates WHERE source='moralis_candidate_validation.json' AND promotion_state='ready_for_reconciliation'"
+          ).fetchone()[0]
+          conn.close()
+
+          summary={
+              'validation':validation['summary'],
+              'reconciliation':rs,
+              'stageableSets':len(staging['sets']),
+              'storedBinaryProofRows':proof_rows,
+              'remainingReadyQueue':ready_queue,
+              'dickButtVerse':stage_by_slug.get('dickbuttverse'),
+          }
+          print(json.dumps(summary,indent=2))
+          assert hit_count == rs['binaryProofRowsStoredThisRun']
+          assert proof_rows >= rs['cumulativeBinaryProofRows']
+          assert ready_queue == 0
+          for collection_id in rs['collectionsThisRun']:
+              assert collection_id in stage_by_slug
+          assert 'dickbuttverse' in rs['cumulativeCollections'], 'measured DickButtVerse proof ledger regressed'
+          assert 'dickbuttverse' in stage_by_slug, 'measured DickButtVerse staging gain regressed'
+          PY
+
+      - name: Full repository verification
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: moralis-candidate-validation
+          path: |
+            data/moralis_candidate_validation.json
+            data/moralis_candidate_reconciliation.json
+          retention-days: 30
+
+      - name: Commit validation and reconciliation evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/moralis_candidate_validation.json data/moralis_candidate_reconciliation.json data/vrm_index.db static/data static/sw.js docs/hubzz-prealpha-staging.md
+          if git diff --cached --quiet; then
+            echo 'Moralis candidate validation and reconciliation already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh validated Moralis VRM evidence [skip ci]'
+          git push

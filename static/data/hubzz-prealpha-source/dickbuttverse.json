@@ -1,0 +1,27 @@
+{
+  "schema": "hubzz-prealpha-source-avatars-v1",
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-12T18:43:32Z",
+  "snapshotId": "vrmcat-v1-c9a7776b776aa698f60aeee8",
+  "setSlug": "dickbuttverse",
+  "count": 1,
+  "reachableCount": 1,
+  "binaryValidatedCount": 1,
+  "avatars": [
+    {
+      "id": "4326",
+      "tokenId": "4326",
+      "name": "DickButtVerse #132",
+      "originalSourceUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xd47d8672e45a7204057baaa3622a3fa276d651e3/b4b73ac03b4e97eab07670380d5077/b2b4b73ac03b4e97eab07670380d5077.png",
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "collection_sample_binary",
+      "checkedAt": "2026-08-12T18:43:32.489748+00:00",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": null,
+      "fileSizeOriginal": 2928488
+    }
+  ]
+}

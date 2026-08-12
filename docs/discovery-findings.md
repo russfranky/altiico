@@ -71,6 +71,34 @@ changes. Current effort should focus on binary-validating held avatar URLs,
 retrying documented metadata paths, and resolving contracts for otherwise strong
 leads.
 
+## Measured Moralis candidate validation gain, 2026-08-12 UTC
+
+A bounded byte-validation pass consumed concrete `.vrm` and `.glb` URLs already
+surfaced by Moralis model discovery. It skipped collections that were already
+stageable and used the same full GLB 2.0 + `VRM` / `VRMC_vrm` binary gate as the
+recursive crawler.
+
+Measured result:
+
+- 127 unique candidate URLs validated from 280 candidate bindings
+- 25 complete binary VRMs, all belonging to the existing `dickbuttverse` row
+- 101 valid GLB files correctly retained as non-VRM
+- 1 transport failure
+- 27,285,868 bytes of validated VRM content
+- 25 whole-file SHA-256 proofs stored without inventing avatar inventory
+- DickButtVerse moved from deferred to `preview_ready`
+- Hubzz staging increased from 13 to 14 sets
+- `no_binary_validated_vrm` deferred sets decreased from 55 to 54
+
+DickButtVerse resolved by its existing Ethereum identity, contract
+`0xd47d8672e45a7204057baaa3622a3fa276d651e3`. The bounded sample is not treated
+as a complete collection inventory: one validated sample is staged while all 25
+binary proofs remain available as evidence for later inventory enumeration.
+
+This validates a useful operating distinction: indexers can be high-value lead
+generators when their concrete model URLs are passed through the catalog's byte
+validator. Indexer model signals themselves remain insufficient proof.
+
 ## Operating conclusion
 
 The population of VRM-bearing NFT collections is small and largely curated. The
