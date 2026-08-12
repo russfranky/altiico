@@ -13,16 +13,35 @@ from scripts.chain_registry import CHAINS
 
 BASE_URL = "https://api.etherscan.io/v2/api"
 MAX_ATTEMPTS = 5
+RATE_LIMIT_MARKERS = ("rate limit", "max calls per sec", "too many requests")
+
+
+def _retry_delay(attempt: int) -> float:
+    return min(20.0, 2 ** attempt) + random.uniform(0, 0.4)
+
+
+def _is_rate_limit_message(value: Any) -> bool:
+    message = str(value or "").casefold()
+    return any(marker in message for marker in RATE_LIMIT_MARKERS)
 
 
 class EtherscanClient:
-    def __init__(self, api_key: Optional[str] = None, *, max_concurrency: int = 3) -> None:
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        *,
+        max_concurrency: int = 3,
+        min_request_interval: float = 0.36,
+    ) -> None:
         key = (api_key or os.getenv("ETHERSCAN_API_KEY") or os.getenv("ETHERSCAN_KEY") or "").strip()
         if not key:
             raise RuntimeError("Etherscan API key is not configured")
         self._api_key = key
         self._session: aiohttp.ClientSession | None = None
         self._semaphore = asyncio.Semaphore(max(1, max_concurrency))
+        self._min_request_interval = max(0.0, float(min_request_interval))
+        self._pace_lock = asyncio.Lock()
+        self._next_request_at = 0.0
 
     async def _get_session(self) -> aiohttp.ClientSession:
         if self._session is None or self._session.closed:
@@ -47,6 +66,17 @@ class EtherscanClient:
             raise ValueError(f"unknown EVM chain: {chain}")
         return str(spec.chain_id)
 
+    async def _pace(self) -> None:
+        if not self._min_request_interval:
+            return
+        loop = asyncio.get_running_loop()
+        async with self._pace_lock:
+            now = loop.time()
+            delay = max(0.0, self._next_request_at - now)
+            if delay:
+                await asyncio.sleep(delay)
+            self._next_request_at = loop.time() + self._min_request_interval
+
     async def _request(self, chain: str, module: str, action: str, **params: Any) -> Any:
         query = {
             "chainid": self.chain_id(chain),
@@ -58,29 +88,40 @@ class EtherscanClient:
         session = await self._get_session()
         for attempt in range(1, MAX_ATTEMPTS + 1):
             try:
+                retryable_http_status: int | None = None
+                await self._pace()
                 async with self._semaphore:
                     async with session.get(BASE_URL, params=query) as response:
                         if response.status == 429 or 500 <= response.status < 600:
-                            if attempt == MAX_ATTEMPTS:
-                                raise RuntimeError(f"Etherscan retry budget exhausted: HTTP {response.status}")
-                            await asyncio.sleep(min(20.0, 2 ** attempt) + random.uniform(0, 0.4))
-                            continue
-                        if response.status >= 400:
+                            retryable_http_status = response.status
+                            data = None
+                        elif response.status >= 400:
                             body = await response.text()
                             raise RuntimeError(f"Etherscan HTTP {response.status}: {body[:300]}")
-                        data = await response.json()
+                        else:
+                            data = await response.json()
+                if retryable_http_status is not None:
+                    if attempt == MAX_ATTEMPTS:
+                        raise RuntimeError(f"Etherscan retry budget exhausted: HTTP {retryable_http_status}")
+                    await asyncio.sleep(_retry_delay(attempt))
+                    continue
                 if not isinstance(data, dict):
                     raise RuntimeError("Etherscan returned a non-object response")
-                # Etherscan uses status=0 for both genuine errors and empty result sets.
+                # Etherscan uses status=0 for genuine errors, empty results, and plan-level throttling.
                 status, message, result = str(data.get("status", "")), str(data.get("message", "")), data.get("result")
                 if status == "0" and message.upper() not in {"NO TRANSACTIONS FOUND", "NO RECORDS FOUND"}:
                     detail = result if isinstance(result, str) else message
+                    if _is_rate_limit_message(detail) or _is_rate_limit_message(message):
+                        if attempt == MAX_ATTEMPTS:
+                            raise RuntimeError(f"Etherscan retry budget exhausted: API rate limit: {str(detail)[:300]}")
+                        await asyncio.sleep(_retry_delay(attempt))
+                        continue
                     raise RuntimeError(f"Etherscan API error: {str(detail)[:300]}")
                 return result
             except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
                 if attempt == MAX_ATTEMPTS:
                     raise RuntimeError("Etherscan retry budget exhausted") from exc
-                await asyncio.sleep(min(20.0, 2 ** attempt) + random.uniform(0, 0.4))
+                await asyncio.sleep(_retry_delay(attempt))
         raise RuntimeError("Etherscan retry budget exhausted")
 
     async def source_code(self, chain: str, contract: str) -> list[dict[str, Any]]:
