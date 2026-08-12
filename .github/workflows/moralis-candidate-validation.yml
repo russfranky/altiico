@@ -6,7 +6,9 @@ on:
     branches: [agent/moralis-binary-validation]
     paths:
       - scripts/validate_moralis_candidates.py
+      - scripts/reconcile_moralis_validated_hits.py
       - tests/test_validate_moralis_candidates.py
+      - tests/test_reconcile_moralis_validated_hits.py
       - data/moralis_model_discovery.json
       - .github/workflows/moralis-candidate-validation.yml
 
@@ -34,10 +36,10 @@ jobs:
 
       - run: python -m pip install -r requirements.txt
 
-      - name: Verify candidate selector
+      - name: Verify candidate validation and reconciliation
         run: |
-          python -m py_compile scripts/validate_moralis_candidates.py
-          python -m pytest tests/test_validate_moralis_candidates.py tests/test_recursive_crawler.py -q
+          python -m py_compile scripts/validate_moralis_candidates.py scripts/reconcile_moralis_validated_hits.py
+          python -m pytest tests/test_validate_moralis_candidates.py tests/test_reconcile_moralis_validated_hits.py tests/test_recursive_crawler.py -q
 
       - name: Binary-validate deferred Moralis model candidates
         run: |
@@ -73,9 +75,17 @@ jobs:
               "SELECT COUNT(*) FROM promotion_candidates WHERE source='moralis_candidate_validation.json' AND promotion_state='ready_for_reconciliation'"
           ).fetchone()[0]
           conn.close()
-          print(json.dumps({'summary':report['summary'],'validatedHits':len(hits),'queuedForReconciliation':queued},indent=2))
-          assert queued >= len({(h.get('catalogId'),h.get('canonical_url'),h.get('sha256')) for h in hits})
+          unique_hits=len({(h.get('catalogId'),h.get('canonical_url'),h.get('sha256')) for h in hits})
+          print(json.dumps({'summary':report['summary'],'validatedHits':len(hits),'uniqueHits':unique_hits,'queuedForReconciliation':queued},indent=2))
+          assert hits, 'measured pass unexpectedly produced no binary VRM hits'
+          assert queued >= unique_hits
           PY
+
+      - name: Reconcile exact existing collection identity
+        run: |
+          python scripts/reconcile_moralis_validated_hits.py \
+            --output data/moralis_candidate_reconciliation.json
+          python scripts/materialize_discovery_fields.py
 
       - name: Rebuild one atomic public and Hubzz snapshot
         run: |
@@ -83,6 +93,49 @@ jobs:
           python scripts/export_avatars_registry.py
           python scripts/export_hubzz_staging.py --validate
           python scripts/build_catalog.py
+
+      - name: Assert DickButtVerse became preview-ready without inventing inventory
+        run: |
+          python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+
+          validation=json.loads(Path('data/moralis_candidate_validation.json').read_text())
+          reconciliation=json.loads(Path('data/moralis_candidate_reconciliation.json').read_text())
+          staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
+          hit_count=len(validation.get('validatedHits') or [])
+          match=next((row for row in staging['sets'] if row['set']['slug']=='dickbuttverse'),None)
+
+          conn=sqlite3.connect('data/vrm_index.db')
+          proof_rows=conn.execute(
+              "SELECT COUNT(*) FROM vrm_metadata WHERE extractor_version='moralis-candidate-binary-validation-v1' AND vrm_spec IS NOT NULL AND parse_error IS NULL"
+          ).fetchone()[0]
+          avatars=conn.execute("SELECT COUNT(*) FROM avatars WHERE collection_id='dickbuttverse'").fetchone()[0]
+          ready_queue=conn.execute(
+              "SELECT COUNT(*) FROM promotion_candidates WHERE collection_id='dickbuttverse' AND promotion_state='ready_for_reconciliation'"
+          ).fetchone()[0]
+          conn.close()
+
+          summary={
+              'validation':validation['summary'],
+              'reconciliation':reconciliation['summary'],
+              'stageableSets':len(staging['sets']),
+              'dickButtVerseStageClass':match.get('stageClass') if match else None,
+              'dickButtVerseSourceAssets':match.get('sourceAssets') if match else None,
+              'storedBinaryProofRows':proof_rows,
+              'existingDickButtVerseAvatars':avatars,
+              'remainingReadyQueue':ready_queue,
+          }
+          print(json.dumps(summary,indent=2))
+          assert hit_count == reconciliation['summary']['binaryProofRowsStored']
+          assert proof_rows >= hit_count
+          assert ready_queue == 0
+          assert match is not None
+          assert match['stageClass'] == 'preview_ready'
+          assert match['sourceAssets']['count'] == 1
+          assert match['sourceAssets']['binaryValidatedCount'] == 1
+          assert len(staging['sets']) >= 14
+          PY
 
       - name: Full repository verification
         run: |
@@ -95,17 +148,19 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: moralis-candidate-validation
-          path: data/moralis_candidate_validation.json
+          path: |
+            data/moralis_candidate_validation.json
+            data/moralis_candidate_reconciliation.json
           retention-days: 30
 
-      - name: Commit measured validation evidence
+      - name: Commit measured validation and reconciliation evidence
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/moralis_candidate_validation.json data/vrm_index.db static/data static/sw.js docs/hubzz-prealpha-staging.md
+          git add data/moralis_candidate_validation.json data/moralis_candidate_reconciliation.json data/vrm_index.db static/data static/sw.js docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
-            echo 'Moralis candidate validation already current.'
+            echo 'Moralis candidate validation and reconciliation already current.'
             exit 0
           fi
-          git commit -m 'Validate Moralis model candidates [skip ci]'
+          git commit -m 'Reconcile validated Moralis VRMs [skip ci]'
           git push
