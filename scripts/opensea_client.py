@@ -228,6 +228,48 @@ class OpenSeaClient:
             params["next"] = cursor
         return await self._request("GET", f"/collection/{slug}/nfts", params=params)
 
+    async def get_chains(self) -> dict[str, Any]:
+        return await self._request("GET", "/chains")
+
+    async def get_collection_traits(self, slug: str) -> dict[str, Any]:
+        return await self._request("GET", f"/traits/{slug}")
+
+    async def get_collection_events(
+        self, slug: str, *, limit: int = 50, event_type: Optional[str] = None,
+        after: Optional[int] = None, before: Optional[int] = None,
+    ) -> dict[str, Any]:
+        params: dict[str, Any] = {"limit": max(1, min(int(limit), 200))}
+        if event_type:
+            params["event_type"] = event_type
+        if after is not None:
+            params["after"] = int(after)
+        if before is not None:
+            params["before"] = int(before)
+        return await self._request("GET", f"/events/collection/{slug}", params=params)
+
+    async def get_nft_collection(self, chain: str, contract: str, token_id: str) -> dict[str, Any]:
+        os_chain = CHAIN_MAP.get(chain, chain)
+        return await self._request("GET", f"/chain/{os_chain}/contract/{contract}/nfts/{token_id}/collection")
+
+    async def get_nft_metadata(self, chain: str, contract: str, token_id: str) -> dict[str, Any]:
+        os_chain = CHAIN_MAP.get(chain, chain)
+        return await self._request("GET", f"/metadata/{os_chain}/{contract}/{token_id}")
+
+    async def validate_nft_metadata(
+        self, chain: str, contract: str, token_id: str, *, ignore_cached_item_urls: bool = False,
+    ) -> dict[str, Any]:
+        os_chain = CHAIN_MAP.get(chain, chain)
+        params = {"ignoreCachedItemUrls": "true"} if ignore_cached_item_urls else None
+        return await self._request(
+            "POST", f"/chain/{os_chain}/contract/{contract}/nfts/{token_id}/validate-metadata", params=params
+        )
+
+    async def get_best_listings(self, slug: str, *, limit: int = 20) -> dict[str, Any]:
+        return await self._request("GET", f"/listings/collection/{slug}/best", params={"limit": max(1, min(int(limit), 200))})
+
+    async def get_collection_offers(self, slug: str, *, limit: int = 20) -> dict[str, Any]:
+        return await self._request("GET", f"/offers/collection/{slug}", params={"limit": max(1, min(int(limit), 200))})
+
     async def batch_collections(self, slugs: list[str]) -> dict[str, Any]:
         return await self._request(
             "POST", "/collections/batch", json_body={"slugs": slugs}
