@@ -6,6 +6,9 @@ name. A hit must target an existing catalog ID whose chain+contract identity
 matches the validation report. Complete VRM proofs are stored in vrm_metadata,
 and an existing avatar is linked only when its model URL already matches the
 validated asset. New avatar rows are never invented from a bounded sample.
+
+The JSON reconciliation artifact is cumulative: later zero-hit runs preserve
+previously reconciled proof rows instead of erasing historical evidence.
 """
 from __future__ import annotations
 
@@ -247,30 +250,75 @@ def reconcile_hit(
     }
 
 
+def proof_key(row: dict[str, Any]) -> tuple[str, str, str]:
+    return (
+        str(row.get("catalogId") or ""),
+        str(row.get("canonicalUrl") or ""),
+        str(row.get("sha256") or ""),
+    )
+
+
+def load_previous_reconciled(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if payload.get("schema") != "moralis-candidate-reconciliation-v1":
+        return []
+    return [row for row in (payload.get("reconciled") or []) if isinstance(row, dict)]
+
+
+def merge_reconciled(
+    previous: list[dict[str, Any]], current: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    by_key = {proof_key(row): row for row in previous if all(proof_key(row))}
+    for row in current:
+        if all(proof_key(row)):
+            by_key[proof_key(row)] = row
+    return sorted(
+        by_key.values(),
+        key=lambda row: (
+            str(row.get("catalogId") or ""),
+            str(row.get("tokenId") or ""),
+            str(row.get("canonicalUrl") or ""),
+        ),
+    )
+
+
 def reconciliation_payload(
     args: argparse.Namespace,
     hits: list[dict[str, Any]],
-    reconciled: list[dict[str, Any]],
+    current: list[dict[str, Any]],
+    cumulative: list[dict[str, Any]],
     stamp: str,
 ) -> dict[str, Any]:
-    collections = sorted({row["catalogId"] for row in reconciled})
-    linked = sum(bool(row["linkedExistingAvatarId"]) for row in reconciled)
+    current_collections = sorted({row["catalogId"] for row in current})
+    cumulative_collections = sorted({row["catalogId"] for row in cumulative})
+    linked_this_run = sum(bool(row.get("linkedExistingAvatarId")) for row in current)
+    linked_cumulative = sum(bool(row.get("linkedExistingAvatarId")) for row in cumulative)
     return {
         "schema": "moralis-candidate-reconciliation-v1",
         "generatedAt": stamp,
         "sourceReport": str(args.report.relative_to(ROOT)) if args.report.is_relative_to(ROOT) else str(args.report),
         "policy": (
             "existing exact collection identity only; binary VRM proof required; "
-            "no fuzzy collection creation and no avatar creation from bounded samples"
+            "no fuzzy collection creation and no avatar creation from bounded samples; "
+            "reconciled proof rows are retained cumulatively across recurring runs"
         ),
         "summary": {
             "validatedHitsInput": len(hits),
-            "binaryProofRowsStored": len(reconciled),
-            "existingAvatarsLinked": linked,
-            "collectionsReconciled": len(collections),
-            "collections": collections,
+            "binaryProofRowsStoredThisRun": len(current),
+            "cumulativeBinaryProofRows": len(cumulative),
+            "existingAvatarsLinkedThisRun": linked_this_run,
+            "cumulativeExistingAvatarsLinked": linked_cumulative,
+            "collectionsReconciledThisRun": len(current_collections),
+            "collectionsThisRun": current_collections,
+            "cumulativeCollectionsReconciled": len(cumulative_collections),
+            "cumulativeCollections": cumulative_collections,
         },
-        "reconciled": reconciled,
+        "reconciled": cumulative,
     }
 
 
@@ -278,7 +326,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     report = json.loads(args.report.read_text(encoding="utf-8"))
     hits = [row for row in (report.get("validatedHits") or []) if isinstance(row, dict)]
     stamp = utc_now()
-    reconciled: list[dict[str, Any]] = []
+    previous = load_previous_reconciled(args.output)
+    current: list[dict[str, Any]] = []
 
     if hits:
         conn = sqlite3.connect(args.db)
@@ -287,7 +336,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         try:
             conn.execute("BEGIN IMMEDIATE")
             for hit in hits:
-                reconciled.append(reconcile_hit(conn, hit, stamp))
+                current.append(reconcile_hit(conn, hit, stamp))
             integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
             foreign_keys = conn.execute("PRAGMA foreign_key_check").fetchall()
             if integrity != "ok" or foreign_keys:
@@ -301,7 +350,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         finally:
             conn.close()
 
-    payload = reconciliation_payload(args, hits, reconciled, stamp)
+    cumulative = merge_reconciled(previous, current)
+    payload = reconciliation_payload(args, hits, current, cumulative, stamp)
     args.output.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return payload
 
