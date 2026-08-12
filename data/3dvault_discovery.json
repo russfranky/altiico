@@ -1,0 +1,549 @@
+{
+  "schema": "3dvault-discovery-v1",
+  "generatedAt": "2026-08-12T04:27:51.766150+00:00",
+  "source": {
+    "url": "https://3dvault.xyz/en/",
+    "status": 200,
+    "role": "high-value curated 3D-avatar relationship source; lead-only, never VRM proof"
+  },
+  "policy": {
+    "promotion": "all model/VRM claims require independent identity resolution and binary GLB 2.0 + VRM/VRMC_vrm validation"
+  },
+  "summary": {
+    "avatarCollectionLeads": 21,
+    "metaversePlatformLeads": 16,
+    "linkedProjectPagesInspected": 0,
+    "modelUrlSignals": 0,
+    "contractSignals": 0,
+    "openseaSignals": 0,
+    "contextLinksRecovered": 2,
+    "contextLabelsRecovered": 1
+  },
+  "avatarCollections": [
+    {
+      "leadId": "059e2ff7c50b345cad35",
+      "kind": "avatar_collection",
+      "label": "a070778ef833cf2df144246cb7427a05_0f2e535b90d4ee3b4c34ca0c706b8190.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/a070778ef833cf2df144246cb7427a05_0f2e535b90d4ee3b4c34ca0c706b8190.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/08/_cache/bcde5c1bb03a439423e"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "e67b9e6b3f09e3a3b273",
+      "kind": "avatar_collection",
+      "label": "f6a21f82c280ac3ca13506874559b668_34161076c8e631a3faedc6835965c102.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/f6a21f82c280ac3ca13506874559b668_34161076c8e631a3faedc6835965c102.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/08/_cache/a96b890167bee248aeb"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "c9cc5dc3307b997841e4",
+      "kind": "avatar_collection",
+      "label": "247bb9c3f22b5949965fd861f3cea04a_3293ef37fc2ddac448317669c8c864a2.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/247bb9c3f22b5949965fd861f3cea04a_3293ef37fc2ddac448317669c8c864a2.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/08/_cache/6fa4d0cc7936a531f83"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "d6656cd978f88c022596",
+      "kind": "avatar_collection",
+      "label": "6a4f53fd17027210be8d50076ae7a0e2_1bb0906ae6fdde07bc19a7ae6eade41b.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/6a4f53fd17027210be8d50076ae7a0e2_1bb0906ae6fdde07bc19a7ae6eade41b.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/08/_cache/aa7358803e4e782a58c"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "2f49e20e010091ee680c",
+      "kind": "avatar_collection",
+      "label": "5e3f20edfc753a31935a1da0efbba0fd_a70081e325b5e237b92a8673b4755391.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/5e3f20edfc753a31935a1da0efbba0fd_a70081e325b5e237b92a8673b4755391.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/08/_cache/f916dbf286ac868d137"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "01ebc70bcbc75bf8d367",
+      "kind": "avatar_collection",
+      "label": "ab99ac910ac57e64adfaf3736d7c26e7_764aa6f4c7edeb13d7126a610c05cb47.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/ab99ac910ac57e64adfaf3736d7c26e7_764aa6f4c7edeb13d7126a610c05cb47.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/1e5399e8cb28d407b0f"
+        ],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "dbb8d9b247779e1f2b3d",
+      "kind": "avatar_collection",
+      "label": "68057fd5e87966ebab075b53abb40671_8389c532c414e86eda0a816468c30c33.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/68057fd5e87966ebab075b53abb40671_8389c532c414e86eda0a816468c30c33.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/2d26cc13742d310ac01"
+        ],
+        "humanText": "future. Join us. Partner Avatar Collections <img src=\"https://drive.baako.com/2024/03/_cache/2d26cc13742d310ac01"
+      }
+    },
+    {
+      "leadId": "f73893d593e820dca3ec",
+      "kind": "avatar_collection",
+      "label": "be9503d951f9f143b1636963cb6e8c4a_a5c21603b00a84d3b661868a79826b1b.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/be9503d951f9f143b1636963cb6e8c4a_a5c21603b00a84d3b661868a79826b1b.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/7b8f93a350ceaa643ce"
+        ],
+        "humanText": "div class=\"title\"> Partner Avatar Collections <img src=\"https://drive.baako.com/2024/03/_cache/7b8f93a350ceaa643ce"
+      }
+    },
+    {
+      "leadId": "4418a881cea64e6880d5",
+      "kind": "avatar_collection",
+      "label": "2a88a5526341f1741236ae2ff6c641e9_bdc3bd71bdd9b76659a0bcbf8c3e8f75.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/2a88a5526341f1741236ae2ff6c641e9_bdc3bd71bdd9b76659a0bcbf8c3e8f75.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/a8d12c9e10db98cc10f"
+        ],
+        "humanText": "<img src=\"https://drive.baako.com/2024/03/_cache/a8d12c9e10db98cc10f"
+      }
+    },
+    {
+      "leadId": "615d4d42d68b110654b4",
+      "kind": "avatar_collection",
+      "label": "bcde5c1bb03a439423eabb4d6e67b945_070c05dc7e58d4a8dc27505b0b6d04ce.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/bcde5c1bb03a439423eabb4d6e67b945_070c05dc7e58d4a8dc27505b0b6d04ce.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/08ba89ede799b3a235f"
+        ],
+        "humanText": "c34ca0c706b8190.jpg\" alt=\"a070778ef833cf2df144246cb7427a05_0f2e535b90d4ee3b4c34ca0c706b8190.jpg\" /> <img src=\"https://drive.baako.com/2024/03/_cache/08ba89ede799b3a235f"
+      }
+    },
+    {
+      "leadId": "a1adcd2ceb8a086d18bb",
+      "kind": "avatar_collection",
+      "label": "a96b890167bee248aebfaf2e6e7ce181_4a05319aef6021c6dd37651c9d117437.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/a96b890167bee248aebfaf2e6e7ce181_4a05319aef6021c6dd37651c9d117437.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/e8978649dece718662b"
+        ],
+        "humanText": "aedc6835965c102.jpg\" alt=\"f6a21f82c280ac3ca13506874559b668_34161076c8e631a3faedc6835965c102.jpg\" /> <img src=\"https://drive.baako.com/2024/03/_cache/e8978649dece718662b"
+      }
+    },
+    {
+      "leadId": "c4f160e882c90b2c727c",
+      "kind": "avatar_collection",
+      "label": "6fa4d0cc7936a531f83a8a41d169644f_850feb1ebff849df3b6f1f5f6cc871d5.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/6fa4d0cc7936a531f83a8a41d169644f_850feb1ebff849df3b6f1f5f6cc871d5.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b8"
+        ],
+        "humanText": "8317669c8c864a2.jpg\" alt=\"247bb9c3f22b5949965fd861f3cea04a_3293ef37fc2ddac448317669c8c864a2.jpg\" /> <img src=\"https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b8"
+      }
+    },
+    {
+      "leadId": "9705f821aa12e5ea9817",
+      "kind": "avatar_collection",
+      "label": "aa7358803e4e782a58c95661112ec8c0_090af572b9570300a598730186d4ccea.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/aa7358803e4e782a58c95661112ec8c0_090af572b9570300a598730186d4ccea.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "c19a7ae6eade41b.jpg\" alt=\"6a4f53fd17027210be8d50076ae7a0e2_1bb0906ae6fdde07bc19a7ae6eade41b.jpg\" /> <sect"
+      }
+    },
+    {
+      "leadId": "199c8ec4d1cf9fec3944",
+      "kind": "avatar_collection",
+      "label": "f916dbf286ac868d1379812d8fab456c_1cc7128455a04c183992564414009e1d.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/08/_cache/f916dbf286ac868d1379812d8fab456c_1cc7128455a04c183992564414009e1d.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "92a8673b4755391.jpg\" alt=\"5e3f20edfc753a31935a1da0efbba0fd_a70081e325b5e237b92a8673b4755391.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "cfb8ae3e2580e431e713",
+      "kind": "avatar_collection",
+      "label": "1e5399e8cb28d407b0ff97eb55ccc0bd_8238766f720e944d6010dde9264d0be0.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/1e5399e8cb28d407b0ff97eb55ccc0bd_8238766f720e944d6010dde9264d0be0.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "7126a610c05cb47.jpg\" alt=\"ab99ac910ac57e64adfaf3736d7c26e7_764aa6f4c7edeb13d7126a610c05cb47.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "97811f3b20c45db9786b",
+      "kind": "avatar_collection",
+      "label": "2d26cc13742d310ac0156f79ce5ac21c_38377b3388f9e79561154d0309c0a5ef.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/2d26cc13742d310ac0156f79ce5ac21c_38377b3388f9e79561154d0309c0a5ef.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "a0a816468c30c33.jpg\" alt=\"68057fd5e87966ebab075b53abb40671_8389c532c414e86eda0a816468c30c33.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "87e9130e29fe58678dea",
+      "kind": "avatar_collection",
+      "label": "7b8f93a350ceaa643ce8af2bad73afda_2600b39706b5a39be4a7b903ac49ae38.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/7b8f93a350ceaa643ce8af2bad73afda_2600b39706b5a39be4a7b903ac49ae38.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "661868a79826b1b.jpg\" alt=\"be9503d951f9f143b1636963cb6e8c4a_a5c21603b00a84d3b661868a79826b1b.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "5b28c702350a5297e0ed",
+      "kind": "avatar_collection",
+      "label": "a8d12c9e10db98cc10f514e543487069_b40f70debab03c7810fd38abb4fc08e3.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/a8d12c9e10db98cc10f514e543487069_b40f70debab03c7810fd38abb4fc08e3.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "9a0bcbf8c3e8f75.jpg\" alt=\"2a88a5526341f1741236ae2ff6c641e9_bdc3bd71bdd9b76659a0bcbf8c3e8f75.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "b050981c7b4b62fe2694",
+      "kind": "avatar_collection",
+      "label": "08ba89ede799b3a235f8dcf992208425_34f2b468f9582364089419a3bcb59461.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/08ba89ede799b3a235f8dcf992208425_34f2b468f9582364089419a3bcb59461.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "c27505b0b6d04ce.png\" alt=\"bcde5c1bb03a439423eabb4d6e67b945_070c05dc7e58d4a8dc27505b0b6d04ce.png\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "6a14267f6c19feb67b83",
+      "kind": "avatar_collection",
+      "label": "e8978649dece718662b4c3be85f1891a_d9340030aadbaf09b0ac6d141d8bc275.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/e8978649dece718662b4c3be85f1891a_d9340030aadbaf09b0ac6d141d8bc275.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "d37651c9d117437.jpg\" alt=\"a96b890167bee248aebfaf2e6e7ce181_4a05319aef6021c6dd37651c9d117437.jpg\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "0a7e404fe5a78d9ed473",
+      "kind": "avatar_collection",
+      "label": "937b9d693e77807c9b81d0992df567dc_10193d0e92c68c95012c279489befedd.png.webp",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b81d0992df567dc_10193d0e92c68c95012c279489befedd.png.webp",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "b6f1f5f6cc871d5.png\" alt=\"6fa4d0cc7936a531f83a8a41d169644f_850feb1ebff849df3b6f1f5f6cc871d5.png\" /> Compatible / Partner Metaverse Platforms"
+      }
+    }
+  ],
+  "metaversePlatforms": [
+    {
+      "leadId": "0d399a9a8bfef15c1993",
+      "kind": "metaverse_platform",
+      "label": "3228c9f921e2c28497d78b6147c89f55_228b9bed4c5e2916db5f39d3036911ad.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/3228c9f921e2c28497d78b6147c89f55_228b9bed4c5e2916db5f39d3036911ad.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/09/_cache/4875816d66ad4083d9a"
+        ],
+        "humanText": "Compatible / Partner Metaverse Platforms <img src=\"https://drive.baako.com/2023/09/_cache/4875816d66ad4083d9a"
+      }
+    },
+    {
+      "leadId": "6f7e59150605368eb2d3",
+      "kind": "metaverse_platform",
+      "label": "25b3e200da0531cf28374f0f4dd54029_4dbaaff85bd895ba0d7f9c0eeac2386d.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/25b3e200da0531cf28374f0f4dd54029_4dbaaff85bd895ba0d7f9c0eeac2386d.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/09/_cache/235e4981ec9a62ec66d"
+        ],
+        "humanText": "Compatible / Partner Metaverse Platforms <img src=\"https://drive.baako.com/2023/09/_cache/235e4981ec9a62ec66d"
+      }
+    },
+    {
+      "leadId": "0ed943c35e6c1f735dbe",
+      "kind": "metaverse_platform",
+      "label": "a07b9cabff05d78c0e602351d499bb1e_325878e4963e039b4ac06c2439ec8819.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/a07b9cabff05d78c0e602351d499bb1e_325878e4963e039b4ac06c2439ec8819.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/09/_cache/4ade9adc5ecb4eff7c4"
+        ],
+        "humanText": "Compatible / Partner Metaverse Platforms <img src=\"https://drive.baako.com/2023/09/_cache/4ade9adc5ecb4eff7c4"
+      }
+    },
+    {
+      "leadId": "826f85a2732e8832bb53",
+      "kind": "metaverse_platform",
+      "label": "03e1adabd47c3da01f7a0f1e03ad002c_27d02da15e748754207547d2bed0f754.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/03e1adabd47c3da01f7a0f1e03ad002c_27d02da15e748754207547d2bed0f754.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2024/03/_cache/0bbdf228fc54449da4f"
+        ],
+        "humanText": "Compatible / Partner Metaverse Platforms <img src=\"https://drive.baako.com/2024/03/_cache/0bbdf228fc54449da4f"
+      }
+    },
+    {
+      "leadId": "f04afa588d2142150d53",
+      "kind": "metaverse_platform",
+      "label": "cc3c6b6c6eccddeb096da0153c8c164f_35b95962774822adf9205100922c119e.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/cc3c6b6c6eccddeb096da0153c8c164f_35b95962774822adf9205100922c119e.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b8"
+        ],
+        "humanText": "Compatible / Partner Metaverse Platforms <img src=\"https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b8"
+      }
+    },
+    {
+      "leadId": "260da2c05bf7ee1b63ef",
+      "kind": "metaverse_platform",
+      "label": "aa90668234f4b90c31a6293e564384bc_70f4f72d0bdbca0146055bff9c552cf5.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/aa90668234f4b90c31a6293e564384bc_70f4f72d0bdbca0146055bff9c552cf5.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "Compatible / Partner Metaverse Platforms <sect"
+      }
+    },
+    {
+      "leadId": "31e26436c1469b72794e",
+      "kind": "metaverse_platform",
+      "label": "8a6e692e3c6ff9a87b9121c2a7dec343_f136c8d3454dc579788290144eb51974.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/8a6e692e3c6ff9a87b9121c2a7dec343_f136c8d3454dc579788290144eb51974.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "cdb764c9d43edede0254",
+      "kind": "metaverse_platform",
+      "label": "c4793279e61925232b319846884b85bf_0e7d416abf9706475e72b235f5f60bb7.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/c4793279e61925232b319846884b85bf_0e7d416abf9706475e72b235f5f60bb7.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "le\"> Compatible / Partner Metaverse Platforms <img style=\"\" id=\"img6a7bf6487041c\" src=\"/data/drive/2023/08/3DVAULT_poster_03_widescreen_04.png\" clas"
+      }
+    },
+    {
+      "leadId": "762e423abe6fd379fd4f",
+      "kind": "metaverse_platform",
+      "label": "34da5002db507c487ec0a5f2cfe8cf37_f2168cd537368f6835fa89be3087046e.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/34da5002db507c487ec0a5f2cfe8cf37_f2168cd537368f6835fa89be3087046e.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": ""
+      }
+    },
+    {
+      "leadId": "f075477347956f4186db",
+      "kind": "metaverse_platform",
+      "label": "4875816d66ad4083d9a661dbf86e1d25_b2b684fc68af060d8989cb498644b7ea.jpg",
+      "url": "https://cdn.baako.com/assets/n",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/4875816d66ad4083d9a661dbf86e1d25_b2b684fc68af060d8989cb498644b7ea.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_context_link_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://cdn.baako.com/assets/n"
+        ],
+        "humanText": "b5f39d3036911ad.png\" alt=\"3228c9f921e2c28497d78b6147c89f55_228b9bed4c5e2916db5f39d3036911ad.png\" /> <script src=\"https://cdn.baako.com/assets/n"
+      }
+    },
+    {
+      "leadId": "a70742429af5fe0fff52",
+      "kind": "metaverse_platform",
+      "label": "235e4981ec9a62ec66d7be24faa01e8c_e23fd833a5b6157fee9e505002b027a3.jpg",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/235e4981ec9a62ec66d7be24faa01e8c_e23fd833a5b6157fee9e505002b027a3.jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "d7f9c0eeac2386d.jpg\" alt=\"25b3e200da0531cf28374f0f4dd54029_4dbaaff85bd895ba0d7f9c0eeac2386d.jpg\" /> </scrip"
+      }
+    },
+    {
+      "leadId": "6e9b998b81ee7cd5ac99",
+      "kind": "metaverse_platform",
+      "label": "4ade9adc5ecb4eff7c422b8d00dcd55c_cb3ec89490117f597425030f6f2640ee.png",
+      "url": "https://cdn.baako.com/a",
+      "imageUrl": "https://drive.baako.com/2023/09/_cache/4ade9adc5ecb4eff7c422b8d00dcd55c_cb3ec89490117f597425030f6f2640ee.png",
+      "source": "3dvault",
+      "sourceRole": "curated_context_link_lead",
+      "sourceContext": {
+        "candidateLinks": [
+          "https://cdn.baako.com/a"
+        ],
+        "humanText": "ac06c2439ec8819.jpg\" alt=\"a07b9cabff05d78c0e602351d499bb1e_325878e4963e039b4ac06c2439ec8819.jpg\" /> <script src=\"https://cdn.baako.com/a"
+      }
+    },
+    {
+      "leadId": "4453275f90baf99b3f40",
+      "kind": "metaverse_platform",
+      "label": "0bbdf228fc54449da4fff85ac7fe5a45_2524d8bcce6953c15d0b82ef073bbfcb.png",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2024/03/_cache/0bbdf228fc54449da4fff85ac7fe5a45_2524d8bcce6953c15d0b82ef073bbfcb.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "07547d2bed0f754.jpg\" alt=\"03e1adabd47c3da01f7a0f1e03ad002c_27d02da15e748754207547d2bed0f754.jpg\" /> </h"
+      }
+    },
+    {
+      "leadId": "4aff8580ab812d005750",
+      "kind": "metaverse_platform",
+      "label": "937b9d693e77807c9b81d0992df567dc_10193d0e92c68c95012c279489befedd.png.webp",
+      "url": "",
+      "imageUrl": "https://drive.baako.com/2023/06/_cache/937b9d693e77807c9b81d0992df567dc_10193d0e92c68c95012c279489befedd.png.webp",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "b6f1f5f6cc871d5.png\" alt=\"6fa4d0cc7936a531f83a8a41d169644f_850feb1ebff849df3b6f1f5f6cc871d5.png\" /> Compatible / Partner Metaverse Platforms"
+      }
+    },
+    {
+      "leadId": "5b4c2992eacb7f5ef987",
+      "kind": "metaverse_platform",
+      "label": "",
+      "url": "",
+      "imageUrl": "https://3dvault.xyz/data/drive/2023/08/3DVAULT_poster_03_widescreen_04.png",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": "85bf_0e7d416abf9706475e72b235f5f60bb7.jpg\" alt=\"c4793279e61925232b319846884b85bf_0e7d416abf9706475e72b235f5f60bb7.jpg\" />"
+      },
+      "contextLabelHint": "85bf_0e7d416abf9706475e72b235f5f60bb7.jpg\" alt=\"c4793279e61925232b319846884b85bf_0e7d416abf9706475e72b235f5f60bb7.jpg\" />"
+    },
+    {
+      "leadId": "1f990bbb9fbac7e5e270",
+      "kind": "metaverse_platform",
+      "label": "",
+      "url": "",
+      "imageUrl": "https://3dvault.xyz/data/drive/2023/02/3dvault-poster-03-widescreen_(1).jpg",
+      "source": "3dvault",
+      "sourceRole": "curated_image_lead",
+      "sourceContext": {
+        "candidateLinks": [],
+        "humanText": ""
+      }
+    }
+  ],
+  "modelUrlSignals": [],
+  "contractSignals": [],
+  "openseaSignals": []
+}
