@@ -40,7 +40,7 @@ def test_select_targets_requires_exact_contract_and_skips_stageable():
     assert summary == {
         "registryRowsWithExplicitVrmField": 1,
         "skippedAlreadyStageable": 0,
-        "skippedMissingExactCatalogIdentity": 0,
+        "skippedMissingOrAmbiguousExactIdentity": 0,
         "selectedTargets": 1,
     }
 
@@ -64,7 +64,15 @@ def test_select_targets_never_fuzzy_matches_names():
         set(),
     )
     assert targets == []
-    assert summary["skippedMissingExactCatalogIdentity"] == 1
+    assert summary["skippedMissingOrAmbiguousExactIdentity"] == 1
+
+
+def test_select_targets_rejects_ambiguous_contract_identity():
+    rows = documented.parse_registry(REGISTRY)
+    contract = rows[0]["contract"]
+    targets, summary = documented.select_targets(rows, {contract: None}, set())
+    assert targets == []
+    assert summary["skippedMissingOrAmbiguousExactIdentity"] == 1
 
 
 def test_stageable_contracts_uses_chain_and_contract_identity():
@@ -133,7 +141,7 @@ def test_inspect_target_deduplicates_and_binary_validates(monkeypatch):
         {
             "registryRowsWithExplicitVrmField": 1,
             "skippedAlreadyStageable": 0,
-            "skippedMissingExactCatalogIdentity": 0,
+            "skippedMissingOrAmbiguousExactIdentity": 0,
             "selectedTargets": 1,
         },
     )
