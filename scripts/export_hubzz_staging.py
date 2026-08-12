@@ -461,9 +461,18 @@ def stage_record(
         warnings.append("partial_avatar_inventory")
     if purchase_gated(row) is None:
         warnings.append("license_requires_review")
-    if not (public_url(row["banner_image_url"]) if "banner_image_url" in row.keys() else None):
+    dedicated_banner = public_url(row["banner_image_url"]) if "banner_image_url" in row.keys() else None
+    pfp_url = (public_url(row["image_url"]) if "image_url" in row.keys() else None) or (
+        public_url(row["sample_nft_image"]) if "sample_nft_image" in row.keys() else None
+    )
+    banner_url = dedicated_banner or pfp_url
+    banner_source = "collection_banner" if dedicated_banner else ("pfp_fallback" if pfp_url else "missing")
+    banner_fallback = dedicated_banner is None and pfp_url is not None
+    if banner_fallback:
+        warnings.append("banner_uses_pfp_fallback")
+    if not banner_url:
         warnings.append("missing_banner")
-    if not (public_url(row["image_url"]) if "image_url" in row.keys() else None):
+    if not pfp_url:
         warnings.append("missing_pfp")
 
     facts = {
@@ -521,9 +530,8 @@ def stage_record(
         "copyright": None,
         "mintDate": norm(row["release_date"]) if "release_date" in row.keys() else None,
         "totalMints": total_mints(row),
-        "bannerUrl": public_url(row["banner_image_url"]) if "banner_image_url" in row.keys() else None,
-        "pfpUrl": (public_url(row["image_url"]) if "image_url" in row.keys() else None)
-        or (public_url(row["sample_nft_image"]) if "sample_nft_image" in row.keys() else None),
+        "bannerUrl": banner_url,
+        "pfpUrl": pfp_url,
         "purchaseGated": purchase_gated(row),
         "listed": False,
         "status": "staged",
@@ -563,6 +571,12 @@ def stage_record(
             "source": evidence.source,
             "chain": evidence.chain,
             "contract": evidence.contract,
+        },
+        "bannerEvidence": {
+            "url": banner_url,
+            "source": banner_source,
+            "fallback": banner_fallback,
+            "observedAt": generated_at,
         },
         "warnings": warnings,
     }
@@ -644,6 +658,15 @@ def validate_bundle(bundle: dict[str, Any]) -> list[str]:
         seen.add(slug)
         if record.get("status") != "staged" or record.get("listed") is not False:
             errors.append(f"{prefix}: must be staged and unlisted")
+        if not public_url(record.get("bannerUrl")):
+            errors.append(f"{prefix}: missing public bannerUrl")
+        banner_evidence = item.get("bannerEvidence") or {}
+        if banner_evidence.get("url") != record.get("bannerUrl"):
+            errors.append(f"{prefix}: banner evidence mismatch")
+        if banner_evidence.get("source") not in {"collection_banner", "pfp_fallback"}:
+            errors.append(f"{prefix}: invalid banner evidence source")
+        if record.get("bannerUrl") == record.get("pfpUrl") and banner_evidence.get("fallback") is not True:
+            errors.append(f"{prefix}: banner/PFP reuse must be explicit fallback")
         if item.get("stageClass") not in {"bulk_ready", "partial_ready", "preview_ready"}:
             errors.append(f"{prefix}: invalid stageClass")
         source = item.get("sourceAssets") or {}

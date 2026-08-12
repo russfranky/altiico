@@ -109,3 +109,31 @@ def test_successful_request_obeys_reset_after_releasing_response(monkeypatch):
     result = asyncio.run(client.get_collection("example"))
     assert result == {"ok": True}
     assert waits == [3.0]
+
+
+def test_catalog_read_surfaces_use_current_routes():
+    client = OpenSeaClient(api_key="test")
+    calls = []
+    async def fake_request(method, url, **kwargs):
+        calls.append((method, url, kwargs))
+        return {"ok": True}
+    client._request = fake_request
+    async def exercise():
+        await client.get_chains()
+        await client.get_collection_traits("avatars")
+        await client.get_collection_events("avatars", limit=200)
+        await client.get_nft_collection("ethereum", "0xabc", "1")
+        await client.get_nft_metadata("ethereum", "0xabc", "1")
+        await client.validate_nft_metadata("ethereum", "0xabc", "1", ignore_cached_item_urls=True)
+        await client.get_best_listings("avatars", limit=10)
+        await client.get_collection_offers("avatars", limit=10)
+    asyncio.run(exercise())
+    routes = [(method, url) for method, url, _ in calls]
+    assert ("GET", "/chains") in routes
+    assert ("GET", "/traits/avatars") in routes
+    assert ("GET", "/events/collection/avatars") in routes
+    assert ("GET", "/chain/ethereum/contract/0xabc/nfts/1/collection") in routes
+    assert ("GET", "/metadata/ethereum/0xabc/1") in routes
+    assert ("POST", "/chain/ethereum/contract/0xabc/nfts/1/validate-metadata") in routes
+    assert ("GET", "/listings/collection/avatars/best") in routes
+    assert ("GET", "/offers/collection/avatars") in routes

@@ -1,0 +1,91 @@
+name: OpenSea full-surface refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/opensea-full-surface-banners]
+    paths:
+      - scripts/opensea_client.py
+      - scripts/audit_opensea_surface.py
+      - scripts/export_hubzz_staging.py
+      - .github/workflows/opensea-full-surface-refresh.yml
+
+permissions:
+  contents: write
+
+env:
+  OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/opensea-full-surface-banners
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Require OpenSea credential
+        run: test -n "$OPENSEA_API_KEY"
+      - name: Refresh collection media from OpenSea
+        run: python scripts/enrich_opensea.py --meta-only --force
+      - name: Audit useful OpenSea read surfaces
+        run: |
+          # Media refresh covers every known OpenSea slug. This capability audit
+          # uses a representative bounded slice because it fans out across
+          # collection, stats, traits, events, listings/offers, NFT metadata,
+          # metadata validation, and collection-by-NFT identity endpoints.
+          python scripts/audit_opensea_surface.py \
+            --output data/opensea_surface_report.json \
+            --limit 12 \
+            --sample-nfts 2 \
+            --concurrency 2 \
+            --collection-concurrency 3
+      - name: Regenerate one coherent catalog snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+      - name: Measure Hubzz banner coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          bundle=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
+          sets=bundle['sets']
+          dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
+          fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
+          missing=sum(not (i.get('set') or {}).get('bannerUrl') for i in sets)
+          print(json.dumps({'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing},indent=2))
+          assert missing == 0
+          assert dedicated + fallback == len(sets)
+          PY
+      - name: Verify repository
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opensea-full-surface-report
+          path: data/opensea_surface_report.json
+      - name: Commit refreshed evidence and artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/vrm_index.db data/opensea_surface_report.json static/data static/sw.js docs/hubzz-prealpha-staging.md
+          if git diff --cached --quiet; then
+            echo 'OpenSea evidence already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh OpenSea media and Hubzz banner evidence [skip ci]'
+          git push

@@ -1,0 +1,112 @@
+name: Authoritative multi-source refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/moralis-cross-reference]
+    paths:
+      - scripts/etherscan_client.py
+      - scripts/audit_etherscan_authority.py
+      - scripts/discover_moralis_models.py
+      - scripts/build_authoritative_consensus.py
+      - .github/workflows/authoritative-multisource-refresh.yml
+
+permissions:
+  contents: write
+
+env:
+  OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+  MORALIS_API_KEY: ${{ secrets.MORALIS_API_KEY }}
+  MORALIS_KEY: ${{ secrets.MORALIS_KEY }}
+  ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+  ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
+
+jobs:
+  refresh:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/moralis-cross-reference
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Require source credentials
+        run: |
+          test -n "$OPENSEA_API_KEY"
+          test -n "$MORALIS_API_KEY" || test -n "$MORALIS_KEY"
+          test -n "$ETHERSCAN_API_KEY" || test -n "$ETHERSCAN_KEY"
+      - name: Compile evidence pipeline
+        run: |
+          python -m py_compile scripts/opensea_client.py scripts/moralis_client.py scripts/etherscan_client.py \
+            scripts/cross_reference_sources.py scripts/build_source_consensus.py scripts/discover_moralis_models.py \
+            scripts/audit_etherscan_authority.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
+      - name: Refresh OpenSea collection media
+        run: python scripts/enrich_opensea.py --meta-only --force
+      - name: Cross-reference Moralis and discover model signals
+        run: |
+          python scripts/cross_reference_sources.py --output data/source_cross_reference_report.json --concurrency 3 --collection-concurrency 3
+          python scripts/build_source_consensus.py
+          python scripts/discover_moralis_models.py --output data/moralis_model_discovery.json --tokens 25 --concurrency 3 --collection-concurrency 3
+      - name: Audit Etherscan contract authority
+        run: |
+          python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
+          python scripts/build_authoritative_consensus.py
+      - name: Regenerate Hubzz and catalog artifacts
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+      - name: Assert banner and authority coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
+          authority=json.loads(Path('data/authoritative_consensus.json').read_text())
+          models=json.loads(Path('data/moralis_model_discovery.json').read_text())
+          sets=staging['sets']
+          missing=[i['set']['slug'] for i in sets if not i['set'].get('bannerUrl')]
+          dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
+          fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
+          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary']}
+          print(json.dumps(summary,indent=2))
+          assert not missing
+          assert dedicated+fallback==len(sets)
+          assert authority['summary']['collections'] > 0
+          PY
+      - name: Full repository verification
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: authoritative-multisource-evidence
+          path: |
+            data/source_cross_reference_report.json
+            data/source_consensus.json
+            data/moralis_model_discovery.json
+            data/etherscan_authority_report.json
+            data/authoritative_consensus.json
+      - name: Commit refreshed evidence and generated artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/source_cross_reference_report.json data/source_consensus.json data/moralis_model_discovery.json \
+            data/etherscan_authority_report.json data/authoritative_consensus.json data/vrm_index.db \
+            static/data static/sw.js docs/hubzz-prealpha-staging.md
+          if git diff --cached --quiet; then
+            echo 'Evidence and generated artifacts already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh authoritative multi-source catalog evidence [skip ci]'
+          git push

@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-08-11T20:24:18Z",
-  "snapshot_id": "vrmcat-v1-2075d3173cece90b0e59bd0b",
+  "generated_at": "2026-08-12T01:09:31Z",
+  "snapshot_id": "vrmcat-v1-4b9d4b7cb055722471e8dfea",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -351,6 +351,31 @@
       }
     },
     {
+      "id": "eip155:360/erc721:0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+      "name": "GARY GRIFTER",
+      "tier": "A",
+      "identifiers": {
+        "chain": "shape",
+        "chain_id": "360",
+        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+        "opensea_slug": "gary-grifter"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
+      }
+    },
+    {
       "id": "eip155:10/erc721:0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
       "name": "Halloween Rising",
       "tier": "A",
@@ -510,31 +535,6 @@
       }
     },
     {
-      "id": "eip155:360/erc721:0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-      "name": "NeonGlitch86 Collection (Shape side)",
-      "tier": "A",
-      "identifiers": {
-        "chain": "shape",
-        "chain_id": "360",
-        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-        "opensea_slug": "gary-grifter"
-      },
-      "resolution": {
-        "strategy": "unavailable"
-      },
-      "license": {
-        "use_scope": "everyone",
-        "commercial_scope": "corporation",
-        "credit": "unnecessary",
-        "redistribute_original": true,
-        "modify": true,
-        "redistribute_modified": true,
-        "corporate_use": true,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": true
-      }
-    },
-    {
       "id": "eip155:1/erc721:0x1459c170e940e52628d9917c85772f7e897e7c0c",
       "name": "OG Meta Meeples PFP",
       "tier": "A",
@@ -620,7 +620,7 @@
     },
     {
       "id": "eip155:1/erc721:0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "name": "PixelBeasts",
+      "name": "Pixelbeasts",
       "tier": "A",
       "identifiers": {
         "chain": "ethereum",
@@ -777,6 +777,48 @@
       }
     },
     {
+      "id": "eip155:1/erc721:0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+      "name": "ByWassies",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+        "opensea_slug": "bywassies"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "metadata_url": {
+          "template": "https://fruuydfac2a4b4v5rip3ovqv5gg2sbaqgcgwnbnztlbt7xed7ela.arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/4050.json/"
+        },
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
+      }
+    },
+    {
       "id": "eip155:1/erc721:0x97597002980134bea46250aa0510c9b90d87a587",
       "name": "Chain Runners",
       "tier": "B",
@@ -886,7 +928,7 @@
     },
     {
       "id": "eip155:1/erc721:0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "name": "CyberAnimeDOLL: Avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
@@ -910,19 +952,19 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-      "name": "Elysium Shell: Next - Mecha",
+      "id": "eip155:1/erc721:0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+      "name": "DASK - Dead Army Skeleton Klub",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-        "opensea_slug": "esnx-mecha"
+        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+        "opensea_slug": "dask-dead-army-skeleton-klub"
       },
       "resolution": {
         "strategy": "token_metadata",
         "metadata_url": {
-          "template": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/{token_id}/metadata.json"
+          "template": "https://theklubrises.mypinata.cloud/ipfs/QmXQMrhqwJ2vJFbxCjJfZBZ7GTfrCwUJzJhJcPnQv9fdRf/{token_id}/metadata.json"
         },
         "vrm_pointer": {
           "json_pointer_candidates": [
@@ -952,19 +994,19 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "name": "Immadegen (VOID)",
+      "id": "eip155:1/erc721:0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+      "name": "Elysium Shell: Next - Mecha",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-        "opensea_slug": "visitors-of-imma-degen"
+        "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+        "opensea_slug": "esnx-mecha"
       },
       "resolution": {
         "strategy": "token_metadata",
         "metadata_url": {
-          "template": "https://void-explorer.netlify.app/void_metadata/{token_id}/metadata.json"
+          "template": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/{token_id}/metadata.json"
         },
         "vrm_pointer": {
           "json_pointer_candidates": [
@@ -1037,7 +1079,7 @@
     },
     {
       "id": "metatravelers",
-      "name": "MetaTravelers",
+      "name": "MetaTravelers: Nibiru",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
@@ -1061,7 +1103,7 @@
     },
     {
       "id": "eip155:137/erc721:0xcdffc2fae679814913305c13edb86fe7967dbeea",
-      "name": "NeonGlitch86 Collection (Polygon side)",
+      "name": "NG86SHAPE",
       "tier": "B",
       "identifiers": {
         "chain": "polygon",
@@ -1211,48 +1253,6 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "name": "The Dask",
-      "tier": "B",
-      "identifiers": {
-        "chain": "ethereum",
-        "chain_id": "1",
-        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-        "opensea_slug": "dask-dead-army-skeleton-klub"
-      },
-      "resolution": {
-        "strategy": "token_metadata",
-        "metadata_url": {
-          "template": "https://theklubrises.mypinata.cloud/ipfs/QmXQMrhqwJ2vJFbxCjJfZBZ7GTfrCwUJzJhJcPnQv9fdRf/{token_id}/metadata.json"
-        },
-        "vrm_pointer": {
-          "json_pointer_candidates": [
-            "/vrm_url",
-            "/vrm",
-            "/asset",
-            "/animation_url",
-            "/files/0/uri"
-          ],
-          "required_mime": [
-            "model/gltf-binary",
-            "model/vrm",
-            "application/octet-stream"
-          ]
-        }
-      },
-      "license": {
-        "use_scope": "unknown",
-        "commercial_scope": "unknown",
-        "credit": "unknown",
-        "redistribute_original": false,
-        "modify": false,
-        "redistribute_modified": false,
-        "corporate_use": false,
-        "terminates_on_transfer": false,
-        "hate_speech_termination": false
-      }
-    },
-    {
       "id": "eip155:1/erc721:0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
       "name": "Toxic Skulls Club",
       "tier": "B",
@@ -1295,19 +1295,19 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "name": "Voltz",
+      "id": "eip155:1/erc721:0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+      "name": "VOID - Visitors of Imma Degen",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-        "opensea_slug": "voltz-avatars"
+        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "opensea_slug": "visitors-of-imma-degen"
       },
       "resolution": {
         "strategy": "token_metadata",
         "metadata_url": {
-          "template": "https://voltz.me/en/voltz-vault"
+          "template": "https://void-explorer.netlify.app/void_metadata/{token_id}/metadata.json"
         },
         "vrm_pointer": {
           "json_pointer_candidates": [
@@ -1337,19 +1337,19 @@
       }
     },
     {
-      "id": "eip155:1/erc721:0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "name": "Wassies",
+      "id": "eip155:1/erc721:0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+      "name": "VOLTZ Avatars",
       "tier": "B",
       "identifiers": {
         "chain": "ethereum",
         "chain_id": "1",
-        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-        "opensea_slug": "bywassies"
+        "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+        "opensea_slug": "voltz-avatars"
       },
       "resolution": {
         "strategy": "token_metadata",
         "metadata_url": {
-          "template": "https://fruuydfac2a4b4v5rip3ovqv5gg2sbaqgcgwnbnztlbt7xed7ela.arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/4050.json/"
+          "template": "https://voltz.me/en/voltz-vault"
         },
         "vrm_pointer": {
           "json_pointer_candidates": [

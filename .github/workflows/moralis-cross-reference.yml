@@ -1,0 +1,76 @@
+name: Moralis source cross-reference
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/moralis-cross-reference]
+    paths:
+      - scripts/moralis_client.py
+      - scripts/cross_reference_sources.py
+      - scripts/build_source_consensus.py
+      - .github/workflows/moralis-cross-reference.yml
+
+permissions:
+  contents: write
+
+env:
+  MORALIS_API_KEY: ${{ secrets.MORALIS_API_KEY }}
+  MORALIS_KEY: ${{ secrets.MORALIS_KEY }}
+
+jobs:
+  cross-reference:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/moralis-cross-reference
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Require Moralis credential
+        run: test -n "$MORALIS_API_KEY" || test -n "$MORALIS_KEY"
+      - name: Compile clients
+        run: python -m py_compile scripts/moralis_client.py scripts/cross_reference_sources.py scripts/build_source_consensus.py
+      - name: Cross-reference all supported EVM catalog contracts
+        run: |
+          python scripts/cross_reference_sources.py \
+            --output data/source_cross_reference_report.json \
+            --concurrency 3 \
+            --collection-concurrency 3
+      - name: Build consensus and review queue
+        run: python scripts/build_source_consensus.py
+      - name: Summarize conflicts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('data/source_cross_reference_report.json').read_text())
+          consensus=json.loads(Path('data/source_consensus.json').read_text())
+          print(json.dumps(report['summary'], indent=2))
+          print(json.dumps(consensus['summary'], indent=2))
+          print('review queue:')
+          print(json.dumps(consensus['reviewQueue'][:20], indent=2))
+          if report['summary']['collectionsInspected'] < 1:
+              raise SystemExit('No collections were cross-referenced')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-cross-reference-report
+          path: |
+            data/source_cross_reference_report.json
+            data/source_consensus.json
+      - name: Commit source evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/source_cross_reference_report.json data/source_consensus.json
+          if git diff --cached --quiet; then
+            echo 'Cross-reference evidence already current.'
+            exit 0
+          fi
+          git commit -m 'Build source consensus from Moralis evidence [skip ci]'
+          git push
