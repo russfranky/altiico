@@ -5,6 +5,7 @@ on:
     branches: [agent/opensea-full-surface-banners]
     paths:
       - scripts/_apply_opensea_banner_upgrade.py
+      - .github/workflows/apply-opensea-banner-upgrade.yml
 
 permissions:
   contents: write
