@@ -64,11 +64,71 @@ jobs:
             scripts/audit_etherscan_authority.py scripts/audit_bitquery_evidence.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
       - name: Refresh OpenSea collection media
         run: python scripts/enrich_opensea.py --meta-only --force
-      - name: Cross-reference Moralis and discover model signals
+      - name: Refresh Moralis without destroying last-good evidence
         run: |
-          python scripts/cross_reference_sources.py --output data/source_cross_reference_report.json --concurrency 3 --collection-concurrency 3
+          mkdir -p /tmp/vrm-source-refresh
+          python scripts/cross_reference_sources.py --output /tmp/vrm-source-refresh/moralis.json --concurrency 3 --collection-concurrency 3
+          python scripts/discover_moralis_models.py --output /tmp/vrm-source-refresh/moralis-models.json --tokens 25 --concurrency 3 --collection-concurrency 3
+          python - <<'PY'
+          import json, subprocess, shutil
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root=Path('.')
+          cross=json.loads(Path('/tmp/vrm-source-refresh/moralis.json').read_text())
+          models=json.loads(Path('/tmp/vrm-source-refresh/moralis-models.json').read_text())
+          cs=cross.get('summary',{})
+          ms=models.get('summary',{})
+          cross_ok=cs.get('collectionsInspected',0)>0 and cs.get('collectionsWithErrors',0)<cs.get('collectionsInspected',0)
+          models_ok=ms.get('collectionsInspected',0)>0 and ms.get('collectionsWithErrors',0)<ms.get('collectionsInspected',0)
+
+          def restore_last_good(path: str):
+              target=Path(path)
+              current_ok=target.exists()
+              if current_ok:
+                  try:
+                      data=json.loads(target.read_text())
+                      summary=data.get('summary',{})
+                      inspected=summary.get('collectionsInspected', summary.get('collections',0))
+                      errors=summary.get('collectionsWithErrors',0)
+                      current_ok=bool(inspected) and errors < inspected
+                  except Exception:
+                      current_ok=False
+              if current_ok:
+                  return 'current-committed'
+              try:
+                  payload=subprocess.check_output(['git','show',f'origin/main:{path}'])
+                  target.write_bytes(payload)
+                  return 'origin-main-last-good'
+              except Exception:
+                  return 'unavailable'
+
+          if cross_ok:
+              shutil.copyfile('/tmp/vrm-source-refresh/moralis.json','data/source_cross_reference_report.json')
+              cross_mode='fresh'
+          else:
+              cross_mode=restore_last_good('data/source_cross_reference_report.json')
+          if models_ok:
+              shutil.copyfile('/tmp/vrm-source-refresh/moralis-models.json','data/moralis_model_discovery.json')
+              model_mode='fresh'
+          else:
+              model_mode=restore_last_good('data/moralis_model_discovery.json')
+
+          health={
+            'generatedAt': datetime.now(timezone.utc).isoformat(),
+            'moralis': {
+              'freshCrossReference': cross_ok,
+              'freshModelDiscovery': models_ok,
+              'crossReferenceMode': cross_mode,
+              'modelDiscoveryMode': model_mode,
+              'attemptSummary': cs,
+              'modelAttemptSummary': ms,
+            }
+          }
+          Path('data/source_health.json').write_text(json.dumps(health,indent=2)+'\n')
+          print(json.dumps(health,indent=2))
+          PY
           python scripts/build_source_consensus.py
-          python scripts/discover_moralis_models.py --output data/moralis_model_discovery.json --tokens 25 --concurrency 3 --collection-concurrency 3
       - name: Audit Etherscan contract authority
         run: python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
       - name: Audit Bitquery on-chain NFT evidence
@@ -90,16 +150,18 @@ jobs:
           authority=json.loads(Path('data/authoritative_consensus.json').read_text())
           models=json.loads(Path('data/moralis_model_discovery.json').read_text())
           bitquery=json.loads(Path('data/bitquery_evidence_report.json').read_text())
+          health=json.loads(Path('data/source_health.json').read_text())
           sets=staging['sets']
           missing=[i['set']['slug'] for i in sets if not i['set'].get('bannerUrl')]
           dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
           fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
-          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'bitquery':bitquery['summary']}
+          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'bitquery':bitquery['summary'],'sourceHealth':health}
           print(json.dumps(summary,indent=2))
           assert not missing
           assert dedicated+fallback==len(sets)
           assert authority['summary']['collections'] > 0
           assert bitquery['summary']['collectionsInspected'] > 0
+          assert bitquery['summary']['collectionsObservedOnchain'] > 0, 'Bitquery produced no positive on-chain observations'
           PY
       - name: Full repository verification
         run: |
@@ -115,6 +177,7 @@ jobs:
             data/source_cross_reference_report.json
             data/source_consensus.json
             data/moralis_model_discovery.json
+            data/source_health.json
             data/etherscan_authority_report.json
             data/bitquery_evidence_report.json
             data/authoritative_consensus.json
@@ -122,7 +185,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/source_cross_reference_report.json data/source_consensus.json data/moralis_model_discovery.json \
+          git add data/source_cross_reference_report.json data/source_consensus.json data/moralis_model_discovery.json data/source_health.json \
             data/etherscan_authority_report.json data/bitquery_evidence_report.json data/authoritative_consensus.json data/vrm_index.db \
             static/data static/sw.js docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
