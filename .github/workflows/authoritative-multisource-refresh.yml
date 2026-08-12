@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '23 8 * * 3'
   push:
-    branches: [agent/bitquery-evidence]
+    branches: [main, agent/bitquery-evidence]
     paths:
       - scripts/opensea_client.py
       - scripts/moralis_client.py
@@ -74,45 +74,68 @@ jobs:
           from datetime import datetime, timezone
           from pathlib import Path
 
-          root=Path('.')
           cross=json.loads(Path('/tmp/vrm-source-refresh/moralis.json').read_text())
           models=json.loads(Path('/tmp/vrm-source-refresh/moralis-models.json').read_text())
           cs=cross.get('summary',{})
           ms=models.get('summary',{})
-          cross_ok=cs.get('collectionsInspected',0)>0 and cs.get('collectionsWithErrors',0)<cs.get('collectionsInspected',0)
-          models_ok=ms.get('collectionsInspected',0)>0 and ms.get('collectionsWithErrors',0)<ms.get('collectionsInspected',0)
+
+          def healthy(data):
+              summary=(data or {}).get('summary',{})
+              inspected=summary.get('collectionsInspected', summary.get('collections',0))
+              errors=summary.get('collectionsWithErrors',0)
+              return bool(inspected) and errors < inspected
 
           def restore_last_good(path: str):
               target=Path(path)
-              current_ok=target.exists()
-              if current_ok:
+              if target.exists():
                   try:
-                      data=json.loads(target.read_text())
-                      summary=data.get('summary',{})
-                      inspected=summary.get('collectionsInspected', summary.get('collections',0))
-                      errors=summary.get('collectionsWithErrors',0)
-                      current_ok=bool(inspected) and errors < inspected
+                      if healthy(json.loads(target.read_text())):
+                          return 'current-committed'
                   except Exception:
-                      current_ok=False
-              if current_ok:
-                  return 'current-committed'
+                      pass
               try:
                   payload=subprocess.check_output(['git','show',f'origin/main:{path}'])
-                  target.write_bytes(payload)
-                  return 'origin-main-last-good'
+                  candidate=json.loads(payload)
+                  if healthy(candidate):
+                      target.write_bytes(payload)
+                      return 'origin-main-last-good'
               except Exception:
-                  return 'unavailable'
+                  pass
+              return 'unavailable'
 
+          cross_ok=healthy(cross)
+          models_ok=healthy(models)
           if cross_ok:
               shutil.copyfile('/tmp/vrm-source-refresh/moralis.json','data/source_cross_reference_report.json')
               cross_mode='fresh'
           else:
               cross_mode=restore_last_good('data/source_cross_reference_report.json')
+
           if models_ok:
               shutil.copyfile('/tmp/vrm-source-refresh/moralis-models.json','data/moralis_model_discovery.json')
               model_mode='fresh'
           else:
               model_mode=restore_last_good('data/moralis_model_discovery.json')
+              if model_mode == 'unavailable':
+                  placeholder={
+                    'schema':'moralis-model-discovery-v1',
+                    'generatedAt':datetime.now(timezone.utc).isoformat(),
+                    'availability':'unavailable',
+                    'reason':'latest Moralis attempt failed and no healthy committed model-discovery snapshot exists',
+                    'policy':'lead-only; no model candidates are asserted while source evidence is unavailable',
+                    'summary':{
+                      'collectionsInspected':0,
+                      'collectionsWithErrors':0,
+                      'nftsWithSignals':0,
+                      'modelCandidates':0,
+                      'unsupportedMediaNfts':0,
+                    },
+                    'collections':[],
+                  }
+                  Path('data/moralis_model_discovery.json').write_text(json.dumps(placeholder,indent=2)+'\n')
+
+          if cross_mode == 'unavailable':
+              raise SystemExit('Moralis refresh failed and no healthy last-good cross-reference exists')
 
           health={
             'generatedAt': datetime.now(timezone.utc).isoformat(),
@@ -155,7 +178,7 @@ jobs:
           missing=[i['set']['slug'] for i in sets if not i['set'].get('bannerUrl')]
           dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
           fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
-          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'bitquery':bitquery['summary'],'sourceHealth':health}
+          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'moralisModelAvailability':models.get('availability','available'),'bitquery':bitquery['summary'],'sourceHealth':health}
           print(json.dumps(summary,indent=2))
           assert not missing
           assert dedicated+fallback==len(sets)
