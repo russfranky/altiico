@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 
 const METADATA_URL = "https://m.cyberbrokers.com/mainnet/mech/419";
-const DIRECT_VRM_URL = "https://m.cyberbrokers.com/mainnet/mech/419/files/mech_1k.0.vrm";
+const DIRECT_VRM_URL = "https://m.cyberbrokers.com/eth/mech/419/files/mech_1k.0.vrm";
 const MAX_BYTES = 64 * 1024 * 1024;
 const FETCH_TIMEOUT_MS = 10_000;
 
@@ -17,9 +17,7 @@ function jsonResponse(payload, status = 200) {
 
 function validateGlb(buffer) {
   if (buffer.length < 20) return { validGlb: false, reason: "header_too_short" };
-  if (buffer.toString("ascii", 0, 4) !== "glTF") {
-    return { validGlb: false, reason: "invalid_glb_magic" };
-  }
+  if (buffer.toString("ascii", 0, 4) !== "glTF") return { validGlb: false, reason: "invalid_glb_magic" };
 
   const version = buffer.readUInt32LE(4);
   const declaredLength = buffer.readUInt32LE(8);
@@ -66,14 +64,8 @@ async function probeMetadata() {
     "user-agent": "vrm-catalog/1.0",
   });
   if (!attempt.response) return { ok: false, elapsedMs: attempt.elapsedMs, error: attempt.error };
-
-  const result = {
-    ok: attempt.response.ok,
-    elapsedMs: attempt.elapsedMs,
-    httpStatus: attempt.response.status,
-  };
+  const result = { ok: attempt.response.ok, elapsedMs: attempt.elapsedMs, httpStatus: attempt.response.status };
   if (!attempt.response.ok) return result;
-
   try {
     const metadata = await attempt.response.json();
     return {
