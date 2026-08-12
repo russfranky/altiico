@@ -1,7 +1,7 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-08-11T20:24:18Z`
-Snapshot: `vrmcat-v1-2075d3173cece90b0e59bd0b`
+Generated at: `2026-08-12T00:38:24Z`
+Snapshot: `vrmcat-v1-4b9d4b7cb055722471e8dfea`
 
 ## Summary
 
@@ -19,7 +19,7 @@ Snapshot: `vrmcat-v1-2075d3173cece90b0e59bd0b`
 |---|---|---:|---:|---|---|---|
 | `halloween-rising` | bulk_ready | 60 | 60 | optimism | review | license_requires_review |
 | `xmas-chibis` | bulk_ready | 80 | 80 | polygon | gated | none |
-| `NeonGlitch86-collection` | partial_ready | 9 | 9 | ethereum | open | partial_avatar_inventory, missing_banner |
+| `NeonGlitch86-collection` | partial_ready | 9 | 9 | ethereum | open | partial_avatar_inventory, banner_uses_pfp_fallback |
 | `avastars` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `boomboxheads-v2` | preview_ready | 1 | 1 | ethereum | open | sample_only |
 | `chuddie` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
@@ -28,7 +28,7 @@ Snapshot: `vrmcat-v1-2075d3173cece90b0e59bd0b`
 | `meebits` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `metaanigen` | preview_ready | 1 | 1 | ethereum | gated | sample_only |
 | `misfitpixels` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
-| `neonglitch86-collection-polygon-side` | preview_ready | 1 | 1 | polygon | review | sample_only, license_requires_review, missing_banner |
+| `neonglitch86-collection-polygon-side` | preview_ready | 1 | 1 | polygon | review | sample_only, license_requires_review, banner_uses_pfp_fallback |
 | `phettaverse-editions` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 
 ## Deferred queue
