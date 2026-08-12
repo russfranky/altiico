@@ -35,9 +35,10 @@
     const conflicts = rows.reduce((n, r) => n + Number(r.evidence_conflicts || 0), 0);
     const tokens = rows.reduce((n, r) => n + Number(r.evidence_tokens_sampled || 0), 0);
     const uris = rows.reduce((n, r) => n + Number(r.evidence_uris_observed || 0), 0);
-    const ready = rows.reduce((n, r) => n + Number(r.promotion_candidate_count || 0), 0);
+    const holderVrm = rows.filter((r) => r.avatar_delivery_status === 'holder_vrm_confirmed').length;
+    const considered3d = rows.filter((r) => r.avatar_delivery_status && r.avatar_delivery_status !== 'holder_vrm_confirmed').length;
 
-    summary.textContent = `${crawled.length}/${rows.length} crawled · ${sources} source observations · ${corroborations} corroborations · ${conflicts} conflicts · ${tokens} token samples · ${uris} URIs · ${ready} promotion-ready`;
+    summary.textContent = `${rows.length} collections · ${holderVrm} holder-VRM confirmed · ${considered3d} new 3D considerations · ${crawled.length} crawled · ${sources} source observations · ${corroborations} corroborations · ${conflicts} conflicts · ${tokens} token samples · ${uris} URIs`;
   }
 
   function evidenceText(row) {
@@ -55,8 +56,18 @@
     if (tokens) bits.push(`${tokens} token samples`);
     if (uris) bits.push(`${uris} URIs`);
     if (models) bits.push(`${models} model signals`);
-    if (ready) bits.push(`${ready} promotion-ready`);
+    if (ready) bits.push(`${ready} binary promotion-ready`);
     return bits.join(' · ');
+  }
+
+  function deliveryText(row) {
+    const status = row.avatar_delivery_status;
+    if (!status) return '';
+    if (status === 'holder_vrm_confirmed') return 'Holder VRM confirmed';
+    if (status === '3d_to_vrm') return '3D files · VRM conversion supported';
+    if (status === '3d_avatar_confirmed') return '3D avatar confirmed · VRM under review';
+    if (status === '3d_confirmed') return 'Full 3D collection · VRM under review';
+    return status;
   }
 
   function decorateRows(rows) {
@@ -64,19 +75,37 @@
     for (const article of document.querySelectorAll('.crow[aria-label]')) {
       const row = byName.get(article.getAttribute('aria-label') || '');
       if (!row) continue;
-      const text = evidenceText(row);
-      if (!text) continue;
-      let target = article.querySelector('.crawl-evidence-visible');
-      if (!target) {
-        target = document.createElement('div');
-        target.className = 'crawl-evidence-visible';
-        target.style.fontSize = '12px';
-        target.style.marginTop = '4px';
-        target.style.opacity = '0.78';
-        const main = article.querySelector('.crow-main');
-        if (main) main.appendChild(target);
+      const main = article.querySelector('.crow-main');
+      if (!main) continue;
+
+      const delivery = deliveryText(row);
+      let deliveryTarget = article.querySelector('.avatar-delivery-visible');
+      if (delivery) {
+        if (!deliveryTarget) {
+          deliveryTarget = document.createElement('div');
+          deliveryTarget.className = 'avatar-delivery-visible';
+          deliveryTarget.style.fontSize = '12px';
+          deliveryTarget.style.marginTop = '4px';
+          deliveryTarget.style.fontWeight = '600';
+          main.appendChild(deliveryTarget);
+        }
+        const evidence = row.avatar_delivery_evidence ? 'Evidence-backed collection-level status. Individual VRM bytes still use the strict binary validator.' : '';
+        deliveryTarget.innerHTML = `<span title="${escHtml(evidence)}">${escHtml(delivery)}</span>`;
       }
-      target.innerHTML = `<span title="Last crawler evidence: ${escHtml(row.evidence_last_seen || 'unknown')}">${escHtml(text)}</span>`;
+
+      const text = evidenceText(row);
+      let target = article.querySelector('.crawl-evidence-visible');
+      if (text) {
+        if (!target) {
+          target = document.createElement('div');
+          target.className = 'crawl-evidence-visible';
+          target.style.fontSize = '12px';
+          target.style.marginTop = '4px';
+          target.style.opacity = '0.78';
+          main.appendChild(target);
+        }
+        target.innerHTML = `<span title="Last crawler evidence: ${escHtml(row.evidence_last_seen || 'unknown')}">${escHtml(text)}</span>`;
+      }
     }
   }
 
