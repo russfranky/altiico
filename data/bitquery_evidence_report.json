@@ -1,0 +1,1005 @@
+{
+  "schema": "bitquery-nft-evidence-v1",
+  "generatedAt": "2026-08-12T01:22:56.795237+00:00",
+  "source": "Bitquery API v2 EVM Transfers",
+  "policy": {
+    "role": "independent on-chain transfer, NFT identity and token URI corroboration",
+    "vrmPromotion": "Bitquery URI/model signals are candidates only; binary GLB 2.0 plus VRM/VRMC_vrm validation remains required"
+  },
+  "summary": {
+    "collectionsInspected": 58,
+    "collectionsObservedOnchain": 0,
+    "collectionsWithErrors": 58,
+    "tokensSampled": 0,
+    "transferUris": 0,
+    "modelSignalTokens": 0
+  },
+  "collections": [
+    {
+      "catalogId": "a3ac-0x62eb14",
+      "name": "AdWorld",
+      "chain": "ethereum",
+      "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
+      "observedAt": "2026-08-12T01:21:19.612097+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0xaad35c",
+      "name": "Akutars",
+      "chain": "ethereum",
+      "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
+      "observedAt": "2026-08-12T01:21:19.612276+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "allstarz-psx",
+      "name": "Allstarz PSX",
+      "chain": "ethereum",
+      "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "observedAt": "2026-08-12T01:21:19.612401+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0x1ac7a2",
+      "name": "ArbiDudesGenOne",
+      "chain": "arbitrum",
+      "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
+      "observedAt": "2026-08-12T01:21:20.281428+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0xc1fcf3",
+      "name": "Arbibots",
+      "chain": "arbitrum",
+      "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
+      "observedAt": "2026-08-12T01:21:20.313335+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "avastars",
+      "name": "Avastars",
+      "chain": "ethereum",
+      "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
+      "observedAt": "2026-08-12T01:21:20.322662+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "boomboxheads-v2",
+      "name": "Boomboxheads V2",
+      "chain": "ethereum",
+      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "observedAt": "2026-08-12T01:21:20.413477+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "bourey-vs-bulley-bourverse",
+      "name": "Bourey vs Bulley: Bourverse",
+      "chain": "ethereum",
+      "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
+      "observedAt": "2026-08-12T01:21:20.480305+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "wassies",
+      "name": "ByWassies",
+      "chain": "ethereum",
+      "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+      "observedAt": "2026-08-12T01:21:20.492586+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "chain": "ethereum",
+      "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+      "observedAt": "2026-08-12T01:21:20.545462+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "chain-runners",
+      "name": "Chain Runners",
+      "chain": "ethereum",
+      "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
+      "observedAt": "2026-08-12T01:21:20.627909+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "chametheon",
+      "name": "Chametheon",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:21:20.662452+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "chain": "ethereum",
+      "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
+      "observedAt": "2026-08-12T01:21:20.750923+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "chuddie",
+      "name": "Chuddies",
+      "chain": "ethereum",
+      "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+      "observedAt": "2026-08-12T01:21:27.528536+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "cyberanimedoll-avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:21:27.608603+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "cyberbrokers",
+      "name": "CyberBrokers",
+      "chain": "ethereum",
+      "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
+      "observedAt": "2026-08-12T01:21:27.615415+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "chain": "ethereum",
+      "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+      "observedAt": "2026-08-12T01:21:34.213027+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "coldie",
+      "name": "DEyes Legends by Coldie",
+      "chain": "ethereum",
+      "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+      "observedAt": "2026-08-12T01:21:34.305412+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "name": "DickButtVerse",
+      "chain": "ethereum",
+      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+      "observedAt": "2026-08-12T01:21:34.472229+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "elysium-shell-next-mecha",
+      "name": "Elysium Shell: Next - Mecha",
+      "chain": "ethereum",
+      "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+      "observedAt": "2026-08-12T01:21:40.868289+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xccc441",
+      "name": "FLUF World",
+      "chain": "ethereum",
+      "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
+      "observedAt": "2026-08-12T01:21:41.029696+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x369156",
+      "name": "Flooz GEN F",
+      "chain": "ethereum",
+      "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
+      "observedAt": "2026-08-12T01:21:41.200533+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "fly-frogs",
+      "name": "Fly Frogs",
+      "chain": "ethereum",
+      "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
+      "observedAt": "2026-08-12T01:21:47.615314+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "forgottenruneswizardscult",
+      "name": "Forgotten Runes Wizards Cult",
+      "chain": "ethereum",
+      "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+      "observedAt": "2026-08-12T01:21:47.858206+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "frutiger-anons",
+      "name": "Frutiger Anons",
+      "chain": "ethereum",
+      "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
+      "observedAt": "2026-08-12T01:21:48.318324+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x14c447",
+      "name": "Fyat Lux (Dawn Collection)",
+      "chain": "ethereum",
+      "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
+      "observedAt": "2026-08-12T01:21:54.208190+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "halloween-rising",
+      "name": "Halloween Rising",
+      "chain": "optimism",
+      "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+      "observedAt": "2026-08-12T01:21:54.882974+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x86fc6f",
+      "name": "Jadu AVA",
+      "chain": "ethereum",
+      "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
+      "observedAt": "2026-08-12T01:21:55.014803+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0xd2F668",
+      "name": "Karafuru",
+      "chain": "ethereum",
+      "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
+      "observedAt": "2026-08-12T01:22:00.955522+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x324F60",
+      "name": "Koala 2025 Collector's Briefcase",
+      "chain": "base",
+      "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
+      "observedAt": "2026-08-12T01:22:01.778292+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "mona-avatars",
+      "name": "MONA Avatars",
+      "chain": "ethereum",
+      "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
+      "observedAt": "2026-08-12T01:22:01.829380+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "meebits",
+      "name": "Meebits",
+      "chain": "ethereum",
+      "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "observedAt": "2026-08-12T01:22:07.579033+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted"
+      ]
+    },
+    {
+      "catalogId": "metaanigen",
+      "name": "MetaaniGEN",
+      "chain": "ethereum",
+      "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
+      "observedAt": "2026-08-12T01:22:08.699491+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x223ef0",
+      "name": "Metashima - Lightning",
+      "chain": "ethereum",
+      "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
+      "observedAt": "2026-08-12T01:22:08.819009+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "misfitpixels",
+      "name": "MisfitPIXELS",
+      "chain": "ethereum",
+      "contract": "0x618951345638caa062259cdbed445d4fb661b774",
+      "observedAt": "2026-08-12T01:22:15.021813+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0x235817",
+      "name": "Moonbirds",
+      "chain": "ethereum",
+      "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
+      "observedAt": "2026-08-12T01:22:15.657044+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "neonglitch86-collection-polygon-side",
+      "name": "NG86SHAPE",
+      "chain": "polygon",
+      "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
+      "observedAt": "2026-08-12T01:22:15.726760+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:matic:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "chain": "ethereum",
+      "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+      "observedAt": "2026-08-12T01:22:21.836921+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0x92133e",
+      "name": "Non-Fungible People by Daz 3D",
+      "chain": "ethereum",
+      "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
+      "observedAt": "2026-08-12T01:22:22.007706+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "nouns",
+      "name": "Nouns",
+      "chain": "ethereum",
+      "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+      "observedAt": "2026-08-12T01:22:22.140323+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "og-meta-meeples-pfp",
+      "name": "OG Meta Meeples PFP",
+      "chain": "ethereum",
+      "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
+      "observedAt": "2026-08-12T01:22:22.274200+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "omnimorphs",
+      "name": "Omnimorphs",
+      "chain": "ethereum",
+      "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
+      "observedAt": "2026-08-12T01:22:22.410009+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "research-0x0fc3dd",
+      "name": "Parallel Avatars",
+      "chain": "ethereum",
+      "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
+      "observedAt": "2026-08-12T01:22:22.515862+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x35471f",
+      "name": "PartyBear",
+      "chain": "ethereum",
+      "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
+      "observedAt": "2026-08-12T01:22:22.549555+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+      ]
+    },
+    {
+      "catalogId": "phettaverse-editions",
+      "name": "Phettaverse Editions",
+      "chain": "ethereum",
+      "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+      "observedAt": "2026-08-12T01:22:22.656174+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "pixelbeasts",
+      "name": "Pixelbeasts",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:22:22.698732+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "rstlss-x-claire-silver-pixelgeist",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "chain": "ethereum",
+      "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
+      "observedAt": "2026-08-12T01:22:22.892483+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x50e712",
+      "name": "The Modz",
+      "chain": "ethereum",
+      "contract": "0x50e712b3a260d7639179e8277836253461418f23",
+      "observedAt": "2026-08-12T01:22:29.473149+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xaaf03a",
+      "name": "The Seekers",
+      "chain": "ethereum",
+      "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
+      "observedAt": "2026-08-12T01:22:29.553982+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "toxic-skulls-club",
+      "name": "Toxic Skulls Club",
+      "chain": "ethereum",
+      "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
+      "observedAt": "2026-08-12T01:22:29.659746+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "chain": "ethereum",
+      "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+      "observedAt": "2026-08-12T01:22:36.147257+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "voltz",
+      "name": "VOLTZ Avatars",
+      "chain": "ethereum",
+      "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+      "observedAt": "2026-08-12T01:22:36.451285+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x631086",
+      "name": "Virtuals Waifus",
+      "chain": "base",
+      "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
+      "observedAt": "2026-08-12T01:22:36.697781+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "woodies",
+      "name": "Woodies",
+      "chain": "ethereum",
+      "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+      "observedAt": "2026-08-12T01:22:42.834149+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "chain": "polygon",
+      "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+      "observedAt": "2026-08-12T01:22:43.154352+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "chain": "arbitrum",
+      "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
+      "observedAt": "2026-08-12T01:22:43.471057+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "chain": "ethereum",
+      "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
+      "observedAt": "2026-08-12T01:22:49.450273+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "chain": "base",
+      "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
+      "observedAt": "2026-08-12T01:22:50.289281+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    }
+  ]
+}

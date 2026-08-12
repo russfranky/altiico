@@ -1,6 +1,6 @@
 {
   "schema": "catalog-source-cross-reference-v1",
-  "generatedAt": "2026-08-12T01:09:21.930695+00:00",
+  "generatedAt": "2026-08-12T01:21:14.550811+00:00",
   "sources": {
     "catalog": "data/vrm_index.db",
     "opensea": "catalog fields refreshed through OpenSea API where available",
@@ -57,7 +57,7 @@
       "name": "AdWorld",
       "chain": "ethereum",
       "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
-      "observedAt": "2026-08-12T01:09:19.355740+00:00",
+      "observedAt": "2026-08-12T01:21:13.062313+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -136,7 +136,7 @@
       "name": "Akutars",
       "chain": "ethereum",
       "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
-      "observedAt": "2026-08-12T01:09:19.355789+00:00",
+      "observedAt": "2026-08-12T01:21:13.062386+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -215,7 +215,7 @@
       "name": "Allstarz PSX",
       "chain": "ethereum",
       "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
-      "observedAt": "2026-08-12T01:09:19.355825+00:00",
+      "observedAt": "2026-08-12T01:21:13.062443+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -294,7 +294,7 @@
       "name": "ArbiDudesGenOne",
       "chain": "arbitrum",
       "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
-      "observedAt": "2026-08-12T01:09:19.732022+00:00",
+      "observedAt": "2026-08-12T01:21:13.236563+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -373,7 +373,7 @@
       "name": "Arbibots",
       "chain": "arbitrum",
       "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
-      "observedAt": "2026-08-12T01:09:19.760005+00:00",
+      "observedAt": "2026-08-12T01:21:13.254428+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -452,7 +452,7 @@
       "name": "Avastars",
       "chain": "ethereum",
       "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
-      "observedAt": "2026-08-12T01:09:19.789763+00:00",
+      "observedAt": "2026-08-12T01:21:13.274688+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -531,7 +531,7 @@
       "name": "Boomboxheads V2",
       "chain": "ethereum",
       "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-      "observedAt": "2026-08-12T01:09:19.816446+00:00",
+      "observedAt": "2026-08-12T01:21:13.298196+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -610,7 +610,7 @@
       "name": "Bourey vs Bulley: Bourverse",
       "chain": "ethereum",
       "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
-      "observedAt": "2026-08-12T01:09:19.848408+00:00",
+      "observedAt": "2026-08-12T01:21:13.324446+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -689,7 +689,7 @@
       "name": "ByWassies",
       "chain": "ethereum",
       "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "observedAt": "2026-08-12T01:09:19.878284+00:00",
+      "observedAt": "2026-08-12T01:21:13.347393+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -768,7 +768,7 @@
       "name": "CLONE X - X TAKASHI MURAKAMI",
       "chain": "ethereum",
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-      "observedAt": "2026-08-12T01:09:19.950989+00:00",
+      "observedAt": "2026-08-12T01:21:13.367057+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -847,7 +847,7 @@
       "name": "Chain Runners",
       "chain": "ethereum",
       "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
-      "observedAt": "2026-08-12T01:09:19.960867+00:00",
+      "observedAt": "2026-08-12T01:21:13.390268+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -926,7 +926,7 @@
       "name": "Chametheon",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:09:20.196950+00:00",
+      "observedAt": "2026-08-12T01:21:13.407247+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1005,7 +1005,7 @@
       "name": "Chibi Apes",
       "chain": "ethereum",
       "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
-      "observedAt": "2026-08-12T01:09:20.197915+00:00",
+      "observedAt": "2026-08-12T01:21:13.432836+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1084,7 +1084,7 @@
       "name": "Chuddies",
       "chain": "ethereum",
       "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
-      "observedAt": "2026-08-12T01:09:20.238659+00:00",
+      "observedAt": "2026-08-12T01:21:13.454903+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1163,7 +1163,7 @@
       "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:09:20.263355+00:00",
+      "observedAt": "2026-08-12T01:21:13.474710+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1242,7 +1242,7 @@
       "name": "CyberBrokers",
       "chain": "ethereum",
       "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
-      "observedAt": "2026-08-12T01:09:20.297733+00:00",
+      "observedAt": "2026-08-12T01:21:13.495352+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1321,7 +1321,7 @@
       "name": "DASK - Dead Army Skeleton Klub",
       "chain": "ethereum",
       "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "observedAt": "2026-08-12T01:09:20.357364+00:00",
+      "observedAt": "2026-08-12T01:21:13.518964+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1400,7 +1400,7 @@
       "name": "DEyes Legends by Coldie",
       "chain": "ethereum",
       "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
-      "observedAt": "2026-08-12T01:09:20.370262+00:00",
+      "observedAt": "2026-08-12T01:21:13.543495+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1479,7 +1479,7 @@
       "name": "DickButtVerse",
       "chain": "ethereum",
       "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
-      "observedAt": "2026-08-12T01:09:20.496730+00:00",
+      "observedAt": "2026-08-12T01:21:13.567174+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1558,7 +1558,7 @@
       "name": "Elysium Shell: Next - Mecha",
       "chain": "ethereum",
       "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-      "observedAt": "2026-08-12T01:09:20.659163+00:00",
+      "observedAt": "2026-08-12T01:21:13.583258+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1637,7 +1637,7 @@
       "name": "FLUF World",
       "chain": "ethereum",
       "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
-      "observedAt": "2026-08-12T01:09:20.706343+00:00",
+      "observedAt": "2026-08-12T01:21:13.605377+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1716,7 +1716,7 @@
       "name": "Flooz GEN F",
       "chain": "ethereum",
       "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
-      "observedAt": "2026-08-12T01:09:20.708050+00:00",
+      "observedAt": "2026-08-12T01:21:13.635439+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1795,7 +1795,7 @@
       "name": "Fly Frogs",
       "chain": "ethereum",
       "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
-      "observedAt": "2026-08-12T01:09:20.735642+00:00",
+      "observedAt": "2026-08-12T01:21:13.655759+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1874,7 +1874,7 @@
       "name": "Forgotten Runes Wizards Cult",
       "chain": "ethereum",
       "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
-      "observedAt": "2026-08-12T01:09:20.762945+00:00",
+      "observedAt": "2026-08-12T01:21:13.680906+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -1953,7 +1953,7 @@
       "name": "Frutiger Anons",
       "chain": "ethereum",
       "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
-      "observedAt": "2026-08-12T01:09:20.790679+00:00",
+      "observedAt": "2026-08-12T01:21:13.704531+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2032,7 +2032,7 @@
       "name": "Fyat Lux (Dawn Collection)",
       "chain": "ethereum",
       "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
-      "observedAt": "2026-08-12T01:09:20.822290+00:00",
+      "observedAt": "2026-08-12T01:21:13.760309+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2111,7 +2111,7 @@
       "name": "Halloween Rising",
       "chain": "optimism",
       "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
-      "observedAt": "2026-08-12T01:09:20.859979+00:00",
+      "observedAt": "2026-08-12T01:21:13.789378+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2190,7 +2190,7 @@
       "name": "Jadu AVA",
       "chain": "ethereum",
       "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
-      "observedAt": "2026-08-12T01:09:20.906053+00:00",
+      "observedAt": "2026-08-12T01:21:13.823340+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2269,7 +2269,7 @@
       "name": "Karafuru",
       "chain": "ethereum",
       "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
-      "observedAt": "2026-08-12T01:09:20.928974+00:00",
+      "observedAt": "2026-08-12T01:21:13.823891+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2348,7 +2348,7 @@
       "name": "Koala 2025 Collector's Briefcase",
       "chain": "base",
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
-      "observedAt": "2026-08-12T01:09:20.980789+00:00",
+      "observedAt": "2026-08-12T01:21:13.850547+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2427,7 +2427,7 @@
       "name": "MONA Avatars",
       "chain": "ethereum",
       "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
-      "observedAt": "2026-08-12T01:09:21.001176+00:00",
+      "observedAt": "2026-08-12T01:21:13.869122+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2506,7 +2506,7 @@
       "name": "Meebits",
       "chain": "ethereum",
       "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "observedAt": "2026-08-12T01:09:21.037034+00:00",
+      "observedAt": "2026-08-12T01:21:13.892534+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2585,7 +2585,7 @@
       "name": "MetaaniGEN",
       "chain": "ethereum",
       "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
-      "observedAt": "2026-08-12T01:09:21.074988+00:00",
+      "observedAt": "2026-08-12T01:21:13.911909+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2664,7 +2664,7 @@
       "name": "Metashima - Lightning",
       "chain": "ethereum",
       "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
-      "observedAt": "2026-08-12T01:09:21.105818+00:00",
+      "observedAt": "2026-08-12T01:21:13.931984+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2743,7 +2743,7 @@
       "name": "MisfitPIXELS",
       "chain": "ethereum",
       "contract": "0x618951345638caa062259cdbed445d4fb661b774",
-      "observedAt": "2026-08-12T01:09:21.137142+00:00",
+      "observedAt": "2026-08-12T01:21:13.965290+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2822,7 +2822,7 @@
       "name": "Moonbirds",
       "chain": "ethereum",
       "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
-      "observedAt": "2026-08-12T01:09:21.166631+00:00",
+      "observedAt": "2026-08-12T01:21:13.995213+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2901,7 +2901,7 @@
       "name": "NG86SHAPE",
       "chain": "polygon",
       "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
-      "observedAt": "2026-08-12T01:09:21.196905+00:00",
+      "observedAt": "2026-08-12T01:21:14.044964+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -2980,7 +2980,7 @@
       "name": "NeonGlitch86 Collection",
       "chain": "ethereum",
       "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-      "observedAt": "2026-08-12T01:09:21.229445+00:00",
+      "observedAt": "2026-08-12T01:21:14.045750+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3059,7 +3059,7 @@
       "name": "Non-Fungible People by Daz 3D",
       "chain": "ethereum",
       "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
-      "observedAt": "2026-08-12T01:09:21.269162+00:00",
+      "observedAt": "2026-08-12T01:21:14.066115+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3138,7 +3138,7 @@
       "name": "Nouns",
       "chain": "ethereum",
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
-      "observedAt": "2026-08-12T01:09:21.292284+00:00",
+      "observedAt": "2026-08-12T01:21:14.086150+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3217,7 +3217,7 @@
       "name": "OG Meta Meeples PFP",
       "chain": "ethereum",
       "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
-      "observedAt": "2026-08-12T01:09:21.334165+00:00",
+      "observedAt": "2026-08-12T01:21:14.106855+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3296,7 +3296,7 @@
       "name": "Omnimorphs",
       "chain": "ethereum",
       "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
-      "observedAt": "2026-08-12T01:09:21.357735+00:00",
+      "observedAt": "2026-08-12T01:21:14.131816+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3375,7 +3375,7 @@
       "name": "Parallel Avatars",
       "chain": "ethereum",
       "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
-      "observedAt": "2026-08-12T01:09:21.390324+00:00",
+      "observedAt": "2026-08-12T01:21:14.153177+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3454,7 +3454,7 @@
       "name": "PartyBear",
       "chain": "ethereum",
       "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
-      "observedAt": "2026-08-12T01:09:21.419396+00:00",
+      "observedAt": "2026-08-12T01:21:14.173134+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3533,7 +3533,7 @@
       "name": "Phettaverse Editions",
       "chain": "ethereum",
       "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
-      "observedAt": "2026-08-12T01:09:21.451573+00:00",
+      "observedAt": "2026-08-12T01:21:14.194475+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3612,7 +3612,7 @@
       "name": "Pixelbeasts",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:09:21.482315+00:00",
+      "observedAt": "2026-08-12T01:21:14.214262+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3691,7 +3691,7 @@
       "name": "RSTLSS x Claire Silver: Pixelgeist",
       "chain": "ethereum",
       "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
-      "observedAt": "2026-08-12T01:09:21.514254+00:00",
+      "observedAt": "2026-08-12T01:21:14.239815+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3770,7 +3770,7 @@
       "name": "The Modz",
       "chain": "ethereum",
       "contract": "0x50e712b3a260d7639179e8277836253461418f23",
-      "observedAt": "2026-08-12T01:09:21.554181+00:00",
+      "observedAt": "2026-08-12T01:21:14.262512+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3849,7 +3849,7 @@
       "name": "The Seekers",
       "chain": "ethereum",
       "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
-      "observedAt": "2026-08-12T01:09:21.575951+00:00",
+      "observedAt": "2026-08-12T01:21:14.282857+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -3928,7 +3928,7 @@
       "name": "Toxic Skulls Club",
       "chain": "ethereum",
       "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
-      "observedAt": "2026-08-12T01:09:21.605925+00:00",
+      "observedAt": "2026-08-12T01:21:14.305539+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4007,7 +4007,7 @@
       "name": "VOID - Visitors of Imma Degen",
       "chain": "ethereum",
       "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "observedAt": "2026-08-12T01:09:21.633224+00:00",
+      "observedAt": "2026-08-12T01:21:14.329510+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4086,7 +4086,7 @@
       "name": "VOLTZ Avatars",
       "chain": "ethereum",
       "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "observedAt": "2026-08-12T01:09:21.660261+00:00",
+      "observedAt": "2026-08-12T01:21:14.349725+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4165,7 +4165,7 @@
       "name": "Virtuals Waifus",
       "chain": "base",
       "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
-      "observedAt": "2026-08-12T01:09:21.692286+00:00",
+      "observedAt": "2026-08-12T01:21:14.373350+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4244,7 +4244,7 @@
       "name": "Woodies",
       "chain": "ethereum",
       "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
-      "observedAt": "2026-08-12T01:09:21.729088+00:00",
+      "observedAt": "2026-08-12T01:21:14.412073+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4323,7 +4323,7 @@
       "name": "Xmas Chibis",
       "chain": "polygon",
       "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
-      "observedAt": "2026-08-12T01:09:21.753942+00:00",
+      "observedAt": "2026-08-12T01:21:14.425867+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4402,7 +4402,7 @@
       "name": "ZTX Genesis Homes",
       "chain": "arbitrum",
       "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
-      "observedAt": "2026-08-12T01:09:21.780530+00:00",
+      "observedAt": "2026-08-12T01:21:14.443174+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4481,7 +4481,7 @@
       "name": "a KID called BEAST",
       "chain": "ethereum",
       "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
-      "observedAt": "2026-08-12T01:09:21.812698+00:00",
+      "observedAt": "2026-08-12T01:21:14.464968+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,
@@ -4560,7 +4560,7 @@
       "name": "mferverse: OG mfers",
       "chain": "base",
       "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
-      "observedAt": "2026-08-12T01:09:21.843170+00:00",
+      "observedAt": "2026-08-12T01:21:14.486050+00:00",
       "moralis": {
         "metadata": null,
         "stats": null,

@@ -1,15 +1,19 @@
 {
-  "schema": "authoritative-catalog-consensus-v1",
-  "generatedAt": "2026-08-12T01:09:31.225066+00:00",
+  "schema": "authoritative-catalog-consensus-v2",
+  "generatedAt": "2026-08-12T01:22:56.848553+00:00",
   "policy": {
-    "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence corroborates identity; OpenSea/Moralis indexes never silently override it",
+    "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
     "vrm": "only binary GLB 2.0 + VRM/VRMC_vrm validation proves VRM",
-    "market": "market values are mutable and source-specific"
+    "market": "market values are mutable and source-specific",
+    "bitquery": "Bitquery transfer URI/model signals are discovery evidence only until the referenced bytes pass binary validation"
   },
   "summary": {
     "collections": 58,
-    "explorerCorroborated": 10,
+    "explorerCorroborated": 6,
+    "bitqueryCorroborated": 0,
+    "onchainCorroborated": 6,
+    "bitqueryModelSignalTokens": 0,
     "reviewItems": 58,
     "etherscanConflicts": 0
   },
@@ -81,7 +85,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.355740+00:00",
+      "observedAt": "2026-08-12T01:21:13.062313+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -91,15 +95,15 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:22.718057+00:00",
+        "observedAt": "2026-08-12T01:21:15.261414+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
         "proxy": "0",
         "implementation": null,
-        "creator": "0x2b70937aeacf490b48e1973bd2a40ba1233569f9",
-        "creationTxHash": "0x3a926546d80256c8373b5c090e11bb7b17f70bf461230ceb0252d9ff410fb89c",
-        "creationBlock": "14440528",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
           "tokenURI": true,
@@ -109,12 +113,25 @@
         },
         "eventLogsSampled": 0,
         "errors": [
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:19.612097+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "research-0xaad35c",
@@ -183,7 +200,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.355789+00:00",
+      "observedAt": "2026-08-12T01:21:13.062386+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -193,7 +210,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:22.718101+00:00",
+        "observedAt": "2026-08-12T01:21:15.261462+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -218,6 +235,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:19.612276+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -288,7 +317,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.355825+00:00",
+      "observedAt": "2026-08-12T01:21:13.062443+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -298,7 +327,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:22.718131+00:00",
+        "observedAt": "2026-08-12T01:21:15.261493+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -323,6 +352,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:19.612401+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -393,7 +434,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.732022+00:00",
+      "observedAt": "2026-08-12T01:21:13.236563+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -403,7 +444,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:23.210494+00:00",
+        "observedAt": "2026-08-12T01:21:15.626663+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -428,6 +469,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.281428+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -498,7 +551,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.760005+00:00",
+      "observedAt": "2026-08-12T01:21:13.254428+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -508,7 +561,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:23.427828+00:00",
+        "observedAt": "2026-08-12T01:21:15.649230+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -533,6 +586,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.313335+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -603,7 +668,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.789763+00:00",
+      "observedAt": "2026-08-12T01:21:13.274688+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -613,8 +678,8 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:23.615146+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T01:21:15.705468+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
@@ -629,16 +694,29 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.322662+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "boomboxheads-v2",
@@ -707,7 +785,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.816446+00:00",
+      "observedAt": "2026-08-12T01:21:13.298196+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -717,12 +795,12 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:23.720447+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "ERC721DropProxy",
-        "proxy": "1",
-        "implementation": "0x8237f421357f87a23ed0cff3a5586172f210a21b",
+        "observedAt": "2026-08-12T01:21:15.762926+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
+        "implementation": null,
         "creator": null,
         "creationTxHash": null,
         "creationBlock": null,
@@ -735,13 +813,27 @@
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.413477+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "bourey-vs-bulley-bourverse",
@@ -810,7 +902,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.848408+00:00",
+      "observedAt": "2026-08-12T01:21:13.324446+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -820,7 +912,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:23.904680+00:00",
+        "observedAt": "2026-08-12T01:21:15.834282+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -845,6 +937,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.480305+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -915,7 +1019,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.878284+00:00",
+      "observedAt": "2026-08-12T01:21:13.347393+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -925,7 +1029,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.157721+00:00",
+        "observedAt": "2026-08-12T01:21:15.890570+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -950,6 +1054,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.492586+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1020,7 +1136,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.950989+00:00",
+      "observedAt": "2026-08-12T01:21:13.367057+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1030,7 +1146,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.255840+00:00",
+        "observedAt": "2026-08-12T01:21:15.947352+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1055,6 +1171,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.545462+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1125,7 +1253,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:19.960867+00:00",
+      "observedAt": "2026-08-12T01:21:13.390268+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1135,7 +1263,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.408506+00:00",
+        "observedAt": "2026-08-12T01:21:16.018837+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1160,6 +1288,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.627909+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1230,7 +1370,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.196950+00:00",
+      "observedAt": "2026-08-12T01:21:13.407247+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1240,7 +1380,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.555016+00:00",
+        "observedAt": "2026-08-12T01:21:16.068160+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1265,6 +1405,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.662452+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1335,7 +1487,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.197915+00:00",
+      "observedAt": "2026-08-12T01:21:13.432836+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1345,7 +1497,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.660865+00:00",
+        "observedAt": "2026-08-12T01:21:16.134518+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1370,6 +1522,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:20.750923+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1440,7 +1604,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.238659+00:00",
+      "observedAt": "2026-08-12T01:21:13.454903+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1450,31 +1614,45 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.797391+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T01:21:16.197700+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
         "implementation": null,
-        "creator": "0x76e245cea07b6caeaee72caa0b3675db44ff3b2c",
-        "creationTxHash": "0xe1e7b10154bee00e4de6bd325316729251f27a1f4bc82bd4891f3f9a9c51cb5d",
-        "creationBlock": "18218375",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
         "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:27.528536+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "cyberanimedoll-avatar",
@@ -1543,7 +1721,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.263355+00:00",
+      "observedAt": "2026-08-12T01:21:13.474710+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1553,7 +1731,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:24.920057+00:00",
+        "observedAt": "2026-08-12T01:21:16.241432+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1578,6 +1756,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:27.608603+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1648,7 +1838,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.297733+00:00",
+      "observedAt": "2026-08-12T01:21:13.495352+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1658,33 +1848,42 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.007048+00:00",
-        "contractCorroborated": false,
-        "verifiedSource": false,
-        "contractName": null,
-        "proxy": null,
+        "observedAt": "2026-08-12T01:21:16.312031+00:00",
+        "contractCorroborated": true,
+        "verifiedSource": true,
+        "contractName": "CyberBrokers",
+        "proxy": "0",
         "implementation": null,
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
+        "creator": "0x070cbef6414f8f0070a98051658bef840bcd86de",
+        "creationTxHash": "0x392201bf427d54472b50cb5bd47f7df76e185e6005c54b1d8dc842a437c8ccdc",
+        "creationBlock": "14317521",
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
-          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:27.615415+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "the-dask",
@@ -1753,7 +1952,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.357364+00:00",
+      "observedAt": "2026-08-12T01:21:13.518964+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1763,7 +1962,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.157995+00:00",
+        "observedAt": "2026-08-12T01:21:16.376224+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1788,6 +1987,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:34.213027+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1858,7 +2069,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.370262+00:00",
+      "observedAt": "2026-08-12T01:21:13.543495+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1868,7 +2079,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.294381+00:00",
+        "observedAt": "2026-08-12T01:21:16.418010+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1893,6 +2104,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:34.305412+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -1963,7 +2186,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.496730+00:00",
+      "observedAt": "2026-08-12T01:21:13.567174+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -1973,7 +2196,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.407721+00:00",
+        "observedAt": "2026-08-12T01:21:16.525434+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1998,6 +2221,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:34.472229+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2068,7 +2303,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.659163+00:00",
+      "observedAt": "2026-08-12T01:21:13.583258+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2078,7 +2313,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.558620+00:00",
+        "observedAt": "2026-08-12T01:21:16.581976+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2103,6 +2338,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:40.868289+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2173,7 +2420,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.706343+00:00",
+      "observedAt": "2026-08-12T01:21:13.605377+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2183,8 +2430,8 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.697674+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T01:21:16.635731+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
@@ -2199,16 +2446,29 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:41.029696+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "research-0x369156",
@@ -2277,7 +2537,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.708050+00:00",
+      "observedAt": "2026-08-12T01:21:13.635439+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2287,7 +2547,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:25.961309+00:00",
+        "observedAt": "2026-08-12T01:21:16.762895+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2312,6 +2572,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:41.200533+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2382,7 +2654,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.735642+00:00",
+      "observedAt": "2026-08-12T01:21:13.655759+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2392,7 +2664,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.136410+00:00",
+        "observedAt": "2026-08-12T01:21:16.822535+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2417,6 +2689,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:47.615314+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2487,7 +2771,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.762945+00:00",
+      "observedAt": "2026-08-12T01:21:13.680906+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2497,7 +2781,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.289035+00:00",
+        "observedAt": "2026-08-12T01:21:16.898563+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2522,6 +2806,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:47.858206+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2592,7 +2888,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.790679+00:00",
+      "observedAt": "2026-08-12T01:21:13.704531+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2602,7 +2898,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.391979+00:00",
+        "observedAt": "2026-08-12T01:21:16.954706+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2627,6 +2923,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:48.318324+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2697,7 +3005,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.822290+00:00",
+      "observedAt": "2026-08-12T01:21:13.760309+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2707,7 +3015,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.523011+00:00",
+        "observedAt": "2026-08-12T01:21:17.010212+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2732,6 +3040,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:54.208190+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2802,7 +3122,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.859979+00:00",
+      "observedAt": "2026-08-12T01:21:13.789378+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2812,7 +3132,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.702358+00:00",
+        "observedAt": "2026-08-12T01:21:17.151609+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2837,6 +3157,18 @@
           "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:54.882974+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -2907,7 +3239,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.906053+00:00",
+      "observedAt": "2026-08-12T01:21:13.823340+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -2917,8 +3249,8 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.801451+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T01:21:17.207811+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
@@ -2933,16 +3265,29 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:21:55.014803+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "research-0xd2F668",
@@ -3011,7 +3356,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.928974+00:00",
+      "observedAt": "2026-08-12T01:21:13.823891+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3021,31 +3366,44 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.865914+00:00",
+        "observedAt": "2026-08-12T01:21:17.296609+00:00",
         "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "Karafuru",
-        "proxy": "0",
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
         "implementation": null,
         "creator": null,
         "creationTxHash": null,
         "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
-        "eventLogsSampled": 0,
+        "eventLogsSampled": 25,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:00.955522+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "research-0x324F60",
@@ -3114,7 +3472,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:20.980789+00:00",
+      "observedAt": "2026-08-12T01:21:13.850547+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3124,11 +3482,11 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:26.981978+00:00",
-        "contractCorroborated": false,
-        "verifiedSource": false,
-        "contractName": null,
-        "proxy": null,
+        "observedAt": "2026-08-12T01:21:17.353404+00:00",
+        "contractCorroborated": true,
+        "verifiedSource": true,
+        "contractName": "VFTokenCAirdrop",
+        "proxy": "0",
         "implementation": null,
         "creator": null,
         "creationTxHash": null,
@@ -3142,7 +3500,6 @@
         },
         "eventLogsSampled": 0,
         "errors": [
-          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
           "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
@@ -3150,7 +3507,19 @@
         ],
         "conflicts": []
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:01.778292+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "mona-avatars",
@@ -3219,7 +3588,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.001176+00:00",
+      "observedAt": "2026-08-12T01:21:13.869122+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3229,7 +3598,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.157926+00:00",
+        "observedAt": "2026-08-12T01:21:17.407885+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3254,6 +3623,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:01.829380+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3324,7 +3705,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.037034+00:00",
+      "observedAt": "2026-08-12T01:21:13.892534+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3334,7 +3715,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.228701+00:00",
+        "observedAt": "2026-08-12T01:21:17.509422+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3359,6 +3740,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:07.579033+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3429,7 +3822,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.074988+00:00",
+      "observedAt": "2026-08-12T01:21:13.911909+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3439,7 +3832,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.340174+00:00",
+        "observedAt": "2026-08-12T01:21:17.567805+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3464,6 +3857,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:08.699491+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3534,7 +3939,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.105818+00:00",
+      "observedAt": "2026-08-12T01:21:13.931984+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3544,7 +3949,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.449760+00:00",
+        "observedAt": "2026-08-12T01:21:17.613511+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3569,6 +3974,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:08.819009+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3639,7 +4056,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.137142+00:00",
+      "observedAt": "2026-08-12T01:21:13.965290+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3649,7 +4066,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.637794+00:00",
+        "observedAt": "2026-08-12T01:21:17.744562+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3674,6 +4091,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:15.021813+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3744,7 +4173,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.166631+00:00",
+      "observedAt": "2026-08-12T01:21:13.995213+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3754,7 +4183,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.742378+00:00",
+        "observedAt": "2026-08-12T01:21:17.789657+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3779,6 +4208,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:15.657044+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3849,7 +4290,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.196905+00:00",
+      "observedAt": "2026-08-12T01:21:14.044964+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3859,11 +4300,11 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.841749+00:00",
+        "observedAt": "2026-08-12T01:21:17.861853+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
-        "contractName": "",
-        "proxy": "0",
+        "contractName": null,
+        "proxy": null,
         "implementation": null,
         "creator": null,
         "creationTxHash": null,
@@ -3877,12 +4318,25 @@
         },
         "eventLogsSampled": 0,
         "errors": [
-          "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-          "creation: RuntimeError: Etherscan API error: No data found",
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:15.726760+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:matic:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -3953,7 +4407,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.229445+00:00",
+      "observedAt": "2026-08-12T01:21:14.045750+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -3963,7 +4417,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:27.999077+00:00",
+        "observedAt": "2026-08-12T01:21:17.928053+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3988,6 +4442,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:21.836921+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4058,7 +4524,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.269162+00:00",
+      "observedAt": "2026-08-12T01:21:14.066115+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4068,7 +4534,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.112104+00:00",
+        "observedAt": "2026-08-12T01:21:17.970391+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4093,6 +4559,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.007706+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4163,7 +4641,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.292284+00:00",
+      "observedAt": "2026-08-12T01:21:14.086150+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4173,7 +4651,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.232439+00:00",
+        "observedAt": "2026-08-12T01:21:18.046549+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4198,6 +4676,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.140323+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4268,7 +4758,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.334165+00:00",
+      "observedAt": "2026-08-12T01:21:14.106855+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4278,7 +4768,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.382148+00:00",
+        "observedAt": "2026-08-12T01:21:18.106721+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4303,6 +4793,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.274200+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4373,7 +4875,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.357735+00:00",
+      "observedAt": "2026-08-12T01:21:14.131816+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4383,7 +4885,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.513707+00:00",
+        "observedAt": "2026-08-12T01:21:18.152342+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4408,6 +4910,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.410009+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4478,7 +4992,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.390324+00:00",
+      "observedAt": "2026-08-12T01:21:14.153177+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4488,7 +5002,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.767113+00:00",
+        "observedAt": "2026-08-12T01:21:18.292647+00:00",
         "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": null,
@@ -4509,11 +5023,23 @@
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.515862+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "a3ac-0x35471f",
@@ -4582,7 +5108,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.419396+00:00",
+      "observedAt": "2026-08-12T01:21:14.173134+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4592,7 +5118,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:28.898099+00:00",
+        "observedAt": "2026-08-12T01:21:18.337451+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "PartyBears",
@@ -4603,21 +5129,32 @@
         "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.549555+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
+        ]
+      },
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "phettaverse-editions",
@@ -4686,7 +5223,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.451573+00:00",
+      "observedAt": "2026-08-12T01:21:14.194475+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4696,7 +5233,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.070512+00:00",
+        "observedAt": "2026-08-12T01:21:18.422001+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4721,6 +5258,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.656174+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4791,7 +5340,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.482315+00:00",
+      "observedAt": "2026-08-12T01:21:14.214262+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4801,7 +5350,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.267275+00:00",
+        "observedAt": "2026-08-12T01:21:18.525673+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4826,6 +5375,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.698732+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -4896,7 +5457,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.514254+00:00",
+      "observedAt": "2026-08-12T01:21:14.239815+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -4906,7 +5467,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.393820+00:00",
+        "observedAt": "2026-08-12T01:21:18.561639+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4931,6 +5492,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:22.892483+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5001,7 +5574,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.554181+00:00",
+      "observedAt": "2026-08-12T01:21:14.262512+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5011,7 +5584,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.566826+00:00",
+        "observedAt": "2026-08-12T01:21:18.607251+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5036,6 +5609,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:29.473149+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5106,7 +5691,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.575951+00:00",
+      "observedAt": "2026-08-12T01:21:14.282857+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5116,7 +5701,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.721007+00:00",
+        "observedAt": "2026-08-12T01:21:18.678205+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5141,6 +5726,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:29.553982+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5211,7 +5808,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.605925+00:00",
+      "observedAt": "2026-08-12T01:21:14.305539+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5221,15 +5818,15 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.824795+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T01:21:18.735859+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
         "implementation": null,
-        "creator": "0x4441d82a60977a1e0eebb77e733aeb6c2f4b191a",
-        "creationTxHash": "0x9ab93191171e7da7000b6992d1e20d39cb8887516fe98b223b5e6a45cf03f534",
-        "creationBlock": "16819446",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
           "tokenURI": false,
@@ -5237,15 +5834,29 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
-      "authorityStatus": "explorer_corroborated"
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:29.659746+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "immadegen-void",
@@ -5314,7 +5925,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.633224+00:00",
+      "observedAt": "2026-08-12T01:21:14.329510+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5324,7 +5935,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:29.970825+00:00",
+        "observedAt": "2026-08-12T01:21:18.784886+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5349,6 +5960,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:36.147257+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5419,7 +6042,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.660261+00:00",
+      "observedAt": "2026-08-12T01:21:14.349725+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5429,7 +6052,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.101073+00:00",
+        "observedAt": "2026-08-12T01:21:18.855888+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5454,6 +6077,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:36.451285+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5524,7 +6159,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.692286+00:00",
+      "observedAt": "2026-08-12T01:21:14.373350+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5534,7 +6169,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.223041+00:00",
+        "observedAt": "2026-08-12T01:21:18.913284+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5559,6 +6194,18 @@
           "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:36.697781+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5629,7 +6276,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.729088+00:00",
+      "observedAt": "2026-08-12T01:21:14.412073+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5639,7 +6286,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.350914+00:00",
+        "observedAt": "2026-08-12T01:21:18.961877+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5664,6 +6311,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:42.834149+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5734,7 +6393,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.753942+00:00",
+      "observedAt": "2026-08-12T01:21:14.425867+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5744,7 +6403,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.480342+00:00",
+        "observedAt": "2026-08-12T01:21:19.030769+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5769,6 +6428,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:43.154352+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5839,7 +6510,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.780530+00:00",
+      "observedAt": "2026-08-12T01:21:14.443174+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5849,7 +6520,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.596276+00:00",
+        "observedAt": "2026-08-12T01:21:19.089934+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5874,6 +6545,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:43.471057+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -5944,7 +6627,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.812698+00:00",
+      "observedAt": "2026-08-12T01:21:14.464968+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -5954,7 +6637,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.686860+00:00",
+        "observedAt": "2026-08-12T01:21:19.151833+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5979,6 +6662,18 @@
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
+      },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:49.450273+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "index_only_or_unavailable"
     },
@@ -6049,7 +6744,7 @@
         "transferCount": null,
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T01:09:21.843170+00:00",
+      "observedAt": "2026-08-12T01:21:14.486050+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
         "stats: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}",
@@ -6059,7 +6754,7 @@
         "trades: RuntimeError: Moralis API error 401: {\"message\":\"Validation service blocked: Your plan: free-plan-daily total included usage has been consumed, please upgrade your plan here, https://moralis.io/pricing\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:09:30.818743+00:00",
+        "observedAt": "2026-08-12T01:21:19.211266+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -6085,6 +6780,18 @@
         ],
         "conflicts": []
       },
+      "bitquery": {
+        "observedAt": "2026-08-12T01:22:50.289281+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
+        "modelSignals": [],
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
+      },
       "authorityStatus": "index_only_or_unavailable"
     }
   ],
@@ -6105,8 +6812,12 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6130,6 +6841,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6153,6 +6867,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6176,6 +6893,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6199,6 +6919,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:arbitrum:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6220,7 +6943,11 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6239,9 +6966,14 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6265,6 +6997,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6288,6 +7023,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6311,6 +7049,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6334,6 +7075,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6357,6 +7101,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6380,6 +7127,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6399,8 +7149,13 @@
       "etherscanConflicts": [],
       "etherscanErrors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6424,6 +7179,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6442,11 +7200,11 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6470,6 +7228,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6493,6 +7254,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6516,6 +7280,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6539,6 +7306,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6560,7 +7330,11 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6584,6 +7358,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6607,6 +7384,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6630,6 +7410,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6653,6 +7436,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6676,6 +7462,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6699,6 +7488,9 @@
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6720,7 +7512,11 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6739,9 +7535,13 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6760,11 +7560,13 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6788,6 +7590,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6811,6 +7616,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted"
       ]
     },
     {
@@ -6834,6 +7642,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6857,6 +7668,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6880,6 +7694,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6903,6 +7720,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -6921,10 +7741,14 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-        "creation: RuntimeError: Etherscan API error: No data found",
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:matic:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6948,6 +7772,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6971,6 +7798,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -6994,6 +7824,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -7017,6 +7850,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -7040,6 +7876,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -7061,7 +7900,10 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -7080,10 +7922,12 @@
       ],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access restricted: the \\\"combined\\\" dataset spans \\\"realtime\\\" and \\\"archive\\\" and needs both, but your plan only allows \\\"realtime\\\" and the request uses \\\"combined:eth:Transfers\\\"\"}]}"
       ]
     },
     {
@@ -7107,6 +7951,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7130,6 +7977,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7153,6 +8003,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7176,6 +8029,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7199,6 +8055,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7219,7 +8078,12 @@
       "etherscanErrors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7243,6 +8107,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7266,6 +8133,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7289,6 +8159,9 @@
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7312,6 +8185,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7335,6 +8211,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7358,6 +8237,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7381,6 +8263,9 @@
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     },
     {
@@ -7404,6 +8289,9 @@
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
+      ],
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
     }
   ]
