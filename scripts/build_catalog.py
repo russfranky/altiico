@@ -23,8 +23,10 @@ from pathlib import Path
 
 try:
     from scripts.catalog_snapshot import record_snapshot, snapshot_created_at
+    from scripts.sanitize_staging_provenance import sanitize_staging_provenance
 except ModuleNotFoundError:  # direct `python scripts/build_catalog.py` execution
     from catalog_snapshot import record_snapshot, snapshot_created_at
+    from sanitize_staging_provenance import sanitize_staging_provenance
 
 BASE = Path(__file__).parent.parent
 DEFAULT_DB = BASE / "data" / "vrm_index.db"
@@ -150,6 +152,14 @@ def main():
         raise SystemExit(1)
 
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    provenance = sanitize_staging_provenance(output_dir)
+    if provenance["setsSanitized"] or provenance["sidecarFieldsSanitized"]:
+        print(
+            "Sanitized collection-level staging provenance: "
+            f"{provenance['setsSanitized']} set(s), "
+            f"{provenance['sidecarFieldsSanitized']} sidecar field(s)"
+        )
 
     conn = sqlite3.connect(str(db_path))
     conn.row_factory = sqlite3.Row
