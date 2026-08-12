@@ -46,17 +46,19 @@ jobs:
             --output data/dickbuttverse_inventory_probe.json \
             --sample-size 96 \
             --full-sample-size 24 \
-            --workers 8 \
+            --workers 4 \
             --timeout 15
 
-      - name: Census every numeric CDN asset ID structurally
+      - name: Resume census with paced retries for unresolved asset IDs
         run: |
           python scripts/census_dickbuttverse_inventory.py \
             --output data/dickbuttverse_inventory_census.json \
-            --workers 8 \
+            --workers 2 \
+            --attempts 3 \
+            --pace-seconds 0.5 \
             --timeout 15
 
-      - name: Assert non-promotional evidence scope
+      - name: Assert non-promotional evidence scope and resolved transport state
         run: |
           python - <<'PY'
           import json
@@ -68,7 +70,7 @@ jobs:
           cs=census['summary']
           known=set(probe['knownProvenIds'])
           full_ids={row['tokenId'] for row in probe['fullValidation']}
-          print(json.dumps({'probe':summary,'census':cs},indent=2))
+          print(json.dumps({'probe':summary,'census':cs,'resume':census.get('resume')},indent=2))
           assert probe['collection']['catalogId']=='dickbuttverse'
           assert probe['collection']['catalogSupply']==5363
           assert census['collection']['catalogId']=='dickbuttverse'
@@ -80,6 +82,7 @@ jobs:
           assert cs['assetIdsCensused']==5363
           assert cs['structuralVrmAssets'] > 0
           assert cs['structuralVrmAssets'] + cs['missing404Assets'] + cs['otherErrorAssets'] == 5363
+          assert cs['retryableUnresolvedAssets']==0, 'paced retry pass still has unresolved transport observations'
           PY
 
       - name: Repository verification
@@ -106,5 +109,5 @@ jobs:
             echo 'DickButtVerse inventory evidence already current.'
             exit 0
           fi
-          git commit -m 'Census DickButtVerse VRM asset coverage [skip ci]'
+          git commit -m 'Resolve DickButtVerse VRM asset census [skip ci]'
           git push
