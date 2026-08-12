@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-08-12T04:52:57Z",
-  "snapshot_id": "vrmcat-v1-0f8fad54e0f4491df437b543",
+  "generated_at": "2026-08-12T04:59:39Z",
+  "snapshot_id": "vrmcat-v1-b2d07541321da20c67131472",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -1334,6 +1334,45 @@
         "corporate_use": false,
         "terminates_on_transfer": false,
         "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0x3137e02341a4acbf01a02cfb60ccc194c3452756",
+      "name": "VOID - Voyagers of Imma Degen",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0x3137e02341a4acbf01a02cfb60ccc194c3452756",
+        "opensea_slug": "voyagers-of-imma-degen"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
       }
     },
     {

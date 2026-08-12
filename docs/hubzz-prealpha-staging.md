@@ -1,7 +1,7 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-08-12T04:52:57Z`
-Snapshot: `vrmcat-v1-0f8fad54e0f4491df437b543`
+Generated at: `2026-08-12T04:59:39Z`
+Snapshot: `vrmcat-v1-b2d07541321da20c67131472`
 
 ## Summary
 
@@ -11,7 +11,7 @@ Snapshot: `vrmcat-v1-0f8fad54e0f4491df437b543`
 - Preview-ready sets: **10**
 - Reachable source avatar candidates: **159**
 - Individually binary-validated source avatars: **159**
-- Deferred sets: **52**
+- Deferred sets: **56**
 
 ## Stageable sets
 
@@ -35,7 +35,7 @@ Snapshot: `vrmcat-v1-0f8fad54e0f4491df437b543`
 
 | Reason | Sets |
 |---|---:|
-| `no_binary_validated_vrm` | 51 |
+| `no_binary_validated_vrm` | 55 |
 | `unsupported_chain:ape_chain` | 3 |
 | `missing_contract` | 2 |
 | `unsupported_chain:multi` | 1 |
