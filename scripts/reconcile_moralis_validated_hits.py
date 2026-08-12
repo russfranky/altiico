@@ -247,35 +247,15 @@ def reconcile_hit(
     }
 
 
-def run(args: argparse.Namespace) -> dict[str, Any]:
-    report = json.loads(args.report.read_text(encoding="utf-8"))
-    hits = [row for row in (report.get("validatedHits") or []) if isinstance(row, dict)]
-    if not hits:
-        raise SystemExit("validation report contains no binary-proven hits")
-
-    stamp = utc_now()
-    conn = sqlite3.connect(args.db)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys=ON")
-    reconciled: list[dict[str, Any]] = []
-    try:
-        conn.execute("BEGIN IMMEDIATE")
-        for hit in hits:
-            reconciled.append(reconcile_hit(conn, hit, stamp))
-        integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
-        foreign_keys = conn.execute("PRAGMA foreign_key_check").fetchall()
-        if integrity != "ok" or foreign_keys:
-            raise RuntimeError(
-                f"database integrity failed: integrity={integrity!r}, foreign_keys={len(foreign_keys)}"
-            )
-        conn.commit()
-    except Exception:
-        conn.rollback()
-        raise
-
+def reconciliation_payload(
+    args: argparse.Namespace,
+    hits: list[dict[str, Any]],
+    reconciled: list[dict[str, Any]],
+    stamp: str,
+) -> dict[str, Any]:
     collections = sorted({row["catalogId"] for row in reconciled})
     linked = sum(bool(row["linkedExistingAvatarId"]) for row in reconciled)
-    payload = {
+    return {
         "schema": "moralis-candidate-reconciliation-v1",
         "generatedAt": stamp,
         "sourceReport": str(args.report.relative_to(ROOT)) if args.report.is_relative_to(ROOT) else str(args.report),
@@ -292,8 +272,37 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         },
         "reconciled": reconciled,
     }
+
+
+def run(args: argparse.Namespace) -> dict[str, Any]:
+    report = json.loads(args.report.read_text(encoding="utf-8"))
+    hits = [row for row in (report.get("validatedHits") or []) if isinstance(row, dict)]
+    stamp = utc_now()
+    reconciled: list[dict[str, Any]] = []
+
+    if hits:
+        conn = sqlite3.connect(args.db)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys=ON")
+        try:
+            conn.execute("BEGIN IMMEDIATE")
+            for hit in hits:
+                reconciled.append(reconcile_hit(conn, hit, stamp))
+            integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
+            foreign_keys = conn.execute("PRAGMA foreign_key_check").fetchall()
+            if integrity != "ok" or foreign_keys:
+                raise RuntimeError(
+                    f"database integrity failed: integrity={integrity!r}, foreign_keys={len(foreign_keys)}"
+                )
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+
+    payload = reconciliation_payload(args, hits, reconciled, stamp)
     args.output.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    conn.close()
     return payload
 
 
