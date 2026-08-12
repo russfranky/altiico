@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-12T01:27:14.290061+00:00",
+  "generatedAt": "2026-08-12T01:35:43.575604+00:00",
   "moralis": {
     "freshCrossReference": false,
     "freshModelDiscovery": false,
-    "crossReferenceMode": "origin-main-last-good",
-    "modelDiscoveryMode": "origin-main-last-good",
+    "crossReferenceMode": "current-committed",
+    "modelDiscoveryMode": "unavailable",
     "attemptSummary": {
       "collectionsInspected": 58,
       "collectionsWithErrors": 58,

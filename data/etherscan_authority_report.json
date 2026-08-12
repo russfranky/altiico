@@ -1,14 +1,14 @@
 {
   "schema": "etherscan-authority-audit-v1",
-  "generatedAt": "2026-08-12T01:27:23.598392+00:00",
+  "generatedAt": "2026-08-12T01:35:51.548510+00:00",
   "source": "Etherscan API V2",
   "policy": "explorer evidence corroborates chain/contract/token facts but never substitutes for direct tokenURI or VRM binary validation",
   "summary": {
     "collectionsInspected": 62,
     "collectionsWithErrors": 62,
     "collectionsWithConflicts": 0,
-    "verifiedSourceContracts": 5,
-    "contractsWithTokenUriAbi": 5
+    "verifiedSourceContracts": 6,
+    "contractsWithTokenUriAbi": 3
   },
   "collections": [
     {
@@ -17,7 +17,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
-      "observedAt": "2026-08-12T01:27:14.561280+00:00",
+      "observedAt": "2026-08-12T01:35:43.813871+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
@@ -52,7 +52,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
-      "observedAt": "2026-08-12T01:27:14.561323+00:00",
+      "observedAt": "2026-08-12T01:35:43.813906+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -90,7 +90,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
-      "observedAt": "2026-08-12T01:27:14.561350+00:00",
+      "observedAt": "2026-08-12T01:35:43.813925+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -128,7 +128,7 @@
       "chain": "arbitrum",
       "chainId": 42161,
       "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
-      "observedAt": "2026-08-12T01:27:14.901712+00:00",
+      "observedAt": "2026-08-12T01:35:44.136966+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -166,7 +166,7 @@
       "chain": "arbitrum",
       "chainId": 42161,
       "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
-      "observedAt": "2026-08-12T01:27:15.026765+00:00",
+      "observedAt": "2026-08-12T01:35:44.264302+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -204,7 +204,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
-      "observedAt": "2026-08-12T01:27:15.148343+00:00",
+      "observedAt": "2026-08-12T01:35:44.381493+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -242,7 +242,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-      "observedAt": "2026-08-12T01:27:15.220204+00:00",
+      "observedAt": "2026-08-12T01:35:44.481117+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -280,7 +280,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
-      "observedAt": "2026-08-12T01:27:15.345603+00:00",
+      "observedAt": "2026-08-12T01:35:44.612364+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -318,13 +318,12 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "observedAt": "2026-08-12T01:27:15.458922+00:00",
+      "observedAt": "2026-08-12T01:35:44.717037+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "contractEvidence": {
         "verifiedSource": false,
@@ -346,7 +345,7 @@
         "creationBlock": null,
         "creationTimestamp": null,
         "tokenInfo": null,
-        "eventLogsSampled": 0
+        "eventLogsSampled": 25
       },
       "conflicts": []
     },
@@ -356,19 +355,20 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-      "observedAt": "2026-08-12T01:27:15.525601+00:00",
+      "observedAt": "2026-08-12T01:35:44.834562+00:00",
       "errors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": false,
-        "sourceSha256": null,
-        "contractName": null,
-        "compilerVersion": null,
-        "licenseType": null,
-        "proxy": null,
+        "verifiedSource": true,
+        "sourceSha256": "70f1e5122a4519cc84e562e0b145ad468a05e0d0e7989fdee9ab4d0f2ef74061",
+        "contractName": "CloneX",
+        "compilerVersion": "v0.8.7+commit.e28d00a7",
+        "licenseType": "",
+        "proxy": "0",
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
@@ -377,12 +377,12 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "creator": "0x12ea19217c65f36385bb030d00525c1034e2f0af",
-        "creationTxHash": "0x2f42a4401dc3c7dca9dba3c509156514e722666b681397d93f027362dfd37f30",
-        "creationBlock": "13790684",
-        "creationTimestamp": "1639317039",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
+        "creationTimestamp": null,
         "tokenInfo": null,
-        "eventLogsSampled": 25
+        "eventLogsSampled": 0
       },
       "conflicts": []
     },
@@ -392,7 +392,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
-      "observedAt": "2026-08-12T01:27:15.657007+00:00",
+      "observedAt": "2026-08-12T01:35:44.949073+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -430,7 +430,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:27:15.786160+00:00",
+      "observedAt": "2026-08-12T01:35:45.090199+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -468,7 +468,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
-      "observedAt": "2026-08-12T01:27:15.864514+00:00",
+      "observedAt": "2026-08-12T01:35:45.186817+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -506,7 +506,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
-      "observedAt": "2026-08-12T01:27:15.997354+00:00",
+      "observedAt": "2026-08-12T01:35:45.293582+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -544,7 +544,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:27:16.120191+00:00",
+      "observedAt": "2026-08-12T01:35:45.423103+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -582,7 +582,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
-      "observedAt": "2026-08-12T01:27:16.201737+00:00",
+      "observedAt": "2026-08-12T01:35:45.540079+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -620,7 +620,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "observedAt": "2026-08-12T01:27:16.328230+00:00",
+      "observedAt": "2026-08-12T01:35:45.761474+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -658,7 +658,42 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
-      "observedAt": "2026-08-12T01:27:16.452049+00:00",
+      "observedAt": "2026-08-12T01:35:45.824520+00:00",
+      "errors": [
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "contractEvidence": {
+        "verifiedSource": true,
+        "sourceSha256": "e73122befdcedabc803d9e532b67e2d396ae07d87a095602ede3d8d25fba75e4",
+        "contractName": "FairxyzBeaconProxy",
+        "compilerVersion": "v0.8.19+commit.7dd6d404",
+        "licenseType": "",
+        "proxy": "1",
+        "implementation": "0xbe14a22d3b6099495234a30354db002e2f3ffc4e",
+        "similarMatch": "0xdBc63dEd1f67b8192a86431dA3e7B570755c5d21",
+        "abiSignals": {
+          "tokenURI": false,
+          "uri": false,
+          "ownerOf": false,
+          "balanceOf": false
+        },
+        "creator": "0xf6ff86aa37aab129c94fd7cfcfcf5ddf8a1a37a6",
+        "creationTxHash": "0x89251b25814e1d9d5b1e1a8ecf06ca2eb7ff1352d1ede6ab70a610de7f89f767",
+        "creationBlock": "17815199",
+        "creationTimestamp": "1690833119",
+        "tokenInfo": null,
+        "eventLogsSampled": 0
+      },
+      "conflicts": []
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "name": "DickButtVerse",
+      "chain": "ethereum",
+      "chainId": 1,
+      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+      "observedAt": "2026-08-12T01:35:45.921603+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -691,48 +726,12 @@
       "conflicts": []
     },
     {
-      "catalogId": "dickbuttverse",
-      "name": "DickButtVerse",
-      "chain": "ethereum",
-      "chainId": 1,
-      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
-      "observedAt": "2026-08-12T01:27:16.545371+00:00",
-      "errors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "contractEvidence": {
-        "verifiedSource": false,
-        "sourceSha256": null,
-        "contractName": null,
-        "compilerVersion": null,
-        "licenseType": null,
-        "proxy": null,
-        "implementation": null,
-        "similarMatch": null,
-        "abiSignals": {
-          "tokenURI": false,
-          "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
-        },
-        "creator": "0x668fefb29678b07d0b025ba4d91d854a288063b1",
-        "creationTxHash": "0x9e58f54e22e8cbbd6d8ee47e20b5df1ab900a66b2686a3d0db3f77ac1e7ea41e",
-        "creationBlock": "14922902",
-        "creationTimestamp": "1654635555",
-        "tokenInfo": null,
-        "eventLogsSampled": 25
-      },
-      "conflicts": []
-    },
-    {
       "catalogId": "elysium-shell-next-mecha",
       "name": "Elysium Shell: Next - Mecha",
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-      "observedAt": "2026-08-12T01:27:16.687599+00:00",
+      "observedAt": "2026-08-12T01:35:46.036492+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -770,7 +769,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
-      "observedAt": "2026-08-12T01:27:16.816873+00:00",
+      "observedAt": "2026-08-12T01:35:46.162093+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -808,7 +807,7 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0x1bcbd0d45d35bbbe514bec8cb9e48c51835a6d8c",
-      "observedAt": "2026-08-12T01:27:16.924669+00:00",
+      "observedAt": "2026-08-12T01:35:46.267247+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -846,7 +845,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
-      "observedAt": "2026-08-12T01:27:17.044450+00:00",
+      "observedAt": "2026-08-12T01:35:46.373956+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -884,7 +883,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
-      "observedAt": "2026-08-12T01:27:17.159350+00:00",
+      "observedAt": "2026-08-12T01:35:46.502128+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -922,7 +921,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
-      "observedAt": "2026-08-12T01:27:17.256395+00:00",
+      "observedAt": "2026-08-12T01:35:46.623080+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -960,7 +959,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
-      "observedAt": "2026-08-12T01:27:17.367452+00:00",
+      "observedAt": "2026-08-12T01:35:46.719864+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -998,33 +997,30 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
-      "observedAt": "2026-08-12T01:27:17.481292+00:00",
+      "observedAt": "2026-08-12T01:35:46.838700+00:00",
       "errors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": false,
-        "sourceSha256": null,
-        "contractName": null,
-        "compilerVersion": null,
-        "licenseType": null,
-        "proxy": null,
+        "verifiedSource": true,
+        "sourceSha256": "1342cfe415bd34d890b64df9ad1fffc2a5b36176c313ef33f41d41a53061fe5e",
+        "contractName": "FyatLux",
+        "compilerVersion": "v0.8.0+commit.c7dfd78e",
+        "licenseType": "None",
+        "proxy": "0",
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
-        "creationTimestamp": null,
+        "creator": "0xe01c949d2f268331f85ebd374e13597920f2279a",
+        "creationTxHash": "0x9ad9860e3bc04be35c5664dc66e7e35d14ba72e8b968c3de4fd8e9d8816cc709",
+        "creationBlock": "13877816",
+        "creationTimestamp": "1640481524",
         "tokenInfo": null,
         "eventLogsSampled": 0
       },
@@ -1036,7 +1032,7 @@
       "chain": "shape",
       "chainId": 360,
       "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-      "observedAt": "2026-08-12T01:27:17.602633+00:00",
+      "observedAt": "2026-08-12T01:35:46.963680+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Missing or unsupported chainid parameter (required for v2 api), please see https://api.etherscan.io/v2/chainlist for the list of supported chainids",
         "abi: RuntimeError: Etherscan API error: Missing or unsupported chainid parameter (required for v2 api), please see https://api.etherscan.io/v2/chainlist for the list of supported chainids",
@@ -1074,26 +1070,28 @@
       "chain": "optimism",
       "chainId": 10,
       "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
-      "observedAt": "2026-08-12T01:27:17.723837+00:00",
+      "observedAt": "2026-08-12T01:35:47.056307+00:00",
       "errors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
       ],
       "contractEvidence": {
-        "verifiedSource": true,
-        "sourceSha256": "98bf524870a9b292705533e05cfa68cfd2bff190653c4688d8d947e9e9f7ab60",
-        "contractName": "HalloweenRising",
-        "compilerVersion": "v0.8.9+commit.e5eed63a",
-        "licenseType": "",
-        "proxy": "0",
+        "verifiedSource": false,
+        "sourceSha256": null,
+        "contractName": null,
+        "compilerVersion": null,
+        "licenseType": null,
+        "proxy": null,
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
         "creator": null,
         "creationTxHash": null,
@@ -1110,20 +1108,21 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
-      "observedAt": "2026-08-12T01:27:17.829588+00:00",
+      "observedAt": "2026-08-12T01:35:47.195907+00:00",
       "errors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": true,
-        "sourceSha256": "923c478987fae47ed36936be30ee8f786e0680b4a3867b302d2ae915d80595c1",
-        "contractName": "JaduAVA",
-        "compilerVersion": "v0.8.7+commit.e28d00a7",
-        "licenseType": "",
-        "proxy": "0",
+        "verifiedSource": false,
+        "sourceSha256": null,
+        "contractName": null,
+        "compilerVersion": null,
+        "licenseType": null,
+        "proxy": null,
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
@@ -1147,7 +1146,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
-      "observedAt": "2026-08-12T01:27:17.940475+00:00",
+      "observedAt": "2026-08-12T01:35:47.316197+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1185,7 +1184,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
-      "observedAt": "2026-08-12T01:27:18.046027+00:00",
+      "observedAt": "2026-08-12T01:35:47.442279+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1223,7 +1222,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
-      "observedAt": "2026-08-12T01:27:18.152280+00:00",
+      "observedAt": "2026-08-12T01:35:47.541022+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1261,7 +1260,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "observedAt": "2026-08-12T01:27:18.278109+00:00",
+      "observedAt": "2026-08-12T01:35:47.648817+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1299,13 +1298,12 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
-      "observedAt": "2026-08-12T01:27:18.390935+00:00",
+      "observedAt": "2026-08-12T01:35:47.794598+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
         "verifiedSource": false,
@@ -1327,7 +1325,7 @@
         "creationBlock": null,
         "creationTimestamp": null,
         "tokenInfo": null,
-        "eventLogsSampled": 0
+        "eventLogsSampled": 25
       },
       "conflicts": []
     },
@@ -1337,23 +1335,21 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
-      "observedAt": "2026-08-12T01:27:18.504898+00:00",
+      "observedAt": "2026-08-12T01:35:47.880731+00:00",
       "errors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": false,
-        "sourceSha256": null,
-        "contractName": null,
-        "compilerVersion": null,
-        "licenseType": null,
-        "proxy": null,
-        "implementation": null,
-        "similarMatch": null,
+        "verifiedSource": true,
+        "sourceSha256": "ff9905647133c34d613508b96a9e88eafa641831e8bd3896630c7c0f5c3b4eba",
+        "contractName": "TransparentUpgradeableProxy",
+        "compilerVersion": "v0.8.2+commit.661d1103",
+        "licenseType": "MIT",
+        "proxy": "1",
+        "implementation": "0x915fd4ea88d2e347ac3faa8090702bae8ab3b878",
+        "similarMatch": "0xe540204af3a5d77419552b35aead5453a477a7da",
         "abiSignals": {
           "tokenURI": false,
           "uri": false,
@@ -1375,30 +1371,33 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0x53e38a3bb5954cc7830bbc6f2520b61d01d95056",
-      "observedAt": "2026-08-12T01:27:18.675352+00:00",
+      "observedAt": "2026-08-12T01:35:47.997166+00:00",
       "errors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": true,
-        "sourceSha256": "ff9a800649b6c337c2390d21e7362faef477fa8b3e5d0853308054fb50300062",
-        "contractName": "ERC721MInitializableV1_0_1",
-        "compilerVersion": "v0.8.22+commit.4fc1097e",
-        "licenseType": "",
-        "proxy": "0",
+        "verifiedSource": false,
+        "sourceSha256": null,
+        "contractName": null,
+        "compilerVersion": null,
+        "licenseType": null,
+        "proxy": null,
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
-        "creator": "0x8135629d1902e5d62aaebb5fdb6afdab5c91dc18",
-        "creationTxHash": "0x70c301b9a80be23d6669a59823b34a78aa92c835950bd53a8774a798ecee465e",
-        "creationBlock": "12974993",
-        "creationTimestamp": "1744308737",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
+        "creationTimestamp": null,
         "tokenInfo": null,
         "eventLogsSampled": 0
       },
@@ -1410,7 +1409,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x618951345638caa062259cdbed445d4fb661b774",
-      "observedAt": "2026-08-12T01:27:18.816589+00:00",
+      "observedAt": "2026-08-12T01:35:48.158238+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1448,7 +1447,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
-      "observedAt": "2026-08-12T01:27:18.931224+00:00",
+      "observedAt": "2026-08-12T01:35:48.241227+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1486,7 +1485,7 @@
       "chain": "polygon",
       "chainId": 137,
       "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
-      "observedAt": "2026-08-12T01:27:19.107311+00:00",
+      "observedAt": "2026-08-12T01:35:48.363059+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1524,7 +1523,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-      "observedAt": "2026-08-12T01:27:19.273382+00:00",
+      "observedAt": "2026-08-12T01:35:48.483207+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1562,19 +1561,19 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
-      "observedAt": "2026-08-12T01:27:19.453919+00:00",
+      "observedAt": "2026-08-12T01:35:48.578462+00:00",
       "errors": [
-        "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "contractEvidence": {
         "verifiedSource": false,
         "sourceSha256": null,
-        "contractName": "",
-        "compilerVersion": "",
-        "licenseType": "Unknown",
-        "proxy": "0",
+        "contractName": null,
+        "compilerVersion": null,
+        "licenseType": null,
+        "proxy": null,
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
@@ -1588,7 +1587,7 @@
         "creationBlock": "13849904",
         "creationTimestamp": "1640108092",
         "tokenInfo": null,
-        "eventLogsSampled": 0
+        "eventLogsSampled": 25
       },
       "conflicts": []
     },
@@ -1598,7 +1597,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
-      "observedAt": "2026-08-12T01:27:19.943584+00:00",
+      "observedAt": "2026-08-12T01:35:48.993575+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1636,7 +1635,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
-      "observedAt": "2026-08-12T01:27:20.182676+00:00",
+      "observedAt": "2026-08-12T01:35:49.059177+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1674,7 +1673,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
-      "observedAt": "2026-08-12T01:27:20.349823+00:00",
+      "observedAt": "2026-08-12T01:35:49.225849+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1712,7 +1711,7 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0xa7ae1bbfa1ee713acf2a240cd5fff184685f5304",
-      "observedAt": "2026-08-12T01:27:20.588918+00:00",
+      "observedAt": "2026-08-12T01:35:49.293235+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1750,10 +1749,12 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
-      "observedAt": "2026-08-12T01:27:20.746541+00:00",
+      "observedAt": "2026-08-12T01:35:49.429101+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
@@ -1766,15 +1767,15 @@
         "implementation": null,
         "similarMatch": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
-        "creator": "0x6e419c482ecfdbc23047a666cbfbacbb95a53e1b",
-        "creationTxHash": "0x74de64b0e2eb6739f4bf2172d727040920adec0aa628485bc0d986012c29b868",
-        "creationBlock": "17580749",
-        "creationTimestamp": "1687990739",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
+        "creationTimestamp": null,
         "tokenInfo": null,
         "eventLogsSampled": 0
       },
@@ -1786,7 +1787,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
-      "observedAt": "2026-08-12T01:27:20.930165+00:00",
+      "observedAt": "2026-08-12T01:35:49.534120+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1824,7 +1825,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
-      "observedAt": "2026-08-12T01:27:21.047012+00:00",
+      "observedAt": "2026-08-12T01:35:49.635532+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1862,7 +1863,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T01:27:21.207173+00:00",
+      "observedAt": "2026-08-12T01:35:49.768579+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1900,12 +1901,10 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
-      "observedAt": "2026-08-12T01:27:21.328703+00:00",
+      "observedAt": "2026-08-12T01:35:49.873723+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
@@ -1923,10 +1922,10 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
-        "creationTimestamp": null,
+        "creator": "0x029d54f2a569bd15c148b841e24a3e7a78639511",
+        "creationTxHash": "0x98e5181fceb4c56ed5e59b7e8b3cd2cf88201a465c9dd3f70ad548a4ecf486a0",
+        "creationBlock": "17318568",
+        "creationTimestamp": "1684803827",
         "tokenInfo": null,
         "eventLogsSampled": 0
       },
@@ -1938,7 +1937,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x50e712b3a260d7639179e8277836253461418f23",
-      "observedAt": "2026-08-12T01:27:21.537477+00:00",
+      "observedAt": "2026-08-12T01:35:49.973851+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -1976,12 +1975,13 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
-      "observedAt": "2026-08-12T01:27:21.697303+00:00",
+      "observedAt": "2026-08-12T01:35:50.105812+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
         "verifiedSource": false,
@@ -2003,7 +2003,7 @@
         "creationBlock": null,
         "creationTimestamp": null,
         "tokenInfo": null,
-        "eventLogsSampled": 25
+        "eventLogsSampled": 0
       },
       "conflicts": []
     },
@@ -2013,21 +2013,22 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
-      "observedAt": "2026-08-12T01:27:21.904055+00:00",
+      "observedAt": "2026-08-12T01:35:50.221133+00:00",
       "errors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "contractEvidence": {
-        "verifiedSource": true,
-        "sourceSha256": "d2c1f308357d7701f1cba71c2c0f1db7ded762a142c331a79a6f24f6d22ca188",
-        "contractName": "ToxicSkullsClubProxy",
-        "compilerVersion": "v0.8.18+commit.87f61d96",
-        "licenseType": "",
-        "proxy": "1",
-        "implementation": "0xd8288a204d295652170ed42a760eedc70d05bdeb",
+        "verifiedSource": false,
+        "sourceSha256": null,
+        "contractName": null,
+        "compilerVersion": null,
+        "licenseType": null,
+        "proxy": null,
+        "implementation": null,
         "similarMatch": null,
         "abiSignals": {
           "tokenURI": false,
@@ -2050,7 +2051,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "observedAt": "2026-08-12T01:27:22.081673+00:00",
+      "observedAt": "2026-08-12T01:35:50.314121+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2088,7 +2089,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "observedAt": "2026-08-12T01:27:22.274868+00:00",
+      "observedAt": "2026-08-12T01:35:50.441270+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2126,7 +2127,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
-      "observedAt": "2026-08-12T01:27:22.446194+00:00",
+      "observedAt": "2026-08-12T01:35:50.558341+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2164,7 +2165,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
-      "observedAt": "2026-08-12T01:27:22.666168+00:00",
+      "observedAt": "2026-08-12T01:35:50.653214+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2202,43 +2203,7 @@
       "chain": "polygon",
       "chainId": 137,
       "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
-      "observedAt": "2026-08-12T01:27:22.835158+00:00",
-      "errors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
-        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
-      ],
-      "contractEvidence": {
-        "verifiedSource": false,
-        "sourceSha256": null,
-        "contractName": null,
-        "compilerVersion": null,
-        "licenseType": null,
-        "proxy": null,
-        "implementation": null,
-        "similarMatch": null,
-        "abiSignals": {
-          "tokenURI": true,
-          "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
-        },
-        "creator": "0xded150f6c599b08950919cfb0b97516b6235a36b",
-        "creationTxHash": "0xaf124354cd18843a4e16344ee086efed1a7468bd97bc8c0b1c36a6607e3eee94",
-        "creationBlock": "50611129",
-        "creationTimestamp": "1701430401",
-        "tokenInfo": null,
-        "eventLogsSampled": 0
-      },
-      "conflicts": []
-    },
-    {
-      "catalogId": "research-0x35373e",
-      "name": "ZTX Genesis Homes",
-      "chain": "arbitrum",
-      "chainId": 42161,
-      "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
-      "observedAt": "2026-08-12T01:27:23.024171+00:00",
+      "observedAt": "2026-08-12T01:35:50.773683+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2271,12 +2236,47 @@
       "conflicts": []
     },
     {
+      "catalogId": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
+      "observedAt": "2026-08-12T01:35:50.897335+00:00",
+      "errors": [
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+      ],
+      "contractEvidence": {
+        "verifiedSource": true,
+        "sourceSha256": "a1336218021177e8ab8f864b4c43d3b6c0a80949c39f2231302ad7ae92a8837e",
+        "contractName": "ERC721SeaDrop",
+        "compilerVersion": "v0.8.17+commit.8df45f5f",
+        "licenseType": "MIT",
+        "proxy": "0",
+        "implementation": null,
+        "similarMatch": "0xa26dfb5520050ed6f52e7684f574db5f32d76c70",
+        "abiSignals": {
+          "tokenURI": true,
+          "uri": false,
+          "ownerOf": true,
+          "balanceOf": true
+        },
+        "creator": "0x7d921516f5400a2c13fc129424e7707b51ad7cc3",
+        "creationTxHash": "0xc58730930fce6310cbd0e2bb1b62d9a114c32d12b0dfb699444346a0a5e43ab1",
+        "creationBlock": "121699957",
+        "creationTimestamp": "1692120470",
+        "tokenInfo": null,
+        "eventLogsSampled": 0
+      },
+      "conflicts": []
+    },
+    {
       "catalogId": "a3ac-0x77372a",
       "name": "a KID called BEAST",
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
-      "observedAt": "2026-08-12T01:27:23.174926+00:00",
+      "observedAt": "2026-08-12T01:35:50.991729+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -2314,7 +2314,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
-      "observedAt": "2026-08-12T01:27:23.330909+00:00",
+      "observedAt": "2026-08-12T01:35:51.278279+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
