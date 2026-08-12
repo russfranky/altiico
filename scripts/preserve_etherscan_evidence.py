@@ -101,6 +101,11 @@ def rate_limit_error_count(report: dict[str, Any]) -> int:
     )
 
 
+def refresh_unusable(inspected: int, errored: int, selected_corroborated: int) -> bool:
+    """Fail closed only when an all-error audit leaves no corroborated evidence."""
+    return bool(inspected and errored >= inspected and selected_corroborated == 0)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fresh", required=True)
@@ -119,10 +124,10 @@ def main() -> int:
     fresh_corroborated = corroborated_count(fresh)
     selected_corroborated = corroborated_count(selected)
 
-    if inspected and errored >= inspected and not preserved:
+    if refresh_unusable(inspected, errored, selected_corroborated):
         raise SystemExit(
-            "Etherscan refresh errored for every inspected collection and retained "
-            "no last-good corroboration"
+            "Etherscan refresh errored for every inspected collection and produced "
+            "no corroborated contract evidence"
         )
 
     Path(args.output).write_text(
@@ -131,6 +136,8 @@ def main() -> int:
     health = {
         "freshCorroborated": fresh_corroborated,
         "selectedCorroborated": selected_corroborated,
+        "collectionsWithErrors": errored,
+        "allCollectionsHaveErrors": bool(inspected and errored >= inspected),
         "rateLimitedCollections": rate_limited,
         "preservedCollections": preserved,
         "mode": "fresh_with_preserved_last_good" if preserved else "fresh",
