@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-11T20:24:18Z",
-  "snapshotId": "vrmcat-v1-2075d3173cece90b0e59bd0b",
+  "generatedAt": "2026-08-12T01:09:31Z",
+  "snapshotId": "vrmcat-v1-4b9d4b7cb055722471e8dfea",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
@@ -26,7 +26,7 @@
         "schemaVersion": 1,
         "slug": "halloween-rising",
         "name": "Halloween Rising",
-        "description": "Spooky Halloweenn avatars - 60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Released on the deprecated VIPE platform",
+        "description": "60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Reroll and claim your halloween monster for 0.025 ETH.",
         "chain": "optimism",
         "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
         "storageProvider": "ipfs",
@@ -70,6 +70,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/5f5bdf8034ef6e9838f017d4ba22a5/3f5f5bdf8034ef6e9838f017d4ba22a5.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "license_requires_review"
       ]
@@ -79,7 +85,7 @@
         "schemaVersion": 1,
         "slug": "xmas-chibis",
         "name": "Xmas Chibis",
-        "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM avatars with 16 designs and 5 variations on Polygon.",
+        "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM Avatars with 16 Designs and 5 Variations on Polygon.",
         "chain": "polygon",
         "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
         "storageProvider": "ipfs",
@@ -123,6 +129,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/polygon/b0de9c9b33394903a7b3d73c26ebc997/b9bade10a0ec9c899711180c3fa13b/6bb9bade10a0ec9c899711180c3fa13b.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": []
     },
     {
@@ -140,7 +152,7 @@
         "copyright": null,
         "mintDate": null,
         "totalMints": 0,
-        "bannerUrl": null,
+        "bannerUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
         "pfpUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
         "purchaseGated": false,
         "listed": false,
@@ -174,9 +186,15 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
+        "source": "pfp_fallback",
+        "fallback": true,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "partial_avatar_inventory",
-        "missing_banner"
+        "banner_uses_pfp_fallback"
       ]
     },
     {
@@ -227,6 +245,12 @@
         "source": "collection-validation",
         "chain": null,
         "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/2d0cdced8a604a7894157cd654fd270e/58f78e61b7e2d8d0885d45a5d55b2d/5258f78e61b7e2d8d0885d45a5d55b2d.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
       },
       "warnings": [
         "sample_only",
@@ -282,6 +306,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/103cf6838291bc65ea81e7d60f5fb5/30103cf6838291bc65ea81e7d60f5fb5.jpeg?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only"
       ]
@@ -334,6 +364,12 @@
         "source": "a3ac-missing-contract",
         "chain": "ethereum",
         "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9"
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
       },
       "warnings": [
         "sample_only",
@@ -389,6 +425,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/5c1e776de37f42508da92ed914f65016/3a1695a7f59eb5765b7ca0081c7f7c/9a3a1695a7f59eb5765b7ca0081c7f7c.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only",
         "license_requires_review"
@@ -443,6 +485,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/572aabedff827fb6a391e9b86b6b54/34572aabedff827fb6a391e9b86b6b54.gif?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only"
       ]
@@ -495,6 +543,12 @@
         "source": "collection-validation",
         "chain": null,
         "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
       },
       "warnings": [
         "sample_only",
@@ -550,6 +604,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/f9ba6b040d52b6a6a53a1b79c27694/56f9ba6b040d52b6a6a53a1b79c27694.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only"
       ]
@@ -603,6 +663,12 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://stream.mux.com/t8FE49Q1NCYDLeVTw6GO4fH5UaPz01ZyKO01gmelY8I01s/high.mp4",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only",
         "license_requires_review"
@@ -612,7 +678,7 @@
       "set": {
         "schemaVersion": 1,
         "slug": "neonglitch86-collection-polygon-side",
-        "name": "NeonGlitch86 Collection (Polygon side)",
+        "name": "NG86SHAPE",
         "description": null,
         "chain": "polygon",
         "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
@@ -623,7 +689,7 @@
         "copyright": null,
         "mintDate": "2025-10-07",
         "totalMints": 41,
-        "bannerUrl": null,
+        "bannerUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
         "pfpUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
         "purchaseGated": null,
         "listed": false,
@@ -657,10 +723,16 @@
         "chain": null,
         "contract": null
       },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
+        "source": "pfp_fallback",
+        "fallback": true,
+        "observedAt": "2026-08-12T01:09:31Z"
+      },
       "warnings": [
         "sample_only",
         "license_requires_review",
-        "missing_banner"
+        "banner_uses_pfp_fallback"
       ]
     },
     {
@@ -711,6 +783,12 @@
         "source": "collection-validation",
         "chain": null,
         "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/4cb97b5f3c244500be1a8fb2064dc675/be6917c67bb8b2a1fd2ca521bac5af/dbbe6917c67bb8b2a1fd2ca521bac5af.png?fit=inside",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-08-12T01:09:31Z"
       },
       "warnings": [
         "sample_only",
@@ -874,6 +952,28 @@
       }
     },
     {
+      "slug": "wassies",
+      "name": "ByWassies",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "wassies",
+        "name": "ByWassies",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
       "slug": "chain-runners",
       "name": "Chain Runners",
       "reasons": [
@@ -902,9 +1002,7 @@
         "no_binary_validated_vrm"
       ],
       "warnings": [
-        "license_requires_review",
-        "missing_banner",
-        "missing_pfp"
+        "license_requires_review"
       ],
       "facts": {
         "slug": "chametheon",
@@ -942,6 +1040,28 @@
       }
     },
     {
+      "slug": "a3ac-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "a3ac-0x49cf6f",
+        "name": "CLONE X - X TAKASHI MURAKAMI",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
       "slug": "cryptoavatars",
       "name": "CryptoAvatars",
       "reasons": [
@@ -966,18 +1086,17 @@
     },
     {
       "slug": "cyberanimedoll-avatar",
-      "name": "CyberAnimeDOLL: Avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
       "reasons": [
         "no_binary_validated_vrm"
       ],
       "warnings": [
         "license_requires_review",
-        "missing_banner",
-        "missing_pfp"
+        "banner_uses_pfp_fallback"
       ],
       "facts": {
         "slug": "cyberanimedoll-avatar",
-        "name": "CyberAnimeDOLL: Avatar",
+        "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
         "tier": "B",
         "chain": "ethereum",
         "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
@@ -1008,6 +1127,28 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "timeout"
+      }
+    },
+    {
+      "slug": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "the-dask",
+        "name": "DASK - Dead Army Skeleton Klub",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
       }
     },
     {
@@ -1147,8 +1288,7 @@
       ],
       "warnings": [
         "license_requires_review",
-        "missing_banner",
-        "missing_pfp"
+        "banner_uses_pfp_fallback"
       ],
       "facts": {
         "slug": "research-0x1bcbd0",
@@ -1165,7 +1305,7 @@
     },
     {
       "slug": "a3ac-0x14c447",
-      "name": "FyatLux",
+      "name": "Fyat Lux (Dawn Collection)",
       "reasons": [
         "no_binary_validated_vrm"
       ],
@@ -1174,7 +1314,7 @@
       ],
       "facts": {
         "slug": "a3ac-0x14c447",
-        "name": "FyatLux",
+        "name": "Fyat Lux (Dawn Collection)",
         "tier": "C",
         "chain": "ethereum",
         "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
@@ -1186,25 +1326,25 @@
       }
     },
     {
-      "slug": "immadegen-void",
-      "name": "Immadegen (VOID)",
+      "slug": "NeonGlitch86 Collection (Shape side)",
+      "name": "GARY GRIFTER",
       "reasons": [
-        "no_binary_validated_vrm"
+        "unsupported_chain:shape"
       ],
       "warnings": [
-        "license_requires_review"
+        "sample_only"
       ],
       "facts": {
-        "slug": "immadegen-void",
-        "name": "Immadegen (VOID)",
-        "tier": "B",
-        "chain": "ethereum",
-        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "slug": "NeonGlitch86 Collection (Shape side)",
+        "name": "GARY GRIFTER",
+        "tier": "A",
+        "chain": "shape",
+        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
         "knownAvatars": 0,
         "reachableSourceAvatars": 0,
         "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
       }
     },
     {
@@ -1231,7 +1371,7 @@
     },
     {
       "slug": "research-0xd2F668",
-      "name": "Karafuru 3D",
+      "name": "Karafuru",
       "reasons": [
         "no_binary_validated_vrm"
       ],
@@ -1240,10 +1380,32 @@
       ],
       "facts": {
         "slug": "research-0xd2F668",
-        "name": "Karafuru 3D",
+        "name": "Karafuru",
         "tier": "C",
         "chain": "ethereum",
         "contract": "0xd2F668a8461D6761115dAF8Aeb3cDf5F40C532C6",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "research-0x324F60",
+      "name": "Koala 2025 Collector's Briefcase",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "research-0x324F60",
+        "name": "Koala 2025 Collector's Briefcase",
+        "tier": "C",
+        "chain": "base",
+        "contract": "0x324F60bA2d1815EF649DCc73559172305F5dd02c",
         "knownAvatars": 0,
         "reachableSourceAvatars": 0,
         "binaryValidatedSourceAvatars": 0,
@@ -1275,7 +1437,7 @@
     },
     {
       "slug": "metatravelers",
-      "name": "MetaTravelers",
+      "name": "MetaTravelers: Nibiru",
       "reasons": [
         "missing_contract",
         "no_binary_validated_vrm"
@@ -1285,7 +1447,7 @@
       ],
       "facts": {
         "slug": "metatravelers",
-        "name": "MetaTravelers",
+        "name": "MetaTravelers: Nibiru",
         "tier": "B",
         "chain": "ethereum",
         "contract": null,
@@ -1305,8 +1467,7 @@
       ],
       "warnings": [
         "license_requires_review",
-        "missing_banner",
-        "missing_pfp"
+        "banner_uses_pfp_fallback"
       ],
       "facts": {
         "slug": "research-0x53e38a",
@@ -1388,30 +1549,8 @@
       }
     },
     {
-      "slug": "NeonGlitch86 Collection (Shape side)",
-      "name": "NeonGlitch86 Collection (Shape side)",
-      "reasons": [
-        "unsupported_chain:shape"
-      ],
-      "warnings": [
-        "sample_only"
-      ],
-      "facts": {
-        "slug": "NeonGlitch86 Collection (Shape side)",
-        "name": "NeonGlitch86 Collection (Shape side)",
-        "tier": "A",
-        "chain": "shape",
-        "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": true,
-        "vrmCheckStatus": "ok_vrm"
-      }
-    },
-    {
       "slug": "research-0x92133e",
-      "name": "Non-Fungible People",
+      "name": "Non-Fungible People by Daz 3D",
       "reasons": [
         "no_binary_validated_vrm"
       ],
@@ -1420,7 +1559,7 @@
       ],
       "facts": {
         "slug": "research-0x92133e",
-        "name": "Non-Fungible People",
+        "name": "Non-Fungible People by Daz 3D",
         "tier": "C",
         "chain": "ethereum",
         "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
@@ -1568,16 +1707,16 @@
     },
     {
       "slug": "pixelbeasts",
-      "name": "PixelBeasts",
+      "name": "Pixelbeasts",
       "reasons": [
         "no_binary_validated_vrm"
       ],
       "warnings": [
-        "missing_banner"
+        "banner_uses_pfp_fallback"
       ],
       "facts": {
         "slug": "pixelbeasts",
-        "name": "PixelBeasts",
+        "name": "Pixelbeasts",
         "tier": "A",
         "chain": "ethereum",
         "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
@@ -1628,50 +1767,6 @@
         "tier": "B",
         "chain": "ethereum",
         "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
-      }
-    },
-    {
-      "slug": "a3ac-0x49cf6f",
-      "name": "RTFKT CloneX",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "license_requires_review"
-      ],
-      "facts": {
-        "slug": "a3ac-0x49cf6f",
-        "name": "RTFKT CloneX",
-        "tier": "C",
-        "chain": "ethereum",
-        "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": null
-      }
-    },
-    {
-      "slug": "the-dask",
-      "name": "The Dask",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "license_requires_review"
-      ],
-      "facts": {
-        "slug": "the-dask",
-        "name": "The Dask",
-        "tier": "B",
-        "chain": "ethereum",
-        "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
         "knownAvatars": 0,
         "reachableSourceAvatars": 0,
         "binaryValidatedSourceAvatars": 0,
@@ -1746,28 +1841,6 @@
       }
     },
     {
-      "slug": "research-0x324F60",
-      "name": "VeeFriends Series 2",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "license_requires_review"
-      ],
-      "facts": {
-        "slug": "research-0x324F60",
-        "name": "VeeFriends Series 2",
-        "tier": "C",
-        "chain": "base",
-        "contract": "0x324F60bA2d1815EF649DCc73559172305F5dd02c",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": null
-      }
-    },
-    {
       "slug": "research-0x631086",
       "name": "Virtuals Waifus",
       "reasons": [
@@ -1790,8 +1863,30 @@
       }
     },
     {
+      "slug": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "reasons": [
+        "no_binary_validated_vrm"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "immadegen-void",
+        "name": "VOID - Visitors of Imma Degen",
+        "tier": "B",
+        "chain": "ethereum",
+        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "knownAvatars": 0,
+        "reachableSourceAvatars": 0,
+        "binaryValidatedSourceAvatars": 0,
+        "collectionVrmValidated": false,
+        "vrmCheckStatus": "no_url"
+      }
+    },
+    {
       "slug": "voltz",
-      "name": "Voltz",
+      "name": "VOLTZ Avatars",
       "reasons": [
         "no_binary_validated_vrm"
       ],
@@ -1800,7 +1895,7 @@
       ],
       "facts": {
         "slug": "voltz",
-        "name": "Voltz",
+        "name": "VOLTZ Avatars",
         "tier": "B",
         "chain": "ethereum",
         "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
@@ -1809,28 +1904,6 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "reachable_not_vrm"
-      }
-    },
-    {
-      "slug": "wassies",
-      "name": "Wassies",
-      "reasons": [
-        "no_binary_validated_vrm"
-      ],
-      "warnings": [
-        "license_requires_review"
-      ],
-      "facts": {
-        "slug": "wassies",
-        "name": "Wassies",
-        "tier": "B",
-        "chain": "ethereum",
-        "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
       }
     },
     {

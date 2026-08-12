@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-11T20:24:18Z",
-  "snapshot_id": "vrmcat-v1-2075d3173cece90b0e59bd0b",
+  "generated_at": "2026-08-12T01:09:31Z",
+  "snapshot_id": "vrmcat-v1-4b9d4b7cb055722471e8dfea",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -140,9 +140,24 @@
       "tier": "A"
     },
     {
+      "slug": "NeonGlitch86 Collection (Shape side)",
+      "name": "GARY GRIFTER",
+      "description": "GARY GRIFTER VRM by NEONGLITCH86 x GARRYB1RD",
+      "license": "CC0",
+      "chain": null,
+      "storage_provider": "self-host",
+      "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
+      "banner": "https://i2c.seadn.io/ethereum/d356cb35798b46a79853506ee9d7a41f/a91618ce5034f6d8078d31c8872b5e/92a91618ce5034f6d8078d31c8872b5e.png?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/0xe7ba6df2934c487bb49435394fdd4b80268e2d3c/b6da26c987d958a766b16e8b04552746.gif",
+      "avatar_count": 27,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "A"
+    },
+    {
       "slug": "halloween-rising",
       "name": "Halloween Rising",
-      "description": "Spooky Halloweenn avatars - 60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Released on the deprecated VIPE platform",
+      "description": "60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Reroll and claim your halloween monster for 0.025 ETH.",
       "license": "Unknown",
       "chain": "optimism",
       "storage_provider": "self-host",
@@ -215,21 +230,6 @@
       "tier": "A"
     },
     {
-      "slug": "NeonGlitch86 Collection (Shape side)",
-      "name": "NeonGlitch86 Collection (Shape side)",
-      "description": "GARY GRIFTER VRM by NEONGLITCH86 x GARRYB1RD",
-      "license": "CC0",
-      "chain": null,
-      "storage_provider": "self-host",
-      "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-      "banner": "https://i2c.seadn.io/ethereum/d356cb35798b46a79853506ee9d7a41f/a91618ce5034f6d8078d31c8872b5e/92a91618ce5034f6d8078d31c8872b5e.png?fit=inside",
-      "pfp": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
-      "avatar_count": 27,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "A"
-    },
-    {
       "slug": "og-meta-meeples-pfp",
       "name": "OG Meta Meeples PFP",
       "description": "OG Meta Meeples is a free mint PFP collection by LUCII. Meta Meeples believes in an accessible and inclusive metaverse for all. #meeplesforthepeoples",
@@ -261,7 +261,7 @@
     },
     {
       "slug": "pixelbeasts",
-      "name": "PixelBeasts",
+      "name": "Pixelbeasts",
       "description": "Pixelbeasts by noclip",
       "license": "CC0",
       "chain": "ethereum",
@@ -292,7 +292,7 @@
     {
       "slug": "xmas-chibis",
       "name": "Xmas Chibis",
-      "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM avatars with 16 designs and 5 variations on Polygon.",
+      "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM Avatars with 16 Designs and 5 Variations on Polygon.",
       "license": "All Rights Reserved",
       "chain": "polygon",
       "storage_provider": "self-host",
@@ -335,6 +335,21 @@
       "tier": "B"
     },
     {
+      "slug": "wassies",
+      "name": "ByWassies",
+      "description": "[Click here to access the ByWassies hub to get onboarded!](https://t.me/bywassieshubbot/open?startapp=utm-os)\r\n\r\nFun lovable creatures that exist for no purpose other than to be killed. Embracing crypto’s most native meme, ByWassies is shaping the future of identity with an onchain army of builders and explorers. Join the Guild to get access to exclusive drops, experiences, and a cracked network of individuals who are here to build the future.\r\n\r\n# Links\r\n[Twitter](https://twitter.com/bywassies) | [Instagram](https://instagram.com/bywassies)\r\n\r\n#ByWassies",
+      "license": "Unknown",
+      "chain": "ethereum",
+      "storage_provider": "contract-metadata",
+      "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+      "banner": "https://i2c.seadn.io/ethereum/06707fc398494145beb98d528ad80910/7198006332fca3856d8d8a97acb972/da7198006332fca3856d8d8a97acb972.png?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/06707fc398494145beb98d528ad80910/916ad66251e63ce0c31d82b282eabf/d9916ad66251e63ce0c31d82b282eabf.png",
+      "avatar_count": 9640,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "B"
+    },
+    {
       "slug": "chain-runners",
       "name": "Chain Runners",
       "description": "Chain Runners are Mega City renegades 100% stored and generated on chain.\n\nVisit https://chainrunners.xyz to find out more.",
@@ -352,14 +367,14 @@
     {
       "slug": "chametheon",
       "name": "Chametheon",
-      "description": null,
+      "description": "Chametheon ┃ [Chametheon Lab](https://opensea.io/collection/chametheon-lab) ┃ [Chametheon Wear](https://opensea.io/collection/chametheon-wear) ┃ [HX1](https://opensea.io/collection/chametheon-hx1) ┃\n\n300 Interoperable VR-ready avatars on the Ethereum blockchain.\n\nEach come complete with high resolution 3D files. Optimised [VRM files](https://planetvr.shop/chametheon/vrm.html) can be downloaded from the Chametheon website\n\nClothed Chametheons can be obtained via the [Chametheon Lab](https://opensea.io/collection/chametheon-lab).",
       "license": "Unknown",
       "chain": "ethereum",
       "storage_provider": "self-host",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "banner": null,
-      "pfp": null,
-      "avatar_count": null,
+      "banner": "https://i2c.seadn.io/ethereum/30a8108c3ade358faf12dd0d79f13455/6b2eac8788e61d600d0ed337026252/a36b2eac8788e61d600d0ed337026252.jpeg?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/30a8108c3ade358faf12dd0d79f13455/426c2a9a1852ed227872a80a577c3b/93426c2a9a1852ed227872a80a577c3b.jpeg",
+      "avatar_count": 300,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -381,15 +396,30 @@
     },
     {
       "slug": "cyberanimedoll-avatar",
-      "name": "CyberAnimeDOLL: Avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
       "description": null,
       "license": "Unknown",
       "chain": "ethereum",
       "storage_provider": "self-host",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
       "banner": null,
-      "pfp": null,
-      "avatar_count": null,
+      "pfp": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1c5b2d3f374818d6cf62ea4f02c3b131.jpeg",
+      "avatar_count": 37,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "B"
+    },
+    {
+      "slug": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "description": "**[as of 7/12](https://stake.jointheklub.io)**\n**[70% staked &](https://stake.jointheklub.io)**\n**[4000+ true owner count](https://stake.jointheklub.io)**\n\n**[STAKE YOUR DASK NOW & START EARNING $KLUB](https://stake.jointheklub.io)**\n\nThe DASK is a community-driven collectibles project starting with a collection of 6969 Klub Members that give you membership access to The Klub: \n\n· Each DASK is a metaverse-ready 3d character.\n· DASK holders own 100% of the copyright of the NFTS.\n· Klub's members receive access to exclusive drops, merch, experiences, and more.\n\n💀 This is just the begining - The Klub Rises 💀\nJoin the Klub.\nhttps://discord.gg/u6WU8Ersut - https://twitter.com/The_DASK",
+      "license": "Unknown",
+      "chain": "ethereum",
+      "storage_provider": "contract-metadata",
+      "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+      "banner": "https://i2c.seadn.io/ethereum/3199edf15ef0433c9e71486f5d9fe28a/d84fcfbc5571f9bf40cb09f01d490b/37d84fcfbc5571f9bf40cb09f01d490b.jpeg?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/3199edf15ef0433c9e71486f5d9fe28a/f1bb3d5379bf48101da6d8a6e148da/bff1bb3d5379bf48101da6d8a6e148da.gif",
+      "avatar_count": 6967,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -405,21 +435,6 @@
       "banner": "https://i2c.seadn.io/ethereum/9fed922fb6de4c9a827b62e6a77478a1/f3759a125294e11917c8591651f803/30f3759a125294e11917c8591651f803.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/9fed922fb6de4c9a827b62e6a77478a1/83811654d63e61b57e64e2d75e2a0e/ad83811654d63e61b57e64e2d75e2a0e.png",
       "avatar_count": 788,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
-      "slug": "immadegen-void",
-      "name": "Immadegen (VOID)",
-      "description": "#First one to be more than just a pfp.   \nEvery VOID comes with a metaverse-ready avatar/3D model.    \nEndless Gamification.   \nCommercial Rights.   \nBuild a brand around your VOID.   \n**Social Media Zoom Integration & More**.   \nJoin us on [Discord](https://discord.gg/rz6t3uP9hx) for more info!",
-      "license": "Unknown",
-      "chain": "ethereum",
-      "storage_provider": "contract-metadata",
-      "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "banner": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/57e38d7b4c978747d80e69ffaa8154/c057e38d7b4c978747d80e69ffaa8154.jpeg?fit=inside",
-      "pfp": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/a0c64b4fa6d4f41fb0f84a4450579b/0aa0c64b4fa6d4f41fb0f84a4450579b.gif",
-      "avatar_count": 9998,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -441,7 +456,7 @@
     },
     {
       "slug": "metatravelers",
-      "name": "MetaTravelers",
+      "name": "MetaTravelers: Nibiru",
       "description": "Genesis Stone: https://opensea.io/collection/metatravelers-genesis-stone  \nNibiru Comics: https://opensea.io/collection/metatravelers-nibiru-comics\n\n#About MetaTravelers\n\nWe are a cross-metaverse ecosystem of avatar embodiment driven by deep lore and emerging technologies.\n\n#Embody the Nibiru\nAs the first known guild to unlock the power of the Genesis Stone, Nibiru travelers portal hop across the metagalaxy while uncovering secrets of ancient civilizations, precious artifacts, and new realms. \n\nLearn more: [Website](https://metatravelers.io/)  \nStay updated: [Twitter](https://twitter.com/metatravelers)  \nExplore with the community: [Discord](https://discord.gg/MetaTravelers)",
       "license": "Unknown",
       "chain": "ethereum",
@@ -456,7 +471,7 @@
     },
     {
       "slug": "neonglitch86-collection-polygon-side",
-      "name": "NeonGlitch86 Collection (Polygon side)",
+      "name": "NG86SHAPE",
       "description": null,
       "license": "Unknown",
       "chain": "polygon",
@@ -479,7 +494,7 @@
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
       "banner": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/3abb29c00bf1d0692ccd932e34dc24/ee3abb29c00bf1d0692ccd932e34dc24.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/578c5892a0e584cef7a9c54b031395/cc578c5892a0e584cef7a9c54b031395.png",
-      "avatar_count": 1944,
+      "avatar_count": 1965,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -515,21 +530,6 @@
       "tier": "B"
     },
     {
-      "slug": "the-dask",
-      "name": "The Dask",
-      "description": "**[as of 7/12](https://stake.jointheklub.io)**\n**[70% staked &](https://stake.jointheklub.io)**\n**[4000+ true owner count](https://stake.jointheklub.io)**\n\n**[STAKE YOUR DASK NOW & START EARNING $KLUB](https://stake.jointheklub.io)**\n\nThe DASK is a community-driven collectibles project starting with a collection of 6969 Klub Members that give you membership access to The Klub: \n\n· Each DASK is a metaverse-ready 3d character.\n· DASK holders own 100% of the copyright of the NFTS.\n· Klub's members receive access to exclusive drops, merch, experiences, and more.\n\n💀 This is just the begining - The Klub Rises 💀\nJoin the Klub.\nhttps://discord.gg/u6WU8Ersut - https://twitter.com/The_DASK",
-      "license": "Unknown",
-      "chain": "ethereum",
-      "storage_provider": "contract-metadata",
-      "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "banner": "https://i2c.seadn.io/ethereum/3199edf15ef0433c9e71486f5d9fe28a/d84fcfbc5571f9bf40cb09f01d490b/37d84fcfbc5571f9bf40cb09f01d490b.jpeg?fit=inside",
-      "pfp": "https://i2c.seadn.io/ethereum/3199edf15ef0433c9e71486f5d9fe28a/f1bb3d5379bf48101da6d8a6e148da/bff1bb3d5379bf48101da6d8a6e148da.gif",
-      "avatar_count": 6967,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
       "slug": "toxic-skulls-club",
       "name": "Toxic Skulls Club",
       "description": "Toxic Skulls Club is a community driven collection of 9,999 unique Toxic Skulls NFTs.\r\n\r\nBeing a Toxic Skulls Club holder grants you access to holders only benefits such as exclusive drops, events and more. Each Toxic Skull allows its holder to vote on experiences, future perks and utilities that will be paid by the Community Wallet.\r\n\r\nVisit www.ToxicSkullsClub.io for more details.\r\n\r\nStay Toxic!",
@@ -545,8 +545,23 @@
       "tier": "B"
     },
     {
+      "slug": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "description": "#First one to be more than just a pfp.   \nEvery VOID comes with a metaverse-ready avatar/3D model.    \nEndless Gamification.   \nCommercial Rights.   \nBuild a brand around your VOID.   \n**Social Media Zoom Integration & More**.   \nJoin us on [Discord](https://discord.gg/rz6t3uP9hx) for more info!",
+      "license": "Unknown",
+      "chain": "ethereum",
+      "storage_provider": "contract-metadata",
+      "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+      "banner": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/57e38d7b4c978747d80e69ffaa8154/c057e38d7b4c978747d80e69ffaa8154.jpeg?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/a0c64b4fa6d4f41fb0f84a4450579b/0aa0c64b4fa6d4f41fb0f84a4450579b.gif",
+      "avatar_count": 9998,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "B"
+    },
+    {
       "slug": "voltz",
-      "name": "Voltz",
+      "name": "VOLTZ Avatars",
       "description": "MINT VIAL -> https://mint.voltz.me — REVEAL VIAL -> https://reveal.voltz.me\nVOLTZ are metaverse focused, identity-thought and state of the art avatars. We are visionaries focused on delivering full web3 capabilities, driven by the idea of fully enabling our social interactions into digital and metaverse-based experiences.\nVOLTZ are metaverse-ready, full-body gaming rigged 3D Avatars.",
       "license": "Unknown",
       "chain": "ethereum",
@@ -555,21 +570,6 @@
       "banner": "https://i2c.seadn.io/ethereum/aa4a94e86d1a40a188124bed8b40031e/4d2c0fa9901c7aa91a47aa7184b820/7b4d2c0fa9901c7aa91a47aa7184b820.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/aa4a94e86d1a40a188124bed8b40031e/0af6d918a34f23dd1d7066394bdd12/630af6d918a34f23dd1d7066394bdd12.png",
       "avatar_count": 3623,
-      "purchase_gated": false,
-      "status": "staged",
-      "tier": "B"
-    },
-    {
-      "slug": "wassies",
-      "name": "Wassies",
-      "description": "[Click here to access the ByWassies hub to get onboarded!](https://t.me/bywassieshubbot/open?startapp=utm-os)\r\n\r\nFun lovable creatures that exist for no purpose other than to be killed. Embracing crypto’s most native meme, ByWassies is shaping the future of identity with an onchain army of builders and explorers. Join the Guild to get access to exclusive drops, experiences, and a cracked network of individuals who are here to build the future.\r\n\r\n# Links\r\n[Twitter](https://twitter.com/bywassies) | [Instagram](https://instagram.com/bywassies)\r\n\r\n#ByWassies",
-      "license": "Unknown",
-      "chain": "ethereum",
-      "storage_provider": "contract-metadata",
-      "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "banner": "https://i2c.seadn.io/ethereum/06707fc398494145beb98d528ad80910/7198006332fca3856d8d8a97acb972/da7198006332fca3856d8d8a97acb972.png?fit=inside",
-      "pfp": "https://i2c.seadn.io/ethereum/06707fc398494145beb98d528ad80910/916ad66251e63ce0c31d82b282eabf/d9916ad66251e63ce0c31d82b282eabf.png",
-      "avatar_count": 9640,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
