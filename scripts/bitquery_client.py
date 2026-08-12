@@ -10,7 +10,7 @@ from typing import Any, Optional
 import aiohttp
 
 ENDPOINT = "https://streaming.bitquery.io/graphql"
-MAX_ATTEMPTS = 5
+MAX_ATTEMPTS = 3
 NETWORK_MAP = {
     "ethereum": "eth",
     "polygon": "matic",
@@ -21,7 +21,7 @@ NETWORK_MAP = {
 
 
 class BitqueryClient:
-    def __init__(self, token: Optional[str] = None, *, max_concurrency: int = 2) -> None:
+    def __init__(self, token: Optional[str] = None, *, max_concurrency: int = 3) -> None:
         value = (
             token
             or os.getenv("BITQUERY_API_KEY")
@@ -44,7 +44,7 @@ class BitqueryClient:
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
                 headers=self._headers,
-                timeout=aiohttp.ClientTimeout(total=45),
+                timeout=aiohttp.ClientTimeout(total=20),
             )
         return self._session
 
@@ -76,10 +76,10 @@ class BitqueryClient:
                                 raise RuntimeError(f"Bitquery retry budget exhausted: HTTP {response.status}")
                             retry_after = response.headers.get("Retry-After")
                             try:
-                                delay = float(retry_after) if retry_after else min(20.0, 2 ** attempt)
+                                delay = float(retry_after) if retry_after else min(8.0, 2 ** attempt)
                             except ValueError:
-                                delay = min(20.0, 2 ** attempt)
-                            await asyncio.sleep(delay + random.uniform(0, 0.4))
+                                delay = min(8.0, 2 ** attempt)
+                            await asyncio.sleep(delay + random.uniform(0, 0.3))
                             continue
                         if response.status >= 400:
                             raise RuntimeError(f"Bitquery HTTP {response.status}: {body[:400]}")
@@ -93,16 +93,20 @@ class BitqueryClient:
             except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
                 if attempt == MAX_ATTEMPTS:
                     raise RuntimeError("Bitquery retry budget exhausted") from exc
-                await asyncio.sleep(min(20.0, 2 ** attempt) + random.uniform(0, 0.4))
+                await asyncio.sleep(min(8.0, 2 ** attempt) + random.uniform(0, 0.3))
         raise RuntimeError("Bitquery retry budget exhausted")
 
-    async def nft_inventory(self, chain: str, contract: str, *, limit: int = 50) -> dict[str, Any]:
+    async def nft_inventory(self, chain: str, contract: str, *, limit: int = 25) -> dict[str, Any]:
+        """Return recent NFT transfers for routine corroboration.
+
+        Deep historical inventory scans are intentionally separate because Bitquery
+        `limitBy` queries over combined history are much more expensive.
+        """
         query = """
-        query NFTInventory($network: evm_network!, $contract: String!, $limit: Int!) {
+        query NFTTransfers($network: evm_network!, $contract: String!, $limit: Int!) {
           EVM(network: $network, dataset: combined) {
             Transfers(
               where: {Transfer: {Currency: {Fungible: false, SmartContract: {is: $contract}}}}
-              limitBy: {by: Transfer_Id, count: 1}
               limit: {count: $limit}
               orderBy: {descending: Block_Time}
             ) {
@@ -127,6 +131,6 @@ class BitqueryClient:
             {
                 "network": self.network(chain),
                 "contract": contract.lower(),
-                "limit": max(1, min(int(limit), 250)),
+                "limit": max(1, min(int(limit), 100)),
             },
         )
