@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-12T04:27:52Z",
-  "snapshot_id": "vrmcat-v1-9a41b42ddd0634195662b0e5",
+  "generated_at": "2026-08-12T05:06:17Z",
+  "snapshot_id": "vrmcat-v1-a1acbbee2c0b40318d3114f1",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -555,6 +555,21 @@
       "banner": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/57e38d7b4c978747d80e69ffaa8154/c057e38d7b4c978747d80e69ffaa8154.jpeg?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/a0c64b4fa6d4f41fb0f84a4450579b/0aa0c64b4fa6d4f41fb0f84a4450579b.gif",
       "avatar_count": 9998,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "B"
+    },
+    {
+      "slug": "research-0x3137e0",
+      "name": "VOID - Voyagers of Imma Degen",
+      "description": "[Quantum Cube Collection](https://opensea.io/collection/immadegen-quantum-cube) | [Burn Quantum Cubes to Reveal Voyagers](https://immadegen.com) | [Visitors Collection](https://opensea.io/collection/visitors-of-imma-degen) | [WynLambo Collection](https://opensea.io/collection/thewynlambo) Ultra-Limited to 1,500 Supply: Voyagers of Imma Degen are an extension to the genesis collection of  VOID Visitors of Imma Degen and the IMMAVERSE eco-system. [ImmaDegen Website](https://immadegen.com) | [Download 3D Files from 3D Vault](https://voltz.me/vault) All PFPs include Metaverse-Ready 3D Avatars in VRM, GLB & FBX Formats, Facial Rigging for Webcam capabilities and Full Commercial IP Rights to Holders.",
+      "license": "Unknown",
+      "chain": "ethereum",
+      "storage_provider": "self-host",
+      "contract": "0x3137e02341a4acbf01a02cfb60ccc194c3452756",
+      "banner": "https://i2c.seadn.io/ethereum/d58a32b0e9ff4a488da4def4ebfe3b52/558b267061267cdb073aa4f8060ec5/a5558b267061267cdb073aa4f8060ec5.png?fit=inside",
+      "pfp": "https://i2c.seadn.io/ethereum/d58a32b0e9ff4a488da4def4ebfe3b52/d8869c43bd34bd9f957f160fcd8e0b/a2d8869c43bd34bd9f957f160fcd8e0b.gif",
+      "avatar_count": null,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
