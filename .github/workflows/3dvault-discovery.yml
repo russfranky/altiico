@@ -11,7 +11,10 @@ on:
       - scripts/enrich_3dvault_context.py
       - scripts/discover_3dvault_backend.py
       - scripts/discover_3dvault_named_projects.py
+      - scripts/promote_3dvault_consideration.py
       - scripts/sync_3dvault_leads.py
+      - data/os_scrape/research_candidates.json
+      - static/discovery-overlay.js
       - .github/workflows/3dvault-discovery.yml
 
 permissions:
@@ -41,7 +44,7 @@ jobs:
       - name: Require OpenSea credential
         run: test -n "$OPENSEA_API_KEY"
       - name: Compile crawler
-        run: python -m py_compile scripts/discover_3dvault.py scripts/enrich_3dvault_context.py scripts/discover_3dvault_backend.py scripts/discover_3dvault_named_projects.py scripts/sync_3dvault_leads.py scripts/sync_discovery_to_db.py scripts/materialize_discovery_fields.py
+        run: python -m py_compile scripts/discover_3dvault.py scripts/enrich_3dvault_context.py scripts/discover_3dvault_backend.py scripts/discover_3dvault_named_projects.py scripts/promote_3dvault_consideration.py scripts/sync_3dvault_leads.py scripts/sync_discovery_to_db.py scripts/materialize_discovery_fields.py
       - name: Crawl 3dvault relationship graph and underlying data sources
         run: |
           python scripts/discover_3dvault.py --output data/3dvault_discovery.json --max-follow 50
@@ -49,8 +52,9 @@ jobs:
           python scripts/discover_3dvault_backend.py --output data/3dvault_backend_probe.json
       - name: Deep inspect named 3dvault partner collections
         run: python scripts/discover_3dvault_named_projects.py --output data/3dvault_named_project_discovery.json --sample 40 --timeout 12 --collection-concurrency 2
-      - name: Persist leads and promotion evidence
+      - name: Materialize named consideration inventory and evidence
         run: |
+          python scripts/promote_3dvault_consideration.py
           python scripts/sync_3dvault_leads.py
           python scripts/sync_discovery_to_db.py
           python scripts/materialize_discovery_fields.py
@@ -60,22 +64,26 @@ jobs:
           python scripts/export_avatars_registry.py
           python scripts/export_hubzz_staging.py --validate
           python scripts/build_catalog.py
-      - name: Assert named projects were deeply inspected
+      - name: Assert public inventory actually increased
         run: |
           python - <<'PY'
           import json, sqlite3
           from pathlib import Path
-          report=json.loads(Path('data/3dvault_discovery.json').read_text())
-          probe=json.loads(Path('data/3dvault_backend_probe.json').read_text())
           named=json.loads(Path('data/3dvault_named_project_discovery.json').read_text())
+          info=json.loads(Path('static/data/build-info.json').read_text())
+          public=json.loads((Path('static/data')/info['files']['collections']).read_text())['collections']
           conn=sqlite3.connect('data/vrm_index.db')
-          leads=conn.execute("SELECT COUNT(*) FROM discovery_leads WHERE source='3dvault'").fetchone()[0]
-          ready=conn.execute("SELECT COUNT(*) FROM promotion_candidates WHERE promotion_state='ready_for_reconciliation'").fetchone()[0]
-          summary={'report':report['summary'],'backendProbe':probe['summary'],'namedProjects':named['summary'],'storedLeads':leads,'promotionReady':ready}
+          total=conn.execute('SELECT COUNT(*) FROM collections').fetchone()[0]
+          considered=conn.execute("SELECT COUNT(*) FROM collections WHERE avatar_delivery_status IS NOT NULL").fetchone()[0]
+          holder=conn.execute("SELECT COUNT(*) FROM collections WHERE avatar_delivery_status='holder_vrm_confirmed'").fetchone()[0]
+          voyagers=next((r for r in public if (r.get('contract') or '').lower()=='0x3137e02341a4acbf01a02cfb60ccc194c3452756'), None)
+          summary={'collections':total,'publicCollections':len(public),'new3dConsiderations':considered,'holderVrmConfirmed':holder,'namedProjects':named['summary'],'voyagersPublic':bool(voyagers),'voyagersStatus':voyagers.get('avatar_delivery_status') if voyagers else None}
           print(json.dumps(summary,indent=2))
-          assert named['summary']['collectionsInspected'] == 6
-          assert named['summary']['nftsSampled'] > 0
-          assert leads > 0
+          assert total >= 69, f'expected catalog inventory to increase beyond 65, got {total}'
+          assert len(public) == total
+          assert considered >= 4
+          assert holder >= 1
+          assert voyagers and voyagers.get('avatar_delivery_status') == 'holder_vrm_confirmed'
           conn.close()
           PY
       - name: Full verification
@@ -84,6 +92,7 @@ jobs:
           python -m pytest tests/ -q
           node tests/catalog-performance.mjs
           node tests/catalog-ux.mjs
+          node --check static/discovery-overlay.js
           sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
       - name: Commit discovery evidence and generated artifacts
         run: |
@@ -94,5 +103,5 @@ jobs:
             echo '3dvault discovery already current.'
             exit 0
           fi
-          git commit -m 'Refresh 3dvault named-project discovery [skip ci]'
+          git commit -m 'Materialize named 3dvault avatar considerations [skip ci]'
           git push
