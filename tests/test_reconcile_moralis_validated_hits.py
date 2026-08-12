@@ -1,7 +1,5 @@
 import sqlite3
 
-import pytest
-
 from scripts.reconcile_moralis_validated_hits import (
     complete_proof,
     identity_matches,
@@ -107,7 +105,7 @@ def test_secondary_contract_table_is_accepted():
     )
 
 
-def test_reconcile_materializes_avatar_binary_proof_and_collection_sample():
+def test_reconcile_stores_binary_proof_and_collection_sample_without_inventing_avatar():
     conn = db()
     conn.execute(
         "INSERT INTO promotion_candidates VALUES (?,?,?,?,?,?)",
@@ -116,20 +114,13 @@ def test_reconcile_materializes_avatar_binary_proof_and_collection_sample():
 
     result = reconcile_hit(conn, hit(), "2026-08-12T19:00:00Z")
 
-    avatar = conn.execute("SELECT * FROM avatars").fetchone()
-    assert avatar["id"] == "dickbuttverse:1010"
-    assert avatar["collection_id"] == "dickbuttverse"
-    assert avatar["check_status"] == "ok_vrm"
-    assert avatar["reachable"] == 1
+    assert conn.execute("SELECT COUNT(*) FROM avatars").fetchone()[0] == 0
+    assert conn.execute("SELECT COUNT(*) FROM avatar_vrm").fetchone()[0] == 0
 
     proof = conn.execute("SELECT * FROM vrm_metadata").fetchone()
     assert proof["vrm_spec"] == "0.x"
     assert proof["content_sha256"] == "a" * 64
     assert proof["content_length"] == 672548
-
-    link = conn.execute("SELECT * FROM avatar_vrm").fetchone()
-    assert link["avatar_id"] == "dickbuttverse:1010"
-    assert link["vrm_source_url"] == hit()["canonical_url"]
 
     collection = conn.execute("SELECT * FROM collections").fetchone()
     assert collection["vrm_check_status"] == "ok_vrm"
@@ -139,6 +130,27 @@ def test_reconcile_materializes_avatar_binary_proof_and_collection_sample():
     queued = conn.execute("SELECT promotion_state FROM promotion_candidates").fetchone()[0]
     assert queued == "reconciled"
     assert result["collectionUpdated"] is True
+    assert result["linkedExistingAvatarId"] is None
+
+
+def test_exact_existing_avatar_is_linked_without_creating_new_inventory():
+    conn = db()
+    conn.execute(
+        "INSERT INTO avatars(id,collection_id,model_file_url) VALUES (?,?,?)",
+        ("existing-avatar", "dickbuttverse", hit()["transport_url"]),
+    )
+
+    result = reconcile_hit(conn, hit(), "2026-08-12T19:00:00Z")
+
+    assert conn.execute("SELECT COUNT(*) FROM avatars").fetchone()[0] == 1
+    avatar = conn.execute("SELECT * FROM avatars").fetchone()
+    assert avatar["id"] == "existing-avatar"
+    assert avatar["reachable"] == 1
+    assert avatar["check_status"] == "ok_vrm"
+    link = conn.execute("SELECT * FROM avatar_vrm").fetchone()
+    assert link["avatar_id"] == "existing-avatar"
+    assert link["vrm_source_url"] == hit()["canonical_url"]
+    assert result["linkedExistingAvatarId"] == "existing-avatar"
 
 
 def test_existing_confirmed_collection_url_is_never_replaced():
@@ -152,14 +164,4 @@ def test_existing_confirmed_collection_url_is_never_replaced():
     collection = conn.execute("SELECT * FROM collections").fetchone()
     assert collection["vrm_url_https"] == "https://existing.test/sample.vrm"
     assert result["collectionUpdated"] is False
-    assert conn.execute("SELECT COUNT(*) FROM avatar_vrm").fetchone()[0] == 1
-
-
-def test_avatar_collision_is_rejected():
-    conn = db()
-    conn.execute(
-        "INSERT INTO avatars(id,collection_id,model_file_url) VALUES (?,?,?)",
-        ("dickbuttverse:1010", "dickbuttverse", "https://other.test/file.vrm"),
-    )
-    with pytest.raises(ValueError, match="different model URL"):
-        reconcile_hit(conn, hit(), "2026-08-12T19:00:00Z")
+    assert conn.execute("SELECT COUNT(*) FROM vrm_metadata").fetchone()[0] == 1
