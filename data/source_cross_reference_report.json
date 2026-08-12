@@ -1,6 +1,6 @@
 {
   "schema": "catalog-source-cross-reference-v1",
-  "generatedAt": "2026-08-12T00:41:17.393864+00:00",
+  "generatedAt": "2026-08-12T00:43:58.713144+00:00",
   "sources": {
     "catalog": "data/vrm_index.db",
     "opensea": "catalog fields refreshed through OpenSea API where available",
@@ -57,7 +57,7 @@
       "name": "AdWorld",
       "chain": "ethereum",
       "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
-      "observedAt": "2026-08-12T00:40:32.635053+00:00",
+      "observedAt": "2026-08-12T00:43:31.723616+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
@@ -535,7 +535,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "3139900000000000",
               "price_formatted": "0.0031399",
-              "current_usd_value": "5.9",
+              "current_usd_value": "5.91",
               "price_token_address": null,
               "block_timestamp": "2026-08-07T18:36:23.000Z",
               "block_number": "25704921",
@@ -611,7 +611,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "3139900000000000",
               "price_formatted": "0.0031399",
-              "current_usd_value": "5.9",
+              "current_usd_value": "5.91",
               "price_token_address": null,
               "block_timestamp": "2026-08-07T18:36:11.000Z",
               "block_number": "25704920",
@@ -1070,7 +1070,7 @@
       "name": "Akutars",
       "chain": "ethereum",
       "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
-      "observedAt": "2026-08-12T00:40:32.635103+00:00",
+      "observedAt": "2026-08-12T00:43:31.723679+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
@@ -1643,7 +1643,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "11000000000000000",
               "price_formatted": "0.011",
-              "current_usd_value": "20.68",
+              "current_usd_value": "20.7",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T19:16:35.000Z",
               "block_number": "25733786",
@@ -1724,7 +1724,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "11000000000000000",
               "price_formatted": "0.011",
-              "current_usd_value": "20.68",
+              "current_usd_value": "20.7",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T14:44:47.000Z",
               "block_number": "25732434",
@@ -1805,7 +1805,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "9880550000000000",
               "price_formatted": "0.00988055",
-              "current_usd_value": "18.57",
+              "current_usd_value": "18.59",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T14:34:35.000Z",
               "block_number": "25732384",
@@ -2301,7 +2301,7 @@
       "name": "Allstarz PSX",
       "chain": "ethereum",
       "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
-      "observedAt": "2026-08-12T00:40:32.635130+00:00",
+      "observedAt": "2026-08-12T00:43:31.723714+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -3456,7 +3456,7 @@
       "name": "ArbiDudesGenOne",
       "chain": "arbitrum",
       "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
-      "observedAt": "2026-08-12T00:40:33.831514+00:00",
+      "observedAt": "2026-08-12T00:43:32.838467+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
@@ -3699,7 +3699,7 @@
               "block_hash": "0xc4fac64771ea74bd8dc8e1a6c48168f64b5a561dc6ddb277d98da75205c0887a",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": null,
+              "token_logo": "https://logo.moralis.io/0xa4b1_0x82af49447d8a07e3bd95bd0d56f35241523fbab1_46dd076fc28dc1444ea32377886e2c2c.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -3899,7 +3899,7 @@
       "name": "Arbibots",
       "chain": "arbitrum",
       "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
-      "observedAt": "2026-08-12T00:40:34.357356+00:00",
+      "observedAt": "2026-08-12T00:43:33.319069+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
@@ -4135,7 +4135,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "41233333333333333",
               "price_formatted": "0.041233333333333333",
-              "current_usd_value": "77.51",
+              "current_usd_value": "77.58",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T13:40:53.000Z",
               "block_number": "493439586",
@@ -4170,7 +4170,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "4527444444166667",
               "price_formatted": "0.004527444444166667",
-              "current_usd_value": "8.51",
+              "current_usd_value": "8.52",
               "price_token_address": null,
               "block_timestamp": "2026-02-14T22:41:15.000Z",
               "block_number": "432154289",
@@ -4212,7 +4212,7 @@
               "block_hash": "0x83724cdc7d684ac8a1768b7500cfa68ffa8789e73dd2da48b6e59092adf45953",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": null,
+              "token_logo": "https://logo.moralis.io/0xa4b1_0x82af49447d8a07e3bd95bd0d56f35241523fbab1_46dd076fc28dc1444ea32377886e2c2c.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -4349,7 +4349,7 @@
       "name": "Avastars",
       "chain": "ethereum",
       "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
-      "observedAt": "2026-08-12T00:40:34.987815+00:00",
+      "observedAt": "2026-08-12T00:43:33.604970+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xf3e778f839934fc819cfa1040aabacecba01e049",
@@ -5395,7 +5395,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "7895000000000000",
               "price_formatted": "0.007895",
-              "current_usd_value": "14.84",
+              "current_usd_value": "14.86",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T20:29:11.000Z",
               "block_number": "25734149",
@@ -5536,7 +5536,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "7438972727272727",
               "price_formatted": "0.007438972727272727",
-              "current_usd_value": "13.98",
+              "current_usd_value": "14",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T20:27:59.000Z",
               "block_number": "25734143",
@@ -5687,7 +5687,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "6800000000000000",
               "price_formatted": "0.0068",
-              "current_usd_value": "12.78",
+              "current_usd_value": "12.79",
               "price_token_address": null,
               "block_timestamp": "2026-08-09T21:31:23.000Z",
               "block_number": "25720127",
@@ -6733,7 +6733,7 @@
       "name": "Boomboxheads V2",
       "chain": "ethereum",
       "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-      "observedAt": "2026-08-12T00:40:35.529398+00:00",
+      "observedAt": "2026-08-12T00:43:33.967960+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
@@ -6966,7 +6966,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "5000000000000000",
               "price_formatted": "0.005",
-              "current_usd_value": "9.4",
+              "current_usd_value": "9.41",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-03-18T16:56:59.000Z",
               "block_number": "24685707",
@@ -7001,7 +7001,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "5000000000000000",
               "price_formatted": "0.005",
-              "current_usd_value": "9.4",
+              "current_usd_value": "9.41",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-02-19T23:05:23.000Z",
               "block_number": "24494062",
@@ -7036,7 +7036,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "15000000000000000",
               "price_formatted": "0.015",
-              "current_usd_value": "28.2",
+              "current_usd_value": "28.22",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2024-11-19T01:05:11.000Z",
               "block_number": "21218373",
@@ -7173,7 +7173,7 @@
       "name": "Bourey vs Bulley: Bourverse",
       "chain": "ethereum",
       "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
-      "observedAt": "2026-08-12T00:40:36.326835+00:00",
+      "observedAt": "2026-08-12T00:43:34.340081+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
@@ -7527,7 +7527,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "800000000000000",
               "price_formatted": "0.0008",
-              "current_usd_value": "1.5",
+              "current_usd_value": "1.51",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-07-30T17:22:11.000Z",
               "block_number": "25647137",
@@ -7695,7 +7695,7 @@
       "name": "Chain Runners",
       "chain": "ethereum",
       "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
-      "observedAt": "2026-08-12T00:40:36.539938+00:00",
+      "observedAt": "2026-08-12T00:43:34.729169+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x97597002980134bea46250aa0510c9b90d87a587",
@@ -8290,7 +8290,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20300000000000000",
               "price_formatted": "0.0203",
-              "current_usd_value": "38.16",
+              "current_usd_value": "38.2",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-10T11:55:47.000Z",
               "block_number": "25724433",
@@ -8366,7 +8366,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20300000000000000",
               "price_formatted": "0.0203",
-              "current_usd_value": "38.16",
+              "current_usd_value": "38.2",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-10T11:46:35.000Z",
               "block_number": "25724387",
@@ -8447,7 +8447,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20100000000000000",
               "price_formatted": "0.0201",
-              "current_usd_value": "37.79",
+              "current_usd_value": "37.82",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-10T11:45:11.000Z",
               "block_number": "25724380",
@@ -8965,7 +8965,7 @@
       "name": "Chametheon",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T00:40:37.046342+00:00",
+      "observedAt": "2026-08-12T00:43:35.140844+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
@@ -9077,14 +9077,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "30000000000000000",
               "price_formatted": "0.03",
-              "current_usd_value": "56.4",
+              "current_usd_value": "56.45",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T19:59:23.000Z",
               "block_number": "25734000",
               "block_hash": "0x159a9a7bee7c8da497e44f40617a7b3e64a2e77ecf78f04310ab60a21ef75937",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -9112,7 +9112,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "19900000000000000",
               "price_formatted": "0.0199",
-              "current_usd_value": "37.41",
+              "current_usd_value": "37.44",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T19:59:11.000Z",
               "block_number": "25733999",
@@ -9147,14 +9147,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20000000000000000",
               "price_formatted": "0.02",
-              "current_usd_value": "37.6",
+              "current_usd_value": "37.63",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T18:08:59.000Z",
               "block_number": "25733449",
               "block_hash": "0x8855ddc79d7c6418cf5eaa0bd74e0c55e7fd82badd78769d078b747884babb71",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -9239,7 +9239,7 @@
       "name": "Chibi Apes",
       "chain": "ethereum",
       "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
-      "observedAt": "2026-08-12T00:40:37.832042+00:00",
+      "observedAt": "2026-08-12T00:43:35.897037+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
@@ -9879,7 +9879,7 @@
               "block_hash": "0x2d89936706c3b582e37bf4313c227b7ec1459a8e4863e6a1f0f4b53fd6f85722",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -10418,7 +10418,7 @@
       "name": "Chuddies",
       "chain": "ethereum",
       "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
-      "observedAt": "2026-08-12T00:40:38.218139+00:00",
+      "observedAt": "2026-08-12T00:43:36.179493+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
@@ -11290,7 +11290,7 @@
       "name": "CyberAnimeDOLL: Avatar",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T00:40:39.624426+00:00",
+      "observedAt": "2026-08-12T00:43:36.677421+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
@@ -11402,14 +11402,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "30000000000000000",
               "price_formatted": "0.03",
-              "current_usd_value": "56.4",
+              "current_usd_value": "56.45",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T19:59:23.000Z",
               "block_number": "25734000",
               "block_hash": "0x159a9a7bee7c8da497e44f40617a7b3e64a2e77ecf78f04310ab60a21ef75937",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -11437,7 +11437,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "19900000000000000",
               "price_formatted": "0.0199",
-              "current_usd_value": "37.41",
+              "current_usd_value": "37.44",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T19:59:11.000Z",
               "block_number": "25733999",
@@ -11472,14 +11472,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20000000000000000",
               "price_formatted": "0.02",
-              "current_usd_value": "37.6",
+              "current_usd_value": "37.63",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T18:08:59.000Z",
               "block_number": "25733449",
               "block_hash": "0x8855ddc79d7c6418cf5eaa0bd74e0c55e7fd82badd78769d078b747884babb71",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -11564,7 +11564,7 @@
       "name": "CyberBrokers",
       "chain": "ethereum",
       "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
-      "observedAt": "2026-08-12T00:40:40.561765+00:00",
+      "observedAt": "2026-08-12T00:43:36.994444+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x892848074ddea461a15f337250da3ce55580ca85",
@@ -12093,7 +12093,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "39800000000000000",
               "price_formatted": "0.0398",
-              "current_usd_value": "74.82",
+              "current_usd_value": "74.89",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T23:58:23.000Z",
               "block_number": "25735192",
@@ -12194,7 +12194,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "39200000000000000",
               "price_formatted": "0.0392",
-              "current_usd_value": "73.69",
+              "current_usd_value": "73.76",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T21:22:47.000Z",
               "block_number": "25734415",
@@ -12275,7 +12275,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "39500000000000000",
               "price_formatted": "0.0395",
-              "current_usd_value": "74.26",
+              "current_usd_value": "74.32",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T21:21:47.000Z",
               "block_number": "25734410",
@@ -12743,7 +12743,7 @@
       "name": "DEyes Legends by Coldie",
       "chain": "ethereum",
       "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
-      "observedAt": "2026-08-12T00:40:40.732318+00:00",
+      "observedAt": "2026-08-12T00:43:37.304770+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
@@ -13180,7 +13180,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "74515000000000020",
               "price_formatted": "0.07451500000000002",
-              "current_usd_value": "140.08",
+              "current_usd_value": "140.21",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2025-04-27T02:50:47.000Z",
               "block_number": "22357511",
@@ -13215,7 +13215,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "150000000000000000",
               "price_formatted": "0.15",
-              "current_usd_value": "281.99",
+              "current_usd_value": "282.24",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2024-12-30T20:22:47.000Z",
               "block_number": "21517652",
@@ -13555,7 +13555,7 @@
       "name": "DickButtVerse",
       "chain": "ethereum",
       "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
-      "observedAt": "2026-08-12T00:40:41.594232+00:00",
+      "observedAt": "2026-08-12T00:43:38.295317+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
@@ -14794,7 +14794,7 @@
       "name": "Elysium Shell: Next - Mecha",
       "chain": "ethereum",
       "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-      "observedAt": "2026-08-12T00:40:41.975884+00:00",
+      "observedAt": "2026-08-12T00:43:38.505716+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
@@ -15279,7 +15279,7 @@
               "block_hash": "0x21271892254d4d545d51359df201e16adabcf6d3e74f41d5db3af3f16339642c",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -15405,7 +15405,7 @@
               "block_hash": "0x41e83ef4c70aa811349fa739cd67a1fd26466a4ac5119fcac2d90d4b51a9a9f5",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -15524,14 +15524,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "46632500000000000",
               "price_formatted": "0.0466325",
-              "current_usd_value": "87.67",
+              "current_usd_value": "87.74",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2025-08-02T15:19:59.000Z",
               "block_number": "23054227",
               "block_hash": "0xc1aacf655fa7f5f1c262e40739a2a91ce72b529b43a8bfa06fe1d3cb16e44703",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -15982,7 +15982,7 @@
       "name": "FLUF World",
       "chain": "ethereum",
       "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
-      "observedAt": "2026-08-12T00:40:42.635770+00:00",
+      "observedAt": "2026-08-12T00:43:39.044169+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
@@ -16731,7 +16731,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "11899000000000000",
               "price_formatted": "0.011899",
-              "current_usd_value": "22.37",
+              "current_usd_value": "22.39",
               "price_token_address": null,
               "block_timestamp": "2026-08-07T15:14:47.000Z",
               "block_number": "25703919",
@@ -16837,14 +16837,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "8800000000000000",
               "price_formatted": "0.0088",
-              "current_usd_value": "16.54",
+              "current_usd_value": "16.56",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-06T21:10:59.000Z",
               "block_number": "25698516",
               "block_hash": "0x25958a8d5ee6a2335cddab4cb7da0edb7d1a712ab0e7ec9aa89172d9425eed08",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -16943,7 +16943,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "14955900000000000",
               "price_formatted": "0.0149559",
-              "current_usd_value": "28.12",
+              "current_usd_value": "28.14",
               "price_token_address": null,
               "block_timestamp": "2026-08-05T15:41:47.000Z",
               "block_number": "25689688",
@@ -17647,7 +17647,7 @@
       "name": "Flooz GEN F",
       "chain": "ethereum",
       "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
-      "observedAt": "2026-08-12T00:40:43.029285+00:00",
+      "observedAt": "2026-08-12T00:43:39.439952+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
@@ -18231,7 +18231,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "1800000000000000",
               "price_formatted": "0.0018",
-              "current_usd_value": "3.38",
+              "current_usd_value": "3.39",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-06-23T15:23:47.000Z",
               "block_number": "25381184",
@@ -18393,7 +18393,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "3500000000000000",
               "price_formatted": "0.0035",
-              "current_usd_value": "6.58",
+              "current_usd_value": "6.59",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-05-22T15:36:23.000Z",
               "block_number": "25151736",
@@ -18907,7 +18907,7 @@
       "name": "Fly Frogs",
       "chain": "ethereum",
       "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
-      "observedAt": "2026-08-12T00:40:43.614997+00:00",
+      "observedAt": "2026-08-12T00:43:39.940820+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
@@ -19323,7 +19323,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "949000000000000",
               "price_formatted": "0.000949",
-              "current_usd_value": "1.78",
+              "current_usd_value": "1.79",
               "price_token_address": null,
               "block_timestamp": "2026-08-10T22:38:59.000Z",
               "block_number": "25727637",
@@ -19515,7 +19515,7 @@
       "name": "Forgotten Runes Wizards Cult",
       "chain": "ethereum",
       "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
-      "observedAt": "2026-08-12T00:40:44.104030+00:00",
+      "observedAt": "2026-08-12T00:43:40.294974+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
@@ -20161,7 +20161,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "39700000000000000",
               "price_formatted": "0.0397",
-              "current_usd_value": "74.63",
+              "current_usd_value": "74.7",
               "price_token_address": null,
               "block_timestamp": "2026-08-08T10:59:59.000Z",
               "block_number": "25709802",
@@ -20252,7 +20252,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "34400000000000000",
               "price_formatted": "0.0344",
-              "current_usd_value": "64.67",
+              "current_usd_value": "64.73",
               "price_token_address": null,
               "block_timestamp": "2026-08-07T20:34:59.000Z",
               "block_number": "25705510",
@@ -20343,7 +20343,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "70000000000000000",
               "price_formatted": "0.07",
-              "current_usd_value": "131.59",
+              "current_usd_value": "131.71",
               "price_token_address": null,
               "block_timestamp": "2026-08-07T03:42:11.000Z",
               "block_number": "25700469",
@@ -20879,7 +20879,7 @@
       "name": "Frutiger Anons",
       "chain": "ethereum",
       "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
-      "observedAt": "2026-08-12T00:40:44.646916+00:00",
+      "observedAt": "2026-08-12T00:43:40.741343+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
@@ -21115,7 +21115,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "4000000000000000",
               "price_formatted": "0.004",
-              "current_usd_value": "7.52",
+              "current_usd_value": "7.53",
               "price_token_address": null,
               "block_timestamp": "2025-05-29T12:05:47.000Z",
               "block_number": "22588298",
@@ -21150,7 +21150,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "5000000000000000",
               "price_formatted": "0.005",
-              "current_usd_value": "9.4",
+              "current_usd_value": "9.41",
               "price_token_address": null,
               "block_timestamp": "2025-05-29T12:03:23.000Z",
               "block_number": "22588286",
@@ -21185,7 +21185,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "5000000000000000",
               "price_formatted": "0.005",
-              "current_usd_value": "9.4",
+              "current_usd_value": "9.41",
               "price_token_address": null,
               "block_timestamp": "2025-05-29T11:59:47.000Z",
               "block_number": "22588268",
@@ -21322,7 +21322,7 @@
       "name": "FyatLux",
       "chain": "ethereum",
       "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
-      "observedAt": "2026-08-12T00:40:45.075655+00:00",
+      "observedAt": "2026-08-12T00:43:41.064893+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
@@ -23162,7 +23162,7 @@
       "name": "Halloween Rising",
       "chain": "optimism",
       "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
-      "observedAt": "2026-08-12T00:40:45.751535+00:00",
+      "observedAt": "2026-08-12T00:43:41.567030+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
@@ -23491,7 +23491,7 @@
       "name": "Immadegen (VOID)",
       "chain": "ethereum",
       "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "observedAt": "2026-08-12T00:40:46.140576+00:00",
+      "observedAt": "2026-08-12T00:43:41.874178+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
@@ -24031,7 +24031,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "13020476190476190",
               "price_formatted": "0.01302047619047619",
-              "current_usd_value": "24.48",
+              "current_usd_value": "24.5",
               "price_token_address": null,
               "block_timestamp": "2026-08-12T00:16:23.000Z",
               "block_number": "25735282",
@@ -24107,7 +24107,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "9900000000000000",
               "price_formatted": "0.0099",
-              "current_usd_value": "18.61",
+              "current_usd_value": "18.63",
               "price_token_address": null,
               "block_timestamp": "2026-08-10T16:24:35.000Z",
               "block_number": "25725772",
@@ -24183,7 +24183,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "7340000000000000",
               "price_formatted": "0.00734",
-              "current_usd_value": "13.8",
+              "current_usd_value": "13.81",
               "price_token_address": null,
               "block_timestamp": "2026-08-10T05:34:35.000Z",
               "block_number": "25722534",
@@ -24658,7 +24658,7 @@
       "name": "Jadu AVA",
       "chain": "ethereum",
       "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
-      "observedAt": "2026-08-12T00:40:46.718755+00:00",
+      "observedAt": "2026-08-12T00:43:42.259942+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
@@ -25392,7 +25392,7 @@
               "block_hash": "0xb3013d16f59b17a2c4cd8bd6dca6f7b15aabcfead1b8f5f6e7d30e7cf3da95f5",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -25488,7 +25488,7 @@
               "block_hash": "0x563f15ddc36b90323a6e1e47b5541b000b39c69cfc2bd9210ed164e1fbe92b80",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -26059,7 +26059,7 @@
       "name": "Karafuru 3D",
       "chain": "ethereum",
       "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
-      "observedAt": "2026-08-12T00:40:48.776386+00:00",
+      "observedAt": "2026-08-12T00:43:42.880694+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
@@ -26643,7 +26643,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "10400000000000000",
               "price_formatted": "0.0104",
-              "current_usd_value": "19.55",
+              "current_usd_value": "19.57",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T09:01:59.000Z",
               "block_number": "25730732",
@@ -26724,7 +26724,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "10400000000000000",
               "price_formatted": "0.0104",
-              "current_usd_value": "19.55",
+              "current_usd_value": "19.57",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T03:29:23.000Z",
               "block_number": "25729077",
@@ -26805,7 +26805,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "10500000000000000",
               "price_formatted": "0.0105",
-              "current_usd_value": "19.74",
+              "current_usd_value": "19.76",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-09T02:56:47.000Z",
               "block_number": "25714573",
@@ -27319,7 +27319,7 @@
       "name": "MONA Avatars",
       "chain": "ethereum",
       "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
-      "observedAt": "2026-08-12T00:40:50.037767+00:00",
+      "observedAt": "2026-08-12T00:43:43.225111+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
@@ -27655,7 +27655,7 @@
       "name": "Meebits",
       "chain": "ethereum",
       "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "observedAt": "2026-08-12T00:40:50.986593+00:00",
+      "observedAt": "2026-08-12T00:43:43.995435+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
@@ -28338,14 +28338,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "346000000000000000",
               "price_formatted": "0.346",
-              "current_usd_value": "650.45",
+              "current_usd_value": "651.03",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T18:29:11.000Z",
               "block_number": "25733549",
               "block_hash": "0x5fe5ff47df81fabae951ab8acc6a85511273f044e175259c68ed3af02a5b85ba",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -28424,7 +28424,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "440000000000000000",
               "price_formatted": "0.44",
-              "current_usd_value": "827.17",
+              "current_usd_value": "827.9",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T18:01:11.000Z",
               "block_number": "25733410",
@@ -28510,14 +28510,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "347000000000000000",
               "price_formatted": "0.347",
-              "current_usd_value": "652.33",
+              "current_usd_value": "652.91",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T16:11:59.000Z",
               "block_number": "25732866",
               "block_hash": "0xa1590c02e9f583bd8eaa52a6429184f5e0ae25618b9a1055edb76beaf47c876e",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -29131,7 +29131,7 @@
       "name": "MetaaniGEN",
       "chain": "ethereum",
       "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
-      "observedAt": "2026-08-12T00:40:51.911089+00:00",
+      "observedAt": "2026-08-12T00:43:44.352332+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xa467ab9447afa5db0c70325348d810d2058dde18",
@@ -29530,7 +29530,7 @@
               "block_hash": "0x088f20f1482e020973ee63642f07de9d2f9988450fd77a7e4cebb7e0de58f712",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -29586,7 +29586,7 @@
               "block_hash": "0x6282b82e9f6f3fc9432cbc1ba115eb1ce5b6863190cbf954d89bdd9dde869cc3",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -29899,7 +29899,7 @@
       "name": "Metashima - Lightning",
       "chain": "ethereum",
       "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
-      "observedAt": "2026-08-12T00:40:52.712834+00:00",
+      "observedAt": "2026-08-12T00:43:44.700790+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
@@ -32764,7 +32764,7 @@
       "name": "MisfitPIXELS",
       "chain": "ethereum",
       "contract": "0x618951345638caa062259cdbed445d4fb661b774",
-      "observedAt": "2026-08-12T00:40:53.914609+00:00",
+      "observedAt": "2026-08-12T00:43:45.058245+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x618951345638caa062259cdbed445d4fb661b774",
@@ -33387,7 +33387,7 @@
       "name": "Moonbirds",
       "chain": "ethereum",
       "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
-      "observedAt": "2026-08-12T00:40:54.591070+00:00",
+      "observedAt": "2026-08-12T00:43:45.642668+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
@@ -33839,7 +33839,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "549000000000000000",
               "price_formatted": "0.549",
-              "current_usd_value": "1032.08",
+              "current_usd_value": "1032.99",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T20:19:47.000Z",
               "block_number": "25734102",
@@ -33905,14 +33905,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "466000000000000000",
               "price_formatted": "0.466",
-              "current_usd_value": "876.05",
+              "current_usd_value": "876.82",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T20:13:35.000Z",
               "block_number": "25734071",
               "block_hash": "0x303aecf22d3d324f42fbee9f1e37f036987f441707146792dad238ca54edf8fe",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -33971,7 +33971,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "493999940000000000",
               "price_formatted": "0.49399994",
-              "current_usd_value": "928.68",
+              "current_usd_value": "929.5",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T19:38:35.000Z",
               "block_number": "25733896",
@@ -34366,7 +34366,7 @@
       "name": "NeonGlitch86 Collection",
       "chain": "ethereum",
       "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-      "observedAt": "2026-08-12T00:40:55.049712+00:00",
+      "observedAt": "2026-08-12T00:43:46.004911+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
@@ -34686,7 +34686,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "30000000000000000",
               "price_formatted": "0.03",
-              "current_usd_value": "56.4",
+              "current_usd_value": "56.45",
               "price_token_address": null,
               "block_timestamp": "2023-06-28T16:38:35.000Z",
               "block_number": "17579058",
@@ -34727,7 +34727,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "26000000000000000",
               "price_formatted": "0.026",
-              "current_usd_value": "48.88",
+              "current_usd_value": "48.92",
               "price_token_address": null,
               "block_timestamp": "2023-06-12T15:05:35.000Z",
               "block_number": "17464748",
@@ -34768,7 +34768,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "25000000000000000",
               "price_formatted": "0.025",
-              "current_usd_value": "47",
+              "current_usd_value": "47.04",
               "price_token_address": null,
               "block_timestamp": "2023-05-12T15:03:11.000Z",
               "block_number": "17244896",
@@ -34984,7 +34984,7 @@
       "name": "NeonGlitch86 Collection (Polygon side)",
       "chain": "polygon",
       "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
-      "observedAt": "2026-08-12T00:40:56.366854+00:00",
+      "observedAt": "2026-08-12T00:43:46.443455+00:00",
       "moralis": {
         "metadata": null,
         "stats": {
@@ -35096,7 +35096,7 @@
       "name": "Non-Fungible People",
       "chain": "ethereum",
       "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
-      "observedAt": "2026-08-12T00:40:57.093397+00:00",
+      "observedAt": "2026-08-12T00:43:47.117000+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x92133e21fff525b16d1edcf78be82297d25d1154",
@@ -36336,7 +36336,7 @@
       "name": "Nouns",
       "chain": "ethereum",
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
-      "observedAt": "2026-08-12T00:40:58.311289+00:00",
+      "observedAt": "2026-08-12T00:43:47.632731+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
@@ -36599,7 +36599,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "762498724950000125",
               "price_formatted": "0.762498724950000125",
-              "current_usd_value": "1433.44",
+              "current_usd_value": "1434.71",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T01:34:11.000Z",
               "block_number": "25728504",
@@ -36634,7 +36634,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "762498724950000125",
               "price_formatted": "0.762498724950000125",
-              "current_usd_value": "1433.44",
+              "current_usd_value": "1434.71",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T01:34:11.000Z",
               "block_number": "25728504",
@@ -36669,7 +36669,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "762498724950000125",
               "price_formatted": "0.762498724950000125",
-              "current_usd_value": "1433.44",
+              "current_usd_value": "1434.71",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T01:34:11.000Z",
               "block_number": "25728504",
@@ -36837,7 +36837,7 @@
       "name": "OG Meta Meeples PFP",
       "chain": "ethereum",
       "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
-      "observedAt": "2026-08-12T00:40:58.711767+00:00",
+      "observedAt": "2026-08-12T00:43:48.334833+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
@@ -37065,7 +37065,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "2300000000000000",
               "price_formatted": "0.0023",
-              "current_usd_value": "4.32",
+              "current_usd_value": "4.33",
               "price_token_address": null,
               "block_timestamp": "2023-11-15T16:47:35.000Z",
               "block_number": "18578572",
@@ -37121,7 +37121,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "2400000000000000",
               "price_formatted": "0.0024",
-              "current_usd_value": "4.51",
+              "current_usd_value": "4.52",
               "price_token_address": null,
               "block_timestamp": "2023-10-08T13:56:35.000Z",
               "block_number": "18306198",
@@ -37177,7 +37177,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/blur.png",
               "price": "2299400000000000",
               "price_formatted": "0.0022994",
-              "current_usd_value": "4.32",
+              "current_usd_value": "4.33",
               "price_token_address": null,
               "block_timestamp": "2023-10-04T23:41:11.000Z",
               "block_number": "18280499",
@@ -37335,7 +37335,7 @@
       "name": "Omnimorphs",
       "chain": "ethereum",
       "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
-      "observedAt": "2026-08-12T00:40:59.442885+00:00",
+      "observedAt": "2026-08-12T00:43:48.600960+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
@@ -38333,7 +38333,7 @@
               "block_hash": "0x6b7cf52612fc71e0e05d676662eaeb7945fdab27e20b7c9111798e23a3ae7d05",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -38474,7 +38474,7 @@
               "block_hash": "0x54a11b00f8702d1418c35cf4b6c7a6ef7243ccb472c7593c7c177f4e163abe54",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -39599,7 +39599,7 @@
       "name": "Parallel Avatars",
       "chain": "ethereum",
       "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
-      "observedAt": "2026-08-12T00:41:00.191172+00:00",
+      "observedAt": "2026-08-12T00:43:48.959238+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
@@ -39974,7 +39974,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "21657000000000000",
               "price_formatted": "0.021657",
-              "current_usd_value": "40.71",
+              "current_usd_value": "40.75",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T17:32:11.000Z",
               "block_number": "25733265",
@@ -40035,7 +40035,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "45000000000000000",
               "price_formatted": "0.045",
-              "current_usd_value": "84.59",
+              "current_usd_value": "84.67",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T03:51:11.000Z",
               "block_number": "25729186",
@@ -40101,7 +40101,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "45000000000000000",
               "price_formatted": "0.045",
-              "current_usd_value": "84.59",
+              "current_usd_value": "84.67",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T03:49:59.000Z",
               "block_number": "25729180",
@@ -40384,7 +40384,7 @@
       "name": "PartyBear",
       "chain": "ethereum",
       "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
-      "observedAt": "2026-08-12T00:41:00.947299+00:00",
+      "observedAt": "2026-08-12T00:43:49.478928+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
@@ -41314,7 +41314,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "1800000000000000",
               "price_formatted": "0.0018",
-              "current_usd_value": "3.38",
+              "current_usd_value": "3.39",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-07-29T22:52:11.000Z",
               "block_number": "25641599",
@@ -41991,7 +41991,7 @@
       "name": "Phettaverse Editions",
       "chain": "ethereum",
       "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
-      "observedAt": "2026-08-12T00:41:01.612365+00:00",
+      "observedAt": "2026-08-12T00:43:49.837305+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
@@ -42486,7 +42486,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "21506000000000000",
               "price_formatted": "0.021506",
-              "current_usd_value": "40.43",
+              "current_usd_value": "40.47",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2025-07-23T19:35:35.000Z",
               "block_number": "22983987",
@@ -42537,7 +42537,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "100000000000000000",
               "price_formatted": "0.1",
-              "current_usd_value": "187.99",
+              "current_usd_value": "188.16",
               "price_token_address": null,
               "block_timestamp": "2022-12-26T02:46:47.000Z",
               "block_number": "16266034",
@@ -42850,7 +42850,7 @@
       "name": "PixelBeasts",
       "chain": "ethereum",
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-08-12T00:41:02.705178+00:00",
+      "observedAt": "2026-08-12T00:43:50.564300+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
@@ -42962,7 +42962,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "30000000000000000",
               "price_formatted": "0.03",
-              "current_usd_value": "56.4",
+              "current_usd_value": "56.45",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T19:59:23.000Z",
               "block_number": "25734000",
@@ -42997,7 +42997,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "19900000000000000",
               "price_formatted": "0.0199",
-              "current_usd_value": "37.41",
+              "current_usd_value": "37.44",
               "price_token_address": null,
               "block_timestamp": "2026-08-11T19:59:11.000Z",
               "block_number": "25733999",
@@ -43032,7 +43032,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "20000000000000000",
               "price_formatted": "0.02",
-              "current_usd_value": "37.6",
+              "current_usd_value": "37.63",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T18:08:59.000Z",
               "block_number": "25733449",
@@ -43142,7 +43142,7 @@
       "name": "RSTLSS x Claire Silver: Pixelgeist",
       "chain": "ethereum",
       "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
-      "observedAt": "2026-08-12T00:41:03.615389+00:00",
+      "observedAt": "2026-08-12T00:43:51.156104+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x0e58adde284e95fa591cd3904452b12356570251",
@@ -44314,7 +44314,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "12600000000000000",
               "price_formatted": "0.0126",
-              "current_usd_value": "23.69",
+              "current_usd_value": "23.71",
               "price_token_address": null,
               "block_timestamp": "2026-08-02T08:47:23.000Z",
               "block_number": "25666100",
@@ -44485,14 +44485,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "8700000000000000",
               "price_formatted": "0.0087",
-              "current_usd_value": "16.35",
+              "current_usd_value": "16.37",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-01T11:29:23.000Z",
               "block_number": "25659730",
               "block_hash": "0x95eaf204533aa0c96fe82f0e93eddad1f921258d5bdbcc610947042a71e2f306",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -44656,14 +44656,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "8700000000000000",
               "price_formatted": "0.0087",
-              "current_usd_value": "16.35",
+              "current_usd_value": "16.37",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-01T11:28:35.000Z",
               "block_number": "25659726",
               "block_hash": "0xe266b87ebe490839d9e0c91169aaf978c110bb96bde5b2bd28bebeb99207ace3",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -45860,7 +45860,7 @@
       "name": "RTFKT CloneX",
       "chain": "ethereum",
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-      "observedAt": "2026-08-12T00:41:04.792028+00:00",
+      "observedAt": "2026-08-12T00:43:51.761156+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
@@ -46356,7 +46356,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "253000000000000000",
               "price_formatted": "0.253",
-              "current_usd_value": "475.6",
+              "current_usd_value": "476.04",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T18:05:59.000Z",
               "block_number": "25733434",
@@ -46417,7 +46417,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "256000000000000000",
               "price_formatted": "0.256",
-              "current_usd_value": "481.24",
+              "current_usd_value": "481.69",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T17:57:59.000Z",
               "block_number": "25733394",
@@ -46478,7 +46478,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "254000000000000000",
               "price_formatted": "0.254",
-              "current_usd_value": "477.48",
+              "current_usd_value": "477.92",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-11T07:36:23.000Z",
               "block_number": "25730306",
@@ -46894,7 +46894,7 @@
       "name": "The Dask",
       "chain": "ethereum",
       "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "observedAt": "2026-08-12T00:41:04.817464+00:00",
+      "observedAt": "2026-08-12T00:43:52.163118+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
@@ -47404,7 +47404,7 @@
               "block_hash": "0x297ecab79ad3e1824be8dca3e47cd6635249f9719ab22e4eb8404140ece1ab9b",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -47480,7 +47480,7 @@
               "block_hash": "0x79304d711ad5c2e2736f29f07baf47bf9e374236c6f09323428599d575c8bc25",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -47551,7 +47551,7 @@
               "block_hash": "0xaddc4e5c3df32477f3a78cad0f6c2c55ac45de0f8af647a0cf4ed3f5508d1b1d",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -47966,7 +47966,7 @@
       "name": "The Modz",
       "chain": "ethereum",
       "contract": "0x50e712b3a260d7639179e8277836253461418f23",
-      "observedAt": "2026-08-12T00:41:05.471294+00:00",
+      "observedAt": "2026-08-12T00:43:52.500214+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x50e712b3a260d7639179e8277836253461418f23",
@@ -49290,7 +49290,7 @@
       "name": "The Seekers",
       "chain": "ethereum",
       "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
-      "observedAt": "2026-08-12T00:41:05.994330+00:00",
+      "observedAt": "2026-08-12T00:43:52.966427+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
@@ -50007,7 +50007,7 @@
               "block_hash": "0x4cc4d466d1a027511330a2b3bc2e8e13f2ae4de12d64a5ea245121731e95e72a",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -50042,7 +50042,7 @@
               "block_hash": "0x9e984cf57fa302711675704a81a0886b10d8283f9147157fc1ba29dd75ece7c1",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -50133,7 +50133,7 @@
               "block_hash": "0x865acc32a366b69738bf3c0fc66dc9d60fc0f600e66bd73bd05f8441b5a8747e",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -50732,7 +50732,7 @@
       "name": "Toxic Skulls Club",
       "chain": "ethereum",
       "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
-      "observedAt": "2026-08-12T00:41:06.793335+00:00",
+      "observedAt": "2026-08-12T00:43:53.322969+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
@@ -51287,7 +51287,7 @@
               "block_hash": "0xb4cd4f391a5f654eea3e176160c1f7c96ca991d53bba46246a0d7a39c2d72f8c",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -51368,7 +51368,7 @@
               "block_hash": "0xa0884157e9bf563f0f390759b8a3ce5b5ba243885f1b40afdadb4222eab8bc23",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
+              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -51753,7 +51753,7 @@
       "name": "VeeFriends Series 2",
       "chain": "base",
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
-      "observedAt": "2026-08-12T00:41:07.457890+00:00",
+      "observedAt": "2026-08-12T00:43:53.699744+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
@@ -52209,7 +52209,7 @@
       "name": "Virtuals Waifus",
       "chain": "base",
       "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
-      "observedAt": "2026-08-12T00:41:08.120440+00:00",
+      "observedAt": "2026-08-12T00:43:54.185823+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x631086734a5415f324f4ca350560b56e86c29fdf",
@@ -53603,7 +53603,7 @@
       "name": "Voltz",
       "chain": "ethereum",
       "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "observedAt": "2026-08-12T00:41:08.416249+00:00",
+      "observedAt": "2026-08-12T00:43:54.732705+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
@@ -54370,7 +54370,7 @@
               "block_hash": "0xda290e8e6a59e97126338f2ec40d93d8e6b98b180346b60a51b080d6b4d13cc4",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -54471,7 +54471,7 @@
               "block_hash": "0x050fee248d9804b2d1e08801380f89eaf91ac83070beff3ceb3ac49f581d5eb3",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -54582,7 +54582,7 @@
               "block_hash": "0xb86bb1d6b220ff66aef4f11913205a50946b1d23f8616cb69039a05880b1391c",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": false,
               "metadata": {
@@ -55295,7 +55295,7 @@
       "name": "Wassies",
       "chain": "ethereum",
       "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "observedAt": "2026-08-12T00:41:10.198605+00:00",
+      "observedAt": "2026-08-12T00:43:55.353667+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
@@ -55945,7 +55945,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "48000000000000000",
               "price_formatted": "0.048",
-              "current_usd_value": "90.23",
+              "current_usd_value": "90.32",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-09T02:33:35.000Z",
               "block_number": "25714457",
@@ -55980,7 +55980,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "51100000000000000",
               "price_formatted": "0.0511",
-              "current_usd_value": "96.06",
+              "current_usd_value": "96.15",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-06T10:05:11.000Z",
               "block_number": "25695193",
@@ -56071,7 +56071,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "49210000000000000",
               "price_formatted": "0.04921",
-              "current_usd_value": "92.51",
+              "current_usd_value": "92.59",
               "price_token_address": null,
               "block_timestamp": "2026-08-03T22:48:59.000Z",
               "block_number": "25677466",
@@ -56667,7 +56667,7 @@
       "name": "Woodies",
       "chain": "ethereum",
       "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
-      "observedAt": "2026-08-12T00:41:11.110050+00:00",
+      "observedAt": "2026-08-12T00:43:55.589529+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
@@ -57291,7 +57291,7 @@
               "block_hash": "0xb8596fc22ac7ffb27862a5bb83432a4d31ba1f5c030217c0825d109d30f7fcaa",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -57375,14 +57375,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "1300000000000000",
               "price_formatted": "0.0013",
-              "current_usd_value": "2.44",
+              "current_usd_value": "2.45",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-05T09:42:47.000Z",
               "block_number": "25687902",
               "block_hash": "0xeb9ee2016b5d41818b28949661757184c9f52902984ab4d094650d7ca4c924d5",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -57461,14 +57461,14 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "1300000000000000",
               "price_formatted": "0.0013",
-              "current_usd_value": "2.44",
+              "current_usd_value": "2.45",
               "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
               "block_timestamp": "2026-08-04T22:44:11.000Z",
               "block_number": "25684621",
               "block_hash": "0xe1d239cce0c3eba2bc9053538f184c74dac0b05b1de4074ecbec12267a9bbcff",
               "token_name": "Wrapped Ether",
               "token_symbol": "WETH",
-              "token_logo": "https://cdn.moralis.io/eth/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png",
+              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
               "token_decimals": "18",
               "verified_collection": true,
               "metadata": {
@@ -58013,7 +58013,7 @@
       "name": "Xmas Chibis",
       "chain": "polygon",
       "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
-      "observedAt": "2026-08-12T00:41:11.134232+00:00",
+      "observedAt": "2026-08-12T00:43:55.975689+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
@@ -58309,7 +58309,7 @@
               "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
               "price": "30000000000000000",
               "price_formatted": "0.03",
-              "current_usd_value": "56.45",
+              "current_usd_value": "56.44",
               "price_token_address": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
               "block_timestamp": "2023-12-28T02:55:42.000Z",
               "block_number": "51642256",
@@ -58448,7 +58448,7 @@
       "name": "ZTX Genesis Homes",
       "chain": "arbitrum",
       "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
-      "observedAt": "2026-08-12T00:41:11.586193+00:00",
+      "observedAt": "2026-08-12T00:43:56.350349+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x35373efc2fd7d852729cae869cc32acc979100bd",
@@ -58891,7 +58891,7 @@
       "name": "a KID called BEAST",
       "chain": "ethereum",
       "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
-      "observedAt": "2026-08-12T00:41:12.075336+00:00",
+      "observedAt": "2026-08-12T00:43:56.718730+00:00",
       "moralis": {
         "metadata": {
           "token_address": "0x77372a4cc66063575b05b44481f059be356964a4",
@@ -59534,302 +59534,8 @@
         "trades": {
           "page": 0,
           "page_size": 3,
-          "cursor": "eyJhbGciOiJIUzI1NiJ9.eyJhc2NlbmRpbmciOmZhbHNlLCJsaW1pdCI6MywicGFnZSI6MCwibGFzdEV2YWx1YXRlZEtleSI6eyJ0b2tlbkFkZHJlc3MiOiIweDc3MzcyYTRjYzY2MDYzNTc1YjA1YjQ0NDgxZjA1OWJlMzU2OTY0YTQiLCJsb2dJZGVudGlmaWVyUm9sbHVwIjoiMDAwMTc4NjQ3MTc3NTAwMDAwMDAwMDAwMDAwMDAwNjkifSwidGFibGVJbmRleCI6MH0.3jHrwXgAcwgrbkfHo3rB1qd1JzDOrYRWZbvrXbfxfAM",
-          "result": [
-            {
-              "transaction_hash": "0xc33e82cd7b4aee87f929ab8008d115917660a708304740d61495abed72d90e22",
-              "transaction_index": "776",
-              "token_ids": [
-                "3061"
-              ],
-              "seller_address": "0xc05efb1147d5f077acd8aeeb83ac12e6fe81d6b1",
-              "buyer_address": "0x202b693b295ff588bc3259736cfae35b2e97e856",
-              "token_address": "0x77372a4cc66063575b05b44481f059be356964a4",
-              "collection_name": "a KID called BEAST",
-              "collection_logo": "https://i2c.seadn.io/ethereum/36f80ec8d8144753ad9133abe0cc1cd2/3d48026c518b2dc7542842f0b7deff/523d48026c518b2dc7542842f0b7deff.png",
-              "marketplace": "opensea",
-              "marketplace_address": "0x0000000000000068f116a894984e2db1123eb395",
-              "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
-              "price": "92799000000000000",
-              "price_formatted": "0.092799",
-              "current_usd_value": "174.45",
-              "price_token_address": null,
-              "block_timestamp": "2026-08-11T23:25:47.000Z",
-              "block_number": "25735029",
-              "block_hash": "0x215681a3c2232e864990abdfc3c313f99d072a843c5d81b155d2e0e45f08e911",
-              "token_name": "Ether",
-              "token_symbol": "ETH",
-              "token_logo": "https://cdn.moralis.io/eth/0x.png",
-              "token_decimals": "18",
-              "verified_collection": true,
-              "metadata": {
-                "name": "BEAST #3061",
-                "description": "Connect your wallet to hub.akidcalledbeast.com, to view your complete BEAST and access all files. a KID called BEAST is a Web3 brand and culture that starts with our digital collectibles — 10,000 unique, truly 3D, and AR-Ready. Each BEAST belongs to 1 of 20 beasthoods. The owner is given access to a sub-community of 500 like-minded individuals.",
-                "animation_url": null,
-                "external_link": null,
-                "image": "ipfs://QmdVjhT3UvyoJ62iSQgqR3crBMJCHCFDQeYLs9DMBoEr5x/3061.png",
-                "attributes": [
-                  {
-                    "traitType": "Eyes",
-                    "value": "Human Pupils",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "DNA",
-                    "value": "Human",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Human",
-                    "value": "Dark",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava",
-                    "value": "Bull",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava Style",
-                    "value": "Black",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Footwear",
-                    "value": "Sock Sneakers",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Sock Sneakers",
-                    "value": "Cream",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Top",
-                    "value": "Suit Jacket",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Suit Jacket",
-                    "value": "Blue Stripes & White",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Bottom",
-                    "value": "Suit Pants",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Beasthood",
-                    "value": "Fort Flex",
-                    "traitCount": 0
-                  }
-                ]
-              }
-            },
-            {
-              "transaction_hash": "0xdcae0534ca7175b4f540cdfeb4f0a623f039310ba23f0bb245e8623ed747dd2d",
-              "transaction_index": "147",
-              "token_ids": [
-                "6949"
-              ],
-              "seller_address": "0x7a6c06a7a44838c9960a22ae90488a672e1274e2",
-              "buyer_address": "0xc05efb1147d5f077acd8aeeb83ac12e6fe81d6b1",
-              "token_address": "0x77372a4cc66063575b05b44481f059be356964a4",
-              "collection_name": "a KID called BEAST",
-              "collection_logo": "https://i2c.seadn.io/ethereum/36f80ec8d8144753ad9133abe0cc1cd2/3d48026c518b2dc7542842f0b7deff/523d48026c518b2dc7542842f0b7deff.png",
-              "marketplace": "opensea",
-              "marketplace_address": "0x0000000000000068f116a894984e2db1123eb395",
-              "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
-              "price": "85600000000000000",
-              "price_formatted": "0.0856",
-              "current_usd_value": "160.92",
-              "price_token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-              "block_timestamp": "2026-08-11T19:10:35.000Z",
-              "block_number": "25733756",
-              "block_hash": "0x17a39d8683513a4669a67f5fbd60d6c09029827a6d73707376562ffc4201fcd6",
-              "token_name": "Wrapped Ether",
-              "token_symbol": "WETH",
-              "token_logo": "https://logo.moralis.io/0x1_0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2_7a88b9c0f9593d020d5be31a11a4ef8f.webp",
-              "token_decimals": "18",
-              "verified_collection": true,
-              "metadata": {
-                "name": "BEAST #6949",
-                "description": "Connect your wallet to hub.akidcalledbeast.com, to view your complete BEAST and access all files. a KID called BEAST is a Web3 brand and culture that starts with our digital collectibles — 10,000 unique, truly 3D, and AR-Ready. Each BEAST belongs to 1 of 20 beasthoods. The owner is given access to a sub-community of 500 like-minded individuals.",
-                "animation_url": null,
-                "external_link": null,
-                "image": "ipfs://QmXPyTivnjnFdkaQRpWot8eSmCtujGSRzLBXbY62MLQma7/6949.png",
-                "attributes": [
-                  {
-                    "traitType": "Eyes",
-                    "value": "Human Pupils",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "DNA",
-                    "value": "Human",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Human",
-                    "value": "Light",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava",
-                    "value": "Koala",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava Style",
-                    "value": "Gray",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Headwear",
-                    "value": "Aviator Glasses",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Aviator Glasses",
-                    "value": "Silver & Yellow Tint",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Top",
-                    "value": "Cardigan",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Bottom",
-                    "value": "Box Pleats",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Cardigan",
-                    "value": "Mustard Yellow & Stripes",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Box Pleats",
-                    "value": "Blue Denim",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Footwear",
-                    "value": "High-Top Sneakers",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "High-Top Sneakers",
-                    "value": "Light Blue",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Beasthood",
-                    "value": "Cloudy Gardens",
-                    "traitCount": 0
-                  }
-                ]
-              }
-            },
-            {
-              "transaction_hash": "0x160880e4512a2c2c6e419ca49532a1462bf3fc4d02fd9169421efc999efe8376",
-              "transaction_index": "22",
-              "token_ids": [
-                "2614"
-              ],
-              "seller_address": "0xfc9797e62540454ced12d4f4f3425dcece9b0feb",
-              "buyer_address": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
-              "token_address": "0x77372a4cc66063575b05b44481f059be356964a4",
-              "collection_name": "a KID called BEAST",
-              "collection_logo": "https://i2c.seadn.io/ethereum/36f80ec8d8144753ad9133abe0cc1cd2/3d48026c518b2dc7542842f0b7deff/523d48026c518b2dc7542842f0b7deff.png",
-              "marketplace": "opensea",
-              "marketplace_address": "0x0000000000000068f116a894984e2db1123eb395",
-              "marketplace_logo": "https://cdn.moralis.io/marketplaces/opensea.png",
-              "price": "89567980000000000",
-              "price_formatted": "0.08956798",
-              "current_usd_value": "168.37",
-              "price_token_address": null,
-              "block_timestamp": "2026-08-11T18:09:35.000Z",
-              "block_number": "25733452",
-              "block_hash": "0x581844dc6d3cba53058d893ff6a6ede2f990a34f5033eb801837b77009255a2f",
-              "token_name": "Ether",
-              "token_symbol": "ETH",
-              "token_logo": "https://cdn.moralis.io/eth/0x.png",
-              "token_decimals": "18",
-              "verified_collection": true,
-              "metadata": {
-                "name": "BEAST #2614",
-                "description": "Connect your wallet to hub.akidcalledbeast.com, to view your complete BEAST and access all files. a KID called BEAST is a Web3 brand and culture that starts with our digital collectibles — 10,000 unique, truly 3D, and AR-Ready. Each BEAST belongs to 1 of 20 beasthoods. The owner is given access to a sub-community of 500 like-minded individuals.",
-                "animation_url": null,
-                "external_link": null,
-                "image": "ipfs://QmdVjhT3UvyoJ62iSQgqR3crBMJCHCFDQeYLs9DMBoEr5x/2614.png",
-                "attributes": [
-                  {
-                    "traitType": "Bottom",
-                    "value": "Shorts",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Shorts",
-                    "value": "Chestnut",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Eyes",
-                    "value": "Human Pupils",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "DNA",
-                    "value": "Human",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Human",
-                    "value": "Dark",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava",
-                    "value": "Pooch",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Balaclava Style",
-                    "value": "Olive",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Footwear",
-                    "value": "Casual Sneakers",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Casual Sneakers",
-                    "value": "Cream",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Top",
-                    "value": "Polo Shirt",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Polo Shirt",
-                    "value": "Red & Arctic Blue",
-                    "traitCount": 0
-                  },
-                  {
-                    "traitType": "Beasthood",
-                    "value": "L33T Labs",
-                    "traitCount": 0
-                  }
-                ]
-              }
-            }
-          ]
+          "cursor": null,
+          "result": []
         },
         "sampledNfts": [
           {
@@ -60338,7 +60044,7 @@
         "independentOnchainSignals": {
           "ownerCount": "3035",
           "transferCount": "78210",
-          "recentTradesReturned": 3
+          "recentTradesReturned": 0
         },
         "note": "Moralis floor pricing may itself aggregate marketplace APIs including OpenSea; treat ownership, transfer and onchain trade signals as more independent than floor-price agreement."
       }
@@ -60348,7 +60054,7 @@
       "name": "mferverse: OG mfers",
       "chain": "base",
       "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
-      "observedAt": "2026-08-12T00:41:15.291208+00:00",
+      "observedAt": "2026-08-12T00:43:58.053903+00:00",
       "moralis": {
         "metadata": null,
         "stats": {
