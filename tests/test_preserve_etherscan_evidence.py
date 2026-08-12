@@ -1,4 +1,4 @@
-from scripts.preserve_etherscan_evidence import merge_with_previous
+from scripts.preserve_etherscan_evidence import merge_with_previous, refresh_unusable
 
 
 def report(collection):
@@ -100,3 +100,11 @@ def test_identity_change_never_reuses_previous_evidence():
 
     assert preserved == 0
     assert merged["collections"][0]["contractEvidence"] == {}
+
+
+def test_all_error_audit_with_corroboration_remains_usable():
+    assert refresh_unusable(66, 66, 62) is False
+
+
+def test_all_error_audit_without_corroboration_fails_closed():
+    assert refresh_unusable(66, 66, 0) is True
