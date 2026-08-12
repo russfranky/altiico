@@ -9,6 +9,7 @@ names, contract addresses, marketplace slugs, and model-file signals so the
 from __future__ import annotations
 
 import argparse
+import html as html_lib
 import json
 import re
 from html.parser import HTMLParser
@@ -45,22 +46,72 @@ def fetch(session: requests.Session, url: str, timeout: float) -> tuple[int, str
     return r.status_code, ctype, text
 
 
+def decoded_views(text: str) -> list[str]:
+    """Return original + conservative decoded variants for JSON/JS escaped strings."""
+    views = [text]
+    simple = text.replace(r"\/", "/").replace(r'\"', '"').replace(r"\'", "'")
+    if simple not in views:
+        views.append(simple)
+    entity = html_lib.unescape(simple)
+    if entity not in views:
+        views.append(entity)
+    # Locale endpoint is JSON-ish JavaScript. Decode common unicode escapes without
+    # trying to execute arbitrary JS.
+    try:
+        unicode_decoded = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), entity)
+        if unicode_decoded not in views:
+            views.append(unicode_decoded)
+    except Exception:
+        pass
+    return views
+
+
+def extract_urls(text: str) -> list[str]:
+    urls: set[str] = set()
+    for view in decoded_views(text):
+        for url in URL_RE.findall(view):
+            urls.add(url.rstrip(".,;"))
+    return sorted(urls)
+
+
 def interesting_urls(text: str) -> list[str]:
     urls = []
-    for url in URL_RE.findall(text):
+    for url in extract_urls(text):
         low = url.lower()
         if any(k in low for k in ("api", "graphql", "json", "avatar", "collection", "partner", "nft", "vrm", "opensea")):
-            urls.append(url.rstrip(".,;"))
+            urls.append(url)
     return sorted(set(urls))
+
+
+def contracts_in(text: str) -> list[str]:
+    out: set[str] = set()
+    for view in decoded_views(text):
+        out.update(CONTRACT_RE.findall(view))
+    return sorted(out)
+
+
+def models_in(text: str) -> list[str]:
+    out: set[str] = set()
+    for view in decoded_views(text):
+        out.update(MODEL_RE.findall(view))
+    return sorted(out)
+
+
+def slugs_in(text: str) -> list[str]:
+    out: set[str] = set()
+    for view in decoded_views(text):
+        out.update(OPENSEA_RE.findall(view))
+    return sorted(out)
 
 
 def string_hints(text: str) -> list[str]:
     hints = []
-    for raw in re.findall(r"[\"']([^\"']{3,120})[\"']", text):
-        s = raw.strip()
-        if KEYWORD_RE.search(s) and not s.startswith(("http://", "https://")):
-            hints.append(s)
-    return sorted(set(hints))[:500]
+    for view in decoded_views(text):
+        for raw in re.findall(r"[\"']([^\"']{3,160})[\"']", view):
+            s = raw.strip()
+            if KEYWORD_RE.search(s) and not s.startswith(("http://", "https://")):
+                hints.append(s)
+    return sorted(set(hints))[:1000]
 
 
 def main() -> None:
@@ -84,40 +135,39 @@ def main() -> None:
 
     records = []
     all_urls: set[str] = set()
-    all_contracts: set[str] = set(CONTRACT_RE.findall(html))
-    all_models: set[str] = set(MODEL_RE.findall(html))
-    all_slugs: set[str] = set(OPENSEA_RE.findall(html))
+    all_contracts: set[str] = set(contracts_in(html))
+    all_models: set[str] = set(models_in(html))
+    all_slugs: set[str] = set(slugs_in(html))
     all_hints: set[str] = set(string_hints(html))
 
     for url in assets:
         try:
             st, ct, text = fetch(session, url, args.timeout)
             urls = interesting_urls(text)
-            contracts = sorted(set(CONTRACT_RE.findall(text)))
-            models = sorted(set(MODEL_RE.findall(text)))
-            slugs = sorted(set(OPENSEA_RE.findall(text)))
+            contracts = contracts_in(text)
+            models = models_in(text)
+            slugs = slugs_in(text)
             hints = string_hints(text)
             all_urls.update(urls); all_contracts.update(contracts); all_models.update(models); all_slugs.update(slugs); all_hints.update(hints)
-            records.append({"url": url, "status": st, "contentType": ct, "bytesText": len(text), "interestingUrls": urls[:100], "contracts": contracts, "modelUrls": models, "openseaSlugs": slugs, "stringHints": hints[:100]})
+            records.append({"url": url, "status": st, "contentType": ct, "bytesText": len(text), "interestingUrls": urls[:200], "contracts": contracts, "modelUrls": models, "openseaSlugs": slugs, "stringHints": hints[:200]})
         except Exception as exc:
             records.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
 
-    # Fetch likely machine-readable endpoints found inside assets, one level deep.
     endpoints = []
-    for url in sorted(all_urls)[:80]:
+    for url in sorted(all_urls)[:120]:
         try:
             st, ct, text = fetch(session, url, args.timeout)
-            contracts = sorted(set(CONTRACT_RE.findall(text)))
-            models = sorted(set(MODEL_RE.findall(text)))
-            slugs = sorted(set(OPENSEA_RE.findall(text)))
+            contracts = contracts_in(text)
+            models = models_in(text)
+            slugs = slugs_in(text)
             hints = string_hints(text)
             all_contracts.update(contracts); all_models.update(models); all_slugs.update(slugs); all_hints.update(hints)
-            endpoints.append({"url": url, "status": st, "contentType": ct, "preview": text[:2000], "contracts": contracts, "modelUrls": models, "openseaSlugs": slugs, "stringHints": hints[:100]})
+            endpoints.append({"url": url, "status": st, "contentType": ct, "preview": text[:3000], "contracts": contracts, "modelUrls": models, "openseaSlugs": slugs, "stringHints": hints[:200]})
         except Exception as exc:
             endpoints.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
 
     out = {
-        "schema": "3dvault-backend-probe-v1",
+        "schema": "3dvault-backend-probe-v2",
         "source": args.url,
         "pageStatus": status,
         "pageContentType": ctype,
@@ -133,6 +183,7 @@ def main() -> None:
         "contracts": sorted(all_contracts),
         "modelUrls": sorted(all_models),
         "openseaSlugs": sorted(all_slugs),
+        "interestingUrls": sorted(all_urls),
         "stringHints": sorted(all_hints),
         "assets": records,
         "endpoints": endpoints,
@@ -140,6 +191,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(out["summary"], indent=2))
+    print(json.dumps({"openseaSlugs": out["openseaSlugs"], "modelUrls": out["modelUrls"][:20], "contracts": out["contracts"][:20]}, indent=2))
 
 
 if __name__ == "__main__":
