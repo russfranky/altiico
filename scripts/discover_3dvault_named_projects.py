@@ -5,13 +5,18 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
-from scripts.opensea_client import OpenSeaClient
-from scripts.discover_opensea_candidates import _inspect_collection
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+from scripts.opensea_client import OpenSeaClient  # noqa: E402
+from scripts.discover_opensea_candidates import _inspect_collection  # noqa: E402
 
 DEFAULT_SLUGS = (
     "clonex",
