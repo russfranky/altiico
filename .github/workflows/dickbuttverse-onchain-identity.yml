@@ -1,0 +1,93 @@
+name: DickButtVerse on-chain identity audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/dickbuttverse-onchain-identity]
+    paths:
+      - scripts/audit_dickbuttverse_onchain_identity.py
+      - tests/test_audit_dickbuttverse_onchain_identity.py
+      - .github/workflows/dickbuttverse-onchain-identity.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dickbuttverse-onchain-identity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Verify identity audit logic
+        run: |
+          python -m py_compile scripts/audit_dickbuttverse_onchain_identity.py
+          python -m pytest tests/test_audit_dickbuttverse_onchain_identity.py -q
+
+      - name: Audit representative on-chain token identity
+        run: |
+          python scripts/audit_dickbuttverse_onchain_identity.py \
+            --output data/dickbuttverse_onchain_identity.json \
+            --limit 32 \
+            --extra-id 5306 \
+            --timeout 15
+
+      - name: Assert bounded positive identity evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report=json.loads(Path('data/dickbuttverse_onchain_identity.json').read_text())
+          summary=report['summary']
+          results={row['tokenId']:row for row in report['results']}
+          print(json.dumps(summary,indent=2))
+          assert report['collection']['catalogId']=='dickbuttverse'
+          assert report['collection']['contract'].lower()=='0xd47d8672e45a7204057baaa3622a3fa276d651e3'
+          assert summary['tokensObservedOnchain'] > 0
+          assert summary['tokenUriIdMatches'] > 0
+          assert summary['metadataModelIdMatches'] > 0
+          for token_id in (1696,3225):
+              row=results.get(token_id)
+              assert row and row['tokenExists'], f'missing known on-chain token {token_id}'
+              assert row['tokenUriIdMatches'], f'tokenURI identity mismatch for {token_id}'
+          PY
+
+      - name: Repository verification
+        run: |
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dickbuttverse-onchain-identity
+          path: data/dickbuttverse_onchain_identity.json
+          retention-days: 30
+
+      - name: Commit measured identity evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/dickbuttverse_onchain_identity.json
+          if git diff --cached --quiet; then
+            echo 'DickButtVerse on-chain identity evidence already current.'
+            exit 0
+          fi
+          git commit -m 'Measure DickButtVerse on-chain identity [skip ci]'
+          git push
