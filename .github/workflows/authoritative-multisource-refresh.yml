@@ -2,13 +2,22 @@ name: Authoritative multi-source refresh
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '23 8 * * 3'
   push:
-    branches: [agent/moralis-cross-reference]
+    branches: [agent/bitquery-evidence]
     paths:
+      - scripts/opensea_client.py
+      - scripts/moralis_client.py
       - scripts/etherscan_client.py
-      - scripts/audit_etherscan_authority.py
+      - scripts/bitquery_client.py
+      - scripts/cross_reference_sources.py
+      - scripts/build_source_consensus.py
       - scripts/discover_moralis_models.py
+      - scripts/audit_etherscan_authority.py
+      - scripts/audit_bitquery_evidence.py
       - scripts/build_authoritative_consensus.py
+      - scripts/export_hubzz_staging.py
       - .github/workflows/authoritative-multisource-refresh.yml
 
 permissions:
@@ -20,6 +29,9 @@ env:
   MORALIS_KEY: ${{ secrets.MORALIS_KEY }}
   ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
   ETHERSCAN_KEY: ${{ secrets.ETHERSCAN_KEY }}
+  BITQUERY_API_KEY: ${{ secrets.BITQUERY_API_KEY }}
+  BITQUERY_TOKEN: ${{ secrets.BITQUERY_TOKEN }}
+  BITQUERY_OAUTH_TOKEN: ${{ secrets.BITQUERY_OAUTH_TOKEN }}
 
 jobs:
   refresh:
@@ -29,7 +41,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: agent/moralis-cross-reference
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -41,11 +52,12 @@ jobs:
           test -n "$OPENSEA_API_KEY"
           test -n "$MORALIS_API_KEY" || test -n "$MORALIS_KEY"
           test -n "$ETHERSCAN_API_KEY" || test -n "$ETHERSCAN_KEY"
+          test -n "$BITQUERY_API_KEY" || test -n "$BITQUERY_TOKEN" || test -n "$BITQUERY_OAUTH_TOKEN"
       - name: Compile evidence pipeline
         run: |
-          python -m py_compile scripts/opensea_client.py scripts/moralis_client.py scripts/etherscan_client.py \
+          python -m py_compile scripts/opensea_client.py scripts/moralis_client.py scripts/etherscan_client.py scripts/bitquery_client.py \
             scripts/cross_reference_sources.py scripts/build_source_consensus.py scripts/discover_moralis_models.py \
-            scripts/audit_etherscan_authority.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
+            scripts/audit_etherscan_authority.py scripts/audit_bitquery_evidence.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
       - name: Refresh OpenSea collection media
         run: python scripts/enrich_opensea.py --meta-only --force
       - name: Cross-reference Moralis and discover model signals
@@ -54,8 +66,10 @@ jobs:
           python scripts/build_source_consensus.py
           python scripts/discover_moralis_models.py --output data/moralis_model_discovery.json --tokens 25 --concurrency 3 --collection-concurrency 3
       - name: Audit Etherscan contract authority
+        run: python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
+      - name: Audit Bitquery on-chain NFT evidence
         run: |
-          python scripts/audit_etherscan_authority.py --output data/etherscan_authority_report.json --concurrency 3 --collection-concurrency 3
+          python scripts/audit_bitquery_evidence.py --output data/bitquery_evidence_report.json --tokens 50 --concurrency 2 --collection-concurrency 2
           python scripts/build_authoritative_consensus.py
       - name: Regenerate Hubzz and catalog artifacts
         run: |
@@ -71,15 +85,17 @@ jobs:
           staging=json.loads(Path('static/data/hubzz-prealpha-staging.json').read_text())
           authority=json.loads(Path('data/authoritative_consensus.json').read_text())
           models=json.loads(Path('data/moralis_model_discovery.json').read_text())
+          bitquery=json.loads(Path('data/bitquery_evidence_report.json').read_text())
           sets=staging['sets']
           missing=[i['set']['slug'] for i in sets if not i['set'].get('bannerUrl')]
           dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
           fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
-          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary']}
+          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'bitquery':bitquery['summary']}
           print(json.dumps(summary,indent=2))
           assert not missing
           assert dedicated+fallback==len(sets)
           assert authority['summary']['collections'] > 0
+          assert bitquery['summary']['collectionsInspected'] > 0
           PY
       - name: Full repository verification
         run: |
@@ -96,13 +112,14 @@ jobs:
             data/source_consensus.json
             data/moralis_model_discovery.json
             data/etherscan_authority_report.json
+            data/bitquery_evidence_report.json
             data/authoritative_consensus.json
       - name: Commit refreshed evidence and generated artifacts
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/source_cross_reference_report.json data/source_consensus.json data/moralis_model_discovery.json \
-            data/etherscan_authority_report.json data/authoritative_consensus.json data/vrm_index.db \
+            data/etherscan_authority_report.json data/bitquery_evidence_report.json data/authoritative_consensus.json data/vrm_index.db \
             static/data static/sw.js docs/hubzz-prealpha-staging.md
           if git diff --cached --quiet; then
             echo 'Evidence and generated artifacts already current.'
