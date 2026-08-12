@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T04:27:52Z",
-  "snapshotId": "vrmcat-v1-9a41b42ddd0634195662b0e5",
+  "generatedAt": "2026-08-12T04:46:01Z",
+  "snapshotId": "vrmcat-v1-0b620d9eb3fa2c864bc68340",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
@@ -74,7 +74,7 @@
         "url": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/5f5bdf8034ef6e9838f017d4ba22a5/3f5f5bdf8034ef6e9838f017d4ba22a5.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "license_requires_review"
@@ -133,7 +133,7 @@
         "url": "https://i2c.seadn.io/polygon/b0de9c9b33394903a7b3d73c26ebc997/b9bade10a0ec9c899711180c3fa13b/6bb9bade10a0ec9c899711180c3fa13b.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": []
     },
@@ -190,7 +190,7 @@
         "url": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
         "source": "pfp_fallback",
         "fallback": true,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "partial_avatar_inventory",
@@ -250,7 +250,7 @@
         "url": "https://i2c.seadn.io/ethereum/2d0cdced8a604a7894157cd654fd270e/58f78e61b7e2d8d0885d45a5d55b2d/5258f78e61b7e2d8d0885d45a5d55b2d.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -310,7 +310,7 @@
         "url": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/103cf6838291bc65ea81e7d60f5fb5/30103cf6838291bc65ea81e7d60f5fb5.jpeg?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only"
@@ -369,7 +369,7 @@
         "url": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -429,7 +429,7 @@
         "url": "https://i2c.seadn.io/ethereum/5c1e776de37f42508da92ed914f65016/3a1695a7f59eb5765b7ca0081c7f7c/9a3a1695a7f59eb5765b7ca0081c7f7c.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -489,7 +489,7 @@
         "url": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/572aabedff827fb6a391e9b86b6b54/34572aabedff827fb6a391e9b86b6b54.gif?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only"
@@ -548,7 +548,7 @@
         "url": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -608,7 +608,7 @@
         "url": "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/f9ba6b040d52b6a6a53a1b79c27694/56f9ba6b040d52b6a6a53a1b79c27694.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only"
@@ -667,7 +667,7 @@
         "url": "https://stream.mux.com/t8FE49Q1NCYDLeVTw6GO4fH5UaPz01ZyKO01gmelY8I01s/high.mp4",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -727,7 +727,7 @@
         "url": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
         "source": "pfp_fallback",
         "fallback": true,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
@@ -788,7 +788,7 @@
         "url": "https://i2c.seadn.io/ethereum/4cb97b5f3c244500be1a8fb2064dc675/be6917c67bb8b2a1fd2ca521bac5af/dbbe6917c67bb8b2a1fd2ca521bac5af.png?fit=inside",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-08-12T04:27:52Z"
+        "observedAt": "2026-08-12T04:46:01Z"
       },
       "warnings": [
         "sample_only",
