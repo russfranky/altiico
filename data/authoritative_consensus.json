@@ -1,6 +1,6 @@
 {
   "schema": "authoritative-catalog-consensus-v2",
-  "generatedAt": "2026-08-12T01:37:31.528168+00:00",
+  "generatedAt": "2026-08-12T09:36:48.357038+00:00",
   "policy": {
     "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
@@ -10,9 +10,9 @@
   },
   "summary": {
     "collections": 58,
-    "explorerCorroborated": 10,
+    "explorerCorroborated": 5,
     "bitqueryCorroborated": 11,
-    "onchainCorroborated": 18,
+    "onchainCorroborated": 16,
     "bitqueryModelSignalTokens": 0,
     "reviewItems": 58,
     "etherscanConflicts": 0
@@ -343,7 +343,7 @@
       "observedAt": "2026-08-12T00:43:31.723616+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:43.813871+00:00",
+        "observedAt": "2026-08-12T09:34:57.900613+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
@@ -367,7 +367,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:51.725568+00:00",
+        "observedAt": "2026-08-12T09:35:02.848925+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -813,7 +813,7 @@
       "observedAt": "2026-08-12T00:43:31.723679+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:43.813906+00:00",
+        "observedAt": "2026-08-12T09:34:57.900687+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -840,7 +840,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:51.725750+00:00",
+        "observedAt": "2026-08-12T09:35:02.849206+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
         "uniqueTokenIds": 24,
@@ -1350,7 +1350,7 @@
       "observedAt": "2026-08-12T00:43:31.723714+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:43.813925+00:00",
+        "observedAt": "2026-08-12T09:34:57.900733+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1377,7 +1377,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:51.725823+00:00",
+        "observedAt": "2026-08-12T09:35:02.849307+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -1510,7 +1510,7 @@
       "observedAt": "2026-08-12T00:43:32.838467+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.136966+00:00",
+        "observedAt": "2026-08-12T09:34:58.096664+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1537,7 +1537,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:52.633139+00:00",
+        "observedAt": "2026-08-12T09:35:03.518210+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -1670,7 +1670,7 @@
       "observedAt": "2026-08-12T00:43:33.319069+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.264302+00:00",
+        "observedAt": "2026-08-12T09:34:58.178101+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -1697,7 +1697,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:52.651077+00:00",
+        "observedAt": "2026-08-12T09:35:03.580712+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 21,
         "uniqueTokenIds": 20,
@@ -2713,7 +2713,7 @@
       "observedAt": "2026-08-12T00:43:33.604970+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.381493+00:00",
+        "observedAt": "2026-08-12T09:34:58.257719+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2740,108 +2740,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:52.747890+00:00",
+        "observedAt": "2026-08-12T09:35:03.666662+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 19,
-        "uniqueTokenIds": 19,
-        "transferUris": 19,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 21,
+        "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "16663",
-            "uri": "https://avastars.io/metadata/16663",
+            "tokenId": "11462",
+            "uri": "https://avastars.io/metadata/11462",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x74730ee9116305f1e4b2e444cad2e8528e05713b",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734149",
-            "time": "2026-08-11T20:29:11Z",
-            "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736791",
+            "time": "2026-08-12T05:21:23Z",
+            "txHash": "0xdb65ca103a5035d1dfad3fe1ffe6e39b2a9e5e1add3e9183061c117730f08c2b"
           },
           {
-            "tokenId": "12135",
-            "uri": "https://avastars.io/metadata/12135",
+            "tokenId": "10479",
+            "uri": "https://avastars.io/metadata/10479",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x74730ee9116305f1e4b2e444cad2e8528e05713b",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734149",
-            "time": "2026-08-11T20:29:11Z",
-            "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736787",
+            "time": "2026-08-12T05:20:35Z",
+            "txHash": "0xaf164c6cda868469ac0bd94d50ec4b9c9d98c3a283de77db941287fa544f3dcf"
           },
           {
-            "tokenId": "11834",
-            "uri": "https://avastars.io/metadata/11834",
+            "tokenId": "13945",
+            "uri": "https://avastars.io/metadata/13945",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x6031c80627ab7c8ee0041bcb9bafc617862f5b6e",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734149",
-            "time": "2026-08-11T20:29:11Z",
-            "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "receiver": "0xa5bf67d7cfcb24c5f20a991766d29db9598f16dd",
+            "block": "25736768",
+            "time": "2026-08-12T05:16:47Z",
+            "txHash": "0x53cc1a8e3313fcf3710d1c737364a7b4bb12c50ca1ac730f6c5f626910ea6d3e"
           },
           {
-            "tokenId": "23874",
-            "uri": "https://avastars.io/metadata/23874",
+            "tokenId": "3400",
+            "uri": "https://avastars.io/metadata/3400",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x16205a6048b6af17f1ac1a009bbf2ed9289e6921",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734149",
-            "time": "2026-08-11T20:29:11Z",
-            "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736718",
+            "time": "2026-08-12T05:06:47Z",
+            "txHash": "0x8fb97e2577fc8707359499def12fc7eb999bab2877355efdbf84076b2bb357a0"
           },
           {
-            "tokenId": "17841",
-            "uri": "https://avastars.io/metadata/17841",
+            "tokenId": "13544",
+            "uri": "https://avastars.io/metadata/13544",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734143",
-            "time": "2026-08-11T20:27:59Z",
-            "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736718",
+            "time": "2026-08-12T05:06:47Z",
+            "txHash": "0x8fb97e2577fc8707359499def12fc7eb999bab2877355efdbf84076b2bb357a0"
           },
           {
-            "tokenId": "12320",
-            "uri": "https://avastars.io/metadata/12320",
+            "tokenId": "13945",
+            "uri": "https://avastars.io/metadata/13945",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734143",
-            "time": "2026-08-11T20:27:59Z",
-            "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736718",
+            "time": "2026-08-12T05:06:47Z",
+            "txHash": "0x8fb97e2577fc8707359499def12fc7eb999bab2877355efdbf84076b2bb357a0"
           },
           {
-            "tokenId": "24218",
-            "uri": "https://avastars.io/metadata/24218",
+            "tokenId": "12224",
+            "uri": "https://avastars.io/metadata/12224",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xd40e498aa66cfb88ed31565494785cbe72076441",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734143",
-            "time": "2026-08-11T20:27:59Z",
-            "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736677",
+            "time": "2026-08-12T04:58:35Z",
+            "txHash": "0x52f2b0864150db36d288fae8372b11b30afa27cad2179e33d7a817c90f270fa2"
           },
           {
-            "tokenId": "11934",
-            "uri": "https://avastars.io/metadata/11934",
+            "tokenId": "13891",
+            "uri": "https://avastars.io/metadata/13891",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
-            "block": "25734143",
-            "time": "2026-08-11T20:27:59Z",
-            "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "block": "25736677",
+            "time": "2026-08-12T04:58:35Z",
+            "txHash": "0x52f2b0864150db36d288fae8372b11b30afa27cad2179e33d7a817c90f270fa2"
           }
         ],
         "errors": []
@@ -2970,7 +2970,7 @@
       "observedAt": "2026-08-12T00:43:33.967960+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.481117+00:00",
+        "observedAt": "2026-08-12T09:34:58.296862+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -2997,7 +2997,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:52.981543+00:00",
+        "observedAt": "2026-08-12T09:35:03.728949+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3154,7 +3154,7 @@
       "observedAt": "2026-08-12T00:43:34.340081+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.612364+00:00",
+        "observedAt": "2026-08-12T09:34:58.369869+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3181,7 +3181,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:52.994737+00:00",
+        "observedAt": "2026-08-12T09:35:03.849250+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 1,
         "uniqueTokenIds": 1,
@@ -3662,7 +3662,7 @@
       "observedAt": "2026-08-12T00:43:34.729169+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.949073+00:00",
+        "observedAt": "2026-08-12T09:34:58.683057+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3689,7 +3689,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:53.391991+00:00",
+        "observedAt": "2026-08-12T09:35:04.276375+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3772,7 +3772,7 @@
       "observedAt": "2026-08-12T00:43:35.140844+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.090199+00:00",
+        "observedAt": "2026-08-12T09:34:58.734426+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -3799,7 +3799,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:53.419546+00:00",
+        "observedAt": "2026-08-12T09:35:04.328656+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -4236,7 +4236,7 @@
       "observedAt": "2026-08-12T00:43:35.897037+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.186817+00:00",
+        "observedAt": "2026-08-12T09:34:58.810960+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4263,7 +4263,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:53.682017+00:00",
+        "observedAt": "2026-08-12T09:35:10.863281+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -4557,34 +4557,32 @@
       "observedAt": "2026-08-12T00:43:36.179493+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.293582+00:00",
-        "contractCorroborated": false,
+        "observedAt": "2026-08-12T09:34:58.892091+00:00",
+        "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
         "implementation": null,
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
+        "creator": "0x76e245cea07b6caeaee72caa0b3675db44ff3b2c",
+        "creationTxHash": "0xe1e7b10154bee00e4de6bd325316729251f27a1f4bc82bd4891f3f9a9c51cb5d",
+        "creationBlock": "18218375",
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:00.238492+00:00",
+        "observedAt": "2026-08-12T09:35:10.865366+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -4595,7 +4593,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "cyberanimedoll-avatar",
@@ -4667,7 +4665,7 @@
       "observedAt": "2026-08-12T00:43:36.677421+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.423103+00:00",
+        "observedAt": "2026-08-12T09:34:58.934169+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -4694,7 +4692,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:00.300613+00:00",
+        "observedAt": "2026-08-12T09:35:11.185956+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5109,7 +5107,7 @@
       "observedAt": "2026-08-12T00:43:36.994444+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.540079+00:00",
+        "observedAt": "2026-08-12T09:34:59.020983+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5136,7 +5134,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:00.346390+00:00",
+        "observedAt": "2026-08-12T09:35:17.697310+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5467,15 +5465,15 @@
       "observedAt": "2026-08-12T00:43:37.304770+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.824520+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "FairxyzBeaconProxy",
-        "proxy": "1",
-        "implementation": "0xbe14a22d3b6099495234a30354db002e2f3ffc4e",
-        "creator": "0xf6ff86aa37aab129c94fd7cfcfcf5ddf8a1a37a6",
-        "creationTxHash": "0x89251b25814e1d9d5b1e1a8ecf06ca2eb7ff1352d1ede6ab70a610de7f89f767",
-        "creationBlock": "17815199",
+        "observedAt": "2026-08-12T09:34:59.185582+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
+        "implementation": null,
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
           "tokenURI": false,
@@ -5485,13 +5483,16 @@
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:07.415917+00:00",
+        "observedAt": "2026-08-12T09:35:18.244660+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5502,7 +5503,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "dickbuttverse",
@@ -5928,7 +5929,7 @@
       "observedAt": "2026-08-12T00:43:38.295317+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.921603+00:00",
+        "observedAt": "2026-08-12T09:34:59.252221+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -5955,7 +5956,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:07.417301+00:00",
+        "observedAt": "2026-08-12T09:35:24.632012+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6313,7 +6314,7 @@
       "observedAt": "2026-08-12T00:43:38.505716+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.036492+00:00",
+        "observedAt": "2026-08-12T09:34:59.325847+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -6340,7 +6341,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:14.086105+00:00",
+        "observedAt": "2026-08-12T09:35:24.796781+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6964,7 +6965,7 @@
       "observedAt": "2026-08-12T00:43:39.044169+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.162093+00:00",
+        "observedAt": "2026-08-12T09:34:59.391522+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -6991,7 +6992,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:14.203286+00:00",
+        "observedAt": "2026-08-12T09:35:25.198158+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7450,7 +7451,7 @@
       "observedAt": "2026-08-12T00:43:39.439952+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.373956+00:00",
+        "observedAt": "2026-08-12T09:34:59.505313+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -7477,7 +7478,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:14.265126+00:00",
+        "observedAt": "2026-08-12T09:35:31.500102+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7636,7 +7637,7 @@
       "observedAt": "2026-08-12T00:43:39.940820+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.502128+00:00",
+        "observedAt": "2026-08-12T09:34:59.571391+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -7663,7 +7664,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:21.111764+00:00",
+        "observedAt": "2026-08-12T09:35:31.568001+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8133,7 +8134,7 @@
       "observedAt": "2026-08-12T00:43:40.294974+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.623080+00:00",
+        "observedAt": "2026-08-12T09:34:59.641794+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -8160,7 +8161,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:21.249776+00:00",
+        "observedAt": "2026-08-12T09:35:32.120216+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8295,7 +8296,7 @@
       "observedAt": "2026-08-12T00:43:40.741343+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.719864+00:00",
+        "observedAt": "2026-08-12T09:34:59.704446+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -8322,7 +8323,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:21.377654+00:00",
+        "observedAt": "2026-08-12T09:35:38.174126+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9012,31 +9013,34 @@
       "observedAt": "2026-08-12T00:43:41.064893+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:46.838700+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "FyatLux",
-        "proxy": "0",
+        "observedAt": "2026-08-12T09:34:59.766148+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
         "implementation": null,
-        "creator": "0xe01c949d2f268331f85ebd374e13597920f2279a",
-        "creationTxHash": "0x9ad9860e3bc04be35c5664dc66e7e35d14ba72e8b968c3de4fd8e9d8816cc709",
-        "creationBlock": "13877816",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:27.916528+00:00",
+        "observedAt": "2026-08-12T09:35:38.439824+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9047,7 +9051,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "halloween-rising",
@@ -9173,7 +9177,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.056307+00:00",
+        "observedAt": "2026-08-12T09:34:59.882005+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -9200,7 +9204,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:28.034616+00:00",
+        "observedAt": "2026-08-12T09:35:39.019731+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9615,7 +9619,7 @@
       "observedAt": "2026-08-12T00:43:41.874178+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.314121+00:00",
+        "observedAt": "2026-08-12T09:35:01.679247+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -9642,7 +9646,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:10.385706+00:00",
+        "observedAt": "2026-08-12T09:36:20.984387+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10167,34 +10171,31 @@
       "observedAt": "2026-08-12T00:43:42.259942+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.195907+00:00",
-        "contractCorroborated": false,
-        "verifiedSource": false,
-        "contractName": null,
-        "proxy": null,
+        "observedAt": "2026-08-12T09:34:59.944003+00:00",
+        "contractCorroborated": true,
+        "verifiedSource": true,
+        "contractName": "JaduAVA",
+        "proxy": "0",
         "implementation": null,
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
+        "creator": "0x7704847d4756d71eb0dacdab120cc6eaeeff703d",
+        "creationTxHash": "0x864a6c4664f6f289979bbb7173d8bb379a12c269d1c9bfd4444547dbe58d1489",
+        "creationBlock": "15486199",
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
-          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:28.442530+00:00",
+        "observedAt": "2026-08-12T09:35:45.092631+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10205,7 +10206,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "research-0xd2F668",
@@ -10653,7 +10654,7 @@
       "observedAt": "2026-08-12T00:43:42.880694+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.316197+00:00",
+        "observedAt": "2026-08-12T09:35:00.019153+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -10680,7 +10681,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:34.753810+00:00",
+        "observedAt": "2026-08-12T09:35:45.210525+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10815,7 +10816,7 @@
       "observedAt": "2026-08-12T00:43:43.225111+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.541022+00:00",
+        "observedAt": "2026-08-12T09:35:00.139374+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -10842,7 +10843,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:35.045986+00:00",
+        "observedAt": "2026-08-12T09:35:51.665089+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11400,7 +11401,7 @@
       "observedAt": "2026-08-12T00:43:43.995435+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.648817+00:00",
+        "observedAt": "2026-08-12T09:35:00.211092+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -11427,7 +11428,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:41.748574+00:00",
+        "observedAt": "2026-08-12T09:35:51.992660+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11668,8 +11669,8 @@
       "observedAt": "2026-08-12T00:43:44.352332+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.794598+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T09:35:00.255896+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
@@ -11684,17 +11685,18 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:41.777491+00:00",
+        "observedAt": "2026-08-12T09:35:52.363426+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11705,7 +11707,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "a3ac-0x223ef0",
@@ -12813,12 +12815,12 @@
       "observedAt": "2026-08-12T00:43:44.700790+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.880731+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "TransparentUpgradeableProxy",
-        "proxy": "1",
-        "implementation": "0x915fd4ea88d2e347ac3faa8090702bae8ab3b878",
+        "observedAt": "2026-08-12T09:35:00.325867+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
+        "implementation": null,
         "creator": null,
         "creationTxHash": null,
         "creationBlock": null,
@@ -12831,6 +12833,8 @@
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
@@ -12838,18 +12842,16 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:41.893769+00:00",
+        "observedAt": "2026-08-12T09:35:58.358863+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "misfitpixels",
@@ -13059,7 +13061,7 @@
       "observedAt": "2026-08-12T00:43:45.058245+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.158238+00:00",
+        "observedAt": "2026-08-12T09:35:00.463868+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -13086,7 +13088,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:48.637808+00:00",
+        "observedAt": "2026-08-12T09:35:58.605349+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13444,7 +13446,7 @@
       "observedAt": "2026-08-12T00:43:45.642668+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.241227+00:00",
+        "observedAt": "2026-08-12T09:35:00.551719+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -13471,13 +13473,37 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:48.796606+00:00",
+        "observedAt": "2026-08-12T09:35:59.218975+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 15,
+        "uniqueTokenIds": 14,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
+          {
+            "tokenId": "547",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x8f34c409c8e00dcaa761b92f826465031d2edad9",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25735833",
+            "time": "2026-08-12T02:07:35Z",
+            "txHash": "0xdffffd3f57d71831d19642d1520968322880557ce2e57359218002edb3177764"
+          },
+          {
+            "tokenId": "547",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0xd6143d48757835897d20cf7837d17ef80b42b44d",
+            "receiver": "0x8f34c409c8e00dcaa761b92f826465031d2edad9",
+            "block": "25735826",
+            "time": "2026-08-12T02:05:59Z",
+            "txHash": "0xebfbe755a6d2476076d49bbffdfa5d213ee711f63f48a6aa6fea085ea4660e92"
+          },
           {
             "tokenId": "8860",
             "uri": null,
@@ -13549,30 +13575,6 @@
             "block": "25733944",
             "time": "2026-08-11T19:48:11Z",
             "txHash": "0x2805dde7dcaf43c5cf24e0af167e4d0b6f86bd36d4d4c5c5eff9096902dd52f5"
-          },
-          {
-            "tokenId": "5853",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "block": "25733944",
-            "time": "2026-08-11T19:48:11Z",
-            "txHash": "0x2805dde7dcaf43c5cf24e0af167e4d0b6f86bd36d4d4c5c5eff9096902dd52f5"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x38e08cf0961de6d29f79493ade04e466f6b89dad",
-            "receiver": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "block": "25733896",
-            "time": "2026-08-11T19:38:35Z",
-            "txHash": "0xb60fd92a592b597c52f052b20abf451fb4b5e4fb6dc9e370f78e045bc805b9d6"
           }
         ],
         "errors": []
@@ -13761,7 +13763,7 @@
       "observedAt": "2026-08-12T00:43:46.004911+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.483207+00:00",
+        "observedAt": "2026-08-12T09:35:00.678339+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -13788,7 +13790,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:55.517220+00:00",
+        "observedAt": "2026-08-12T09:36:05.720500+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13872,7 +13874,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.363059+00:00",
+        "observedAt": "2026-08-12T09:35:00.637361+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -13899,7 +13901,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:49.146721+00:00",
+        "observedAt": "2026-08-12T09:36:05.220711+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -14356,15 +14358,15 @@
       "observedAt": "2026-08-12T00:43:47.117000+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.578462+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T09:35:00.745055+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
         "implementation": null,
-        "creator": "0x316c0226e4c317c6e732d95910597946d4e94677",
-        "creationTxHash": "0x3d150a09f2368ad536f41e0cf50ba9afb908499fb83b8f3c3b42a0d6f29d151f",
-        "creationBlock": "13849904",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
           "tokenURI": false,
@@ -14372,16 +14374,18 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:55.867839+00:00",
+        "observedAt": "2026-08-12T09:36:05.784360+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 12,
         "uniqueTokenIds": 8,
@@ -14635,7 +14639,7 @@
       "observedAt": "2026-08-12T00:43:47.632731+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:48.993575+00:00",
+        "observedAt": "2026-08-12T09:35:00.823270+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -14662,13 +14666,25 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:55.870707+00:00",
+        "observedAt": "2026-08-12T09:36:05.970357+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 13,
+        "uniqueTokenIds": 14,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
+          {
+            "tokenId": "1394",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x4972bcab33ad4123c2ebca2e1d25dd25c86380e1",
+            "receiver": "0x538384891ef5cb8ce9ca7cc045d7829acbfc9360",
+            "block": "25737088",
+            "time": "2026-08-12T06:20:47Z",
+            "txHash": "0x1019fcf864c5bb2762fdd929ce1af065fe819e440ac800257718a8914dad4080"
+          },
           {
             "tokenId": "1989",
             "uri": null,
@@ -14752,18 +14768,6 @@
             "block": "25728504",
             "time": "2026-08-11T01:34:11Z",
             "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
-          },
-          {
-            "tokenId": "1748",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
-            "block": "25727452",
-            "time": "2026-08-10T22:01:59Z",
-            "txHash": "0xf0f9c861c5ac8412690e8112fb0ba56d6d54c01985c92dd62bfe0414817d54fa"
           }
         ],
         "errors": []
@@ -14892,7 +14896,7 @@
       "observedAt": "2026-08-12T00:43:48.334833+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.059177+00:00",
+        "observedAt": "2026-08-12T09:35:00.863623+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -14919,7 +14923,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.203067+00:00",
+        "observedAt": "2026-08-12T09:36:06.028200+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15783,43 +15787,42 @@
       "observedAt": "2026-08-12T00:43:48.600960+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.225849+00:00",
-        "contractCorroborated": false,
-        "verifiedSource": false,
-        "contractName": null,
-        "proxy": null,
+        "observedAt": "2026-08-12T09:35:00.945387+00:00",
+        "contractCorroborated": true,
+        "verifiedSource": true,
+        "contractName": "Omnimorphs",
+        "proxy": "0",
         "implementation": null,
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
+        "creator": "0x71d6c3823bbbce39af789d2b063ad33b2ecda7d3",
+        "creationTxHash": "0xe8106c5e5df2313fc95e5bebfd1dfcadb8131f0e9c897f10be176f7e05ca2f96",
+        "creationBlock": "13203380",
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
-          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.205502+00:00",
+        "observedAt": "2026-08-12T09:36:06.248393+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": []
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "research-0x0fc3dd",
@@ -16058,7 +16061,7 @@
       "observedAt": "2026-08-12T00:43:48.959238+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.429101+00:00",
+        "observedAt": "2026-08-12T09:35:01.074460+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -16085,13 +16088,25 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.543104+00:00",
+        "observedAt": "2026-08-12T09:36:06.353975+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
         "uniqueTokenIds": 24,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
+          {
+            "tokenId": "7030",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7030",
+            "name": "Parallel Avatars",
+            "symbol": "LLPPL",
+            "protocol": null,
+            "sender": "0x28358cef6f55f9746c9c26c62e5728036b4f64b8",
+            "receiver": "0x7542c9df25dae8a004f29b8647641757b4582098",
+            "block": "25736190",
+            "time": "2026-08-12T03:19:11Z",
+            "txHash": "0x4fc6688d8c20c3b713ebc0235a7e90d73844d67e5ca28a1e1fca0f3ac2f99d21"
+          },
           {
             "tokenId": "1414",
             "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/1414",
@@ -16167,18 +16182,6 @@
           {
             "tokenId": "5605",
             "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5605",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "5806",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5806",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
@@ -16782,7 +16785,7 @@
       "observedAt": "2026-08-12T00:43:49.478928+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.534120+00:00",
+        "observedAt": "2026-08-12T09:35:01.160435+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -16809,7 +16812,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.544155+00:00",
+        "observedAt": "2026-08-12T09:36:06.363987+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 4,
         "uniqueTokenIds": 4,
@@ -17139,7 +17142,7 @@
       "observedAt": "2026-08-12T00:43:49.837305+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.635532+00:00",
+        "observedAt": "2026-08-12T09:35:01.248288+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -17166,7 +17169,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.879270+00:00",
+        "observedAt": "2026-08-12T09:36:06.655398+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -17249,7 +17252,7 @@
       "observedAt": "2026-08-12T00:43:50.564300+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.768579+00:00",
+        "observedAt": "2026-08-12T09:35:01.294569+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -17276,7 +17279,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:56.911366+00:00",
+        "observedAt": "2026-08-12T09:36:06.657507+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18329,15 +18332,15 @@
       "observedAt": "2026-08-12T00:43:51.156104+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.873723+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T09:35:01.364822+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
         "implementation": null,
-        "creator": "0x029d54f2a569bd15c148b841e24a3e7a78639511",
-        "creationTxHash": "0x98e5181fceb4c56ed5e59b7e8b3cd2cf88201a465c9dd3f70ad548a4ecf486a0",
-        "creationBlock": "17318568",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
           "tokenURI": false,
@@ -18348,13 +18351,15 @@
         "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:57.216468+00:00",
+        "observedAt": "2026-08-12T09:36:12.849274+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18365,7 +18370,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "a3ac-0x49cf6f",
@@ -18725,11 +18730,11 @@
       "observedAt": "2026-08-12T00:43:51.761156+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.834562+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "CloneX",
-        "proxy": "0",
+        "observedAt": "2026-08-12T09:34:58.498483+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
         "implementation": null,
         "creator": null,
         "creationTxHash": null,
@@ -18743,6 +18748,7 @@
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -18751,108 +18757,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:53.379731+00:00",
+        "observedAt": "2026-08-12T09:35:04.024767+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 20,
+        "uniqueTokenIds": 23,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "2641",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2641",
+            "tokenId": "2405",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2405",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xb3611da4a72fba65a80b0e7025b49431b193873e",
-            "receiver": "0xa6acd6ddb556b794124ad95b7040bdd7aa174bd5",
-            "block": "25735129",
-            "time": "2026-08-11T23:45:47Z",
-            "txHash": "0x31c6b7b16aebe790d655867d11dea802270e92d5a47206134dc2de030a925d35"
+            "sender": "0xfbf1893d3c2b94949b12fc461d42bdb7da428a8f",
+            "receiver": "0x2f27147a30d45cd0d51d91cc937c5e14acda9d02",
+            "block": "25737840",
+            "time": "2026-08-12T08:52:35Z",
+            "txHash": "0xfc4deb2d9931acb5f29eebed9701f112e2385785deb4465a3171efc5d5b520fa"
           },
           {
-            "tokenId": "11260",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/11260",
+            "tokenId": "10129",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10129",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xb3611da4a72fba65a80b0e7025b49431b193873e",
-            "receiver": "0xa6acd6ddb556b794124ad95b7040bdd7aa174bd5",
-            "block": "25735129",
-            "time": "2026-08-11T23:45:47Z",
-            "txHash": "0x31c6b7b16aebe790d655867d11dea802270e92d5a47206134dc2de030a925d35"
+            "sender": "0x5431c0dce14a9ffdffc82097538f330e6d2cbc81",
+            "receiver": "0x36f98b7e0ab0aa5f8d13f8f5b8c496b05ba8dc08",
+            "block": "25737835",
+            "time": "2026-08-12T08:51:35Z",
+            "txHash": "0x54be2f1b8e3c434053d39ffcfa3f8bfd674965b8e5f8f3f440e173436d560c3d"
           },
           {
-            "tokenId": "12324",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/12324",
+            "tokenId": "3500",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/3500",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x994b470248b6f9bbede09422a15990efdb793096",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25734485",
-            "time": "2026-08-11T21:36:47Z",
-            "txHash": "0xf18d4f105b621dd4f64ee1d46f30ac80fa83e1c45b227fa81c41662d460cf10f"
+            "sender": "0xb8b67f4ae25a13fec518298bb4c7f0122bdac7ea",
+            "receiver": "0x994b470248b6f9bbede09422a15990efdb793096",
+            "block": "25737403",
+            "time": "2026-08-12T07:24:59Z",
+            "txHash": "0x66aa18402b288ba98fbda79f98a1dfd33c4ad7d74334254e79f27499f6562670"
           },
           {
-            "tokenId": "4343",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4343",
+            "tokenId": "6089",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/6089",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xb5479d539096b67ad412b3421043d320da4fe245",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25734484",
-            "time": "2026-08-11T21:36:35Z",
-            "txHash": "0xe76e5dfab98171d155d18b9f80974f72d3cf8bce7adde70d85a8c428067fb3c4"
+            "sender": "0xb2b909badce3a050014f442926b081d3f6e8b3ac",
+            "receiver": "0x1e7fbb0bda316496e55664140c3239a843983e05",
+            "block": "25737340",
+            "time": "2026-08-12T07:12:11Z",
+            "txHash": "0x0fe815916e3426cb13a63c76931d7397dfd8d68e07c9ada3e90125b2f83013a2"
           },
           {
-            "tokenId": "5719",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/5719",
+            "tokenId": "2610",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2610",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
-            "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
-            "block": "25733644",
-            "time": "2026-08-11T18:48:11Z",
-            "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+            "sender": "0x028296d8bf1995549d5b9446622cf565bbd0a26e",
+            "receiver": "0x0005eacb6e7c57bc9bd988e613ed9cc4cda1f386",
+            "block": "25737227",
+            "time": "2026-08-12T06:49:11Z",
+            "txHash": "0x11e25680eabc07aee213a5555352ec67feb0c7819eb6cdcffe012b73e86e7af4"
           },
           {
-            "tokenId": "10281",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10281",
+            "tokenId": "6217",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/6217",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
-            "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
-            "block": "25733644",
-            "time": "2026-08-11T18:48:11Z",
-            "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+            "sender": "0x028296d8bf1995549d5b9446622cf565bbd0a26e",
+            "receiver": "0xcca4446b31a94d7708729a13bea16e73d47e1eed",
+            "block": "25737214",
+            "time": "2026-08-12T06:46:35Z",
+            "txHash": "0x72dfb57bdbb1dacfb2ae2ba62bd8a49d07818c5c6853e95307a04430d44eda72"
           },
           {
-            "tokenId": "4099",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4099",
+            "tokenId": "2610",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2610",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
-            "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
-            "block": "25733644",
-            "time": "2026-08-11T18:48:11Z",
-            "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+            "sender": "0xfc61d2a622cd3123b89bfb0168524cd26d4cacac",
+            "receiver": "0x028296d8bf1995549d5b9446622cf565bbd0a26e",
+            "block": "25737173",
+            "time": "2026-08-12T06:38:11Z",
+            "txHash": "0xe139049e096ebe4ee6c8a1bf917c2e7be0b4fadd383056fb5300d047f482c508"
           },
           {
-            "tokenId": "4343",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4343",
+            "tokenId": "10277",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10277",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
-            "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
-            "block": "25733644",
-            "time": "2026-08-11T18:48:11Z",
-            "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+            "sender": "0x392cf1a882f4a4f85429008584f80b8de21e364f",
+            "receiver": "0xca36097c9f0c4f1866ee4a998869d5ae24b1c3cc",
+            "block": "25736877",
+            "time": "2026-08-12T05:38:35Z",
+            "txHash": "0xd63a5fcf6b84a69e2238178d0565674430d06b218c3c6f360d01d7c1f2917fca"
           }
         ],
         "errors": []
@@ -19228,7 +19234,7 @@
       "observedAt": "2026-08-12T00:43:52.163118+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:45.761474+00:00",
+        "observedAt": "2026-08-12T09:34:59.120754+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -19255,7 +19261,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:07.234207+00:00",
+        "observedAt": "2026-08-12T09:35:18.000585+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -19747,7 +19753,7 @@
       "observedAt": "2026-08-12T00:43:52.500214+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:49.973851+00:00",
+        "observedAt": "2026-08-12T09:35:01.438778+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -19774,7 +19780,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:03.495705+00:00",
+        "observedAt": "2026-08-12T09:36:13.813795+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20365,7 +20371,7 @@
       "observedAt": "2026-08-12T00:43:52.966427+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.105812+00:00",
+        "observedAt": "2026-08-12T09:35:01.489008+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -20392,7 +20398,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:03.942880+00:00",
+        "observedAt": "2026-08-12T09:36:14.028214+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20741,7 +20747,7 @@
       "observedAt": "2026-08-12T00:43:53.322969+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.221133+00:00",
+        "observedAt": "2026-08-12T09:35:01.629899+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -20768,7 +20774,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:04.075648+00:00",
+        "observedAt": "2026-08-12T09:36:20.717043+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20903,7 +20909,7 @@
       "observedAt": "2026-08-12T00:43:53.699744+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:47.442279+00:00",
+        "observedAt": "2026-08-12T09:35:00.066460+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -20930,7 +20936,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:36:34.871254+00:00",
+        "observedAt": "2026-08-12T09:35:45.768195+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -21455,7 +21461,7 @@
       "observedAt": "2026-08-12T00:43:54.185823+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.558341+00:00",
+        "observedAt": "2026-08-12T09:35:01.958677+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -21482,7 +21488,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:11.055779+00:00",
+        "observedAt": "2026-08-12T09:36:33.548237+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22117,7 +22123,7 @@
       "observedAt": "2026-08-12T00:43:54.732705+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.441270+00:00",
+        "observedAt": "2026-08-12T09:35:01.893955+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -22144,7 +22150,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:10.890441+00:00",
+        "observedAt": "2026-08-12T09:36:27.847904+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22669,8 +22675,8 @@
       "observedAt": "2026-08-12T00:43:55.353667+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:44.717037+00:00",
-        "contractCorroborated": true,
+        "observedAt": "2026-08-12T09:34:58.445609+00:00",
+        "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
         "proxy": null,
@@ -22685,23 +22691,48 @@
           "ownerOf": false,
           "balanceOf": false
         },
-        "eventLogsSampled": 25,
+        "eventLogsSampled": 0,
         "errors": [
           "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+          "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:35:53.049362+00:00",
+        "observedAt": "2026-08-12T09:35:04.010828+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 1,
-        "uniqueTokenIds": 1,
-        "transferUris": 1,
+        "tokensSampled": 3,
+        "uniqueTokenIds": 3,
+        "transferUris": 3,
         "modelSignals": [],
         "sampledTransfers": [
+          {
+            "tokenId": "12",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/12.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x85dc5ee6a64bd6e28e96b20a768705d40f7553d7",
+            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
+            "block": "25736282",
+            "time": "2026-08-12T03:37:47Z",
+            "txHash": "0x3be0bc3e35ca111cf4f01c50e62e11507db6bd89b5e6d23c59015ac993606e87"
+          },
+          {
+            "tokenId": "819",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/819.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x2fc6e03f0b445e9d7c910a468b716431e2866779",
+            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
+            "block": "25736279",
+            "time": "2026-08-12T03:37:11Z",
+            "txHash": "0x5e3781ddf1d908afd7c59450eab18902cff73bf3f01288dfac37de8386d8ee31"
+          },
           {
             "tokenId": "585",
             "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/585.json",
@@ -23198,34 +23229,31 @@
       "observedAt": "2026-08-12T00:43:55.589529+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.653214+00:00",
-        "contractCorroborated": false,
-        "verifiedSource": false,
-        "contractName": null,
-        "proxy": null,
+        "observedAt": "2026-08-12T09:35:02.022984+00:00",
+        "contractCorroborated": true,
+        "verifiedSource": true,
+        "contractName": "Woodie",
+        "proxy": "0",
         "implementation": null,
-        "creator": null,
-        "creationTxHash": null,
-        "creationBlock": null,
+        "creator": "0x7e6a74008e1b8df0c5754436d0de3654636b2bf9",
+        "creationTxHash": "0x27973d11febceda41bc6d54beaed70a21a39b0df412f80b38340a4fd5e24e36e",
+        "creationBlock": "13286828",
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": false,
+          "tokenURI": true,
           "uri": false,
-          "ownerOf": false,
-          "balanceOf": false
+          "ownerOf": true,
+          "balanceOf": true
         },
         "eventLogsSampled": 0,
         "errors": [
-          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:17.522211+00:00",
+        "observedAt": "2026-08-12T09:36:34.404501+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23236,7 +23264,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "index_only_or_unavailable"
+      "authorityStatus": "onchain_corroborated"
     },
     {
       "catalogId": "xmas-chibis",
@@ -23362,7 +23390,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.773683+00:00",
+        "observedAt": "2026-08-12T09:35:02.071297+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -23389,7 +23417,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:17.867220+00:00",
+        "observedAt": "2026-08-12T09:36:34.631740+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23524,31 +23552,34 @@
       "observedAt": "2026-08-12T00:43:56.350349+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.897335+00:00",
-        "contractCorroborated": true,
-        "verifiedSource": true,
-        "contractName": "ERC721SeaDrop",
-        "proxy": "0",
+        "observedAt": "2026-08-12T09:35:02.135748+00:00",
+        "contractCorroborated": false,
+        "verifiedSource": false,
+        "contractName": null,
+        "proxy": null,
         "implementation": null,
-        "creator": "0x7d921516f5400a2c13fc129424e7707b51ad7cc3",
-        "creationTxHash": "0xc58730930fce6310cbd0e2bb1b62d9a114c32d12b0dfb699444346a0a5e43ab1",
-        "creationBlock": "121699957",
+        "creator": null,
+        "creationTxHash": null,
+        "creationBlock": null,
         "tokenInfo": null,
         "abiSignals": {
-          "tokenURI": true,
+          "tokenURI": false,
           "uri": false,
-          "ownerOf": true,
-          "balanceOf": true
+          "ownerOf": false,
+          "balanceOf": false
         },
         "eventLogsSampled": 0,
         "errors": [
+          "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+          "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
           "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
         ],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:17.954577+00:00",
+        "observedAt": "2026-08-12T09:36:40.507385+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23559,7 +23590,7 @@
           "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
         ]
       },
-      "authorityStatus": "onchain_corroborated"
+      "authorityStatus": "index_only_or_unavailable"
     },
     {
       "catalogId": "a3ac-0x77372a",
@@ -24084,7 +24115,7 @@
       "observedAt": "2026-08-12T00:43:56.718730+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:50.991729+00:00",
+        "observedAt": "2026-08-12T09:35:02.216614+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -24111,7 +24142,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:24.324463+00:00",
+        "observedAt": "2026-08-12T09:36:41.259065+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24196,7 +24227,7 @@
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T01:35:51.278279+00:00",
+        "observedAt": "2026-08-12T09:35:02.284787+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": null,
@@ -24223,7 +24254,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T01:37:24.577995+00:00",
+        "observedAt": "2026-08-12T09:36:41.527531+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24454,9 +24485,7 @@
       "etherscanConflicts": [],
       "etherscanErrors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "bitqueryErrors": [
@@ -24514,6 +24543,9 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
@@ -24674,6 +24706,9 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
@@ -24732,9 +24767,6 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
@@ -24815,7 +24847,8 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
@@ -24832,13 +24865,13 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "misfitpixels",
@@ -24932,7 +24965,9 @@
       "etherscanErrors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "bitqueryErrors": []
     },
@@ -24983,13 +25018,12 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
-      "bitqueryErrors": []
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
     },
     {
       "catalogId": "research-0x0fc3dd",
@@ -25085,7 +25119,9 @@
       "etherscanConflicts": [],
       "etherscanErrors": [
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro.",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "bitqueryErrors": [
@@ -25103,6 +25139,7 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
@@ -25268,7 +25305,8 @@
         "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+        "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
       "bitqueryErrors": []
     },
@@ -25283,9 +25321,6 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
-        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
-        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
@@ -25323,6 +25358,9 @@
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
+        "source: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "abi: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
+        "creation: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "token_info: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)",
         "logs: RuntimeError: Etherscan API error: Max calls per sec rate limit reached (3/sec)"
       ],
