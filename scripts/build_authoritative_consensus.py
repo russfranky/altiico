@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Combine OpenSea/Moralis consensus with Etherscan explorer evidence."""
+"""Combine OpenSea/Moralis consensus with Etherscan and Bitquery on-chain evidence."""
 from __future__ import annotations
 
 import json
@@ -10,6 +10,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 CROSS = ROOT / "data/source_consensus.json"
 ETH = ROOT / "data/etherscan_authority_report.json"
+BIT = ROOT / "data/bitquery_evidence_report.json"
 OUT = ROOT / "data/authoritative_consensus.json"
 
 
@@ -17,14 +18,20 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def indexed(items: Any) -> dict[str, dict[str, Any]]:
+    return {
+        item.get("catalogId"): item
+        for item in (items or [])
+        if isinstance(item, dict) and item.get("catalogId")
+    }
+
+
 def main() -> int:
     consensus = json.loads(CROSS.read_text(encoding="utf-8"))
     etherscan = json.loads(ETH.read_text(encoding="utf-8"))
-    by_id = {
-        item.get("catalogId"): item
-        for item in etherscan.get("collections", [])
-        if isinstance(item, dict) and item.get("catalogId")
-    }
+    bitquery = json.loads(BIT.read_text(encoding="utf-8"))
+    etherscan_by_id = indexed(etherscan.get("collections"))
+    bitquery_by_id = indexed(bitquery.get("collections"))
 
     source_collections = consensus.get("collections") or {}
     if isinstance(source_collections, dict):
@@ -34,35 +41,34 @@ def main() -> int:
     else:
         source_items = [value for value in source_collections if isinstance(value, dict)]
 
-    review_by_id = {
-        item.get("catalogId"): item
-        for item in (consensus.get("reviewQueue") or [])
-        if isinstance(item, dict) and item.get("catalogId")
-    }
-
+    review_by_id = indexed(consensus.get("reviewQueue"))
     collections: list[dict[str, Any]] = []
     review: list[dict[str, Any]] = []
+
     for item in source_items:
         cid = item.get("catalogId")
-        es = by_id.get(cid)
+        es = etherscan_by_id.get(cid)
+        bq = bitquery_by_id.get(cid)
         existing_review = review_by_id.get(cid) or {}
         source_conflicts = list(existing_review.get("conflictFields") or [])
         source_errors = list(existing_review.get("errors") or [])
         es_conflicts = list((es or {}).get("conflicts") or [])
         es_errors = list((es or {}).get("errors") or [])
         evidence = (es or {}).get("contractEvidence") or {}
-        contract_corroborated = bool(
+        explorer_corroborated = bool(
             evidence.get("creator")
             or evidence.get("verifiedSource")
             or evidence.get("creationTxHash")
             or evidence.get("eventLogsSampled")
         )
+        bitquery_corroborated = bool((bq or {}).get("contractObservedOnchain"))
+        onchain_corroborated = explorer_corroborated or bitquery_corroborated
 
         record = {
             **item,
             "etherscan": {
                 "observedAt": (es or {}).get("observedAt"),
-                "contractCorroborated": contract_corroborated,
+                "contractCorroborated": explorer_corroborated,
                 "verifiedSource": evidence.get("verifiedSource"),
                 "contractName": evidence.get("contractName"),
                 "proxy": evidence.get("proxy"),
@@ -76,10 +82,18 @@ def main() -> int:
                 "errors": es_errors,
                 "conflicts": es_conflicts,
             },
+            "bitquery": {
+                "observedAt": (bq or {}).get("observedAt"),
+                "contractObservedOnchain": bitquery_corroborated,
+                "tokensSampled": (bq or {}).get("tokensSampled", 0),
+                "uniqueTokenIds": (bq or {}).get("uniqueTokenIds", 0),
+                "transferUris": (bq or {}).get("transferUris", 0),
+                "modelSignals": (bq or {}).get("modelSignals") or [],
+                "sampledTransfers": (bq or {}).get("sampledTransfers") or [],
+                "errors": (bq or {}).get("errors") or [],
+            },
             "authorityStatus": (
-                "explorer_corroborated"
-                if contract_corroborated
-                else "index_only_or_unavailable"
+                "onchain_corroborated" if onchain_corroborated else "index_only_or_unavailable"
             ),
         }
         collections.append(record)
@@ -96,36 +110,33 @@ def main() -> int:
                     "sourceErrors": source_errors,
                     "etherscanConflicts": es_conflicts,
                     "etherscanErrors": es_errors,
+                    "bitqueryErrors": (bq or {}).get("errors") or [],
                 }
             )
 
     payload = {
-        "schema": "authoritative-catalog-consensus-v1",
+        "schema": "authoritative-catalog-consensus-v2",
         "generatedAt": now_iso(),
         "policy": {
-            "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence corroborates identity; OpenSea/Moralis indexes never silently override it",
+            "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
             "mutableFields": "preserve per-source timestamps and conflicts",
             "vrm": "only binary GLB 2.0 + VRM/VRMC_vrm validation proves VRM",
             "market": "market values are mutable and source-specific",
+            "bitquery": "Bitquery transfer URI/model signals are discovery evidence only until the referenced bytes pass binary validation",
         },
         "summary": {
             "collections": len(collections),
-            "explorerCorroborated": sum(
-                item["authorityStatus"] == "explorer_corroborated"
-                for item in collections
-            ),
+            "explorerCorroborated": sum(bool(item["etherscan"]["contractCorroborated"]) for item in collections),
+            "bitqueryCorroborated": sum(bool(item["bitquery"]["contractObservedOnchain"]) for item in collections),
+            "onchainCorroborated": sum(item["authorityStatus"] == "onchain_corroborated" for item in collections),
+            "bitqueryModelSignalTokens": sum(len(item["bitquery"]["modelSignals"]) for item in collections),
             "reviewItems": len(review),
-            "etherscanConflicts": sum(
-                len(item["etherscanConflicts"]) for item in review
-            ),
+            "etherscanConflicts": sum(len(item["etherscanConflicts"]) for item in review),
         },
         "collections": collections,
         "reviewQueue": review,
     }
-    OUT.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(payload["summary"], indent=2))
     return 0
 

@@ -1,0 +1,1816 @@
+{
+  "schema": "bitquery-nft-evidence-v1",
+  "generatedAt": "2026-08-12T01:37:31.476762+00:00",
+  "source": "Bitquery API v2 EVM Transfers",
+  "policy": {
+    "role": "independent on-chain transfer, NFT identity and token URI corroboration",
+    "vrmPromotion": "Bitquery URI/model signals are candidates only; binary GLB 2.0 plus VRM/VRMC_vrm validation remains required"
+  },
+  "summary": {
+    "collectionsInspected": 58,
+    "collectionsObservedOnchain": 11,
+    "collectionsWithErrors": 38,
+    "tokensSampled": 183,
+    "transferUris": 112,
+    "modelSignalTokens": 0
+  },
+  "collections": [
+    {
+      "catalogId": "a3ac-0x62eb14",
+      "name": "AdWorld",
+      "chain": "ethereum",
+      "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
+      "observedAt": "2026-08-12T01:35:51.725568+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0xaad35c",
+      "name": "Akutars",
+      "chain": "ethereum",
+      "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
+      "observedAt": "2026-08-12T01:35:51.725750+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 25,
+      "uniqueTokenIds": 24,
+      "transferUris": 25,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "12657",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/12657.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+          "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
+          "block": "25733786",
+          "time": "2026-08-11T19:16:35Z",
+          "txHash": "0x56ffd1397df464670f12afb90ea03627afde51d484ee9294149323417c1a42a8"
+        },
+        {
+          "tokenId": "9776",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9776.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+          "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
+          "block": "25732434",
+          "time": "2026-08-11T14:44:47Z",
+          "txHash": "0x0d9b23f8d864d5714905aad147675c4bb788453fe154fdcaaf7f39b8998d9d60"
+        },
+        {
+          "tokenId": "11516",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
+          "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
+          "block": "25732384",
+          "time": "2026-08-11T14:34:35Z",
+          "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
+        },
+        {
+          "tokenId": "6822",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/6822.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
+          "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
+          "block": "25732384",
+          "time": "2026-08-11T14:34:35Z",
+          "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
+        },
+        {
+          "tokenId": "11516",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xeeacd78e4650221b60bb7f283e39ebbe84e1b24a",
+          "receiver": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
+          "block": "25731540",
+          "time": "2026-08-11T11:45:11Z",
+          "txHash": "0xcccf83f8f5ed2850aa06b7a6be03a54b36abc08fb4e7d3a9b14407a366f773c0"
+        },
+        {
+          "tokenId": "14622",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14622.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+          "receiver": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
+          "block": "25723069",
+          "time": "2026-08-10T07:21:59Z",
+          "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+        },
+        {
+          "tokenId": "14158",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14158.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+          "receiver": "0xb9783493d12b9b3fce1d00242aff22dd08bb9810",
+          "block": "25723069",
+          "time": "2026-08-10T07:21:59Z",
+          "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+        },
+        {
+          "tokenId": "14774",
+          "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14774.json",
+          "name": "Akutars",
+          "symbol": "AKU",
+          "protocol": null,
+          "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+          "receiver": "0xb180e3fde77c0d4499a934014f437e8d442fd8a8",
+          "block": "25723069",
+          "time": "2026-08-10T07:21:59Z",
+          "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "allstarz-psx",
+      "name": "Allstarz PSX",
+      "chain": "ethereum",
+      "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
+      "observedAt": "2026-08-12T01:35:51.725823+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0x1ac7a2",
+      "name": "ArbiDudesGenOne",
+      "chain": "arbitrum",
+      "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
+      "observedAt": "2026-08-12T01:35:52.633139+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0xc1fcf3",
+      "name": "Arbibots",
+      "chain": "arbitrum",
+      "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
+      "observedAt": "2026-08-12T01:35:52.651077+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 21,
+      "uniqueTokenIds": 20,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "1676",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
+          "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
+          "block": "493439586",
+          "time": "2026-08-11T13:40:53Z",
+          "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
+        },
+        {
+          "tokenId": "1216",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x8d910779211f12e7f109792cafe0a98185982db3",
+          "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
+          "block": "493439586",
+          "time": "2026-08-11T13:40:53Z",
+          "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
+        },
+        {
+          "tokenId": "1320",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0xa0708d9093ce39e7b2aed1509120456fa78a2f02",
+          "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
+          "block": "493439586",
+          "time": "2026-08-11T13:40:53Z",
+          "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
+        },
+        {
+          "tokenId": "1765",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
+          "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
+          "block": "493433764",
+          "time": "2026-08-11T13:16:41Z",
+          "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
+        },
+        {
+          "tokenId": "1216",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x101eb380d06e443c7d456aed63961b16e290d8c7",
+          "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
+          "block": "493433764",
+          "time": "2026-08-11T13:16:41Z",
+          "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
+        },
+        {
+          "tokenId": "1478",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
+          "receiver": "0xd90d8c74545728cd8200c66084e36dc10afdca40",
+          "block": "493433394",
+          "time": "2026-08-11T13:15:08Z",
+          "txHash": "0x8d27288c494154ca5d4a70e45b62b56b48ff5fed92021f73f4c311926daa1b5f"
+        },
+        {
+          "tokenId": "358",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x1b5cbe0440861590ba929b2d0ef819a8f5f0d454",
+          "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
+          "block": "493428746",
+          "time": "2026-08-11T12:55:46Z",
+          "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
+        },
+        {
+          "tokenId": "1828",
+          "uri": null,
+          "name": "Arbibots",
+          "symbol": "BOT",
+          "protocol": null,
+          "sender": "0x2897be1b8411c248dfaab1186bdd89a3f4b2ffbe",
+          "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
+          "block": "493428746",
+          "time": "2026-08-11T12:55:46Z",
+          "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "avastars",
+      "name": "Avastars",
+      "chain": "ethereum",
+      "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
+      "observedAt": "2026-08-12T01:35:52.747890+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 19,
+      "uniqueTokenIds": 19,
+      "transferUris": 19,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "16663",
+          "uri": "https://avastars.io/metadata/16663",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x74730ee9116305f1e4b2e444cad2e8528e05713b",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734149",
+          "time": "2026-08-11T20:29:11Z",
+          "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+        },
+        {
+          "tokenId": "12135",
+          "uri": "https://avastars.io/metadata/12135",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x74730ee9116305f1e4b2e444cad2e8528e05713b",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734149",
+          "time": "2026-08-11T20:29:11Z",
+          "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+        },
+        {
+          "tokenId": "11834",
+          "uri": "https://avastars.io/metadata/11834",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x6031c80627ab7c8ee0041bcb9bafc617862f5b6e",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734149",
+          "time": "2026-08-11T20:29:11Z",
+          "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+        },
+        {
+          "tokenId": "23874",
+          "uri": "https://avastars.io/metadata/23874",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x16205a6048b6af17f1ac1a009bbf2ed9289e6921",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734149",
+          "time": "2026-08-11T20:29:11Z",
+          "txHash": "0x127c339763aef46e66c33eda1bc779ca41479c539c8061b429ff448e12e605e0"
+        },
+        {
+          "tokenId": "17841",
+          "uri": "https://avastars.io/metadata/17841",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734143",
+          "time": "2026-08-11T20:27:59Z",
+          "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+        },
+        {
+          "tokenId": "12320",
+          "uri": "https://avastars.io/metadata/12320",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734143",
+          "time": "2026-08-11T20:27:59Z",
+          "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+        },
+        {
+          "tokenId": "24218",
+          "uri": "https://avastars.io/metadata/24218",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0xd40e498aa66cfb88ed31565494785cbe72076441",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734143",
+          "time": "2026-08-11T20:27:59Z",
+          "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+        },
+        {
+          "tokenId": "11934",
+          "uri": "https://avastars.io/metadata/11934",
+          "name": "Avastar",
+          "symbol": "AVASTAR",
+          "protocol": null,
+          "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+          "receiver": "0xba7b697aa97c04afdad1d41461575e8b1b3cd988",
+          "block": "25734143",
+          "time": "2026-08-11T20:27:59Z",
+          "txHash": "0x99747c33b573b8ba2f3900254f500442d0325c07f37ef1869b41b32ed05c1c9c"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "boomboxheads-v2",
+      "name": "Boomboxheads V2",
+      "chain": "ethereum",
+      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
+      "observedAt": "2026-08-12T01:35:52.981543+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "bourey-vs-bulley-bourverse",
+      "name": "Bourey vs Bulley: Bourverse",
+      "chain": "ethereum",
+      "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
+      "observedAt": "2026-08-12T01:35:52.994737+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 1,
+      "uniqueTokenIds": 1,
+      "transferUris": 1,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "5",
+          "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/5",
+          "name": "Bourey vs Bulley: Bourverse",
+          "symbol": "BVBB",
+          "protocol": null,
+          "sender": "0x1e44b0ebc7aac6e33575be1268040cee247e5ad3",
+          "receiver": "0xe6ac7475950de2181065ea6d442e5b5b8ce07b28",
+          "block": "25716503",
+          "time": "2026-08-09T09:23:47Z",
+          "txHash": "0xd30dda656287f1251b9c43c9f67270f0c5432af31d585fee7950be464e5f6ee5"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "wassies",
+      "name": "ByWassies",
+      "chain": "ethereum",
+      "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
+      "observedAt": "2026-08-12T01:35:53.049362+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 1,
+      "uniqueTokenIds": 1,
+      "transferUris": 1,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "585",
+          "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/585.json",
+          "name": "loomlocknft",
+          "symbol": "LL",
+          "protocol": null,
+          "sender": "0xa43711f5dcc3559a1e07ec124fd167e26c9bad43",
+          "receiver": "0x771c3994d0f838eb7a163513b1f41f8417458f28",
+          "block": "25714457",
+          "time": "2026-08-09T02:33:35Z",
+          "txHash": "0x845e3f2e31410d1d86f29d009c19011fa4411e41bfe3e8e6c28fba21c8a66e11"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "a3ac-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "chain": "ethereum",
+      "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+      "observedAt": "2026-08-12T01:35:53.379731+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 25,
+      "uniqueTokenIds": 20,
+      "transferUris": 25,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "2641",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2641",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xb3611da4a72fba65a80b0e7025b49431b193873e",
+          "receiver": "0xa6acd6ddb556b794124ad95b7040bdd7aa174bd5",
+          "block": "25735129",
+          "time": "2026-08-11T23:45:47Z",
+          "txHash": "0x31c6b7b16aebe790d655867d11dea802270e92d5a47206134dc2de030a925d35"
+        },
+        {
+          "tokenId": "11260",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/11260",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xb3611da4a72fba65a80b0e7025b49431b193873e",
+          "receiver": "0xa6acd6ddb556b794124ad95b7040bdd7aa174bd5",
+          "block": "25735129",
+          "time": "2026-08-11T23:45:47Z",
+          "txHash": "0x31c6b7b16aebe790d655867d11dea802270e92d5a47206134dc2de030a925d35"
+        },
+        {
+          "tokenId": "12324",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/12324",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0x994b470248b6f9bbede09422a15990efdb793096",
+          "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+          "block": "25734485",
+          "time": "2026-08-11T21:36:47Z",
+          "txHash": "0xf18d4f105b621dd4f64ee1d46f30ac80fa83e1c45b227fa81c41662d460cf10f"
+        },
+        {
+          "tokenId": "4343",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4343",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xb5479d539096b67ad412b3421043d320da4fe245",
+          "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+          "block": "25734484",
+          "time": "2026-08-11T21:36:35Z",
+          "txHash": "0xe76e5dfab98171d155d18b9f80974f72d3cf8bce7adde70d85a8c428067fb3c4"
+        },
+        {
+          "tokenId": "5719",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/5719",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
+          "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
+          "block": "25733644",
+          "time": "2026-08-11T18:48:11Z",
+          "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+        },
+        {
+          "tokenId": "10281",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10281",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
+          "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
+          "block": "25733644",
+          "time": "2026-08-11T18:48:11Z",
+          "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+        },
+        {
+          "tokenId": "4099",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4099",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
+          "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
+          "block": "25733644",
+          "time": "2026-08-11T18:48:11Z",
+          "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+        },
+        {
+          "tokenId": "4343",
+          "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4343",
+          "name": "CloneX",
+          "symbol": "CloneX",
+          "protocol": null,
+          "sender": "0xe71a126d41d167ce3ca048ccce3f61fa83274535",
+          "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
+          "block": "25733644",
+          "time": "2026-08-11T18:48:11Z",
+          "txHash": "0xd49ad6131a7e0e6522a94dfb0f5b8739fff9a783ec0ec8510a114861a108254f"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "chain-runners",
+      "name": "Chain Runners",
+      "chain": "ethereum",
+      "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
+      "observedAt": "2026-08-12T01:35:53.391991+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "chametheon",
+      "name": "Chametheon",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:35:53.419546+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "chain": "ethereum",
+      "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
+      "observedAt": "2026-08-12T01:35:53.682017+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "chuddie",
+      "name": "Chuddies",
+      "chain": "ethereum",
+      "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
+      "observedAt": "2026-08-12T01:36:00.238492+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "cyberanimedoll-avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:36:00.300613+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "cyberbrokers",
+      "name": "CyberBrokers",
+      "chain": "ethereum",
+      "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
+      "observedAt": "2026-08-12T01:36:00.346390+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "chain": "ethereum",
+      "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
+      "observedAt": "2026-08-12T01:36:07.234207+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "coldie",
+      "name": "DEyes Legends by Coldie",
+      "chain": "ethereum",
+      "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
+      "observedAt": "2026-08-12T01:36:07.415917+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "name": "DickButtVerse",
+      "chain": "ethereum",
+      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+      "observedAt": "2026-08-12T01:36:07.417301+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "elysium-shell-next-mecha",
+      "name": "Elysium Shell: Next - Mecha",
+      "chain": "ethereum",
+      "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
+      "observedAt": "2026-08-12T01:36:14.086105+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xccc441",
+      "name": "FLUF World",
+      "chain": "ethereum",
+      "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
+      "observedAt": "2026-08-12T01:36:14.203286+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x369156",
+      "name": "Flooz GEN F",
+      "chain": "ethereum",
+      "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
+      "observedAt": "2026-08-12T01:36:14.265126+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "fly-frogs",
+      "name": "Fly Frogs",
+      "chain": "ethereum",
+      "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
+      "observedAt": "2026-08-12T01:36:21.111764+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "forgottenruneswizardscult",
+      "name": "Forgotten Runes Wizards Cult",
+      "chain": "ethereum",
+      "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+      "observedAt": "2026-08-12T01:36:21.249776+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "frutiger-anons",
+      "name": "Frutiger Anons",
+      "chain": "ethereum",
+      "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
+      "observedAt": "2026-08-12T01:36:21.377654+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x14c447",
+      "name": "Fyat Lux (Dawn Collection)",
+      "chain": "ethereum",
+      "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
+      "observedAt": "2026-08-12T01:36:27.916528+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "halloween-rising",
+      "name": "Halloween Rising",
+      "chain": "optimism",
+      "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+      "observedAt": "2026-08-12T01:36:28.034616+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x86fc6f",
+      "name": "Jadu AVA",
+      "chain": "ethereum",
+      "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
+      "observedAt": "2026-08-12T01:36:28.442530+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0xd2F668",
+      "name": "Karafuru",
+      "chain": "ethereum",
+      "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
+      "observedAt": "2026-08-12T01:36:34.753810+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x324F60",
+      "name": "Koala 2025 Collector's Briefcase",
+      "chain": "base",
+      "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
+      "observedAt": "2026-08-12T01:36:34.871254+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "mona-avatars",
+      "name": "MONA Avatars",
+      "chain": "ethereum",
+      "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
+      "observedAt": "2026-08-12T01:36:35.045986+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "meebits",
+      "name": "Meebits",
+      "chain": "ethereum",
+      "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "observedAt": "2026-08-12T01:36:41.748574+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "metaanigen",
+      "name": "MetaaniGEN",
+      "chain": "ethereum",
+      "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
+      "observedAt": "2026-08-12T01:36:41.777491+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x223ef0",
+      "name": "Metashima - Lightning",
+      "chain": "ethereum",
+      "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
+      "observedAt": "2026-08-12T01:36:41.893769+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "misfitpixels",
+      "name": "MisfitPIXELS",
+      "chain": "ethereum",
+      "contract": "0x618951345638caa062259cdbed445d4fb661b774",
+      "observedAt": "2026-08-12T01:36:48.637808+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0x235817",
+      "name": "Moonbirds",
+      "chain": "ethereum",
+      "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
+      "observedAt": "2026-08-12T01:36:48.796606+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 25,
+      "uniqueTokenIds": 15,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "8860",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x766e7be7835f0f7c256c58a14bce5b6af9362ad7",
+          "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+          "block": "25734527",
+          "time": "2026-08-11T21:45:11Z",
+          "txHash": "0xc64fe1e0e1f68a3dfa9718adf5657b05408df72c332fb8e2f50810857bacdde1"
+        },
+        {
+          "tokenId": "2517",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
+          "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+          "block": "25734116",
+          "time": "2026-08-11T20:22:35Z",
+          "txHash": "0x514ac8948f0fdd3eba4781275d341abbce4fe2939fb5d36ec571b42030950e66"
+        },
+        {
+          "tokenId": "2903",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
+          "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+          "block": "25734116",
+          "time": "2026-08-11T20:22:35Z",
+          "txHash": "0x514ac8948f0fdd3eba4781275d341abbce4fe2939fb5d36ec571b42030950e66"
+        },
+        {
+          "tokenId": "2903",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0xd6143d48757835897d20cf7837d17ef80b42b44d",
+          "receiver": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
+          "block": "25734102",
+          "time": "2026-08-11T20:19:47Z",
+          "txHash": "0x67067d102808338d68c961f18af9f13d828158ef1ea174ce19caede39f12c064"
+        },
+        {
+          "tokenId": "4274",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
+          "receiver": "0x994b470248b6f9bbede09422a15990efdb793096",
+          "block": "25734071",
+          "time": "2026-08-11T20:13:35Z",
+          "txHash": "0xa086687c593b69da9df5c30a4051b2abc917a010dd01d253c435fc7f4e6a4280"
+        },
+        {
+          "tokenId": "2677",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
+          "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+          "block": "25733944",
+          "time": "2026-08-11T19:48:11Z",
+          "txHash": "0x2805dde7dcaf43c5cf24e0af167e4d0b6f86bd36d4d4c5c5eff9096902dd52f5"
+        },
+        {
+          "tokenId": "5853",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
+          "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+          "block": "25733944",
+          "time": "2026-08-11T19:48:11Z",
+          "txHash": "0x2805dde7dcaf43c5cf24e0af167e4d0b6f86bd36d4d4c5c5eff9096902dd52f5"
+        },
+        {
+          "tokenId": "2677",
+          "uri": null,
+          "name": "Moonbirds",
+          "symbol": "MOONBIRD",
+          "protocol": null,
+          "sender": "0x38e08cf0961de6d29f79493ade04e466f6b89dad",
+          "receiver": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
+          "block": "25733896",
+          "time": "2026-08-11T19:38:35Z",
+          "txHash": "0xb60fd92a592b597c52f052b20abf451fb4b5e4fb6dc9e370f78e045bc805b9d6"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "neonglitch86-collection-polygon-side",
+      "name": "NG86SHAPE",
+      "chain": "polygon",
+      "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
+      "observedAt": "2026-08-12T01:36:49.146721+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "chain": "ethereum",
+      "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+      "observedAt": "2026-08-12T01:36:55.517220+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0x92133e",
+      "name": "Non-Fungible People by Daz 3D",
+      "chain": "ethereum",
+      "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
+      "observedAt": "2026-08-12T01:36:55.867839+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 12,
+      "uniqueTokenIds": 8,
+      "transferUris": 12,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "7225",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
+          "block": "25729156",
+          "time": "2026-08-11T03:45:11Z",
+          "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
+        },
+        {
+          "tokenId": "7226",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
+          "block": "25729156",
+          "time": "2026-08-11T03:45:11Z",
+          "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
+        },
+        {
+          "tokenId": "7298",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7298",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
+          "block": "25729156",
+          "time": "2026-08-11T03:45:11Z",
+          "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
+        },
+        {
+          "tokenId": "7297",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7297",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
+          "block": "25729156",
+          "time": "2026-08-11T03:45:11Z",
+          "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
+        },
+        {
+          "tokenId": "5767",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5767",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
+          "block": "25729156",
+          "time": "2026-08-11T03:45:11Z",
+          "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
+        },
+        {
+          "tokenId": "7225",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
+          "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "block": "25727570",
+          "time": "2026-08-10T22:25:35Z",
+          "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
+        },
+        {
+          "tokenId": "7226",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
+          "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
+          "block": "25727570",
+          "time": "2026-08-10T22:25:35Z",
+          "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
+        },
+        {
+          "tokenId": "5898",
+          "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5898",
+          "name": "Daz3D Non-Fungible People",
+          "symbol": "DAZNFP",
+          "protocol": null,
+          "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
+          "receiver": "0xcc800a41da6947b224bb57cb553e6744420323f6",
+          "block": "25727570",
+          "time": "2026-08-10T22:25:35Z",
+          "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "nouns",
+      "name": "Nouns",
+      "chain": "ethereum",
+      "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
+      "observedAt": "2026-08-12T01:36:55.870707+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 25,
+      "uniqueTokenIds": 13,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "1989",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
+          "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+          "block": "25733900",
+          "time": "2026-08-11T19:39:23Z",
+          "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+        },
+        {
+          "tokenId": "1990",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x0000000000000000000000000000000000000000",
+          "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+          "block": "25733900",
+          "time": "2026-08-11T19:39:23Z",
+          "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+        },
+        {
+          "tokenId": "1990",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+          "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
+          "block": "25733900",
+          "time": "2026-08-11T19:39:23Z",
+          "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+        },
+        {
+          "tokenId": "1455",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
+          "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
+          "block": "25728504",
+          "time": "2026-08-11T01:34:11Z",
+          "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+        },
+        {
+          "tokenId": "1743",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
+          "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
+          "block": "25728504",
+          "time": "2026-08-11T01:34:11Z",
+          "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+        },
+        {
+          "tokenId": "1760",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x7cae81d859ad41ef5ad8110364e1d656477f7345",
+          "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
+          "block": "25728504",
+          "time": "2026-08-11T01:34:11Z",
+          "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+        },
+        {
+          "tokenId": "1810",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x5bf9123dd298fd24ae52de60c5c15fd0e4dcba7c",
+          "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
+          "block": "25728504",
+          "time": "2026-08-11T01:34:11Z",
+          "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+        },
+        {
+          "tokenId": "1748",
+          "uri": null,
+          "name": "Nouns",
+          "symbol": "NOUN",
+          "protocol": null,
+          "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
+          "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
+          "block": "25727452",
+          "time": "2026-08-10T22:01:59Z",
+          "txHash": "0xf0f9c861c5ac8412690e8112fb0ba56d6d54c01985c92dd62bfe0414817d54fa"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "og-meta-meeples-pfp",
+      "name": "OG Meta Meeples PFP",
+      "chain": "ethereum",
+      "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
+      "observedAt": "2026-08-12T01:36:56.203067+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "omnimorphs",
+      "name": "Omnimorphs",
+      "chain": "ethereum",
+      "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
+      "observedAt": "2026-08-12T01:36:56.205502+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": []
+    },
+    {
+      "catalogId": "research-0x0fc3dd",
+      "name": "Parallel Avatars",
+      "chain": "ethereum",
+      "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
+      "observedAt": "2026-08-12T01:36:56.543104+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 25,
+      "uniqueTokenIds": 24,
+      "transferUris": 25,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "1414",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/1414",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "4913",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/4913",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5236",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5236",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5259",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5259",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5545",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5545",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5598",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5598",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5605",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5605",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        },
+        {
+          "tokenId": "5806",
+          "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5806",
+          "name": "Parallel Avatars",
+          "symbol": "LLPPL",
+          "protocol": null,
+          "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
+          "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
+          "block": "25735360",
+          "time": "2026-08-12T00:31:59Z",
+          "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "a3ac-0x35471f",
+      "name": "PartyBear",
+      "chain": "ethereum",
+      "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
+      "observedAt": "2026-08-12T01:36:56.544155+00:00",
+      "supported": true,
+      "contractObservedOnchain": true,
+      "tokensSampled": 4,
+      "uniqueTokenIds": 4,
+      "transferUris": 4,
+      "modelSignals": [],
+      "sampledTransfers": [
+        {
+          "tokenId": "175",
+          "uri": "https://api.partybear.xyz/api/token/175",
+          "name": "Party Bears",
+          "symbol": "PartyBears",
+          "protocol": null,
+          "sender": "0x7853733783cdf02ea63a17c792ea9d0837b91b6d",
+          "receiver": "0x8917865df85d4ed812c0f76f74242a3f414c1e17",
+          "block": "25712799",
+          "time": "2026-08-08T21:01:23Z",
+          "txHash": "0x22f8d794b01965896404c1a6cff4daabdbc189e2a83738a08142165dbc782d41"
+        },
+        {
+          "tokenId": "7045",
+          "uri": "https://api.partybear.xyz/api/token/7045",
+          "name": "Party Bears",
+          "symbol": "PartyBears",
+          "protocol": null,
+          "sender": "0x2fab8e58748f18814b37b86d6ec9bb237118027b",
+          "receiver": "0x8917865df85d4ed812c0f76f74242a3f414c1e17",
+          "block": "25712799",
+          "time": "2026-08-08T21:01:23Z",
+          "txHash": "0x22f8d794b01965896404c1a6cff4daabdbc189e2a83738a08142165dbc782d41"
+        },
+        {
+          "tokenId": "8489",
+          "uri": "https://api.partybear.xyz/api/token/8489",
+          "name": "Party Bears",
+          "symbol": "PartyBears",
+          "protocol": null,
+          "sender": "0xd416ca40c76f164c4c325aba1ee69c570ae87b01",
+          "receiver": "0x8917865df85d4ed812c0f76f74242a3f414c1e17",
+          "block": "25712799",
+          "time": "2026-08-08T21:01:23Z",
+          "txHash": "0x22f8d794b01965896404c1a6cff4daabdbc189e2a83738a08142165dbc782d41"
+        },
+        {
+          "tokenId": "5614",
+          "uri": "https://api.partybear.xyz/api/token/5614",
+          "name": "Party Bears",
+          "symbol": "PartyBears",
+          "protocol": null,
+          "sender": "0x45fbc0930bdb7b5037a27623d69aa1f2def98e3d",
+          "receiver": "0x8917865df85d4ed812c0f76f74242a3f414c1e17",
+          "block": "25712799",
+          "time": "2026-08-08T21:01:23Z",
+          "txHash": "0x22f8d794b01965896404c1a6cff4daabdbc189e2a83738a08142165dbc782d41"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "catalogId": "phettaverse-editions",
+      "name": "Phettaverse Editions",
+      "chain": "ethereum",
+      "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
+      "observedAt": "2026-08-12T01:36:56.879270+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "pixelbeasts",
+      "name": "Pixelbeasts",
+      "chain": "ethereum",
+      "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+      "observedAt": "2026-08-12T01:36:56.911366+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "rstlss-x-claire-silver-pixelgeist",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "chain": "ethereum",
+      "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
+      "observedAt": "2026-08-12T01:36:57.216468+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x50e712",
+      "name": "The Modz",
+      "chain": "ethereum",
+      "contract": "0x50e712b3a260d7639179e8277836253461418f23",
+      "observedAt": "2026-08-12T01:37:03.495705+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0xaaf03a",
+      "name": "The Seekers",
+      "chain": "ethereum",
+      "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
+      "observedAt": "2026-08-12T01:37:03.942880+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "toxic-skulls-club",
+      "name": "Toxic Skulls Club",
+      "chain": "ethereum",
+      "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
+      "observedAt": "2026-08-12T01:37:04.075648+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "chain": "ethereum",
+      "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+      "observedAt": "2026-08-12T01:37:10.385706+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "voltz",
+      "name": "VOLTZ Avatars",
+      "chain": "ethereum",
+      "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+      "observedAt": "2026-08-12T01:37:10.890441+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x631086",
+      "name": "Virtuals Waifus",
+      "chain": "base",
+      "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
+      "observedAt": "2026-08-12T01:37:11.055779+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "woodies",
+      "name": "Woodies",
+      "chain": "ethereum",
+      "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
+      "observedAt": "2026-08-12T01:37:17.522211+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "chain": "polygon",
+      "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+      "observedAt": "2026-08-12T01:37:17.867220+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "chain": "arbitrum",
+      "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
+      "observedAt": "2026-08-12T01:37:17.954577+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "chain": "ethereum",
+      "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
+      "observedAt": "2026-08-12T01:37:24.324463+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    },
+    {
+      "catalogId": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "chain": "base",
+      "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
+      "observedAt": "2026-08-12T01:37:24.577995+00:00",
+      "supported": true,
+      "contractObservedOnchain": false,
+      "tokensSampled": 0,
+      "uniqueTokenIds": 0,
+      "transferUris": 0,
+      "modelSignals": [],
+      "sampledTransfers": [],
+      "errors": [
+        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+      ]
+    }
+  ]
+}
