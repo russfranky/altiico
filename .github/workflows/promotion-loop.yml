@@ -1,0 +1,86 @@
+name: Discovery promotion loop
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/promotion-loop, main]
+    paths:
+      - scripts/sync_discovery_to_db.py
+      - scripts/materialize_discovery_fields.py
+      - static/discovery-overlay.js
+      - static/index.html
+      - data/authoritative_consensus.json
+      - data/bitquery_evidence_report.json
+      - data/moralis_model_discovery.json
+      - .github/workflows/promotion-loop.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promotion-loop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile promotion bridge
+        run: python -m py_compile scripts/sync_discovery_to_db.py scripts/materialize_discovery_fields.py
+      - name: Sync crawler evidence into SQLite
+        run: |
+          python scripts/sync_discovery_to_db.py
+          python scripts/materialize_discovery_fields.py
+      - name: Rebuild public catalog
+        run: python scripts/build_catalog.py
+      - name: Assert crawl evidence reached public payload
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          info=json.loads(Path('static/data/build-info.json').read_text())
+          payload=json.loads((Path('static/data')/info['files']['collections']).read_text())
+          rows=payload['collections']
+          with_evidence=[r for r in rows if (r.get('evidence_sources') or 0)>0]
+          print(json.dumps({
+            'collections':len(rows),
+            'collectionsWithVisibleEvidence':len(with_evidence),
+            'evidenceSources':sum(r.get('evidence_sources') or 0 for r in rows),
+            'corroborations':sum(r.get('evidence_corroborated') or 0 for r in rows),
+            'conflicts':sum(r.get('evidence_conflicts') or 0 for r in rows),
+            'tokenSamples':sum(r.get('evidence_tokens_sampled') or 0 for r in rows),
+            'tokenUris':sum(r.get('evidence_uris_observed') or 0 for r in rows),
+            'modelSignals':sum(r.get('evidence_model_signals') or 0 for r in rows),
+            'promotionCandidates':sum(r.get('promotion_candidate_count') or 0 for r in rows),
+          },indent=2))
+          assert with_evidence, 'crawler evidence did not reach public catalog rows'
+          assert sum(r.get('evidence_sources') or 0 for r in rows) > 0
+          PY
+      - name: Full verification
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          node --check static/discovery-overlay.js
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+      - name: Commit materialized database and public artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/vrm_index.db static/data static/sw.js
+          if git diff --cached --quiet; then
+            echo 'Promotion/evidence materialization already current.'
+            exit 0
+          fi
+          git commit -m 'Materialize discovery evidence into catalog [skip ci]'
+          git push
