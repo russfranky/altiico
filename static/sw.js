@@ -17,7 +17,7 @@
 // old caches.
 
 // Stamped by scripts/build_catalog.py on every build — never edit by hand.
-const CACHE_VERSION = 'b4e879767f7e';
+const CACHE_VERSION = 'f335316af663';
 const CACHE_NAME = `superyeti-${CACHE_VERSION}`;
 const APP_SHELL = [
   './',
