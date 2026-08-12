@@ -7,10 +7,11 @@ extract_vrm_meta) and records the result in the reachability columns from
 migration 013.
 
 Strategy per collection:
-  1. Pick a concrete URL: vrm_url_https if present, else substitute a sample id
-     into vrm_url_pattern.
-  2. Fetch it (range request + GLB validation).
-  3. If it is an IPFS URL and the stored gateway fails, retry via ipfs.io and
+  1. Pick a concrete URL: vrm_url_https if it is syntactically concrete, else
+     substitute a sample id into a syntactically valid vrm_url_pattern.
+  2. Reject prose/descriptive patterns rather than sending them to the network.
+  3. Fetch the concrete URL (range request + GLB validation).
+  4. If it is an IPFS URL and the stored gateway fails, retry via ipfs.io and
      dweb.link so we learn whether the FILE exists even if the gateway is dead.
 
 Statuses:
@@ -28,6 +29,7 @@ import socket
 import sqlite3
 import sys
 import urllib.error
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,20 +42,39 @@ if str(_REPO_ROOT) not in sys.path:
 from scripts.extract_vrm_meta import fetch_vrm_meta  # noqa: E402
 
 TOKEN_RE = re.compile(r"\{token_id\}|\{id\}|\{token\}|%d", re.IGNORECASE)
+UNRESOLVED_TEMPLATE_RE = re.compile(r"\{[^}]+\}|%[a-z]", re.IGNORECASE)
 IPFS_PATH_RE = re.compile(r"/ipfs/([A-Za-z0-9]+)(/.*)?$")
 GLB_PARSE_HINTS = ("Not a GLB", "no VRM extension", "Unsupported GLB", "First chunk is not JSON", "Header too short")
 
 
+def _syntactically_concrete_url(value: str) -> bool:
+    """Return True only for network-fetchable URL syntax, never prose labels."""
+    if not value or any(ch.isspace() for ch in value):
+        return False
+    if UNRESOLVED_TEMPLATE_RE.search(value):
+        return False
+    if value.startswith("ipfs://"):
+        remainder = value[len("ipfs://"):]
+        return bool(remainder and "/" not in remainder[:1] and " " not in remainder)
+    try:
+        parsed = urllib.parse.urlsplit(value)
+    except ValueError:
+        return False
+    return parsed.scheme.lower() in {"http", "https"} and bool(parsed.netloc)
+
+
 def concrete_url(row: dict[str, Any], sample_id: str = "1") -> str | None:
     u = (row.get("vrm_url_https") or "").strip()
-    if u:
+    if u and _syntactically_concrete_url(u):
         return u
+
     p = (row.get("vrm_url_pattern") or "").strip()
     if not p:
         return None
-    if not (p.startswith("http") or p.startswith("ipfs://")):
-        p = "https://" + p  # scheme-less host, e.g. nft.retrodoges.com/...
-    return TOKEN_RE.sub(sample_id, p)
+    if not (p.startswith("http://") or p.startswith("https://") or p.startswith("ipfs://")):
+        p = "https://" + p  # scheme-less host, e.g. nft.example.com/{id}.vrm
+    candidate = TOKEN_RE.sub(str(sample_id), p)
+    return candidate if _syntactically_concrete_url(candidate) else None
 
 
 def _normalize(url: str) -> str:
