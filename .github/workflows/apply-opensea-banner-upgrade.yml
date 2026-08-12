@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
       - run: python scripts/_apply_opensea_banner_upgrade.py
       - name: Verify patch
         run: |
