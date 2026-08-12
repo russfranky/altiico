@@ -79,6 +79,22 @@ def hit(**overrides):
     return row
 
 
+def reconciled_row(**overrides):
+    row = {
+        "catalogId": "dickbuttverse",
+        "tokenId": "1010",
+        "canonicalUrl": "https://example.test/1010.vrm",
+        "sha256": "a" * 64,
+        "vrmSpec": "0.x",
+        "byteLength": 672548,
+        "identityMode": "collection_primary_contract",
+        "linkedExistingAvatarId": None,
+        "collectionUpdated": True,
+    }
+    row.update(overrides)
+    return row
+
+
 def test_complete_proof_is_strict():
     assert complete_proof(hit())
     assert not complete_proof(hit(status="valid_glb_not_vrm"))
@@ -184,9 +200,40 @@ def test_zero_hit_reconciliation_is_a_successful_noop(tmp_path):
 
     assert payload["summary"] == {
         "validatedHitsInput": 0,
-        "binaryProofRowsStored": 0,
-        "existingAvatarsLinked": 0,
-        "collectionsReconciled": 0,
-        "collections": [],
+        "binaryProofRowsStoredThisRun": 0,
+        "cumulativeBinaryProofRows": 0,
+        "existingAvatarsLinkedThisRun": 0,
+        "cumulativeExistingAvatarsLinked": 0,
+        "collectionsReconciledThisRun": 0,
+        "collectionsThisRun": [],
+        "cumulativeCollectionsReconciled": 0,
+        "cumulativeCollections": [],
     }
     assert json.loads(output.read_text())["reconciled"] == []
+
+
+def test_zero_hit_run_preserves_previous_reconciled_proof_ledger(tmp_path):
+    report = tmp_path / "validation.json"
+    output = tmp_path / "reconciliation.json"
+    report.write_text(json.dumps({"validatedHits": []}))
+    output.write_text(
+        json.dumps(
+            {
+                "schema": "moralis-candidate-reconciliation-v1",
+                "reconciled": [reconciled_row()],
+            }
+        )
+    )
+    args = SimpleNamespace(
+        report=report,
+        output=output,
+        db=tmp_path / "does-not-need-to-exist.db",
+    )
+
+    payload = run(args)
+
+    assert payload["summary"]["validatedHitsInput"] == 0
+    assert payload["summary"]["binaryProofRowsStoredThisRun"] == 0
+    assert payload["summary"]["cumulativeBinaryProofRows"] == 1
+    assert payload["summary"]["cumulativeCollections"] == ["dickbuttverse"]
+    assert payload["reconciled"] == [reconciled_row()]
