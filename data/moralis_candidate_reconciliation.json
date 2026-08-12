@@ -1,0 +1,292 @@
+{
+  "schema": "moralis-candidate-reconciliation-v1",
+  "generatedAt": "2026-08-12T18:43:32Z",
+  "sourceReport": "data/moralis_candidate_validation.json",
+  "policy": "existing exact collection identity only; binary VRM proof required; no fuzzy collection creation and no avatar creation from bounded samples",
+  "summary": {
+    "validatedHitsInput": 25,
+    "binaryProofRowsStored": 25,
+    "existingAvatarsLinked": 0,
+    "collectionsReconciled": 1,
+    "collections": [
+      "dickbuttverse"
+    ]
+  },
+  "reconciled": [
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "0",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "sha256": "4bb05f40d2eb07bdb6b16e0fd309d927d1a5c2ac7e1d196d177eb9d1de033855",
+      "vrmSpec": "0.x",
+      "byteLength": 2928488,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": true
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+      "sha256": "8a8fbc752279ef4c550b2fd0f772d455322cf5b66c0eae29f0867462f6ec2679",
+      "vrmSpec": "0.x",
+      "byteLength": 1090948,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "10",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/10.vrm",
+      "sha256": "2165330878d03c68d00000b5b6c4094a4acba76e7740fec5be60820f524ec0b6",
+      "vrmSpec": "0.x",
+      "byteLength": 1038564,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "100",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/100.vrm",
+      "sha256": "9563c7532cd3386b90db51d1f013b3302bb31713925aa5df10d39383837a35ec",
+      "vrmSpec": "0.x",
+      "byteLength": 802948,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1000",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1000.vrm",
+      "sha256": "4ed827ac91c53a54d587cd5bbd64320b5d17a50a9e6c690fb131aadf18ae8d90",
+      "vrmSpec": "0.x",
+      "byteLength": 1165000,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1001",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1001.vrm",
+      "sha256": "6801aa9a8bbae6b4b714e581cc463cce1f97a836f3090c09d9d33f3a90c649b3",
+      "vrmSpec": "0.x",
+      "byteLength": 2238044,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1002",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1002.vrm",
+      "sha256": "8de0e0e0f8c1a23154529589267e2dd472d323d4ceb75ef8cd659e10ff4ae89c",
+      "vrmSpec": "0.x",
+      "byteLength": 1050288,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1003",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1003.vrm",
+      "sha256": "96977529d7352e4ae4e9ced161061ea8164063242f9129052e6f7cdcbb76eacd",
+      "vrmSpec": "0.x",
+      "byteLength": 637084,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1004",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1004.vrm",
+      "sha256": "80f18d17ec2ff2c7ad9cbde5ee409f86c46ec5853f1409025e12d79e3e3356ae",
+      "vrmSpec": "0.x",
+      "byteLength": 881112,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1005",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1005.vrm",
+      "sha256": "8920853479e3ee23d372daa08d9cf9cfcd2f8a4e6b4de90aaa7bebb7b7754774",
+      "vrmSpec": "0.x",
+      "byteLength": 1080016,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1006",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1006.vrm",
+      "sha256": "71074bc90175c3617948b1e53dd7f209a69af9617da084a4e264e21dd92859bf",
+      "vrmSpec": "0.x",
+      "byteLength": 1453652,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1007",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1007.vrm",
+      "sha256": "57d111cb20d33740b26cd859a5b19fdb931d51cc4c0d1d2ce8d8a2ec7065320c",
+      "vrmSpec": "0.x",
+      "byteLength": 464216,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1008",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1008.vrm",
+      "sha256": "a2c5bdb439f0d3f840086917f200e83da3cd2ee33cef0103f9a9a9946e401f40",
+      "vrmSpec": "0.x",
+      "byteLength": 1125532,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1009",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1009.vrm",
+      "sha256": "8e72d4c2cab257e50e2a94bcd2685159aecb5645bec29cebc891cd86423b58d4",
+      "vrmSpec": "0.x",
+      "byteLength": 2623792,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "101",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/101.vrm",
+      "sha256": "2e0b73bc2079dcf43f19743566c68aa01c30bacb950286b1adbc6896399884cf",
+      "vrmSpec": "0.x",
+      "byteLength": 997084,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1010",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1010.vrm",
+      "sha256": "2925f6ebedaf4dbab7e5ff1ca040070ca95c9bfa0c55532329c335169be7b613",
+      "vrmSpec": "0.x",
+      "byteLength": 672548,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1011",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1011.vrm",
+      "sha256": "1ad683f56892c75d3b7e778da8ffb3b5c6a0211ad93af73ba7374d813bfde4cb",
+      "vrmSpec": "0.x",
+      "byteLength": 681772,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1012",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1012.vrm",
+      "sha256": "0044c59c978cd3576eab9bc653eabb344e53836c5ce61c1200bae51e7a1f5cad",
+      "vrmSpec": "0.x",
+      "byteLength": 818816,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1013",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1013.vrm",
+      "sha256": "a449b48fb986ddb3af6fa13c3cffdbbbe87357858b95f134d8731952e25f0146",
+      "vrmSpec": "0.x",
+      "byteLength": 698316,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1014",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1014.vrm",
+      "sha256": "8c94d1d60d63ecc47157c1a16fce71ea0bd774b50ee41483127b69a8c9fb83d6",
+      "vrmSpec": "0.x",
+      "byteLength": 890408,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1015",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1015.vrm",
+      "sha256": "71e9cc04b24843ffbecd0edcfc6cdd59bf9a0beb485b95652fb74ad776b3a820",
+      "vrmSpec": "0.x",
+      "byteLength": 675452,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1016",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1016.vrm",
+      "sha256": "bbc7f8c91dbf746e3c46c882b048e44448a2e1baebbbdb8bf4943a05dda8aaef",
+      "vrmSpec": "0.x",
+      "byteLength": 752236,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1017",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1017.vrm",
+      "sha256": "f62e0f828cf16d0b9252a13bd05e2f45c0a3de85124941ae2af7786e597765fa",
+      "vrmSpec": "0.x",
+      "byteLength": 465660,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1018",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1018.vrm",
+      "sha256": "7ced473724b612dca785f0ce38a47024a2f2d808342478636952cc1b4356a20a",
+      "vrmSpec": "0.x",
+      "byteLength": 1062456,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "tokenId": "1019",
+      "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1019.vrm",
+      "sha256": "d4ebb53b7a20f3eabb770ca62a87adf478c7a96a025c23104d5fd05ad036d969",
+      "vrmSpec": "0.x",
+      "byteLength": 991436,
+      "identityMode": "collection_primary_contract",
+      "linkedExistingAvatarId": null,
+      "collectionUpdated": false
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-08-12T18:33:10Z`
-Snapshot: `vrmcat-v1-4c8d634aedba5371f779544f`
+Generated at: `2026-08-12T18:43:32Z`
+Snapshot: `vrmcat-v1-c9a7776b776aa698f60aeee8`
 
 ## Summary
 
-- Stageable sets: **13**
+- Stageable sets: **14**
 - Bulk-ready sets: **2**
 - Partial-inventory sets: **1**
-- Preview-ready sets: **10**
-- Reachable source avatar candidates: **159**
-- Individually binary-validated source avatars: **159**
-- Deferred sets: **56**
+- Preview-ready sets: **11**
+- Reachable source avatar candidates: **160**
+- Individually binary-validated source avatars: **160**
+- Deferred sets: **55**
 
 ## Stageable sets
 
@@ -23,6 +23,7 @@ Snapshot: `vrmcat-v1-4c8d634aedba5371f779544f`
 | `avastars` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `boomboxheads-v2` | preview_ready | 1 | 1 | ethereum | open | sample_only |
 | `chuddie` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
+| `dickbuttverse` | preview_ready | 1 | 1 | ethereum | gated | sample_only |
 | `forgottenruneswizardscult` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
 | `frutiger-anons` | preview_ready | 1 | 1 | ethereum | gated | sample_only |
 | `meebits` | preview_ready | 1 | 1 | ethereum | review | sample_only, license_requires_review |
@@ -35,7 +36,7 @@ Snapshot: `vrmcat-v1-4c8d634aedba5371f779544f`
 
 | Reason | Sets |
 |---|---:|
-| `no_binary_validated_vrm` | 55 |
+| `no_binary_validated_vrm` | 54 |
 | `unsupported_chain:ape_chain` | 3 |
 | `missing_contract` | 2 |
 | `unsupported_chain:multi` | 1 |
