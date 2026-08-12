@@ -1,9 +1,12 @@
+import json
 import sqlite3
+from types import SimpleNamespace
 
 from scripts.reconcile_moralis_validated_hits import (
     complete_proof,
     identity_matches,
     reconcile_hit,
+    run,
 )
 
 
@@ -165,3 +168,25 @@ def test_existing_confirmed_collection_url_is_never_replaced():
     assert collection["vrm_url_https"] == "https://existing.test/sample.vrm"
     assert result["collectionUpdated"] is False
     assert conn.execute("SELECT COUNT(*) FROM vrm_metadata").fetchone()[0] == 1
+
+
+def test_zero_hit_reconciliation_is_a_successful_noop(tmp_path):
+    report = tmp_path / "validation.json"
+    output = tmp_path / "reconciliation.json"
+    report.write_text(json.dumps({"validatedHits": []}))
+    args = SimpleNamespace(
+        report=report,
+        output=output,
+        db=tmp_path / "does-not-need-to-exist.db",
+    )
+
+    payload = run(args)
+
+    assert payload["summary"] == {
+        "validatedHitsInput": 0,
+        "binaryProofRowsStored": 0,
+        "existingAvatarsLinked": 0,
+        "collectionsReconciled": 0,
+        "collections": [],
+    }
+    assert json.loads(output.read_text())["reconciled"] == []
