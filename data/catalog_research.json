@@ -1,0 +1,21 @@
+{
+  "schema": "vrm-catalog-research-v1",
+  "policy": "Manual research only overrides dimensions that cannot be safely derived from authoritative catalog/API evidence. Explicit absence and lifecycle states require evidence.",
+  "collections": {
+    "super-yetis": {
+      "project_status": {
+        "value": "sunset",
+        "state": "sunset",
+        "note": "Curator confirmed Super Yetis is a sunset project and wants sunset lifecycle surfaced explicitly in the catalog.",
+        "evidence": [
+          {
+            "kind": "curator_assertion",
+            "source": "catalog-curator-conversation",
+            "observed_at": "2026-08-13",
+            "note": "SuperYetis is sunset."
+          }
+        ]
+      }
+    }
+  }
+}
