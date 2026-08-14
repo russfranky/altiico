@@ -9,10 +9,13 @@ source of secondary identities.
 """
 from __future__ import annotations
 
+import json
 import re
 import sqlite3
+from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parent.parent
 EVM_ADDRESS_RE = re.compile(r"0x[a-fA-F0-9]{40}")
 
 
@@ -34,6 +37,23 @@ def table_columns(conn: sqlite3.Connection, name: str) -> set[str]:
 
 def valid_evm_address(value: Any) -> bool:
     return bool(EVM_ADDRESS_RE.fullmatch(text(value)))
+
+
+def default_research() -> dict[str, Any]:
+    """Load the same compiled research overlay the workflow materializes."""
+    for path in (
+        ROOT / "data" / "catalog_research_merged.json",
+        ROOT / "data" / "catalog_research.json",
+    ):
+        if not path.exists():
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(payload, dict) and isinstance(payload.get("collections"), dict):
+            return payload
+    return {"collections": {}}
 
 
 def research_contracts(
@@ -108,6 +128,9 @@ def collection_contract_rows(
     curated research. Older DB snapshots therefore stay scannable while newly
     discovered migration identities can immediately enter API coverage.
     """
+    if research is None:
+        research = default_research()
+
     collection_columns = table_columns(conn, "collections")
     wanted = [
         key
