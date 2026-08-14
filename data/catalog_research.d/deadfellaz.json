@@ -1,0 +1,95 @@
+{
+  "id": "deadfellaz",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Deadfellaz",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x2acab3dea77832c09420663b0e1cb386031ba17b",
+    "opensea_slug": "deadfellaz",
+    "project_url": "https://deadfellaz.io/",
+    "source": "official+curated",
+    "notes": "Active DFZ Labs IP. Historical 3D/streaming work is real, but this shard deliberately does not claim an exhaustive .vrm inventory; the keyed enumeration/probe path must prove actual files."
+  },
+  "discord": {
+    "value": "https://discord.gg/deadfellaz",
+    "evidence": [
+      {
+        "kind": "official_project_publication",
+        "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+        "observed_at": "2026-08-13",
+        "note": "Current collector guide directs collectors to the DFZ Discord for streaming setup/support."
+      },
+      {
+        "kind": "official_collaboration_directory",
+        "source": "https://youtooz.com/products/deadfellaz",
+        "note": "Official collaboration page exposes Deadfellaz website, Twitter and Discord destinations."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/deadfellaz",
+    "handle": "deadfellaz",
+    "evidence": [
+      {
+        "kind": "official_collaboration_directory",
+        "source": "https://youtooz.com/products/deadfellaz",
+        "note": "Official collaboration page links the Deadfellaz Twitter/X account."
+      },
+      {
+        "kind": "official_project_publication",
+        "source": "https://deadfellaz.medium.com/",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-08-13",
+    "evidence": [
+      {
+        "kind": "official_anniversary_history",
+        "source": "https://deadfellaz.medium.com/hbd-dfz-one-year-of-deadfellaz-363cb0c5d8df",
+        "note": "Official one-year anniversary post states Deadfellaz launched Friday, August 13, 2021."
+      },
+      {
+        "kind": "official_anniversary_history",
+        "source": "https://deadfellaz.medium.com/year-4-the-evolution-of-deadfellaz-37d7e8103cd0",
+        "note": "2025 official anniversary post independently anchors the launch to Friday the 13th in 2021."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "collector_ip_use_recognized_exact_primary_license_unrecovered",
+    "state": "unrecoverable",
+    "summary": "Official DFZ material repeatedly treats collector-owned Deadfellaz as holder/collector IP that can be folded into project products and creative programs, but the exact controlling primary holder license text and commercial/redistribution limits were not recovered in this research pass. The catalog must not invent broader rights than the available primary material proves.",
+    "evidence": [
+      {
+        "kind": "official_founder_update",
+        "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+        "note": "Founder update describes collector IP and plans to fold collector IP into products/profit-share opportunities."
+      },
+      {
+        "kind": "official_collector_guide",
+        "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+        "note": "Collector guide describes private use of Deadfellaz as streaming identities and current collector utilities."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "Deadfellaz remains under active DFZ Labs development. The official publication has 2025 project development and a Feb. 19, 2026 Dead Lucky update. Some prior initiatives/assets were put on ice or simplified, but the core project is not sunset.",
+    "evidence": [
+      {
+        "kind": "official_project_publication",
+        "source": "https://deadfellaz.medium.com/",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "official_founder_update",
+        "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+        "note": "Explains the active project focus and explicitly identifies certain older Metawrapz/DAO initiatives as on ice rather than the core project."
+      }
+    ]
+  }
+}
