@@ -1,0 +1,95 @@
+{
+  "id": "mutant-ape-yacht-club",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Mutant Ape Yacht Club",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+    "opensea_slug": "mutant-ape-yacht-club",
+    "project_url": "https://boredapeyachtclub.com/",
+    "source": "official+opensea",
+    "notes": "MAYC is researched separately from BAYC. Current official Otherside documentation proves Mutant Ape avatar/runtime support through GLB character definitions, but no exhaustive downloadable MAYC VRM inventory or equivalent of the BAYC-specific Avatar File download terms has been proven."
+  },
+  "logo": {
+    "value": "https://i2c.seadn.io/collection/mutant-ape-yacht-club/image/33dcf5ce12bc4760bf912a5b3f5979/f033dcf5ce12bc4760bf912a5b3f5979.png?h=250&w=250",
+    "evidence": [
+      {
+        "source": "https://opensea.io/collection/mutant-ape-yacht-club",
+        "note": "Current OpenSea collection logo asset for Mutant Ape Yacht Club."
+      }
+    ]
+  },
+  "short_description": {
+    "value": "Yuga Labs' Ethereum companion collection to BAYC, launched in August 2021 through Mutant Serum mutations and a public mint of additional Mutant Apes.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/mutant-ape-yacht-club",
+        "note": "Official MAYC history describes the serum mutation and public auction launch."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-08-28",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/mutant-ape-yacht-club",
+        "note": "Official BAYC history states MAYC launched August 28, 2021."
+      }
+    ]
+  },
+  "discord": {
+    "value": "https://discord.com/invite/3P5K3dzgdB",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC ecosystem links page exposes the shared club Discord used by BAYC/MAYC community surfaces."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/BoredApeYC",
+    "handle": "BoredApeYC",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC ecosystem links page exposes @BoredApeYC; no distinct official MAYC X account is presented there."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "evidence": [
+      {
+        "source": "https://www.yuga.com/about/",
+        "note": "Yuga's current About page lists Mutant Ape Yacht Club among its collections."
+      },
+      {
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Current Otherside avatar documentation includes Mutant Ape Yacht Club in supported avatar/runtime material."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial",
+    "summary": "MAYC holders own the purchased Mutant Ape art and receive a worldwide, royalty-free personal license plus an unlimited worldwide commercial license to use the purchased art and create derivative works, while Yuga retains the MAYC/BAYC trademarks and other project IP.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/mayc-license",
+        "note": "Current official MAYC License sections 1A-1D define ownership, personal use, unlimited commercial use and reserved project IP."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "unknown",
+    "coverage": "research_open",
+    "urls": [],
+    "evidence": [
+      {
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Current Otherside documentation says relevant character meshes are downloaded at runtime from GLB definitions. This proves 3D runtime support, not an exhaustive VRM inventory or downloadable holder file set."
+      }
+    ]
+  }
+}
