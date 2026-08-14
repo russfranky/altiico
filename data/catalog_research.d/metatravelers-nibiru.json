@@ -1,0 +1,88 @@
+{
+  "id": "metatravelers-nibiru",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "MetaTravelers: Nibiru",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x5372f926b34be60ac1436372107c3ee8c6e056e5",
+    "opensea_slug": "metatravelers-nibiru",
+    "project_url": "https://metatravelers.io/",
+    "source": "official+opensea+curated",
+    "notes": "The historical generic MetaTravelers Tier-C row maps to the 7,777-item Nibiru avatar collection, not later Elements/Factions products. Historical 3D/downloadability claims are not treated as proof of an exhaustive native VRM inventory."
+  },
+  "discord": {
+    "value": "https://discord.gg/JMZyWCyQ6Y",
+    "state": "historical",
+    "evidence": [
+      {
+        "kind": "contemporaneous_project_calendar",
+        "source": "https://nftcalendar.io/event/metatravelers-nibiru/",
+        "note": "Historical Nibiru launch listing records the project's Discord invite. Current official site no longer foregrounds Discord, so it is retained as historical rather than asserted current."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/themetatravelers",
+    "handle": "themetatravelers",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://metatravelers.io/",
+        "observed_at": "2026-08-13",
+        "note": "Current official site links the MetaTravelers X account."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-11-06",
+    "evidence": [
+      {
+        "kind": "historical_collection_record",
+        "source": "https://nftpricefloor.com/metatravelers-nibiru",
+        "note": "Historical collection record resolves the Nibiru launch to Nov. 6, 2021."
+      },
+      {
+        "kind": "marketplace_identity",
+        "source": "https://opensea.io/collection/metatravelers-nibiru",
+        "note": "OpenSea collection identity independently anchors the Nibiru collection and contract."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "commercial_rights_reported_exact_primary_license_unrecovered",
+    "state": "unrecoverable",
+    "summary": "Contemporaneous 3D-avatar research and launch material described MetaTravelers avatars as holder-owned/downloadable characters with commercial-rights intent, but a current controlling primary Nibiru holder license was not recovered. The catalog therefore records the historical commercial-rights signal without inventing exact derivative, redistribution, or sublicensing scope.",
+    "evidence": [
+      {
+        "kind": "contemporary_avatar_catalog",
+        "source": "https://hackmd.io/@XR/nftavatars",
+        "note": "MetaTravelers entry marks commercial rights and downloadable-avatar intent while listing file format/status as unresolved at the time."
+      },
+      {
+        "kind": "current_official_project_site",
+        "source": "https://metatravelers.io/",
+        "observed_at": "2026-08-13",
+        "note": "Current site confirms continuity of the MetaTravelers character/IP business but does not expose a controlling historical Nibiru license in the material reviewed."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "MetaTravelers remains an active character/IP business. The current official site continues to market the universe and current physical/digital character products; current product fulfillment extends into 2026.",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://metatravelers.io/",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "current_product_release",
+        "source": "https://metatravelers.io/",
+        "observed_at": "2026-08-13",
+        "note": "Current official product surfaces describe active Wave 1 physical/digital character fulfillment into 2026."
+      }
+    ]
+  }
+}
