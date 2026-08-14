@@ -1,0 +1,128 @@
+{
+  "id": "clone-x",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Clone X",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+    "opensea_slug": "clonex",
+    "project_url": "https://rtfkt.com/",
+    "source": "official+opensea+curated",
+    "notes": "Clone X collection preserved in the RTFKT archive after RTFKT operations wound down. Official holder-gated 3D-file access survives as an archival/download surface; exact per-token VRM inventory still must be enumerated rather than inferred."
+  },
+  "discord": {
+    "value": "https://discord.gg/rtfkt",
+    "state": "historical",
+    "evidence": [
+      {
+        "kind": "official_publication_profile",
+        "source": "https://medium.com/@rtfktstudios/about",
+        "note": "Official RTFKT Medium profile lists discord.gg/rtfkt."
+      },
+      {
+        "kind": "discord_invite",
+        "source": "https://discord.com/invite/rtfkt",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/RTFKT",
+    "handle": "RTFKT",
+    "state": "historical",
+    "evidence": [
+      {
+        "kind": "official_link_hub",
+        "source": "https://linktr.ee/rtfktfx",
+        "observed_at": "2026-08-13",
+        "note": "RTFKT's official link hub retains its Twitter/X destination and Clone X collection link."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-11-29",
+    "evidence": [
+      {
+        "kind": "contemporaneous_launch_report",
+        "source": "https://www.forbes.com/sites/cathyhackl/2021/11/29/the-evolution-of-a-metaverse-brand-rtkfts-clonex-drops-today/",
+        "note": "Contemporaneous Nov. 29, 2021 report states Clone X drops that day."
+      },
+      {
+        "kind": "marketplace_history",
+        "source": "https://opensea.io/collection/clonex",
+        "note": "OpenSea displays the collection launch period as Dec 2021; the catalog uses Nov. 29 as the public drop date and preserves this month-boundary discrepancy in evidence."
+      }
+    ]
+  },
+  "storage": {
+    "value": "holder_platform",
+    "scope": "vrm_and_3d_file_delivery",
+    "note": "RTFKT's documented distribution mechanism is its authenticated holder inventory/Clone X download surface. This describes delivery/storage availability, not the underlying CDN/object-store implementation.",
+    "evidence": [
+      {
+        "kind": "official_3d_file_documentation",
+        "source": "https://academy.rtfkt.com/library/foundations/rtfkt-3d-files",
+        "observed_at": "2026-08-13",
+        "note": "Clone X is listed among RTFKT collections with 3D files and Clone X downloads are directed to clonex.rtfkt.com."
+      },
+      {
+        "kind": "official_3d_file_update",
+        "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial_3d_license_subject_to_registration_and_guidelines",
+    "summary": "RTFKT documents commercial rights for Clone X 3D files and requires holders to register their Clone for commercial-license use under the applicable 3D-model commercial-license guidelines. Rights are therefore holder-linked and governed by the RTFKT license terms rather than unrestricted public-domain rights.",
+    "evidence": [
+      {
+        "kind": "official_3d_file_documentation",
+        "source": "https://academy.rtfkt.com/library/foundations/rtfkt-3d-files",
+        "note": "Official documentation states the 3D library includes commercial rights and instructs Clone X holders to register their Clone for commercial licensing."
+      },
+      {
+        "kind": "official_project_history",
+        "source": "https://rtfktstudios.medium.com/a-new-era-begins-the-start-of-the-avatar-economy-91f644be33be",
+        "note": "RTFKT states Clone X was built in full 3D and that Clone IP commercial rights accompanied the collection."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "access_url": "https://clonex.rtfkt.com/",
+    "note": "Official RTFKT documentation says holders access 3D files by authenticating with their RTFKT account/wallet; Clone X is specifically downloaded from the Clone X holder surface. Exact per-token VRM URLs still need enumeration from authenticated inventory and are not fabricated here.",
+    "evidence": [
+      {
+        "kind": "official_3d_file_documentation",
+        "source": "https://academy.rtfkt.com/library/foundations/rtfkt-3d-files",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "official_3d_file_update",
+        "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "project_status": {
+    "value": "sunset",
+    "state": "sunset",
+    "note": "RTFKT announced its operational wind-down for the end of January 2025. The current RTFKT site is presented as an archive and retained download/service surfaces should be treated as preservation infrastructure, not evidence that the operating project remains active.",
+    "evidence": [
+      {
+        "kind": "official_archive_state",
+        "source": "https://rtfkt.com/",
+        "observed_at": "2026-08-13",
+        "note": "Current site is organized around THE ARCHIVES and retained 3D-file/legal resources."
+      },
+      {
+        "kind": "contemporaneous_shutdown_report_quoting_official_statement",
+        "source": "https://www.vogue.com/article/rtfkt-andnbspan-early-web3-fashion-success-story-is-folding",
+        "note": "Reports RTFKT's official announcement that operations would wind down by January 2025."
+      }
+    ]
+  }
+}
