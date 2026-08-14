@@ -20,12 +20,21 @@ SOURCE_PLAN = {
     "x": ["OpenSea collection API", "official site social links", "historical X account/index", "Wayback archive"],
     "launch_date": ["OpenSea created_date", "contract creation evidence", "contemporaneous mint/drop announcement"],
     "project_status": ["official current site/social activity", "official shutdown/sunset announcement", "Wayback history"],
-    "ip_rights": ["official license/terms", "token/VRM metadata license fields", "project repository/docs", "archived terms"],
-    "storage": ["enumerated VRM URLs", "tokenURI metadata", "official technical docs"],
+    "ip_rights": ["official license/terms", "token/model metadata license fields", "project repository/docs", "archived terms"],
+    "storage": ["enumerated avatar URLs", "tokenURI metadata", "official technical docs", "OpenPage/MML model references"],
+    "avatar_inventory": [
+        "OpenPage avatar records and MML model references",
+        "Moralis cursor-exhausted VRM metadata",
+        "on-chain tokenURI enumeration",
+        "recursive project/release repository search for VRM/GLB/FBX",
+        "official holder portal / 3D Vault",
+        "archived avatar interoperability registries"
+    ],
     "vrm_inventory": ["Moralis cursor-exhausted collection NFTs", "on-chain tokenURI enumeration", "recursive metadata crawler", "3D Vault/official holder portal"],
-    "file_access": ["unauthenticated structural VRM probe", "official download flow", "holder portal / 3D Vault access rules"],
+    "file_access": ["unauthenticated avatar asset probe", "official download flow", "holder portal / 3D Vault access rules"],
 }
 PRIORITY = {
+    "avatar_inventory": 100,
     "vrm_inventory": 100,
     "file_access": 95,
     "project_status": 90,
@@ -68,7 +77,7 @@ def run(acceptance_path: Path, output_path: Path) -> dict[str, Any]:
         )
     queue.sort(key=lambda row: (-int(row["priority"]), -len(row["missingFields"]), str(row.get("name") or "").lower()))
     payload = {
-        "schema": "vrm-catalog-research-queue-v1",
+        "schema": "avatar-catalog-research-queue-v2",
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "sourceAcceptanceSchema": acceptance.get("schema"),
         "summary": {
