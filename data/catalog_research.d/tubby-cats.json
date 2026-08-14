@@ -1,0 +1,52 @@
+{
+  "id": "tubby-cats",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Tubby Cats",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+    "opensea_slug": "tubby-cats-by-tubby-collective",
+    "project_url": "https://tubbycats.xyz/",
+    "source": "official+etherscan+curated",
+    "notes": "20,000-item CC0 collection. Current 3D/community experimentation is not treated as proof of an exhaustive shipped VRM inventory."
+  },
+  "discord": {
+    "value": "https://discord.gg/tubbycats",
+    "evidence": [
+      {"kind":"current_contract_directory","source":"https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd","observed_at":"2026-08-13","note":"Current token profile exposes the project Discord and official site."},
+      {"kind":"project_directory","source":"https://nftcalendar.io/event/tubby-cats/","note":"Historical project directory records discord.gg/tubbycats."}
+    ]
+  },
+  "x": {
+    "value": "https://x.com/tubbycatsnft",
+    "handle": "tubbycatsnft",
+    "evidence": [
+      {"kind":"current_x_account","source":"https://x.com/tubbycatsnft","observed_at":"2026-08-13"},
+      {"kind":"current_contract_directory","source":"https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd","observed_at":"2026-08-13"}
+    ]
+  },
+  "launch_date": {
+    "value": "2022-02-21",
+    "evidence": [
+      {"kind":"contemporaneous_mint_report","source":"https://nftnow.com/news/tubby-cats-nft-everything-you-need-to-know/","note":"Whitelist mint opened Feb. 21, 2022; public mint followed Feb. 23. The catalog records the first collection mint date."}
+    ]
+  },
+  "ip_rights": {
+    "value": "cc0_public_domain",
+    "summary": "Tubby Cats artwork is released under CC0/public-domain terms, allowing unrestricted reuse of the collection artwork without holder-specific commercial licensing.",
+    "evidence": [
+      {"kind":"current_contract_directory","source":"https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd","observed_at":"2026-08-13","note":"Current Etherscan collection description identifies Tubby Cats as CC0."},
+      {"kind":"marketplace_description","source":"https://opensea.io/collection/tubby-cats-by-tubby-collective","note":"Current collection description independently identifies the artwork as CC0."}
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "The official Tubby Cats site and named project social/community surfaces remain live in 2026. No project sunset announcement was found in the current official surfaces checked.",
+    "evidence": [
+      {"kind":"official_project_site","source":"https://tubbycats.xyz/","observed_at":"2026-08-13"},
+      {"kind":"current_x_account","source":"https://x.com/tubbycatsnft","observed_at":"2026-08-13"}
+    ]
+  }
+}
