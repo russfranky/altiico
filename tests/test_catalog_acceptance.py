@@ -192,3 +192,45 @@ def test_run_uses_probe_and_fails_collection_when_literal_requirement_missing(tm
     assert result["passing"] == 0
     assert result["failing"] == 1
     assert result["reasonCounts"]["x:actual_value_required"] == 1
+
+
+def test_scope_source_collection_cannot_disappear_from_acceptance_denominator(tmp_path: Path):
+    report = tmp_path / "report.json"
+    inventory = tmp_path / "inventory.json"
+    probe = tmp_path / "probe.json"
+    scope = tmp_path / "vrm_collections.md"
+
+    report.write_text(
+        json.dumps({"collections": [complete_collection()]}), encoding="utf-8"
+    )
+    inventory.write_text(
+        json.dumps({"collections": [complete_inventory()]}), encoding="utf-8"
+    )
+    probe.write_text(
+        json.dumps({"collections": [complete_probe()]}), encoding="utf-8"
+    )
+    scope.write_text(
+        """
+## Tier C — historical collection leads
+
+### Ethereum mainnet
+
+| Collection | Contract | OpenSea slug | Notes |
+| --- | --- | --- | --- |
+| Demo | `0x1111111111111111111111111111111111111111` | demo | Already represented |
+| Missing Sergs | `0x2222222222222222222222222222222222222222` | missing-sergs | Must not vanish |
+""".strip()
+        + "\n",
+        encoding="utf-8",
+    )
+
+    result = run(report, inventory, probe, scope)
+
+    assert result["reportCollections"] == 1
+    assert result["scopeCollections"] == 2
+    assert result["scopeMissing"] == 1
+    assert result["collections"] == 2
+    assert result["passing"] == 1
+    assert result["failing"] == 1
+    assert result["reasonCounts"]["catalog_scope:missing_from_completeness_report"] == 1
+    assert result["failures"][0]["id"] == "missing-sergs"
