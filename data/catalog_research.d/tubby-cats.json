@@ -8,8 +8,8 @@
     "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
     "opensea_slug": "tubby-cats-by-tubby-collective",
     "project_url": "https://tubbycats.xyz/",
-    "source": "official+etherscan+curated",
-    "notes": "20,000-item CC0 collection. Current 3D/community experimentation is not treated as proof of an exhaustive shipped VRM inventory."
+    "source": "official+etherscan+curated+community-vrm-repository",
+    "notes": "20,000-item CC0 collection. A public community conversion repository contains VRM files for a small named/token-numbered subset; this is preserved as partial inventory and is not treated as proof that all Tubby Cats were converted."
   },
   "discord": {
     "value": "https://discord.gg/tubbycats",
@@ -32,12 +32,49 @@
       {"kind":"contemporaneous_mint_report","source":"https://nftnow.com/news/tubby-cats-nft-everything-you-need-to-know/","note":"Whitelist mint opened Feb. 21, 2022; public mint followed Feb. 23. The catalog records the first collection mint date."}
     ]
   },
+  "storage": {
+    "value": "https",
+    "scope": "public_community_vrm_conversions",
+    "note": "Recovered community VRM conversions are stored as public GitHub repository blobs/raw HTTPS files. This does not claim that the original NFT metadata or the full 20,000-token collection stores VRMs on GitHub.",
+    "evidence": [
+      {"kind":"public_vrm_repository","source":"https://github.com/la53rshark/tubby-cats","observed_at":"2026-08-14","note":"Untruncated repository tree exposes token-numbered .vrm files together with source Blender and GLB assets."}
+    ]
+  },
+  "vrm_inventory": {
+    "state": "partial",
+    "coverage": "partial_public_community_conversions",
+    "urls": [
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/1044/1044_avatar.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/18362/18362.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/18595/18595_avatar.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/5357/5357_base_with_teeth_eyes_final.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/7696/7696_avatar.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/8624/8624_avatar.vrm",
+      "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/9105/9105_rigged.vrm"
+    ],
+    "note": "These eight token-numbered public VRMs are exhaustively enumerated from the current untruncated la53rshark/tubby-cats repository tree. The repository also contains a non-token-named Ratwell derivative, which is deliberately excluded from collection-token inventory. Eight public conversions do not establish exhaustive coverage of the 20,000-token collection, so the state remains partial until a broader authoritative inventory is proven.",
+    "evidence": [
+      {"kind":"public_vrm_repository_tree","source":"https://github.com/la53rshark/tubby-cats","observed_at":"2026-08-14","note":"Repository tree is not truncated and contains .vrm files in token-numbered directories 159, 1044, 5357, 7696, 8624, 9105, 18362 and 18595."},
+      {"kind":"contemporaneous_avatar_interop_notes","source":"https://hackmd.io/@arashichan/H1rG09Thq","note":"July 2022 avatar-interoperability notes identify the Tubby community repositories and describe Tubby assets as GLB and VRM."}
+    ]
+  },
+  "file_access": {
+    "mode": "public",
+    "requires_ownership": false,
+    "state": "partial_inventory_public",
+    "note": "The recovered community VRM subset is directly downloadable from a public GitHub repository without token ownership or account credentials. This access conclusion applies to the enumerated subset only.",
+    "evidence": [
+      {"kind":"public_vrm_repository","source":"https://github.com/la53rshark/tubby-cats","observed_at":"2026-08-14"}
+    ]
+  },
   "ip_rights": {
     "value": "cc0_public_domain",
-    "summary": "Tubby Cats artwork is released under CC0/public-domain terms, allowing unrestricted reuse of the collection artwork without holder-specific commercial licensing.",
+    "summary": "Tubby Cats artwork is released under CC0/public-domain terms, and the recovered community VRM repository itself carries a CC0 1.0 Universal license. Reuse of this public conversion subset is therefore not conditioned on token ownership.",
     "evidence": [
       {"kind":"current_contract_directory","source":"https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd","observed_at":"2026-08-13","note":"Current Etherscan collection description identifies Tubby Cats as CC0."},
-      {"kind":"marketplace_description","source":"https://opensea.io/collection/tubby-cats-by-tubby-collective","note":"Current collection description independently identifies the artwork as CC0."}
+      {"kind":"marketplace_description","source":"https://opensea.io/collection/tubby-cats-by-tubby-collective","note":"Current collection description independently identifies the artwork as CC0."},
+      {"kind":"public_vrm_repository_license","source":"https://github.com/la53rshark/tubby-cats/blob/main/license","observed_at":"2026-08-14","note":"The community VRM repository includes the full CC0 1.0 Universal legal code."}
     ]
   },
   "project_status": {
