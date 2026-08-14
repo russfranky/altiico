@@ -6,10 +6,12 @@ on:
     branches: [agent/catalog-completeness-contract]
     paths:
       - scripts/audit_catalog_completeness.py
+      - scripts/enforce_catalog_acceptance.py
       - scripts/materialize_catalog_research.py
       - scripts/export_vrm_inventory.py
       - scripts/reconcile_markdown_catalog_sources.py
       - tests/test_catalog_completeness.py
+      - tests/test_catalog_acceptance.py
       - tests/test_catalog_research_pipeline.py
       - data/catalog_research.json
       - data/vrm_collections.md
@@ -61,11 +63,13 @@ jobs:
         run: |
           python -m py_compile \
             scripts/audit_catalog_completeness.py \
+            scripts/enforce_catalog_acceptance.py \
             scripts/materialize_catalog_research.py \
             scripts/export_vrm_inventory.py \
             scripts/reconcile_markdown_catalog_sources.py
           python -m pytest \
             tests/test_catalog_completeness.py \
+            tests/test_catalog_acceptance.py \
             tests/test_catalog_research_pipeline.py -q
 
       - name: Seed researched identities before API enrichment
@@ -183,11 +187,24 @@ jobs:
           python scripts/audit_catalog_completeness.py \
             --tiers A,B,C,ARWEAVE \
             --output data/catalog_completeness_report.json
+          python scripts/enforce_catalog_acceptance.py \
+            --report data/catalog_completeness_report.json \
+            --inventory static/data/vrm-inventory.json \
+            --output data/catalog_acceptance.json || true
           python - <<'PY'
           import json
           from pathlib import Path
           report=json.loads(Path('data/catalog_completeness_report.json').read_text())
+          acceptance=json.loads(Path('data/catalog_acceptance.json').read_text())
           print(json.dumps(report['summary'],indent=2))
+          print(json.dumps({
+            'literalAcceptance': {
+              'collections':acceptance['collections'],
+              'passing':acceptance['passing'],
+              'failing':acceptance['failing'],
+              'reasonCounts':acceptance['reasonCounts'],
+            }
+          },indent=2))
           worst=sorted(report['summary']['missingByField'].items(),key=lambda item:(-item[1],item[0]))
           print('largest gaps:')
           for field,count in worst:
@@ -219,6 +236,7 @@ jobs:
           name: catalog-completeness-evidence
           path: |
             data/catalog_completeness_report.json
+            data/catalog_acceptance.json
             data/markdown_source_reconciliation.json
             data/source_cross_reference_report.json
             data/source_consensus.json
@@ -237,6 +255,7 @@ jobs:
           git add \
             data/vrm_index.db \
             data/catalog_completeness_report.json \
+            data/catalog_acceptance.json \
             data/markdown_source_reconciliation.json \
             data/source_cross_reference_report.json \
             data/source_consensus.json \
@@ -253,7 +272,7 @@ jobs:
             git push origin HEAD:${GITHUB_REF_NAME}
           fi
 
-      - name: Hard acceptance gate — no collection may have a missing required field
+      - name: Hard acceptance gate — every literal requirement must pass
         run: |
           python scripts/audit_catalog_completeness.py \
             --tiers A,B,C,ARWEAVE \
@@ -262,3 +281,7 @@ jobs:
           python scripts/export_vrm_inventory.py \
             --output static/data/vrm-inventory.json \
             --strict
+          python scripts/enforce_catalog_acceptance.py \
+            --report data/catalog_completeness_report.json \
+            --inventory static/data/vrm-inventory.json \
+            --output data/catalog_acceptance.json
