@@ -8,8 +8,8 @@
     "contract": "0x3bf2922f4520a8ba0c2efc3d2a1539678dad5e9d",
     "opensea_slug": "0n1-force",
     "project_url": "https://0n1force.com/",
-    "source": "official+opensea+curated",
-    "notes": "Active anime/cyberpunk PFP project. Historical avatar-development evidence is not treated as proof of an exhaustive shipped VRM set; the keyed inventory pass must resolve actual files."
+    "source": "official+opensea+curated+contemporaneous-avatar-development",
+    "notes": "Active anime/cyberpunk PFP project. A private commissioned reference VRM existed as a proof of concept, but contemporaneous development notes show collection-wide generation remained planned rather than shipped; later 2024 ecosystem evidence still lists 0N1 Force among collections not yet offering 3D models."
   },
   "discord": {
     "value": "https://discord.gg/0n1-force",
@@ -55,6 +55,77 @@
         "kind": "official_project_history",
         "source": "https://0n1forceofficial.medium.com/0n1-force-strategic-partnership-announcement-a-new-chapter-begins-c99be293fa07",
         "note": "Official project history independently states the collection minted in August 2021."
+      }
+    ]
+  },
+  "prototype_vrm": {
+    "value": "one_commissioned_reference_vrm",
+    "state": "private_proof_of_concept",
+    "note": "The historical avatar-development project had one commissioned reference avatar with Blend, VRM and Unitypackage outputs, with two more reference avatars planned. This proves a VRM prototype existed but does not establish a collection-wide release.",
+    "evidence": [
+      {
+        "kind": "contemporaneous_avatar_catalog",
+        "source": "https://hackmd.io/@XR/nftavatars",
+        "note": "0N1 Force is labeled VRM and 'Proof of concept only'; the entry says a commissioned reference avatar had Blend, VRM and Unitypackage files."
+      },
+      {
+        "kind": "contemporaneous_avatar_development_log",
+        "source": "https://hackmd.io/@XR/0n1force-avatars",
+        "note": "Development log says the goal was VR/VTuber-ready avatars for every NFT, the GitHub repo was currently private, there was one reference avatar and two more on the way, and trait/collection generation remained planned work."
+      }
+    ]
+  },
+  "storage": {
+    "value": "private_repository",
+    "scope": "historical_vrm_proof_of_concept_development",
+    "note": "The documented reference-VRM development repository was private. No public collection-wide VRM storage or download location is evidenced. This storage fact describes the historical proof-of-concept lane, not a shipped 0N1 Force asset inventory.",
+    "evidence": [
+      {
+        "kind": "contemporaneous_avatar_development_log",
+        "source": "https://hackmd.io/@XR/0n1force-avatars",
+        "note": "The documented project GitHub repository github.com/madjin/0N1-avatars is explicitly marked 'currently private'."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "not_shipped",
+    "coverage": "collectionwide_native_vrm_release_not_shipped",
+    "urls": [],
+    "note": "A private single/reference VRM proof of concept existed, but the documented collection-wide program remained in reference-avatar and trait-production planning. A later 2024 ecosystem implementation proposal independently identifies 0N1 Force among collections that did not yet offer 3D models to their communities. The terminal state therefore applies to a collection-wide native VRM release, not to the existence of the private prototype.",
+    "evidence": [
+      {
+        "kind": "contemporaneous_avatar_development_log",
+        "source": "https://hackmd.io/@XR/0n1force-avatars",
+        "note": "Goal was avatars for every 0N1 Force NFT, but the log records one reference avatar, two more on the way, a private repo and substantial remaining trait-generation tasks."
+      },
+      {
+        "kind": "contemporaneous_avatar_catalog",
+        "source": "https://hackmd.io/@XR/nftavatars",
+        "note": "0N1 Force is explicitly categorized as VRM, status 'Proof of concept only'."
+      },
+      {
+        "kind": "later_ecosystem_implementation_proposal",
+        "source": "https://forum.apecoin.com/t/aip-498-dashbo-ugc-platform-democratizing-content-creation/25163",
+        "note": "2024 AIP-498 distinguishes collections already offering 3D models from collections that did not yet, explicitly naming 0N1 Force in the latter group."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "unavailable",
+    "requires_ownership": null,
+    "state": "not_shipped",
+    "note": "No public collection-wide VRM download/access flow shipped. The known reference-VRM development repository was private, and current official public assets are marketing/content-creation assets rather than an exhaustive VRM distribution surface.",
+    "evidence": [
+      {
+        "kind": "contemporaneous_avatar_development_log",
+        "source": "https://hackmd.io/@XR/0n1force-avatars",
+        "note": "Reference development repository was private and collection generation was unfinished."
+      },
+      {
+        "kind": "current_official_assets_page",
+        "source": "https://www.0n1force.com/assets",
+        "observed_at": "2026-08-14",
+        "note": "Current official assets page presents public marketing assets for community content creation, not a collection-wide VRM download inventory."
       }
     ]
   },
