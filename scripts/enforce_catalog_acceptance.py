@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 """Enforce the literal full-catalog acceptance bar.
 
-The general completeness audit can represent explicit negative research states.
-This final gate is stricter where the catalog must actually *have* the value:
-collection media, description, social accounts and launch date.
+Required identity/media/social fields need actual values. For active/dormant
+collections with files, the inventory needs explicit exhaustive VRM links and
+every link must have passed the lightweight structural VRM probe. An unexpanded
+URL template is not "all links".
 
-VRM inventory is different: an evidence-backed terminal state may be a complete
-answer when files were never shipped, are irrecoverable, or were only available
-through a historical gated flow. For any non-terminal inventory, an exhaustive
-URL set or authoritative tokenized URL template is required.
-
-File access is also evaluated independently from IP rights. When files exist,
-the catalog must explicitly answer whether ownership is required. When a
-terminal inventory proves there is no accessible file, ownership is recorded as
-not applicable rather than guessed.
+Only evidence-backed ``not_shipped`` and ``unrecoverable`` inventory states can
+complete without URLs. Holder-gated files still exist and therefore still need
+an explicit inventory plus ownership/access facts.
 """
 from __future__ import annotations
 
@@ -25,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_REPORT = ROOT / "data" / "catalog_completeness_report.json"
 DEFAULT_INVENTORY = ROOT / "static" / "data" / "vrm-inventory.json"
+DEFAULT_PROBE = ROOT / "data" / "vrm_inventory_probe.json"
 
 MUST_HAVE_VALUE = (
     "banner",
@@ -35,8 +31,7 @@ MUST_HAVE_VALUE = (
     "launch_date",
     "storage",
 )
-TERMINAL_INVENTORY_STATES = {"not_shipped", "unrecoverable", "holder_gated"}
-NON_TERMINAL_COMPLETE_STATES = {"complete", "complete_template"}
+TERMINAL_INVENTORY_STATES = {"not_shipped", "unrecoverable"}
 PROJECT_STATUSES = {"active", "dormant", "sunset"}
 
 
@@ -62,12 +57,24 @@ def inventory_index(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
     }
 
 
+def probe_index(payload: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    if not payload:
+        return {}
+    return {
+        str(row.get("catalogId")): row
+        for row in payload.get("collections") or []
+        if isinstance(row, dict) and row.get("catalogId")
+    }
+
+
 def field_has_value(field: dict[str, Any]) -> bool:
     return bool(field.get("ok")) and has(field.get("value"))
 
 
 def evaluate_collection(
-    collection: dict[str, Any], inventory: dict[str, Any] | None
+    collection: dict[str, Any],
+    inventory: dict[str, Any] | None,
+    probe: dict[str, Any] | None = None,
 ) -> list[str]:
     failures: list[str] = []
     fields = collection.get("fields") or {}
@@ -94,20 +101,19 @@ def evaluate_collection(
     inv_state = str(inventory.get("state") or "").strip().lower()
     inv_evidence = inventory.get("inventory_evidence") or []
     urls = inventory.get("urls") or []
-    template = inventory.get("url_template")
 
-    if inv_state in NON_TERMINAL_COMPLETE_STATES:
+    if inv_state == "complete":
         if not inventory.get("complete"):
             failures.append("vrm_inventory:complete_flag_required")
-        if inv_state == "complete" and not urls:
+        if not urls:
             failures.append("vrm_inventory:exhaustive_urls_required")
-        if inv_state == "complete_template" and not has(template):
-            failures.append("vrm_inventory:authoritative_template_required")
+        if not probe or not probe.get("structurallyComplete"):
+            failures.append("vrm_inventory:all_links_must_probe_as_vrm")
     elif inv_state in TERMINAL_INVENTORY_STATES:
         if not inventory.get("complete") or not inv_evidence:
             failures.append("vrm_inventory:terminal_state_requires_evidence")
     else:
-        failures.append("vrm_inventory:exhaustive_or_terminal_resolution_required")
+        failures.append("vrm_inventory:explicit_exhaustive_links_required")
 
     access = inventory.get("access") or {}
     mode = str(access.get("mode") or "").strip().lower()
@@ -117,7 +123,6 @@ def evaluate_collection(
     if inv_state in TERMINAL_INVENTORY_STATES and mode == "unavailable":
         if not access_evidence:
             failures.append("file_access:unavailable_requires_evidence")
-        # No accessible file means ownership-to-access is not applicable.
     else:
         if mode not in {"public", "holder_gated", "account_gated"}:
             failures.append("file_access:explicit_access_mode_required")
@@ -131,15 +136,23 @@ def evaluate_collection(
     return failures
 
 
-def run(report_path: Path, inventory_path: Path) -> dict[str, Any]:
+def run(
+    report_path: Path,
+    inventory_path: Path,
+    probe_path: Path | None = None,
+) -> dict[str, Any]:
     report = load(report_path)
-    inventory_payload = load(inventory_path)
-    inventories = inventory_index(inventory_payload)
+    inventories = inventory_index(load(inventory_path))
+    probes = probe_index(load(probe_path)) if probe_path and probe_path.exists() else {}
 
     failures: list[dict[str, Any]] = []
     for collection in report.get("collections") or []:
         cid = str(collection.get("id") or "")
-        reasons = evaluate_collection(collection, inventories.get(cid))
+        reasons = evaluate_collection(
+            collection,
+            inventories.get(cid),
+            probes.get(cid),
+        )
         if reasons:
             failures.append(
                 {
@@ -155,11 +168,13 @@ def run(report_path: Path, inventory_path: Path) -> dict[str, Any]:
             reason_counts[reason] = reason_counts.get(reason, 0) + 1
 
     return {
-        "schema": "vrm-catalog-acceptance-v1",
+        "schema": "vrm-catalog-acceptance-v2",
         "collections": len(report.get("collections") or []),
         "passing": len(report.get("collections") or []) - len(failures),
         "failing": len(failures),
-        "reasonCounts": dict(sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))),
+        "reasonCounts": dict(
+            sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))
+        ),
         "failures": failures,
     }
 
@@ -168,14 +183,23 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--inventory", type=Path, default=DEFAULT_INVENTORY)
+    parser.add_argument("--probe", type=Path, default=DEFAULT_PROBE)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
-    result = run(args.report, args.inventory)
+    result = run(args.report, args.inventory, args.probe)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: result[k] for k in ("collections", "passing", "failing", "reasonCounts")}, indent=2))
+    print(
+        json.dumps(
+            {
+                key: result[key]
+                for key in ("collections", "passing", "failing", "reasonCounts")
+            },
+            indent=2,
+        )
+    )
     return 1 if result["failing"] else 0
 
 
