@@ -1,0 +1,75 @@
+{
+  "id": "cryptosergs",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "CryptoSergs",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x18ed5803cD47F91716E06E38216E211ffAA9cC07",
+    "contracts": [
+      {
+        "address": "0x18ed5803cD47F91716E06E38216E211ffAA9cC07",
+        "chain": "ethereum",
+        "token_standard": "ERC-721",
+        "is_primary": true,
+        "role": "legacy_migration_wrapper"
+      },
+      {
+        "address": "0xd014499743e3D6a66D9Db3e57D5884270999eE47",
+        "chain": "ethereum",
+        "token_standard": "ERC-721",
+        "is_primary": false,
+        "role": "successor_sergs"
+      }
+    ],
+    "project_url": "https://cryptosergs.com/",
+    "source": "etherscan+hackmd+curated",
+    "notes": "The original March 2021 CryptoSergs were OpenSea Storefront ERC-1155 assets. The verified legacy ERC-721 migration contract burns the original Storefront token and calls the successor Sergs ERC-721 contract. The generic OpenSea Storefront contract is intentionally excluded from collection-level API scans because it is shared by unrelated projects."
+  },
+  "short_description": {
+    "value": "A limited series of 1,111 algorithmically generated Serg characters that later gained dedicated ERC-721 migration and successor contracts.",
+    "evidence": [
+      {
+        "source": "https://etherscan.io/token/0x18ed5803cd47f91716e06e38216e211ffaa9cc07",
+        "note": "Etherscan project overview describes 1,111 unique Sergs launched in March 2021 and identifies the verified CryptoSergs contract."
+      },
+      {
+        "source": "https://etherscan.io/address/0xd014499743e3d6a66d9db3e57d5884270999ee47#code",
+        "note": "Verified successor source establishes the CryptoSergs-to-Sergs migration relationship."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/CryptoSergs",
+    "handle": "CryptoSergs",
+    "state": "historical",
+    "evidence": [
+      {
+        "source": "https://etherscan.io/token/0x18ed5803cd47f91716e06e38216e211ffaa9cc07",
+        "note": "Etherscan's CryptoSergs token profile exposes an X/Twitter project-social entry; historical indexed posts reference @CryptoSergs. Current account availability still requires live-source refresh."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "unknown",
+    "summary": "No verified collection IP or commercial-use grant has been recovered. The historical 3D-avatar registry explicitly recorded CryptoSergs commercial rights as unknown.",
+    "state": "researched_unknown",
+    "evidence": [
+      {
+        "source": "https://hackmd.io/@XR/nftavatars",
+        "note": "Historical NFT 3D Avatars registry lists CryptoSergs commercial rights as '?' and file format as '?'."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "unknown",
+    "coverage": "research_open",
+    "urls": [],
+    "evidence": [
+      {
+        "source": "https://hackmd.io/@XR/nftavatars",
+        "note": "Historical registry says 'Minting, WIP modeling' with unknown file format. This is not evidence that VRM files shipped, so exhaustive inventory remains open."
+      }
+    ]
+  }
+}
