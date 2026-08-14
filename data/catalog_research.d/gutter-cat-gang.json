@@ -1,0 +1,81 @@
+{
+  "id": "gutter-cat-gang",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Gutter Cat Gang",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+    "opensea_slug": "guttercatgang",
+    "project_url": "https://guttercatgang.com/",
+    "source": "official+etherscan+curated",
+    "notes": "Original 3,000 Gutter Cat collection identity. Newer migrations/releases must not silently replace this historical launch identity."
+  },
+  "discord": {
+    "value": "https://discord.gg/guttercatgang",
+    "evidence": [
+      {
+        "kind": "current_contract_directory",
+        "source": "https://etherscan.io/token/0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+        "observed_at": "2026-08-13",
+        "note": "Current Etherscan token profile exposes the project's Discord alongside its official website and X account."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/guttercatgang",
+    "handle": "guttercatgang",
+    "evidence": [
+      {
+        "kind": "current_contract_directory",
+        "source": "https://etherscan.io/token/0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+        "observed_at": "2026-08-13",
+        "note": "Current Etherscan token profile exposes the official X link."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-06-08",
+    "evidence": [
+      {
+        "kind": "official_project_history",
+        "source": "https://www.guttercatgang.com/about",
+        "note": "Current project history states the Gutter Cat Gang was born in June 2021."
+      },
+      {
+        "kind": "contemporaneous_collection_history",
+        "source": "https://www.bitget.com/wiki/gutter-cat-gang-launch-date",
+        "note": "Independent historical source resolves the original collection launch to June 8, 2021."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_unlimited_commercial_derivative_license_subject_to_terms",
+    "summary": "Current Gutter Cat Labs terms grant the holder a worldwide royalty-free personal license and an unlimited worldwide commercial license to create derivative works from the purchased Gutter NFT, subject to the current terms and separate treatment for third-party Licensed NFTs.",
+    "evidence": [
+      {
+        "kind": "official_terms",
+        "source": "https://guttergrab.com/gcg-terms",
+        "observed_at": "2026-08-13",
+        "note": "Sections 1.3 and 1.4 define personal and unlimited commercial use; section 1.2 separates third-party Licensed NFTs."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "The current project site and post-2024 Gutter Cat Labs terms remain active. Current management explicitly describes itself as the third owner of the Gutter Cat Gang IP, so historical promises must be evaluated against the current terms rather than assumed to carry forward.",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://guttercatgang.com/",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "official_terms",
+        "source": "https://guttergrab.com/gcg-terms",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  }
+}
