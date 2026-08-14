@@ -9,7 +9,7 @@ def test_queue_prioritizes_inventory_and_maps_sources(tmp_path: Path):
     acceptance.write_text(
         json.dumps(
             {
-                "schema": "vrm-catalog-acceptance-v2",
+                "schema": "avatar-catalog-acceptance-v1",
                 "failures": [
                     {
                         "id": "social-gap",
@@ -23,7 +23,7 @@ def test_queue_prioritizes_inventory_and_maps_sources(tmp_path: Path):
                         "id": "inventory-gap",
                         "name": "Inventory Gap",
                         "reasons": [
-                            "vrm_inventory:explicit_exhaustive_links_required",
+                            "avatar_inventory:explicit_exhaustive_assets_required",
                             "file_access:explicit_access_mode_required",
                         ],
                     },
@@ -37,13 +37,20 @@ def test_queue_prioritizes_inventory_and_maps_sources(tmp_path: Path):
     payload = run(acceptance, output)
 
     assert payload["summary"]["collections"] == 2
-    assert payload["summary"]["fieldCounts"]["vrm_inventory"] == 1
+    assert payload["summary"]["fieldCounts"]["avatar_inventory"] == 1
     assert payload["summary"]["fieldCounts"]["discord"] == 1
     assert payload["queue"][0]["id"] == "inventory-gap"
     assert payload["queue"][0]["priority"] == 100
-    assert "Moralis cursor-exhausted collection NFTs" in payload["queue"][0]["researchPlan"]["vrm_inventory"]
+    assert "OpenPage avatar records and MML model references" in payload["queue"][0]["researchPlan"]["avatar_inventory"]
     assert "official site/community page" in payload["queue"][1]["researchPlan"]["discord"]
-    assert json.loads(output.read_text())["schema"] == "vrm-catalog-research-queue-v1"
+    assert json.loads(output.read_text())["schema"] == "avatar-catalog-research-queue-v2"
+
+
+def test_legacy_vrm_inventory_reasons_still_route():
+    # The VRM-specific discovery pipeline remains supported as a research lane.
+    assert "Moralis cursor-exhausted collection NFTs" in __import__(
+        "scripts.build_catalog_research_queue", fromlist=["SOURCE_PLAN"]
+    ).SOURCE_PLAN["vrm_inventory"]
 
 
 def test_queue_uses_reason_prefix_as_field(tmp_path: Path):
