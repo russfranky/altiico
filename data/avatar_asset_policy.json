@@ -1,0 +1,42 @@
+{
+  "schema": "avatar-asset-policy-v1",
+  "goal": "Catalog usable rigged avatar files without requiring VRM when another interoperable rigged model format is actually available.",
+  "supported_formats": {
+    "vrm": {
+      "qualifies": true,
+      "validation": "GLB 2.0 plus VRM or VRMC_vrm extension",
+      "rigging_evidence": "self_describing_vrm_structure"
+    },
+    "glb": {
+      "qualifies": true,
+      "validation": "GLB 2.0 plus at least one mesh and a glTF skin containing joint nodes",
+      "rigging_evidence": "structural_skin_and_joints",
+      "warning": "A plain GLB without a skin/joint rig is 3D model evidence, not an avatar-ready asset."
+    },
+    "fbx": {
+      "qualifies": true,
+      "validation": "Recognizable FBX bytes plus an explicit research claim that the asset is rigged, backed by rigging/avatar documentation or equivalent source evidence",
+      "rigging_evidence": "external_evidence_required",
+      "warning": "The .fbx extension alone never proves avatar readiness."
+    }
+  },
+  "runtime_wrappers": {
+    "mml": {
+      "qualifies": false,
+      "role": "Runtime definition and model-discovery surface. Resolve referenced model files, then validate those files independently."
+    }
+  },
+  "completeness": {
+    "rule": "One exhaustive supported avatar representation lane is sufficient. A collection does not need to ship VRM if an exhaustive rigged GLB or rigged FBX lane is available.",
+    "partial_sets": "Useful and retained, but do not satisfy collection completeness.",
+    "holder_gated_sets": "Valid assets, but still require explicit inventory and ownership/access semantics; holder gating is not a no-link escape hatch.",
+    "terminal_state": "not_shipped or unrecoverable may close the broader avatar inventory only when evidence addresses usable avatar models generally. A legacy VRM-only not_shipped finding does not rule out GLB or FBX."
+  },
+  "pipeline": {
+    "vrm_discovery": "scripts/export_vrm_inventory.py",
+    "avatar_inventory": "scripts/export_avatar_inventory.py",
+    "avatar_probe": "scripts/probe_avatar_inventory.py",
+    "completeness_audit": "scripts/audit_avatar_completeness.py",
+    "acceptance_gate": "scripts/enforce_avatar_acceptance.py"
+  }
+}
