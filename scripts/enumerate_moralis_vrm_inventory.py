@@ -3,14 +3,20 @@
 
 The sampled Moralis discovery pass is useful for finding leads but cannot prove
 "links to all VRMs". This pass walks Moralis cursor pagination to exhaustion for
-each supported EVM collection and records every token ID plus every explicit
-`.vrm` URL found in its normalized/raw metadata.
+every registered EVM contract belonging to each supported catalog collection
+and records every token ID plus every explicit `.vrm` URL found in normalized
+or raw metadata.
 
-A collection is marked metadata-complete only when:
+A single-contract collection is marked metadata-complete only when:
 - pagination reaches the terminal page (no cursor),
 - no artificial page/token budget truncated the scan,
 - every enumerated token has at least one explicit `.vrm` URL, and
 - the enumerated token count is not below the best known supply count.
+
+For multi-contract collections, every registered contract must independently
+satisfy those conditions. This is intentionally conservative: a migrated or
+secondary contract may make a collection fail until its role is researched, but
+no contract can silently disappear from the "all VRMs" denominator.
 
 This is metadata/link evidence, not binary VRM proof. The separate link probe
 must structurally validate every URL before final catalog acceptance.
@@ -31,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.catalog_contract_scope import collection_contract_rows, valid_evm_address  # noqa: E402
 from scripts.discover_moralis_models import inspect_nft  # noqa: E402
 from scripts.moralis_client import CHAIN_MAP, MoralisClient  # noqa: E402
 
@@ -131,16 +138,48 @@ def coverage_summary(
     }
 
 
-async def scan_collection(
+def contract_scope(row: dict[str, Any]) -> list[dict[str, Any]]:
+    contracts = row.get("contracts")
+    if isinstance(contracts, list) and contracts:
+        out = [
+            {
+                "address": text(item.get("address")).lower(),
+                "chain": text(item.get("chain") or row.get("chain")).lower(),
+                "is_primary": bool(item.get("is_primary")),
+                "token_standard": item.get("token_standard"),
+            }
+            for item in contracts
+            if isinstance(item, dict)
+            and valid_evm_address(item.get("address"))
+            and text(item.get("chain") or row.get("chain")).lower() in CHAIN_MAP
+        ]
+        if out:
+            return out
+    address = text(row.get("contract")).lower()
+    chain = text(row.get("chain")).lower()
+    if valid_evm_address(address) and chain in CHAIN_MAP:
+        return [
+            {
+                "address": address,
+                "chain": chain,
+                "is_primary": True,
+                "token_standard": None,
+            }
+        ]
+    return []
+
+
+async def scan_contract(
     client: MoralisClient,
     row: dict[str, Any],
+    contract_row: dict[str, Any],
     *,
     page_size: int = 100,
     max_pages: int = 0,
     max_tokens: int = 0,
 ) -> dict[str, Any]:
-    chain = text(row.get("chain")).lower()
-    contract = text(row.get("contract")).lower()
+    chain = text(contract_row.get("chain") or row.get("chain")).lower()
+    contract = text(contract_row.get("address") or row.get("contract")).lower()
     cursor: str | None = None
     seen_cursors: set[str] = set()
     token_map: dict[str, dict[str, Any]] = {}
@@ -206,7 +245,9 @@ async def scan_collection(
         token_map.values(),
         key=lambda item: (
             0 if text(item.get("tokenId")).isdigit() else 1,
-            int(item["tokenId"]) if text(item.get("tokenId")).isdigit() else text(item.get("tokenId")),
+            int(item["tokenId"])
+            if text(item.get("tokenId")).isdigit()
+            else text(item.get("tokenId")),
         ),
     )
     coverage = coverage_summary(
@@ -218,13 +259,101 @@ async def scan_collection(
     )
     all_urls = sorted({url for token in tokens for url in token.get("vrmUrls") or []})
     return {
-        "catalogId": row.get("id"),
-        "name": row.get("name"),
         "chain": chain,
         "contract": contract,
+        "isPrimary": bool(contract_row.get("is_primary")),
+        "tokenStandard": contract_row.get("token_standard"),
         "pages": pages,
         "error": "; ".join(errors) if errors else None,
         **coverage,
+        "uniqueVrmUrls": len(all_urls),
+        "vrmUrls": all_urls,
+        "tokens": tokens,
+    }
+
+
+async def scan_collection(
+    client: MoralisClient,
+    row: dict[str, Any],
+    *,
+    page_size: int = 100,
+    max_pages: int = 0,
+    max_tokens: int = 0,
+) -> dict[str, Any]:
+    scopes = contract_scope(row)
+    contract_results: list[dict[str, Any]] = []
+    for scope in scopes:
+        contract_results.append(
+            await scan_contract(
+                client,
+                row,
+                scope,
+                page_size=page_size,
+                max_pages=max_pages,
+                max_tokens=max_tokens,
+            )
+        )
+
+    primary = next(
+        (item for item in contract_results if item.get("isPrimary")),
+        contract_results[0] if contract_results else None,
+    )
+    all_urls = sorted(
+        {
+            url
+            for result in contract_results
+            for url in result.get("vrmUrls") or []
+        }
+    )
+    tokens = []
+    for result in contract_results:
+        for token in result.get("tokens") or []:
+            tokens.append(
+                {
+                    **token,
+                    "contract": result.get("contract"),
+                    "chain": result.get("chain"),
+                }
+            )
+    errors = [
+        f"{result.get('contract')}: {result.get('error')}"
+        for result in contract_results
+        if result.get("error")
+    ]
+    metadata_complete = bool(contract_results) and all(
+        bool(result.get("metadataComplete")) for result in contract_results
+    )
+    return {
+        "catalogId": row.get("id"),
+        "name": row.get("name"),
+        "chain": primary.get("chain") if primary else text(row.get("chain")).lower(),
+        "contract": primary.get("contract") if primary else text(row.get("contract")).lower(),
+        "contracts": [result.get("contract") for result in contract_results],
+        "contractsScanned": len(contract_results),
+        "contractResults": contract_results,
+        "pages": sum(int(result.get("pages") or 0) for result in contract_results),
+        "error": "; ".join(errors) if errors else None,
+        "cursorExhausted": bool(contract_results)
+        and all(bool(result.get("cursorExhausted")) for result in contract_results),
+        "truncated": any(bool(result.get("truncated")) for result in contract_results),
+        "tokensEnumerated": sum(
+            int(result.get("tokensEnumerated") or 0) for result in contract_results
+        ),
+        "tokensWithVrmLinks": sum(
+            int(result.get("tokensWithVrmLinks") or 0) for result in contract_results
+        ),
+        "tokensMissingVrmLinks": sum(
+            int(result.get("tokensMissingVrmLinks") or 0) for result in contract_results
+        ),
+        "apiTotal": sum(int(result.get("apiTotal") or 0) for result in contract_results)
+        or None,
+        "expectedTokens": sum(
+            int(result.get("expectedTokens") or 0) for result in contract_results
+        )
+        or None,
+        "supplyCovered": bool(contract_results)
+        and all(bool(result.get("supplyCovered")) for result in contract_results),
+        "metadataComplete": metadata_complete,
         "uniqueVrmUrls": len(all_urls),
         "vrmUrls": all_urls,
         "tokens": tokens,
@@ -236,45 +365,45 @@ async def run_async(args: argparse.Namespace) -> dict[str, Any]:
     conn = sqlite3.connect(args.db)
     conn.row_factory = sqlite3.Row
     try:
-        columns = {str(row[1]) for row in conn.execute("PRAGMA table_info(collections)")}
-        wanted = [
-            key
-            for key in (
-                "id",
-                "name",
-                "tier",
-                "chain",
-                "contract",
-                "avatar_count",
-                "total_supply",
-                "max_supply",
-            )
-            if key in columns
-        ]
-        rows = [dict(row) for row in conn.execute(f"SELECT {','.join(wanted)} FROM collections ORDER BY name")]
+        rows = collection_contract_rows(conn)
     finally:
         conn.close()
 
     tiers = {part.strip().upper() for part in args.tiers.split(",") if part.strip()}
-    candidates = [
-        row
-        for row in rows
-        if text(row.get("tier")).upper() in tiers
-        and text(row.get("chain")).lower() in CHAIN_MAP
-        and re.fullmatch(r"0x[a-fA-F0-9]{40}", text(row.get("contract")))
-    ]
+    candidates = []
+    for row in rows:
+        if text(row.get("tier")).upper() not in tiers:
+            continue
+        supported_contracts = [
+            item
+            for item in row.get("contracts") or []
+            if text(item.get("chain")).lower() in CHAIN_MAP
+            and valid_evm_address(item.get("address"))
+        ]
+        if not supported_contracts:
+            continue
+        row["contracts"] = supported_contracts
+        candidates.append(row)
 
     terminal: list[dict[str, Any]] = []
     scannable: list[dict[str, Any]] = []
     for row in candidates:
         state = terminal_research_state(research.get(text(row.get("id"))) or {})
         if state:
+            scopes = contract_scope(row)
+            primary = next(
+                (item for item in scopes if item.get("is_primary")),
+                scopes[0] if scopes else {},
+            )
             terminal.append(
                 {
                     "catalogId": row.get("id"),
                     "name": row.get("name"),
-                    "chain": row.get("chain"),
-                    "contract": row.get("contract"),
+                    "chain": primary.get("chain") or row.get("chain"),
+                    "contract": primary.get("address") or row.get("contract"),
+                    "contracts": [item.get("address") for item in scopes],
+                    "contractsScanned": 0,
+                    "contractResults": [],
                     "terminalResearchState": state,
                     "metadataComplete": True,
                     "tokensEnumerated": 0,
@@ -292,6 +421,7 @@ async def run_async(args: argparse.Namespace) -> dict[str, Any]:
 
     semaphore = asyncio.Semaphore(max(1, args.collection_concurrency))
     async with MoralisClient(max_concurrency=args.concurrency) as client:
+
         async def one(row: dict[str, Any]) -> dict[str, Any]:
             async with semaphore:
                 result = await scan_collection(
@@ -302,8 +432,9 @@ async def run_async(args: argparse.Namespace) -> dict[str, Any]:
                     max_tokens=args.max_tokens,
                 )
                 print(
-                    f"{result['catalogId']}: {result['tokensEnumerated']} tokens, "
-                    f"{result['uniqueVrmUrls']} VRM URLs, complete={result['metadataComplete']}",
+                    f"{result['catalogId']}: {result['contractsScanned']} contracts, "
+                    f"{result['tokensEnumerated']} tokens, {result['uniqueVrmUrls']} VRM URLs, "
+                    f"complete={result['metadataComplete']}",
                     file=sys.stderr,
                 )
                 return result
@@ -311,24 +442,35 @@ async def run_async(args: argparse.Namespace) -> dict[str, Any]:
         scanned = await asyncio.gather(*(one(row) for row in scannable))
 
     collections = sorted(
-        [*terminal, *scanned], key=lambda row: (text(row.get("name")).lower(), text(row.get("catalogId")))
+        [*terminal, *scanned],
+        key=lambda row: (text(row.get("name")).lower(), text(row.get("catalogId"))),
     )
     return {
-        "schema": "moralis-full-vrm-inventory-v1",
+        "schema": "moralis-full-vrm-inventory-v2",
         "generatedAt": now_iso(),
         "policy": (
-            "Cursor pagination must exhaust and every enumerated token must expose an explicit .vrm URL; "
-            "this proves metadata/link coverage only, not VRM binary validity."
+            "Cursor pagination must exhaust for every registered collection contract and every "
+            "enumerated token on every contract must expose an explicit .vrm URL; this proves "
+            "metadata/link coverage only, not VRM binary validity."
         ),
         "summary": {
             "collections": len(collections),
             "scannedCollections": len(scanned),
+            "contractsScanned": sum(int(row.get("contractsScanned") or 0) for row in scanned),
             "terminalResearchCollections": len(terminal),
             "collectionsWithErrors": sum(bool(row.get("error")) for row in scanned),
-            "metadataCompleteCollections": sum(bool(row.get("metadataComplete")) for row in collections),
-            "tokensEnumerated": sum(int(row.get("tokensEnumerated") or 0) for row in scanned),
-            "tokensWithVrmLinks": sum(int(row.get("tokensWithVrmLinks") or 0) for row in scanned),
-            "uniqueVrmUrls": sum(int(row.get("uniqueVrmUrls") or 0) for row in scanned),
+            "metadataCompleteCollections": sum(
+                bool(row.get("metadataComplete")) for row in collections
+            ),
+            "tokensEnumerated": sum(
+                int(row.get("tokensEnumerated") or 0) for row in scanned
+            ),
+            "tokensWithVrmLinks": sum(
+                int(row.get("tokensWithVrmLinks") or 0) for row in scanned
+            ),
+            "uniqueVrmUrls": sum(
+                int(row.get("uniqueVrmUrls") or 0) for row in scanned
+            ),
         },
         "collections": collections,
     }
