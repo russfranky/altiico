@@ -1,0 +1,50 @@
+{
+  "schema": "openpage-source-policy-v1",
+  "source": {
+    "name": "OpenPage",
+    "current_domain": "openpage.fun",
+    "legacy_domain": "op.xyz",
+    "current_docs": "https://docs.openpage.fun/",
+    "legacy_docs": "https://docs.op.xyz/"
+  },
+  "purpose": "High-signal avatar discovery and runtime-representation evidence for catalog collections that use or onboard through OpenPage.",
+  "asset_lanes": {
+    "mml": {
+      "role": "runtime_definition",
+      "catalog_effect": "evidence_only",
+      "notes": "Preserve MML URLs independently. Inspect m-character and m-model src attributes for underlying model leads. MML itself never proves VRM."
+    },
+    "vrm": {
+      "role": "vrm_candidate",
+      "catalog_effect": "candidate_only_until_binary_validation",
+      "notes": "Creator-provided .vrm URLs are strong discovery leads but must still pass the catalog structural VRM probe and exhaustive-inventory rules."
+    },
+    "glb": {
+      "role": "runtime_or_animation_model",
+      "catalog_effect": "evidence_only",
+      "notes": "GLB/GLTF proves a 3D model representation, not VRM. Never promote GLB/GLTF to the VRM inventory lane."
+    }
+  },
+  "identity_policy": {
+    "catalog_mapping_required_for_collection_enrichment": true,
+    "accepted_catalog_keys": [
+      "catalogId",
+      "catalog_id",
+      "collection_id"
+    ],
+    "unmapped_records": "Keep as discovery leads; do not silently attach them to a catalog collection by display name alone."
+  },
+  "acceptance_policy": {
+    "mml_satisfies_vrm_inventory": false,
+    "glb_satisfies_vrm_inventory": false,
+    "direct_vrm_candidate_satisfies_vrm_inventory": false,
+    "requires_existing_structural_vrm_probe": true,
+    "requires_exhaustive_collection_inventory": true
+  },
+  "pipeline": {
+    "adapter": "scripts/openpage_asset_discovery.py",
+    "tests": "tests/test_openpage_asset_discovery.py",
+    "default_output": "data/openpage_asset_discovery.json"
+  },
+  "curator_note": "OpenPage is expected to become an important onboarding source for collections using MML. Treat the source as additive discovery coverage, never as a relaxation of the literal catalog completeness bar."
+}
