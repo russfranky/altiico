@@ -1,0 +1,90 @@
+{
+  "id": "0n1-force",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "0N1 Force",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x3bf2922f4520a8ba0c2efc3d2a1539678dad5e9d",
+    "opensea_slug": "0n1-force",
+    "project_url": "https://0n1force.com/",
+    "source": "official+opensea+curated",
+    "notes": "Active anime/cyberpunk PFP project. Historical avatar-development evidence is not treated as proof of an exhaustive shipped VRM set; the keyed inventory pass must resolve actual files."
+  },
+  "discord": {
+    "value": "https://discord.gg/0n1-force",
+    "evidence": [
+      {
+        "kind": "official_project_community_link",
+        "source": "https://linktr.ee/0n1force",
+        "observed_at": "2026-08-13",
+        "note": "Current official 0N1 Force link hub exposes the project Discord/community destinations."
+      },
+      {
+        "kind": "project_announcement",
+        "source": "https://nft-media.net/nft-production/nft-0n1-force/30001/",
+        "note": "Announcement identifies https://discord.gg/0n1-force as the official Discord."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/0n1Force",
+    "handle": "0n1Force",
+    "evidence": [
+      {
+        "kind": "current_x_account",
+        "source": "https://x.com/0n1Force",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "official_project_link_hub",
+        "source": "https://linktr.ee/0n1force",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-08-19",
+    "evidence": [
+      {
+        "kind": "contemporaneous_market_report",
+        "source": "https://dappradar.com/blog/new-dapps-report-nft-collectibles-august-edition-2",
+        "note": "DappRadar records 0N1 Force launch date as Aug 19, 2021."
+      },
+      {
+        "kind": "official_project_history",
+        "source": "https://0n1forceofficial.medium.com/0n1-force-strategic-partnership-announcement-a-new-chapter-begins-c99be293fa07",
+        "note": "Official project history independently states the collection minted in August 2021."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_unlimited_commercial_derivative_license",
+    "summary": "Current 0N1 Force terms grant the NFT holder a worldwide royalty-free personal license and an unlimited worldwide commercial license to use the purchased art to create derivative works, while project/company rights and project-wide usage remain separately reserved by the issuer.",
+    "evidence": [
+      {
+        "kind": "official_terms",
+        "source": "https://synapse.0n1force.com/terms",
+        "observed_at": "2026-08-13",
+        "note": "Terms revised Dec 3, 2023; sections ii-iii define personal and unlimited commercial/derivative holder usage."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "Current official website/link hub and active project surfaces remain live; no sunset announcement was found in the current official sources checked.",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://0n1force.com/",
+        "observed_at": "2026-08-13"
+      },
+      {
+        "kind": "official_project_link_hub",
+        "source": "https://linktr.ee/0n1force",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  }
+}
