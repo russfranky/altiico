@@ -1,0 +1,90 @@
+{
+  "id": "axolittles",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Axolittles",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0xf36446105ff682999a442b003f2224bcb3d82067",
+    "opensea_slug": "axolittles",
+    "project_url": "https://axolittles.io/",
+    "source": "official+etherscan+curated",
+    "notes": "Community/DAO-transitioned collection. Historical Axoquarium 3D models existed, so the catalog must not mark the VRM inventory as terminal merely because no current exhaustive .vrm set has yet been proven."
+  },
+  "discord": {
+    "value": "https://discord.gg/axolittlesnft",
+    "evidence": [
+      {
+        "kind": "official_project_publication",
+        "source": "https://medium.com/@axolittles/axolittles-welcome-to-a-new-era-dba2ef7d6de2",
+        "note": "Official Jan. 6, 2022 project handover post explicitly lists discord.gg/axolittlesnft."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/AxolittlesNFT",
+    "handle": "AxolittlesNFT",
+    "evidence": [
+      {
+        "kind": "official_project_publication",
+        "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+        "note": "Latest substantive official governance post lists https://twitter.com/AxolittlesNFT among project-managed social infrastructure."
+      },
+      {
+        "kind": "official_publication_profile",
+        "source": "https://medium.com/@axolittles/about",
+        "observed_at": "2026-08-13"
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-09-06",
+    "evidence": [
+      {
+        "kind": "marketplace_history",
+        "source": "https://opensea.io/collection/axolittles/",
+        "note": "OpenSea independently resolves the collection launch month to Sep 2021."
+      },
+      {
+        "kind": "contemporaneous_mint_calendar",
+        "source": "https://t.me/s/nft_calendar",
+        "note": "Contemporaneous NFT Calendar archive lists the Axolittles mint on September 6, 2021."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "community_governed_license_undetermined",
+    "state": "unrecoverable",
+    "summary": "The Jan. 26, 2023 transition proposal suggested CC BY, but the later Feb. 1, 2023 official governance handoff explicitly rescinded all prior IP-licensing statements and left licensing of the NFTs, Seasonal Axolittles, Axoquarium 3D models and code for the community to decide. No later controlling community license decision was recovered, so the catalog must not present CC BY as settled rights.",
+    "evidence": [
+      {
+        "kind": "official_governance_handoff",
+        "source": "https://medium.com/@axolittles/hello-axolittles-from-ori-cc26d68ca77e",
+        "note": "Jan. 26 proposal described a planned CC BY license."
+      },
+      {
+        "kind": "official_governance_handoff",
+        "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+        "note": "Feb. 1 update supersedes prior statements: IP licensing, including 3D models, is entirely for the community to decide."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "dormant",
+    "state": "dormant",
+    "note": "Evidence-based lifecycle inference: the latest substantive official project publication recovered is the Feb. 1, 2023 community/DAO handoff. The official Medium profile and marketplace references remain reachable in 2026, but no later substantive official development update was recovered in this research pass. Dormant is used rather than sunset because the assets/governance were deliberately handed to the community and no shutdown announcement was found.",
+    "evidence": [
+      {
+        "kind": "official_governance_handoff",
+        "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+        "note": "Latest substantive official update recovered; establishes community multisigs/DAO and future community control."
+      },
+      {
+        "kind": "official_publication_index",
+        "source": "https://medium.com/@axolittles",
+        "observed_at": "2026-08-13",
+        "note": "Current index still ends substantive project posts in February 2023."
+      }
+    ]
+  }
+}
