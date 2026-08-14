@@ -9,7 +9,7 @@
     "opensea_slug": "boredapeyachtclub",
     "project_url": "https://boredapeyachtclub.com/",
     "source": "official+opensea",
-    "notes": "BAYC and MAYC are researched as separate collections. BAYC has official holder-gated 3D Avatar Files, but no evidence yet establishes those files as VRM or exposes an exhaustive public VRM inventory."
+    "notes": "BAYC and MAYC are researched as separate collections. BAYC has official holder-gated 3D Avatar Files and animation-ready 3D Ape models; Otherside separately proves a GLB-backed BAYC avatar runtime. The broader avatar requirement is therefore proven in principle even though an exhaustive downloadable GLB/FBX/VRM asset lane has not been recovered."
   },
   "banner": {
     "value": "https://i2c.seadn.io/collection/boredapeyachtclub/banner/3ddcabd06bb257af35f029b3c17163/e13ddcabd06bb257af35f029b3c17163.jpeg?fit=inside",
@@ -87,7 +87,7 @@
     "evidence": [
       {
         "source": "https://yuga.com/3d-avatar-terms/",
-        "note": "Yuga states associated 2D and 3D Avatar Files are made available for download to verified BAYC owners. The exact backing object store and file-format inventory are not disclosed by the terms."
+        "note": "Yuga states associated 2D and 3D Avatar Files are made available for download to verified BAYC owners. The exact backing object store and holder-download file-format inventory are not disclosed by the terms."
       }
     ]
   },
@@ -128,6 +128,48 @@
       {
         "source": "https://yuga.com/3d-avatar-terms/",
         "note": "Official terms prove downloadable 3D Avatar Files exist for BAYC holders. They do not identify the format as VRM."
+      }
+    ]
+  },
+  "avatar_formats": {
+    "value": [
+      "glb"
+    ],
+    "state": "runtime_proven_holder_download_format_unresolved",
+    "note": "Otherside explicitly implements BAYC avatars from GLB character definitions. Separately, BAYC's DashBo lets holders pose and animate their official 3D Ape models, proving the holder model lane is animation-ready. The sources do not establish that the holder-downloaded file itself is the same GLB used by Otherside, so GLB is recorded as a proven official runtime representation rather than asserted as the undisclosed holder-download format.",
+    "evidence": [
+      {
+        "kind": "official_otherside_avatar_runtime",
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Official Otherside docs list BAYC among proven avatar implementations and say relevant character meshes are downloaded at runtime from GLB definitions."
+      },
+      {
+        "kind": "official_bayc_animation_surface",
+        "source": "https://boredapeyachtclub.com/activations/dashbo",
+        "note": "Official BAYC activation states holders use their 3D Ape models to pose characters and add dance animations."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "shipped_unenumerated",
+    "coverage": "rigged_avatar_capability_and_glb_runtime_proven_files_not_enumerated",
+    "assets": [],
+    "note": "Usable rigged BAYC avatars are proven by official holder-model animation tooling and the GLB-backed Otherside avatar implementation, but neither an exhaustive public GLB runtime URL set nor the holder-gated Avatar File URLs/formats have been recovered. Keep the broader inventory incomplete until one supported representation lane is exhaustively enumerable.",
+    "evidence": [
+      {
+        "kind": "official_avatar_file_terms",
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Yuga makes associated 3D Avatar Files downloadable to verified owners."
+      },
+      {
+        "kind": "official_bayc_animation_surface",
+        "source": "https://boredapeyachtclub.com/activations/dashbo",
+        "note": "Official platform demonstrates holder 3D Ape models are poseable and animation-ready."
+      },
+      {
+        "kind": "official_otherside_avatar_runtime",
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Official runtime uses GLB definitions for supported character meshes and lists BAYC as a proven avatar implementation."
       }
     ]
   }
