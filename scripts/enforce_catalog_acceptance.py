@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 """Enforce the literal full-catalog acceptance bar.
 
-Required identity/media/social fields need actual values. For active/dormant
-collections with files, the inventory needs explicit exhaustive VRM links and
-every link must have passed the lightweight structural VRM probe. An unexpanded
-URL template is not "all links".
-
-Only evidence-backed ``not_shipped`` and ``unrecoverable`` inventory states can
-complete without URLs. Holder-gated files still exist and therefore still need
-an explicit inventory plus ownership/access facts.
+Identity/media/social fields need actual values. Non-terminal collections need
+explicit exhaustive VRM links, every link must structurally probe as a VRM, and
+storage/access/IP/lifecycle facts must be resolved. URL templates and sampled
+links are not accepted as substitutes for the explicit inventory.
 """
 from __future__ import annotations
 
@@ -29,7 +25,6 @@ MUST_HAVE_VALUE = (
     "x",
     "logo",
     "launch_date",
-    "storage",
 )
 TERMINAL_INVENTORY_STATES = {"not_shipped", "unrecoverable"}
 PROJECT_STATUSES = {"active", "dormant", "sunset"}
@@ -94,9 +89,14 @@ def evaluate_collection(
         failures.append("ip_rights:researched_information_required")
 
     if not inventory:
+        failures.append("storage:inventory_storage_required")
         failures.append("vrm_inventory:inventory_record_required")
         failures.append("file_access:inventory_access_record_required")
         return failures
+
+    storage_info = inventory.get("storage") or {}
+    if not has(storage_info.get("types")):
+        failures.append("storage:actual_storage_type_required")
 
     inv_state = str(inventory.get("state") or "").strip().lower()
     inv_evidence = inventory.get("inventory_evidence") or []
@@ -148,19 +148,9 @@ def run(
     failures: list[dict[str, Any]] = []
     for collection in report.get("collections") or []:
         cid = str(collection.get("id") or "")
-        reasons = evaluate_collection(
-            collection,
-            inventories.get(cid),
-            probes.get(cid),
-        )
+        reasons = evaluate_collection(collection, inventories.get(cid), probes.get(cid))
         if reasons:
-            failures.append(
-                {
-                    "id": cid,
-                    "name": collection.get("name"),
-                    "reasons": reasons,
-                }
-            )
+            failures.append({"id": cid, "name": collection.get("name"), "reasons": reasons})
 
     reason_counts: dict[str, int] = {}
     for row in failures:
@@ -172,9 +162,7 @@ def run(
         "collections": len(report.get("collections") or []),
         "passing": len(report.get("collections") or []) - len(failures),
         "failing": len(failures),
-        "reasonCounts": dict(
-            sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))
-        ),
+        "reasonCounts": dict(sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))),
         "failures": failures,
     }
 
@@ -191,15 +179,7 @@ def main() -> int:
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print(
-        json.dumps(
-            {
-                key: result[key]
-                for key in ("collections", "passing", "failing", "reasonCounts")
-            },
-            indent=2,
-        )
-    )
+    print(json.dumps({key: result[key] for key in ("collections", "passing", "failing", "reasonCounts")}, indent=2))
     return 1 if result["failing"] else 0
 
 
