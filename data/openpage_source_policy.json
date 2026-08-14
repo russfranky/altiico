@@ -1,5 +1,5 @@
 {
-  "schema": "openpage-source-policy-v1",
+  "schema": "openpage-source-policy-v2",
   "source": {
     "name": "OpenPage",
     "current_domain": "openpage.fun",
@@ -28,24 +28,29 @@
       "method": "GET",
       "path": "/m/mml/{id}",
       "authentication": "none shown in documentation",
-      "catalog_value": "MML/runtime definition lead; inspect referenced model sources without inferring VRM"
+      "catalog_value": "MML/runtime definition lead; inspect referenced model sources without inferring avatar readiness"
     }
   },
   "asset_lanes": {
     "mml": {
       "role": "runtime_definition",
-      "catalog_effect": "evidence_only",
-      "notes": "Preserve MML URLs independently. Inspect m-character and m-model src attributes for underlying model leads. MML itself never proves VRM."
+      "catalog_effect": "evidence_and_model_discovery",
+      "notes": "Preserve MML URLs independently. Inspect m-character and m-model src attributes for underlying model leads. MML itself is not a model file and does not satisfy the avatar inventory."
     },
     "vrm": {
-      "role": "vrm_candidate",
-      "catalog_effect": "candidate_only_until_binary_validation",
-      "notes": "Creator-provided .vrm URLs are strong discovery leads but must still pass the catalog structural VRM probe and exhaustive-inventory rules."
+      "role": "avatar_candidate",
+      "catalog_effect": "candidate_until_structural_validation",
+      "notes": "Creator-provided .vrm URLs are strong avatar leads but must still pass the structural VRM probe and exhaustive-inventory rules."
     },
     "glb": {
-      "role": "runtime_or_animation_model",
-      "catalog_effect": "evidence_only",
-      "notes": "GLB/GLTF proves a 3D model representation, not VRM. Never promote GLB/GLTF to the VRM inventory lane."
+      "role": "avatar_candidate",
+      "catalog_effect": "qualifies_when_rigged_and_structurally_valid",
+      "notes": "A GLB can satisfy the usable-avatar inventory when the binary is valid GLB 2.0 and its glTF structure contains a skin with joints. A plain/unrigged GLB remains 3D evidence only."
+    },
+    "fbx": {
+      "role": "avatar_candidate",
+      "catalog_effect": "qualifies_when_real_fbx_plus_explicit_rigging_evidence",
+      "notes": "OpenPage does not currently require FBX, but recovered FBX assets may qualify elsewhere in the catalog when the file is real FBX and rigging/avatar-readiness is explicitly evidenced."
     }
   },
   "identity_policy": {
@@ -58,10 +63,11 @@
     "unmapped_records": "Keep as discovery leads; do not silently attach them to a catalog collection by display name alone."
   },
   "acceptance_policy": {
-    "mml_satisfies_vrm_inventory": false,
-    "glb_satisfies_vrm_inventory": false,
-    "direct_vrm_candidate_satisfies_vrm_inventory": false,
-    "requires_existing_structural_vrm_probe": true,
+    "mml_satisfies_avatar_inventory": false,
+    "vrm_satisfies_avatar_inventory_after_structural_validation": true,
+    "rigged_glb_satisfies_avatar_inventory_after_structural_validation": true,
+    "unrigged_glb_satisfies_avatar_inventory": false,
+    "fbx_requires_explicit_rigging_evidence": true,
     "requires_exhaustive_collection_inventory": true
   },
   "pipeline": {
@@ -70,7 +76,9 @@
     "asset_default_output": "data/openpage_asset_discovery.json",
     "community_adapter": "scripts/discover_openpage_communities.py",
     "community_tests": "tests/test_discover_openpage_communities.py",
-    "community_default_output": "data/openpage_communities.json"
+    "community_default_output": "data/openpage_communities.json",
+    "avatar_inventory_exporter": "scripts/export_avatar_inventory.py",
+    "avatar_probe": "scripts/probe_avatar_inventory.py"
   },
-  "curator_note": "OpenPage is expected to become an important onboarding source for collections using MML. Treat the source as additive discovery coverage, never as a relaxation of the literal catalog completeness bar."
+  "curator_note": "OpenPage is expected to become an important onboarding source for collections using MML. Treat MML as discovery/runtime evidence, then validate the referenced VRM or rigged GLB as the actual usable avatar asset."
 }
