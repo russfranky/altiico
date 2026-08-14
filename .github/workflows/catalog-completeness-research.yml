@@ -9,10 +9,17 @@ on:
       - scripts/enforce_catalog_acceptance.py
       - scripts/materialize_catalog_research.py
       - scripts/export_vrm_inventory.py
+      - scripts/export_avatars_registry.py
       - scripts/reconcile_markdown_catalog_sources.py
+      - scripts/moralis_client.py
+      - scripts/enumerate_moralis_vrm_inventory.py
+      - scripts/probe_vrm_inventory.py
       - tests/test_catalog_completeness.py
       - tests/test_catalog_acceptance.py
       - tests/test_catalog_research_pipeline.py
+      - tests/test_export_avatars_registry_access.py
+      - tests/test_moralis_full_inventory.py
+      - tests/test_probe_vrm_inventory.py
       - data/catalog_research.json
       - data/vrm_collections.md
       - .github/workflows/catalog-completeness-research.yml
@@ -66,11 +73,18 @@ jobs:
             scripts/enforce_catalog_acceptance.py \
             scripts/materialize_catalog_research.py \
             scripts/export_vrm_inventory.py \
-            scripts/reconcile_markdown_catalog_sources.py
+            scripts/export_avatars_registry.py \
+            scripts/reconcile_markdown_catalog_sources.py \
+            scripts/moralis_client.py \
+            scripts/enumerate_moralis_vrm_inventory.py \
+            scripts/probe_vrm_inventory.py
           python -m pytest \
             tests/test_catalog_completeness.py \
             tests/test_catalog_acceptance.py \
-            tests/test_catalog_research_pipeline.py -q
+            tests/test_catalog_research_pipeline.py \
+            tests/test_export_avatars_registry_access.py \
+            tests/test_moralis_full_inventory.py \
+            tests/test_probe_vrm_inventory.py -q
 
       - name: Seed researched identities before API enrichment
         run: |
@@ -81,7 +95,7 @@ jobs:
       - name: Refresh OpenSea identity, media and social metadata with real key
         run: python scripts/enrich_opensea.py --meta-only --force
 
-      - name: Refresh Moralis token and model evidence with real key
+      - name: Refresh sampled Moralis source evidence with real key
         run: |
           mkdir -p /tmp/vrm-source-refresh
           python scripts/cross_reference_sources.py \
@@ -157,6 +171,17 @@ jobs:
           PY
           python scripts/build_source_consensus.py
 
+      - name: Exhaust every Moralis collection cursor for all VRM links
+        run: |
+          python scripts/enumerate_moralis_vrm_inventory.py \
+            --output data/moralis_full_vrm_inventory.json \
+            --tiers A,B,C \
+            --page-size 100 \
+            --max-pages 0 \
+            --max-tokens 0 \
+            --concurrency 3 \
+            --collection-concurrency 2
+
       - name: Refresh Etherscan authority with real key and preserve last-good evidence
         run: |
           mkdir -p /tmp/vrm-source-refresh
@@ -176,13 +201,19 @@ jobs:
             --tokens 25 --concurrency 3 --collection-concurrency 3
           python scripts/build_authoritative_consensus.py
 
-      - name: Reapply researched exact values and export exhaustive VRM inventory
+      - name: Merge explicit links and structurally probe every VRM URL
         run: |
           python scripts/materialize_catalog_research.py
           python scripts/export_vrm_inventory.py \
+            --moralis-inventory data/moralis_full_vrm_inventory.json \
             --output static/data/vrm-inventory.json
+          python scripts/probe_vrm_inventory.py \
+            --source static/data/vrm-inventory.json \
+            --output data/vrm_inventory_probe.json \
+            --workers 4 \
+            --timeout 20
 
-      - name: Measure every required collection field
+      - name: Measure every literal collection requirement
         run: |
           python scripts/audit_catalog_completeness.py \
             --tiers A,B,C,ARWEAVE \
@@ -190,6 +221,7 @@ jobs:
           python scripts/enforce_catalog_acceptance.py \
             --report data/catalog_completeness_report.json \
             --inventory static/data/vrm-inventory.json \
+            --probe data/vrm_inventory_probe.json \
             --output data/catalog_acceptance.json || true
           python - <<'PY'
           import json
@@ -205,15 +237,7 @@ jobs:
               'reasonCounts':acceptance['reasonCounts'],
             }
           },indent=2))
-          worst=sorted(report['summary']['missingByField'].items(),key=lambda item:(-item[1],item[0]))
-          print('largest gaps:')
-          for field,count in worst:
-              print(f'  {field}: {count}')
-          incomplete=[
-              {'id':row['id'],'name':row['name'],'missing':row['missing']}
-              for row in report['collections'] if not row['complete']
-          ]
-          print(json.dumps({'firstIncomplete':incomplete[:25]},indent=2))
+          print(json.dumps({'firstFailures':acceptance['failures'][:25]},indent=2))
           PY
 
       - name: Rebuild one coherent public snapshot
@@ -241,6 +265,8 @@ jobs:
             data/source_cross_reference_report.json
             data/source_consensus.json
             data/moralis_model_discovery.json
+            data/moralis_full_vrm_inventory.json
+            data/vrm_inventory_probe.json
             data/source_health.json
             data/etherscan_authority_report.json
             data/bitquery_evidence_report.json
@@ -260,6 +286,8 @@ jobs:
             data/source_cross_reference_report.json \
             data/source_consensus.json \
             data/moralis_model_discovery.json \
+            data/moralis_full_vrm_inventory.json \
+            data/vrm_inventory_probe.json \
             data/source_health.json \
             data/etherscan_authority_report.json \
             data/bitquery_evidence_report.json \
@@ -274,14 +302,8 @@ jobs:
 
       - name: Hard acceptance gate — every literal requirement must pass
         run: |
-          python scripts/audit_catalog_completeness.py \
-            --tiers A,B,C,ARWEAVE \
-            --output data/catalog_completeness_report.json \
-            --strict
-          python scripts/export_vrm_inventory.py \
-            --output static/data/vrm-inventory.json \
-            --strict
           python scripts/enforce_catalog_acceptance.py \
             --report data/catalog_completeness_report.json \
             --inventory static/data/vrm-inventory.json \
+            --probe data/vrm_inventory_probe.json \
             --output data/catalog_acceptance.json
