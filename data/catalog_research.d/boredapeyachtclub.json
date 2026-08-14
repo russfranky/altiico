@@ -1,0 +1,134 @@
+{
+  "id": "boredapeyachtclub",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Bored Ape Yacht Club",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "opensea_slug": "boredapeyachtclub",
+    "project_url": "https://boredapeyachtclub.com/",
+    "source": "official+opensea",
+    "notes": "BAYC and MAYC are researched as separate collections. BAYC has official holder-gated 3D Avatar Files, but no evidence yet establishes those files as VRM or exposes an exhaustive public VRM inventory."
+  },
+  "banner": {
+    "value": "https://i2c.seadn.io/collection/boredapeyachtclub/banner/3ddcabd06bb257af35f029b3c17163/e13ddcabd06bb257af35f029b3c17163.jpeg?fit=inside",
+    "evidence": [
+      {
+        "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+        "note": "Current OpenSea collection metadata banner_image_url."
+      }
+    ]
+  },
+  "logo": {
+    "value": "https://i2c.seadn.io/collection/boredapeyachtclub/image/1a09c26b1c30427b26944c47fc7bb9/d81a09c26b1c30427b26944c47fc7bb9.png",
+    "evidence": [
+      {
+        "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+        "note": "Current OpenSea collection metadata image_url."
+      }
+    ]
+  },
+  "short_description": {
+    "value": "Yuga Labs' 10,000-piece Ethereum PFP collection, launched in April 2021 as NFT-backed membership in the Bored Ape Yacht Club.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+        "note": "Official BAYC history identifies the 10,000-piece collection and April 23, 2021 release."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-04-23",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+        "note": "Official BAYC history: 10,000 Bored Apes were released April 23, 2021."
+      }
+    ]
+  },
+  "discord": {
+    "value": "https://discord.com/invite/3P5K3dzgdB",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC links page resolves its Discord entry to this invite."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/BoredApeYC",
+    "handle": "BoredApeYC",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC links page resolves X to @BoredApeYC."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "evidence": [
+      {
+        "source": "https://yuga.com/about/",
+        "note": "Yuga's current About page lists BAYC among its active collections and states the company is still building."
+      },
+      {
+        "source": "https://boredapeyachtclub.com/activations",
+        "note": "Official BAYC activations remain current through 2025-2026."
+      }
+    ]
+  },
+  "storage": {
+    "value": [
+      "https"
+    ],
+    "scope": "official_holder_avatar_file_delivery",
+    "evidence": [
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Yuga states associated 2D and 3D Avatar Files are made available for download to verified BAYC owners. The exact backing object store and file-format inventory are not disclosed by the terms."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "scope": "official_bayc_avatar_files",
+    "evidence": [
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Official Avatar Terms state the associated 2D/3D files are downloadable by verified owners and the Avatar File license lasts only while the holder owns the corresponding BAYC NFT."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial",
+    "summary": "BAYC holders receive broad commercial rights in purchased BAYC art. For Yuga's official 3D Avatar Files, Yuga retains the Avatar File IP and grants the current BAYC holder an exclusive, worldwide, royalty-free, sublicensable commercial and non-commercial license for the ownership term, subject to the Avatar Terms.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/bayc-license",
+        "note": "Current BAYC license grants unlimited worldwide commercial use of purchased art to the holder."
+      },
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Current BAYC Avatar Terms define ownership and the holder license for Yuga-created 2D/3D Avatar Files."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "unknown",
+    "coverage": "research_open",
+    "urls": [],
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bored-ape-3d-models-release",
+        "note": "Official source proves 3D Ape Models shipped in 2024, but does not identify VRM as the file format or expose all model URLs."
+      },
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Official terms prove downloadable 3D Avatar Files exist for BAYC holders. They do not identify the format as VRM."
+      }
+    ]
+  }
+}
