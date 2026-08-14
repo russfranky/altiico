@@ -8,6 +8,8 @@ on:
       - scripts/audit_catalog_completeness.py
       - scripts/enforce_catalog_acceptance.py
       - scripts/build_catalog_research_queue.py
+      - scripts/catalog_research_store.py
+      - scripts/build_catalog_research_store.py
       - scripts/materialize_catalog_research.py
       - scripts/materialize_short_descriptions.py
       - scripts/materialize_public_vrm_access.py
@@ -20,6 +22,7 @@ on:
       - tests/test_catalog_completeness.py
       - tests/test_catalog_acceptance.py
       - tests/test_catalog_research_queue.py
+      - tests/test_catalog_research_store.py
       - tests/test_catalog_research_pipeline.py
       - tests/test_export_avatars_registry_access.py
       - tests/test_materialize_short_descriptions.py
@@ -27,6 +30,7 @@ on:
       - tests/test_moralis_full_inventory.py
       - tests/test_probe_vrm_inventory.py
       - data/catalog_research.json
+      - data/catalog_research.d/**
       - data/vrm_collections.md
       - .github/workflows/catalog-completeness-research.yml
 
@@ -78,6 +82,8 @@ jobs:
             scripts/audit_catalog_completeness.py \
             scripts/enforce_catalog_acceptance.py \
             scripts/build_catalog_research_queue.py \
+            scripts/catalog_research_store.py \
+            scripts/build_catalog_research_store.py \
             scripts/materialize_catalog_research.py \
             scripts/materialize_short_descriptions.py \
             scripts/materialize_public_vrm_access.py \
@@ -91,6 +97,7 @@ jobs:
             tests/test_catalog_completeness.py \
             tests/test_catalog_acceptance.py \
             tests/test_catalog_research_queue.py \
+            tests/test_catalog_research_store.py \
             tests/test_catalog_research_pipeline.py \
             tests/test_export_avatars_registry_access.py \
             tests/test_materialize_short_descriptions.py \
@@ -98,9 +105,12 @@ jobs:
             tests/test_moralis_full_inventory.py \
             tests/test_probe_vrm_inventory.py -q
 
-      - name: Seed researched identities before API enrichment
+      - name: Compile research and seed identities before API enrichment
         run: |
-          python scripts/materialize_catalog_research.py
+          python scripts/build_catalog_research_store.py \
+            --output data/catalog_research_merged.json
+          python scripts/materialize_catalog_research.py \
+            --research data/catalog_research_merged.json
           python scripts/reconcile_markdown_catalog_sources.py \
             --output data/markdown_source_reconciliation.json
 
@@ -188,6 +198,7 @@ jobs:
       - name: Exhaust every Moralis collection cursor for all VRM links
         run: |
           python scripts/enumerate_moralis_vrm_inventory.py \
+            --research data/catalog_research_merged.json \
             --output data/moralis_full_vrm_inventory.json \
             --tiers A,B,C \
             --page-size 100 \
@@ -217,9 +228,11 @@ jobs:
 
       - name: Merge, probe and materialize VRM inventory facts
         run: |
-          python scripts/materialize_catalog_research.py
+          python scripts/materialize_catalog_research.py \
+            --research data/catalog_research_merged.json
           python scripts/materialize_short_descriptions.py
           python scripts/export_vrm_inventory.py \
+            --research data/catalog_research_merged.json \
             --moralis-inventory data/moralis_full_vrm_inventory.json \
             --output static/data/vrm-inventory.json
           python scripts/probe_vrm_inventory.py \
@@ -231,12 +244,14 @@ jobs:
             --inventory static/data/vrm-inventory.json \
             --probe data/vrm_inventory_probe.json
           python scripts/export_vrm_inventory.py \
+            --research data/catalog_research_merged.json \
             --moralis-inventory data/moralis_full_vrm_inventory.json \
             --output static/data/vrm-inventory.json
 
       - name: Measure every literal collection requirement
         run: |
           python scripts/audit_catalog_completeness.py \
+            --research data/catalog_research_merged.json \
             --tiers A,B,C,ARWEAVE \
             --output data/catalog_completeness_report.json
           python scripts/enforce_catalog_acceptance.py \
@@ -285,6 +300,7 @@ jobs:
         with:
           name: catalog-completeness-evidence
           path: |
+            data/catalog_research_merged.json
             data/catalog_completeness_report.json
             data/catalog_acceptance.json
             data/catalog_research_queue.json
@@ -307,6 +323,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
             data/vrm_index.db \
+            data/catalog_research_merged.json \
             data/catalog_completeness_report.json \
             data/catalog_acceptance.json \
             data/catalog_research_queue.json \
