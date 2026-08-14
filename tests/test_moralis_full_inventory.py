@@ -14,8 +14,11 @@ class FakeMoralis:
 
     async def collection_nfts(self, chain, contract, *, limit=100, cursor=None):
         self.calls.append((chain, contract, limit, cursor))
-        key = cursor or "first"
-        return self.pages[key]
+        cursor_key = cursor or "first"
+        contract_key = (contract, cursor_key)
+        if contract_key in self.pages:
+            return self.pages[contract_key]
+        return self.pages[cursor_key]
 
 
 def nft(token_id, model_url=None):
@@ -157,3 +160,38 @@ def test_repeated_cursor_is_error_not_infinite_loop():
 
     assert "repeated cursor" in result["error"]
     assert result["metadataComplete"] is False
+
+
+def test_multi_contract_collection_cannot_pass_when_a_migration_contract_is_incomplete():
+    primary = "0x0000000000000000000000000000000000000001"
+    migrated = "0x0000000000000000000000000000000000000002"
+    collection = row(
+        avatar_count=1,
+        total_supply=1,
+        max_supply=1,
+        contracts=[
+            {"address": primary, "chain": "ethereum", "is_primary": True},
+            {"address": migrated, "chain": "ethereum", "is_primary": False},
+        ],
+    )
+    client = FakeMoralis(
+        {
+            (primary, "first"): {
+                "total": 1,
+                "cursor": None,
+                "result": [nft(1, "https://cdn.test/primary.vrm")],
+            },
+            (migrated, "first"): {
+                "total": 1,
+                "cursor": None,
+                "result": [nft(1)],
+            },
+        }
+    )
+
+    result = asyncio.run(scan_collection(client, collection))
+
+    assert result["contractsScanned"] == 2
+    assert result["metadataComplete"] is False
+    assert result["tokensMissingVrmLinks"] == 1
+    assert {call[1] for call in client.calls} == {primary, migrated}
