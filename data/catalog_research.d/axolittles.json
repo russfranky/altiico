@@ -69,6 +69,32 @@
       }
     ]
   },
+  "surviving_3d_assets": {
+    "value": [
+      "fbx"
+    ],
+    "state": "surviving_public_handoff",
+    "summary": "The surviving public Axoquarium/Unity handoff contains Axolittles-specific FBX model assets. A recursive repository-tree inspection found no .vrm or .glb paths, and the repository exposes no GitHub release artifacts. This is format evidence for the surviving handoff only; it is not proof that a native VRM release never existed historically.",
+    "evidence": [
+      {
+        "kind": "official_governance_handoff",
+        "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+        "note": "The original team states that Axoquarium 3D models and code were included in the community handoff."
+      },
+      {
+        "kind": "public_handoff_repository_tree",
+        "source": "https://github.com/AxoEngineers/axolittles-client",
+        "observed_at": "2026-08-14",
+        "note": "Recursive Assets tree contains many .fbx model paths, including Axolittles-specific assets; no .vrm or .glb paths were found in the tree inspection."
+      },
+      {
+        "kind": "public_handoff_repository_releases",
+        "source": "https://github.com/AxoEngineers/axolittles-client/releases",
+        "observed_at": "2026-08-14",
+        "note": "GitHub Releases returned no release artifacts, so no release-packaged VRM or GLB evidence was recovered there."
+      }
+    ]
+  },
   "project_status": {
     "value": "dormant",
     "state": "dormant",
