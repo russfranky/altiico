@@ -1,0 +1,98 @@
+name: Catalog completeness research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/catalog-completeness-contract]
+    paths:
+      - scripts/audit_catalog_completeness.py
+      - tests/test_catalog_completeness.py
+      - data/catalog_research.json
+      - .github/workflows/catalog-completeness-research.yml
+
+permissions:
+  contents: write
+
+env:
+  OPENSEA_API_KEY: ${{ secrets.OPENSEA_API_KEY }}
+
+concurrency:
+  group: catalog-completeness-research-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  research:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Require real OpenSea credential
+        run: test -n "$OPENSEA_API_KEY"
+
+      - name: Verify completeness contract
+        run: |
+          python -m py_compile scripts/audit_catalog_completeness.py
+          python -m pytest tests/test_catalog_completeness.py -q
+
+      - name: Refresh authoritative collection identity and media
+        run: python scripts/enrich_opensea.py --meta-only --force
+
+      - name: Measure every required collection field
+        run: |
+          python scripts/audit_catalog_completeness.py \
+            --output data/catalog_completeness_report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('data/catalog_completeness_report.json').read_text())
+          print(json.dumps(report['summary'],indent=2))
+          worst=sorted(report['summary']['missingByField'].items(),key=lambda item:(-item[1],item[0]))
+          print('largest gaps:')
+          for field,count in worst:
+              print(f'  {field}: {count}')
+          PY
+
+      - name: Rebuild one coherent public snapshot
+        run: |
+          python scripts/export_hubzz_manifest.py --validate
+          python scripts/export_avatars_registry.py
+          python scripts/export_hubzz_staging.py --validate
+          python scripts/build_catalog.py
+
+      - name: Verify repository after API refresh
+        run: |
+          python scripts/verify_catalog_consistency.py
+          python -m pytest tests/ -q
+          node tests/catalog-performance.mjs
+          node tests/catalog-ux.mjs
+          sqlite3 data/vrm_index.db 'PRAGMA foreign_keys=ON; PRAGMA integrity_check; PRAGMA foreign_key_check;'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-completeness-report
+          path: data/catalog_completeness_report.json
+          retention-days: 30
+
+      - name: Commit refreshed API evidence and completeness report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/vrm_index.db data/catalog_completeness_report.json static/data static/sw.js docs/hubzz-prealpha-staging.md
+          if git diff --cached --quiet; then
+            echo 'Catalog completeness evidence already current.'
+            exit 0
+          fi
+          git commit -m 'Refresh catalog completeness evidence [skip ci]'
+          git push origin HEAD:${GITHUB_REF_NAME}
