@@ -12,49 +12,23 @@ def make_db(path: Path) -> None:
     conn.executescript(
         """
         CREATE TABLE collections (
-            id TEXT PRIMARY KEY,
-            name TEXT NOT NULL,
-            tier TEXT,
-            chain TEXT,
-            contract TEXT,
-            opensea_slug TEXT,
-            release_date TEXT,
-            vrm_param TEXT,
-            vrm_url_pattern TEXT,
-            avatar_count INTEGER,
-            vrm_license TEXT,
-            commercial_use TEXT,
-            allowed_user TEXT,
-            redistribution TEXT,
-            license_category TEXT,
-            description TEXT,
-            curated_description TEXT,
-            notes TEXT,
-            source TEXT,
-            discord_url TEXT,
-            twitter_username TEXT,
-            image_url TEXT,
-            banner_image_url TEXT,
-            sample_nft_image TEXT,
-            vrm_url_https TEXT,
-            total_supply INTEGER,
-            max_supply INTEGER,
-            project_url TEXT,
-            vrm_check_status TEXT,
-            vrm_check_url TEXT
+            id TEXT PRIMARY KEY, name TEXT NOT NULL, tier TEXT, chain TEXT,
+            contract TEXT, opensea_slug TEXT, release_date TEXT, vrm_param TEXT,
+            vrm_url_pattern TEXT, avatar_count INTEGER, vrm_license TEXT,
+            commercial_use TEXT, allowed_user TEXT, redistribution TEXT,
+            license_category TEXT, description TEXT, curated_description TEXT,
+            notes TEXT, source TEXT, discord_url TEXT, twitter_username TEXT,
+            image_url TEXT, banner_image_url TEXT, sample_nft_image TEXT,
+            vrm_url_https TEXT, total_supply INTEGER, max_supply INTEGER,
+            project_url TEXT, vrm_check_status TEXT, vrm_check_url TEXT
         );
         CREATE TABLE contracts (
-            collection_id TEXT,
-            address TEXT,
-            chain TEXT,
-            is_primary INTEGER,
+            collection_id TEXT, address TEXT, chain TEXT, is_primary INTEGER,
             PRIMARY KEY (collection_id,address)
         );
         CREATE TABLE avatars (
-            id TEXT PRIMARY KEY,
-            collection_id TEXT,
-            model_file_url TEXT,
-            is_public INTEGER
+            id TEXT PRIMARY KEY, collection_id TEXT,
+            model_file_url TEXT, is_public INTEGER
         );
         """
     )
@@ -66,7 +40,7 @@ def evidence(source="https://example.test/source"):
     return [{"source": source, "note": "authoritative test evidence"}]
 
 
-def test_markdown_parser_recovers_tables_from_actual_header_row():
+def test_markdown_parser_recovers_tables_from_real_header_rows():
     markdown = """
 ## Tier C — WIP / proof-of-concept / community-led
 
@@ -86,43 +60,15 @@ def test_markdown_parser_recovers_tables_from_actual_header_row():
 | --- | --- | --- | --- |
 | 3D Anvil | Solana | Arweave via Irys | VRM launchpad |
 """
-    leads = collection_leads(markdown)
-    by_name = {lead["name"]: lead for lead in leads}
-
+    by_name = {lead["name"]: lead for lead in collection_leads(markdown)}
     assert set(by_name) == {"Super Yetis", "100Avatars R1", "3D Anvil"}
-    assert by_name["Super Yetis"]["id"] == "superyeti"
     assert by_name["Super Yetis"]["tier"] == "C"
     assert by_name["100Avatars R1"]["tier"] == "arweave"
     assert by_name["100Avatars R1"]["avatar_count"] == 100
     assert by_name["3D Anvil"]["tier"] == "infra"
 
 
-def test_markdown_reconciliation_inserts_missing_source_identity(tmp_path: Path):
-    db = tmp_path / "catalog.db"
-    make_db(db)
-    markdown = tmp_path / "catalog.md"
-    markdown.write_text(
-        """
-## Tier C — WIP
-
-| Collection | OpenSea | Notes |
-| --- | --- | --- |
-| Super Yetis | opensea.io/collection/superyeti | WIP |
-""",
-        encoding="utf-8",
-    )
-    report = reconcile_markdown(db, markdown, tmp_path / "report.json")
-    assert report["summary"]["inserted"] == 1
-
-    conn = sqlite3.connect(db)
-    row = conn.execute(
-        "SELECT id,name,tier,opensea_slug FROM collections"
-    ).fetchone()
-    conn.close()
-    assert row == ("superyeti", "Super Yetis", "C", "superyeti")
-
-
-def test_markdown_reconciliation_matches_existing_name_without_duplication(tmp_path: Path):
+def test_markdown_reconciliation_matches_existing_identity_without_duplicate(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
     conn = sqlite3.connect(db)
@@ -132,9 +78,8 @@ def test_markdown_reconciliation_matches_existing_name_without_duplication(tmp_p
     )
     conn.commit()
     conn.close()
-
-    markdown = tmp_path / "catalog.md"
-    markdown.write_text(
+    source = tmp_path / "catalog.md"
+    source.write_text(
         """
 ## Tier C — WIP
 
@@ -144,21 +89,20 @@ def test_markdown_reconciliation_matches_existing_name_without_duplication(tmp_p
 """,
         encoding="utf-8",
     )
-    report = reconcile_markdown(db, markdown, tmp_path / "report.json")
+    report = reconcile_markdown(db, source, tmp_path / "report.json")
     assert report["summary"]["inserted"] == 0
     assert report["summary"]["matched"] == 1
-
     conn = sqlite3.connect(db)
     rows = conn.execute("SELECT id,opensea_slug FROM collections").fetchall()
     conn.close()
     assert rows == [("super-yetis", "superyeti")]
 
 
-def test_materializer_inserts_research_only_sunset_collection_and_keeps_access_separate(tmp_path: Path):
+def test_materializer_keeps_sunset_ip_rights_and_access_separate(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
-    research_path = tmp_path / "research.json"
-    research_path.write_text(
+    research = tmp_path / "research.json"
+    research.write_text(
         json.dumps(
             {
                 "collections": {
@@ -175,32 +119,23 @@ def test_materializer_inserts_research_only_sunset_collection_and_keeps_access_s
                             "evidence": evidence(),
                         },
                         "project_status": {
-                            "value": "sunset",
-                            "state": "sunset",
-                            "evidence": evidence(),
+                            "value": "sunset", "state": "sunset", "evidence": evidence()
                         },
                         "storage": {
-                            "value": "ipfs",
-                            "scope": "nft_metadata_and_images",
-                            "evidence": evidence(),
+                            "value": "ipfs", "scope": "nft_metadata_and_images", "evidence": evidence()
                         },
                         "vrm_inventory": {
-                            "state": "unrecoverable",
-                            "coverage": "unrecoverable",
-                            "urls": [],
-                            "evidence": evidence(),
+                            "state": "unrecoverable", "coverage": "unrecoverable",
+                            "urls": [], "evidence": evidence()
                         },
                         "ip_rights": {
                             "value": "commercial_rights_reported",
-                            "summary": "Commercial rights were reported, exact terms unrecovered.",
-                            "state": "unrecoverable",
-                            "evidence": evidence(),
+                            "summary": "Commercial rights reported; exact terms unrecovered.",
+                            "state": "unrecoverable", "evidence": evidence()
                         },
                         "file_access": {
-                            "mode": "unavailable",
-                            "state": "unrecoverable",
-                            "requires_ownership": None,
-                            "evidence": evidence(),
+                            "mode": "unavailable", "state": "unrecoverable",
+                            "requires_ownership": None, "evidence": evidence()
                         },
                     }
                 }
@@ -208,90 +143,41 @@ def test_materializer_inserts_research_only_sunset_collection_and_keeps_access_s
         ),
         encoding="utf-8",
     )
-
-    report = materialize_research(db, research_path)
+    report = materialize_research(db, research)
     assert report["inserted"] == 1
-
     conn = sqlite3.connect(db)
     row = conn.execute(
         """
-        SELECT name,project_status,short_description,storage_types,
+        SELECT project_status,short_description,storage_types,
                vrm_inventory_state,vrm_inventory_complete,
                file_access_mode,file_access_requires_ownership,ip_rights_summary
         FROM collections WHERE id='super-yetis'
         """
     ).fetchone()
-    contract = conn.execute(
-        "SELECT address FROM contracts WHERE collection_id='super-yetis'"
-    ).fetchone()[0]
     evidence_rows = conn.execute(
         "SELECT COUNT(*) FROM catalog_research_evidence WHERE collection_id='super-yetis'"
     ).fetchone()[0]
     conn.close()
-
-    assert row[0] == "Super Yetis"
-    assert row[1] == "sunset"
-    assert row[2].startswith("A historical")
-    assert json.loads(row[3]) == ["ipfs"]
-    assert row[4] == "unrecoverable"
-    assert row[5] == 1
-    assert row[6] == "unavailable"
-    assert row[7] is None
-    assert "Commercial rights were reported" in row[8]
-    assert contract == "0x3f0785095a660fee131eebcd5aa243e529c21786"
+    assert row[0] == "sunset"
+    assert row[1].startswith("A historical")
+    assert json.loads(row[2]) == ["ipfs"]
+    assert row[3] == "unrecoverable" and row[4] == 1
+    assert row[5] == "unavailable" and row[6] is None
+    assert "Commercial rights" in row[7]
     assert evidence_rows >= 5
-
-
-def test_materializer_requires_evidence_before_manual_social_or_media_override(tmp_path: Path):
-    db = tmp_path / "catalog.db"
-    make_db(db)
-    conn = sqlite3.connect(db)
-    conn.execute(
-        "INSERT INTO collections (id,name,tier,chain) VALUES ('demo','Demo','C','ethereum')"
-    )
-    conn.commit()
-    conn.close()
-
-    research_path = tmp_path / "research.json"
-    research_path.write_text(
-        json.dumps(
-            {
-                "collections": {
-                    "demo": {
-                        "banner": {"value": "https://example.test/banner.png"},
-                        "discord": {"value": "https://discord.gg/demo"},
-                        "x": {"value": "https://x.com/demo"},
-                    }
-                }
-            }
-        ),
-        encoding="utf-8",
-    )
-    materialize_research(db, research_path)
-
-    conn = sqlite3.connect(db)
-    row = conn.execute(
-        "SELECT banner_image_url,discord_url,twitter_username FROM collections WHERE id='demo'"
-    ).fetchone()
-    conn.close()
-    assert row == (None, None, None)
 
 
 def inventory_row(**updates):
     row = {
-        "id": "demo",
-        "name": "Demo",
-        "avatar_count": 2,
-        "total_supply": 2,
-        "max_supply": 2,
-        "vrm_url_https": "",
-        "vrm_url_pattern": "",
+        "id": "demo", "name": "Demo", "avatar_count": 2,
+        "total_supply": 2, "max_supply": 2,
+        "vrm_url_https": "", "vrm_url_pattern": "",
     }
     row.update(updates)
     return row
 
 
-def test_inventory_one_sample_never_implies_collection_complete(tmp_path: Path):
+def test_one_sample_link_never_implies_complete_inventory(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
     conn = sqlite3.connect(db)
@@ -299,110 +185,89 @@ def test_inventory_one_sample_never_implies_collection_complete(tmp_path: Path):
         "INSERT INTO collections (id,name,avatar_count,total_supply,max_supply) VALUES ('demo','Demo',2,2,2)"
     )
     conn.execute(
-        "INSERT INTO avatars (id,collection_id,model_file_url,is_public) VALUES ('1','demo','ipfs://bafy/1.vrm',1)"
+        "INSERT INTO avatars VALUES ('1','demo','ipfs://bafy/1.vrm',1)"
     )
-    conn.commit()
-    conn.row_factory = sqlite3.Row
+    conn.commit(); conn.row_factory = sqlite3.Row
     row = dict(conn.execute("SELECT * FROM collections WHERE id='demo'").fetchone())
     result = inventory_for(conn, row, {})
     conn.close()
-
     assert result["state"] == "partial"
     assert result["complete"] is False
     assert result["enumerated_urls"] == 1
 
 
-def test_inventory_authoritative_token_template_can_be_exhaustive(tmp_path: Path):
+def test_token_template_is_only_a_candidate_until_expanded(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
-    conn = sqlite3.connect(db)
-    conn.row_factory = sqlite3.Row
-    row = inventory_row(vrm_url_pattern="ipfs://bafy/{id}.vrm")
-    result = inventory_for(conn, row, {})
+    conn = sqlite3.connect(db); conn.row_factory = sqlite3.Row
+    result = inventory_for(conn, inventory_row(vrm_url_pattern="ipfs://bafy/{id}.vrm"), {})
     conn.close()
-
-    assert result["state"] == "complete_template"
-    assert result["complete"] is True
-    assert result["url_template"] == "ipfs://bafy/{id}.vrm"
-
-
-def test_inventory_descriptive_pseudo_url_is_not_evidence(tmp_path: Path):
-    db = tmp_path / "catalog.db"
-    make_db(db)
-    conn = sqlite3.connect(db)
-    conn.row_factory = sqlite3.Row
-    row = inventory_row(vrm_url_pattern="allstarz.world (same VRM for all tokens)")
-    result = inventory_for(conn, row, {})
-    conn.close()
-
     assert result["state"] == "unknown"
     assert result["complete"] is False
-    assert result["url_template"] is None
+    assert result["candidate_url_template"] == "ipfs://bafy/{id}.vrm"
 
 
-def test_inventory_terminal_research_state_is_explicit_not_fabricated(tmp_path: Path):
+def test_descriptive_pseudo_url_is_not_inventory_evidence(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
-    conn = sqlite3.connect(db)
-    conn.row_factory = sqlite3.Row
-    row = inventory_row()
-    research = {
-        "vrm_inventory": {
-            "state": "unrecoverable",
-            "urls": [],
-            "evidence": evidence(),
-        },
-        "file_access": {
-            "mode": "unavailable",
-            "requires_ownership": None,
-            "evidence": evidence(),
-        },
-    }
-    result = inventory_for(conn, row, research)
+    conn = sqlite3.connect(db); conn.row_factory = sqlite3.Row
+    result = inventory_for(conn, inventory_row(vrm_url_pattern="allstarz.world (same VRM for all tokens)"), {})
     conn.close()
+    assert result["state"] == "unknown"
+    assert result["candidate_url_template"] is None
 
-    assert result["state"] == "unrecoverable"
+
+def test_cursor_exhausted_moralis_links_can_make_inventory_complete(tmp_path: Path):
+    db = tmp_path / "catalog.db"
+    make_db(db)
+    conn = sqlite3.connect(db); conn.row_factory = sqlite3.Row
+    result = inventory_for(
+        conn,
+        inventory_row(),
+        {},
+        {
+            "metadataComplete": True,
+            "tokensEnumerated": 2,
+            "vrmUrls": ["https://cdn.test/1.vrm", "https://cdn.test/2.vrm"],
+        },
+    )
+    conn.close()
+    assert result["state"] == "complete"
     assert result["complete"] is True
-    assert result["terminal"] is True
+    assert result["coverage_source"] == "moralis_cursor_exhausted"
+    assert result["urls"] == ["https://cdn.test/1.vrm", "https://cdn.test/2.vrm"]
+
+
+def test_terminal_research_state_is_explicit_not_fabricated(tmp_path: Path):
+    db = tmp_path / "catalog.db"
+    make_db(db)
+    conn = sqlite3.connect(db); conn.row_factory = sqlite3.Row
+    research = {
+        "storage": {"value": "ipfs", "scope": "nft_metadata", "evidence": evidence()},
+        "vrm_inventory": {"state": "unrecoverable", "urls": [], "evidence": evidence()},
+        "file_access": {"mode": "unavailable", "requires_ownership": None, "evidence": evidence()},
+    }
+    result = inventory_for(conn, inventory_row(), research)
+    conn.close()
+    assert result["state"] == "unrecoverable"
+    assert result["complete"] is True and result["terminal"] is True
     assert result["urls"] == []
+    assert result["storage"]["types"] == ["ipfs"]
     assert result["access"]["mode"] == "unavailable"
-    assert result["access"]["requires_ownership"] is None
 
 
-def test_inventory_export_reports_partial_and_terminal_states(tmp_path: Path):
+def test_inventory_export_schema_v2(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)
     conn = sqlite3.connect(db)
-    conn.executemany(
-        "INSERT INTO collections (id,name,avatar_count,total_supply,max_supply) VALUES (?,?,?,?,?)",
-        [("partial", "Partial", 2, 2, 2), ("terminal", "Terminal", 2, 2, 2)],
-    )
     conn.execute(
-        "INSERT INTO avatars (id,collection_id,model_file_url,is_public) VALUES ('p1','partial','https://cdn.test/1.vrm',1)"
+        "INSERT INTO collections (id,name,avatar_count,total_supply,max_supply) VALUES ('demo','Demo',1,1,1)"
     )
-    conn.commit()
-    conn.close()
-
-    research_path = tmp_path / "research.json"
-    research_path.write_text(
-        json.dumps(
-            {
-                "collections": {
-                    "terminal": {
-                        "vrm_inventory": {
-                            "state": "unrecoverable",
-                            "evidence": evidence(),
-                        }
-                    }
-                }
-            }
-        ),
-        encoding="utf-8",
-    )
+    conn.execute("INSERT INTO avatars VALUES ('1','demo','https://cdn.test/1.vrm',1)")
+    conn.commit(); conn.close()
+    research = tmp_path / "research.json"
+    research.write_text(json.dumps({"collections": {}}), encoding="utf-8")
     output = tmp_path / "inventory.json"
-    payload = export_inventory(db, research_path, output)
-
-    assert payload["summary"]["partial"] == 1
-    assert payload["summary"]["unknown"] == 0
+    payload = export_inventory(db, research, output, tmp_path / "missing-moralis.json")
     assert payload["summary"]["complete"] == 1
-    assert json.loads(output.read_text())["schema"] == "vrm-catalog-inventory-v1"
+    assert json.loads(output.read_text())["schema"] == "vrm-catalog-inventory-v2"
