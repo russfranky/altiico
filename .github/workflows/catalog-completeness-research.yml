@@ -8,6 +8,8 @@ on:
       - scripts/audit_catalog_completeness.py
       - scripts/enforce_catalog_acceptance.py
       - scripts/materialize_catalog_research.py
+      - scripts/materialize_short_descriptions.py
+      - scripts/materialize_public_vrm_access.py
       - scripts/export_vrm_inventory.py
       - scripts/export_avatars_registry.py
       - scripts/reconcile_markdown_catalog_sources.py
@@ -18,6 +20,8 @@ on:
       - tests/test_catalog_acceptance.py
       - tests/test_catalog_research_pipeline.py
       - tests/test_export_avatars_registry_access.py
+      - tests/test_materialize_short_descriptions.py
+      - tests/test_materialize_public_vrm_access.py
       - tests/test_moralis_full_inventory.py
       - tests/test_probe_vrm_inventory.py
       - data/catalog_research.json
@@ -72,6 +76,8 @@ jobs:
             scripts/audit_catalog_completeness.py \
             scripts/enforce_catalog_acceptance.py \
             scripts/materialize_catalog_research.py \
+            scripts/materialize_short_descriptions.py \
+            scripts/materialize_public_vrm_access.py \
             scripts/export_vrm_inventory.py \
             scripts/export_avatars_registry.py \
             scripts/reconcile_markdown_catalog_sources.py \
@@ -83,6 +89,8 @@ jobs:
             tests/test_catalog_acceptance.py \
             tests/test_catalog_research_pipeline.py \
             tests/test_export_avatars_registry_access.py \
+            tests/test_materialize_short_descriptions.py \
+            tests/test_materialize_public_vrm_access.py \
             tests/test_moralis_full_inventory.py \
             tests/test_probe_vrm_inventory.py -q
 
@@ -92,8 +100,10 @@ jobs:
           python scripts/reconcile_markdown_catalog_sources.py \
             --output data/markdown_source_reconciliation.json
 
-      - name: Refresh OpenSea identity, media and social metadata with real key
-        run: python scripts/enrich_opensea.py --meta-only --force
+      - name: Refresh OpenSea identity, media and socials with real key
+        run: |
+          python scripts/enrich_opensea.py --meta-only --force
+          python scripts/materialize_short_descriptions.py
 
       - name: Refresh sampled Moralis source evidence with real key
         run: |
@@ -201,9 +211,10 @@ jobs:
             --tokens 25 --concurrency 3 --collection-concurrency 3
           python scripts/build_authoritative_consensus.py
 
-      - name: Merge explicit links and structurally probe every VRM URL
+      - name: Merge, probe and materialize VRM inventory facts
         run: |
           python scripts/materialize_catalog_research.py
+          python scripts/materialize_short_descriptions.py
           python scripts/export_vrm_inventory.py \
             --moralis-inventory data/moralis_full_vrm_inventory.json \
             --output static/data/vrm-inventory.json
@@ -212,6 +223,12 @@ jobs:
             --output data/vrm_inventory_probe.json \
             --workers 4 \
             --timeout 20
+          python scripts/materialize_public_vrm_access.py \
+            --inventory static/data/vrm-inventory.json \
+            --probe data/vrm_inventory_probe.json
+          python scripts/export_vrm_inventory.py \
+            --moralis-inventory data/moralis_full_vrm_inventory.json \
+            --output static/data/vrm-inventory.json
 
       - name: Measure every literal collection requirement
         run: |
