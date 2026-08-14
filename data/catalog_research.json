@@ -122,6 +122,7 @@
       },
       "ip_rights": {
         "value": "commercial_rights_reported",
+        "state": "unrecoverable",
         "summary": "A contemporaneous 3D-avatar catalog reported commercial rights enabled for Super Yeti holders; primary project license/terms text has not been recovered, so the exact scope remains unverified.",
         "confidence": "medium",
         "evidence": [
