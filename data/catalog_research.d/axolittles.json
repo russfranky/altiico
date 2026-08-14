@@ -9,7 +9,7 @@
     "opensea_slug": "axolittles",
     "project_url": "https://axolittles.io/",
     "source": "official+etherscan+curated",
-    "notes": "Community/DAO-transitioned collection. Historical Axoquarium 3D models existed, so the catalog must not mark the VRM inventory as terminal merely because no current exhaustive .vrm set has yet been proven."
+    "notes": "Community/DAO-transitioned collection. The surviving Axoquarium Unity handoff includes directly downloadable FBX character models whose Unity importer metadata proves humanoid/avatar rigging. The broader avatar inventory is therefore partial rather than unknown, while exhaustive enumeration remains open."
   },
   "discord": {
     "value": "https://discord.gg/axolittlesnft",
@@ -74,7 +74,7 @@
       "fbx"
     ],
     "state": "surviving_public_handoff",
-    "summary": "The surviving public Axoquarium/Unity handoff contains Axolittles-specific FBX model assets. A recursive repository-tree inspection found no .vrm or .glb paths, and the repository exposes no GitHub release artifacts. This is format evidence for the surviving handoff only; it is not proof that a native VRM release never existed historically.",
+    "summary": "The surviving public Axoquarium/Unity handoff contains Axolittles-specific FBX character assets. Recursive tree inspection found no .vrm or .glb paths. Importer metadata for inspected BaseModel FBXs includes skeletons, humanoid bone mappings and Unity avatar-generation settings, proving that at least part of the surviving FBX lane is rigged/avatar-ready rather than mesh-only. This does not prove that every FBX in the repository is rigged or that a native VRM release never existed historically.",
     "evidence": [
       {
         "kind": "official_governance_handoff",
@@ -83,15 +83,89 @@
       },
       {
         "kind": "public_handoff_repository_tree",
-        "source": "https://github.com/AxoEngineers/axolittles-client",
+        "source": "https://github.com/AxoEngineers/axolittles-client/tree/main/Assets/BundleAssets/BaseModel",
         "observed_at": "2026-08-14",
-        "note": "Recursive Assets tree contains many .fbx model paths, including Axolittles-specific assets; no .vrm or .glb paths were found in the tree inspection."
+        "note": "BaseModel tree contains directly stored FBX character assets including Adventurer.fbx and Angel.fbx with corresponding Unity .fbx.meta importer files."
+      },
+      {
+        "kind": "unity_humanoid_importer_metadata",
+        "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+        "observed_at": "2026-08-14",
+        "note": "Angel importer metadata maps joints to Hips, legs, feet, spine, chest, neck, head, shoulders, arms and hands and records animationType 3, avatarSetup 1 and automatic avatar mapping."
+      },
+      {
+        "kind": "unity_avatar_importer_metadata",
+        "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+        "observed_at": "2026-08-14",
+        "note": "Adventurer importer metadata contains a populated skeleton hierarchy and records animationType 3, avatarSetup 1 and automatic avatar mapping."
       },
       {
         "kind": "public_handoff_repository_releases",
         "source": "https://github.com/AxoEngineers/axolittles-client/releases",
         "observed_at": "2026-08-14",
         "note": "GitHub Releases returned no release artifacts, so no release-packaged VRM or GLB evidence was recovered there."
+      }
+    ]
+  },
+  "avatar_formats": {
+    "value": [
+      "fbx"
+    ],
+    "state": "verified_surviving_rigged_assets",
+    "note": "FBX now qualifies as a usable avatar format for Axolittles because inspected public handoff models carry explicit Unity humanoid/avatar rig metadata. This is stronger than extension-only format evidence and remains scoped to the inspected surviving assets.",
+    "evidence": [
+      {
+        "kind": "unity_humanoid_importer_metadata",
+        "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+        "observed_at": "2026-08-14",
+        "note": "HumanDescription contains explicit standard humanoid bone mappings; importer also records animationType 3 and avatarSetup 1."
+      },
+      {
+        "kind": "unity_avatar_importer_metadata",
+        "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+        "observed_at": "2026-08-14",
+        "note": "Importer contains a substantial skeleton hierarchy and records animationType 3, avatarSetup 1 and automatic avatar mapping."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "partial",
+    "coverage": "verified_rigged_fbx_examples_inventory_not_yet_exhaustive",
+    "assets": [
+      {
+        "url": "https://raw.githubusercontent.com/AxoEngineers/axolittles-client/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx",
+        "format": "fbx",
+        "rigged": true,
+        "rigging_evidence": [
+          {
+            "kind": "unity_avatar_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "Matching Unity importer metadata contains a populated skeleton and avatar-generation settings."
+          }
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AxoEngineers/axolittles-client/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx",
+        "format": "fbx",
+        "rigged": true,
+        "rigging_evidence": [
+          {
+            "kind": "unity_humanoid_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "Matching Unity importer metadata explicitly maps the skeleton to standard humanoid bones and records avatar-generation settings."
+          }
+        ]
+      }
+    ],
+    "note": "Two surviving public FBX avatars are now directly enumerable and evidence-backed as rigged. The BaseModel tree contains additional FBXs, so the lane stays partial until all qualifying FBXs are enumerated or a narrower exhaustive representation lane is established.",
+    "evidence": [
+      {
+        "kind": "public_handoff_repository_tree",
+        "source": "https://github.com/AxoEngineers/axolittles-client/tree/main/Assets/BundleAssets/BaseModel",
+        "observed_at": "2026-08-14",
+        "note": "Repository tree establishes that additional BaseModel FBXs remain to be classified and enumerated."
       }
     ]
   },
