@@ -6,7 +6,9 @@ on:
     branches: [agent/catalog-completeness-contract]
     paths:
       - scripts/audit_catalog_completeness.py
+      - scripts/audit_avatar_completeness.py
       - scripts/enforce_catalog_acceptance.py
+      - scripts/enforce_avatar_acceptance.py
       - scripts/build_catalog_research_queue.py
       - scripts/catalog_research_store.py
       - scripts/build_catalog_research_store.py
@@ -14,13 +16,20 @@ on:
       - scripts/materialize_short_descriptions.py
       - scripts/materialize_public_vrm_access.py
       - scripts/export_vrm_inventory.py
+      - scripts/export_avatar_inventory.py
+      - scripts/probe_avatar_inventory.py
       - scripts/export_avatars_registry.py
       - scripts/reconcile_markdown_catalog_sources.py
       - scripts/moralis_client.py
       - scripts/enumerate_moralis_vrm_inventory.py
       - scripts/probe_vrm_inventory.py
+      - scripts/openpage_asset_discovery.py
+      - scripts/discover_openpage_communities.py
       - tests/test_catalog_completeness.py
       - tests/test_catalog_acceptance.py
+      - tests/test_avatar_inventory.py
+      - tests/test_probe_avatar_inventory.py
+      - tests/test_avatar_acceptance.py
       - tests/test_catalog_research_queue.py
       - tests/test_catalog_research_store.py
       - tests/test_catalog_research_pipeline.py
@@ -29,8 +38,11 @@ on:
       - tests/test_materialize_public_vrm_access.py
       - tests/test_moralis_full_inventory.py
       - tests/test_probe_vrm_inventory.py
+      - tests/test_openpage_asset_discovery.py
+      - tests/test_discover_openpage_communities.py
       - data/catalog_research.json
       - data/catalog_research.d/**
+      - data/openpage_source_policy.json
       - data/vrm_collections.md
       - .github/workflows/catalog-completeness-research.yml
 
@@ -80,7 +92,9 @@ jobs:
         run: |
           python -m py_compile \
             scripts/audit_catalog_completeness.py \
+            scripts/audit_avatar_completeness.py \
             scripts/enforce_catalog_acceptance.py \
+            scripts/enforce_avatar_acceptance.py \
             scripts/build_catalog_research_queue.py \
             scripts/catalog_research_store.py \
             scripts/build_catalog_research_store.py \
@@ -88,14 +102,21 @@ jobs:
             scripts/materialize_short_descriptions.py \
             scripts/materialize_public_vrm_access.py \
             scripts/export_vrm_inventory.py \
+            scripts/export_avatar_inventory.py \
+            scripts/probe_avatar_inventory.py \
             scripts/export_avatars_registry.py \
             scripts/reconcile_markdown_catalog_sources.py \
             scripts/moralis_client.py \
             scripts/enumerate_moralis_vrm_inventory.py \
-            scripts/probe_vrm_inventory.py
+            scripts/probe_vrm_inventory.py \
+            scripts/openpage_asset_discovery.py \
+            scripts/discover_openpage_communities.py
           python -m pytest \
             tests/test_catalog_completeness.py \
             tests/test_catalog_acceptance.py \
+            tests/test_avatar_inventory.py \
+            tests/test_probe_avatar_inventory.py \
+            tests/test_avatar_acceptance.py \
             tests/test_catalog_research_queue.py \
             tests/test_catalog_research_store.py \
             tests/test_catalog_research_pipeline.py \
@@ -103,7 +124,9 @@ jobs:
             tests/test_materialize_short_descriptions.py \
             tests/test_materialize_public_vrm_access.py \
             tests/test_moralis_full_inventory.py \
-            tests/test_probe_vrm_inventory.py -q
+            tests/test_probe_vrm_inventory.py \
+            tests/test_openpage_asset_discovery.py \
+            tests/test_discover_openpage_communities.py -q
 
       - name: Compile research and seed identities before API enrichment
         run: |
@@ -226,7 +249,7 @@ jobs:
             --tokens 25 --concurrency 3 --collection-concurrency 3
           python scripts/build_authoritative_consensus.py
 
-      - name: Merge, probe and materialize VRM inventory facts
+      - name: Merge and probe VRM plus broader avatar inventory facts
         run: |
           python scripts/materialize_catalog_research.py \
             --research data/catalog_research_merged.json
@@ -247,17 +270,27 @@ jobs:
             --research data/catalog_research_merged.json \
             --moralis-inventory data/moralis_full_vrm_inventory.json \
             --output static/data/vrm-inventory.json
+          python scripts/export_avatar_inventory.py \
+            --research data/catalog_research_merged.json \
+            --vrm-inventory static/data/vrm-inventory.json \
+            --output static/data/avatar-inventory.json
+          python scripts/probe_avatar_inventory.py \
+            --source static/data/avatar-inventory.json \
+            --output data/avatar_inventory_probe.json \
+            --workers 4 \
+            --timeout 20
 
       - name: Measure every literal collection requirement
         run: |
-          python scripts/audit_catalog_completeness.py \
+          python scripts/audit_avatar_completeness.py \
             --research data/catalog_research_merged.json \
+            --inventory static/data/avatar-inventory.json \
             --tiers A,B,C,ARWEAVE \
             --output data/catalog_completeness_report.json
-          python scripts/enforce_catalog_acceptance.py \
+          python scripts/enforce_avatar_acceptance.py \
             --report data/catalog_completeness_report.json \
-            --inventory static/data/vrm-inventory.json \
-            --probe data/vrm_inventory_probe.json \
+            --inventory static/data/avatar-inventory.json \
+            --probe data/avatar_inventory_probe.json \
             --output data/catalog_acceptance.json || true
           python scripts/build_catalog_research_queue.py \
             --acceptance data/catalog_acceptance.json \
@@ -310,11 +343,13 @@ jobs:
             data/moralis_model_discovery.json
             data/moralis_full_vrm_inventory.json
             data/vrm_inventory_probe.json
+            data/avatar_inventory_probe.json
             data/source_health.json
             data/etherscan_authority_report.json
             data/bitquery_evidence_report.json
             data/authoritative_consensus.json
             static/data/vrm-inventory.json
+            static/data/avatar-inventory.json
           retention-days: 30
 
       - name: Commit refreshed evidence and public catalog
@@ -333,6 +368,7 @@ jobs:
             data/moralis_model_discovery.json \
             data/moralis_full_vrm_inventory.json \
             data/vrm_inventory_probe.json \
+            data/avatar_inventory_probe.json \
             data/source_health.json \
             data/etherscan_authority_report.json \
             data/bitquery_evidence_report.json \
@@ -347,8 +383,8 @@ jobs:
 
       - name: Hard acceptance gate — every literal requirement must pass
         run: |
-          python scripts/enforce_catalog_acceptance.py \
+          python scripts/enforce_avatar_acceptance.py \
             --report data/catalog_completeness_report.json \
-            --inventory static/data/vrm-inventory.json \
-            --probe data/vrm_inventory_probe.json \
+            --inventory static/data/avatar-inventory.json \
+            --probe data/avatar_inventory_probe.json \
             --output data/catalog_acceptance.json
