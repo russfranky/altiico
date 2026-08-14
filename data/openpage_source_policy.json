@@ -5,9 +5,32 @@
     "current_domain": "openpage.fun",
     "legacy_domain": "op.xyz",
     "current_docs": "https://docs.openpage.fun/",
-    "legacy_docs": "https://docs.op.xyz/"
+    "legacy_docs": "https://docs.op.xyz/",
+    "documented_api_base": "https://api.op.xyz/v1",
+    "api_base_configurable": true
   },
   "purpose": "High-signal avatar discovery and runtime-representation evidence for catalog collections that use or onboard through OpenPage.",
+  "documented_endpoints": {
+    "communities": {
+      "method": "GET",
+      "path": "/community",
+      "authentication": "X-Api-Key",
+      "pagination": "page + perPage",
+      "catalog_value": "description, X, Discord, website, logo and source timestamps; identity remains unbound until explicit mapping"
+    },
+    "collection_metadata": {
+      "method": "GET",
+      "path": "/m/c/{id}",
+      "authentication": "none shown in documentation",
+      "catalog_value": "collection metadata lead"
+    },
+    "mml_metadata": {
+      "method": "GET",
+      "path": "/m/mml/{id}",
+      "authentication": "none shown in documentation",
+      "catalog_value": "MML/runtime definition lead; inspect referenced model sources without inferring VRM"
+    }
+  },
   "asset_lanes": {
     "mml": {
       "role": "runtime_definition",
@@ -42,9 +65,12 @@
     "requires_exhaustive_collection_inventory": true
   },
   "pipeline": {
-    "adapter": "scripts/openpage_asset_discovery.py",
-    "tests": "tests/test_openpage_asset_discovery.py",
-    "default_output": "data/openpage_asset_discovery.json"
+    "asset_adapter": "scripts/openpage_asset_discovery.py",
+    "asset_tests": "tests/test_openpage_asset_discovery.py",
+    "asset_default_output": "data/openpage_asset_discovery.json",
+    "community_adapter": "scripts/discover_openpage_communities.py",
+    "community_tests": "tests/test_discover_openpage_communities.py",
+    "community_default_output": "data/openpage_communities.json"
   },
   "curator_note": "OpenPage is expected to become an important onboarding source for collections using MML. Treat the source as additive discovery coverage, never as a relaxation of the literal catalog completeness bar."
 }
