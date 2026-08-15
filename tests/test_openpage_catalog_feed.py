@@ -49,6 +49,21 @@ def test_existing_known_catalog_id_is_preserved():
     assert diagnostics == []
 
 
+def test_invalid_catalog_alias_is_removed_before_other_binding_attempts():
+    known, contracts, bindings = indexes()
+    row, method, diagnostics = bind_record(
+        {"catalog_id": "not-a-catalog-id", "name": "Alpha"},
+        known_catalog_ids=known,
+        contracts=contracts,
+        explicit_bindings=bindings,
+    )
+    assert "catalogId" not in row
+    assert "catalog_id" not in row
+    assert "collection_id" not in row
+    assert method == "unbound"
+    assert diagnostics == ["unknown_catalog_id:not-a-catalog-id", "no_explicit_binding"]
+
+
 def test_nested_contract_address_creates_explicit_binding():
     known, contracts, bindings = indexes()
     row, method, diagnostics = bind_record(
