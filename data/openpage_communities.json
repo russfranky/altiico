@@ -3,7 +3,7 @@
   "generatedAt": null,
   "source": {
     "name": "OpenPage",
-    "apiBase": "https://api.op.xyz/v1",
+    "apiBase": "https://api.openpage.fun/v1",
     "endpoint": "/community"
   },
   "policy": "Seed snapshot only. A credentialed workflow refresh replaces this file with paginated OpenPage community results. No catalog identity binding is implied by community display names.",
