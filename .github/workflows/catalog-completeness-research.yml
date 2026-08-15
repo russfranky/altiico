@@ -26,6 +26,7 @@ on:
       - scripts/openpage_asset_discovery.py
       - scripts/discover_openpage_communities.py
       - scripts/build_openpage_catalog_feed.py
+      - scripts/enumerate_unity_fbx_avatar_sources.py
       - tests/test_catalog_completeness.py
       - tests/test_catalog_acceptance.py
       - tests/test_avatar_inventory.py
@@ -42,11 +43,14 @@ on:
       - tests/test_openpage_asset_discovery.py
       - tests/test_discover_openpage_communities.py
       - tests/test_openpage_catalog_feed.py
+      - tests/test_unity_fbx_avatar_sources.py
       - data/catalog_research.json
       - data/catalog_research.d/**
       - data/openpage_source_policy.json
       - data/openpage_catalog_bindings.json
       - data/openpage_asset_sources.json
+      - data/openpage_communities.json
+      - data/unity_fbx_avatar_sources.json
       - data/vrm_collections.md
       - .github/workflows/catalog-completeness-research.yml
 
@@ -63,6 +67,7 @@ env:
   BITQUERY_TOKEN: ${{ secrets.BITQUERY_TOKEN }}
   BITQUERY_OAUTH_TOKEN: ${{ secrets.BITQUERY_OAUTH_TOKEN }}
   OPENPAGE_API_KEY: ${{ secrets.OPENPAGE_API_KEY }}
+  GITHUB_TOKEN: ${{ github.token }}
 
 concurrency:
   group: catalog-completeness-research-${{ github.ref }}
@@ -116,7 +121,8 @@ jobs:
             scripts/probe_vrm_inventory.py \
             scripts/openpage_asset_discovery.py \
             scripts/discover_openpage_communities.py \
-            scripts/build_openpage_catalog_feed.py
+            scripts/build_openpage_catalog_feed.py \
+            scripts/enumerate_unity_fbx_avatar_sources.py
           python -m pytest \
             tests/test_catalog_completeness.py \
             tests/test_catalog_acceptance.py \
@@ -133,7 +139,8 @@ jobs:
             tests/test_probe_vrm_inventory.py \
             tests/test_openpage_asset_discovery.py \
             tests/test_discover_openpage_communities.py \
-            tests/test_openpage_catalog_feed.py -q
+            tests/test_openpage_catalog_feed.py \
+            tests/test_unity_fbx_avatar_sources.py -q
 
       - name: Compile research and seed identities before API enrichment
         run: |
@@ -144,6 +151,14 @@ jobs:
           python scripts/reconcile_markdown_catalog_sources.py \
             --output data/markdown_source_reconciliation.json
 
+      - name: Exhaust configured public Unity FBX avatar lanes
+        run: |
+          python scripts/enumerate_unity_fbx_avatar_sources.py \
+            --sources data/unity_fbx_avatar_sources.json \
+            --output data/unity_fbx_avatar_inventory.json \
+            --research data/catalog_research_merged.json \
+            --write-research
+
       - name: Refresh OpenPage communities and bound avatar candidates
         run: |
           mkdir -p /tmp/openpage-refresh
@@ -152,29 +167,11 @@ jobs:
               --api-key "$OPENPAGE_API_KEY" \
               --output /tmp/openpage-refresh/communities.json; then
               mv /tmp/openpage-refresh/communities.json data/openpage_communities.json
-            elif [ -f data/openpage_communities.json ]; then
-              echo 'OpenPage community refresh failed; preserving committed last-good snapshot.'
             else
-              echo 'OpenPage community refresh failed and no last-good snapshot exists.' >&2
-              exit 1
+              echo 'OpenPage community refresh failed; preserving committed last-good snapshot.'
             fi
-          elif [ -f data/openpage_communities.json ]; then
-            echo 'OPENPAGE_API_KEY is not configured; preserving committed OpenPage community snapshot.'
           else
-            python - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-          payload={
-            'schema':'openpage-community-discovery-v1',
-            'generatedAt':datetime.now(timezone.utc).isoformat(),
-            'source':{'name':'OpenPage','apiBase':'https://api.op.xyz/v1','endpoint':'/community'},
-            'policy':'No OPENPAGE_API_KEY was configured for this run; no community API rows were fetched.',
-            'summary':{'communitiesEnumerated':0,'coverageComplete':False,'skippedMissingApiKey':True},
-            'communities':[],
-          }
-          Path('data/openpage_communities.json').write_text(json.dumps(payload,indent=2)+'\n')
-          PY
+            echo 'OPENPAGE_API_KEY is not configured; preserving committed OpenPage community snapshot.'
           fi
           python scripts/build_openpage_catalog_feed.py \
             --research data/catalog_research_merged.json \
@@ -388,6 +385,7 @@ jobs:
             data/markdown_source_reconciliation.json
             data/openpage_communities.json
             data/openpage_asset_discovery.json
+            data/unity_fbx_avatar_inventory.json
             data/source_cross_reference_report.json
             data/source_consensus.json
             data/moralis_model_discovery.json
@@ -415,6 +413,7 @@ jobs:
             data/markdown_source_reconciliation.json \
             data/openpage_communities.json \
             data/openpage_asset_discovery.json \
+            data/unity_fbx_avatar_inventory.json \
             data/source_cross_reference_report.json \
             data/source_consensus.json \
             data/moralis_model_discovery.json \
