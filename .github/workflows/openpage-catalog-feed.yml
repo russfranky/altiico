@@ -79,7 +79,6 @@ jobs:
       - name: Refresh and measure the complete OpenPage avatar lane
         run: |
           python scripts/run_openpage_catalog_feed.py \
-            --api-key "$OPENPAGE_API_KEY" \
             --per-page 100 \
             --max-pages 0 \
             --workers 4 \
