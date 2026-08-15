@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Enumerate OpenPage communities as high-recall catalog research leads.
 
-The documented OpenPage API still uses ``https://api.op.xyz/v1`` after the
-OpenPage rebrand. The base URL is configurable so a future host migration does
-not require code changes.
+The current documented API base is ``https://api.openpage.fun/v1``. The base
+URL remains configurable through ``OPENPAGE_API_BASE`` or ``--api-base`` so a
+future host migration does not require code changes.
 
 Community results contain useful research fields such as description, X,
 Discord, website and logo. They are emitted as source evidence only. This script
@@ -23,7 +23,9 @@ from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUTPUT = ROOT / "data" / "openpage_communities.json"
-DEFAULT_API_BASE = os.environ.get("OPENPAGE_API_BASE", "https://api.op.xyz/v1")
+DEFAULT_API_BASE = os.environ.get(
+    "OPENPAGE_API_BASE", "https://api.openpage.fun/v1"
+)
 
 
 def now_iso() -> str:
@@ -75,7 +77,9 @@ def collect_communities(
         pages += 1
         raw_total = payload.get("total")
         try:
-            total_reported = int(raw_total) if raw_total is not None else total_reported
+            total_reported = (
+                int(raw_total) if raw_total is not None else total_reported
+            )
         except (TypeError, ValueError):
             pass
 
@@ -87,7 +91,9 @@ def collect_communities(
             if not isinstance(row, dict):
                 continue
             community_id = text(row.get("id"))
-            dedupe_key = community_id or json.dumps(row, sort_keys=True, ensure_ascii=False)
+            dedupe_key = community_id or json.dumps(
+                row, sort_keys=True, ensure_ascii=False
+            )
             if dedupe_key in seen_ids:
                 continue
             seen_ids.add(dedupe_key)
@@ -160,10 +166,16 @@ def build_report(
         ),
         "summary": {
             **coverage,
-            "withDescription": sum(bool(text(row.get("description"))) for row in normalized),
+            "withDescription": sum(
+                bool(text(row.get("description"))) for row in normalized
+            ),
             "withX": sum(bool(text(row.get("x"))) for row in normalized),
-            "withDiscord": sum(bool(text(row.get("discord"))) for row in normalized),
-            "withWebsite": sum(bool(text(row.get("website"))) for row in normalized),
+            "withDiscord": sum(
+                bool(text(row.get("discord"))) for row in normalized
+            ),
+            "withWebsite": sum(
+                bool(text(row.get("website"))) for row in normalized
+            ),
             "withLogo": sum(bool(text(row.get("logo"))) for row in normalized),
         },
         "communities": normalized,
@@ -173,9 +185,13 @@ def build_report(
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-base", default=DEFAULT_API_BASE)
-    parser.add_argument("--api-key", default=os.environ.get("OPENPAGE_API_KEY", ""))
+    parser.add_argument(
+        "--api-key", default=os.environ.get("OPENPAGE_API_KEY", "")
+    )
     parser.add_argument("--per-page", type=int, default=100)
-    parser.add_argument("--max-pages", type=int, default=0, help="0 = exhaust pagination")
+    parser.add_argument(
+        "--max-pages", type=int, default=0, help="0 = exhaust pagination"
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     if not text(args.api_key):
@@ -188,7 +204,10 @@ def main() -> int:
     )
     report = build_report(communities, coverage, api_base=args.api_base)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    args.output.write_text(
+        json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     print(json.dumps(report["summary"], indent=2))
     return 0
 
