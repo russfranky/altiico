@@ -82,6 +82,7 @@ def test_openpage_name_never_auto_binds_catalog_identity():
                 "discord": "https://discord.gg/example",
                 "website": "https://example.test",
                 "logo": "https://example.test/logo.png",
+                "bannerUrl": "https://example.test/banner.png",
             }
         ],
         {
@@ -97,6 +98,8 @@ def test_openpage_name_never_auto_binds_catalog_identity():
     assert row["name"] == "Bored Ape Yacht Club"
     assert row["catalogId"] is None
     assert row["bindingState"] == "unbound"
+    assert row["banner"] == "https://example.test/banner.png"
     assert report["summary"]["withDescription"] == 1
     assert report["summary"]["withX"] == 1
     assert report["summary"]["withDiscord"] == 1
+    assert report["summary"]["withBanner"] == 1
