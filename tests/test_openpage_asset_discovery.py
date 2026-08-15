@@ -13,15 +13,17 @@ def test_mml_url_alone_never_becomes_vrm_candidate():
     ]
     assert result["vrmCandidates"] == []
     assert result["glbUrls"] == []
+    assert result["animationGlbUrls"] == []
 
 
-def test_direct_openpage_vrm_is_candidate_not_validation():
+def test_direct_openpage_vrm_and_model_glb_are_candidates_but_animation_glb_is_not():
     report = build_report(
         [
             {
                 "catalogId": "demo",
                 "vrmUrl": "https://cdn.example/avatar.vrm?version=4",
-                "animationUrl": "https://cdn.example/avatar.glb",
+                "modelUrl": "https://cdn.example/avatar.glb",
+                "animationUrl": "https://cdn.example/idle.glb",
             }
         ]
     )
@@ -32,8 +34,26 @@ def test_direct_openpage_vrm_is_candidate_not_validation():
     assert [item["url"] for item in row["glbUrls"]] == [
         "https://cdn.example/avatar.glb"
     ]
+    assert [item["url"] for item in row["animationGlbUrls"]] == [
+        "https://cdn.example/idle.glb"
+    ]
     assert "candidates only" in report["policy"]
     assert report["summary"]["uniqueVrmCandidates"] == 1
+    assert report["summary"]["uniqueGlbCandidates"] == 1
+    assert report["summary"]["uniqueAnimationGlbs"] == 1
+
+
+def test_named_animation_glb_is_not_model_candidate_even_in_generic_field():
+    result = inspect_record(
+        {
+            "catalogId": "boredapeyachtclub",
+            "download": "https://example.test/bayc-animations.glb",
+        }
+    )
+    assert result["glbUrls"] == []
+    assert [item["url"] for item in result["animationGlbUrls"]] == [
+        "https://example.test/bayc-animations.glb"
+    ]
 
 
 def test_inline_mml_keeps_glb_separate_from_vrm():
@@ -51,6 +71,7 @@ def test_inline_mml_keeps_glb_separate_from_vrm():
         "https://cdn.example/base.glb",
         "https://cdn.example/prop.gltf",
     }
+    assert result["animationGlbUrls"] == []
 
 
 def test_inline_mml_can_surface_explicit_vrm_candidate():
@@ -92,6 +113,30 @@ def test_fetched_mml_resolves_relative_model_src_without_promoting_glb():
         "https://assets.openpage.fun/models/avatar.glb"
     }
     assert result["fetchErrors"] == []
+
+
+def test_fetched_json_keeps_animation_field_out_of_model_candidates():
+    def fake_fetch(url):
+        assert url == "https://assets.openpage.fun/avatar/42.mml"
+        return """{
+          "modelUrl": "https://cdn.example/avatar.glb",
+          "animationUrl": "https://cdn.example/talking.glb"
+        }"""
+
+    result = inspect_record(
+        {
+            "catalogId": "demo",
+            "mmlUrl": "https://assets.openpage.fun/avatar/42.mml",
+        },
+        fetch_mml=True,
+        fetcher=fake_fetch,
+    )
+    assert [item["url"] for item in result["glbUrls"]] == [
+        "https://cdn.example/avatar.glb"
+    ]
+    assert [item["url"] for item in result["animationGlbUrls"]] == [
+        "https://cdn.example/talking.glb"
+    ]
 
 
 def test_duplicate_urls_are_deduplicated_per_evidence_lane():
