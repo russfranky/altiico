@@ -33,6 +33,7 @@ DEFAULT_OUTPUT = ROOT / "data" / "openpage_asset_discovery.json"
 URL_RE = re.compile(r"(?:https?|ipfs|ar)://[^\s\"'<>]+", re.I)
 VRM_RE = re.compile(r"\.vrm(?:$|[?#])", re.I)
 GLB_RE = re.compile(r"\.(?:glb|gltf)(?:$|[?#])", re.I)
+MML_RE = re.compile(r"\.mml(?:$|[?#])", re.I)
 MML_SRC_RE = re.compile(
     r"<m-(?:character|model)\b[^>]*?\bsrc\s*=\s*(?:\"([^\"]+)\"|'([^']+)'|([^\s>]+))",
     re.I | re.S,
@@ -45,6 +46,18 @@ ANIMATION_PATH_RE = re.compile(
     re.I,
 )
 ANIMATION_FILE_RE = re.compile(r"(?:^|[-_.])animations?(?:[-_.]|$)", re.I)
+MML_PATH_RE = re.compile(
+    r"(?:^|[.\[_-])(?:mml|mmlurl|mmlurls|mml_url|mml_urls)(?:$|[.\]_-])",
+    re.I,
+)
+VRM_PATH_RE = re.compile(
+    r"(?:^|[.\[_-])(?:vrm|vrmurl|vrmurls|vrm_url|vrm_urls)(?:$|[.\]_-])",
+    re.I,
+)
+MODEL_GLB_PATH_RE = re.compile(
+    r"(?:^|[.\[_-])(?:glb|glbs|glburl|glburls|glb_url|glb_urls|model|modelurl|modelurls|model_url|model_urls)(?:$|[.\]_-])",
+    re.I,
+)
 
 
 def now_iso() -> str:
@@ -105,11 +118,15 @@ def is_animation_glb(url: str, path_hint: str = "") -> bool:
 
 def classify_url(url: str, path_hint: str = "") -> str | None:
     lowered = url.lower()
-    if VRM_RE.search(lowered):
+    if VRM_RE.search(lowered) or VRM_PATH_RE.search(path_hint):
         return "vrm"
     if GLB_RE.search(lowered):
         return "animation_glb" if is_animation_glb(url, path_hint) else "glb"
-    if "mml" in path_hint.lower():
+    if ANIMATION_PATH_RE.search(path_hint):
+        return "animation_glb"
+    if MODEL_GLB_PATH_RE.search(path_hint):
+        return "glb"
+    if MML_RE.search(lowered) or MML_PATH_RE.search(path_hint):
         return "mml"
     return None
 
@@ -297,12 +314,12 @@ def build_report(
         for index, row in enumerate(records)
     ]
     return {
-        "schema": "openpage-asset-discovery-v2",
+        "schema": "openpage-asset-discovery-v3",
         "generatedAt": now_iso(),
         "policy": (
             "OpenPage MML, avatar-model GLB, and animation GLB are separate runtime representations. "
-            "Animation GLBs never enter avatar inventory. Explicit .vrm URLs and model GLBs are discovery "
-            "candidates only until structural validation succeeds and collection coverage is proven exhaustive."
+            "Animation GLBs never enter avatar inventory. Explicit VRM fields/URLs and model-GLB fields/URLs "
+            "are discovery candidates only until structural validation succeeds and collection coverage is proven exhaustive."
         ),
         "summary": {
             "records": len(inspected),
