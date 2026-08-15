@@ -16,6 +16,42 @@ def test_mml_url_alone_never_becomes_vrm_candidate():
     assert result["animationGlbUrls"] == []
 
 
+def test_generic_mml_extension_is_classified_without_a_typed_field():
+    result = inspect_record(
+        {
+            "catalogId": "demo",
+            "download": "https://assets.openpage.fun/avatar/42.mml?version=2",
+        }
+    )
+    assert [row["url"] for row in result["mmlUrls"]] == [
+        "https://assets.openpage.fun/avatar/42.mml?version=2"
+    ]
+
+
+def test_typed_fields_classify_opaque_cdn_urls():
+    result = inspect_record(
+        {
+            "catalogId": "demo",
+            "mmlUrl": "https://cdn.example/file/one",
+            "vrmUrl": "https://cdn.example/file/two",
+            "modelUrl": "https://cdn.example/file/three",
+            "animationUrl": "https://cdn.example/file/four",
+        }
+    )
+    assert [row["url"] for row in result["mmlUrls"]] == [
+        "https://cdn.example/file/one"
+    ]
+    assert [row["url"] for row in result["vrmCandidates"]] == [
+        "https://cdn.example/file/two"
+    ]
+    assert [row["url"] for row in result["glbUrls"]] == [
+        "https://cdn.example/file/three"
+    ]
+    assert [row["url"] for row in result["animationGlbUrls"]] == [
+        "https://cdn.example/file/four"
+    ]
+
+
 def test_direct_openpage_vrm_and_model_glb_are_candidates_but_animation_glb_is_not():
     report = build_report(
         [
