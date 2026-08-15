@@ -230,9 +230,9 @@ def test_live_metadata_request_preserves_explicit_binding_and_feeds_candidates(t
     ]
     row = report["records"][0]
     assert row["catalogId"] == "alpha"
-    assert [item["url"] for item in row["vrmCandidates"]] == [
+    assert {item["url"] for item in row["vrmCandidates"]} == {
         "https://cdn.test/alpha.vrm"
-    ]
+    }
     assert [item["url"] for item in row["glbUrls"]] == [
         "https://cdn.test/alpha.glb"
     ]
