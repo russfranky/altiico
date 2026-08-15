@@ -14,7 +14,9 @@ maintainer can execute the exact productive lane from any checkout:
 7. emit an explicit health report and reject a nonproductive feed by default.
 
 The command does not commit or push files. It never treats MML, animation GLBs,
-or unbound records as usable avatar inventory.
+unbound records, or unvalidated model URLs as usable avatar inventory. The API
+key is inherited through the child environment and is never placed on a child
+process command line or printed by this runner.
 """
 from __future__ import annotations
 
@@ -51,8 +53,7 @@ def load_json(path: Path, fallback: dict[str, Any] | None = None) -> dict[str, A
 
 
 def command(args: Sequence[str], *, env: dict[str, str] | None = None) -> None:
-    printable = " ".join(args)
-    print(f"+ {printable}", flush=True)
+    print("+ " + " ".join(args), flush=True)
     subprocess.run(
         list(args),
         cwd=ROOT,
@@ -76,6 +77,19 @@ def candidate_urls(row: dict[str, Any], field: str) -> set[str]:
         if value:
             urls.add(value)
     return urls
+
+
+def probe_index(probe: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    if not isinstance(probe, dict):
+        return {}
+    rows = probe.get("probes")
+    if not isinstance(rows, list):
+        return {}
+    return {
+        text(row.get("url")): row
+        for row in rows
+        if isinstance(row, dict) and text(row.get("url"))
+    }
 
 
 def build_health(
@@ -109,13 +123,33 @@ def build_health(
     bound_glbs = {
         url for row in bound_asset_rows for url in candidate_urls(row, "glbUrls")
     }
+    bound_candidates = bound_vrms | bound_glbs
 
     probe_summary: dict[str, Any] = {}
     if isinstance(probe, dict) and isinstance(probe.get("summary"), dict):
         probe_summary = dict(probe["summary"])
+    probes = probe_index(probe)
+    valid_bound = {
+        url
+        for url in bound_candidates
+        if (probes.get(url) or {}).get("validAvatar") is True
+    }
+    valid_bound_vrms = {
+        url
+        for url in valid_bound
+        if (probes.get(url) or {}).get("actualFormat") == "vrm"
+    }
+    valid_bound_glbs = {
+        url
+        for url in valid_bound
+        if (probes.get(url) or {}).get("actualFormat") == "glb"
+    }
+    probed_bound = bound_candidates & set(probes)
+    validation_complete = bool(bound_candidates) and probed_bound == bound_candidates
+    invalid_or_unprobed = sorted(bound_candidates - valid_bound)
 
     return {
-        "schema": "openpage-feed-health-v3",
+        "schema": "openpage-feed-health-v4",
         "communitiesEnumerated": int(community_summary.get("communitiesEnumerated") or 0),
         "communityCoverageComplete": community_summary.get("coverageComplete") is True,
         "assetListEndpoints": int(source_summary.get("endpoints") or 0),
@@ -129,8 +163,15 @@ def build_health(
         "boundAssetRecords": len(bound_asset_rows),
         "boundVrmCandidates": len(bound_vrms),
         "boundGlbCandidates": len(bound_glbs),
+        "boundCandidatesProbed": len(probed_bound),
+        "boundValidAvatarCandidates": len(valid_bound),
+        "boundValidVrmCandidates": len(valid_bound_vrms),
+        "boundValidRiggedGlbCandidates": len(valid_bound_glbs),
+        "boundInvalidOrUnprobedCandidateUrls": invalid_or_unprobed,
+        "candidateDiscoveryProductive": bool(bound_candidates),
+        "validationComplete": validation_complete,
         "probeSummary": probe_summary,
-        "productive": bool(bound_vrms or bound_glbs),
+        "productive": bool(valid_bound),
     }
 
 
@@ -161,7 +202,7 @@ def main() -> int:
     parser.add_argument(
         "--allow-unproductive",
         action="store_true",
-        help="Write evidence and return success even when no bound VRM/GLB candidate is found",
+        help="Write evidence and return success even when no bound candidate validates as an avatar",
     )
     args = parser.parse_args()
 
@@ -188,8 +229,6 @@ def main() -> int:
             "scripts/discover_openpage_communities.py",
             "--api-base",
             args.api_base,
-            "--api-key",
-            api_key,
             "--per-page",
             str(max(1, args.per_page)),
             "--max-pages",
@@ -213,8 +252,6 @@ def main() -> int:
         str(DEFAULT_COMMUNITY_ASSETS.relative_to(ROOT)),
         "--api-base",
         args.api_base,
-        "--api-key",
-        api_key,
         "--per-page",
         str(max(1, args.per_page)),
         "--max-pages",
@@ -290,7 +327,7 @@ def main() -> int:
     print(json.dumps(health, indent=2))
     if not health["productive"] and not args.allow_unproductive:
         print(
-            "OpenPage produced no explicitly catalog-bound VRM or model-GLB candidates.",
+            "OpenPage produced no explicitly bound, structurally valid VRM or rigged-GLB candidate.",
             file=sys.stderr,
         )
         return 2
