@@ -1,8 +1,10 @@
 import json
 
 from scripts.discover_openpage_community_assets import (
+    api_path_url,
     discover_list_endpoints,
     page_url,
+    payload_items,
     run,
 )
 
@@ -61,6 +63,36 @@ def test_openapi_discovers_only_community_asset_list_operations():
     ]
 
 
+def test_operation_id_and_path_can_identify_endpoint_without_summary_or_tags():
+    spec = {
+        "paths": {
+            "/v1/community/{communityId}/collections": {
+                "get": {
+                    "operationId": "getCommunityCollections",
+                    "parameters": [
+                        {
+                            "name": "communityId",
+                            "in": "path",
+                            "description": "Community ID",
+                        }
+                    ],
+                }
+            }
+        }
+    }
+    assert discover_list_endpoints(spec) == [
+        {
+            "kind": "community_collections",
+            "path": "/v1/community/{communityId}/collections",
+            "communityParameter": "communityId",
+            "queryParameters": [],
+            "operationId": "getCommunityCollections",
+            "summary": None,
+            "tags": [],
+        }
+    ]
+
+
 def test_endpoint_url_uses_discovered_parameter_names():
     endpoint = discover_list_endpoints(OPENAPI)[0]
     assert page_url(
@@ -70,6 +102,39 @@ def test_endpoint_url_uses_discovered_parameter_names():
         2,
         100,
     ) == "https://api.openpage.fun/v1/community/community%20one/file?page=2&perPage=100"
+
+
+def test_versioned_openapi_path_does_not_duplicate_api_base_prefix():
+    assert api_path_url(
+        "https://api.openpage.fun/v1",
+        "/v1/community/community-1/file",
+    ) == "https://api.openpage.fun/v1/community/community-1/file"
+    assert api_path_url(
+        "https://api.openpage.fun/v1",
+        "/community/community-1/file",
+    ) == "https://api.openpage.fun/v1/community/community-1/file"
+
+
+def test_nested_response_wrappers_are_extracted_without_treating_status_as_asset():
+    rows, total = payload_items(
+        {
+            "total": 2,
+            "data": {
+                "results": [
+                    {"id": "a", "modelUrl": "https://cdn.test/a"},
+                    {"id": "b", "vrmUrl": "https://cdn.test/b"},
+                ]
+            },
+        }
+    )
+    assert [row["id"] for row in rows] == ["a", "b"]
+    assert total == 2
+    assert payload_items({"status": "ok", "message": "no files"}) == ([], None)
+
+
+def test_single_asset_object_is_preserved():
+    row = {"id": "file-1", "url": "https://cdn.test/file-1"}
+    assert payload_items(row) == ([row], 1)
 
 
 def test_run_exhausts_openapi_endpoint_and_preserves_explicit_binding(tmp_path):
