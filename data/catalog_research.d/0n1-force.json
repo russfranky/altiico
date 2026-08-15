@@ -9,7 +9,7 @@
     "opensea_slug": "0n1-force",
     "project_url": "https://0n1force.com/",
     "source": "official+opensea+curated+contemporaneous-avatar-development",
-    "notes": "Active anime/cyberpunk PFP project. A private commissioned reference VRM existed as a proof of concept, but contemporaneous development notes show collection-wide generation remained planned rather than shipped; later 2024 ecosystem evidence still lists 0N1 Force among collections not yet offering 3D models."
+    "notes": "Active anime/cyberpunk PFP project. A private commissioned reference VRM existed as a proof of concept, but contemporaneous development notes show collection-wide generation remained planned rather than shipped. A later 2024 ecosystem implementation proposal explicitly says 0N1 Force did not yet offer 3D models to its community, and the current official public assets surface remains a marketing/content-creation library rather than a 3D model delivery surface. The broad collection-wide avatar lane is therefore evidence-backed not_shipped while the private prototype is preserved separately."
   },
   "discord": {
     "value": "https://discord.gg/0n1-force",
@@ -78,7 +78,7 @@
   "storage": {
     "value": "private_repository",
     "scope": "historical_vrm_proof_of_concept_development",
-    "note": "The documented reference-VRM development repository was private. No public collection-wide VRM storage or download location is evidenced. This storage fact describes the historical proof-of-concept lane, not a shipped 0N1 Force asset inventory.",
+    "note": "The documented reference-VRM development repository was private. No public collection-wide avatar storage or download location is evidenced. This storage fact describes the historical proof-of-concept lane, not a shipped 0N1 Force asset inventory.",
     "evidence": [
       {
         "kind": "contemporaneous_avatar_development_log",
@@ -110,11 +110,35 @@
       }
     ]
   },
+  "avatar_inventory": {
+    "state": "not_shipped",
+    "coverage": "collectionwide_usable_3d_avatar_release_not_shipped",
+    "assets": [],
+    "note": "This terminal state is intentionally broader than the VRM-specific finding. The known private commissioned reference avatar is retained as a prototype fact, but it was never a collection-wide holder/community delivery lane. Contemporary development records show collection generation unfinished, a 2024 implemented ecosystem proposal explicitly states 0N1 Force did not yet offer 3D models to its community, and the current official public assets page still presents marketing/content-creation assets rather than downloadable 3D avatar models. No later official collection-wide GLB, FBX, VRM or other usable 3D avatar release was recovered in this research pass.",
+    "evidence": [
+      {
+        "kind": "contemporaneous_avatar_development_log",
+        "source": "https://hackmd.io/@XR/0n1force-avatars",
+        "note": "Collection-wide VR/VTuber avatar generation was a goal, while the actual state was one private reference avatar, two more planned and substantial remaining trait-generation work."
+      },
+      {
+        "kind": "later_ecosystem_implementation_proposal",
+        "source": "https://forum.apecoin.com/t/aip-498-dashbo-ugc-platform-democratizing-content-creation/25163",
+        "note": "AIP-498 explicitly distinguishes 0N1 Force from collections already offering 3D models and says 0N1 Force did not yet offer such models to its community. This statement is format-agnostic and therefore supports the broad avatar lane."
+      },
+      {
+        "kind": "current_official_assets_page",
+        "source": "https://www.0n1force.com/assets",
+        "observed_at": "2026-08-15",
+        "note": "Current official assets page describes its public files as marketing assets for community content creation and exposes no collection-wide 3D avatar download lane."
+      }
+    ]
+  },
   "file_access": {
     "mode": "unavailable",
     "requires_ownership": null,
     "state": "not_shipped",
-    "note": "No public collection-wide VRM download/access flow shipped. The known reference-VRM development repository was private, and current official public assets are marketing/content-creation assets rather than an exhaustive VRM distribution surface.",
+    "note": "No public collection-wide usable 3D avatar download/access flow shipped. The known reference-VRM development repository was private, and current official public assets are marketing/content-creation assets rather than an exhaustive avatar distribution surface.",
     "evidence": [
       {
         "kind": "contemporaneous_avatar_development_log",
@@ -124,8 +148,8 @@
       {
         "kind": "current_official_assets_page",
         "source": "https://www.0n1force.com/assets",
-        "observed_at": "2026-08-14",
-        "note": "Current official assets page presents public marketing assets for community content creation, not a collection-wide VRM download inventory."
+        "observed_at": "2026-08-15",
+        "note": "Current official assets page presents public marketing assets for community content creation, not a collection-wide 3D avatar download inventory."
       }
     ]
   },
