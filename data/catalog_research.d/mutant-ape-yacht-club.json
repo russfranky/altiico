@@ -9,7 +9,7 @@
     "opensea_slug": "mutant-ape-yacht-club",
     "project_url": "https://boredapeyachtclub.com/",
     "source": "official+opensea",
-    "notes": "MAYC is researched separately from BAYC. Current official Otherside documentation proves that individual Mutant Ape avatar meshes are available as selectable in-game characters through the GLB-based skeletal-avatar pipeline. This qualifies GLB as a usable rigged-avatar representation for at least the available MAYC meshes, but exhaustive collection coverage and direct asset URLs remain unresolved."
+    "notes": "MAYC is researched separately from BAYC. Current official Otherside documentation proves that individual Mutant Ape avatar meshes are available as selectable in-game characters through the GLB-based skeletal-avatar pipeline. Current OpenPage documentation independently lists MAYC as a supported avatar family and states that compatible models are downloaded after ownership verification. This qualifies a usable holder-gated avatar lane while exhaustive collection coverage and direct asset URLs remain unresolved."
   },
   "logo": {
     "value": "https://i2c.seadn.io/collection/mutant-ape-yacht-club/image/33dcf5ce12bc4760bf912a5b3f5979/f033dcf5ce12bc4760bf912a5b3f5979.png?h=250&w=250",
@@ -71,6 +71,31 @@
       }
     ]
   },
+  "storage": {
+    "value": "holder_platform",
+    "scope": "supported_avatar_model_delivery",
+    "note": "OpenPage documents MAYC-compatible models as downloadable through OP after ownership verification. This establishes a holder-platform delivery surface, not the underlying object-store implementation or an exhaustive public URL set.",
+    "evidence": [
+      {
+        "kind": "official_openpage_supported_avatars",
+        "source": "https://docs.openpage.fun/avatars",
+        "note": "OpenPage lists MAYC under supported avatar animations and says the associated models are downloaded from OP after verifying ownership."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "scope": "openpage_supported_mayc_avatar_models",
+    "access_url": "https://openpage.fun/",
+    "evidence": [
+      {
+        "kind": "official_openpage_supported_avatars",
+        "source": "https://docs.openpage.fun/avatars",
+        "note": "OpenPage says supported models are downloaded after ownership verification and explicitly lists MAYC."
+      }
+    ]
+  },
   "ip_rights": {
     "value": "holder_commercial",
     "summary": "MAYC holders own the purchased Mutant Ape art and receive a worldwide, royalty-free personal license plus an unlimited worldwide commercial license to use the purchased art and create derivative works, while Yuga retains the MAYC/BAYC trademarks and other project IP.",
@@ -97,7 +122,7 @@
       "glb"
     ],
     "state": "verified_runtime_avatar_meshes_partial_collection",
-    "note": "Otherside identifies individual MAYC avatar meshes as selectable in-game characters and implements character meshes from GLB definitions. The documented Otherside avatar pipeline binds meshes to an armature, exports skins in GLB, and loads the result as a skeletal mesh for animation. This is sufficient rigging evidence for the available runtime meshes, but not evidence that every MAYC token has a corresponding avatar GLB.",
+    "note": "Otherside identifies individual MAYC avatar meshes as selectable in-game characters and implements character meshes from GLB definitions. The documented Otherside avatar pipeline binds meshes to an armature, exports skins in GLB, and loads the result as a skeletal mesh for animation. OpenPage separately lists MAYC as supported and its custom-avatar guidance prefers GLB. This is sufficient rigging and format evidence for available runtime meshes, but not evidence that every MAYC token has a corresponding avatar GLB.",
     "evidence": [
       {
         "kind": "official_otherside_avatar_runtime",
@@ -113,19 +138,29 @@
         "kind": "official_otherside_skeletal_runtime_test",
         "source": "https://docs.otherside.xyz/documentation/characters/creating-a-custom-character/creating-a-simple-avatar-collection/further-testing",
         "note": "Official runtime test loads avatar GLBs as skeletal meshes on the UE5 mannequin skeleton and previews animations."
+      },
+      {
+        "kind": "official_openpage_supported_avatars",
+        "source": "https://docs.openpage.fun/avatars",
+        "note": "OpenPage lists MAYC as supported and documents fully custom GLB as a supported avatar format."
       }
     ]
   },
   "avatar_inventory": {
     "state": "shipped_unenumerated",
-    "coverage": "individual_rigged_glb_avatar_meshes_proven_exhaustive_coverage_unknown",
+    "coverage": "individual_rigged_glb_avatar_meshes_and_holder_delivery_proven_exhaustive_coverage_unknown",
     "assets": [],
-    "note": "Official runtime evidence proves usable rigged GLB avatars exist for MAYC, but the documentation deliberately says individual avatar meshes rather than proving complete collection coverage. No direct MAYC GLB URLs or exhaustive token-to-GLB mapping have been recovered, so the broader inventory remains unresolved.",
+    "note": "Official runtime evidence proves usable rigged GLB avatars exist for MAYC, and OpenPage independently proves an ownership-verified model delivery surface. Neither source exposes a direct exhaustive MAYC model URL set or complete token-to-model mapping, so the broader inventory remains unresolved.",
     "evidence": [
       {
         "kind": "official_otherside_avatar_runtime",
         "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
         "note": "MAYC has individual avatar meshes available in the official Otherside avatar system, backed by the GLB character runtime."
+      },
+      {
+        "kind": "official_openpage_supported_avatars",
+        "source": "https://docs.openpage.fun/avatars",
+        "note": "OpenPage explicitly lists MAYC and says compatible models can be downloaded from OP after ownership verification."
       }
     ]
   }
