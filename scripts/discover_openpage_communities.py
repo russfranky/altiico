@@ -122,6 +122,14 @@ def collect_communities(
     }
 
 
+def first_value(row: dict[str, Any], *keys: str) -> Any:
+    for key in keys:
+        value = row.get(key)
+        if text(value):
+            return value
+    return None
+
+
 def normalize_community(row: dict[str, Any]) -> dict[str, Any]:
     return {
         "openpageId": row.get("id"),
@@ -133,6 +141,14 @@ def normalize_community(row: dict[str, Any]) -> dict[str, Any]:
         "youtube": row.get("youtube"),
         "website": row.get("website"),
         "logo": row.get("logo"),
+        "banner": first_value(
+            row,
+            "banner",
+            "bannerUrl",
+            "bannerURL",
+            "bannerImage",
+            "banner_image_url",
+        ),
         "type": row.get("type"),
         "requestLevel": row.get("requestLevel"),
         "approvedAt": row.get("approvedAt"),
@@ -152,7 +168,7 @@ def build_report(
 ) -> dict[str, Any]:
     normalized = [normalize_community(row) for row in communities]
     return {
-        "schema": "openpage-community-discovery-v1",
+        "schema": "openpage-community-discovery-v2",
         "generatedAt": now_iso(),
         "source": {
             "name": "OpenPage",
@@ -160,9 +176,9 @@ def build_report(
             "endpoint": "/community",
         },
         "policy": (
-            "OpenPage community metadata is a high-recall source for descriptions, socials, websites and logos. "
-            "Community display names never create catalog identity bindings by themselves; catalogId remains null "
-            "until an explicit contract/collection/source mapping is established."
+            "OpenPage community metadata is a high-recall source for descriptions, socials, websites, logos and any "
+            "banner field returned by the API. Community display names never create catalog identity bindings by "
+            "themselves; catalogId remains null until an explicit contract/collection/source mapping is established."
         ),
         "summary": {
             **coverage,
@@ -177,6 +193,7 @@ def build_report(
                 bool(text(row.get("website"))) for row in normalized
             ),
             "withLogo": sum(bool(text(row.get("logo"))) for row in normalized),
+            "withBanner": sum(bool(text(row.get("banner"))) for row in normalized),
         },
         "communities": normalized,
     }
