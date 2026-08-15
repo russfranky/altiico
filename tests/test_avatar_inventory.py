@@ -128,6 +128,13 @@ def test_openpage_bound_candidates_feed_avatar_inventory_without_claiming_comple
                         "via": "openpage_record",
                     }
                 ],
+                "animationGlbUrls": [
+                    {
+                        "url": "https://cdn.test/openpage/idle.glb",
+                        "source": "$.animationUrl",
+                        "via": "openpage_record",
+                    }
+                ],
             }
         ]
     }
@@ -138,6 +145,11 @@ def test_openpage_bound_candidates_feed_avatar_inventory_without_claiming_comple
     assert result["complete"] is False
     assert result["coverage_source"] == "openpage_candidates"
     assert result["formats"] == {"glb": 1, "vrm": 1}
+    assert result["urls"] == [
+        "https://cdn.test/openpage/avatar.glb",
+        "https://cdn.test/openpage/avatar.vrm",
+    ]
+    assert "https://cdn.test/openpage/idle.glb" not in result["urls"]
     assert all(asset["source_evidence"] for asset in result["assets"])
     assert {
         row["openpage_id"]
@@ -158,6 +170,9 @@ def test_openpage_unbound_records_are_never_attached_by_name_or_openpage_id():
                     {"url": "https://cdn.test/should-not-attach.vrm", "via": "openpage_record"}
                 ],
                 "glbUrls": [],
+                "animationGlbUrls": [
+                    {"url": "https://cdn.test/also-ignored.glb", "via": "openpage_record"}
+                ],
             }
         ]
     }
@@ -178,6 +193,7 @@ def test_openpage_candidates_do_not_override_evidence_backed_terminal_avatar_sta
                     "catalogId": "demo",
                     "vrmCandidates": ["https://cdn.test/conflict.vrm"],
                     "glbUrls": [],
+                    "animationGlbUrls": [],
                 }
             ]
         }
