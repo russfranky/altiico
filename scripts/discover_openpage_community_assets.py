@@ -41,9 +41,43 @@ LIST_TERMS = (
     ("community_collections", ("community collections", "get collections", "list collections")),
     ("community_mintables", ("community mintables", "get mintables", "list mintables")),
 )
+PATH_SEGMENTS = {
+    "file": "community_files",
+    "files": "community_files",
+    "collection": "community_collections",
+    "collections": "community_collections",
+    "mintable": "community_mintables",
+    "mintables": "community_mintables",
+}
 PAGE_KEYS = ("page",)
 PER_PAGE_KEYS = ("perpage", "per_page", "limit", "pagesize", "page_size")
 PLACEHOLDER_RE = re.compile(r"\{([^{}]+)\}")
+CAMEL_RE = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
+LIST_KEYS = ("results", "items", "files", "collections", "mintables", "records")
+WRAPPER_KEYS = ("data", "payload", "response")
+ASSET_HINT_KEYS = {
+    "url",
+    "href",
+    "downloadurl",
+    "download_url",
+    "sourceurl",
+    "source_url",
+    "modelurl",
+    "model_url",
+    "mmlurl",
+    "mml_url",
+    "vrmurl",
+    "vrm_url",
+    "animationurl",
+    "animation_url",
+    "contract",
+    "contractaddress",
+    "contract_address",
+    "mimetype",
+    "mime_type",
+    "filename",
+    "file_name",
+}
 Requester = Callable[[str, str, str], Any]
 
 
@@ -103,6 +137,12 @@ def fetch_openapi(
     raise RuntimeError("OpenPage OpenAPI discovery failed: " + json.dumps(errors))
 
 
+def normalized_words(value: Any) -> str:
+    raw = CAMEL_RE.sub(" ", text(value))
+    raw = re.sub(r"[_/.-]+", " ", raw)
+    return " ".join(raw.lower().split())
+
+
 def operation_text(operation: dict[str, Any], path: str) -> str:
     tags = operation.get("tags") if isinstance(operation.get("tags"), list) else []
     values = [
@@ -112,7 +152,7 @@ def operation_text(operation: dict[str, Any], path: str) -> str:
         *tags,
         path,
     ]
-    return " ".join(text(value) for value in values).lower().replace("_", "-")
+    return " ".join(normalized_words(value) for value in values)
 
 
 def operation_parameters(operation: dict[str, Any], path_item: dict[str, Any]) -> list[dict[str, Any]]:
@@ -140,8 +180,23 @@ def path_parameter_names(path: str) -> list[str]:
 
 def is_community_parameter(name: str, parameter: dict[str, Any]) -> bool:
     normalized = name.lower().replace("_", "")
-    description = text(parameter.get("description")).lower()
+    description = normalized_words(parameter.get("description"))
     return normalized in {"id", "communityid", "community"} or "community id" in description
+
+
+def path_list_kind(path: str) -> str | None:
+    segments = [
+        segment.lower()
+        for segment in urllib.parse.urlsplit(path).path.strip("/").split("/")
+        if segment
+    ]
+    if not segments:
+        return None
+    for index, segment in enumerate(segments[:-1]):
+        if segment == "community" and PLACEHOLDER_RE.fullmatch(segments[index + 1]):
+            if index + 2 < len(segments) and index + 3 == len(segments):
+                return PATH_SEGMENTS.get(segments[index + 2])
+    return None
 
 
 def discover_list_endpoints(spec: dict[str, Any]) -> list[dict[str, Any]]:
@@ -154,11 +209,12 @@ def discover_list_endpoints(spec: dict[str, Any]) -> list[dict[str, Any]]:
         if not isinstance(operation, dict):
             continue
         combined = operation_text(operation, str(path))
-        kind = None
-        for candidate_kind, terms in LIST_TERMS:
-            if any(term in combined for term in terms):
-                kind = candidate_kind
-                break
+        kind = path_list_kind(str(path))
+        if kind is None:
+            for candidate_kind, terms in LIST_TERMS:
+                if any(term in combined for term in terms):
+                    kind = candidate_kind
+                    break
         if not kind:
             continue
 
@@ -248,6 +304,19 @@ def query_key(names: set[str], candidates: tuple[str, ...]) -> str | None:
     return None
 
 
+def api_path_url(api_base: str, path: str) -> str:
+    if path.startswith(("http://", "https://")):
+        return path
+    base = urllib.parse.urlsplit(api_base.rstrip("/"))
+    base_path = base.path.rstrip("/")
+    requested = "/" + path.lstrip("/")
+    if base_path and (requested == base_path or requested.startswith(base_path + "/")):
+        resolved_path = requested
+    else:
+        resolved_path = (base_path + requested) or "/"
+    return urllib.parse.urlunsplit((base.scheme, base.netloc, resolved_path, "", ""))
+
+
 def page_url(api_base: str, endpoint: dict[str, Any], community_id: str, page: int, per_page: int) -> str:
     path = endpoint["path"].replace(
         "{" + endpoint["communityParameter"] + "}",
@@ -261,24 +330,56 @@ def page_url(api_base: str, endpoint: dict[str, Any], community_id: str, page: i
         query[page_name] = page
     if per_page_name:
         query[per_page_name] = per_page
-    url = urllib.parse.urljoin(api_base.rstrip("/") + "/", path.lstrip("/"))
+    url = api_path_url(api_base, path)
     return url + ("?" + urllib.parse.urlencode(query) if query else "")
 
 
-def payload_items(payload: Any) -> tuple[list[dict[str, Any]], int | None]:
+def reported_total(payload: dict[str, Any]) -> int | None:
+    for key in ("total", "totalCount", "total_count", "count"):
+        raw = payload.get(key)
+        try:
+            if raw is not None:
+                return int(raw)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def looks_like_asset_record(payload: dict[str, Any]) -> bool:
+    normalized_keys = {
+        str(key).lower().replace("-", "").replace(" ", "")
+        for key in payload
+    }
+    normalized_hints = {
+        key.lower().replace("-", "").replace(" ", "")
+        for key in ASSET_HINT_KEYS
+    }
+    return bool(normalized_keys & normalized_hints)
+
+
+def payload_items(payload: Any, depth: int = 0) -> tuple[list[dict[str, Any]], int | None]:
     if isinstance(payload, list):
         return [row for row in payload if isinstance(row, dict)], None
     if not isinstance(payload, dict):
         return [], None
-    for key in ("results", "items", "files", "collections", "mintables", "records", "data"):
+
+    outer_total = reported_total(payload)
+    for key in LIST_KEYS:
         rows = payload.get(key)
         if isinstance(rows, list):
-            total = payload.get("total")
-            try:
-                return [row for row in rows if isinstance(row, dict)], int(total) if total is not None else None
-            except (TypeError, ValueError):
-                return [row for row in rows if isinstance(row, dict)], None
-    return [payload], 1
+            return [row for row in rows if isinstance(row, dict)], outer_total
+
+    if depth < 3:
+        for key in WRAPPER_KEYS:
+            child = payload.get(key)
+            if isinstance(child, (dict, list)):
+                rows, child_total = payload_items(child, depth + 1)
+                if rows:
+                    return rows, outer_total if outer_total is not None else child_total
+
+    if looks_like_asset_record(payload):
+        return [payload], 1
+    return [], outer_total
 
 
 def enumerate_endpoint(
@@ -326,6 +427,7 @@ def enumerate_endpoint(
         if not rows or new_rows == 0 or len(rows) < per_page:
             break
         if not endpoint.get("queryParameters"):
+            truncated = total_reported is not None and len(records) < total_reported
             break
         page += 1
 
@@ -409,7 +511,7 @@ def run(
                 )
 
     report = {
-        "schema": "openpage-community-assets-v1",
+        "schema": "openpage-community-assets-v2",
         "generatedAt": now_iso(),
         "source": {
             "apiBase": api_base.rstrip("/"),
