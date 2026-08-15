@@ -9,7 +9,7 @@
     "opensea_slug": "deadfellaz",
     "project_url": "https://deadfellaz.io/",
     "source": "official+curated",
-    "notes": "Active DFZ Labs IP. Historical 3D/streaming work is real, but this shard deliberately does not claim an exhaustive .vrm inventory; the keyed enumeration/probe path must prove actual files."
+    "notes": "Active DFZ Labs IP. Deadfellaz has two historically distinct avatar efforts that must not be conflated: Streamingfellaz shipped as fully rigged streaming/video-avatar utility through Hologram, while the separately announced collection-wide 3D Fellaz program targeted fully rigged 3D models. The available sources prove the streaming rigs shipped and the 3D program was real, but they do not prove that the full 10K 3D model inventory was ultimately delivered as downloadable GLB, FBX or VRM files."
   },
   "discord": {
     "value": "https://discord.gg/deadfellaz",
@@ -72,6 +72,76 @@
         "kind": "official_collector_guide",
         "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
         "note": "Collector guide describes private use of Deadfellaz as streaming identities and current collector utilities."
+      }
+    ]
+  },
+  "streaming_avatar_lane": {
+    "state": "shipped_rigged_streaming_representation_not_3d_file_proof",
+    "note": "The current official collector guide says every Deadfella comes fully rigged for streaming and recommends Hologram with OBS/Streamlabs. Contemporary coverage describes Streamingfellaz as animating the holder's existing JPEG/PFP for video calls and streams. This is strong proof that a rigged streaming representation shipped for the collection, but it is not evidence of a downloadable 3D GLB, FBX or VRM model lane and therefore does not satisfy the catalog's 3D avatar inventory by itself.",
+    "evidence": [
+      {
+        "kind": "official_collector_guide",
+        "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+        "note": "Official guide states that every Deadfella comes fully rigged for streaming and identifies Hologram.xyz as the usual streaming tool."
+      },
+      {
+        "kind": "official_stream_team_post",
+        "source": "https://deadfellaz.medium.com/deadfellaz-community-twitch-team-officially-launched-c900ebb2cb39",
+        "note": "Official post documents Horde members using Streamingfellaz rigs by Hologram in live streaming."
+      },
+      {
+        "kind": "contemporaneous_product_coverage",
+        "source": "https://decrypt.co/140684",
+        "note": "Contemporaneous coverage describes Streamingfellaz as turning the existing Deadfellaz JPEG/PFP into a video avatar, which prevents the catalog from treating the streaming rig as proof of a 3D model file."
+      }
+    ]
+  },
+  "historical_3d_avatar_development": {
+    "state": "collectionwide_fully_rigged_3d_program_announced_delivery_unverified",
+    "summary": "The official 2021 roadmap committed to transforming all 10,000 Deadfellaz into fully rigged 3D models. The 2022 Metawrapping plan separately described 3D Deadfellaz and a production timeline, and the August 2022 anniversary said the 3D Fellaz were slated to release before Halloween. These are strong primary-source proofs that a real collection-wide rigged-3D production effort existed, but no later source recovered in this pass exposes the completed 10K model files or their GLB/FBX/VRM delivery format.",
+    "evidence": [
+      {
+        "kind": "official_roadmap",
+        "source": "https://deadfellaz.medium.com/deadfellaz-roadmap-2-0-b5bcaab6ff8",
+        "note": "Official Roadmap 2.0 says the 3D team would transform all 10,000 original Deadfellaz into fully rigged 3D models for avatar/metaverse, AR and social-media use."
+      },
+      {
+        "kind": "official_metawrapping_plan",
+        "source": "https://deadfellaz.medium.com/the-df10k-pfp-metawrapping-5cea187868c4",
+        "note": "Official 2022 plan distinguishes 3D Deadfellaz from Live2D/streaming work and describes the 3D Fellaz production timeline as approaching completion."
+      },
+      {
+        "kind": "official_anniversary_update",
+        "source": "https://deadfellaz.medium.com/hbd-dfz-one-year-of-deadfellaz-363cb0c5d8df",
+        "note": "August 2022 official update says Hologram avatars and 3D Fellaz were both slated to release before Halloween, again treating them as separate products."
+      },
+      {
+        "kind": "official_founder_update",
+        "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+        "note": "July 2024 founder update says the Metawrapz effort was put on ice and surviving asset extensions would move to a simplified IPFS asset portal. The post does not establish a surviving full 10K 3D model lane."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "unknown",
+    "coverage": "collectionwide_3d_program_proven_but_model_delivery_and_format_unverified",
+    "assets": [],
+    "note": "Keep the broad 3D avatar inventory open. The project indisputably developed a collection-wide fully-rigged 3D program, but the shipped Streamingfellaz rigs are a separate video/PFP representation and cannot substitute for 3D model files. No exhaustive downloadable GLB, FBX or VRM lane for the announced 10K 3D Fellaz was recovered. Historical roadmap language alone is not sufficient to mark the 3D inventory shipped or complete.",
+    "evidence": [
+      {
+        "kind": "official_roadmap",
+        "source": "https://deadfellaz.medium.com/deadfellaz-roadmap-2-0-b5bcaab6ff8",
+        "note": "Collection-wide fully-rigged 3D model production was explicitly announced."
+      },
+      {
+        "kind": "official_collector_guide",
+        "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+        "note": "Current collector utility proves fully rigged Streamingfellaz, but does not disclose downloadable 3D model files or a 3D format."
+      },
+      {
+        "kind": "official_founder_update",
+        "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+        "note": "Metawrapz was later put on ice, so earlier production targets cannot be treated as proof that an exhaustive 3D model distribution lane survived."
       }
     ]
   },
