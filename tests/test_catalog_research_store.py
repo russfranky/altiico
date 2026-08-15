@@ -80,8 +80,67 @@ def test_compiler_writes_deterministic_sorted_aggregate(tmp_path: Path):
     (shards / "alpha.json").write_text(json.dumps({"id": "alpha", "notes": "a"}), encoding="utf-8")
     output = tmp_path / "merged.json"
 
-    payload = run(base, shards, output)
+    payload = run(base, shards, output, overlays=[])
     saved = json.loads(output.read_text())
 
     assert list(payload["collections"]) == ["alpha", "zeta"]
     assert list(saved["collections"]) == ["alpha", "zeta"]
+
+
+def test_generated_overlay_fills_missing_nested_fields_but_never_overwrites_curator_data(tmp_path: Path):
+    base = tmp_path / "base.json"
+    shards = tmp_path / "shards"
+    shards.mkdir()
+    base.write_text(
+        json.dumps(
+            {
+                "collections": {
+                    "alpha": {
+                        "identity": {"name": "Alpha"},
+                        "discord": {
+                            "value": "https://discord.gg/curated",
+                            "evidence": [{"source": "curator"}],
+                        },
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    overlay = tmp_path / "openpage.json"
+    overlay.write_text(
+        json.dumps(
+            {
+                "collections": {
+                    "alpha": {
+                        "identity": {"project_url": "https://alpha.test"},
+                        "discord": {
+                            "value": "https://discord.gg/provider",
+                            "evidence": [{"source": "openpage"}],
+                        },
+                        "logo": {
+                            "value": "https://alpha.test/logo.png",
+                            "evidence": [{"source": "openpage"}],
+                        },
+                    },
+                    "unknown": {"logo": {"value": "https://unknown.test/logo.png"}},
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    output = tmp_path / "merged.json"
+
+    payload = run(base, shards, output, overlays=[overlay])
+    alpha = payload["collections"]["alpha"]
+    assert alpha["identity"] == {
+        "name": "Alpha",
+        "project_url": "https://alpha.test",
+    }
+    assert alpha["discord"]["value"] == "https://discord.gg/curated"
+    assert alpha["logo"]["value"] == "https://alpha.test/logo.png"
+    result = payload["overlays"][0]
+    assert "alpha.identity.project_url" in result["fieldsFilled"]
+    assert "alpha.logo" in result["fieldsFilled"]
+    assert "alpha.discord.value" in result["curatorFieldsPreserved"]
+    assert result["unknownCollections"] == ["unknown"]
