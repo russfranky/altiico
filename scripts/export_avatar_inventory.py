@@ -12,6 +12,8 @@ Compatibility rules:
   FBX avatar shipped. Only ``avatar_inventory`` may terminally resolve the
   broader multi-format inventory.
 - ``avatar_inventory.assets`` is the preferred research shape for GLB/FBX.
+- Explicitly catalog-bound OpenPage VRM/GLB discoveries are merged as partial
+  candidates. They never make an inventory exhaustive by themselves.
 """
 from __future__ import annotations
 
@@ -25,6 +27,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RESEARCH = ROOT / "data" / "catalog_research.json"
 DEFAULT_VRM_INVENTORY = ROOT / "static" / "data" / "vrm-inventory.json"
+DEFAULT_OPENPAGE_ASSETS = ROOT / "data" / "openpage_asset_discovery.json"
 DEFAULT_OUTPUT = ROOT / "static" / "data" / "avatar-inventory.json"
 SUPPORTED_FORMATS = {"vrm", "glb", "fbx"}
 TERMINAL_RESEARCH_STATES = {"not_shipped", "unrecoverable"}
@@ -109,6 +112,7 @@ def normalize_asset(
             "format": fmt,
             "rigged": True if fmt == "vrm" else None,
             "rigging_evidence": [],
+            "source_evidence": [],
         }
     if not isinstance(raw, dict):
         return None
@@ -122,6 +126,12 @@ def normalize_asset(
     if not isinstance(rigging_evidence, list):
         rigging_evidence = []
     rigging_evidence = [row for row in rigging_evidence if isinstance(row, dict) and row]
+    source_evidence = raw.get("source_evidence")
+    if not isinstance(source_evidence, list):
+        source_evidence = raw.get("sourceEvidence")
+    if not isinstance(source_evidence, list):
+        source_evidence = []
+    source_evidence = [row for row in source_evidence if isinstance(row, dict) and row]
     if raw.get("rigged") is True and not rigging_evidence and fmt == "fbx":
         # Collection-level evidence is allowed to support an explicitly rigged
         # FBX declaration when the asset is part of the evidenced inventory.
@@ -131,6 +141,7 @@ def normalize_asset(
         "format": fmt,
         "rigged": True if fmt == "vrm" else raw.get("rigged"),
         "rigging_evidence": rigging_evidence,
+        "source_evidence": source_evidence,
     }
 
 
@@ -148,11 +159,12 @@ def merge_assets(assets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             current["format"] = asset.get("format")
         if asset.get("rigged") is True:
             current["rigged"] = True
-        evidence_rows = list(current.get("rigging_evidence") or [])
-        for row in asset.get("rigging_evidence") or []:
-            if row not in evidence_rows:
-                evidence_rows.append(row)
-        current["rigging_evidence"] = evidence_rows
+        for field in ("rigging_evidence", "source_evidence"):
+            evidence_rows = list(current.get(field) or [])
+            for row in asset.get(field) or []:
+                if row not in evidence_rows:
+                    evidence_rows.append(row)
+            current[field] = evidence_rows
     return [merged[url] for url in sorted(merged)]
 
 
@@ -186,6 +198,71 @@ def vrm_assets(vrm_row: dict[str, Any]) -> list[dict[str, Any]]:
             if (asset := normalize_asset(url, default_format="vrm")) is not None
         ]
     )
+
+
+def openpage_asset_index(payload: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+    """Index only explicitly catalog-bound OpenPage candidate assets.
+
+    Display-name similarity and OpenPage IDs are deliberately insufficient for
+    catalog binding. The upstream discovery report must contain ``catalogId``.
+    """
+    indexed: dict[str, list[dict[str, Any]]] = {}
+    rows = payload.get("records")
+    if not isinstance(rows, list):
+        return indexed
+
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        collection_id = str(row.get("catalogId") or "").strip()
+        if not collection_id:
+            continue
+        openpage_id = str(row.get("openpageId") or "").strip() or None
+        candidates: list[dict[str, Any]] = []
+
+        for key, fmt in (("vrmCandidates", "vrm"), ("glbUrls", "glb")):
+            hits = row.get(key)
+            if not isinstance(hits, list):
+                continue
+            for hit in hits:
+                if isinstance(hit, str):
+                    url = hit.strip()
+                    source = None
+                    via = "openpage_asset_discovery"
+                elif isinstance(hit, dict):
+                    url = str(hit.get("url") or "").strip()
+                    source = hit.get("source")
+                    via = hit.get("via") or "openpage_asset_discovery"
+                else:
+                    continue
+                if not valid_url(url):
+                    continue
+                source_row = {
+                    "kind": "openpage_asset_candidate",
+                    "source": "OpenPage",
+                    "openpage_id": openpage_id,
+                    "record_index": row.get("recordIndex"),
+                    "source_path": source,
+                    "via": via,
+                }
+                source_row = {key: value for key, value in source_row.items() if value is not None}
+                asset = normalize_asset(
+                    {
+                        "url": url,
+                        "format": fmt,
+                        "source_evidence": [source_row],
+                    }
+                )
+                if asset is not None:
+                    candidates.append(asset)
+
+        if candidates:
+            indexed.setdefault(collection_id, []).extend(candidates)
+
+    return {
+        collection_id: merge_assets(assets)
+        for collection_id, assets in indexed.items()
+    }
 
 
 def access_for(research_row: dict[str, Any], vrm_row: dict[str, Any]) -> dict[str, Any]:
@@ -236,10 +313,15 @@ def storage_for(
     return dict(base) if isinstance(base, dict) else {"types": [], "scope": "avatar_files", "evidence": []}
 
 
-def inventory_for(vrm_row: dict[str, Any], research_row: dict[str, Any]) -> dict[str, Any]:
+def inventory_for(
+    vrm_row: dict[str, Any],
+    research_row: dict[str, Any],
+    openpage_assets: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     base_assets = vrm_assets(vrm_row)
     researched_assets = research_assets(research_row)
-    assets = merge_assets(base_assets + researched_assets)
+    discovered_assets = openpage_assets or []
+    assets = merge_assets(base_assets + researched_assets + discovered_assets)
     urls = [asset["url"] for asset in assets]
 
     avatar_override = research_row.get("avatar_inventory")
@@ -271,7 +353,11 @@ def inventory_for(vrm_row: dict[str, Any], research_row: dict[str, Any]) -> dict
         coverage_source = "complete_vrm_inventory"
     elif assets:
         state = "partial"
-        coverage_source = "partial_supported_avatar_assets"
+        coverage_source = (
+            "openpage_candidates"
+            if discovered_assets and not (base_assets or researched_assets)
+            else "partial_supported_avatar_assets"
+        )
 
     format_counts: dict[str, int] = {}
     for asset in assets:
@@ -302,25 +388,56 @@ def inventory_for(vrm_row: dict[str, Any], research_row: dict[str, Any]) -> dict
     }
 
 
-def run(research_path: Path, vrm_inventory_path: Path, output_path: Path) -> dict[str, Any]:
+def run(
+    research_path: Path,
+    vrm_inventory_path: Path,
+    output_path: Path,
+    openpage_assets_path: Path = DEFAULT_OPENPAGE_ASSETS,
+) -> dict[str, Any]:
     research_payload = load_json(research_path, {"collections": {}})
     research = research_payload.get("collections")
     if not isinstance(research, dict):
         research = {}
     vrm_payload = load_json(vrm_inventory_path, {"collections": []})
     vrm_rows = [row for row in vrm_payload.get("collections") or [] if isinstance(row, dict)]
+    openpage_payload = load_json(openpage_assets_path, {"records": []})
+    openpage_by_collection = openpage_asset_index(openpage_payload)
     inventories = [
-        inventory_for(row, research.get(str(row.get("collection_id"))) or {})
+        inventory_for(
+            row,
+            research.get(str(row.get("collection_id"))) or {},
+            openpage_by_collection.get(str(row.get("collection_id"))) or [],
+        )
         for row in vrm_rows
     ]
+    openpage_candidate_assets = sum(
+        any(
+            evidence_row.get("kind") == "openpage_asset_candidate"
+            for evidence_row in asset.get("source_evidence") or []
+        )
+        for row in inventories
+        for asset in row["assets"]
+    )
+    openpage_candidate_collections = sum(
+        any(
+            any(
+                evidence_row.get("kind") == "openpage_asset_candidate"
+                for evidence_row in asset.get("source_evidence") or []
+            )
+            for asset in row["assets"]
+        )
+        for row in inventories
+    )
     payload = {
         "schema": "avatar-catalog-inventory-v1",
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "sourceVrmGeneratedAt": vrm_payload.get("generatedAt"),
+        "sourceOpenPageGeneratedAt": openpage_payload.get("generatedAt"),
         "policy": (
             "A collection may satisfy the usable-avatar requirement with one exhaustive supported representation lane: "
             "structurally valid VRM, rigged GLB, or evidence-backed rigged FBX. Legacy VRM not_shipped states do not "
-            "terminally resolve the broader avatar inventory."
+            "terminally resolve the broader avatar inventory. Explicitly catalog-bound OpenPage VRM/GLB discoveries "
+            "are merged as candidates only and cannot make an inventory exhaustive without separate coverage evidence."
         ),
         "summary": {
             "collections": len(inventories),
@@ -330,6 +447,8 @@ def run(research_path: Path, vrm_inventory_path: Path, output_path: Path) -> dic
             "notShipped": sum(row["state"] == "not_shipped" for row in inventories),
             "unrecoverable": sum(row["state"] == "unrecoverable" for row in inventories),
             "enumeratedAssets": sum(int(row["enumerated_assets"]) for row in inventories),
+            "openpageCandidateCollections": openpage_candidate_collections,
+            "openpageCandidateAssets": openpage_candidate_assets,
         },
         "collections": inventories,
     }
@@ -342,10 +461,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--research", type=Path, default=DEFAULT_RESEARCH)
     parser.add_argument("--vrm-inventory", type=Path, default=DEFAULT_VRM_INVENTORY)
+    parser.add_argument("--openpage-assets", type=Path, default=DEFAULT_OPENPAGE_ASSETS)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args()
-    payload = run(args.research, args.vrm_inventory, args.output)
+    payload = run(args.research, args.vrm_inventory, args.output, args.openpage_assets)
     print(json.dumps(payload["summary"], indent=2))
     if args.strict and (payload["summary"]["partial"] or payload["summary"]["unknown"]):
         return 1
