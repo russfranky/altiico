@@ -1,0 +1,25 @@
+{
+  "schema": "unity-fbx-avatar-sources-v1",
+  "policy": "Each configured root must be a deliberately scoped standalone-avatar lane. Completeness requires an untruncated Git tree and explicit Unity humanoid/avatar importer evidence for every FBX in the root.",
+  "sources": [
+    {
+      "collection_id": "axolittles",
+      "repo": "AxoEngineers/axolittles-client",
+      "ref": "main",
+      "root": "Assets/BundleAssets/BaseModel",
+      "public": true,
+      "evidence": [
+        {
+          "kind": "official_governance_handoff",
+          "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+          "note": "The original project team transferred the Axoquarium 3D models and code to the community."
+        },
+        {
+          "kind": "public_handoff_repository",
+          "source": "https://github.com/AxoEngineers/axolittles-client/tree/main/Assets/BundleAssets/BaseModel",
+          "note": "The BaseModel subtree is the public Unity lane containing standalone Axolittles character FBXs and their importer metadata."
+        }
+      ]
+    }
+  ]
+}
