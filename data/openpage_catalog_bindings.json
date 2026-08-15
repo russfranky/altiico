@@ -1,13 +1,12 @@
 {
   "schema": "openpage-catalog-bindings-v2",
-  "policy": "Bindings are explicit curator/source mappings only. Display-name similarity never creates a catalog binding. Seed records may carry official OpenPage support evidence and explicit live source requests without claiming downloadable model enumeration.",
+  "policy": "Bindings are explicit curator/source mappings only. Display-name similarity never creates a catalog binding. Seed records may carry official OpenPage support evidence without claiming downloadable model enumeration.",
   "bindings": [],
   "seedRecords": [
     {
       "catalogId": "boredapeyachtclub",
       "sourceRecordId": "openpage-supported-avatars-bayc",
       "sourceUrl": "https://docs.openpage.fun/avatars",
-      "fetchUrl": "https://docs.openpage.fun/avatars",
       "openpageSupport": {
         "label": "BAYC",
         "animationCompatibility": [
@@ -15,35 +14,33 @@
           "MML UE5"
         ],
         "modelAccess": "ownership_verification_required",
-        "note": "OpenPage Supported Avatars lists BAYC and states that animation files can be used with models downloaded from OP after verifying ownership. The live source request may surface public reference links, but it does not prove an exhaustive owner-gated model inventory."
+        "note": "OpenPage Supported Avatars lists BAYC and states that animation files can be used with models downloaded from OP after verifying ownership. This proves platform support and access context, not exhaustive model URLs."
       }
     },
     {
       "catalogId": "mutant-ape-yacht-club",
       "sourceRecordId": "openpage-supported-avatars-mayc",
       "sourceUrl": "https://docs.openpage.fun/avatars",
-      "fetchUrl": "https://docs.openpage.fun/avatars",
       "openpageSupport": {
         "label": "MAYC",
         "animationCompatibility": [
           "MML UE5"
         ],
         "modelAccess": "ownership_verification_required",
-        "note": "OpenPage Supported Avatars lists MAYC and states that animation files can be used with models downloaded from OP after verifying ownership. The live source request may surface public reference links, but it does not prove an exhaustive owner-gated model inventory."
+        "note": "OpenPage Supported Avatars lists MAYC and states that animation files can be used with models downloaded from OP after verifying ownership. This proves platform support and access context, not exhaustive model URLs."
       }
     },
     {
       "catalogId": "clone-x",
       "sourceRecordId": "openpage-supported-avatars-clonex",
       "sourceUrl": "https://docs.openpage.fun/avatars",
-      "fetchUrl": "https://docs.openpage.fun/avatars",
       "openpageSupport": {
         "label": "CLONE X",
         "animationCompatibility": [
           "Daz3D Genesis 8.1"
         ],
         "modelAccess": "ownership_verification_required",
-        "note": "OpenPage Supported Avatars lists CLONE X and states that animation files can be used with models downloaded from OP after verifying ownership. The live source request may surface public reference links, but it does not prove an exhaustive owner-gated model inventory."
+        "note": "OpenPage Supported Avatars lists CLONE X and states that animation files can be used with models downloaded from OP after verifying ownership. This proves platform support and access context, not exhaustive model URLs."
       }
     }
   ]
