@@ -1,4 +1,4 @@
-from scripts.export_avatar_inventory import infer_format, inventory_for
+from scripts.export_avatar_inventory import infer_format, inventory_for, openpage_asset_index
 
 
 def base_vrm_row(**updates):
@@ -105,3 +105,87 @@ def test_fbx_rigging_evidence_is_preserved_for_probe():
     assert asset["format"] == "fbx"
     assert asset["rigged"] is True
     assert asset["rigging_evidence"]
+
+
+def test_openpage_bound_candidates_feed_avatar_inventory_without_claiming_completeness():
+    report = {
+        "records": [
+            {
+                "recordIndex": 4,
+                "catalogId": "demo",
+                "openpageId": "op-avatar-7",
+                "vrmCandidates": [
+                    {
+                        "url": "https://cdn.test/openpage/avatar.vrm",
+                        "source": "$.vrmUrl",
+                        "via": "openpage_record",
+                    }
+                ],
+                "glbUrls": [
+                    {
+                        "url": "https://cdn.test/openpage/avatar.glb",
+                        "source": "$.modelUrl",
+                        "via": "openpage_record",
+                    }
+                ],
+            }
+        ]
+    }
+    candidates = openpage_asset_index(report)["demo"]
+    result = inventory_for(base_vrm_row(), {}, candidates)
+
+    assert result["state"] == "partial"
+    assert result["complete"] is False
+    assert result["coverage_source"] == "openpage_candidates"
+    assert result["formats"] == {"glb": 1, "vrm": 1}
+    assert all(asset["source_evidence"] for asset in result["assets"])
+    assert {
+        row["openpage_id"]
+        for asset in result["assets"]
+        for row in asset["source_evidence"]
+    } == {"op-avatar-7"}
+
+
+def test_openpage_unbound_records_are_never_attached_by_name_or_openpage_id():
+    report = {
+        "records": [
+            {
+                "recordIndex": 0,
+                "catalogId": None,
+                "openpageId": "demo",
+                "name": "Demo",
+                "vrmCandidates": [
+                    {"url": "https://cdn.test/should-not-attach.vrm", "via": "openpage_record"}
+                ],
+                "glbUrls": [],
+            }
+        ]
+    }
+    assert openpage_asset_index(report) == {}
+
+
+def test_openpage_candidates_do_not_override_evidence_backed_terminal_avatar_state():
+    terminal_research = {
+        "avatar_inventory": {
+            "state": "not_shipped",
+            "evidence": evidence(),
+        }
+    }
+    candidates = openpage_asset_index(
+        {
+            "records": [
+                {
+                    "catalogId": "demo",
+                    "vrmCandidates": ["https://cdn.test/conflict.vrm"],
+                    "glbUrls": [],
+                }
+            ]
+        }
+    )["demo"]
+    result = inventory_for(base_vrm_row(), terminal_research, candidates)
+
+    # Discovery candidates are intentionally strong enough to reopen a stale
+    # terminal claim, rather than silently coexist with "not shipped".
+    assert result["state"] == "partial"
+    assert result["complete"] is False
+    assert result["terminal"] is False
