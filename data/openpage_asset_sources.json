@@ -1,5 +1,37 @@
 {
-  "schema": "openpage-asset-sources-v1",
-  "policy": "Raw or curated OpenPage avatar records may be added here when they carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json. Animation-only GLBs are preserved as evidence but are not avatar-model candidates.",
-  "records": []
+  "schema": "openpage-asset-sources-v2",
+  "apiBase": "https://api.openpage.fun/v1",
+  "policy": "Raw, curated, or live-resolved OpenPage avatar records must carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json. Animation-only GLBs are preserved as evidence but are not avatar-model candidates. Live requests create partial discovery candidates only.",
+  "documentedEndpointTemplates": {
+    "mml": "/m/mml/{id}",
+    "collection_metadata": "/m/c/{id}"
+  },
+  "records": [],
+  "examples": [
+    {
+      "catalogId": "example-catalog-id",
+      "mmlIds": [
+        "openpage-mml-id"
+      ],
+      "note": "The workflow resolves each ID against /m/mml/{id}, preserves source evidence, and discovers referenced VRM or model GLB URLs."
+    },
+    {
+      "openpageId": "curator-bound-openpage-id",
+      "collectionMetadataId": "openpage-collection-metadata-id"
+    },
+    {
+      "catalogId": "example-catalog-id",
+      "requests": [
+        {
+          "kind": "url",
+          "url": "https://example.openpage-source.test/avatar-metadata.json"
+        },
+        {
+          "kind": "custom_metadata",
+          "id": "source-id",
+          "path": "/custom/metadata/{id}"
+        }
+      ]
+    }
+  ]
 }
