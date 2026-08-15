@@ -1,0 +1,51 @@
+{
+  "id": "mekaverse",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "MekaVerse",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x9a534628b4062e123ce7ee2222ec20b86e16ca8f",
+    "opensea_slug": "mekaverse",
+    "project_url": "https://themekaverse.com/",
+    "source": "official+etherscan+curated",
+    "notes": "8,888-item mecha collection. Historical GLB/rig availability is not treated as a native exhaustive VRM inventory."
+  },
+  "discord": {
+    "value": "https://discord.gg/mekaverse",
+    "evidence": [{"kind":"official_project_site","source":"https://themekaverse.com/","observed_at":"2026-08-13","note":"Current site exposes the MekaVerse Discord link."}]
+  },
+  "x": {
+    "value": "https://x.com/MekaVerse",
+    "handle": "MekaVerse",
+    "evidence": [{"kind":"official_project_site","source":"https://themekaverse.com/","observed_at":"2026-08-13","note":"Current site exposes the MekaVerse Twitter/X link."}]
+  },
+  "launch_date": {
+    "value": "2021-10-07",
+    "evidence": [
+      {"kind":"official_developer_launch_post","source":"https://medium.com/@themekaverse/mekaverse-minting-process-and-technical-issues-a4ef462eaf0d","note":"Project technical post describes the Oct. 7 sale/redeployment during launch."},
+      {"kind":"contemporaneous_mint_record","source":"https://www.nftculture.com/nft-news/mekaverse-nft-drop/","note":"Historical mint coverage anchors the public mint window to Oct. 7, 2021."}
+    ]
+  },
+  "storage": {
+    "value": "ipfs",
+    "scope": "nft_metadata_and_art",
+    "note": "Project launch documentation states final NFT assets/metadata were intended to be on IPFS after reveal. This is not proof that any separate VRM files were stored on IPFS.",
+    "evidence": [{"kind":"official_developer_launch_post","source":"https://medium.com/@themekaverse/mekaverse-minting-process-and-technical-issues-a4ef462eaf0d"}]
+  },
+  "ip_rights": {
+    "value": "exact_nft_holder_license_unrecovered",
+    "state": "unrecoverable",
+    "summary": "The current official site exposes Terms & Conditions, but the accessible current terms reviewed are commerce/site terms and do not establish a controlling NFT-holder commercial/derivative license. The catalog therefore does not infer holder IP rights beyond ordinary token ownership without a recovered primary NFT license.",
+    "evidence": [
+      {"kind":"official_current_terms","source":"https://themekaverse.com/terms/","observed_at":"2026-08-13","note":"Current terms were reviewed but do not provide a clear controlling NFT-holder IP grant in the material recovered."},
+      {"kind":"official_project_site","source":"https://themekaverse.com/","observed_at":"2026-08-13"}
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "The current official site remains a substantive project surface with collection, Season 2 world map, Citadel, events/news and community links. No sunset announcement was found in the current official surfaces checked.",
+    "evidence": [{"kind":"official_project_site","source":"https://themekaverse.com/","observed_at":"2026-08-13"}]
+  }
+}

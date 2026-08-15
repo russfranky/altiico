@@ -1,0 +1,167 @@
+{
+  "schema": "vrm-catalog-research-v1",
+  "policy": "Manual research only overrides dimensions that cannot be safely derived from authoritative catalog/API evidence. Positive manual values and explicit absence/lifecycle states require evidence. IP rights and file access are independent dimensions.",
+  "collections": {
+    "super-yetis": {
+      "identity": {
+        "name": "Super Yetis",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x3f0785095a660fee131eebcd5aa243e529c21786",
+        "opensea_slug": "superyeti",
+        "project_url": "https://superyeti.co/",
+        "source": "curated+archive+opensea",
+        "notes": "Sunset 3D-avatar project. Contemporary avatar research listed the 3D deliverable as WIP with unknown file format; archived sampled token metadata contains no model references."
+      },
+      "banner": {
+        "value": "https://i2c.seadn.io/ethereum/ccede398c020425aba91d8cdfc1ee09a/02d0aaac5118f7675555efde7cf3ba/7702d0aaac5118f7675555efde7cf3ba.jpeg?w=2000",
+        "evidence": [
+          {
+            "kind": "opensea_collection_media",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "logo": {
+        "value": "https://i2c.seadn.io/ethereum/ccede398c020425aba91d8cdfc1ee09a/8fc7e11d889468b633589e6ad78b53/6c8fc7e11d889468b633589e6ad78b53.gif?h=250&w=250",
+        "evidence": [
+          {
+            "kind": "opensea_collection_media",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "short_description": {
+        "value": "Super Yetis is an Ethereum PFP collection of randomized full-body 3D yeti characters built around the planned Yetiverse game.",
+        "evidence": [
+          {
+            "kind": "archived_token_metadata",
+            "source": "data/superyeti_archive/metadata/0.json",
+            "note": "Archived metadata describes randomized 3D characters and the planned multiplayer Yetiverse."
+          },
+          {
+            "kind": "opensea_collection",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "discord": {
+        "value": "https://discord.gg/jm2cFGW245",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "official_publication",
+            "source": "https://medium.com/superyeti",
+            "note": "Official SuperYeti Medium publication links this invite from its JOIN OVER 3.5k SUPERYETIS ON OUR DISCORD callout."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/super_yeti",
+        "handle": "super_yeti",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "x_account",
+            "source": "https://x.com/super_yeti",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "historical_profile_index",
+            "source": "https://mobile.twstalker.com/Dev__Jay",
+            "note": "Historical index identifies SuperYeti @super_yeti and its project bio."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-06-15",
+        "evidence": [
+          {
+            "kind": "contemporaneous_launch_report",
+            "source": "https://www.nftculture.com/nft-video/nftculture-super-yeti-drop-coverage/",
+            "note": "Published June 15, 2021 and states the Super Yeti project launches that day at 3:00 PM ET."
+          },
+          {
+            "kind": "opensea_collection",
+            "source": "https://opensea.io/collection/superyeti",
+            "note": "OpenSea independently lists launch month as Jun 2021."
+          }
+        ]
+      },
+      "storage": {
+        "value": "ipfs",
+        "scope": "nft_metadata_and_images",
+        "note": "Archived project metadata says the ERC-721 collection is backed by IPFS file storage. No VRM-file storage mechanism was proven.",
+        "evidence": [
+          {
+            "kind": "archived_token_metadata",
+            "source": "data/superyeti_archive/metadata/0.json"
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "unrecoverable",
+        "coverage": "unrecoverable",
+        "urls": [],
+        "note": "No public shipped VRM inventory is proven. Contemporary 3D-avatar research listed Super Yetis as WIP/Q&A with unknown file format, while the archived sampled token metadata has no model references. This does not claim that a VRM could never have existed; it records that no exhaustive public VRM set can be recovered from the available evidence.",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "Super Yetis: file format unknown; status WIP, Q/A; rigged 3D avatars were being modeled/tested/optimized."
+          },
+          {
+            "kind": "wayback_archive_manifest",
+            "source": "data/superyeti_archive_wayback/manifest.json",
+            "note": "Archived sampled token records contain empty model_refs arrays."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "commercial_rights_reported",
+        "state": "unrecoverable",
+        "summary": "A contemporaneous 3D-avatar catalog reported commercial rights enabled for Super Yeti holders; primary project license/terms text has not been recovered, so the exact scope remains unverified.",
+        "confidence": "medium",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "The Super Yetis entry marks Commercial rights with a check."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "unavailable",
+        "requires_ownership": null,
+        "state": "unrecoverable",
+        "note": "No shipped public VRM download/access flow is proven in the recovered sources, so holder-gating cannot be inferred either way.",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars"
+          },
+          {
+            "kind": "wayback_archive_manifest",
+            "source": "data/superyeti_archive_wayback/manifest.json"
+          }
+        ]
+      },
+      "project_status": {
+        "value": "sunset",
+        "state": "sunset",
+        "note": "Catalog curator confirmed Super Yetis is a sunset project; secondary-market trading may continue even though project development is sunset.",
+        "evidence": [
+          {
+            "kind": "curator_assertion",
+            "source": "catalog-curator-conversation",
+            "observed_at": "2026-08-13",
+            "note": "SuperYetis is sunset."
+          }
+        ]
+      }
+    }
+  }
+}

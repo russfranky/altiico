@@ -1,0 +1,85 @@
+{
+  "schema": "openpage-asset-sources-v2",
+  "apiBase": "https://api.openpage.fun/v1",
+  "policy": "Raw, curated, or live-resolved OpenPage avatar records must carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json before they can enter a collection inventory. Shared indexes and platform-default models are retained as unbound discovery leads. Animation-only GLBs are preserved as evidence but are not avatar-model candidates. Live requests create partial discovery candidates only.",
+  "documentedEndpointTemplates": {
+    "mml": "/m/mml/{id}",
+    "collection_metadata": "/m/c/{id}"
+  },
+  "records": [
+    {
+      "sourceRecordId": "openpage-supported-avatars-index",
+      "fetchUrl": "https://docs.openpage.fun/avatars",
+      "bindingState": "unbound",
+      "note": "Shared OpenPage supported-avatar index. Any links found here remain unbound discovery leads until a curator supplies a collection-specific OpenPage ID, metadata ID, contract, or catalogId."
+    },
+    {
+      "sourceRecordId": "openpage-default-avatar-models",
+      "sourceUrl": "https://docs.openpage.fun/avatars",
+      "bindingState": "unbound",
+      "role": "platform_default_reference_models",
+      "modelUrls": [
+        "https://cdn.other.page/m/avatar-n1x.3js.glb",
+        "https://cdn.other.page/m/avatar-p4g3.3js.glb",
+        "https://cdn.other.page/m/avatar-n1x-m2.3js.glb",
+        "https://cdn.other.page/m/avatar-p4g3-m2.3js.glb",
+        "https://cdn.other.page/m/avatar-n1x-soneium.3js.glb",
+        "https://cdn.other.page/m/avatar-p4g3-soneium.3js.glb"
+      ],
+      "sharedDrive": {
+        "url": "https://drive.google.com/drive/folders/1r9GpwyDhPUmyLTar3Eq0oqDw0cZAiwua",
+        "observedFolders": [
+          "N1X",
+          "P4G3",
+          "Animations"
+        ],
+        "observedModelFormats": [
+          "glb",
+          "fbx",
+          "blend"
+        ],
+        "observedMmlModelFiles": [
+          "MSquared-N1X.mml.glb",
+          "MSquared-P4G3.mml.glb"
+        ],
+        "observedAnimationFiles": [
+          "bayc-animations.glb",
+          "mayc-animations.glb",
+          "clonex-animations.glb",
+          "koda-animations.glb",
+          "meebit-animations.glb",
+          "frwc-animations.glb",
+          "mml-generic-animations.glb"
+        ],
+        "note": "Drive file-page URLs are preserved as source evidence rather than binary inventory URLs. They require a dedicated Drive download resolver before structural probing."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "catalogId": "example-catalog-id",
+      "mmlIds": [
+        "openpage-mml-id"
+      ],
+      "note": "The workflow resolves each ID against /m/mml/{id}, preserves source evidence, and discovers referenced VRM or model GLB URLs."
+    },
+    {
+      "openpageId": "curator-bound-openpage-id",
+      "collectionMetadataId": "openpage-collection-metadata-id"
+    },
+    {
+      "catalogId": "example-catalog-id",
+      "requests": [
+        {
+          "kind": "url",
+          "url": "https://example.openpage-source.test/avatar-metadata.json"
+        },
+        {
+          "kind": "custom_metadata",
+          "id": "source-id",
+          "path": "/custom/metadata/{id}"
+        }
+      ]
+    }
+  ]
+}

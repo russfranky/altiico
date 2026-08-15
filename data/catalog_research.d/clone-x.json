@@ -1,0 +1,128 @@
+{
+  "id": "clone-x",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Clone X",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+    "opensea_slug": "clonex",
+    "project_url": "https://rtfkt.com/",
+    "source": "official+opensea+curated",
+    "notes": "Sunset RTFKT collection. Official holder downloads are avatar-ready source 3D files delivered in GLB/FBX lanes; RTFKT separately teaches holders to convert those sources into VRM. The source library therefore qualifies for the broader usable-avatar inventory even though it is not a shipped per-token VRM inventory."
+  },
+  "discord": {
+    "value": "https://discord.gg/rtfkt",
+    "state": "historical",
+    "evidence": [{"kind":"official_publication_profile","source":"https://medium.com/@rtfktstudios/about","note":"Official RTFKT profile lists discord.gg/rtfkt."}]
+  },
+  "x": {
+    "value": "https://x.com/RTFKT",
+    "handle": "RTFKT",
+    "state": "historical",
+    "evidence": [{"kind":"official_link_hub","source":"https://linktr.ee/rtfktfx","observed_at":"2026-08-13"}]
+  },
+  "launch_date": {
+    "value": "2021-11-29",
+    "evidence": [
+      {"kind":"contemporaneous_launch_report","source":"https://www.forbes.com/sites/cathyhackl/2021/11/29/the-evolution-of-a-metaverse-brand-rtkfts-clonex-drops-today/","note":"Contemporaneous report states Clone X drops Nov. 29, 2021."},
+      {"kind":"marketplace_history","source":"https://opensea.io/collection/clonex","note":"OpenSea shows Dec 2021; retained as a month-boundary discrepancy."}
+    ]
+  },
+  "storage": {
+    "value": "holder_platform",
+    "scope": "source_3d_file_delivery",
+    "note": "Clone X source 3D files are delivered through the authenticated Clone X holder surface; this is not a claim about a native VRM object-store backend.",
+    "evidence": [
+      {"kind":"official_3d_file_documentation","source":"https://academy.rtfkt.com/library/foundations/clone-x-3d-files","observed_at":"2026-08-13"},
+      {"kind":"official_3d_file_update","source":"https://creators.rtfkt.com/feature-articles/3d-files-2-0","note":"RTFKT says current delivered formats are GLB or FBX."}
+    ]
+  },
+  "vrm_inventory": {
+    "state": "not_shipped",
+    "coverage": "not_shipped",
+    "urls": [],
+    "note": "RTFKT's official delivery docs identify GLB/FBX source files. VRM is a holder-created export using Clone Converter/Blender; no official per-token native VRM download inventory is shipped by the collection itself.",
+    "evidence": [
+      {"kind":"official_file_format_documentation","source":"https://creators.rtfkt.com/feature-articles/3d-files-2-0","note":"Delivered formats documented as GLB or FBX."},
+      {"kind":"official_vrm_conversion_documentation","source":"https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-converter","note":"Clone Converter is documented as a tool to optimize/export a Clone as VRM."},
+      {"kind":"official_vrm_course","source":"https://academy.rtfkt.com/library/courses/blender/platforms-and-vrms/clone-x-vrms","note":"Official course teaches holders how to create a Clone X VRM from source files."}
+    ]
+  },
+  "avatar_formats": {
+    "value": [
+      "glb",
+      "fbx"
+    ],
+    "state": "shipped_avatar_ready",
+    "note": "RTFKT documents Clone X as a high-end avatar collection ready for digital worlds, delivers the source library in GLB/FBX formats, provides posing and animation tooling that operates on Clone files, and documents user-friendly rigging/animation as part of the 3D asset-library requirements. This crosses the broader rigged-avatar threshold without implying that native VRM files were shipped.",
+    "evidence": [
+      {
+        "kind": "official_clone_avatar_documentation",
+        "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+        "note": "Official Clone X 3D Files page describes the collection as high-end avatars ready for digital worlds and documents holder download access."
+      },
+      {
+        "kind": "official_3d_file_update",
+        "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+        "note": "Official 3D Files 2.0 documentation identifies GLB/FBX delivery, says Clone X files remain downloadable from the dedicated Clone X inventory, and specifies user-friendly rigging and animation for the asset library."
+      },
+      {
+        "kind": "official_clone_animation_tooling",
+        "source": "https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-tools",
+        "note": "Official Clone Tools operates on imported Clone files and provides one-click posing plus animation packs and export settings."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "shipped_unenumerated",
+    "coverage": "avatar_ready_formats_proven_holder_gated_files_not_enumerated",
+    "assets": [],
+    "note": "Clone X GLB/FBX avatar-ready files are proven to have shipped, but they are retrieved per owned Clone through a holder-gated surface. No exhaustive public asset URL lane has been recovered, so this remains incomplete rather than terminally complete.",
+    "evidence": [
+      {
+        "kind": "official_clone_avatar_documentation",
+        "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+        "note": "Official instructions require connecting a wallet, selecting an owned Clone and downloading from its 3D Files tab."
+      },
+      {
+        "kind": "official_3d_file_update",
+        "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+        "note": "Official update confirms GLB/FBX delivery and continued Clone X downloads from the holder inventory."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial_3d_license_subject_to_registration_and_guidelines",
+    "summary": "RTFKT documents commercial rights for Clone X 3D files and requires holders to register their Clone for commercial-license use under the applicable 3D-model commercial-license guidelines.",
+    "evidence": [
+      {"kind":"official_3d_file_documentation","source":"https://academy.rtfkt.com/library/foundations/rtfkt-3d-files","note":"Official documentation describes commercial rights and Clone registration for commercial licensing."},
+      {"kind":"official_project_history","source":"https://rtfktstudios.medium.com/a-new-era-begins-the-start-of-the-avatar-economy-91f644be33be"}
+    ]
+  },
+  "file_access": {
+    "mode": "unavailable",
+    "requires_ownership": null,
+    "state": "not_shipped",
+    "note": "There is no official native VRM file to access. The underlying Clone X GLB/FBX source files are separately holder-gated and require wallet ownership; holders can convert those sources to VRM themselves.",
+    "evidence": [
+      {"kind":"official_3d_file_documentation","source":"https://academy.rtfkt.com/library/foundations/clone-x-3d-files","note":"Source 3D download requires connecting a wallet and selecting an owned Clone."},
+      {"kind":"official_vrm_conversion_documentation","source":"https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-converter"}
+    ]
+  },
+  "source_3d_file_access": {
+    "value": "holder_gated",
+    "requires_ownership": true,
+    "access_url": "https://clonex.rtfkt.com/",
+    "evidence": [{"kind":"official_3d_file_documentation","source":"https://academy.rtfkt.com/library/foundations/clone-x-3d-files"}]
+  },
+  "project_status": {
+    "value": "sunset",
+    "state": "sunset",
+    "note": "RTFKT announced its operational wind-down for the end of January 2025. Current archive/download resources are preservation surfaces, not evidence of an operating project.",
+    "evidence": [
+      {"kind":"official_archive_state","source":"https://rtfkt.com/","observed_at":"2026-08-13"},
+      {"kind":"contemporaneous_shutdown_report_quoting_official_statement","source":"https://www.vogue.com/article/rtfkt-andnbspan-early-web3-fashion-success-story-is-folding"}
+    ]
+  }
+}

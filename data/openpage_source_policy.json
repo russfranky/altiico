@@ -1,0 +1,109 @@
+{
+  "schema": "openpage-source-policy-v4",
+  "source": {
+    "name": "OpenPage",
+    "current_domain": "openpage.fun",
+    "legacy_domain": "op.xyz",
+    "current_docs": "https://docs.openpage.fun/",
+    "legacy_docs": "https://docs.op.xyz/",
+    "documented_api_base": "https://api.openpage.fun/v1",
+    "legacy_api_base": "https://api.op.xyz/v1",
+    "api_base_configurable": true
+  },
+  "purpose": "High-signal avatar discovery and runtime-representation evidence for catalog collections that use or onboard through OpenPage.",
+  "documented_endpoints": {
+    "communities": {
+      "method": "GET",
+      "path": "/community",
+      "authentication": "X-Api-Key",
+      "pagination": "page + perPage",
+      "catalog_value": "description, X, Discord, website, logo and source timestamps; identity remains unbound until explicit mapping"
+    },
+    "collection_metadata": {
+      "method": "GET",
+      "path": "/m/c/{id}",
+      "authentication": "public metadata endpoint",
+      "catalog_value": "collection metadata and nested asset leads for an explicitly supplied collection metadata ID"
+    },
+    "mml_metadata": {
+      "method": "GET",
+      "path": "/m/mml/{id}",
+      "authentication": "public metadata endpoint",
+      "catalog_value": "MML/runtime definition lead; inspect referenced model sources without inferring avatar readiness"
+    }
+  },
+  "live_source_requests": {
+    "location": "data/openpage_asset_sources.json records plus data/openpage_catalog_bindings.json seedRecords",
+    "accepted_shapes": [
+      "mmlId or mmlIds",
+      "collectionMetadataId or collectionMetadataIds",
+      "fetchUrl or fetchUrls",
+      "requests / metadataRequests / openpageRequests with kind plus id, URL, or explicit path"
+    ],
+    "security": "OPENPAGE_API_KEY is sent only when the resolved request has the same origin as the configured OpenPage API base.",
+    "failure_semantics": "Per-request failures are retained in sourceRefresh.events and never fabricate assets or silently make a collection complete.",
+    "coverage_semantics": "Resolved records are discovery candidates. They remain partial until a separately evidenced exhaustive collection inventory exists."
+  },
+  "asset_lanes": {
+    "mml": {
+      "role": "runtime_definition",
+      "catalog_effect": "evidence_and_model_discovery",
+      "notes": "Preserve MML URLs independently. Inspect m-character and m-model src attributes for underlying model leads. MML itself is not a model file and does not satisfy the avatar inventory."
+    },
+    "vrm": {
+      "role": "avatar_candidate",
+      "catalog_effect": "candidate_until_structural_validation",
+      "notes": "Creator-provided .vrm URLs are strong avatar leads but must still pass the structural VRM probe and exhaustive-inventory rules."
+    },
+    "glb": {
+      "role": "avatar_model_candidate",
+      "catalog_effect": "qualifies_when_rigged_and_structurally_valid",
+      "notes": "A model GLB can satisfy the usable-avatar inventory when the binary is valid GLB 2.0 and its glTF structure contains a mesh plus a skin with joints. A plain or unrigged GLB remains 3D evidence only."
+    },
+    "animation_glb": {
+      "role": "animation_runtime_asset",
+      "catalog_effect": "evidence_only_excluded_from_avatar_inventory",
+      "notes": "OpenPage publishes or references standalone animation GLBs separately from avatar models. Animation fields and animation-named GLBs such as bayc-animations.glb are preserved as compatibility evidence but must never be imported as avatar-model candidates."
+    },
+    "fbx": {
+      "role": "avatar_candidate",
+      "catalog_effect": "qualifies_when_real_fbx_plus_explicit_rigging_evidence",
+      "notes": "OpenPage does not currently require FBX, but recovered FBX assets may qualify elsewhere in the catalog when the file is real FBX and rigging or avatar-readiness is explicitly evidenced."
+    }
+  },
+  "identity_policy": {
+    "catalog_mapping_required_for_collection_enrichment": true,
+    "accepted_binding_methods": [
+      "known_catalog_id",
+      "unique_contract_address",
+      "curator_supplied_openpage_id"
+    ],
+    "display_name_matching_allowed": false,
+    "unmapped_records": "Keep as discovery leads; do not silently attach them to a catalog collection by display name alone."
+  },
+  "acceptance_policy": {
+    "mml_satisfies_avatar_inventory": false,
+    "animation_glb_satisfies_avatar_inventory": false,
+    "vrm_satisfies_avatar_inventory_after_structural_validation": true,
+    "rigged_glb_satisfies_avatar_inventory_after_structural_validation": true,
+    "unrigged_glb_satisfies_avatar_inventory": false,
+    "fbx_requires_explicit_rigging_evidence": true,
+    "requires_exhaustive_collection_inventory": true,
+    "openpage_candidates_are_complete_by_themselves": false
+  },
+  "pipeline": {
+    "community_adapter": "scripts/discover_openpage_communities.py",
+    "community_tests": "tests/test_discover_openpage_communities.py",
+    "community_default_output": "data/openpage_communities.json",
+    "catalog_binder_and_live_resolver": "scripts/build_openpage_catalog_feed.py",
+    "catalog_binder_tests": "tests/test_openpage_catalog_feed.py",
+    "catalog_bindings": "data/openpage_catalog_bindings.json",
+    "asset_source_intake": "data/openpage_asset_sources.json",
+    "asset_adapter": "scripts/openpage_asset_discovery.py",
+    "asset_tests": "tests/test_openpage_asset_discovery.py",
+    "asset_default_output": "data/openpage_asset_discovery.json",
+    "avatar_inventory_exporter": "scripts/export_avatar_inventory.py",
+    "avatar_probe": "scripts/probe_avatar_inventory.py"
+  },
+  "curator_note": "OpenPage is expected to become an important onboarding source for collections using MML. Add explicit OpenPage MML or collection metadata IDs to the source intake, or an explicitly bound source URL. The workflow resolves those sources, keeps MML and standalone animation GLBs separate, and validates the referenced VRM or rigged model GLB as the actual usable avatar asset."
+}

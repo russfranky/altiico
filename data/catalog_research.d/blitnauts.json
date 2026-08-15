@@ -1,0 +1,52 @@
+{
+  "id": "blitnauts",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Blitnauts",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0x448f3219cf2a23b0527a7a0158e7264b87f635db",
+    "opensea_slug": "blitnauts",
+    "project_url": "https://www.blitmap.com/",
+    "source": "official+etherscan+curated",
+    "notes": "Blitmap expansion collection. CC0/public-domain rights are strong evidence; lifecycle and file inventory are tracked separately."
+  },
+  "discord": {
+    "value": "https://discord.gg/blitmap",
+    "evidence": [
+      {"kind":"official_project_site","source":"https://www.blitmap.com/","observed_at":"2026-08-13","note":"Current official site links discord.gg/blitmap."},
+      {"kind":"official_launch_plan","source":"https://blitmap.mirror.xyz/","note":"Official Blitmap publication uses the same Discord community link."}
+    ]
+  },
+  "x": {
+    "value": "https://x.com/blitmap",
+    "handle": "blitmap",
+    "evidence": [
+      {"kind":"official_project_site","source":"https://www.blitmap.com/","observed_at":"2026-08-13","note":"Current official site links twitter.com/blitmap."}
+    ]
+  },
+  "launch_date": {
+    "value": "2021-09-10",
+    "evidence": [
+      {"kind":"official_project_history","source":"https://blitmap.mirror.xyz/","note":"Official October 2021 Blitnauts update describes the release as about one month earlier."},
+      {"kind":"historical_market_record","source":"https://cryptoslam.io/blitnauts/sales/summary","note":"Historical collection records resolve first launch activity to Sep. 10, 2021."}
+    ]
+  },
+  "ip_rights": {
+    "value": "cc0_public_domain",
+    "summary": "Blitnauts and the broader Blitmap assets were released into the public domain/CC0, so reuse is not conditioned on token ownership.",
+    "evidence": [
+      {"kind":"official_public_domain_announcement","source":"https://blitmap.mirror.xyz/","note":"Official Blitmap publication announces the project art as public domain and describes the public-domain expansion model."},
+      {"kind":"official_current_project_site","source":"https://www.blitmap.com/","observed_at":"2026-08-13"}
+    ]
+  },
+  "project_status": {
+    "value": "dormant",
+    "state": "dormant",
+    "note": "Evidence-based lifecycle inference: the official site, Discord and X links remain reachable, but the official publication surfaces checked are dominated by the original 2021-era launch/public-domain material and no project shutdown announcement was found. Dormant is used rather than sunset.",
+    "evidence": [
+      {"kind":"official_project_site","source":"https://www.blitmap.com/","observed_at":"2026-08-13"},
+      {"kind":"official_project_publication","source":"https://blitmap.mirror.xyz/","observed_at":"2026-08-13"}
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "id": "boredapeyachtclub",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Bored Ape Yacht Club",
+    "tier": "C",
+    "chain": "ethereum",
+    "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "opensea_slug": "boredapeyachtclub",
+    "project_url": "https://boredapeyachtclub.com/",
+    "source": "official+opensea",
+    "notes": "BAYC and MAYC are researched as separate collections. BAYC has official holder-gated 3D Avatar Files and animation-ready 3D Ape models; Otherside separately proves a GLB-backed BAYC avatar runtime. The broader avatar requirement is therefore proven in principle even though an exhaustive downloadable GLB/FBX/VRM asset lane has not been recovered."
+  },
+  "banner": {
+    "value": "https://i2c.seadn.io/collection/boredapeyachtclub/banner/3ddcabd06bb257af35f029b3c17163/e13ddcabd06bb257af35f029b3c17163.jpeg?fit=inside",
+    "evidence": [
+      {
+        "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+        "note": "Current OpenSea collection metadata banner_image_url."
+      }
+    ]
+  },
+  "logo": {
+    "value": "https://i2c.seadn.io/collection/boredapeyachtclub/image/1a09c26b1c30427b26944c47fc7bb9/d81a09c26b1c30427b26944c47fc7bb9.png",
+    "evidence": [
+      {
+        "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+        "note": "Current OpenSea collection metadata image_url."
+      }
+    ]
+  },
+  "short_description": {
+    "value": "Yuga Labs' 10,000-piece Ethereum PFP collection, launched in April 2021 as NFT-backed membership in the Bored Ape Yacht Club.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+        "note": "Official BAYC history identifies the 10,000-piece collection and April 23, 2021 release."
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2021-04-23",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+        "note": "Official BAYC history: 10,000 Bored Apes were released April 23, 2021."
+      }
+    ]
+  },
+  "discord": {
+    "value": "https://discord.com/invite/3P5K3dzgdB",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC links page resolves its Discord entry to this invite."
+      }
+    ]
+  },
+  "x": {
+    "value": "https://x.com/BoredApeYC",
+    "handle": "BoredApeYC",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/links",
+        "note": "Current official BAYC links page resolves X to @BoredApeYC."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "evidence": [
+      {
+        "source": "https://yuga.com/about/",
+        "note": "Yuga's current About page lists BAYC among its active collections and states the company is still building."
+      },
+      {
+        "source": "https://boredapeyachtclub.com/activations",
+        "note": "Official BAYC activations remain current through 2025-2026."
+      }
+    ]
+  },
+  "storage": {
+    "value": [
+      "https"
+    ],
+    "scope": "official_holder_avatar_file_delivery",
+    "evidence": [
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Yuga states associated 2D and 3D Avatar Files are made available for download to verified BAYC owners. The exact backing object store and holder-download file-format inventory are not disclosed by the terms."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "scope": "official_bayc_avatar_files",
+    "evidence": [
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Official Avatar Terms state the associated 2D/3D files are downloadable by verified owners and the Avatar File license lasts only while the holder owns the corresponding BAYC NFT."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial",
+    "summary": "BAYC holders receive broad commercial rights in purchased BAYC art. For Yuga's official 3D Avatar Files, Yuga retains the Avatar File IP and grants the current BAYC holder an exclusive, worldwide, royalty-free, sublicensable commercial and non-commercial license for the ownership term, subject to the Avatar Terms.",
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/bayc-license",
+        "note": "Current BAYC license grants unlimited worldwide commercial use of purchased art to the holder."
+      },
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Current BAYC Avatar Terms define ownership and the holder license for Yuga-created 2D/3D Avatar Files."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "unknown",
+    "coverage": "research_open",
+    "urls": [],
+    "evidence": [
+      {
+        "source": "https://boredapeyachtclub.com/activations/bored-ape-3d-models-release",
+        "note": "Official source proves 3D Ape Models shipped in 2024, but does not identify VRM as the file format or expose all model URLs."
+      },
+      {
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Official terms prove downloadable 3D Avatar Files exist for BAYC holders. They do not identify the format as VRM."
+      }
+    ]
+  },
+  "avatar_formats": {
+    "value": [
+      "glb"
+    ],
+    "state": "runtime_proven_holder_download_format_unresolved",
+    "note": "Otherside explicitly implements BAYC avatars from GLB character definitions. Separately, BAYC's DashBo lets holders pose and animate their official 3D Ape models, proving the holder model lane is animation-ready. The sources do not establish that the holder-downloaded file itself is the same GLB used by Otherside, so GLB is recorded as a proven official runtime representation rather than asserted as the undisclosed holder-download format.",
+    "evidence": [
+      {
+        "kind": "official_otherside_avatar_runtime",
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Official Otherside docs list BAYC among proven avatar implementations and say relevant character meshes are downloaded at runtime from GLB definitions."
+      },
+      {
+        "kind": "official_bayc_animation_surface",
+        "source": "https://boredapeyachtclub.com/activations/dashbo",
+        "note": "Official BAYC activation states holders use their 3D Ape models to pose characters and add dance animations."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "shipped_unenumerated",
+    "coverage": "rigged_avatar_capability_and_glb_runtime_proven_files_not_enumerated",
+    "assets": [],
+    "note": "Usable rigged BAYC avatars are proven by official holder-model animation tooling and the GLB-backed Otherside avatar implementation, but neither an exhaustive public GLB runtime URL set nor the holder-gated Avatar File URLs/formats have been recovered. Keep the broader inventory incomplete until one supported representation lane is exhaustively enumerable.",
+    "evidence": [
+      {
+        "kind": "official_avatar_file_terms",
+        "source": "https://yuga.com/3d-avatar-terms/",
+        "note": "Yuga makes associated 3D Avatar Files downloadable to verified owners."
+      },
+      {
+        "kind": "official_bayc_animation_surface",
+        "source": "https://boredapeyachtclub.com/activations/dashbo",
+        "note": "Official platform demonstrates holder 3D Ape models are poseable and animation-ready."
+      },
+      {
+        "kind": "official_otherside_avatar_runtime",
+        "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+        "note": "Official runtime uses GLB definitions for supported character meshes and lists BAYC as a proven avatar implementation."
+      }
+    ]
+  }
+}

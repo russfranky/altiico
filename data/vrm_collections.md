@@ -26,8 +26,9 @@ Three tiers:
 - **Tier B — VRM exists but off-chain.** The collection ships VRM avatars via a separate
   site/API/manifest, not in the token metadata itself. Holder has to go fetch the VRM
   manually.
-- **Tier C — WIP / proof-of-concept only.** Team or community has produced VRM files
-  but they're not yet shipped as a complete, downloadable per-token asset.
+- **Tier C — WIP / proof-of-concept only.** Evidence exists for 3D/VRM development or
+  adjacent avatar work, but a complete downloadable per-token VRM inventory has not
+  been proven.
 
 † = single VRM shared across the whole collection (not per-token unique).
 
@@ -73,7 +74,7 @@ Three tiers:
 ### Polygon
 
 | OpenSea slug | Collection | Contract | Notes |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | xmas-chibis | Xmas Chibis | 0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483 | 80 VRMs, 16 designs × 5 variations, CC0, Polygonal Mind |
 | — | PolygonLow | (see opensea.io/collection/polygon-low) | glb + vrm + vox per hackmd/@XR; site polygonlow.xyz |
 
@@ -130,12 +131,13 @@ by parsing the NFT.
 
 ## Tier C — WIP / proof-of-concept / community-led
 
-Team or community has produced VRM files but they're not yet shipped as a complete,
-downloadable per-token asset. Listed for completeness.
+Evidence exists for 3D/VRM development or adjacent avatar work, but a complete,
+downloadable per-token VRM inventory has not yet been proven. Listed for completeness.
 
 | Collection | OpenSea | Notes |
 | --- | --- | --- |
-| Bored Ape Yacht Club / Mutant Ape Yacht Club | opensea.io/collection/boredapeyachtclub | CryptoAvatars team working on 30,000 BAYC+MAYC VRMs |
+| Bored Ape Yacht Club | opensea.io/collection/boredapeyachtclub | Official Yuga 3D Avatar Files ship to verified BAYC owners; VRM format and exhaustive file URLs are not proven |
+| Mutant Ape Yacht Club | opensea.io/collection/mutant-ape-yacht-club | Current Otherside runtime supports Mutant Ape 3D/GLB avatar definitions; downloadable VRM inventory is not proven |
 | 0N1 Force | opensea.io/collection/0n1-force | Proof-of-concept VRM only |
 | Gutter Cat Gang | opensea.io/collection/guttercatgang | Partnered with House of Kibaa; WIP |
 | Deadfellaz | opensea.io/collection/deadfellaz | Roadmap 2.0 promises 10k 3D models |
@@ -147,13 +149,18 @@ downloadable per-token asset. Listed for completeness.
 | CloneX | clonex.rtfkt.com | RTFKT; rigged + shapekeys for face filters; not VRM-native |
 | Mekaverse | opensea.io/collection/mekaverse | Unknown file format |
 | MetaTravelers | opensea.io/collection/metatravelers | WIP |
-| Genies (Flow) | (Dapper Labs / Flow) | Partnership, format unknown |
 
 ---
 
 ## Not VRM (often mislabeled)
 
-These ship GLB only, or no 3D at all. Listed to save future scrapers time.
+These ship GLB only, no 3D at all, or are platform/ecosystem leads rather than a
+fixed tokenized avatar collection. Listed to save future scrapers time.
+
+Genies (Flow) is a platform/marketplace/avatar ecosystem rather than a fixed NFT avatar
+collection; the historical Flow partnership does not identify a catalogable Genies VRM
+collection. Current Genies SDK material describes account-backed avatars and native asset
+frameworks, not an exhaustive tokenized VRM collection.
 
 AdWorld (0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb), Chibi Apes (GLB only via
 `external_url`), A Kid Called Beast, FLUF World, FyatLux (GLB only), PartyBear,
@@ -340,11 +347,12 @@ licenses would need to be checked per-project before implementation:
 | MetaTravelers | Unknown | WIP |
 | PolygonLow | Unknown | — |
 
-### Tier C — WIP / not yet shipped
+### Tier C — WIP / not yet fully proven
 
-These collections have not yet shipped VRM files. Licensing will be determined
-when the VRM files are released. Most PFP projects (BAYC, CloneX, etc.) grant
-holder commercial rights, so the holder-based model (🟡) will likely apply.
+Tier C rows do not yet have a complete, binary-validated VRM inventory. Some already
+have official 3D files or runtime avatar support, while others remain WIP. Licensing,
+storage, file access, and ownership gating must be researched per project rather than
+inferred from the presence of 3D work.
 
 ### VRM-embedded license fields reference
 

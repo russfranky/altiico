@@ -1,26 +1,14 @@
 """Export the catalog as a pre-alpha ``packages/avatars`` registry projection.
 
-The pre-alpha Hubzz avatar backend (``packages/avatars``) owns a locked
-canonical schema (``packages/avatars/schema/src/avatar.ts``, SCHEMA_VERSION 1).
-Its registry (`collections/index.json` on R2, seeded by
-``seed-registry.ts``) carries one row per avatar SET. Today that seed is 8
-hardcoded collections; this catalog is the authoritative superset that can
-regenerate it from real data.
+The downstream registry has a locked schema, so this exporter projects richer
+catalog facts conservatively. Two distinctions are non-negotiable:
 
-This exporter emits ``static/data/avatars-registry.json`` in that registry
-shape so the pre-alpha ``avatar-api`` can ingest it. It deliberately obeys the
-pre-alpha schema's two locked design rules:
+1. ownership chain and storage provider are independent;
+2. IP/license rights and file-access gating are independent.
 
-  1. CHAIN and STORAGE are orthogonal. ``chain`` is the OWNERSHIP blockchain and
-     is one of a fixed enum (or null for CC0 / non-NFT sets). ``arweave`` and
-     ``ipfs`` are STORAGE providers, never chains — the pre-alpha schema calls
-     ``chain: a.chain || source`` "the bug in the current API". We split them.
-  2. Chains outside the pre-alpha enum (shape, ape_chain, solana, "multi") are
-     NOT coerced. The collection still ships with ``chain: null`` and is listed
-     under ``unmapped`` with a reason, so a human decides — we never invent a
-     chain the downstream enum cannot represent.
-
-Nothing here mutates the DB or touches pre-alpha; it only writes one JSON file.
+In particular, ``purchase_gated`` is derived only from explicit file-access
+facts. A restrictive license never implies that downloading the file requires
+owning the NFT.
 """
 
 from __future__ import annotations
@@ -39,68 +27,82 @@ except ModuleNotFoundError:
     from catalog_snapshot import record_snapshot, snapshot_created_at
 
 REGISTRY_SCHEMA = "hubzz-avatars-registry-v1"
-
-# The pre-alpha ChainSchema enum (packages/avatars/schema/src/avatar.ts).
-# A catalog chain NOT in this set becomes null + an `unmapped` note.
 PREALPHA_CHAINS = {"ethereum", "zora", "polygon", "base", "optimism", "arbitrum"}
-
-# The pre-alpha StorageProviderSchema enum.
 STORAGE_PROVIDERS = {"self-host", "ipfs", "arweave", "contract-metadata", "r2"}
 
-# Catalog license terms -> the string form the registry seed uses
-# (seed-registry.ts values: "CC0", "CC-BY", "All Rights Reserved", ...).
-LICENSE_OPEN = "open"        # redistribution allowed, no holder gate
-LICENSE_RESTRICTED = "restricted"  # holder-gated / redistribution prohibited
 
-
-def _norm(s: str | None) -> str | None:
+def _norm(s: Any) -> str | None:
     if s is None:
         return None
-    s = s.strip()
-    return s or None
+    value = str(s).strip()
+    return value or None
 
 
 def _slug(row: dict[str, Any]) -> str:
-    """The set slug. The catalog collection id already serves this role."""
     return row["id"]
 
 
 def _chain(row: dict[str, Any]) -> tuple[str | None, str | None]:
-    """Return (chain_or_none, unmapped_reason_or_none) per locked rule 1/2."""
     chain = (_norm(row.get("chain")) or "").lower()
     if chain in PREALPHA_CHAINS:
         return chain, None
     if not chain:
-        return None, None  # CC0 / non-NFT sets legitimately have no chain
-    # A storage provider mis-filed in the chain column (rule 1's exact bug):
-    # null the chain, let _storage_provider pick it up, do NOT flag as unmapped.
+        return None, None
     if chain in {"arweave", "ipfs"}:
         return None, None
-    # A real chain the downstream enum cannot represent — do not coerce.
     return None, f"chain '{chain}' not in pre-alpha ChainSchema enum"
 
 
+def _explicit_storage_types(row: dict[str, Any]) -> list[str]:
+    raw = row.get("storage_types")
+    if raw is None:
+        return []
+    if isinstance(raw, list):
+        values = raw
+    else:
+        try:
+            decoded = json.loads(str(raw))
+        except (TypeError, ValueError, json.JSONDecodeError):
+            decoded = str(raw)
+        values = decoded if isinstance(decoded, list) else [decoded]
+    return sorted({str(item).strip().lower() for item in values if _norm(item)})
+
+
 def _storage_provider(row: dict[str, Any]) -> str:
-    """Where the ORIGINAL asset is hosted — orthogonal to chain (rule 1)."""
-    pattern = (_norm(row.get("vrm_url_pattern")) or "").lower()
-    chain = (_norm(row.get("chain")) or "").lower()
-    if pattern.startswith("ipfs://") or "/ipfs/" in pattern:
+    """Project richer catalog storage into the locked pre-alpha enum."""
+    explicit = _explicit_storage_types(row)
+    if "ipfs" in explicit:
         return "ipfs"
-    if chain == "arweave" or "arweave" in pattern or pattern.startswith("ar://"):
+    if "arweave" in explicit:
         return "arweave"
-    # Any other non-empty pattern is a direct file host (catalog patterns are
-    # often scheme-less, e.g. "nft.retrodoges.com/main/vrm/{id}.vrm").
-    if pattern:
+    if "onchain" in explicit:
+        return "contract-metadata"
+    if any(item in {"https", "holder_platform", "mixed"} for item in explicit):
         return "self-host"
-    # No direct file pattern: the VRM is only reachable via token metadata.
+
+    pattern = (_norm(row.get("vrm_url_pattern")) or "").lower()
+    direct = (_norm(row.get("vrm_url_https")) or "").lower()
+    chain = (_norm(row.get("chain")) or "").lower()
+    combined = " ".join(part for part in (pattern, direct) if part)
+    if pattern.startswith("ipfs://") or direct.startswith("ipfs://") or "/ipfs/" in combined:
+        return "ipfs"
+    if chain == "arweave" or "arweave" in combined or pattern.startswith("ar://") or direct.startswith("ar://"):
+        return "arweave"
+    if pattern or direct:
+        return "self-host"
     if _norm(row.get("sample_metadata_url")) or _norm(row.get("vrm_param")):
         return "contract-metadata"
     return "self-host"
 
 
 def _license_label(row: dict[str, Any]) -> str:
-    """Human-facing license string, mirroring the seed-registry vocabulary."""
-    vl = (_norm(row.get("vrm_license")) or "").upper().replace(" ", "").replace("-", "").replace("_", "")
+    vl = (
+        (_norm(row.get("vrm_license")) or "")
+        .upper()
+        .replace(" ", "")
+        .replace("-", "")
+        .replace("_", "")
+    )
     if vl.startswith("CC0") or "PUBLICDOMAIN" in vl:
         return "CC0"
     if vl.startswith("CCBYNCND"):
@@ -120,26 +122,36 @@ def _license_label(row: dict[str, Any]) -> str:
     return "Unknown"
 
 
-def _purchase_gated(row: dict[str, Any]) -> bool:
-    """Whether the set requires owning the NFT (pre-alpha `purchase_gated`).
+def _explicit_bool(value: Any) -> bool | None:
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, int) and value in {0, 1}:
+        return bool(value)
+    text = str(value).strip().lower()
+    if text in {"1", "true", "yes"}:
+        return True
+    if text in {"0", "false", "no"}:
+        return False
+    return None
 
-    The pre-alpha server treats gating as "an economics rule, not a security
-    boundary" and fails OPEN, so we gate only when the catalog clearly says the
-    license is holder-restricted or redistribution-prohibited. Open (CC0/CC-BY)
-    and unknown default to ungated, matching the seed-registry's mostly-open set.
+
+def _purchase_gated(row: dict[str, Any]) -> bool:
+    """Project explicit file ownership/access evidence to the locked bool.
+
+    Unknown is represented as ``False`` only because the downstream schema has
+    no nullable gating field. The strict catalog acceptance audit separately
+    rejects unknown access, so this projection must never be treated as evidence.
     """
-    category = (_norm(row.get("license_category")) or "").lower()
-    allowed_user = (_norm(row.get("allowed_user")) or "").lower()
-    redistribution = (_norm(row.get("redistribution")) or "").lower()
-    label = _license_label(row)
-    if category == "red":
+    explicit = _explicit_bool(row.get("file_access_requires_ownership"))
+    if explicit is not None:
+        return explicit
+    mode = (_norm(row.get("file_access_mode")) or "").lower()
+    if mode == "holder_gated":
         return True
-    if label == "All Rights Reserved":
-        return True
-    if allowed_user == "holder":
-        return True
-    if redistribution == "prohibited":
-        return True
+    if mode in {"public", "unavailable"}:
+        return False
     return False
 
 
@@ -153,13 +165,20 @@ def _avatar_count(row: dict[str, Any]) -> int | None:
     return None
 
 
+def _description(row: dict[str, Any]) -> str | None:
+    return (
+        _norm(row.get("short_description"))
+        or _norm(row.get("curated_description"))
+        or _norm(row.get("description"))
+    )
+
+
 def build_entry(row: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | None]:
-    """Return (registry_entry, unmapped_note_or_none)."""
     chain, reason = _chain(row)
     entry: dict[str, Any] = {
         "slug": _slug(row),
         "name": _norm(row.get("name")) or _slug(row),
-        "description": _norm(row.get("description")),
+        "description": _description(row),
         "license": _license_label(row),
         "chain": chain,
         "storage_provider": _storage_provider(row),
@@ -168,17 +187,17 @@ def build_entry(row: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | N
         "pfp": _norm(row.get("image_url")) or _norm(row.get("sample_nft_image")),
         "avatar_count": _avatar_count(row),
         "purchase_gated": _purchase_gated(row),
-        "status": "staged",  # catalog data is not yet published to R2
+        "status": "staged",
         "tier": _norm(row.get("tier")),
     }
     note = None
     if reason:
-        note = {"slug": entry["slug"], "reason": reason,
-                "original_chain": _norm(row.get("chain"))}
+        note = {
+            "slug": entry["slug"],
+            "reason": reason,
+            "original_chain": _norm(row.get("chain")),
+        }
     return entry, note
-
-
-# ─── DB access ───────────────────────────────────────────────────────────────
 
 
 def _row_factory(cursor: sqlite3.Cursor, row: tuple[Any, ...]) -> dict[str, Any]:
@@ -195,14 +214,13 @@ def load_collections(conn: sqlite3.Connection, tiers: set[str]) -> list[dict[str
     return list(cur.fetchall())
 
 
-# ─── main ────────────────────────────────────────────────────────────────────
-
-
 def parse_tiers(raw: str) -> set[str]:
     tiers = {t.strip().upper() for t in raw.split(",") if t.strip()}
     invalid = tiers - {"A", "B", "C"}
     if invalid:
-        raise SystemExit(f"invalid tier(s): {', '.join(sorted(invalid))} (allowed: A, B, C)")
+        raise SystemExit(
+            f"invalid tier(s): {', '.join(sorted(invalid))} (allowed: A, B, C)"
+        )
     return tiers
 
 
@@ -221,7 +239,8 @@ def build_registry(
     return {
         "schema": REGISTRY_SCHEMA,
         "source": "vrm-catalog",
-        "generated_at": generated_at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": generated_at
+        or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "snapshot_id": snapshot_id,
         "collections": entries,
         "unmapped": unmapped,
@@ -234,7 +253,9 @@ def main(argv: Iterable[str] | None = None) -> int:
         description="Export avatars-registry.json for the pre-alpha packages/avatars ingest."
     )
     parser.add_argument("--db", default=str(repo_root / "data" / "vrm_index.db"))
-    parser.add_argument("--output", default=str(repo_root / "static" / "data" / "avatars-registry.json"))
+    parser.add_argument(
+        "--output", default=str(repo_root / "static" / "data" / "avatars-registry.json")
+    )
     parser.add_argument("--tier", default="A,B", help="comma-separated tiers (default A,B)")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
@@ -250,29 +271,34 @@ def main(argv: Iterable[str] | None = None) -> int:
         snapshot_id = record_snapshot(conn)
         generated_at = snapshot_created_at(conn, snapshot_id)
         rows = load_collections(conn, tiers)
-        primary_contracts = {
-            str(item["collection_id"]): item["address"]
-            for item in conn.execute(
-                """
-                SELECT collection_id, address
-                FROM contracts
-                WHERE is_primary=1
-                ORDER BY collection_id, rowid
-                """
-            )
-        } if conn.execute(
-            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='contracts'"
-        ).fetchone() else {}
+        primary_contracts = (
+            {
+                str(item["collection_id"]): item["address"]
+                for item in conn.execute(
+                    """
+                    SELECT collection_id, address
+                    FROM contracts
+                    WHERE is_primary=1
+                    ORDER BY collection_id, rowid
+                    """
+                )
+            }
+            if conn.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='contracts'"
+            ).fetchone()
+            else {}
+        )
         for row in rows:
             row["_canonical_contract"] = primary_contracts.get(str(row["id"]))
     finally:
         conn.close()
 
     registry = build_registry(rows, snapshot_id, generated_at)
-
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    output_path.write_text(
+        json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
 
     gated = sum(1 for c in registry["collections"] if c["purchase_gated"])
     with_chain = sum(1 for c in registry["collections"] if c["chain"])
