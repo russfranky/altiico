@@ -1,0 +1,5 @@
+{
+  "schema": "openpage-asset-sources-v1",
+  "policy": "Raw or curated OpenPage avatar records may be added here when they carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json. Animation-only GLBs are preserved as evidence but are not avatar-model candidates.",
+  "records": []
+}
