@@ -259,3 +259,42 @@ def test_failed_live_request_is_visible_and_does_not_fabricate_assets():
     assert events[0]["url"] == "https://api.openpage.fun/v1/m/mml/missing"
     assert events[0]["status"] == "error"
     assert "upstream unavailable" in events[0]["error"]
+
+
+def test_shared_index_fetch_remains_unbound_discovery_only(tmp_path):
+    research_path = tmp_path / "research.json"
+    bindings_path = tmp_path / "bindings.json"
+    input_path = tmp_path / "input.json"
+    output_path = tmp_path / "output.json"
+    research_path.write_text(json.dumps(CATALOG))
+    bindings_path.write_text(json.dumps({"bindings": []}))
+    input_path.write_text(
+        json.dumps(
+            {
+                "records": [
+                    {
+                        "sourceRecordId": "shared-index",
+                        "fetchUrl": "https://docs.openpage.fun/avatars",
+                    }
+                ]
+            }
+        )
+    )
+
+    def requester(url, api_key, api_base):
+        return {"modelUrl": "https://cdn.test/shared-reference.glb"}
+
+    report = run(
+        research_path=research_path,
+        bindings_path=bindings_path,
+        input_paths=[input_path],
+        output_path=output_path,
+        source_requester=requester,
+    )
+    row = report["records"][0]
+    assert row["catalogId"] is None
+    assert [item["url"] for item in row["glbUrls"]] == [
+        "https://cdn.test/shared-reference.glb"
+    ]
+    assert report["bindingSummary"]["bound"] == 0
+    assert report["bindingSummary"]["unbound"] == 1
