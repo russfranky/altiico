@@ -7,10 +7,12 @@ on:
     paths:
       - .github/workflows/openpage-catalog-feed.yml
       - scripts/discover_openpage_communities.py
+      - scripts/discover_openpage_community_assets.py
       - scripts/build_openpage_catalog_feed.py
       - scripts/openpage_asset_discovery.py
       - scripts/export_avatar_inventory.py
       - scripts/probe_avatar_inventory.py
+      - tests/test_discover_openpage_community_assets.py
       - data/openpage_source_policy.json
       - data/openpage_catalog_bindings.json
       - data/openpage_asset_sources.json
@@ -52,12 +54,14 @@ jobs:
         run: |
           python -m py_compile \
             scripts/discover_openpage_communities.py \
+            scripts/discover_openpage_community_assets.py \
             scripts/build_openpage_catalog_feed.py \
             scripts/openpage_asset_discovery.py \
             scripts/export_avatar_inventory.py \
             scripts/probe_avatar_inventory.py
           python -m pytest \
             tests/test_discover_openpage_communities.py \
+            tests/test_discover_openpage_community_assets.py \
             tests/test_openpage_catalog_feed.py \
             tests/test_openpage_asset_discovery.py \
             tests/test_avatar_inventory.py \
@@ -91,12 +95,24 @@ jobs:
           print(json.dumps({'communitiesEnumerated': count, 'coverageComplete': complete}, indent=2))
           PY
 
+      - name: Discover current OpenPage community asset-list routes and exhaust them
+        run: |
+          python scripts/discover_openpage_community_assets.py \
+            --communities data/openpage_communities.json \
+            --bindings data/openpage_catalog_bindings.json \
+            --output data/openpage_community_assets.json \
+            --api-key "$OPENPAGE_API_KEY" \
+            --per-page 100 \
+            --max-pages 0 \
+            --strict
+
       - name: Resolve explicitly bound MML, VRM and model-GLB candidates
         run: |
           python scripts/build_openpage_catalog_feed.py \
             --research data/catalog_research_merged.json \
             --bindings data/openpage_catalog_bindings.json \
             --input data/openpage_communities.json \
+            --input data/openpage_community_assets.json \
             --input data/openpage_asset_sources.json \
             --output data/openpage_asset_discovery.json \
             --fetch-mml \
@@ -110,6 +126,7 @@ jobs:
           from pathlib import Path
 
           communities = json.loads(Path('data/openpage_communities.json').read_text())
+          community_assets = json.loads(Path('data/openpage_community_assets.json').read_text())
           feed = json.loads(Path('data/openpage_asset_discovery.json').read_text())
           records = [row for row in feed.get('records', []) if isinstance(row, dict)]
           bound_asset_records = [
@@ -128,11 +145,18 @@ jobs:
               for hit in row.get('glbUrls', [])
               if isinstance(hit, dict) and hit.get('url')
           }
+          source_summary = community_assets.get('summary') or {}
           health = {
-              'schema': 'openpage-feed-health-v1',
+              'schema': 'openpage-feed-health-v2',
               'generatedAt': datetime.now(timezone.utc).isoformat(),
               'communitiesEnumerated': int((communities.get('summary') or {}).get('communitiesEnumerated') or 0),
               'communityCoverageComplete': (communities.get('summary') or {}).get('coverageComplete') is True,
+              'assetListEndpoints': int(source_summary.get('endpoints') or 0),
+              'assetListRequestsSucceeded': int(source_summary.get('requestsSucceeded') or 0),
+              'assetListRequestsFailed': int(source_summary.get('requestsFailed') or 0),
+              'assetListItems': int(source_summary.get('items') or 0),
+              'assetListCatalogBoundItems': int(source_summary.get('catalogBoundItems') or 0),
+              'assetListCoverageComplete': source_summary.get('coverageComplete') is True,
               'records': len(records),
               'boundRecords': int((feed.get('bindingSummary') or {}).get('bound') or 0),
               'boundAssetRecords': len(bound_asset_records),
@@ -163,6 +187,7 @@ jobs:
           name: openpage-catalog-feed
           path: |
             data/openpage_communities.json
+            data/openpage_community_assets.json
             data/openpage_asset_discovery.json
             data/openpage_feed_health.json
             data/avatar_inventory_probe.json
@@ -178,7 +203,7 @@ jobs:
           if not health.get('productive'):
               raise SystemExit(
                   'OpenPage produced no explicitly catalog-bound VRM or model-GLB candidates; '
-                  'add real collection metadata/MML IDs or explicit contract-bound source records'
+                  'add real community bindings or source records for the communities that own the files'
               )
           PY
 
@@ -188,6 +213,7 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add \
             data/openpage_communities.json \
+            data/openpage_community_assets.json \
             data/openpage_asset_discovery.json \
             data/openpage_feed_health.json \
             data/avatar_inventory_probe.json \
