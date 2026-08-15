@@ -1,4 +1,5 @@
 from scripts.discover_openpage_communities import (
+    DEFAULT_API_BASE,
     build_report,
     collect_communities,
     community_page_url,
@@ -6,8 +7,9 @@ from scripts.discover_openpage_communities import (
 
 
 def test_community_page_url_uses_documented_pagination_shape():
-    assert community_page_url("https://api.op.xyz/v1", 2, 100) == (
-        "https://api.op.xyz/v1/community?page=2&perPage=100"
+    assert DEFAULT_API_BASE == "https://api.openpage.fun/v1"
+    assert community_page_url(DEFAULT_API_BASE, 2, 100) == (
+        "https://api.openpage.fun/v1/community?page=2&perPage=100"
     )
 
 
@@ -35,7 +37,7 @@ def test_community_discovery_exhausts_pages_and_deduplicates_ids():
         return pages[page]
 
     rows, coverage = collect_communities(
-        api_base="https://api.op.xyz/v1",
+        api_base=DEFAULT_API_BASE,
         api_key="secret",
         per_page=2,
         requester=requester,
@@ -58,7 +60,7 @@ def test_page_budget_is_explicitly_truncated():
         }
 
     rows, coverage = collect_communities(
-        api_base="https://api.op.xyz/v1",
+        api_base=DEFAULT_API_BASE,
         api_key="secret",
         per_page=100,
         max_pages=1,
@@ -89,7 +91,7 @@ def test_openpage_name_never_auto_binds_catalog_identity():
             "truncated": False,
             "coverageComplete": True,
         },
-        api_base="https://api.op.xyz/v1",
+        api_base=DEFAULT_API_BASE,
     )
     row = report["communities"][0]
     assert row["name"] == "Bored Ape Yacht Club"
