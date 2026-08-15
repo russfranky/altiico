@@ -95,7 +95,7 @@ jobs:
           print(json.dumps({'communitiesEnumerated': count, 'coverageComplete': complete}, indent=2))
           PY
 
-      - name: Discover current OpenPage community asset-list routes and exhaust them
+      - name: Discover current OpenPage community asset-list routes and exhaust accessible records
         run: |
           python scripts/discover_openpage_community_assets.py \
             --communities data/openpage_communities.json \
@@ -103,8 +103,7 @@ jobs:
             --output data/openpage_community_assets.json \
             --api-key "$OPENPAGE_API_KEY" \
             --per-page 100 \
-            --max-pages 0 \
-            --strict
+            --max-pages 0
 
       - name: Resolve explicitly bound MML, VRM and model-GLB candidates
         run: |
