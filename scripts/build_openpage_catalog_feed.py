@@ -181,9 +181,13 @@ def bind_record(
     if supplied_catalog_id:
         if supplied_catalog_id in known_catalog_ids:
             row["catalogId"] = supplied_catalog_id
+            for key in CATALOG_ID_KEYS:
+                if key != "catalogId":
+                    row.pop(key, None)
             return row, "catalog_id", diagnostics
         diagnostics.append(f"unknown_catalog_id:{supplied_catalog_id}")
-        row.pop("catalogId", None)
+        for key in CATALOG_ID_KEYS:
+            row.pop(key, None)
 
     matched_ids: set[str] = set()
     matched_contracts: list[str] = []
