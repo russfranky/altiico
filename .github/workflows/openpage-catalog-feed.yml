@@ -12,7 +12,14 @@ on:
       - scripts/openpage_asset_discovery.py
       - scripts/export_avatar_inventory.py
       - scripts/probe_avatar_inventory.py
+      - scripts/run_openpage_catalog_feed.py
+      - tests/test_discover_openpage_communities.py
       - tests/test_discover_openpage_community_assets.py
+      - tests/test_openpage_catalog_feed.py
+      - tests/test_openpage_asset_discovery.py
+      - tests/test_avatar_inventory.py
+      - tests/test_probe_avatar_inventory.py
+      - tests/test_run_openpage_catalog_feed.py
       - data/openpage_source_policy.json
       - data/openpage_catalog_bindings.json
       - data/openpage_asset_sources.json
@@ -58,125 +65,23 @@ jobs:
             scripts/build_openpage_catalog_feed.py \
             scripts/openpage_asset_discovery.py \
             scripts/export_avatar_inventory.py \
-            scripts/probe_avatar_inventory.py
+            scripts/probe_avatar_inventory.py \
+            scripts/run_openpage_catalog_feed.py
           python -m pytest \
             tests/test_discover_openpage_communities.py \
             tests/test_discover_openpage_community_assets.py \
             tests/test_openpage_catalog_feed.py \
             tests/test_openpage_asset_discovery.py \
             tests/test_avatar_inventory.py \
-            tests/test_probe_avatar_inventory.py -q
+            tests/test_probe_avatar_inventory.py \
+            tests/test_run_openpage_catalog_feed.py -q
 
-      - name: Build the merged research identity source
+      - name: Refresh and measure the complete OpenPage avatar lane
         run: |
-          python scripts/build_catalog_research_store.py \
-            --output data/catalog_research_merged.json
-
-      - name: Exhaust the OpenPage community API
-        run: |
-          python scripts/discover_openpage_communities.py \
-            --api-key "$OPENPAGE_API_KEY" \
-            --output data/openpage_communities.json
-
-      - name: Reject an empty or incomplete community snapshot
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          payload = json.loads(Path('data/openpage_communities.json').read_text())
-          summary = payload.get('summary') or {}
-          count = int(summary.get('communitiesEnumerated') or 0)
-          complete = summary.get('coverageComplete') is True
-          if count <= 0:
-              raise SystemExit('OpenPage returned zero communities; refusing a false-success feed')
-          if not complete:
-              raise SystemExit('OpenPage community pagination is incomplete')
-          print(json.dumps({'communitiesEnumerated': count, 'coverageComplete': complete}, indent=2))
-          PY
-
-      - name: Discover current OpenPage community asset-list routes and exhaust accessible records
-        run: |
-          python scripts/discover_openpage_community_assets.py \
-            --communities data/openpage_communities.json \
-            --bindings data/openpage_catalog_bindings.json \
-            --output data/openpage_community_assets.json \
+          python scripts/run_openpage_catalog_feed.py \
             --api-key "$OPENPAGE_API_KEY" \
             --per-page 100 \
-            --max-pages 0
-
-      - name: Resolve explicitly bound MML, VRM and model-GLB candidates
-        run: |
-          python scripts/build_openpage_catalog_feed.py \
-            --research data/catalog_research_merged.json \
-            --bindings data/openpage_catalog_bindings.json \
-            --input data/openpage_communities.json \
-            --input data/openpage_community_assets.json \
-            --input data/openpage_asset_sources.json \
-            --output data/openpage_asset_discovery.json \
-            --fetch-mml \
-            --strict-source-fetch
-
-      - name: Measure productive collection-bound candidates
-        run: |
-          python - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          communities = json.loads(Path('data/openpage_communities.json').read_text())
-          community_assets = json.loads(Path('data/openpage_community_assets.json').read_text())
-          feed = json.loads(Path('data/openpage_asset_discovery.json').read_text())
-          records = [row for row in feed.get('records', []) if isinstance(row, dict)]
-          bound_asset_records = [
-              row for row in records
-              if row.get('catalogId') and (row.get('vrmCandidates') or row.get('glbUrls'))
-          ]
-          bound_vrms = {
-              hit.get('url')
-              for row in bound_asset_records
-              for hit in row.get('vrmCandidates', [])
-              if isinstance(hit, dict) and hit.get('url')
-          }
-          bound_glbs = {
-              hit.get('url')
-              for row in bound_asset_records
-              for hit in row.get('glbUrls', [])
-              if isinstance(hit, dict) and hit.get('url')
-          }
-          source_summary = community_assets.get('summary') or {}
-          health = {
-              'schema': 'openpage-feed-health-v2',
-              'generatedAt': datetime.now(timezone.utc).isoformat(),
-              'communitiesEnumerated': int((communities.get('summary') or {}).get('communitiesEnumerated') or 0),
-              'communityCoverageComplete': (communities.get('summary') or {}).get('coverageComplete') is True,
-              'assetListEndpoints': int(source_summary.get('endpoints') or 0),
-              'assetListRequestsSucceeded': int(source_summary.get('requestsSucceeded') or 0),
-              'assetListRequestsFailed': int(source_summary.get('requestsFailed') or 0),
-              'assetListItems': int(source_summary.get('items') or 0),
-              'assetListCatalogBoundItems': int(source_summary.get('catalogBoundItems') or 0),
-              'assetListCoverageComplete': source_summary.get('coverageComplete') is True,
-              'records': len(records),
-              'boundRecords': int((feed.get('bindingSummary') or {}).get('bound') or 0),
-              'boundAssetRecords': len(bound_asset_records),
-              'boundVrmCandidates': len(bound_vrms),
-              'boundGlbCandidates': len(bound_glbs),
-              'productive': bool(bound_vrms or bound_glbs),
-          }
-          Path('data/openpage_feed_health.json').write_text(json.dumps(health, indent=2) + '\n')
-          print(json.dumps(health, indent=2))
-          PY
-
-      - name: Feed OpenPage candidates into the broader avatar inventory
-        run: |
-          python scripts/export_avatar_inventory.py \
-            --research data/catalog_research_merged.json \
-            --vrm-inventory static/data/vrm-inventory.json \
-            --openpage-assets data/openpage_asset_discovery.json \
-            --output static/data/avatar-inventory.json
-          python scripts/probe_avatar_inventory.py \
-            --source static/data/avatar-inventory.json \
-            --output data/avatar_inventory_probe.json \
+            --max-pages 0 \
             --workers 4 \
             --timeout 20
 
@@ -191,20 +96,6 @@ jobs:
             data/openpage_feed_health.json
             data/avatar_inventory_probe.json
             static/data/avatar-inventory.json
-
-      - name: Reject a nonproductive OpenPage feed
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          health = json.loads(Path('data/openpage_feed_health.json').read_text())
-          if not health.get('productive'):
-              raise SystemExit(
-                  'OpenPage produced no explicitly catalog-bound VRM or model-GLB candidates; '
-                  'add real community bindings or source records for the communities that own the files'
-              )
-          PY
 
       - name: Commit refreshed OpenPage evidence
         run: |
