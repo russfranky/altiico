@@ -159,3 +159,15 @@ def test_generic_export_wrappers_are_accepted():
     }
     rows = record_list(payload)
     assert [row["id"] for row in rows] == ["a", "b"]
+
+
+def test_openpage_community_report_wrapper_is_accepted():
+    payload = {
+        "schema": "openpage-community-discovery-v1",
+        "communities": [
+            {"openpageId": "community-a", "name": "Alpha"},
+            {"openpageId": "community-b", "name": "Beta"},
+        ],
+    }
+    rows = record_list(payload)
+    assert [row["openpageId"] for row in rows] == ["community-a", "community-b"]
