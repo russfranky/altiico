@@ -1,0 +1,1144 @@
+{
+  "schema": "avatar-catalog-acceptance-v1",
+  "collections": 90,
+  "reportCollections": 69,
+  "scopeCollections": 59,
+  "scopeMissing": 21,
+  "passing": 1,
+  "failing": 89,
+  "reasonCounts": {
+    "file_access:explicit_access_mode_required": 68,
+    "file_access:ownership_requirement_boolean_required": 68,
+    "project_status:evidenced_status_required": 68,
+    "avatar_inventory:explicit_exhaustive_assets_required": 66,
+    "ip_rights:researched_information_required": 58,
+    "storage:actual_storage_type_required": 49,
+    "discord:actual_value_required": 23,
+    "catalog_scope:missing_from_completeness_report": 21,
+    "x:actual_value_required": 15,
+    "banner:actual_value_required": 8,
+    "launch_date:actual_value_required": 5,
+    "short_description:actual_value_required": 4,
+    "avatar_inventory:all_assets_must_be_avatar_ready": 2,
+    "logo:actual_value_required": 2
+  },
+  "failures": [
+    {
+      "id": "a3ac-0x62eb14",
+      "name": "AdWorld",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0xaad35c",
+      "name": "Akutars",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "allstarz-psx",
+      "name": "Allstarz PSX",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x1ac7a2",
+      "name": "ArbiDudesGenOne",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0xc1fcf3",
+      "name": "Arbibots",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "avastars",
+      "name": "Avastars",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "boomboxheads-v2",
+      "name": "Boomboxheads V2",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "bourey-vs-bulley-bourverse",
+      "name": "Bourey vs Bulley: Bourverse",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "wassies",
+      "name": "ByWassies",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "chain-runners",
+      "name": "Chain Runners",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "chametheon",
+      "name": "Chametheon",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "chuddie",
+      "name": "Chuddies",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "cryptoavatars",
+      "name": "CryptoAvatars",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "cyberanimedoll-avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
+      "reasons": [
+        "banner:actual_value_required",
+        "short_description:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "cyberbrokers",
+      "name": "CyberBrokers",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "coldie",
+      "name": "DEyes Legends by Coldie",
+      "reasons": [
+        "short_description:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "dickbuttverse",
+      "name": "DickButtVerse",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "elysium-shell-next-mecha",
+      "name": "Elysium Shell: Next - Mecha",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0xccc441",
+      "name": "FLUF World",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x1bcbd0",
+      "name": "FUKU",
+      "reasons": [
+        "banner:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "launch_date:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x369156",
+      "name": "Flooz GEN F",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "fly-frogs",
+      "name": "Fly Frogs",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "frutiger-anons",
+      "name": "Frutiger Anons",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x14c447",
+      "name": "Fyat Lux (Dawn Collection)",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "NeonGlitch86 Collection (Shape side)",
+      "name": "GARY GRIFTER",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "halloween-rising",
+      "name": "Halloween Rising",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:all_assets_must_be_avatar_ready",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x86fc6f",
+      "name": "Jadu AVA",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0xd2F668",
+      "name": "Karafuru",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x324F60",
+      "name": "Koala 2025 Collector's Briefcase",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "mona-avatars",
+      "name": "MONA Avatars",
+      "reasons": [
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "meebits",
+      "name": "Meebits",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "metatravelers",
+      "name": "MetaTravelers: Nibiru",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "metaanigen",
+      "name": "MetaaniGEN",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x223ef0",
+      "name": "Metashima - Lightning",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x53e38a",
+      "name": "Metaverse Stardrop",
+      "reasons": [
+        "banner:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "launch_date:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "misfitpixels",
+      "name": "MisfitPIXELS",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x235817",
+      "name": "Moonbirds",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "neonglitch86-collection-polygon-side",
+      "name": "NG86SHAPE",
+      "reasons": [
+        "banner:actual_value_required",
+        "short_description:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "reasons": [
+        "banner:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "launch_date:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x92133e",
+      "name": "Non-Fungible People by Daz 3D",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "nouns",
+      "name": "Nouns",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "og-meta-meeples-pfp",
+      "name": "OG Meta Meeples PFP",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "omnimorphs",
+      "name": "Omnimorphs",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0xA7aE1B",
+      "name": "PAPE",
+      "reasons": [
+        "banner:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "logo:actual_value_required",
+        "launch_date:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x0fc3dd",
+      "name": "Parallel Avatars",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x35471f",
+      "name": "PartyBear",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "phettaverse-editions",
+      "name": "Phettaverse Editions",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "pixelbeasts",
+      "name": "Pixelbeasts",
+      "reasons": [
+        "banner:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "polygonlow",
+      "name": "PolygonLow",
+      "reasons": [
+        "banner:actual_value_required",
+        "short_description:actual_value_required",
+        "discord:actual_value_required",
+        "x:actual_value_required",
+        "logo:actual_value_required",
+        "launch_date:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "rstlss-x-claire-silver-pixelgeist",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x50e712",
+      "name": "The Modz",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0xaaf03a",
+      "name": "The Seekers",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x414c5e",
+      "name": "The WynLambo",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "toxic-skulls-club",
+      "name": "Toxic Skulls Club",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0xdb5558",
+      "name": "VOID - Visitors of Imma Degen",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x3137e0",
+      "name": "VOID - Voyagers of Imma Degen",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "voltz",
+      "name": "VOLTZ Avatars",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x631086",
+      "name": "Virtuals Waifus",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "woodies",
+      "name": "Woodies",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "reasons": [
+        "discord:actual_value_required",
+        "project_status:evidenced_status_required",
+        "avatar_inventory:all_assets_must_be_avatar_ready",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "reasons": [
+        "project_status:evidenced_status_required",
+        "ip_rights:researched_information_required",
+        "storage:actual_storage_type_required",
+        "avatar_inventory:explicit_exhaustive_assets_required",
+        "file_access:explicit_access_mode_required",
+        "file_access:ownership_requirement_boolean_required"
+      ]
+    },
+    {
+      "id": "vipe-heroes",
+      "name": "VIPE Heroes",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "A",
+        "contract": "0x3999877754904d8542ad1845d368fa01a5e6e9a5",
+        "source_section": "Tier A \u2014 VRM embedded in NFT metadata (verified)",
+        "source_line": 41
+      }
+    },
+    {
+      "id": "retrodogesnft",
+      "name": "RetroDoges",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "A",
+        "contract": "0xeeecde100b55f135a40ca9d92a52bd7723235814",
+        "source_section": "Tier A \u2014 VRM embedded in NFT metadata (verified)",
+        "source_line": 41
+      }
+    },
+    {
+      "id": "grifterssquaddies",
+      "name": "Grifters Squaddies",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "A",
+        "contract": "0xa94c652c16525e6b7cac82a34eab18b5174ad23c",
+        "source_section": "Tier A \u2014 VRM embedded in NFT metadata (verified)",
+        "source_line": 63
+      }
+    },
+    {
+      "id": "toxsam",
+      "name": "ToxSam (Base side)",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "A",
+        "contract": "0x59202483529a11642a43578a6ee77ca4ec24f930",
+        "source_section": "Tier A \u2014 VRM embedded in NFT metadata (verified)",
+        "source_line": 63
+      }
+    },
+    {
+      "id": "immadegen",
+      "name": "Immadegen (VOID)",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "B",
+        "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
+        "source_section": "Tier B \u2014 VRM exists, but not in token metadata",
+        "source_line": 97
+      }
+    },
+    {
+      "id": "toxsam",
+      "name": "ToxSam",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "B",
+        "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
+        "source_section": "Tier B \u2014 VRM exists, but not in token metadata",
+        "source_line": 120
+      }
+    },
+    {
+      "id": "boredapeyachtclub",
+      "name": "Bored Ape Yacht Club",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "mutant-ape-yacht-club",
+      "name": "Mutant Ape Yacht Club",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "0n1-force",
+      "name": "0N1 Force",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "guttercatgang",
+      "name": "Gutter Cat Gang",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "deadfellaz",
+      "name": "Deadfellaz",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "axolittles",
+      "name": "Axolittles",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "tubby-cats",
+      "name": "Tubby Cats",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "the-blitnauts",
+      "name": "Blitnauts",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "(cryptosergs.com)",
+      "name": "Cryptosergs",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "superyeti",
+      "name": "Super Yetis",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "clonex.rtfkt.com",
+      "name": "CloneX",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "mekaverse",
+      "name": "Mekaverse",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "C",
+        "contract": null,
+        "source_section": "Tier C \u2014 WIP / proof-of-concept / community-led",
+        "source_line": 137
+      }
+    },
+    {
+      "id": "100avatars-r1",
+      "name": "100Avatars R1",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "arweave",
+        "contract": null,
+        "source_section": "Arweave-native VRM collections (not NFTs, but CC0 VRM avatar registries)",
+        "source_line": 193
+      }
+    },
+    {
+      "id": "100avatars-r2",
+      "name": "100Avatars R2",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "arweave",
+        "contract": null,
+        "source_section": "Arweave-native VRM collections (not NFTs, but CC0 VRM avatar registries)",
+        "source_line": 193
+      }
+    },
+    {
+      "id": "100avatars-r3",
+      "name": "100Avatars R3",
+      "reasons": [
+        "catalog_scope:missing_from_completeness_report"
+      ],
+      "scope": {
+        "tier": "arweave",
+        "contract": null,
+        "source_section": "Arweave-native VRM collections (not NFTs, but CC0 VRM avatar registries)",
+        "source_line": 193
+      }
+    }
+  ]
+}

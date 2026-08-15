@@ -1,0 +1,53 @@
+{
+  "schema": "avatar-inventory-structural-probe-v1",
+  "generatedAt": "2026-08-15T23:52:16.785764+00:00",
+  "sourceGeneratedAt": "2026-08-15T23:40:27.780662+00:00",
+  "policy": "Every enumerated non-terminal asset must be avatar-ready: VRM extension, GLB skin/joint rig, or recognizable FBX with explicit rigging evidence.",
+  "summary": {
+    "collections": 1,
+    "avatarReadyCompleteCollections": 1,
+    "urls": 1,
+    "validAvatarUrls": 1,
+    "validVrmUrls": 1,
+    "validRiggedGlbUrls": 0,
+    "validRiggedFbxUrls": 0,
+    "statusCounts": {
+      "valid_vrm": 1
+    }
+  },
+  "collections": [
+    {
+      "catalogId": "forgottenruneswizardscult",
+      "name": "Forgotten Runes Wizards Cult",
+      "terminalResearchState": null,
+      "metadataComplete": true,
+      "avatarReadyComplete": true,
+      "structurallyComplete": true,
+      "urls": 1,
+      "validAssetUrls": 1,
+      "validVrmUrls": 1,
+      "validRiggedGlbUrls": 0,
+      "validRiggedFbxUrls": 0,
+      "invalidUrls": []
+    }
+  ],
+  "probes": [
+    {
+      "url": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+      "status": "valid_vrm",
+      "validAvatar": true,
+      "validVrm": true,
+      "actualFormat": "vrm",
+      "vrmSpec": "0.x",
+      "rigged": true,
+      "riggingProof": "vrm_extension",
+      "totalLength": 3207404,
+      "jsonChunkSha256": "e8eb9ab7cd413c8ca6b3ded452b0be59dda91e6f705de767111d0463abe140f3",
+      "networkRequests": 2,
+      "transportUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+      "formatHint": "vrm",
+      "formatMismatch": false,
+      "error": null
+    }
+  ]
+}

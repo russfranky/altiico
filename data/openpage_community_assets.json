@@ -1,0 +1,98 @@
+{
+  "schema": "openpage-community-assets-v2",
+  "generatedAt": "2026-08-15T23:31:35.534947+00:00",
+  "source": {
+    "apiBase": "https://api.openpage.fun/v1",
+    "openapiUrl": "https://api.openpage.fun/v1/docs.json",
+    "openapiFallbackErrors": []
+  },
+  "policy": "Routes are discovered from OpenPage's live OpenAPI specification. Records bind by curator-supplied OpenPage community ID or by unique contract identity downstream; display names never bind records.",
+  "summary": {
+    "communities": 9,
+    "endpoints": 1,
+    "requestsSucceeded": 1,
+    "requestsFailed": 8,
+    "items": 0,
+    "catalogBoundItems": 0,
+    "coverageComplete": false
+  },
+  "endpoints": [
+    {
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "communityParameter": "id",
+      "queryParameters": [],
+      "operationId": "CommunityFileController_getFiles",
+      "summary": "Get files",
+      "tags": [
+        "Community Files"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "communityId": "3af4889f-d31d-4d70-b79b-d39f1df8d061",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "pages": 1,
+      "items": 0,
+      "totalReported": null,
+      "truncated": false,
+      "coverageComplete": true,
+      "urls": [
+        "https://api.openpage.fun/v1/community/3af4889f-d31d-4d70-b79b-d39f1df8d061/file"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "communityId": "36514f9c-6b7b-4d0e-90a7-caec2f9bb633",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "ff595105-e7eb-445a-b8b4-ab900cbbe059",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "b27b65f0-518d-468e-9c1e-deae42b922a7",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "568c49f7-ad67-4b0b-9278-36e47b4937a8",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "486a0254-c8ee-4709-8410-4ed793336685",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "acc4b3fc-6ad8-4231-aa7e-fa545995f61a",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "d80b2c68-c0de-4fff-a6fe-9b8a3b78798e",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "communityId": "09de0824-15a3-4bdd-a0c0-370e646c2ad0",
+      "kind": "community_files",
+      "path": "/community/{id}/file",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    }
+  ],
+  "records": []
+}
