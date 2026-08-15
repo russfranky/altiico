@@ -14,8 +14,8 @@ records with fields such as ``animationUrl`` and for named files such as
 
 Input is intentionally generic so exports/API responses can be saved verbatim.
 Accepted top-level shapes include a list of records, a single record object, or
-an object containing ``records``, ``avatars``, ``items``, ``results`` or
-``collections`` lists.
+an object containing ``records``, ``avatars``, ``items``, ``results``,
+``collections`` or ``communities`` lists.
 """
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ MML_SRC_RE = re.compile(
     r"<m-(?:character|model)\b[^>]*?\bsrc\s*=\s*(?:\"([^\"]+)\"|'([^']+)'|([^\s>]+))",
     re.I | re.S,
 )
-LIST_KEYS = ("records", "avatars", "items", "results", "collections")
+LIST_KEYS = ("records", "avatars", "items", "results", "collections", "communities")
 CATALOG_ID_KEYS = ("catalogId", "catalog_id", "collection_id")
 OPENPAGE_ID_KEYS = ("openpageId", "openpage_id", "avatarId", "avatar_id", "id")
 ANIMATION_PATH_RE = re.compile(
