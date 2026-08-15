@@ -9,7 +9,7 @@
     "opensea_slug": "guttercatgang",
     "project_url": "https://guttercatgang.com/",
     "source": "official+etherscan+curated",
-    "notes": "Original 3,000 Gutter Cat collection identity. Newer migrations/releases must not silently replace this historical launch identity. Historical partner evidence proves Gutter characters entered a rigged 3D avatar pipeline, and a 2025 secondary report names GLB/FBX for a newer completed Cat asset set, but current first-party delivery/access evidence has not yet been recovered."
+    "notes": "Original 3,000 Gutter Cat collection identity. Newer migrations/releases must not silently replace this historical launch identity. Historical partner evidence proves Gutter characters entered a rigged 3D avatar pipeline. The Sandbox currently exposes an exhaustive 3,000-avatar Gutter Cats platform collection, and a 2025 report quoting a GCG team member says a newer completed Cat asset set was prepared for GLB/FBX delivery. The remaining catalog gap is direct supported-file delivery/enumeration, not whether usable 3D Gutter Cat avatars exist."
   },
   "discord": {
     "value": "https://discord.gg/guttercatgang",
@@ -72,7 +72,7 @@
       },
       {
         "kind": "partner_corporate_rigging_release",
-        "source": "https://www.newswire.ca/news-releases/looking-glass-labs-3d-modelling-technology-provides-genesis-for-the-development-of-the-hapebeast-nft-collection-871931582.html",
+        "source": "https://www.newswire.ca/news-releases/looking-glass-labs-3d-modelling-technology-provides-genesis-for-the-development-of-the-hapebeAST-nft-collection-871931582.html",
         "note": "Looking Glass Labs explicitly says its technology was being used to design, model and rig Gutter Cat Gang characters for integration into a 3D metaverse."
       },
       {
@@ -82,44 +82,66 @@
       }
     ]
   },
+  "platform_avatar_inventory": {
+    "state": "complete_platform_runtime_collection",
+    "platform": "The Sandbox",
+    "count": 3000,
+    "supported_catalog_file_format": false,
+    "note": "The Sandbox's current avatar shop exposes a Gutter Cats collection created by GutterLabsLLC with TOTAL AVATARS 3000 and 3000 assets. This is strong exhaustive proof that the original Cats have a complete usable platform-avatar representation. It does not satisfy the catalog file lane because no VRM/GLB/FBX download format or direct file URLs are exposed by this source.",
+    "evidence": [
+      {
+        "kind": "current_platform_avatar_collection",
+        "source": "https://www.sandbox.game/en/avatars/Gutter%20Cats/103/",
+        "observed_at": "2026-08-15",
+        "note": "The Sandbox page identifies the collection as created by GutterLabsLLC, reports TOTAL AVATARS 3000 and lists 3000 assets."
+      }
+    ]
+  },
   "avatar_format_leads": {
     "value": [
       "glb",
       "fbx"
     ],
-    "state": "secondary_report_pending_primary_delivery_confirmation",
-    "note": "A July 2025 Bored Ape Gazette report quotes a Gutter Cat Gang team member saying completed DashBo-designed Cat assets would be downloadable as GLB, MML and FBX through a portal then under construction. This is a high-value lead, not sufficient first-party proof of current delivery. The current official GCG site does not expose that portal in the public navigation observed in August 2026.",
+    "state": "completed_models_reported_delivery_portal_unverified",
+    "note": "A July 2025 Bored Ape Gazette report quotes Gutter Cat Gang team member Ceres saying the DashBo-designed 3D Cats were finished and a portal was being built to deliver each Cat as GLB, MML and FBX plus renders. This moves the question beyond historical WIP: production completion and intended supported formats are reported. However, no current first-party portal or direct file inventory was recovered, so the catalog still cannot claim delivery or enumerate the files.",
     "evidence": [
       {
         "kind": "secondary_report_quoting_team_member",
         "source": "https://www.theboredapegazette.com/post/looking-gutter-gutter-cat-gang-s-dashbo-designed-3d-modeled-cats-are-coming-to-otherside-soon",
         "published": "2025-07-01",
-        "note": "Report quotes GCG team member Ceres naming GLB, MML and FBX for finished 3D Cat assets and saying a download portal was being built."
+        "note": "Report quotes GCG team member Ceres saying the 3D modeled Cats were finished and naming GLB, MML and FBX for a download portal then under construction."
       },
       {
         "kind": "current_official_site_observation",
         "source": "https://guttercatgang.com/",
-        "observed_at": "2026-08-14",
-        "note": "Current public site navigation exposes shop, collection and about surfaces but no discoverable 3D asset portal."
+        "observed_at": "2026-08-15",
+        "note": "Current public site navigation exposes shop/collection/about surfaces but no discoverable 3D asset download portal."
       }
     ]
   },
   "avatar_inventory": {
     "state": "unknown",
-    "coverage": "rigged_development_proven_supported_format_delivery_unverified",
+    "coverage": "complete_platform_avatar_set_and_completed_glb_fbx_production_reported_direct_delivery_unverified",
     "assets": [],
-    "note": "Do not promote Gutter Cat Gang to the supported avatar inventory yet. Rigging is historically proven, and GLB/FBX delivery was reported in 2025, but no current first-party download surface, direct asset URLs, or exhaustive supported-format inventory has been recovered. Current project terms also state that the present ownership does not assume promises or obligations made by prior teams, so historical roadmap promises cannot substitute for current delivery evidence.",
+    "note": "Do not promote Gutter Cat Gang to a supported file inventory yet. We now have exhaustive proof of a 3,000-avatar platform representation and a later team-attributed report that GLB/FBX models were finished, but the acceptance contract requires an actual supported-file lane: direct URLs or a recoverable holder/public download surface plus exhaustive coverage. The current source set does not establish that delivery step.",
     "evidence": [
+      {
+        "kind": "current_platform_avatar_collection",
+        "source": "https://www.sandbox.game/en/avatars/Gutter%20Cats/103/",
+        "observed_at": "2026-08-15",
+        "note": "Exhaustive 3,000-avatar Gutter Cats representation exists on The Sandbox, but this source does not expose supported catalog model files."
+      },
+      {
+        "kind": "secondary_report_quoting_team_member",
+        "source": "https://www.theboredapegazette.com/post/looking-gutter-gutter-cat-gang-s-dashbo-designed-3d-modeled-cats-are-coming-to-otherside-soon",
+        "published": "2025-07-01",
+        "note": "Finished GLB/FBX production and a planned download portal are reported, but current delivery is not independently confirmed."
+      },
       {
         "kind": "official_current_terms",
         "source": "https://guttergrab.com/gcg-terms",
         "observed_at": "2026-08-14",
-        "note": "Current owners expressly disclaim promises, warranties and obligations made by previous owners or teams."
-      },
-      {
-        "kind": "partner_corporate_rigging_release",
-        "source": "https://www.newswire.ca/news-releases/looking-glass-labs-3d-modelling-technology-provides-genesis-for-the-development-of-the-hapebeast-nft-collection-871931582.html",
-        "note": "Historical rigging work is directly evidenced, but format and surviving delivery are not."
+        "note": "Current owners expressly disclaim promises, warranties and obligations made by previous owners or teams, so historical delivery promises cannot close the current file lane."
       }
     ]
   },
@@ -131,7 +153,7 @@
       {
         "kind": "official_project_site",
         "source": "https://guttercatgang.com/",
-        "observed_at": "2026-08-13"
+        "observed_at": "2026-08-15"
       },
       {
         "kind": "official_terms",
