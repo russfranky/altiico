@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Extract OpenPage/MML avatar asset leads without weakening VRM proof rules.
+"""Extract OpenPage/MML avatar asset leads without weakening avatar proof rules.
 
-OpenPage avatar records can expose several representations of the same avatar.
-This adapter preserves MML, VRM and GLB/GLTF URLs as separate evidence lanes.
-MML and GLB are never promoted to VRM. Explicit ``.vrm`` URLs found directly in
-an OpenPage record or referenced by an MML ``<m-character>``/``<m-model>`` tag
-are emitted only as candidates for the existing binary VRM validator.
+OpenPage records can expose several representations around the same avatar.
+This adapter preserves MML, VRM, model GLB/GLTF and animation GLB URLs as
+separate evidence lanes. MML and GLB are never promoted to VRM. Explicit
+``.vrm`` URLs are candidates for structural VRM validation, while model GLBs
+are candidates for the rigged-GLB validator.
+
+OpenPage also uses standalone animation GLBs. Those are intentionally emitted
+as ``animationGlbUrls`` and never as avatar-model candidates. This matters for
+records with fields such as ``animationUrl`` and for named files such as
+``bayc-animations.glb``.
 
 Input is intentionally generic so exports/API responses can be saved verbatim.
 Accepted top-level shapes include a list of records, a single record object, or
@@ -35,6 +40,11 @@ MML_SRC_RE = re.compile(
 LIST_KEYS = ("records", "avatars", "items", "results", "collections")
 CATALOG_ID_KEYS = ("catalogId", "catalog_id", "collection_id")
 OPENPAGE_ID_KEYS = ("openpageId", "openpage_id", "avatarId", "avatar_id", "id")
+ANIMATION_PATH_RE = re.compile(
+    r"(?:^|[.\[_-])(?:animation|animations|animationurl|animation_url|idle|talk|talking|emote|motion)(?:$|[.\]_-])",
+    re.I,
+)
+ANIMATION_FILE_RE = re.compile(r"(?:^|[-_.])animations?(?:[-_.]|$)", re.I)
 
 
 def now_iso() -> str:
@@ -83,12 +93,22 @@ def normalize_url(raw: str, base_url: str | None = None) -> str:
     return value
 
 
+def is_animation_glb(url: str, path_hint: str = "") -> bool:
+    if ANIMATION_PATH_RE.search(path_hint):
+        return True
+    try:
+        basename = Path(urllib.parse.urlsplit(url).path).name
+    except ValueError:
+        basename = Path(url.split("?", 1)[0].split("#", 1)[0]).name
+    return bool(ANIMATION_FILE_RE.search(basename))
+
+
 def classify_url(url: str, path_hint: str = "") -> str | None:
     lowered = url.lower()
     if VRM_RE.search(lowered):
         return "vrm"
     if GLB_RE.search(lowered):
-        return "glb"
+        return "animation_glb" if is_animation_glb(url, path_hint) else "glb"
     if "mml" in path_hint.lower():
         return "mml"
     return None
@@ -142,7 +162,7 @@ def inspect_fetched_mml(
     hits: list[tuple[str, str]] = []
     for url in mml_model_urls(payload, source_url):
         kind = classify_url(url)
-        if kind in {"vrm", "glb"}:
+        if kind in {"vrm", "glb", "animation_glb"}:
             hits.append((kind, url))
     stripped = payload.lstrip()
     if stripped.startswith(("{", "[")):
@@ -154,11 +174,11 @@ def inspect_fetched_mml(
             for path, value in walk(decoded):
                 for url in url_hits(value):
                     kind = classify_url(url, path)
-                    if kind in {"vrm", "glb", "mml"}:
+                    if kind in {"vrm", "glb", "animation_glb", "mml"}:
                         hits.append((kind, url))
                 for url in mml_model_urls(value, source_url):
                     kind = classify_url(url)
-                    if kind in {"vrm", "glb"}:
+                    if kind in {"vrm", "glb", "animation_glb"}:
                         hits.append((kind, url))
     return sorted(set(hits))
 
@@ -175,9 +195,11 @@ def inspect_record(
     mml: list[dict[str, Any]] = []
     vrm: list[dict[str, Any]] = []
     glb: list[dict[str, Any]] = []
+    animation_glb: list[dict[str, Any]] = []
     seen_mml: set[tuple[str, str]] = set()
     seen_vrm: set[tuple[str, str]] = set()
     seen_glb: set[tuple[str, str]] = set()
+    seen_animation_glb: set[tuple[str, str]] = set()
 
     for path, value in walk(record):
         for url in url_hits(value):
@@ -188,6 +210,14 @@ def inspect_record(
                 add_hit(vrm, seen_vrm, url=url, source=path, via="openpage_record")
             elif kind == "glb":
                 add_hit(glb, seen_glb, url=url, source=path, via="openpage_record")
+            elif kind == "animation_glb":
+                add_hit(
+                    animation_glb,
+                    seen_animation_glb,
+                    url=url,
+                    source=path,
+                    via="openpage_record",
+                )
 
         if "<m-character" in value.lower() or "<m-model" in value.lower():
             for model_url in mml_model_urls(value):
@@ -196,6 +226,14 @@ def inspect_record(
                     add_hit(vrm, seen_vrm, url=model_url, source=path, via="mml_inline")
                 elif kind == "glb":
                     add_hit(glb, seen_glb, url=model_url, source=path, via="mml_inline")
+                elif kind == "animation_glb":
+                    add_hit(
+                        animation_glb,
+                        seen_animation_glb,
+                        url=model_url,
+                        source=path,
+                        via="mml_inline",
+                    )
 
     fetch_errors: list[dict[str, str]] = []
     if fetch_mml:
@@ -215,6 +253,14 @@ def inspect_record(
                     add_hit(vrm, seen_vrm, url=model_url, source=url, via="mml_fetched")
                 elif kind == "glb":
                     add_hit(glb, seen_glb, url=model_url, source=url, via="mml_fetched")
+                elif kind == "animation_glb":
+                    add_hit(
+                        animation_glb,
+                        seen_animation_glb,
+                        url=model_url,
+                        source=url,
+                        via="mml_fetched",
+                    )
                 elif kind == "mml":
                     add_hit(mml, seen_mml, url=model_url, source=url, via="mml_fetched")
 
@@ -225,6 +271,9 @@ def inspect_record(
         "mmlUrls": sorted(mml, key=lambda row: (row["url"], row["via"])),
         "vrmCandidates": sorted(vrm, key=lambda row: (row["url"], row["via"])),
         "glbUrls": sorted(glb, key=lambda row: (row["url"], row["via"])),
+        "animationGlbUrls": sorted(
+            animation_glb, key=lambda row: (row["url"], row["via"])
+        ),
         "fetchErrors": fetch_errors,
     }
 
@@ -248,12 +297,12 @@ def build_report(
         for index, row in enumerate(records)
     ]
     return {
-        "schema": "openpage-asset-discovery-v1",
+        "schema": "openpage-asset-discovery-v2",
         "generatedAt": now_iso(),
         "policy": (
-            "OpenPage MML and GLB are separate runtime representations and never prove VRM. "
-            "Explicit .vrm URLs are discovery candidates only until the catalog binary validator "
-            "confirms VRM structure and the collection inventory is proven exhaustive."
+            "OpenPage MML, avatar-model GLB, and animation GLB are separate runtime representations. "
+            "Animation GLBs never enter avatar inventory. Explicit .vrm URLs and model GLBs are discovery "
+            "candidates only until structural validation succeeds and collection coverage is proven exhaustive."
         ),
         "summary": {
             "records": len(inspected),
@@ -261,8 +310,15 @@ def build_report(
             "recordsWithMml": sum(bool(row["mmlUrls"]) for row in inspected),
             "recordsWithVrmCandidates": sum(bool(row["vrmCandidates"]) for row in inspected),
             "recordsWithGlb": sum(bool(row["glbUrls"]) for row in inspected),
+            "recordsWithAnimationGlb": sum(bool(row["animationGlbUrls"]) for row in inspected),
             "uniqueVrmCandidates": len(
                 {hit["url"] for row in inspected for hit in row["vrmCandidates"]}
+            ),
+            "uniqueGlbCandidates": len(
+                {hit["url"] for row in inspected for hit in row["glbUrls"]}
+            ),
+            "uniqueAnimationGlbs": len(
+                {hit["url"] for row in inspected for hit in row["animationGlbUrls"]}
             ),
             "fetchErrors": sum(len(row["fetchErrors"]) for row in inspected),
         },
