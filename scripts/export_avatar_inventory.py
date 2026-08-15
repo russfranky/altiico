@@ -337,7 +337,12 @@ def inventory_for(
     terminal = False
     coverage_source = None
 
-    if override_state in TERMINAL_RESEARCH_STATES and override_evidence and not researched_assets:
+    if (
+        override_state in TERMINAL_RESEARCH_STATES
+        and override_evidence
+        and not researched_assets
+        and not discovered_assets
+    ):
         state = override_state
         complete = True
         terminal = True
