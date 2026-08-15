@@ -1,12 +1,19 @@
 {
   "schema": "openpage-asset-sources-v2",
   "apiBase": "https://api.openpage.fun/v1",
-  "policy": "Raw, curated, or live-resolved OpenPage avatar records must carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json. Animation-only GLBs are preserved as evidence but are not avatar-model candidates. Live requests create partial discovery candidates only.",
+  "policy": "Raw, curated, or live-resolved OpenPage avatar records must carry explicit catalog identity, a unique catalog contract address, or an OpenPage ID covered by data/openpage_catalog_bindings.json before they can enter a collection inventory. Shared indexes may be fetched as unbound discovery leads. Animation-only GLBs are preserved as evidence but are not avatar-model candidates. Live requests create partial discovery candidates only.",
   "documentedEndpointTemplates": {
     "mml": "/m/mml/{id}",
     "collection_metadata": "/m/c/{id}"
   },
-  "records": [],
+  "records": [
+    {
+      "sourceRecordId": "openpage-supported-avatars-index",
+      "fetchUrl": "https://docs.openpage.fun/avatars",
+      "bindingState": "unbound",
+      "note": "Shared OpenPage supported-avatar index. Any links found here remain unbound discovery leads until a curator supplies a collection-specific OpenPage ID, metadata ID, contract, or catalogId."
+    }
+  ],
   "examples": [
     {
       "catalogId": "example-catalog-id",
