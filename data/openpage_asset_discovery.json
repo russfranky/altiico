@@ -1,0 +1,381 @@
+{
+  "schema": "openpage-catalog-feed-v2",
+  "generatedAt": "2026-08-15T23:31:36.580714+00:00",
+  "policy": "OpenPage MML, avatar-model GLB, and animation GLB are separate runtime representations. Animation GLBs never enter avatar inventory. Explicit VRM fields/URLs and model-GLB fields/URLs are discovery candidates only until structural validation succeeds and collection coverage is proven exhaustive.",
+  "summary": {
+    "records": 14,
+    "recordsWithCatalogId": 3,
+    "recordsWithMml": 0,
+    "recordsWithVrmCandidates": 0,
+    "recordsWithGlb": 2,
+    "recordsWithAnimationGlb": 0,
+    "uniqueVrmCandidates": 0,
+    "uniqueGlbCandidates": 6,
+    "uniqueAnimationGlbs": 0,
+    "fetchErrors": 0
+  },
+  "records": [
+    {
+      "recordIndex": 0,
+      "catalogId": null,
+      "openpageId": "3af4889f-d31d-4d70-b79b-d39f1df8d061",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 1,
+      "catalogId": null,
+      "openpageId": "36514f9c-6b7b-4d0e-90a7-caec2f9bb633",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 2,
+      "catalogId": null,
+      "openpageId": "ff595105-e7eb-445a-b8b4-ab900cbbe059",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 3,
+      "catalogId": null,
+      "openpageId": "b27b65f0-518d-468e-9c1e-deae42b922a7",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 4,
+      "catalogId": null,
+      "openpageId": "568c49f7-ad67-4b0b-9278-36e47b4937a8",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 5,
+      "catalogId": null,
+      "openpageId": "486a0254-c8ee-4709-8410-4ed793336685",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 6,
+      "catalogId": null,
+      "openpageId": "acc4b3fc-6ad8-4231-aa7e-fa545995f61a",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 7,
+      "catalogId": null,
+      "openpageId": "d80b2c68-c0de-4fff-a6fe-9b8a3b78798e",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 8,
+      "catalogId": null,
+      "openpageId": "09de0824-15a3-4bdd-a0c0-370e646c2ad0",
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": []
+    },
+    {
+      "recordIndex": 9,
+      "catalogId": null,
+      "openpageId": null,
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x-m2.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x-soneium.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3-m2.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3-soneium.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3.3js.glb",
+          "source": "$.openpagePayloadText",
+          "via": "openpage_record"
+        }
+      ],
+      "animationGlbUrls": [],
+      "fetchErrors": [],
+      "sourceContext": {
+        "sourceRecordId": "openpage-supported-avatars-index",
+        "resolvedSourceUrl": "https://docs.openpage.fun/avatars",
+        "openpageSource": {
+          "kind": "url",
+          "id": null,
+          "url": "https://docs.openpage.fun/avatars",
+          "fetchedAt": "2026-08-15T23:31:36.577257+00:00"
+        }
+      }
+    },
+    {
+      "recordIndex": 10,
+      "catalogId": null,
+      "openpageId": null,
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x-m2.3js.glb",
+          "source": "$.modelUrls[2]",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x-soneium.3js.glb",
+          "source": "$.modelUrls[4]",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-n1x.3js.glb",
+          "source": "$.modelUrls[0]",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3-m2.3js.glb",
+          "source": "$.modelUrls[3]",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3-soneium.3js.glb",
+          "source": "$.modelUrls[5]",
+          "via": "openpage_record"
+        },
+        {
+          "url": "https://cdn.other.page/m/avatar-p4g3.3js.glb",
+          "source": "$.modelUrls[1]",
+          "via": "openpage_record"
+        }
+      ],
+      "animationGlbUrls": [],
+      "fetchErrors": [],
+      "sourceContext": {
+        "sourceRecordId": "openpage-default-avatar-models",
+        "sourceUrl": "https://docs.openpage.fun/avatars"
+      }
+    },
+    {
+      "recordIndex": 11,
+      "catalogId": "boredapeyachtclub",
+      "openpageId": null,
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": [],
+      "sourceContext": {
+        "sourceRecordId": "openpage-supported-avatars-bayc",
+        "sourceUrl": "https://docs.openpage.fun/avatars"
+      }
+    },
+    {
+      "recordIndex": 12,
+      "catalogId": "mutant-ape-yacht-club",
+      "openpageId": null,
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": [],
+      "sourceContext": {
+        "sourceRecordId": "openpage-supported-avatars-mayc",
+        "sourceUrl": "https://docs.openpage.fun/avatars"
+      }
+    },
+    {
+      "recordIndex": 13,
+      "catalogId": "clone-x",
+      "openpageId": null,
+      "mmlUrls": [],
+      "vrmCandidates": [],
+      "glbUrls": [],
+      "animationGlbUrls": [],
+      "fetchErrors": [],
+      "sourceContext": {
+        "sourceRecordId": "openpage-supported-avatars-clonex",
+        "sourceUrl": "https://docs.openpage.fun/avatars"
+      }
+    }
+  ],
+  "bindingPolicy": "Catalog binding uses explicit catalogId, unique contract-address identity, or curator-supplied OpenPage ID only. Display names and fuzzy similarity never bind records.",
+  "sourceRefresh": {
+    "apiBase": "https://api.openpage.fun/v1",
+    "requestsConfigured": 1,
+    "requestsSucceeded": 1,
+    "requestsFailed": 0,
+    "events": [
+      {
+        "sourceIndex": 9,
+        "requestIndex": 0,
+        "kind": "url",
+        "id": null,
+        "url": "https://docs.openpage.fun/avatars",
+        "status": "ok"
+      }
+    ]
+  },
+  "bindingSummary": {
+    "records": 14,
+    "bound": 3,
+    "unbound": 11,
+    "methods": {
+      "catalog_id": 3,
+      "unbound": 11
+    }
+  },
+  "bindings": [
+    {
+      "recordIndex": 0,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 1,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 2,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 3,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 4,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 5,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 6,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 7,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 8,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 9,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 10,
+      "catalogId": null,
+      "method": "unbound",
+      "diagnostics": [
+        "no_explicit_binding"
+      ]
+    },
+    {
+      "recordIndex": 11,
+      "catalogId": "boredapeyachtclub",
+      "method": "catalog_id",
+      "diagnostics": []
+    },
+    {
+      "recordIndex": 12,
+      "catalogId": "mutant-ape-yacht-club",
+      "method": "catalog_id",
+      "diagnostics": []
+    },
+    {
+      "recordIndex": 13,
+      "catalogId": "clone-x",
+      "method": "catalog_id",
+      "diagnostics": []
+    }
+  ]
+}

@@ -83,7 +83,7 @@ def collect_communities(
         except (TypeError, ValueError):
             pass
 
-        rows = payload.get("results") or []
+        rows = payload.get("results") or payload.get("items") or []
         if not isinstance(rows, list):
             raise ValueError("OpenPage community response `results` must be a list")
         new_rows = 0

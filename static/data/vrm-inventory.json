@@ -1,0 +1,2138 @@
+{
+  "schema": "vrm-catalog-inventory-v2",
+  "generatedAt": "2026-08-15T23:40:27.161268+00:00",
+  "policy": "Complete non-terminal inventory requires explicit exhaustive VRM links; templates remain candidates until expanded, and one sample link never implies completeness.",
+  "summary": {
+    "collections": 69,
+    "complete": 2,
+    "partial": 18,
+    "unknown": 49,
+    "notShipped": 0,
+    "unrecoverable": 0,
+    "enumeratedUrls": 171,
+    "moralisCompleteCollections": 0
+  },
+  "collections": [
+    {
+      "collection_id": "a3ac-0x62eb14",
+      "name": "AdWorld",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 3325,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0xaad35c",
+      "name": "Akutars",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 14833,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "allstarz-psx",
+      "name": "Allstarz PSX",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 2500,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x1ac7a2",
+      "name": "ArbiDudesGenOne",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9993,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0xc1fcf3",
+      "name": "Arbibots",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 2000,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "avastars",
+      "name": "Avastars",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 26617,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://ipfs.io/ipfs/QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_1.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "boomboxheads-v2",
+      "name": "Boomboxheads V2",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 420,
+      "enumerated_urls": 1,
+      "urls": [
+        "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm"
+      ],
+      "candidate_url_template": "ipfs://bafybeibe4axqsukdfeuy4fnrtti4dko7ph3fopl6xkr3tsdyp3zhhl5eyu/{id}.vrm",
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "bourey-vs-bulley-bourverse",
+      "name": "Bourey vs Bulley: Bourverse",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 333,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "wassies",
+      "name": "ByWassies",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9640,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 19764,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x49cf6f",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 19764,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "chain-runners",
+      "name": "Chain Runners",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9999,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "chametheon",
+      "name": "Chametheon",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 300,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 2998,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://cdn.chibilabs.dev/apes/GLBs/1.glb"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "chuddie",
+      "name": "Chuddies",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 4875,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq.ipfs.dweb.link/127.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "cryptoavatars",
+      "name": "CryptoAvatars",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 583,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "cyberanimedoll-avatar",
+      "name": "CyberAnimeDOLL: Avatar (Obsolete Collection)",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 37,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "cyberbrokers",
+      "name": "CyberBrokers",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 10001,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://m.cyberbrokers.com/eth/mech/1/files/mech_1k.0.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "the-dask",
+      "name": "DASK - Dead Army Skeleton Klub",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 6967,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "coldie",
+      "name": "DEyes Legends by Coldie",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 114,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "dickbuttverse",
+      "name": "DickButtVerse",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 5363,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "elysium-shell-next-mecha",
+      "name": "Elysium Shell: Next - Mecha",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 788,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0xccc441",
+      "name": "FLUF World",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 10000,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x1bcbd0",
+      "name": "FUKU",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": null,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x369156",
+      "name": "Flooz GEN F",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9999,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "fly-frogs",
+      "name": "Fly Frogs",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9986,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "forgottenruneswizardscult",
+      "name": "Forgotten Runes Wizards Cult",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 9944,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's own HTTPS endpoint."
+          }
+        ]
+      },
+      "access": {
+        "mode": "holder_gated",
+        "requires_ownership": true,
+        "access_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://forgottenrunes.com/",
+            "note": "Official site documents the per-token VRM download template and the holder-tier wizard download surface."
+          },
+          {
+            "kind": "onchain_token_uri",
+            "source": "https://portal.forgottenrunes.com/api/wizards/data/7362",
+            "note": "Etherscan + Moralis consensus confirms a tokenURI for token 7362 that maps to the canonical VRM endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+            "observed_at": "2026-08-15",
+            "note": "The sample URL is publicly reachable and returns a valid VRM file."
+          }
+        ]
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "frutiger-anons",
+      "name": "Frutiger Anons",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 400,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x14c447",
+      "name": "Fyat Lux (Dawn Collection)",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 8074,
+      "enumerated_urls": 1,
+      "urls": [
+        "ipfs://QmbAEjyVKPv6848vk1UK8zMoR86sJXpkkazRp4tYSc6hjU/1.glb"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "NeonGlitch86 Collection (Shape side)",
+      "name": "GARY GRIFTER",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 27,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "halloween-rising",
+      "name": "Halloween Rising",
+      "state": "complete",
+      "complete": true,
+      "terminal": false,
+      "coverage_source": "avatars_enumerated",
+      "expected_models": 60,
+      "enumerated_urls": 61,
+      "urls": [
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar01_v1_Cute_Green.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar01_v2_Stylized_Green.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar02_v1_Cute_Red.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar03_v2_Stylized_Blue.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar04_v1_Cute_Blue.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar04_v2_Stylized_Brown.vrm",
+        "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar05_v1_Cute_Black.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Yellow.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v2_Stylized_Yellow.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Black.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v1_Cute_Yellow.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Black.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar02_v2_Stylized_Yellow.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Orange.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v1_Cute_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Orange.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Brown.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v1_Cute_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Blue.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Pink.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar04_v2_Stylized_Red.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Brown.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Cream.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v1_Cute_White.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Black.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Brown.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Cream.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Green.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_Purple.vrm",
+        "https://ipfs.io/ipfs/QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar05_v2_Stylized_White.vrm",
+        "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar01_v1_Cute_Pink.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https",
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x86fc6f",
+      "name": "Jadu AVA",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 11101,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0xd2F668",
+      "name": "Karafuru",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 5555,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x324F60",
+      "name": "Koala 2025 Collector's Briefcase",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 499,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "mona-avatars",
+      "name": "MONA Avatars",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 67,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "meebits",
+      "name": "Meebits",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 20000,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://api.meebits.app/v2/3d/larvalabs_vrm/17438"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "metatravelers",
+      "name": "MetaTravelers: Nibiru",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 7777,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "metaanigen",
+      "name": "MetaaniGEN",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 1354,
+      "enumerated_urls": 1,
+      "urls": [
+        "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x223ef0",
+      "name": "Metashima - Lightning",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 4721,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x53e38a",
+      "name": "Metaverse Stardrop",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": null,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "misfitpixels",
+      "name": "MisfitPIXELS",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 1000,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x235817",
+      "name": "Moonbirds",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9999,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "neonglitch86-collection-polygon-side",
+      "name": "NG86SHAPE",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 41,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": null,
+      "enumerated_urls": 12,
+      "urls": [
+        "https://bafybeibeegcbxo3itcucdjrbrvum5f3y7pb3rbhsvkx5c2crevtn2nwore.ipfs.w3s.link/ipfs/bafybeibeegcbxo3itcucdjrbrvum5f3y7pb3rbhsvkx5c2crevtn2nwore/gothamYellowNycss.vrm",
+        "https://bafybeig4dmkps7kxuacwnw2v5ygas55bondtyzt73y4hqtev425ojgfjfi.ipfs.w3s.link/ipfs/bafybeig4dmkps7kxuacwnw2v5ygas55bondtyzt73y4hqtev425ojgfjfi/Pepe_TrashCan.vrm",
+        "https://bafybeigazr4q4mkbmu5vrkshznqyb7vp4u4q2tcjscstr3dnw4yfeyzm3q.ipfs.w3s.link/ipfs/bafybeigazr4q4mkbmu5vrkshznqyb7vp4u4q2tcjscstr3dnw4yfeyzm3q/ROCKETMAN.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_A.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_B.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_C.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/MAXMCD.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86v2.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Summer_pbr.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https",
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x92133e",
+      "name": "Non-Fungible People by Daz 3D",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 8875,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "nouns",
+      "name": "Nouns",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 1965,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "og-meta-meeples-pfp",
+      "name": "OG Meta Meeples PFP",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 2390,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "omnimorphs",
+      "name": "Omnimorphs",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9982,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0xA7aE1B",
+      "name": "PAPE",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": null,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x0fc3dd",
+      "name": "Parallel Avatars",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 11001,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x35471f",
+      "name": "PartyBear",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9668,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "phettaverse-editions",
+      "name": "Phettaverse Editions",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 371,
+      "enumerated_urls": 1,
+      "urls": [
+        "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "pixelbeasts",
+      "name": "Pixelbeasts",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 1,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://pixelbeasts3d.replit.app/beast/3064.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "polygonlow",
+      "name": "PolygonLow",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": null,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "rstlss-x-claire-silver-pixelgeist",
+      "name": "RSTLSS x Claire Silver: Pixelgeist",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 2129,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x50e712",
+      "name": "The Modz",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 5553,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0xaaf03a",
+      "name": "The Seekers",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 47848,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x414c5e",
+      "name": "The WynLambo",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9997,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "toxic-skulls-club",
+      "name": "Toxic Skulls Club",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9999,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "immadegen-void",
+      "name": "VOID - Visitors of Imma Degen",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9998,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0xdb5558",
+      "name": "VOID - Visitors of Imma Degen",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9998,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x3137e0",
+      "name": "VOID - Voyagers of Imma Degen",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 631,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "voltz",
+      "name": "VOLTZ Avatars",
+      "state": "partial",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": "partial_links",
+      "expected_models": 3623,
+      "enumerated_urls": 1,
+      "urls": [
+        "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x631086",
+      "name": "Virtuals Waifus",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 4442,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "woodies",
+      "name": "Woodies",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 9735,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "state": "complete",
+      "complete": true,
+      "terminal": false,
+      "coverage_source": "avatars_enumerated",
+      "expected_models": 80,
+      "enumerated_urls": 81,
+      "urls": [
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar01_Cold.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar02_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar03_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar03_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar05_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar05_Pastel.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar05_Xmas.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar06_Cold.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar06_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar06_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar07_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar07_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar09_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar09_Pastel.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar10_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar12_Cold.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar12_Xmas.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar13_Neutral.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar13_Pastel.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar13_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar14_Cold.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar14_Warm.vrm",
+        "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar15_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar02_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar03_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar04_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar05_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar06_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar07_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar08_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar10_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar11_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar12_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar13_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar14_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar15_Xmas.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Cold.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Neutral.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Pastel.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Warm.vrm",
+        "https://ipfs.io/ipfs/QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar16_Xmas.vrm",
+        "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar01_Neutral.vrm"
+      ],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [
+          "https",
+          "ipfs"
+        ],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x35373e",
+      "name": "ZTX Genesis Homes",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 4000,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 10000,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    },
+    {
+      "collection_id": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "state": "unknown",
+      "complete": false,
+      "terminal": false,
+      "coverage_source": null,
+      "expected_models": 1379,
+      "enumerated_urls": 0,
+      "urls": [],
+      "candidate_url_template": null,
+      "url_template_evidence": [],
+      "moralis_metadata_complete": false,
+      "moralis_tokens_enumerated": 0,
+      "storage": {
+        "types": [],
+        "scope": "vrm_files",
+        "evidence": []
+      },
+      "access": {
+        "mode": null,
+        "requires_ownership": null,
+        "access_url": null,
+        "evidence": []
+      },
+      "inventory_evidence": []
+    }
+  ]
+}

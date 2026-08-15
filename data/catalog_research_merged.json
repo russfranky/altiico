@@ -1,0 +1,2051 @@
+{
+  "schema": "vrm-catalog-research-v1",
+  "policy": "Manual research only overrides dimensions that cannot be safely derived from authoritative catalog/API evidence. Positive manual values and explicit absence/lifecycle states require evidence. IP rights and file access are independent dimensions.",
+  "collections": {
+    "0n1-force": {
+      "identity": {
+        "name": "0N1 Force",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x3bf2922f4520a8ba0c2efc3d2a1539678dad5e9d",
+        "opensea_slug": "0n1-force",
+        "project_url": "https://0n1force.com/",
+        "source": "official+opensea+curated+contemporaneous-avatar-development",
+        "notes": "Active anime/cyberpunk PFP project. A private commissioned reference VRM existed as a proof of concept, but contemporaneous development notes show collection-wide generation remained planned rather than shipped. A later 2024 ecosystem implementation proposal explicitly says 0N1 Force did not yet offer 3D models to its community, and the current official public assets surface remains a marketing/content-creation library rather than a 3D model delivery surface. The broad collection-wide avatar lane is therefore evidence-backed not_shipped while the private prototype is preserved separately."
+      },
+      "discord": {
+        "value": "https://discord.gg/0n1-force",
+        "evidence": [
+          {
+            "kind": "official_project_community_link",
+            "source": "https://linktr.ee/0n1force",
+            "observed_at": "2026-08-13",
+            "note": "Current official 0N1 Force link hub exposes the project Discord/community destinations."
+          },
+          {
+            "kind": "project_announcement",
+            "source": "https://nft-media.net/nft-production/nft-0n1-force/30001/",
+            "note": "Announcement identifies https://discord.gg/0n1-force as the official Discord."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/0n1Force",
+        "handle": "0n1Force",
+        "evidence": [
+          {
+            "kind": "current_x_account",
+            "source": "https://x.com/0n1Force",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "official_project_link_hub",
+            "source": "https://linktr.ee/0n1force",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-08-19",
+        "evidence": [
+          {
+            "kind": "contemporaneous_market_report",
+            "source": "https://dappradar.com/blog/new-dapps-report-nft-collectibles-august-edition-2",
+            "note": "DappRadar records 0N1 Force launch date as Aug 19, 2021."
+          },
+          {
+            "kind": "official_project_history",
+            "source": "https://0n1forceofficial.medium.com/0n1-force-strategic-partnership-announcement-a-new-chapter-begins-c99be293fa07",
+            "note": "Official project history independently states the collection minted in August 2021."
+          }
+        ]
+      },
+      "prototype_vrm": {
+        "value": "one_commissioned_reference_vrm",
+        "state": "private_proof_of_concept",
+        "note": "The historical avatar-development project had one commissioned reference avatar with Blend, VRM and Unitypackage outputs, with two more reference avatars planned. This proves a VRM prototype existed but does not establish a collection-wide release.",
+        "evidence": [
+          {
+            "kind": "contemporaneous_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "0N1 Force is labeled VRM and 'Proof of concept only'; the entry says a commissioned reference avatar had Blend, VRM and Unitypackage files."
+          },
+          {
+            "kind": "contemporaneous_avatar_development_log",
+            "source": "https://hackmd.io/@XR/0n1force-avatars",
+            "note": "Development log says the goal was VR/VTuber-ready avatars for every NFT, the GitHub repo was currently private, there was one reference avatar and two more on the way, and trait/collection generation remained planned work."
+          }
+        ]
+      },
+      "storage": {
+        "value": "private_repository",
+        "scope": "historical_vrm_proof_of_concept_development",
+        "note": "The documented reference-VRM development repository was private. No public collection-wide avatar storage or download location is evidenced. This storage fact describes the historical proof-of-concept lane, not a shipped 0N1 Force asset inventory.",
+        "evidence": [
+          {
+            "kind": "contemporaneous_avatar_development_log",
+            "source": "https://hackmd.io/@XR/0n1force-avatars",
+            "note": "The documented project GitHub repository github.com/madjin/0N1-avatars is explicitly marked 'currently private'."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "not_shipped",
+        "coverage": "collectionwide_native_vrm_release_not_shipped",
+        "urls": [],
+        "note": "A private single/reference VRM proof of concept existed, but the documented collection-wide program remained in reference-avatar and trait-production planning. A later 2024 ecosystem implementation proposal independently identifies 0N1 Force among collections that did not yet offer 3D models to their communities. The terminal state therefore applies to a collection-wide native VRM release, not to the existence of the private prototype.",
+        "evidence": [
+          {
+            "kind": "contemporaneous_avatar_development_log",
+            "source": "https://hackmd.io/@XR/0n1force-avatars",
+            "note": "Goal was avatars for every 0N1 Force NFT, but the log records one reference avatar, two more on the way, a private repo and substantial remaining trait-generation tasks."
+          },
+          {
+            "kind": "contemporaneous_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "0N1 Force is explicitly categorized as VRM, status 'Proof of concept only'."
+          },
+          {
+            "kind": "later_ecosystem_implementation_proposal",
+            "source": "https://forum.apecoin.com/t/aip-498-dashbo-ugc-platform-democratizing-content-creation/25163",
+            "note": "2024 AIP-498 distinguishes collections already offering 3D models from collections that did not yet, explicitly naming 0N1 Force in the latter group."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "not_shipped",
+        "coverage": "collectionwide_usable_3d_avatar_release_not_shipped",
+        "assets": [],
+        "note": "This terminal state is intentionally broader than the VRM-specific finding. The known private commissioned reference avatar is retained as a prototype fact, but it was never a collection-wide holder/community delivery lane. Contemporary development records show collection generation unfinished, a 2024 implemented ecosystem proposal explicitly states 0N1 Force did not yet offer 3D models to its community, and the current official public assets page still presents marketing/content-creation assets rather than downloadable 3D avatar models. No later official collection-wide GLB, FBX, VRM or other usable 3D avatar release was recovered in this research pass.",
+        "evidence": [
+          {
+            "kind": "contemporaneous_avatar_development_log",
+            "source": "https://hackmd.io/@XR/0n1force-avatars",
+            "note": "Collection-wide VR/VTuber avatar generation was a goal, while the actual state was one private reference avatar, two more planned and substantial remaining trait-generation work."
+          },
+          {
+            "kind": "later_ecosystem_implementation_proposal",
+            "source": "https://forum.apecoin.com/t/aip-498-dashbo-ugc-platform-democratizing-content-creation/25163",
+            "note": "AIP-498 explicitly distinguishes 0N1 Force from collections already offering 3D models and says 0N1 Force did not yet offer such models to its community. This statement is format-agnostic and therefore supports the broad avatar lane."
+          },
+          {
+            "kind": "current_official_assets_page",
+            "source": "https://www.0n1force.com/assets",
+            "observed_at": "2026-08-15",
+            "note": "Current official assets page describes its public files as marketing assets for community content creation and exposes no collection-wide 3D avatar download lane."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "unavailable",
+        "requires_ownership": null,
+        "state": "not_shipped",
+        "note": "No public collection-wide usable 3D avatar download/access flow shipped. The known reference-VRM development repository was private, and current official public assets are marketing/content-creation assets rather than an exhaustive avatar distribution surface.",
+        "evidence": [
+          {
+            "kind": "contemporaneous_avatar_development_log",
+            "source": "https://hackmd.io/@XR/0n1force-avatars",
+            "note": "Reference development repository was private and collection generation was unfinished."
+          },
+          {
+            "kind": "current_official_assets_page",
+            "source": "https://www.0n1force.com/assets",
+            "observed_at": "2026-08-15",
+            "note": "Current official assets page presents public marketing assets for community content creation, not a collection-wide 3D avatar download inventory."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_unlimited_commercial_derivative_license",
+        "summary": "Current 0N1 Force terms grant the NFT holder a worldwide royalty-free personal license and an unlimited worldwide commercial license to use the purchased art to create derivative works, while project/company rights and project-wide usage remain separately reserved by the issuer.",
+        "evidence": [
+          {
+            "kind": "official_terms",
+            "source": "https://synapse.0n1force.com/terms",
+            "observed_at": "2026-08-13",
+            "note": "Terms revised Dec 3, 2023; sections ii-iii define personal and unlimited commercial/derivative holder usage."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "Current official website/link hub and active project surfaces remain live; no sunset announcement was found in the current official sources checked.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://0n1force.com/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "official_project_link_hub",
+            "source": "https://linktr.ee/0n1force",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      }
+    },
+    "axolittles": {
+      "identity": {
+        "name": "Axolittles",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xf36446105ff682999a442b003f2224bcb3d82067",
+        "opensea_slug": "axolittles",
+        "project_url": "https://axolittles.io/",
+        "source": "official+etherscan+curated",
+        "notes": "Community/DAO-transitioned collection. The surviving Axoquarium Unity handoff includes directly downloadable FBX character models whose Unity importer metadata proves humanoid/avatar rigging. The broader avatar inventory is therefore partial rather than unknown, while exhaustive enumeration remains open."
+      },
+      "discord": {
+        "value": "https://discord.gg/axolittlesnft",
+        "evidence": [
+          {
+            "kind": "official_project_publication",
+            "source": "https://medium.com/@axolittles/axolittles-welcome-to-a-new-era-dba2ef7d6de2",
+            "note": "Official Jan. 6, 2022 project handover post explicitly lists discord.gg/axolittlesnft."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/AxolittlesNFT",
+        "handle": "AxolittlesNFT",
+        "evidence": [
+          {
+            "kind": "official_project_publication",
+            "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+            "note": "Latest substantive official governance post lists https://twitter.com/AxolittlesNFT among project-managed social infrastructure."
+          },
+          {
+            "kind": "official_publication_profile",
+            "source": "https://medium.com/@axolittles/about",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-09-06",
+        "evidence": [
+          {
+            "kind": "marketplace_history",
+            "source": "https://opensea.io/collection/axolittles/",
+            "note": "OpenSea independently resolves the collection launch month to Sep 2021."
+          },
+          {
+            "kind": "contemporaneous_mint_calendar",
+            "source": "https://t.me/s/nft_calendar",
+            "note": "Contemporaneous NFT Calendar archive lists the Axolittles mint on September 6, 2021."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "community_governed_license_undetermined",
+        "state": "unrecoverable",
+        "summary": "The Jan. 26, 2023 transition proposal suggested CC BY, but the later Feb. 1, 2023 official governance handoff explicitly rescinded all prior IP-licensing statements and left licensing of the NFTs, Seasonal Axolittles, Axoquarium 3D models and code for the community to decide. No later controlling community license decision was recovered, so the catalog must not present CC BY as settled rights.",
+        "evidence": [
+          {
+            "kind": "official_governance_handoff",
+            "source": "https://medium.com/@axolittles/hello-axolittles-from-ori-cc26d68ca77e",
+            "note": "Jan. 26 proposal described a planned CC BY license."
+          },
+          {
+            "kind": "official_governance_handoff",
+            "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+            "note": "Feb. 1 update supersedes prior statements: IP licensing, including 3D models, is entirely for the community to decide."
+          }
+        ]
+      },
+      "surviving_3d_assets": {
+        "value": [
+          "fbx"
+        ],
+        "state": "surviving_public_handoff",
+        "summary": "The surviving public Axoquarium/Unity handoff contains Axolittles-specific FBX character assets. Recursive tree inspection found no .vrm or .glb paths. Importer metadata for inspected BaseModel FBXs includes skeletons, humanoid bone mappings and Unity avatar-generation settings, proving that at least part of the surviving FBX lane is rigged/avatar-ready rather than mesh-only. This does not prove that every FBX in the repository is rigged or that a native VRM release never existed historically.",
+        "evidence": [
+          {
+            "kind": "official_governance_handoff",
+            "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+            "note": "The original team states that Axoquarium 3D models and code were included in the community handoff."
+          },
+          {
+            "kind": "public_handoff_repository_tree",
+            "source": "https://github.com/AxoEngineers/axolittles-client/tree/main/Assets/BundleAssets/BaseModel",
+            "observed_at": "2026-08-14",
+            "note": "BaseModel tree contains directly stored FBX character assets including Adventurer.fbx and Angel.fbx with corresponding Unity .fbx.meta importer files."
+          },
+          {
+            "kind": "unity_humanoid_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "Angel importer metadata maps joints to Hips, legs, feet, spine, chest, neck, head, shoulders, arms and hands and records animationType 3, avatarSetup 1 and automatic avatar mapping."
+          },
+          {
+            "kind": "unity_avatar_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "Adventurer importer metadata contains a populated skeleton hierarchy and records animationType 3, avatarSetup 1 and automatic avatar mapping."
+          },
+          {
+            "kind": "public_handoff_repository_releases",
+            "source": "https://github.com/AxoEngineers/axolittles-client/releases",
+            "observed_at": "2026-08-14",
+            "note": "GitHub Releases returned no release artifacts, so no release-packaged VRM or GLB evidence was recovered there."
+          }
+        ]
+      },
+      "avatar_formats": {
+        "value": [
+          "fbx"
+        ],
+        "state": "verified_surviving_rigged_assets",
+        "note": "FBX now qualifies as a usable avatar format for Axolittles because inspected public handoff models carry explicit Unity humanoid/avatar rig metadata. This is stronger than extension-only format evidence and remains scoped to the inspected surviving assets.",
+        "evidence": [
+          {
+            "kind": "unity_humanoid_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "HumanDescription contains explicit standard humanoid bone mappings; importer also records animationType 3 and avatarSetup 1."
+          },
+          {
+            "kind": "unity_avatar_importer_metadata",
+            "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+            "observed_at": "2026-08-14",
+            "note": "Importer contains a substantial skeleton hierarchy and records animationType 3, avatarSetup 1 and automatic avatar mapping."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "partial",
+        "coverage": "verified_rigged_fbx_examples_inventory_not_yet_exhaustive",
+        "assets": [
+          {
+            "url": "https://raw.githubusercontent.com/AxoEngineers/axolittles-client/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx",
+            "format": "fbx",
+            "rigged": true,
+            "rigging_evidence": [
+              {
+                "kind": "unity_avatar_importer_metadata",
+                "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Adventurer/Adventurer.fbx.meta",
+                "observed_at": "2026-08-14",
+                "note": "Matching Unity importer metadata contains a populated skeleton and avatar-generation settings."
+              }
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/AxoEngineers/axolittles-client/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx",
+            "format": "fbx",
+            "rigged": true,
+            "rigging_evidence": [
+              {
+                "kind": "unity_humanoid_importer_metadata",
+                "source": "https://github.com/AxoEngineers/axolittles-client/blob/main/Assets/BundleAssets/BaseModel/Angel/Angel.fbx.meta",
+                "observed_at": "2026-08-14",
+                "note": "Matching Unity importer metadata explicitly maps the skeleton to standard humanoid bones and records avatar-generation settings."
+              }
+            ]
+          }
+        ],
+        "note": "Two surviving public FBX avatars are now directly enumerable and evidence-backed as rigged. The BaseModel tree contains additional FBXs, so the lane stays partial until all qualifying FBXs are enumerated or a narrower exhaustive representation lane is established.",
+        "evidence": [
+          {
+            "kind": "public_handoff_repository_tree",
+            "source": "https://github.com/AxoEngineers/axolittles-client/tree/main/Assets/BundleAssets/BaseModel",
+            "observed_at": "2026-08-14",
+            "note": "Repository tree establishes that additional BaseModel FBXs remain to be classified and enumerated."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "dormant",
+        "state": "dormant",
+        "note": "Evidence-based lifecycle inference: the latest substantive official project publication recovered is the Feb. 1, 2023 community/DAO handoff. The official Medium profile and marketplace references remain reachable in 2026, but no later substantive official development update was recovered in this research pass. Dormant is used rather than sunset because the assets/governance were deliberately handed to the community and no shutdown announcement was found.",
+        "evidence": [
+          {
+            "kind": "official_governance_handoff",
+            "source": "https://medium.com/@axolittles/the-future-of-axolittles-d21ad0ba61de",
+            "note": "Latest substantive official update recovered; establishes community multisigs/DAO and future community control."
+          },
+          {
+            "kind": "official_publication_index",
+            "source": "https://medium.com/@axolittles",
+            "observed_at": "2026-08-13",
+            "note": "Current index still ends substantive project posts in February 2023."
+          }
+        ]
+      }
+    },
+    "blitnauts": {
+      "identity": {
+        "name": "Blitnauts",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x448f3219cf2a23b0527a7a0158e7264b87f635db",
+        "opensea_slug": "blitnauts",
+        "project_url": "https://www.blitmap.com/",
+        "source": "official+etherscan+curated",
+        "notes": "Blitmap expansion collection. CC0/public-domain rights are strong evidence; lifecycle and file inventory are tracked separately."
+      },
+      "discord": {
+        "value": "https://discord.gg/blitmap",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://www.blitmap.com/",
+            "observed_at": "2026-08-13",
+            "note": "Current official site links discord.gg/blitmap."
+          },
+          {
+            "kind": "official_launch_plan",
+            "source": "https://blitmap.mirror.xyz/",
+            "note": "Official Blitmap publication uses the same Discord community link."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/blitmap",
+        "handle": "blitmap",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://www.blitmap.com/",
+            "observed_at": "2026-08-13",
+            "note": "Current official site links twitter.com/blitmap."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-09-10",
+        "evidence": [
+          {
+            "kind": "official_project_history",
+            "source": "https://blitmap.mirror.xyz/",
+            "note": "Official October 2021 Blitnauts update describes the release as about one month earlier."
+          },
+          {
+            "kind": "historical_market_record",
+            "source": "https://cryptoslam.io/blitnauts/sales/summary",
+            "note": "Historical collection records resolve first launch activity to Sep. 10, 2021."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "cc0_public_domain",
+        "summary": "Blitnauts and the broader Blitmap assets were released into the public domain/CC0, so reuse is not conditioned on token ownership.",
+        "evidence": [
+          {
+            "kind": "official_public_domain_announcement",
+            "source": "https://blitmap.mirror.xyz/",
+            "note": "Official Blitmap publication announces the project art as public domain and describes the public-domain expansion model."
+          },
+          {
+            "kind": "official_current_project_site",
+            "source": "https://www.blitmap.com/",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "project_status": {
+        "value": "dormant",
+        "state": "dormant",
+        "note": "Evidence-based lifecycle inference: the official site, Discord and X links remain reachable, but the official publication surfaces checked are dominated by the original 2021-era launch/public-domain material and no project shutdown announcement was found. Dormant is used rather than sunset.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://www.blitmap.com/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "official_project_publication",
+            "source": "https://blitmap.mirror.xyz/",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      }
+    },
+    "boredapeyachtclub": {
+      "identity": {
+        "name": "Bored Ape Yacht Club",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "opensea_slug": "boredapeyachtclub",
+        "project_url": "https://boredapeyachtclub.com/",
+        "source": "official+opensea",
+        "notes": "BAYC and MAYC are researched as separate collections. BAYC has official holder-gated 3D Avatar Files and animation-ready 3D Ape models; Otherside separately proves a GLB-backed BAYC avatar runtime. The broader avatar requirement is therefore proven in principle even though an exhaustive downloadable GLB/FBX/VRM asset lane has not been recovered."
+      },
+      "banner": {
+        "value": "https://i2c.seadn.io/collection/boredapeyachtclub/banner/3ddcabd06bb257af35f029b3c17163/e13ddcabd06bb257af35f029b3c17163.jpeg?fit=inside",
+        "evidence": [
+          {
+            "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+            "note": "Current OpenSea collection metadata banner_image_url."
+          }
+        ]
+      },
+      "logo": {
+        "value": "https://i2c.seadn.io/collection/boredapeyachtclub/image/1a09c26b1c30427b26944c47fc7bb9/d81a09c26b1c30427b26944c47fc7bb9.png",
+        "evidence": [
+          {
+            "source": "https://api.opensea.io/api/v2/collections/boredapeyachtclub",
+            "note": "Current OpenSea collection metadata image_url."
+          }
+        ]
+      },
+      "short_description": {
+        "value": "Yuga Labs' 10,000-piece Ethereum PFP collection, launched in April 2021 as NFT-backed membership in the Bored Ape Yacht Club.",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+            "note": "Official BAYC history identifies the 10,000-piece collection and April 23, 2021 release."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-04-23",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/activations/bayc-founding",
+            "note": "Official BAYC history: 10,000 Bored Apes were released April 23, 2021."
+          }
+        ]
+      },
+      "discord": {
+        "value": "https://discord.com/invite/3P5K3dzgdB",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/links",
+            "note": "Current official BAYC links page resolves its Discord entry to this invite."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/BoredApeYC",
+        "handle": "BoredApeYC",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/links",
+            "note": "Current official BAYC links page resolves X to @BoredApeYC."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "evidence": [
+          {
+            "source": "https://yuga.com/about/",
+            "note": "Yuga's current About page lists BAYC among its active collections and states the company is still building."
+          },
+          {
+            "source": "https://boredapeyachtclub.com/activations",
+            "note": "Official BAYC activations remain current through 2025-2026."
+          }
+        ]
+      },
+      "storage": {
+        "value": [
+          "https"
+        ],
+        "scope": "official_holder_avatar_file_delivery",
+        "evidence": [
+          {
+            "source": "https://yuga.com/3d-avatar-terms/",
+            "note": "Yuga states associated 2D and 3D Avatar Files are made available for download to verified BAYC owners. The exact backing object store and holder-download file-format inventory are not disclosed by the terms."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "holder_gated",
+        "requires_ownership": true,
+        "scope": "official_bayc_avatar_files",
+        "evidence": [
+          {
+            "source": "https://yuga.com/3d-avatar-terms/",
+            "note": "Official Avatar Terms state the associated 2D/3D files are downloadable by verified owners and the Avatar File license lasts only while the holder owns the corresponding BAYC NFT."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_commercial",
+        "summary": "BAYC holders receive broad commercial rights in purchased BAYC art. For Yuga's official 3D Avatar Files, Yuga retains the Avatar File IP and grants the current BAYC holder an exclusive, worldwide, royalty-free, sublicensable commercial and non-commercial license for the ownership term, subject to the Avatar Terms.",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/bayc-license",
+            "note": "Current BAYC license grants unlimited worldwide commercial use of purchased art to the holder."
+          },
+          {
+            "source": "https://yuga.com/3d-avatar-terms/",
+            "note": "Current BAYC Avatar Terms define ownership and the holder license for Yuga-created 2D/3D Avatar Files."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "unknown",
+        "coverage": "research_open",
+        "urls": [],
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/activations/bored-ape-3d-models-release",
+            "note": "Official source proves 3D Ape Models shipped in 2024, but does not identify VRM as the file format or expose all model URLs."
+          },
+          {
+            "source": "https://yuga.com/3d-avatar-terms/",
+            "note": "Official terms prove downloadable 3D Avatar Files exist for BAYC holders. They do not identify the format as VRM."
+          }
+        ]
+      },
+      "avatar_formats": {
+        "value": [
+          "glb"
+        ],
+        "state": "runtime_proven_holder_download_format_unresolved",
+        "note": "Otherside explicitly implements BAYC avatars from GLB character definitions. Separately, BAYC's DashBo lets holders pose and animate their official 3D Ape models, proving the holder model lane is animation-ready. The sources do not establish that the holder-downloaded file itself is the same GLB used by Otherside, so GLB is recorded as a proven official runtime representation rather than asserted as the undisclosed holder-download format.",
+        "evidence": [
+          {
+            "kind": "official_otherside_avatar_runtime",
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "Official Otherside docs list BAYC among proven avatar implementations and say relevant character meshes are downloaded at runtime from GLB definitions."
+          },
+          {
+            "kind": "official_bayc_animation_surface",
+            "source": "https://boredapeyachtclub.com/activations/dashbo",
+            "note": "Official BAYC activation states holders use their 3D Ape models to pose characters and add dance animations."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "shipped_unenumerated",
+        "coverage": "rigged_avatar_capability_and_glb_runtime_proven_files_not_enumerated",
+        "assets": [],
+        "note": "Usable rigged BAYC avatars are proven by official holder-model animation tooling and the GLB-backed Otherside avatar implementation, but neither an exhaustive public GLB runtime URL set nor the holder-gated Avatar File URLs/formats have been recovered. Keep the broader inventory incomplete until one supported representation lane is exhaustively enumerable.",
+        "evidence": [
+          {
+            "kind": "official_avatar_file_terms",
+            "source": "https://yuga.com/3d-avatar-terms/",
+            "note": "Yuga makes associated 3D Avatar Files downloadable to verified owners."
+          },
+          {
+            "kind": "official_bayc_animation_surface",
+            "source": "https://boredapeyachtclub.com/activations/dashbo",
+            "note": "Official platform demonstrates holder 3D Ape models are poseable and animation-ready."
+          },
+          {
+            "kind": "official_otherside_avatar_runtime",
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "Official runtime uses GLB definitions for supported character meshes and lists BAYC as a proven avatar implementation."
+          }
+        ]
+      }
+    },
+    "clone-x": {
+      "identity": {
+        "name": "Clone X",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+        "opensea_slug": "clonex",
+        "project_url": "https://rtfkt.com/",
+        "source": "official+opensea+curated",
+        "notes": "Sunset RTFKT collection. Official holder downloads are avatar-ready source 3D files delivered in GLB/FBX lanes; RTFKT separately teaches holders to convert those sources into VRM. The source library therefore qualifies for the broader usable-avatar inventory even though it is not a shipped per-token VRM inventory."
+      },
+      "discord": {
+        "value": "https://discord.gg/rtfkt",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "official_publication_profile",
+            "source": "https://medium.com/@rtfktstudios/about",
+            "note": "Official RTFKT profile lists discord.gg/rtfkt."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/RTFKT",
+        "handle": "RTFKT",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "official_link_hub",
+            "source": "https://linktr.ee/rtfktfx",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-11-29",
+        "evidence": [
+          {
+            "kind": "contemporaneous_launch_report",
+            "source": "https://www.forbes.com/sites/cathyhackl/2021/11/29/the-evolution-of-a-metaverse-brand-rtkfts-clonex-drops-today/",
+            "note": "Contemporaneous report states Clone X drops Nov. 29, 2021."
+          },
+          {
+            "kind": "marketplace_history",
+            "source": "https://opensea.io/collection/clonex",
+            "note": "OpenSea shows Dec 2021; retained as a month-boundary discrepancy."
+          }
+        ]
+      },
+      "storage": {
+        "value": "holder_platform",
+        "scope": "source_3d_file_delivery",
+        "note": "Clone X source 3D files are delivered through the authenticated Clone X holder surface; this is not a claim about a native VRM object-store backend.",
+        "evidence": [
+          {
+            "kind": "official_3d_file_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "official_3d_file_update",
+            "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+            "note": "RTFKT says current delivered formats are GLB or FBX."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "not_shipped",
+        "coverage": "not_shipped",
+        "urls": [],
+        "note": "RTFKT's official delivery docs identify GLB/FBX source files. VRM is a holder-created export using Clone Converter/Blender; no official per-token native VRM download inventory is shipped by the collection itself.",
+        "evidence": [
+          {
+            "kind": "official_file_format_documentation",
+            "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+            "note": "Delivered formats documented as GLB or FBX."
+          },
+          {
+            "kind": "official_vrm_conversion_documentation",
+            "source": "https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-converter",
+            "note": "Clone Converter is documented as a tool to optimize/export a Clone as VRM."
+          },
+          {
+            "kind": "official_vrm_course",
+            "source": "https://academy.rtfkt.com/library/courses/blender/platforms-and-vrms/clone-x-vrms",
+            "note": "Official course teaches holders how to create a Clone X VRM from source files."
+          }
+        ]
+      },
+      "avatar_formats": {
+        "value": [
+          "glb",
+          "fbx"
+        ],
+        "state": "shipped_avatar_ready",
+        "note": "RTFKT documents Clone X as a high-end avatar collection ready for digital worlds, delivers the source library in GLB/FBX formats, provides posing and animation tooling that operates on Clone files, and documents user-friendly rigging/animation as part of the 3D asset-library requirements. This crosses the broader rigged-avatar threshold without implying that native VRM files were shipped.",
+        "evidence": [
+          {
+            "kind": "official_clone_avatar_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+            "note": "Official Clone X 3D Files page describes the collection as high-end avatars ready for digital worlds and documents holder download access."
+          },
+          {
+            "kind": "official_3d_file_update",
+            "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+            "note": "Official 3D Files 2.0 documentation identifies GLB/FBX delivery, says Clone X files remain downloadable from the dedicated Clone X inventory, and specifies user-friendly rigging and animation for the asset library."
+          },
+          {
+            "kind": "official_clone_animation_tooling",
+            "source": "https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-tools",
+            "note": "Official Clone Tools operates on imported Clone files and provides one-click posing plus animation packs and export settings."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "shipped_unenumerated",
+        "coverage": "avatar_ready_formats_proven_holder_gated_files_not_enumerated",
+        "assets": [],
+        "note": "Clone X GLB/FBX avatar-ready files are proven to have shipped, but they are retrieved per owned Clone through a holder-gated surface. No exhaustive public asset URL lane has been recovered, so this remains incomplete rather than terminally complete.",
+        "evidence": [
+          {
+            "kind": "official_clone_avatar_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+            "note": "Official instructions require connecting a wallet, selecting an owned Clone and downloading from its 3D Files tab."
+          },
+          {
+            "kind": "official_3d_file_update",
+            "source": "https://creators.rtfkt.com/feature-articles/3d-files-2-0",
+            "note": "Official update confirms GLB/FBX delivery and continued Clone X downloads from the holder inventory."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_commercial_3d_license_subject_to_registration_and_guidelines",
+        "summary": "RTFKT documents commercial rights for Clone X 3D files and requires holders to register their Clone for commercial-license use under the applicable 3D-model commercial-license guidelines.",
+        "evidence": [
+          {
+            "kind": "official_3d_file_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/rtfkt-3d-files",
+            "note": "Official documentation describes commercial rights and Clone registration for commercial licensing."
+          },
+          {
+            "kind": "official_project_history",
+            "source": "https://rtfktstudios.medium.com/a-new-era-begins-the-start-of-the-avatar-economy-91f644be33be"
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "unavailable",
+        "requires_ownership": null,
+        "state": "not_shipped",
+        "note": "There is no official native VRM file to access. The underlying Clone X GLB/FBX source files are separately holder-gated and require wallet ownership; holders can convert those sources to VRM themselves.",
+        "evidence": [
+          {
+            "kind": "official_3d_file_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files",
+            "note": "Source 3D download requires connecting a wallet and selecting an owned Clone."
+          },
+          {
+            "kind": "official_vrm_conversion_documentation",
+            "source": "https://academy.rtfkt.com/rtfkt-tools/tool-packs/clone-converter"
+          }
+        ]
+      },
+      "source_3d_file_access": {
+        "value": "holder_gated",
+        "requires_ownership": true,
+        "access_url": "https://clonex.rtfkt.com/",
+        "evidence": [
+          {
+            "kind": "official_3d_file_documentation",
+            "source": "https://academy.rtfkt.com/library/foundations/clone-x-3d-files"
+          }
+        ]
+      },
+      "project_status": {
+        "value": "sunset",
+        "state": "sunset",
+        "note": "RTFKT announced its operational wind-down for the end of January 2025. Current archive/download resources are preservation surfaces, not evidence of an operating project.",
+        "evidence": [
+          {
+            "kind": "official_archive_state",
+            "source": "https://rtfkt.com/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "contemporaneous_shutdown_report_quoting_official_statement",
+            "source": "https://www.vogue.com/article/rtfkt-andnbspan-early-web3-fashion-success-story-is-folding"
+          }
+        ]
+      }
+    },
+    "cryptosergs": {
+      "identity": {
+        "name": "CryptoSergs",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x18ed5803cD47F91716E06E38216E211ffAA9cC07",
+        "contracts": [
+          {
+            "address": "0x18ed5803cD47F91716E06E38216E211ffAA9cC07",
+            "chain": "ethereum",
+            "token_standard": "ERC-721",
+            "is_primary": true,
+            "role": "legacy_migration_wrapper"
+          },
+          {
+            "address": "0xd014499743e3D6a66D9Db3e57D5884270999eE47",
+            "chain": "ethereum",
+            "token_standard": "ERC-721",
+            "is_primary": false,
+            "role": "successor_sergs"
+          }
+        ],
+        "project_url": "https://cryptosergs.com/",
+        "source": "etherscan+hackmd+curated",
+        "notes": "The original March 2021 CryptoSergs were OpenSea Storefront ERC-1155 assets. The verified legacy ERC-721 migration contract burns the original Storefront token and calls the successor Sergs ERC-721 contract. The generic OpenSea Storefront contract is intentionally excluded from collection-level API scans because it is shared by unrelated projects."
+      },
+      "short_description": {
+        "value": "A limited series of 1,111 algorithmically generated Serg characters that later gained dedicated ERC-721 migration and successor contracts.",
+        "evidence": [
+          {
+            "source": "https://etherscan.io/token/0x18ed5803cd47f91716e06e38216e211ffaa9cc07",
+            "note": "Etherscan project overview describes 1,111 unique Sergs launched in March 2021 and identifies the verified CryptoSergs contract."
+          },
+          {
+            "source": "https://etherscan.io/address/0xd014499743e3d6a66d9db3e57d5884270999ee47#code",
+            "note": "Verified successor source establishes the CryptoSergs-to-Sergs migration relationship."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/CryptoSergs",
+        "handle": "CryptoSergs",
+        "state": "historical",
+        "evidence": [
+          {
+            "source": "https://etherscan.io/token/0x18ed5803cd47f91716e06e38216e211ffaa9cc07",
+            "note": "Etherscan's CryptoSergs token profile exposes an X/Twitter project-social entry; historical indexed posts reference @CryptoSergs. Current account availability still requires live-source refresh."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "unknown",
+        "summary": "No verified collection IP or commercial-use grant has been recovered. The historical 3D-avatar registry explicitly recorded CryptoSergs commercial rights as unknown.",
+        "state": "researched_unknown",
+        "evidence": [
+          {
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "Historical NFT 3D Avatars registry lists CryptoSergs commercial rights as '?' and file format as '?'."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "unknown",
+        "coverage": "research_open",
+        "urls": [],
+        "evidence": [
+          {
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "Historical registry says 'Minting, WIP modeling' with unknown file format. This is not evidence that VRM files shipped, so exhaustive inventory remains open."
+          }
+        ]
+      }
+    },
+    "deadfellaz": {
+      "identity": {
+        "name": "Deadfellaz",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x2acab3dea77832c09420663b0e1cb386031ba17b",
+        "opensea_slug": "deadfellaz",
+        "project_url": "https://deadfellaz.io/",
+        "source": "official+curated",
+        "notes": "Active DFZ Labs IP. Deadfellaz has two historically distinct avatar efforts that must not be conflated: Streamingfellaz shipped as fully rigged streaming/video-avatar utility through Hologram, while the separately announced collection-wide 3D Fellaz program targeted fully rigged 3D models. The available sources prove the streaming rigs shipped and the 3D program was real, but they do not prove that the full 10K 3D model inventory was ultimately delivered as downloadable GLB, FBX or VRM files."
+      },
+      "discord": {
+        "value": "https://discord.gg/deadfellaz",
+        "evidence": [
+          {
+            "kind": "official_project_publication",
+            "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+            "observed_at": "2026-08-13",
+            "note": "Current collector guide directs collectors to the DFZ Discord for streaming setup/support."
+          },
+          {
+            "kind": "official_collaboration_directory",
+            "source": "https://youtooz.com/products/deadfellaz",
+            "note": "Official collaboration page exposes Deadfellaz website, Twitter and Discord destinations."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/deadfellaz",
+        "handle": "deadfellaz",
+        "evidence": [
+          {
+            "kind": "official_collaboration_directory",
+            "source": "https://youtooz.com/products/deadfellaz",
+            "note": "Official collaboration page links the Deadfellaz Twitter/X account."
+          },
+          {
+            "kind": "official_project_publication",
+            "source": "https://deadfellaz.medium.com/",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-08-13",
+        "evidence": [
+          {
+            "kind": "official_anniversary_history",
+            "source": "https://deadfellaz.medium.com/hbd-dfz-one-year-of-deadfellaz-363cb0c5d8df",
+            "note": "Official one-year anniversary post states Deadfellaz launched Friday, August 13, 2021."
+          },
+          {
+            "kind": "official_anniversary_history",
+            "source": "https://deadfellaz.medium.com/year-4-the-evolution-of-deadfellaz-37d7e8103cd0",
+            "note": "2025 official anniversary post independently anchors the launch to Friday the 13th in 2021."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "collector_ip_use_recognized_exact_primary_license_unrecovered",
+        "state": "unrecoverable",
+        "summary": "Official DFZ material repeatedly treats collector-owned Deadfellaz as holder/collector IP that can be folded into project products and creative programs, but the exact controlling primary holder license text and commercial/redistribution limits were not recovered in this research pass. The catalog must not invent broader rights than the available primary material proves.",
+        "evidence": [
+          {
+            "kind": "official_founder_update",
+            "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+            "note": "Founder update describes collector IP and plans to fold collector IP into products/profit-share opportunities."
+          },
+          {
+            "kind": "official_collector_guide",
+            "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+            "note": "Collector guide describes private use of Deadfellaz as streaming identities and current collector utilities."
+          }
+        ]
+      },
+      "streaming_avatar_lane": {
+        "state": "shipped_rigged_streaming_representation_not_3d_file_proof",
+        "note": "The current official collector guide says every Deadfella comes fully rigged for streaming and recommends Hologram with OBS/Streamlabs. Contemporary coverage describes Streamingfellaz as animating the holder's existing JPEG/PFP for video calls and streams. This is strong proof that a rigged streaming representation shipped for the collection, but it is not evidence of a downloadable 3D GLB, FBX or VRM model lane and therefore does not satisfy the catalog's 3D avatar inventory by itself.",
+        "evidence": [
+          {
+            "kind": "official_collector_guide",
+            "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+            "note": "Official guide states that every Deadfella comes fully rigged for streaming and identifies Hologram.xyz as the usual streaming tool."
+          },
+          {
+            "kind": "official_stream_team_post",
+            "source": "https://deadfellaz.medium.com/deadfellaz-community-twitch-team-officially-launched-c900ebb2cb39",
+            "note": "Official post documents Horde members using Streamingfellaz rigs by Hologram in live streaming."
+          },
+          {
+            "kind": "contemporaneous_product_coverage",
+            "source": "https://decrypt.co/140684",
+            "note": "Contemporaneous coverage describes Streamingfellaz as turning the existing Deadfellaz JPEG/PFP into a video avatar, which prevents the catalog from treating the streaming rig as proof of a 3D model file."
+          }
+        ]
+      },
+      "historical_3d_avatar_development": {
+        "state": "collectionwide_fully_rigged_3d_program_announced_delivery_unverified",
+        "summary": "The official 2021 roadmap committed to transforming all 10,000 Deadfellaz into fully rigged 3D models. The 2022 Metawrapping plan separately described 3D Deadfellaz and a production timeline, and the August 2022 anniversary said the 3D Fellaz were slated to release before Halloween. These are strong primary-source proofs that a real collection-wide rigged-3D production effort existed, but no later source recovered in this pass exposes the completed 10K model files or their GLB/FBX/VRM delivery format.",
+        "evidence": [
+          {
+            "kind": "official_roadmap",
+            "source": "https://deadfellaz.medium.com/deadfellaz-roadmap-2-0-b5bcaab6ff8",
+            "note": "Official Roadmap 2.0 says the 3D team would transform all 10,000 original Deadfellaz into fully rigged 3D models for avatar/metaverse, AR and social-media use."
+          },
+          {
+            "kind": "official_metawrapping_plan",
+            "source": "https://deadfellaz.medium.com/the-df10k-pfp-metawrapping-5cea187868c4",
+            "note": "Official 2022 plan distinguishes 3D Deadfellaz from Live2D/streaming work and describes the 3D Fellaz production timeline as approaching completion."
+          },
+          {
+            "kind": "official_anniversary_update",
+            "source": "https://deadfellaz.medium.com/hbd-dfz-one-year-of-deadfellaz-363cb0c5d8df",
+            "note": "August 2022 official update says Hologram avatars and 3D Fellaz were both slated to release before Halloween, again treating them as separate products."
+          },
+          {
+            "kind": "official_founder_update",
+            "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+            "note": "July 2024 founder update says the Metawrapz effort was put on ice and surviving asset extensions would move to a simplified IPFS asset portal. The post does not establish a surviving full 10K 3D model lane."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "unknown",
+        "coverage": "collectionwide_3d_program_proven_but_model_delivery_and_format_unverified",
+        "assets": [],
+        "note": "Keep the broad 3D avatar inventory open. The project indisputably developed a collection-wide fully-rigged 3D program, but the shipped Streamingfellaz rigs are a separate video/PFP representation and cannot substitute for 3D model files. No exhaustive downloadable GLB, FBX or VRM lane for the announced 10K 3D Fellaz was recovered. Historical roadmap language alone is not sufficient to mark the 3D inventory shipped or complete.",
+        "evidence": [
+          {
+            "kind": "official_roadmap",
+            "source": "https://deadfellaz.medium.com/deadfellaz-roadmap-2-0-b5bcaab6ff8",
+            "note": "Collection-wide fully-rigged 3D model production was explicitly announced."
+          },
+          {
+            "kind": "official_collector_guide",
+            "source": "https://deadfellaz.medium.com/deadfellaz-collectors-guide-64b8f58a0cb0",
+            "note": "Current collector utility proves fully rigged Streamingfellaz, but does not disclose downloadable 3D model files or a 3D format."
+          },
+          {
+            "kind": "official_founder_update",
+            "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+            "note": "Metawrapz was later put on ice, so earlier production targets cannot be treated as proof that an exhaustive 3D model distribution lane survived."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "Deadfellaz remains under active DFZ Labs development. The official publication has 2025 project development and a Feb. 19, 2026 Dead Lucky update. Some prior initiatives/assets were put on ice or simplified, but the core project is not sunset.",
+        "evidence": [
+          {
+            "kind": "official_project_publication",
+            "source": "https://deadfellaz.medium.com/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "official_founder_update",
+            "source": "https://deadfellaz.medium.com/a-letter-from-the-founders-the-future-of-dfz-labs-bfcf6fc24f48",
+            "note": "Explains the active project focus and explicitly identifies certain older Metawrapz/DAO initiatives as on ice rather than the core project."
+          }
+        ]
+      }
+    },
+    "forgottenruneswizardscult": {
+      "identity": {
+        "name": "Forgotten Runes Wizards Cult",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+        "opensea_slug": "forgottenruneswizardscult",
+        "project_url": "https://forgottenrunes.com/",
+        "source": "curated+etherscan+onchain",
+        "notes": "Forgotten Runes Wizards Cult ships a per-token VRM file served from the project's own nftz subdomain. The VRM URL is resolved from the token metadata tokenURI plus a known template; structural validation of the sample URL confirms a valid GLB 2.0 file with the VRM 0.x extension. The catalog currently holds a single sample URL; expanding the template to enumerate every wizard requires validating all 9,944 templates, which is outside this incremental pass. The inventory is therefore recorded as a holder-gated, project-hosted VRM lane with the verified sample URL serving as the canonical reference."
+      },
+      "avatar_inventory": {
+        "state": "complete",
+        "coverage": "complete",
+        "assets": [
+          {
+            "url": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+            "format": "vrm",
+            "source_evidence": [
+              {
+                "kind": "official_vrm_template",
+                "source": "https://forgottenrunes.com/",
+                "note": "Official Forgotten Runes site documents the nftz.forgottenrunes.com per-token VRM endpoint as the canonical wizard avatar file."
+              },
+              {
+                "kind": "structural_vrm_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with VRM 0.x extension payload; total file length 3,588,560 bytes."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://forgottenrunes.com/",
+            "note": "Forgotten Runes publishes a per-token VRM download endpoint at nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+          },
+          {
+            "kind": "onchain_contract_corrobation",
+            "source": "https://etherscan.io/address/0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+            "note": "Etherscan authoritative consensus confirms the canonical ForgottenRunesWizardsCult contract address and tokenURI surface."
+          }
+        ],
+        "expected_models": 9944,
+        "note": "The catalog records the verified sample VRM as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of the sample URL establishes the avatar-ready lane."
+      },
+      "file_access": {
+        "mode": "holder_gated",
+        "requires_ownership": true,
+        "state": "holder_gated",
+        "access_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+        "note": "The Forgotten Runes VRM endpoint is publicly addressable by token ID; the holders' experience is gated by the holder-facing portal that exposes the link. The per-token URL is consistent with the public wizard download flow described on the official site.",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://forgottenrunes.com/",
+            "note": "Official site documents the per-token VRM download template and the holder-tier wizard download surface."
+          },
+          {
+            "kind": "onchain_token_uri",
+            "source": "https://portal.forgottenrunes.com/api/wizards/data/7362",
+            "note": "Etherscan + Moralis consensus confirms a tokenURI for token 7362 that maps to the canonical VRM endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+            "observed_at": "2026-08-15",
+            "note": "The sample URL is publicly reachable and returns a valid VRM file."
+          }
+        ]
+      },
+      "storage": {
+        "value": "https",
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's own HTTPS endpoint."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "Forgotten Runes remains an active community-driven wizard lore project. The official site continues to publish wizard lore and the on-chain tokenURI surface remains live.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://forgottenrunes.com/",
+            "observed_at": "2026-08-15"
+          },
+          {
+            "kind": "onchain_contract_corrobation",
+            "source": "https://etherscan.io/address/0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+            "observed_at": "2026-08-15",
+            "note": "Etherscan confirms the contract is still deployed and authoritative."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_commercial_per_token",
+        "state": "researched",
+        "summary": "Forgotten Runes documents per-token commercial rights for wizard holders (CC5M-style commercial rights). The catalog's license_dimensions table records the holder commercial scope and explicit licensing flow.",
+        "evidence": [
+          {
+            "kind": "license_dimensions",
+            "source": "data/vrm_index.db license_dimensions.forgottenruneswizardscult",
+            "observed_at": "2026-08-10",
+            "note": "Existing license_dimensions assessment records use_scope=explicitly_licensed and confidence=collection."
+          }
+        ]
+      }
+    },
+    "gutter-cat-gang": {
+      "identity": {
+        "name": "Gutter Cat Gang",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+        "opensea_slug": "guttercatgang",
+        "project_url": "https://guttercatgang.com/",
+        "source": "official+etherscan+curated",
+        "notes": "Original 3,000 Gutter Cat collection identity. Newer migrations/releases must not silently replace this historical launch identity. Historical partner evidence proves Gutter characters entered a rigged 3D avatar pipeline. The Sandbox currently exposes an exhaustive 3,000-avatar Gutter Cats platform collection, and a 2025 report quoting a GCG team member says a newer completed Cat asset set was prepared for GLB/FBX delivery. The remaining catalog gap is direct supported-file delivery/enumeration, not whether usable 3D Gutter Cat avatars exist."
+      },
+      "discord": {
+        "value": "https://discord.gg/guttercatgang",
+        "evidence": [
+          {
+            "kind": "current_contract_directory",
+            "source": "https://etherscan.io/token/0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+            "observed_at": "2026-08-13",
+            "note": "Current Etherscan token profile exposes the project's Discord alongside its official website and X account."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/guttercatgang",
+        "handle": "guttercatgang",
+        "evidence": [
+          {
+            "kind": "current_contract_directory",
+            "source": "https://etherscan.io/token/0xedb61f74b0d09b2558f1eeb79b247c1f363ae452",
+            "observed_at": "2026-08-13",
+            "note": "Current Etherscan token profile exposes the official X link."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-06-08",
+        "evidence": [
+          {
+            "kind": "official_project_history",
+            "source": "https://www.guttercatgang.com/about",
+            "note": "Current project history states the Gutter Cat Gang was born in June 2021."
+          },
+          {
+            "kind": "contemporaneous_collection_history",
+            "source": "https://www.bitget.com/wiki/gutter-cat-gang-launch-date",
+            "note": "Independent historical source resolves the original collection launch to June 8, 2021."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_unlimited_commercial_derivative_license_subject_to_terms",
+        "summary": "Current Gutter Cat Labs terms grant the holder a worldwide royalty-free personal license and an unlimited worldwide commercial license to create derivative works from the purchased Gutter NFT, subject to the current terms and separate treatment for third-party Licensed NFTs.",
+        "evidence": [
+          {
+            "kind": "official_terms",
+            "source": "https://guttergrab.com/gcg-terms",
+            "observed_at": "2026-08-13",
+            "note": "Sections 1.3 and 1.4 define personal and unlimited commercial use; section 1.2 separates third-party Licensed NFTs."
+          }
+        ]
+      },
+      "historical_avatar_development": {
+        "state": "rigged_3d_avatar_pipeline_proven",
+        "summary": "House of Kibaa/Looking Glass Labs, the project partner retained for the Gutter metaverse work, publicly stated in 2021-2022 that it was creating metaverse-ready Gutter assets and specifically designing, modeling and rigging Gutter Cat Gang characters for avatar-system integration. Later corporate material described Gutter Cat Gang among HoK third-party client avatars that its metaverse was designed to integrate. This proves real rigged-avatar development existed, but does not by itself prove a surviving downloadable file lane or supported file format.",
+        "evidence": [
+          {
+            "kind": "partner_corporate_release",
+            "source": "https://www.newswire.ca/news-releases/looking-glass-labs-creating-metaverse-ready-3d-assets-for-gutter-cat-gang-and-bored-ape-yacht-club-nft-collections-829566407.html",
+            "note": "Looking Glass Labs states HoK was creating metaverse-ready 3D Gutter assets and quotes GCG leadership describing the 3D project."
+          },
+          {
+            "kind": "partner_corporate_rigging_release",
+            "source": "https://www.newswire.ca/news-releases/looking-glass-labs-3d-modelling-technology-provides-genesis-for-the-development-of-the-hapebeast-nft-collection-871931582.html",
+            "note": "Looking Glass Labs explicitly says its technology was being used to design, model and rig Gutter Cat Gang characters for integration into a 3D metaverse."
+          },
+          {
+            "kind": "partner_corporate_avatar_integration_release",
+            "source": "https://www.newswire.ca/news-releases/looking-glass-labs-announces-metaverse-land-sale-of-pocket-dimension-by-house-of-kibaa-861522275.html",
+            "note": "Looking Glass Labs later lists Gutter Cat Gang among third-party client avatars intended for integration into HoK's Pocket Dimension."
+          }
+        ]
+      },
+      "platform_avatar_inventory": {
+        "state": "complete_platform_runtime_collection",
+        "platform": "The Sandbox",
+        "count": 3000,
+        "supported_catalog_file_format": false,
+        "note": "The Sandbox's current avatar shop exposes a Gutter Cats collection created by GutterLabsLLC with TOTAL AVATARS 3000 and 3000 assets. This is strong exhaustive proof that the original Cats have a complete usable platform-avatar representation. It does not satisfy the catalog file lane because no VRM/GLB/FBX download format or direct file URLs are exposed by this source.",
+        "evidence": [
+          {
+            "kind": "current_platform_avatar_collection",
+            "source": "https://www.sandbox.game/en/avatars/Gutter%20Cats/103/",
+            "observed_at": "2026-08-15",
+            "note": "The Sandbox page identifies the collection as created by GutterLabsLLC, reports TOTAL AVATARS 3000 and lists 3000 assets."
+          }
+        ]
+      },
+      "avatar_format_leads": {
+        "value": [
+          "glb",
+          "fbx"
+        ],
+        "state": "completed_models_reported_delivery_portal_unverified",
+        "note": "A July 2025 Bored Ape Gazette report quotes Gutter Cat Gang team member Ceres saying the DashBo-designed 3D Cats were finished and a portal was being built to deliver each Cat as GLB, MML and FBX plus renders. This moves the question beyond historical WIP: production completion and intended supported formats are reported. However, no current first-party portal or direct file inventory was recovered, so the catalog still cannot claim delivery or enumerate the files.",
+        "evidence": [
+          {
+            "kind": "secondary_report_quoting_team_member",
+            "source": "https://www.theboredapegazette.com/post/looking-gutter-gutter-cat-gang-s-dashbo-designed-3d-modeled-cats-are-coming-to-otherside-soon",
+            "published": "2025-07-01",
+            "note": "Report quotes GCG team member Ceres saying the 3D modeled Cats were finished and naming GLB, MML and FBX for a download portal then under construction."
+          },
+          {
+            "kind": "current_official_site_observation",
+            "source": "https://guttercatgang.com/",
+            "observed_at": "2026-08-15",
+            "note": "Current public site navigation exposes shop/collection/about surfaces but no discoverable 3D asset download portal."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "unknown",
+        "coverage": "complete_platform_avatar_set_and_completed_glb_fbx_production_reported_direct_delivery_unverified",
+        "assets": [],
+        "note": "Do not promote Gutter Cat Gang to a supported file inventory yet. We now have exhaustive proof of a 3,000-avatar platform representation and a later team-attributed report that GLB/FBX models were finished, but the acceptance contract requires an actual supported-file lane: direct URLs or a recoverable holder/public download surface plus exhaustive coverage. The current source set does not establish that delivery step.",
+        "evidence": [
+          {
+            "kind": "current_platform_avatar_collection",
+            "source": "https://www.sandbox.game/en/avatars/Gutter%20Cats/103/",
+            "observed_at": "2026-08-15",
+            "note": "Exhaustive 3,000-avatar Gutter Cats representation exists on The Sandbox, but this source does not expose supported catalog model files."
+          },
+          {
+            "kind": "secondary_report_quoting_team_member",
+            "source": "https://www.theboredapegazette.com/post/looking-gutter-gutter-cat-gang-s-dashbo-designed-3d-modeled-cats-are-coming-to-otherside-soon",
+            "published": "2025-07-01",
+            "note": "Finished GLB/FBX production and a planned download portal are reported, but current delivery is not independently confirmed."
+          },
+          {
+            "kind": "official_current_terms",
+            "source": "https://guttergrab.com/gcg-terms",
+            "observed_at": "2026-08-14",
+            "note": "Current owners expressly disclaim promises, warranties and obligations made by previous owners or teams, so historical delivery promises cannot close the current file lane."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "The current project site and post-2024 Gutter Cat Labs terms remain active. Current management explicitly describes itself as the third owner of the Gutter Cat Gang IP, so historical promises must be evaluated against the current terms rather than assumed to carry forward.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://guttercatgang.com/",
+            "observed_at": "2026-08-15"
+          },
+          {
+            "kind": "official_terms",
+            "source": "https://guttergrab.com/gcg-terms",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      }
+    },
+    "mekaverse": {
+      "identity": {
+        "name": "MekaVerse",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x9a534628b4062e123ce7ee2222ec20b86e16ca8f",
+        "opensea_slug": "mekaverse",
+        "project_url": "https://themekaverse.com/",
+        "source": "official+etherscan+curated",
+        "notes": "8,888-item mecha collection. Historical GLB/rig availability is not treated as a native exhaustive VRM inventory."
+      },
+      "discord": {
+        "value": "https://discord.gg/mekaverse",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://themekaverse.com/",
+            "observed_at": "2026-08-13",
+            "note": "Current site exposes the MekaVerse Discord link."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/MekaVerse",
+        "handle": "MekaVerse",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://themekaverse.com/",
+            "observed_at": "2026-08-13",
+            "note": "Current site exposes the MekaVerse Twitter/X link."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-10-07",
+        "evidence": [
+          {
+            "kind": "official_developer_launch_post",
+            "source": "https://medium.com/@themekaverse/mekaverse-minting-process-and-technical-issues-a4ef462eaf0d",
+            "note": "Project technical post describes the Oct. 7 sale/redeployment during launch."
+          },
+          {
+            "kind": "contemporaneous_mint_record",
+            "source": "https://www.nftculture.com/nft-news/mekaverse-nft-drop/",
+            "note": "Historical mint coverage anchors the public mint window to Oct. 7, 2021."
+          }
+        ]
+      },
+      "storage": {
+        "value": "ipfs",
+        "scope": "nft_metadata_and_art",
+        "note": "Project launch documentation states final NFT assets/metadata were intended to be on IPFS after reveal. This is not proof that any separate VRM files were stored on IPFS.",
+        "evidence": [
+          {
+            "kind": "official_developer_launch_post",
+            "source": "https://medium.com/@themekaverse/mekaverse-minting-process-and-technical-issues-a4ef462eaf0d"
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "exact_nft_holder_license_unrecovered",
+        "state": "unrecoverable",
+        "summary": "The current official site exposes Terms & Conditions, but the accessible current terms reviewed are commerce/site terms and do not establish a controlling NFT-holder commercial/derivative license. The catalog therefore does not infer holder IP rights beyond ordinary token ownership without a recovered primary NFT license.",
+        "evidence": [
+          {
+            "kind": "official_current_terms",
+            "source": "https://themekaverse.com/terms/",
+            "observed_at": "2026-08-13",
+            "note": "Current terms were reviewed but do not provide a clear controlling NFT-holder IP grant in the material recovered."
+          },
+          {
+            "kind": "official_project_site",
+            "source": "https://themekaverse.com/",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "The current official site remains a substantive project surface with collection, Season 2 world map, Citadel, events/news and community links. No sunset announcement was found in the current official surfaces checked.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://themekaverse.com/",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      }
+    },
+    "metatravelers-nibiru": {
+      "identity": {
+        "name": "MetaTravelers: Nibiru",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x5372f926b34be60ac1436372107c3ee8c6e056e5",
+        "opensea_slug": "metatravelers-nibiru",
+        "project_url": "https://metatravelers.io/",
+        "source": "official+opensea+curated",
+        "notes": "The historical generic MetaTravelers Tier-C row maps to the 7,777-item Nibiru avatar collection, not later Elements/Factions products. Official March 2022 documentation proves usable GLB, FBX, VRM and Animaze .avatar file types were available in the Nibiru avatar ecosystem; the unresolved issue is exhaustive file enumeration/access, not whether avatar formats shipped."
+      },
+      "discord": {
+        "value": "https://discord.gg/JMZyWCyQ6Y",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "contemporaneous_project_calendar",
+            "source": "https://nftcalendar.io/event/metatravelers-nibiru/",
+            "note": "Historical Nibiru launch listing records the project's Discord invite. Current official site no longer foregrounds Discord, so it is retained as historical rather than asserted current."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/themetatravelers",
+        "handle": "themetatravelers",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://metatravelers.io/",
+            "observed_at": "2026-08-13",
+            "note": "Current official site links the MetaTravelers X account."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-11-06",
+        "evidence": [
+          {
+            "kind": "historical_collection_record",
+            "source": "https://nftpricefloor.com/metatravelers-nibiru",
+            "note": "Historical collection record resolves the Nibiru launch to Nov. 6, 2021."
+          },
+          {
+            "kind": "marketplace_identity",
+            "source": "https://opensea.io/collection/metatravelers-nibiru",
+            "note": "OpenSea collection identity independently anchors the Nibiru collection and contract."
+          }
+        ]
+      },
+      "avatar_formats": {
+        "value": [
+          "glb",
+          "fbx",
+          "vrm",
+          "avatar"
+        ],
+        "state": "shipped",
+        "note": "The project's own March 3, 2022 file-flow documentation calls these its currently available 3D file types and demonstrates Nibiru avatars in a custom GLB viewer, Unreal/VRChat contexts, Webaverse via VRM, and Animaze. FBX is therefore not ruled out: it was an explicitly supported avatar deployment format. Exact per-token URLs have not yet been recovered.",
+        "evidence": [
+          {
+            "kind": "official_avatar_file_flow",
+            "source": "https://medium.com/@metatravelers/lets-build-the-metaverse-together-6796a38c592b",
+            "note": "Official MetaTravelers article dated Mar. 3, 2022 describes currently available .GLB, .FBX, .VRM and .AVATAR file types for the avatar ecosystem and maps them to avatar/metaverse use cases."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "shipped_unenumerated",
+        "coverage": "formats_proven_files_not_exhaustively_enumerated",
+        "assets": [],
+        "note": "Usable avatar files definitely shipped, including GLB/FBX/VRM, but the literal catalog still needs an exhaustive supported-format asset lane or a recoverable holder download/index. This state must remain incomplete until actual asset URLs are enumerated.",
+        "evidence": [
+          {
+            "kind": "official_avatar_file_flow",
+            "source": "https://medium.com/@metatravelers/lets-build-the-metaverse-together-6796a38c592b",
+            "note": "Official article presents the current available file flow rather than a future-only roadmap."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "commercial_rights_reported_exact_primary_license_unrecovered",
+        "state": "unrecoverable",
+        "summary": "Contemporaneous 3D-avatar research and launch material described MetaTravelers avatars as holder-owned/downloadable characters with commercial-rights intent, but a current controlling primary Nibiru holder license was not recovered. The catalog therefore records the historical commercial-rights signal without inventing exact derivative, redistribution, or sublicensing scope.",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "MetaTravelers entry marks commercial rights and downloadable-avatar intent while listing file format/status as unresolved at the time."
+          },
+          {
+            "kind": "current_official_project_site",
+            "source": "https://metatravelers.io/",
+            "observed_at": "2026-08-13",
+            "note": "Current site confirms continuity of the MetaTravelers character/IP business but does not expose a controlling historical Nibiru license in the material reviewed."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "MetaTravelers remains an active character/IP business. The current official site continues to market the universe and current physical/digital character products; current product fulfillment extends into 2026.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://metatravelers.io/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "current_product_release",
+            "source": "https://metatravelers.io/",
+            "observed_at": "2026-08-13",
+            "note": "Current official product surfaces describe active Wave 1 physical/digital character fulfillment into 2026."
+          }
+        ]
+      }
+    },
+    "mutant-ape-yacht-club": {
+      "identity": {
+        "name": "Mutant Ape Yacht Club",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+        "opensea_slug": "mutant-ape-yacht-club",
+        "project_url": "https://boredapeyachtclub.com/",
+        "source": "official+opensea",
+        "notes": "MAYC is researched separately from BAYC. Current official Otherside documentation proves that individual Mutant Ape avatar meshes are available as selectable in-game characters through the GLB-based skeletal-avatar pipeline. Current OpenPage documentation independently lists MAYC as a supported avatar family and states that compatible models are downloaded after ownership verification. This qualifies a usable holder-gated avatar lane while exhaustive collection coverage and direct asset URLs remain unresolved."
+      },
+      "logo": {
+        "value": "https://i2c.seadn.io/collection/mutant-ape-yacht-club/image/33dcf5ce12bc4760bf912a5b3f5979/f033dcf5ce12bc4760bf912a5b3f5979.png?h=250&w=250",
+        "evidence": [
+          {
+            "source": "https://opensea.io/collection/mutant-ape-yacht-club",
+            "note": "Current OpenSea collection logo asset for Mutant Ape Yacht Club."
+          }
+        ]
+      },
+      "short_description": {
+        "value": "Yuga Labs' Ethereum companion collection to BAYC, launched in August 2021 through Mutant Serum mutations and a public mint of additional Mutant Apes.",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/activations/mutant-ape-yacht-club",
+            "note": "Official MAYC history describes the serum mutation and public auction launch."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-08-28",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/activations/mutant-ape-yacht-club",
+            "note": "Official BAYC history states MAYC launched August 28, 2021."
+          }
+        ]
+      },
+      "discord": {
+        "value": "https://discord.com/invite/3P5K3dzgdB",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/links",
+            "note": "Current official BAYC ecosystem links page exposes the shared club Discord used by BAYC/MAYC community surfaces."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/BoredApeYC",
+        "handle": "BoredApeYC",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/links",
+            "note": "Current official BAYC ecosystem links page exposes @BoredApeYC; no distinct official MAYC X account is presented there."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "evidence": [
+          {
+            "source": "https://www.yuga.com/about/",
+            "note": "Yuga's current About page lists Mutant Ape Yacht Club among its collections."
+          },
+          {
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "Current Otherside avatar documentation includes Mutant Ape Yacht Club in available avatar material."
+          }
+        ]
+      },
+      "storage": {
+        "value": "holder_platform",
+        "scope": "supported_avatar_model_delivery",
+        "note": "OpenPage documents MAYC-compatible models as downloadable through OP after ownership verification. This establishes a holder-platform delivery surface, not the underlying object-store implementation or an exhaustive public URL set.",
+        "evidence": [
+          {
+            "kind": "official_openpage_supported_avatars",
+            "source": "https://docs.openpage.fun/avatars",
+            "note": "OpenPage lists MAYC under supported avatar animations and says the associated models are downloaded from OP after verifying ownership."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "holder_gated",
+        "requires_ownership": true,
+        "scope": "openpage_supported_mayc_avatar_models",
+        "access_url": "https://openpage.fun/",
+        "evidence": [
+          {
+            "kind": "official_openpage_supported_avatars",
+            "source": "https://docs.openpage.fun/avatars",
+            "note": "OpenPage says supported models are downloaded after ownership verification and explicitly lists MAYC."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_commercial",
+        "summary": "MAYC holders own the purchased Mutant Ape art and receive a worldwide, royalty-free personal license plus an unlimited worldwide commercial license to use the purchased art and create derivative works, while Yuga retains the MAYC/BAYC trademarks and other project IP.",
+        "evidence": [
+          {
+            "source": "https://boredapeyachtclub.com/mayc-license",
+            "note": "Current official MAYC License sections 1A-1D define ownership, personal use, unlimited commercial use and reserved project IP."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "unknown",
+        "coverage": "research_open",
+        "urls": [],
+        "evidence": [
+          {
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "Current Otherside documentation says relevant character meshes are downloaded at runtime from GLB definitions. This proves 3D runtime support, not an exhaustive VRM inventory or downloadable holder file set."
+          }
+        ]
+      },
+      "avatar_formats": {
+        "value": [
+          "glb"
+        ],
+        "state": "verified_runtime_avatar_meshes_partial_collection",
+        "note": "Otherside identifies individual MAYC avatar meshes as selectable in-game characters and implements character meshes from GLB definitions. The documented Otherside avatar pipeline binds meshes to an armature, exports skins in GLB, and loads the result as a skeletal mesh for animation. OpenPage separately lists MAYC as supported and its custom-avatar guidance prefers GLB. This is sufficient rigging and format evidence for available runtime meshes, but not evidence that every MAYC token has a corresponding avatar GLB.",
+        "evidence": [
+          {
+            "kind": "official_otherside_avatar_runtime",
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "Official docs list individual Mutant Ape Yacht Club avatar meshes, say holders can select relevant avatars as in-game characters, and describe runtime character meshes as GLB definitions."
+          },
+          {
+            "kind": "official_otherside_skeletal_pipeline",
+            "source": "https://docs.otherside.xyz/documentation/characters/creating-a-custom-character/creating-a-simple-avatar-collection/block-out-character",
+            "note": "Official avatar authoring pipeline requires armature/vertex weighting and exports GLB avatars for animation."
+          },
+          {
+            "kind": "official_otherside_skeletal_runtime_test",
+            "source": "https://docs.otherside.xyz/documentation/characters/creating-a-custom-character/creating-a-simple-avatar-collection/further-testing",
+            "note": "Official runtime test loads avatar GLBs as skeletal meshes on the UE5 mannequin skeleton and previews animations."
+          },
+          {
+            "kind": "official_openpage_supported_avatars",
+            "source": "https://docs.openpage.fun/avatars",
+            "note": "OpenPage lists MAYC as supported and documents fully custom GLB as a supported avatar format."
+          }
+        ]
+      },
+      "avatar_inventory": {
+        "state": "shipped_unenumerated",
+        "coverage": "individual_rigged_glb_avatar_meshes_and_holder_delivery_proven_exhaustive_coverage_unknown",
+        "assets": [],
+        "note": "Official runtime evidence proves usable rigged GLB avatars exist for MAYC, and OpenPage independently proves an ownership-verified model delivery surface. Neither source exposes a direct exhaustive MAYC model URL set or complete token-to-model mapping, so the broader inventory remains unresolved.",
+        "evidence": [
+          {
+            "kind": "official_otherside_avatar_runtime",
+            "source": "https://docs.otherside.xyz/documentation/odk-plugin/avatars",
+            "note": "MAYC has individual avatar meshes available in the official Otherside avatar system, backed by the GLB character runtime."
+          },
+          {
+            "kind": "official_openpage_supported_avatars",
+            "source": "https://docs.openpage.fun/avatars",
+            "note": "OpenPage explicitly lists MAYC and says compatible models can be downloaded from OP after ownership verification."
+          }
+        ]
+      }
+    },
+    "super-yetis": {
+      "identity": {
+        "name": "Super Yetis",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0x3f0785095a660fee131eebcd5aa243e529c21786",
+        "opensea_slug": "superyeti",
+        "project_url": "https://superyeti.co/",
+        "source": "curated+archive+opensea",
+        "notes": "Sunset 3D-avatar project. Contemporary avatar research listed the 3D deliverable as WIP with unknown file format; archived sampled token metadata contains no model references."
+      },
+      "banner": {
+        "value": "https://i2c.seadn.io/ethereum/ccede398c020425aba91d8cdfc1ee09a/02d0aaac5118f7675555efde7cf3ba/7702d0aaac5118f7675555efde7cf3ba.jpeg?w=2000",
+        "evidence": [
+          {
+            "kind": "opensea_collection_media",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "logo": {
+        "value": "https://i2c.seadn.io/ethereum/ccede398c020425aba91d8cdfc1ee09a/8fc7e11d889468b633589e6ad78b53/6c8fc7e11d889468b633589e6ad78b53.gif?h=250&w=250",
+        "evidence": [
+          {
+            "kind": "opensea_collection_media",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "short_description": {
+        "value": "Super Yetis is an Ethereum PFP collection of randomized full-body 3D yeti characters built around the planned Yetiverse game.",
+        "evidence": [
+          {
+            "kind": "archived_token_metadata",
+            "source": "data/superyeti_archive/metadata/0.json",
+            "note": "Archived metadata describes randomized 3D characters and the planned multiplayer Yetiverse."
+          },
+          {
+            "kind": "opensea_collection",
+            "source": "https://opensea.io/collection/superyeti",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "discord": {
+        "value": "https://discord.gg/jm2cFGW245",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "official_publication",
+            "source": "https://medium.com/superyeti",
+            "note": "Official SuperYeti Medium publication links this invite from its JOIN OVER 3.5k SUPERYETIS ON OUR DISCORD callout."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/super_yeti",
+        "handle": "super_yeti",
+        "state": "historical",
+        "evidence": [
+          {
+            "kind": "x_account",
+            "source": "https://x.com/super_yeti",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "historical_profile_index",
+            "source": "https://mobile.twstalker.com/Dev__Jay",
+            "note": "Historical index identifies SuperYeti @super_yeti and its project bio."
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2021-06-15",
+        "evidence": [
+          {
+            "kind": "contemporaneous_launch_report",
+            "source": "https://www.nftculture.com/nft-video/nftculture-super-yeti-drop-coverage/",
+            "note": "Published June 15, 2021 and states the Super Yeti project launches that day at 3:00 PM ET."
+          },
+          {
+            "kind": "opensea_collection",
+            "source": "https://opensea.io/collection/superyeti",
+            "note": "OpenSea independently lists launch month as Jun 2021."
+          }
+        ]
+      },
+      "storage": {
+        "value": "ipfs",
+        "scope": "nft_metadata_and_images",
+        "note": "Archived project metadata says the ERC-721 collection is backed by IPFS file storage. No VRM-file storage mechanism was proven.",
+        "evidence": [
+          {
+            "kind": "archived_token_metadata",
+            "source": "data/superyeti_archive/metadata/0.json"
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "unrecoverable",
+        "coverage": "unrecoverable",
+        "urls": [],
+        "note": "No public shipped VRM inventory is proven. Contemporary 3D-avatar research listed Super Yetis as WIP/Q&A with unknown file format, while the archived sampled token metadata has no model references. This does not claim that a VRM could never have existed; it records that no exhaustive public VRM set can be recovered from the available evidence.",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "Super Yetis: file format unknown; status WIP, Q/A; rigged 3D avatars were being modeled/tested/optimized."
+          },
+          {
+            "kind": "wayback_archive_manifest",
+            "source": "data/superyeti_archive_wayback/manifest.json",
+            "note": "Archived sampled token records contain empty model_refs arrays."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "commercial_rights_reported",
+        "state": "unrecoverable",
+        "summary": "A contemporaneous 3D-avatar catalog reported commercial rights enabled for Super Yeti holders; primary project license/terms text has not been recovered, so the exact scope remains unverified.",
+        "confidence": "medium",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars",
+            "note": "The Super Yetis entry marks Commercial rights with a check."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "unavailable",
+        "requires_ownership": null,
+        "state": "unrecoverable",
+        "note": "No shipped public VRM download/access flow is proven in the recovered sources, so holder-gating cannot be inferred either way.",
+        "evidence": [
+          {
+            "kind": "contemporary_avatar_catalog",
+            "source": "https://hackmd.io/@XR/nftavatars"
+          },
+          {
+            "kind": "wayback_archive_manifest",
+            "source": "data/superyeti_archive_wayback/manifest.json"
+          }
+        ]
+      },
+      "project_status": {
+        "value": "sunset",
+        "state": "sunset",
+        "note": "Catalog curator confirmed Super Yetis is a sunset project; secondary-market trading may continue even though project development is sunset.",
+        "evidence": [
+          {
+            "kind": "curator_assertion",
+            "source": "catalog-curator-conversation",
+            "observed_at": "2026-08-13",
+            "note": "SuperYetis is sunset."
+          }
+        ]
+      }
+    },
+    "tubby-cats": {
+      "identity": {
+        "name": "Tubby Cats",
+        "tier": "C",
+        "chain": "ethereum",
+        "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+        "opensea_slug": "tubby-cats-by-tubby-collective",
+        "project_url": "https://tubbycats.xyz/",
+        "source": "official+etherscan+curated+community-vrm-repository",
+        "notes": "20,000-item CC0 collection. A public community conversion repository contains VRM files for a small named/token-numbered subset; this is preserved as partial inventory and is not treated as proof that all Tubby Cats were converted."
+      },
+      "discord": {
+        "value": "https://discord.gg/tubbycats",
+        "evidence": [
+          {
+            "kind": "current_contract_directory",
+            "source": "https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+            "observed_at": "2026-08-13",
+            "note": "Current token profile exposes the project Discord and official site."
+          },
+          {
+            "kind": "project_directory",
+            "source": "https://nftcalendar.io/event/tubby-cats/",
+            "note": "Historical project directory records discord.gg/tubbycats."
+          }
+        ]
+      },
+      "x": {
+        "value": "https://x.com/tubbycatsnft",
+        "handle": "tubbycatsnft",
+        "evidence": [
+          {
+            "kind": "current_x_account",
+            "source": "https://x.com/tubbycatsnft",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "current_contract_directory",
+            "source": "https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      },
+      "launch_date": {
+        "value": "2022-02-21",
+        "evidence": [
+          {
+            "kind": "contemporaneous_mint_report",
+            "source": "https://nftnow.com/news/tubby-cats-nft-everything-you-need-to-know/",
+            "note": "Whitelist mint opened Feb. 21, 2022; public mint followed Feb. 23. The catalog records the first collection mint date."
+          }
+        ]
+      },
+      "storage": {
+        "value": "https",
+        "scope": "public_community_vrm_conversions",
+        "note": "Recovered community VRM conversions are stored as public GitHub repository blobs/raw HTTPS files. This does not claim that the original NFT metadata or the full 20,000-token collection stores VRMs on GitHub.",
+        "evidence": [
+          {
+            "kind": "public_vrm_repository",
+            "source": "https://github.com/la53rshark/tubby-cats",
+            "observed_at": "2026-08-14",
+            "note": "Untruncated repository tree exposes token-numbered .vrm files together with source Blender and GLB assets."
+          }
+        ]
+      },
+      "vrm_inventory": {
+        "state": "partial",
+        "coverage": "partial_public_community_conversions",
+        "urls": [
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/1044/1044_avatar.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/18362/18362.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/18595/18595_avatar.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/5357/5357_base_with_teeth_eyes_final.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/7696/7696_avatar.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/8624/8624_avatar.vrm",
+          "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/9105/9105_rigged.vrm"
+        ],
+        "note": "These eight token-numbered public VRMs are exhaustively enumerated from the current untruncated la53rshark/tubby-cats repository tree. The repository also contains a non-token-named Ratwell derivative, which is deliberately excluded from collection-token inventory. Eight public conversions do not establish exhaustive coverage of the 20,000-token collection, so the state remains partial until a broader authoritative inventory is proven.",
+        "evidence": [
+          {
+            "kind": "public_vrm_repository_tree",
+            "source": "https://github.com/la53rshark/tubby-cats",
+            "observed_at": "2026-08-14",
+            "note": "Repository tree is not truncated and contains .vrm files in token-numbered directories 159, 1044, 5357, 7696, 8624, 9105, 18362 and 18595."
+          },
+          {
+            "kind": "contemporaneous_avatar_interop_notes",
+            "source": "https://hackmd.io/@arashichan/H1rG09Thq",
+            "note": "July 2022 avatar-interoperability notes identify the Tubby community repositories and describe Tubby assets as GLB and VRM."
+          }
+        ]
+      },
+      "file_access": {
+        "mode": "public",
+        "requires_ownership": false,
+        "state": "partial_inventory_public",
+        "note": "The recovered community VRM subset is directly downloadable from a public GitHub repository without token ownership or account credentials. This access conclusion applies to the enumerated subset only.",
+        "evidence": [
+          {
+            "kind": "public_vrm_repository",
+            "source": "https://github.com/la53rshark/tubby-cats",
+            "observed_at": "2026-08-14"
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "cc0_public_domain",
+        "summary": "Tubby Cats artwork is released under CC0/public-domain terms, and the recovered community VRM repository itself carries a CC0 1.0 Universal license. Reuse of this public conversion subset is therefore not conditioned on token ownership.",
+        "evidence": [
+          {
+            "kind": "current_contract_directory",
+            "source": "https://etherscan.io/token/0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+            "observed_at": "2026-08-13",
+            "note": "Current Etherscan collection description identifies Tubby Cats as CC0."
+          },
+          {
+            "kind": "marketplace_description",
+            "source": "https://opensea.io/collection/tubby-cats-by-tubby-collective",
+            "note": "Current collection description independently identifies the artwork as CC0."
+          },
+          {
+            "kind": "public_vrm_repository_license",
+            "source": "https://github.com/la53rshark/tubby-cats/blob/main/license",
+            "observed_at": "2026-08-14",
+            "note": "The community VRM repository includes the full CC0 1.0 Universal legal code."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "The official Tubby Cats site and named project social/community surfaces remain live in 2026. No project sunset announcement was found in the current official surfaces checked.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://tubbycats.xyz/",
+            "observed_at": "2026-08-13"
+          },
+          {
+            "kind": "current_x_account",
+            "source": "https://x.com/tubbycatsnft",
+            "observed_at": "2026-08-13"
+          }
+        ]
+      }
+    }
+  },
+  "sources": [
+    "/private/tmp/vrm-catalog/data/catalog_research.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/0n1-force.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/axolittles.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/blitnauts.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/boredapeyachtclub.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/clone-x.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/cryptosergs.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/deadfellaz.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/forgottenruneswizardscult.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/gutter-cat-gang.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/mekaverse.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/metatravelers-nibiru.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/mutant-ape-yacht-club.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/tubby-cats.json"
+  ],
+  "overlays": []
+}

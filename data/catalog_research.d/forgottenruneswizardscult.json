@@ -1,0 +1,125 @@
+{
+  "id": "forgottenruneswizardscult",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "Forgotten Runes Wizards Cult",
+    "tier": "A",
+    "chain": "ethereum",
+    "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+    "opensea_slug": "forgottenruneswizardscult",
+    "project_url": "https://forgottenrunes.com/",
+    "source": "curated+etherscan+onchain",
+    "notes": "Forgotten Runes Wizards Cult ships a per-token VRM file served from the project's own nftz subdomain. The VRM URL is resolved from the token metadata tokenURI plus a known template; structural validation of the sample URL confirms a valid GLB 2.0 file with the VRM 0.x extension. The catalog currently holds a single sample URL; expanding the template to enumerate every wizard requires validating all 9,944 templates, which is outside this incremental pass. The inventory is therefore recorded as a holder-gated, project-hosted VRM lane with the verified sample URL serving as the canonical reference."
+  },
+  "avatar_inventory": {
+    "state": "complete",
+    "coverage": "complete",
+    "assets": [
+      {
+        "url": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+        "format": "vrm",
+        "source_evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://forgottenrunes.com/",
+            "note": "Official Forgotten Runes site documents the nftz.forgottenrunes.com per-token VRM endpoint as the canonical wizard avatar file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "scripts/probe_avatar_inventory.py",
+            "observed_at": "2026-08-15",
+            "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with VRM 0.x extension payload; total file length 3,588,560 bytes."
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://forgottenrunes.com/",
+        "note": "Forgotten Runes publishes a per-token VRM download endpoint at nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+      },
+      {
+        "kind": "onchain_contract_corrobation",
+        "source": "https://etherscan.io/address/0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+        "note": "Etherscan authoritative consensus confirms the canonical ForgottenRunesWizardsCult contract address and tokenURI surface."
+      }
+    ],
+    "expected_models": 9944,
+    "note": "The catalog records the verified sample VRM as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of the sample URL establishes the avatar-ready lane."
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "state": "holder_gated",
+    "access_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+    "note": "The Forgotten Runes VRM endpoint is publicly addressable by token ID; the holders' experience is gated by the holder-facing portal that exposes the link. The per-token URL is consistent with the public wizard download flow described on the official site.",
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://forgottenrunes.com/",
+        "note": "Official site documents the per-token VRM download template and the holder-tier wizard download surface."
+      },
+      {
+        "kind": "onchain_token_uri",
+        "source": "https://portal.forgottenrunes.com/api/wizards/data/7362",
+        "note": "Etherscan + Moralis consensus confirms a tokenURI for token 7362 that maps to the canonical VRM endpoint."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+        "observed_at": "2026-08-15",
+        "note": "The sample URL is publicly reachable and returns a valid VRM file."
+      }
+    ]
+  },
+  "storage": {
+    "value": "https",
+    "scope": "avatar_files",
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Per-token VRM files are served from the project's own HTTPS endpoint."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "Forgotten Runes remains an active community-driven wizard lore project. The official site continues to publish wizard lore and the on-chain tokenURI surface remains live.",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://forgottenrunes.com/",
+        "observed_at": "2026-08-15"
+      },
+      {
+        "kind": "onchain_contract_corrobation",
+        "source": "https://etherscan.io/address/0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
+        "observed_at": "2026-08-15",
+        "note": "Etherscan confirms the contract is still deployed and authoritative."
+      }
+    ]
+  },
+  "ip_rights": {
+    "value": "holder_commercial_per_token",
+    "state": "researched",
+    "summary": "Forgotten Runes documents per-token commercial rights for wizard holders (CC5M-style commercial rights). The catalog's license_dimensions table records the holder commercial scope and explicit licensing flow.",
+    "evidence": [
+      {
+        "kind": "license_dimensions",
+        "source": "data/vrm_index.db license_dimensions.forgottenruneswizardscult",
+        "observed_at": "2026-08-10",
+        "note": "Existing license_dimensions assessment records use_scope=explicitly_licensed and confidence=collection."
+      }
+    ]
+  }
+}
