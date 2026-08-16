@@ -1,6 +1,6 @@
 {
   "schema": "vrm-catalog-inventory-v2",
-  "generatedAt": "2026-08-16T00:01:25.025298+00:00",
+  "generatedAt": "2026-08-16T00:04:35.134462+00:00",
   "policy": "Complete non-terminal inventory requires explicit exhaustive VRM links; templates remain candidates until expanded, and one sample link never implies completeness.",
   "summary": {
     "collections": 69,
@@ -1132,14 +1132,39 @@
         "types": [
           "https"
         ],
-        "scope": "vrm_files",
-        "evidence": []
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project larvabots API."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://meebits.app/",
+            "note": "Official site documents the per-token VRM download endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+          }
+        ]
       },
       "inventory_evidence": []
     },

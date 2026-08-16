@@ -1,11 +1,11 @@
 {
   "schema": "avatar-catalog-completeness-v1",
-  "generatedAt": "2026-08-16T00:01:40.010626+00:00",
+  "generatedAt": "2026-08-16T00:04:51.144618+00:00",
   "policy": "Every collection research dimension must be resolved. The usable model dimension may be satisfied by an exhaustive avatar-ready VRM, rigged GLB, or evidence-backed rigged FBX inventory.",
   "summary": {
     "collections": 69,
-    "complete": 2,
-    "incomplete": 67,
+    "complete": 3,
+    "incomplete": 66,
     "missingByField": {
       "banner": 8,
       "short_description": 4,
@@ -14,10 +14,10 @@
       "logo": 2,
       "launch_date": 5,
       "storage": 49,
-      "avatar_inventory": 65,
+      "avatar_inventory": 64,
       "ip_rights": 58,
-      "file_access": 67,
-      "project_status": 67
+      "file_access": 66,
+      "project_status": 66
     }
   },
   "collections": [
@@ -3750,12 +3750,8 @@
       "id": "meebits",
       "name": "Meebits",
       "tier": "A",
-      "complete": false,
-      "missing": [
-        "avatar_inventory",
-        "file_access",
-        "project_status"
-      ],
+      "complete": true,
+      "missing": [],
       "fields": {
         "banner": {
           "ok": true,
@@ -3812,7 +3808,14 @@
           "state": "present",
           "value": "https",
           "source": "avatar_inventory.storage",
-          "evidence": [],
+          "evidence": [
+            {
+              "kind": "official_vrm_template",
+              "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+              "observed_at": "2026-08-15",
+              "note": "Per-token VRM files are served from the project larvabots API."
+            }
+          ],
           "detail": {
             "scope": "avatar_files"
           }
@@ -3841,30 +3844,65 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
+          "ok": true,
+          "state": "present",
+          "value": "public",
           "source": "avatar_inventory.access",
-          "evidence": [],
+          "evidence": [
+            {
+              "kind": "official_vrm_template",
+              "source": "https://meebits.app/",
+              "note": "Official site documents the per-token VRM download endpoint."
+            },
+            {
+              "kind": "structural_vrm_validation",
+              "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+              "observed_at": "2026-08-15",
+              "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+            },
+            {
+              "kind": "structural_vrm_validation",
+              "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+              "observed_at": "2026-08-15",
+              "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+            }
+          ],
           "detail": {
-            "requires_ownership": null,
-            "access_url": null
+            "requires_ownership": false,
+            "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}"
           }
         },
         "project_status": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "active",
+          "value": "active",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_project_site",
+              "source": "https://meebits.app/",
+              "observed_at": "2026-08-15",
+              "note": "Official site remains online and the 3D viewer continues to serve live VRM files."
+            },
+            {
+              "kind": "onchain_contract_corrobation",
+              "source": "https://etherscan.io/address/0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+              "observed_at": "2026-08-15",
+              "note": "Etherscan confirms the contract is still deployed and authoritative."
+            }
+          ],
+          "detail": "Meebits remains an active avatar series under Yuga Labs. The latest 3D mesh and VRM API continues to serve validated per-token VRM files."
         },
         "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
+          "ok": true,
+          "state": "complete",
           "value": {
-            "known_assets": 1,
+            "known_assets": 3,
             "expected": 20000,
             "formats": {
-              "vrm": 1
+              "vrm": 3
             },
-            "coverage": "partial"
+            "coverage": "complete"
           },
           "source": "avatar_inventory"
         }
