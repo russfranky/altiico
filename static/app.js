@@ -5,10 +5,21 @@ let _collRows = [];
 let _filterTimer = null;
 let lastFocusedElement = null;
 
-async function fetchJSON(path) {
-  const resp = await fetch(path);
-  if (!resp.ok) throw new Error(`Failed to load ${path}: ${resp.status}`);
-  return resp.json();
+async function fetchJSON(path, timeoutMs = 20000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const resp = await fetch(path, { signal: controller.signal });
+    if (!resp.ok) throw new Error(`Failed to load ${path}: ${resp.status}`);
+    return await resp.json();
+  } catch (error) {
+    if (error && error.name === 'AbortError') {
+      throw new Error(`Timed out loading ${path}`);
+    }
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function loadBuildInfo() {
@@ -747,7 +758,7 @@ if ('serviceWorker' in navigator) {
     : null;
   if (swScope) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register(swScope).catch((error) => {
+      navigator.serviceWorker.register(swScope, { updateViaCache: 'none' }).catch((error) => {
         console.warn('sw registration failed:', error);
       });
     });

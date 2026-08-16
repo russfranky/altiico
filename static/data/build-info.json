@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-16T03:19:55Z",
+  "generated_at": "2026-08-16T05:43:00Z",
   "schema_version": 1,
-  "snapshot_id": "vrmcat-v1-677882fe4804cfda372b02a4",
+  "snapshot_id": "vrmcat-v1-931934f64f254a592e157b5f",
   "files": {
-    "collections": "collections.2d7dc4c967b2.json"
+    "collections": "collections.d9d67682f423.json"
   },
   "market_data_as_of": "2026-08-12T18:19:08.454469+00:00"
 }

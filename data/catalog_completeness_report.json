@@ -1,6 +1,6 @@
 {
   "schema": "vrm-catalog-completeness-v1",
-  "generatedAt": "2026-08-16T03:19:03.782660+00:00",
+  "generatedAt": "2026-08-16T05:42:50.346614+00:00",
   "policy": "Every required collection research dimension must be concrete or explicitly resolved with evidence; IP rights and file-access gating are independent.",
   "summary": {
     "collections": 69,
@@ -9,15 +9,15 @@
     "missingByField": {
       "banner": 8,
       "short_description": 4,
-      "discord": 21,
+      "discord": 20,
       "x": 13,
       "logo": 2,
       "launch_date": 5,
       "storage": 48,
       "vrm_inventory": 66,
-      "ip_rights": 56,
-      "file_access": 59,
-      "project_status": 62
+      "ip_rights": 55,
+      "file_access": 58,
+      "project_status": 61
     }
   },
   "collections": [
@@ -1293,11 +1293,7 @@
       "tier": "A",
       "complete": false,
       "missing": [
-        "discord",
-        "vrm_inventory",
-        "ip_rights",
-        "file_access",
-        "project_status"
+        "vrm_inventory"
       ],
       "fields": {
         "banner": {
@@ -1313,8 +1309,10 @@
           "source": "derived:description"
         },
         "discord": {
-          "ok": false,
-          "state": "missing"
+          "ok": true,
+          "state": "present",
+          "value": "https://discord.gg/BBW7e54P99",
+          "source": "collections.discord_url"
         },
         "x": {
           "ok": true,
@@ -1355,16 +1353,62 @@
           "source": "vrm_urls"
         },
         "ip_rights": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "holder_gated",
+          "value": "Redistribution prohibited; avatar use restricted to author; commercial, violent, and sexual use disallowed (embedded VRM license metadata).",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "embedded_asset_license_metadata",
+              "source": "https://ipfs.io/ipfs/bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/1.vrm",
+              "observed_at": "2026-08-16",
+              "note": "VRMC_vrm.meta inside the official VRM binary declares licenseName=Redistribution_Prohibited, allowedUserName=OnlyAuthor, commercialUssageName=Disallow, violentUssageName=Disallow, sexualUssageName=Disallow."
+            },
+            {
+              "kind": "embedded_asset_license_metadata",
+              "source": "https://ipfs.io/ipfs/bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
+              "observed_at": "2026-08-16",
+              "note": "A second archive binary (127.vrm) embeds the same Redistribution_Prohibited VRM license metadata, confirming it is collection-wide."
+            }
+          ]
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "present",
+          "value": "public",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "public_gateway_verification",
+              "source": "https://ipfs.io/ipfs/bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/1.vrm",
+              "observed_at": "2026-08-16",
+              "note": "VRM binaries served successfully over public IPFS gateways without authentication during structural probing of the 3000-file archive."
+            }
+          ],
+          "detail": {
+            "access_url": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/",
+            "note": "All 3000 VRM files are served from public IPFS gateways (ipfs.io, dweb.link, cloudflare-ipfs.com, pinata, nftstorage.link, w3s.link) without an NFT, wallet, or account check."
+          }
         },
         "project_status": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "dormant",
+          "value": "dormant",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "marketplace_stats_snapshot",
+              "source": "https://api.opensea.io/api/v2/collections/chuddie/stats",
+              "observed_at": "2026-08-16",
+              "note": "OpenSea stats: 750 lifetime sales, 0 sales in 1-day/7-day/30-day intervals; floor 0.00271 ETH; 1091 owners."
+            },
+            {
+              "kind": "curated_collection_record",
+              "source": "https://opensea.io/collection/chuddie",
+              "observed_at": "2026-08-16",
+              "note": "OpenSea collection record: created 2023-06-26, total supply 4875."
+            }
+          ]
         }
       }
     },

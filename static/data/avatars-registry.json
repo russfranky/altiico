@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-16T03:19:55Z",
-  "snapshot_id": "vrmcat-v1-677882fe4804cfda372b02a4",
+  "generated_at": "2026-08-16T05:43:00Z",
+  "snapshot_id": "vrmcat-v1-931934f64f254a592e157b5f",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -40,7 +40,7 @@
       "description": "Chuddies are 5,000 sweetiepilled generative pfpNFTS, a love letter to gaming and internet culture filled with nostalgia.\n\nDiscord: https://discord.gg/BBW7e54P99\nMint: https://www.scatter.art/chuddies?tab=mint\nTwitter: https://twitter.com/chuddieswow",
       "license": "Unknown",
       "chain": "ethereum",
-      "storage_provider": "self-host",
+      "storage_provider": "ipfs",
       "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
       "banner": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/e70e58fdece34aadec4f34e078e494/e4e70e58fdece34aadec4f34e078e494.gif",
