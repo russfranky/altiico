@@ -1,23 +1,23 @@
 {
   "schema": "avatar-catalog-completeness-v1",
-  "generatedAt": "2026-08-16T00:13:57.334340+00:00",
+  "generatedAt": "2026-08-16T01:27:12.043584+00:00",
   "policy": "Every collection research dimension must be resolved. The usable model dimension may be satisfied by an exhaustive avatar-ready VRM, rigged GLB, or evidence-backed rigged FBX inventory.",
   "summary": {
     "collections": 69,
-    "complete": 5,
-    "incomplete": 64,
+    "complete": 6,
+    "incomplete": 63,
     "missingByField": {
       "banner": 8,
       "short_description": 4,
-      "discord": 23,
-      "x": 15,
+      "discord": 22,
+      "x": 14,
       "logo": 2,
       "launch_date": 5,
       "storage": 49,
-      "avatar_inventory": 62,
+      "avatar_inventory": 61,
       "ip_rights": 56,
-      "file_access": 64,
-      "project_status": 64
+      "file_access": 63,
+      "project_status": 63
     }
   },
   "collections": [
@@ -3161,14 +3161,8 @@
       "id": "NeonGlitch86 Collection (Shape side)",
       "name": "GARY GRIFTER",
       "tier": "A",
-      "complete": false,
-      "missing": [
-        "discord",
-        "x",
-        "avatar_inventory",
-        "file_access",
-        "project_status"
-      ],
+      "complete": true,
+      "missing": [],
       "fields": {
         "banner": {
           "ok": true,
@@ -3183,12 +3177,29 @@
           "source": "derived:description"
         },
         "discord": {
-          "ok": false,
-          "state": "missing"
+          "ok": true,
+          "state": "not_available",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_public_surface_inspection",
+              "source": "https://github.com/neonglitch86/vrm",
+              "observed_at": "2026-08-15",
+              "note": "Official public VRM archive README and repository page contain no Discord link."
+            },
+            {
+              "kind": "official_public_surface_inspection",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/readme",
+              "observed_at": "2026-08-15",
+              "note": "README content is a single raw-URL line; no social or Discord references exist."
+            }
+          ]
         },
         "x": {
-          "ok": false,
-          "state": "missing"
+          "ok": true,
+          "state": "present",
+          "value": "https://x.com/neonglitch86",
+          "source": "collections.twitter_username"
         },
         "logo": {
           "ok": true,
@@ -3250,30 +3261,53 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
+          "ok": true,
+          "state": "present",
+          "value": "public",
           "source": "avatar_inventory.access",
-          "evidence": [],
+          "evidence": [
+            {
+              "kind": "public_repository_verification",
+              "source": "https://api.github.com/repos/neonglitch86/vrm",
+              "observed_at": "2026-08-15",
+              "note": "Repository is public and raw.githubusercontent.com URLs served the VRM binaries without authentication during structural probing."
+            }
+          ],
           "detail": {
-            "requires_ownership": null,
-            "access_url": null
+            "requires_ownership": false,
+            "access_url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/"
           }
         },
         "project_status": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "dormant",
+          "value": "dormant",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_repository_activity",
+              "source": "https://api.github.com/repos/neonglitch86/vrm",
+              "observed_at": "2026-08-15",
+              "note": "GitHub API reports pushed_at 2025-10-31T19:42:46Z and last commit 2025-10-31T19:42:44Z; no activity for over nine months."
+            },
+            {
+              "kind": "curated_collection_record",
+              "source": "https://opensea.io/collection/gary-grifter",
+              "observed_at": "2026-08-15",
+              "note": "Collection launch date 2024-03-06; no ongoing mint or project activity observed."
+            }
+          ]
         },
         "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
+          "ok": true,
+          "state": "complete",
           "value": {
-            "known_assets": 1,
+            "known_assets": 46,
             "expected": 27,
             "formats": {
-              "vrm": 1
+              "vrm": 46
             },
-            "coverage": "partial"
+            "coverage": "complete"
           },
           "source": "avatar_inventory"
         }

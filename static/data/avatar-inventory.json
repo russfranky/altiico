@@ -1,17 +1,17 @@
 {
   "schema": "avatar-catalog-inventory-v1",
-  "generatedAt": "2026-08-16T00:11:23.037126+00:00",
-  "sourceVrmGeneratedAt": "2026-08-16T00:11:22.953003+00:00",
+  "generatedAt": "2026-08-16T01:27:11.922967+00:00",
+  "sourceVrmGeneratedAt": "2026-08-16T01:27:08.907601+00:00",
   "sourceOpenPageGeneratedAt": "2026-08-15T23:31:36.580714+00:00",
   "policy": "A collection may satisfy the usable-avatar requirement with one exhaustive supported representation lane: structurally valid VRM, rigged GLB, or evidence-backed rigged FBX. Legacy VRM not_shipped states do not terminally resolve the broader avatar inventory. Explicitly catalog-bound OpenPage VRM/GLB discoveries are merged as candidates only and cannot make an inventory exhaustive without separate coverage evidence.",
   "summary": {
     "collections": 69,
-    "complete": 6,
-    "partial": 14,
+    "complete": 8,
+    "partial": 12,
     "unknown": 49,
     "notShipped": 0,
     "unrecoverable": 0,
-    "enumeratedAssets": 174,
+    "enumeratedAssets": 219,
     "openpageCandidateCollections": 0,
     "openpageCandidateAssets": 0
   },
@@ -1102,27 +1102,709 @@
     {
       "collection_id": "NeonGlitch86 Collection (Shape side)",
       "name": "GARY GRIFTER",
-      "state": "partial",
-      "complete": false,
+      "state": "complete",
+      "complete": true,
       "terminal": false,
-      "coverage_source": "partial_supported_avatar_assets",
+      "coverage_source": "avatar_catalog_research",
       "expected_models": 27,
-      "enumerated_assets": 1,
-      "enumerated_urls": 1,
+      "enumerated_assets": 46,
+      "enumerated_urls": 46,
       "formats": {
-        "vrm": 1
+        "vrm": 46
       },
       "assets": [
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Arctefact.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Arctefact.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/BM.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates BM.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_EM.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates BS_EM.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_Female_CC.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates BS_Female_CC.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_Male_CC.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates BS_Male_CC.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Bubble.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Bubble.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/CB_86HV.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates CB_86HV.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/CCLM.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates CCLM.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/CK.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates CK.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/CONE86.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates CONE86.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/DeathlessEye.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates DeathlessEye.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/EMonster_Rig1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates EMonster_Rig1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
         {
           "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
           "format": "vrm",
           "rigged": true,
           "rigging_evidence": [],
-          "source_evidence": []
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates GG_1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_A.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates G_A.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_B.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates G_B.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_C.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates G_C.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GodCandle_P.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates GodCandle_P.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Hasbulla.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Hasbulla.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Kibo_1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Kibo_1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/MAXMCD.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates MAXMCD.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/MEMEPOLICE.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates MEMEPOLICE.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/NG86_Skelly1-0.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates NG86_Skelly1-0.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/PEPECANDY_.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates PEPECANDY_.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Peepo_sm.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Peepo_sm.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Green.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RCS_Pixel_Green.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Pink.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RCS_Pixel_Pink.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Purple.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RCS_Pixel_Purple.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_PurpleLight.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RCS_Pixel_PurpleLight.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_White.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RCS_Pixel_White.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatFredro.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RatFredro.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RatGrift1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift2.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RatGrift2.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift3.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RatGrift3.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RektGuy.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RektGuy_BS1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS2.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RektGuy_BS2.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS3.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RektGuy_BS3.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS4.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates RektGuy_BS4.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates SBW_86.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86v2.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates SBW_86v2.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/Summer_pbr.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates Summer_pbr.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/X_StaticMan1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates X_StaticMan1.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/beeps.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates beeps.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/clay.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates clay.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates shapey.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/xbossm.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "official_artist_archive_listing",
+              "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+              "observed_at": "2026-08-15",
+              "note": "GitHub contents API enumerates xbossm.vrm in the official public VRM archive (46 VRM files total)."
+            }
+          ]
         }
       ],
       "urls": [
-        "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm"
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Arctefact.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/BM.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_EM.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_Female_CC.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/BS_Male_CC.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Bubble.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/CB_86HV.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/CCLM.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/CK.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/CONE86.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/DeathlessEye.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/EMonster_Rig1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_A.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_B.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/G_C.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/GodCandle_P.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Hasbulla.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Kibo_1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/MAXMCD.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/MEMEPOLICE.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/NG86_Skelly1-0.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/PEPECANDY_.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Peepo_sm.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Green.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Pink.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_Purple.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_PurpleLight.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RCS_Pixel_White.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatFredro.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift2.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RatGrift3.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS2.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS3.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/RektGuy_BS4.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/SBW_86v2.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/Summer_pbr.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/X_StaticMan1.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/beeps.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/clay.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+        "https://raw.githubusercontent.com/neonglitch86/vrm/main/xbossm.vrm"
       ],
       "storage": {
         "types": [
@@ -1132,12 +1814,26 @@
         "evidence": []
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/",
+        "evidence": [
+          {
+            "kind": "public_repository_verification",
+            "source": "https://api.github.com/repos/neonglitch86/vrm",
+            "observed_at": "2026-08-15",
+            "note": "Repository is public and raw.githubusercontent.com URLs served the VRM binaries without authentication during structural probing."
+          }
+        ]
       },
-      "inventory_evidence": [],
+      "inventory_evidence": [
+        {
+          "kind": "official_artist_archive_listing",
+          "source": "https://api.github.com/repos/neonglitch86/vrm/contents/",
+          "observed_at": "2026-08-15",
+          "note": "Contents API enumerates exactly 46 VRM files, all type=file, no pagination truncation; archive lane is exhaustive."
+        }
+      ],
       "legacy_vrm_state": "partial"
     },
     {
@@ -2022,10 +2718,10 @@
     {
       "collection_id": "misfitpixels",
       "name": "MisfitPIXELS",
-      "state": "partial",
-      "complete": false,
+      "state": "complete",
+      "complete": true,
       "terminal": false,
-      "coverage_source": "partial_supported_avatar_assets",
+      "coverage_source": "avatar_catalog_research",
       "expected_models": 1000,
       "enumerated_assets": 1,
       "enumerated_urls": 1,
@@ -2038,7 +2734,20 @@
           "format": "vrm",
           "rigged": true,
           "rigging_evidence": [],
-          "source_evidence": []
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 146,868 bytes."
+            },
+            {
+              "kind": "moralis_metadata_pointer",
+              "source": "https://misfitpixels.xyz/misfits/11",
+              "observed_at": "2026-08-15",
+              "note": "Moralis evidence confirms the on-chain token metadata publishes per-token VRM/FBX/GLB/GLTF URLs."
+            }
+          ]
         }
       ],
       "urls": [
@@ -2049,15 +2758,58 @@
           "https"
         ],
         "scope": "avatar_files",
-        "evidence": []
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's public CDN."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz",
+            "note": "Official site documents the public 3D avatar download endpoint and the multi-format issuer."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the token metadata publishes the per-token VRM URL directly without authentication."
+          }
+        ]
       },
-      "inventory_evidence": [],
+      "inventory_evidence": [
+        {
+          "kind": "official_collection_3d_documentation",
+          "source": "https://misfitpixels.xyz",
+          "note": "Official MisfitPIXELS site documents the per-token avatar download endpoint and the multi-format (VRM, FBX, GLB, GLTF) issuer."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+          "observed_at": "2026-08-15",
+          "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        },
+        {
+          "kind": "moralis_metadata_pointer",
+          "source": "https://misfitpixels.xyz/misfits/11",
+          "observed_at": "2026-08-15",
+          "note": "Moralis confirms the on-chain token metadata publishes the per-token VRM URL."
+        }
+      ],
       "legacy_vrm_state": "partial"
     },
     {
