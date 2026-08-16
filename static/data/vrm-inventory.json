@@ -1,6 +1,6 @@
 {
   "schema": "vrm-catalog-inventory-v2",
-  "generatedAt": "2026-08-16T00:04:35.134462+00:00",
+  "generatedAt": "2026-08-16T00:11:22.953003+00:00",
   "policy": "Complete non-terminal inventory requires explicit exhaustive VRM links; templates remain candidates until expanded, and one sample link never implies completeness.",
   "summary": {
     "collections": 69,
@@ -392,14 +392,39 @@
         "types": [
           "https"
         ],
-        "scope": "vrm_files",
-        "evidence": []
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
+            "observed_at": "2026-08-15",
+            "note": "Per-token rigged GLB files are served from the project's public CDN."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://chibilabs.io/",
+            "note": "Official site documents the public 3D avatar viewer and the per-token CDN endpoint."
+          },
+          {
+            "kind": "structural_rigged_glb_validation",
+            "source": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid rigged GLB file."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://api.chibilabs.dev/token/apes/1",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the token metadata publishes the GLB URL directly without authentication."
+          }
+        ]
       },
       "inventory_evidence": []
     },
