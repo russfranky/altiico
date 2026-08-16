@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-16T22:41:19Z",
-  "snapshot_id": "vrmcat-v1-6c3f139d05aa0de86a834f6a",
+  "generated_at": "2026-08-16T22:43:38Z",
+  "snapshot_id": "vrmcat-v1-8102eb7feef174c8f74ffd16",
   "collections": [
     {
       "slug": "allstarz-psx",
