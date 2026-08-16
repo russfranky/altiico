@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Altiico Catalog in research or software, cite this repository and preserve the underlying source attributions."
+title: "Altiico Catalog"
+type: software
+authors:
+  - family-names: "Franky"
+    given-names: "Russ"
+repository-code: "https://github.com/russfranky/altiico"
+url: "https://www.altii.co/"
+license: MIT
+keywords:
+  - VRM
+  - avatars
+  - NFT
+  - provenance
+  - digital identity

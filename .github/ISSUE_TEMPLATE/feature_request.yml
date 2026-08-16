@@ -1,0 +1,53 @@
+name: Feature request
+description: Propose a focused product, pipeline, schema, or research improvement
+title: "Feature: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete problem should the project solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest useful implementation.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Public catalog
+        - Discovery
+        - Evidence and research model
+        - Binary validation
+        - Acceptance policy
+        - Hubzz staging or integration
+        - Developer experience
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: trust
+    attributes:
+      label: Trust and identity considerations
+      description: Explain effects on provenance, exact identity, licensing, or fail-closed behavior.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: I reviewed SCOPE.md and ROADMAP.md.
+          required: true
+        - label: This proposal does not require weakening validation to improve a metric.
+          required: true

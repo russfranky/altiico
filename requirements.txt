@@ -1,19 +1,19 @@
-# Runtime dependencies for the vrm-catalog pipeline.
-# Pinned to the versions in the working venv (Python 3.11).
-# Install:  python -m venv venv && ./venv/bin/pip install -r requirements.txt
+# Runtime dependencies for the Altiico Catalog pipeline.
+# Pinned to the supported Python 3.11 environment.
+# Install: python -m venv .venv && .venv/bin/pip install -r requirements.txt
 #
-# Note: extract_vrm_meta.py and the GLB parsing path use stdlib only
-# (urllib + struct). These deps are for the source importers, OpenSea client,
-# on-chain lookups, config parsing, and manifest schema validation.
+# extract_vrm_meta.py and the core GLB parsing path use the standard library.
+# These dependencies support source adapters, on-chain reads, configuration,
+# schema validation, and the test suite.
 
-aiohttp==3.14.1        # async OpenSea client (scripts/opensea_client.py)
-requests==2.34.2       # sync HTTP in source importers
-PyYAML==6.0.3          # license-mapping / cache-policy / overrides configs
-jsonschema==4.26.0     # avatar-manifest-v1 schema validation (export_hubzz_manifest.py)
-web3==7.16.0           # on-chain reads (scripts/download_superyetis.py)
-eth-utils==6.0.0       # address checksum / helpers
-eth-abi==5.2.0         # ABI decoding for on-chain calls
+aiohttp==3.14.1
+requests==2.34.2
+PyYAML==6.0.3
+jsonschema==4.26.0
+web3==7.16.0
+eth-utils==6.0.0
+eth-abi==5.2.0
 
-# Test / dev
+# Test and development
 pytest==9.1.1
 pytest-asyncio==1.4.0

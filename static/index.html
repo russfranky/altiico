@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>VRM Catalog</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" media="print" onload="this.media='all'">
+<meta name="theme-color" content="#0D0D0F">
+<meta name="description" content="Altiico is an evidence-backed catalog of validated VRM and rigged avatar collections.">
+<meta name="application-name" content="Altiico Catalog">
+<link rel="canonical" href="https://www.altii.co/">
+<title>Altiico Catalog</title>
 <link rel="stylesheet" href="app.css">
 <!-- Import map for the VRM viewer. @pixiv/three-vrm's module build uses bare
      imports, so the browser needs one shared three instance. -->
@@ -25,8 +26,8 @@
 <header>
   <div class="header-inner">
     <div class="catalog-intro">
-      <h1>VRM catalog</h1>
-      <p>Working NFT avatar files, ordered by evidence.</p>
+      <h1>Altiico</h1>
+      <p>Evidence-backed VRM and rigged avatar catalog.</p>
     </div>
 
     <div class="controls" role="search" aria-label="Catalog search and filters">
@@ -113,7 +114,7 @@
 
 <main>
   <section id="collectionsView" aria-labelledby="collectionsHeading">
-    <h2 id="collectionsHeading" class="sr-only">Collections</h2>
+    <h2 id="collectionsHeading" class="sr-only">Avatar collections</h2>
     <div class="result-bar">
       <span class="result-count" id="collCount" aria-live="polite"></span>
     </div>
@@ -125,11 +126,13 @@
 </main>
 
 <footer class="site-credits">
-  Curated with data from
+  Altiico is a research catalog. Verify usage rights before reusing an avatar.
+  Data includes contributions from
   <a href="https://github.com/toxsam/open-source-avatars" target="_blank" rel="noopener">Open Source Avatars</a>
   and
   <a href="https://github.com/itsmetamike/awesome-3D-avatar-collections" target="_blank" rel="noopener">awesome-3D-avatar-collections</a>.
   VRM viewer by <a href="https://github.com/pixiv/three-vrm" target="_blank" rel="noopener">pixiv/three-vrm</a>.
+  <a href="https://github.com/russfranky/altiico" target="_blank" rel="noopener">Source and methodology</a>.
 </footer>
 
 <!-- The 3D viewer is the only modal surface. -->

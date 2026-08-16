@@ -20,16 +20,24 @@ DEFAULT_DB = ROOT / "data" / "vrm_index.db"
 def short_description(value: object, max_chars: int = 180) -> str:
     import re
 
+    if max_chars < 1:
+        return ""
     text = re.sub(r"\s+", " ", str(value or "")).strip()
     text = re.sub(r"^[#>*\-\s]+", "", text).strip()
     if not text:
         return ""
     if len(text) <= max_chars:
         return text
+
     cut = text[: max_chars + 1]
-    sentence = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
-    if sentence >= max_chars // 2:
-        return cut[: sentence + 1].strip()
+    sentence_ends = [
+        match.end(1)
+        for match in re.finditer(r"([.!?])(?:\s|$)", cut)
+        if match.end(1) <= max_chars
+    ]
+    if sentence_ends:
+        return cut[: sentence_ends[-1]].strip()
+
     word = cut.rfind(" ")
     if word < max_chars // 2:
         word = max_chars

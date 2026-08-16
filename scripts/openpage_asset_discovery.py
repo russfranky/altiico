@@ -219,7 +219,19 @@ def inspect_record(
     seen_animation_glb: set[tuple[str, str]] = set()
 
     for path, value in walk(record):
+        lowered = value.lower()
+        inline_model_urls = (
+            mml_model_urls(value)
+            if "<m-character" in lowered or "<m-model" in lowered
+            else []
+        )
+        inline_model_url_set = set(inline_model_urls)
+
         for url in url_hits(value):
+            # Inline MML src values are recorded below with precise provenance.
+            # Skipping them here prevents a second generic openpage_record hit.
+            if normalize_url(url) in inline_model_url_set:
+                continue
             kind = classify_url(url, path)
             if kind == "mml":
                 add_hit(mml, seen_mml, url=url, source=path, via="openpage_record")
@@ -236,21 +248,20 @@ def inspect_record(
                     via="openpage_record",
                 )
 
-        if "<m-character" in value.lower() or "<m-model" in value.lower():
-            for model_url in mml_model_urls(value):
-                kind = classify_url(model_url)
-                if kind == "vrm":
-                    add_hit(vrm, seen_vrm, url=model_url, source=path, via="mml_inline")
-                elif kind == "glb":
-                    add_hit(glb, seen_glb, url=model_url, source=path, via="mml_inline")
-                elif kind == "animation_glb":
-                    add_hit(
-                        animation_glb,
-                        seen_animation_glb,
-                        url=model_url,
-                        source=path,
-                        via="mml_inline",
-                    )
+        for model_url in inline_model_urls:
+            kind = classify_url(model_url)
+            if kind == "vrm":
+                add_hit(vrm, seen_vrm, url=model_url, source=path, via="mml_inline")
+            elif kind == "glb":
+                add_hit(glb, seen_glb, url=model_url, source=path, via="mml_inline")
+            elif kind == "animation_glb":
+                add_hit(
+                    animation_glb,
+                    seen_animation_glb,
+                    url=model_url,
+                    source=path,
+                    via="mml_inline",
+                )
 
     fetch_errors: list[dict[str, str]] = []
     if fetch_mml:
