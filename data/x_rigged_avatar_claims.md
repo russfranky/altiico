@@ -3,7 +3,9 @@
 This is a **claims ledger**, not a verified-file inventory.
 
 `x_rigged_avatar_claims.json` records 72 collections that X posts, A3AC,
-[hackmd/@XR/nftavatars](https://hackmd.io/@XR/nftavatars), or Bankless
+jin's [M3taverse Bookshelf](https://hackmd.io/@XR/book/https%3A%2F%2Fhackmd.io%2F%40xr%2Favatars)
+([Avatar Interoperability](https://hackmd.io/@XR/avatars) Mar 2020 →
+[NFT 3D Avatars](https://hackmd.io/@XR/nftavatars) May 2022), or Bankless
 Metaversal said shipped a fully rigged 3D avatar (VRM, GLB, FBX, or a
 holder-gated vault). A tweet or marketplace blurb is **not** a VRM.
 
@@ -28,6 +30,23 @@ vault as four archetype files, not one unique VRM per token.
 
 See `catalog_research.d/voltz.json`. Do not mark VOLTZ `ok_vrm` from the
 public URL.
+
+## jin / @XR book (this pass)
+
+The URL is a HackMD **book wrapper** around
+[hackmd.io/@XR/avatars](https://hackmd.io/@XR/avatars) (Avatar
+Interoperability, originally March 2020). It is **not** a second
+collection catalog.
+
+| Note | Role |
+| --- | --- |
+| [Part 1 · Avatars](https://hackmd.io/@XR/avatars) | VRM spec, VRoid, Cryptovoxels `.vox` wearables ported into VRChat, world list (VRChat, Neos, Cluster, Somnium, Webaverse…). Format primer. |
+| [Part 2 · LOD](https://hackmd.io/@XR/avatarlod) | Sprite-sheet / imposter optimization. Names Meebits blender utils. |
+| [Part 3 · NFT 3D avatars](https://hackmd.io/@XR/nftavatars) | May 2022 collection survey. Already ingested as `web-xr-avatars`. |
+
+Part 1 does **not** add new verified VRM NFT collections. Cryptovoxels
+wearables are `.vox` accessories, not full-body VRM inventories. VOLTZ
+is absent (minted around the same week as Part 3).
 
 ## Method
 

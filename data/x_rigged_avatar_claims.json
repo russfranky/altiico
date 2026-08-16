@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-16T23:50:00Z",
-  "method": "X keyword + semantic search plus corroborating web archives (hackmd/@XR/nftavatars, A3AC, Bankless Metaversal). Claims are not binary file proofs.",
+  "generatedAt": "2026-08-17T00:34:00Z",
+  "method": "X keyword + semantic search plus corroborating web archives (jin/@XR Avatar Interoperability book: hackmd/@XR/avatars Mar 2020, @XR/nftavatars May 2022, A3AC, Bankless Metaversal). Claims are not binary file proofs.",
   "summary": {
     "claims": 72,
     "officialShipped": 28,
@@ -75,9 +75,30 @@
     {
       "id": "web-xr-avatars",
       "kind": "web",
-      "label": "hackmd/@XR/nftavatars (May 2022)",
+      "label": "hackmd/@XR/nftavatars · Part 3 (May 2022)",
       "url": "https://hackmd.io/@XR/nftavatars",
       "date": "2022-05-17"
+    },
+    {
+      "id": "web-xr-interop",
+      "kind": "web",
+      "label": "hackmd/@XR/avatars · Avatar Interoperability (Mar 2020)",
+      "url": "https://hackmd.io/@XR/avatars",
+      "date": "2020-03-01"
+    },
+    {
+      "id": "web-xr-lod",
+      "kind": "web",
+      "label": "hackmd/@XR/avatarlod · Avatar LOD",
+      "url": "https://hackmd.io/@XR/avatarlod",
+      "date": "2020-04-01"
+    },
+    {
+      "id": "web-xr-book",
+      "kind": "web",
+      "label": "hackmd/@XR/book · M3taverse Bookshelf",
+      "url": "https://hackmd.io/@XR/book/https%3A%2F%2Fhackmd.io%2F%40xr%2Favatars",
+      "date": "2020-03-01"
     },
     {
       "id": "web-a3ac",
@@ -121,7 +142,7 @@
       "verdict": "shipped",
       "rigNote": "Official custom-rigged VRM / FBX / GLB for owners, Nov 2021, first MeebitsDAO collab.",
       "twitter": "MeebitsNFTs",
-      "sourceIds": ["x-meebits-2021", "web-xr-avatars", "web-a3ac"]
+      "sourceIds": ["x-meebits-2021", "web-xr-avatars", "web-xr-lod", "web-a3ac"]
     },
     {
       "id": "cryptoavatars",
@@ -135,7 +156,7 @@
       "verdict": "shipped",
       "rigNote": "Oldest native VRM NFT line. 1/1 artist avatars; also modeled BAYC/MAYC conversions. Per-token license.",
       "twitter": "cryptoavatarsio",
-      "sourceIds": ["web-xr-avatars", "web-a3ac", "web-bankless"]
+      "sourceIds": ["web-xr-avatars", "web-xr-interop", "web-a3ac", "web-bankless"]
     },
     {
       "id": "void-visitors",
