@@ -1,0 +1,18 @@
+* text=auto eol=lf
+
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.glb binary
+*.vrm binary
+*.fbx binary
+*.zip binary
+
+static/data/** linguist-generated=true
+data/*_probe.json linguist-generated=true
+data/*_report.json linguist-generated=true

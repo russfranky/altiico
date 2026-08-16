@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible defect in the pipeline, data, or public catalog
+title: "Bug: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report vulnerabilities or exposed credentials here. Follow SECURITY.md instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Public catalog
+        - Discovery or source adapter
+        - Research or identity binding
+        - Inventory or binary validation
+        - Acceptance gate
+        - Generated artifacts or snapshot consistency
+        - Hubzz staging export
+        - Documentation or developer tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: identity
+    attributes:
+      label: Exact identity
+      description: Include catalog ID, chain, contract, token ID, URL, or snapshot ID when relevant.
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or evidence
+      description: Remove secrets, private URLs, and personal data.
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or snapshot
+      description: Git commit SHA or vrmcat snapshot ID.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: This report contains no secrets or vulnerability details.
+          required: true

@@ -1,8 +1,8 @@
 """Tests for scripts/export_avatars_registry.py.
 
 The registry projection must obey the pre-alpha packages/avatars canonical
-schema (schema/src/avatar.ts, SCHEMA_VERSION 1). The two locked design rules —
-chain is a fixed enum (or null) and is orthogonal to storage — are asserted
+schema (schema/src/avatar.ts, SCHEMA_VERSION 1). The two locked design rules -
+chain is a fixed enum (or null) and is orthogonal to storage - are asserted
 here so a future edit cannot silently emit a chain the downstream enum cannot
 represent, or fold a storage provider into the chain field.
 """
@@ -53,7 +53,7 @@ def test_top_level_shape(registry):
 
 
 def test_chain_is_enum_or_null(registry):
-    """Locked rule: chain is a fixed enum or null — never a coerced value."""
+    """Locked rule: chain is a fixed enum or null, never a coerced value."""
     for c in registry["collections"]:
         assert c["chain"] is None or c["chain"] in PREALPHA_CHAINS, (
             f"{c['slug']}: illegal chain {c['chain']!r}"
@@ -76,7 +76,7 @@ def test_chain_and_storage_are_orthogonal(registry):
 
 
 def test_unmapped_chains_are_nulled_not_coerced(registry):
-    """A chain outside the enum must be null AND recorded under unmapped."""
+    """A chain outside the enum must be null and recorded under unmapped."""
     unmapped_slugs = {u["slug"] for u in registry["unmapped"]}
     by_slug = {c["slug"]: c for c in registry["collections"]}
     for slug in unmapped_slugs:
@@ -104,7 +104,7 @@ def test_required_fields_present(registry):
 
 
 def test_cc0_set_is_not_gated(registry):
-    """A CC0 set is open by definition — it must not be purchase-gated."""
+    """A CC0 set is open by definition, so it must not be purchase-gated."""
     for c in registry["collections"]:
         if c["license"] == "CC0":
             assert c["purchase_gated"] is False, f"{c['slug']}: CC0 but gated"
@@ -120,16 +120,16 @@ def test_no_secrets_in_registry(registry):
         assert needle not in blob, f"possible secret token {needle!r} in registry"
 
 
-# ─── unit: mapping rules ───────────────────────────────────────────────────
+# Unit tests for mapping rules.
 
 
 def test_build_entry_splits_arweave_chain_to_storage():
     row = {"id": "x", "name": "X", "chain": "arweave", "vrm_url_pattern": "ar://abc/{id}.vrm",
            "vrm_license": "CC0", "tier": "A"}
     entry, note = build_entry(row)
-    assert entry["chain"] is None          # arweave is not a chain
+    assert entry["chain"] is None
     assert entry["storage_provider"] == "arweave"
-    assert note is None                    # null-because-CC0 is not an "unmapped" chain
+    assert note is None
 
 
 def test_build_entry_flags_offenum_chain():
@@ -148,9 +148,9 @@ def test_build_entry_ipfs_pattern_is_ipfs_storage():
     assert entry["storage_provider"] == "ipfs"
 
 
-def test_redistribution_prohibited_is_gated_and_labeled():
+def test_redistribution_prohibited_is_labeled_without_inventing_access_gate():
     row = {"id": "r", "name": "R", "chain": "ethereum",
            "vrm_license": "Redistribution_Prohibited", "license_category": "red", "tier": "A"}
     entry, _ = build_entry(row)
     assert entry["license"] == "All Rights Reserved"
-    assert entry["purchase_gated"] is True
+    assert entry["purchase_gated"] is False

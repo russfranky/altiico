@@ -1,121 +1,169 @@
-# Altiico — VRM Avatar Catalog
+# Altiico Catalog
 
-Research-grade, evidence-backed catalog of NFT avatar collections with verified
-VRM, FBX, and rigged GLB model inventories. Every claim in the catalog is
-source-attributed; every accepted avatar file passes binary validation, not
-URL or keyword heuristics.
+[![CI](https://github.com/russfranky/altiico/actions/workflows/ci.yml/badge.svg)](https://github.com/russfranky/altiico/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/russfranky/altiico/actions/workflows/codeql.yml/badge.svg)](https://github.com/russfranky/altiico/actions/workflows/codeql.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](.python-version)
 
-Public catalog: <https://www.altii.co/>
+Altiico Catalog is an evidence-backed discovery and validation pipeline for NFT and on-chain avatar collections. It records collection identity, provenance, file access, license signals, and exhaustive avatar inventories where evidence supports them. Accepted files are validated from their binary contents rather than inferred from filenames or metadata strings.
 
-Formerly `russfranky/vrm-catalog`. See `docs/HUBZZ_ALTIICO_INTEGRATION.md` for
-the planned merge of the public-facing catalog into the Hubzz avatar product.
+**Public catalog:** <https://www.altii.co/>
 
-## What this is
+> **Project maturity: alpha.** The software and data model are usable, but the catalog is intentionally fail-closed and many collections still require research. A collection appearing in the catalog does not mean it has passed the acceptance gate, is licensed for reuse, or is published by Hubzz.
 
-A researcher needs to find VRM avatar sets and answer three questions fast:
-**what is this, can I see it, does the file actually work.** This repository is
-that tool:
+## What this repository owns
 
-- Discovers avatar/NFT collections from OpenSea, Moralis, Etherscan, Bitquery,
-  RPC/indexer surfaces, project metadata, GitHub repos, and direct asset URLs.
-- Preserves conflicting observations instead of silently overwriting them.
-- Validates actual GLB 2.0 binaries and requires `VRM` or `VRMC_vrm` before a
-  VRM claim is promoted; FBX claims require explicit rigging evidence.
-- Maintains a versioned SQLite index (`data/vrm_index.db`) with generated
-  evidence committed to the repository.
-- Deploys a static read-only catalog to Vercel.
+This repository is the **Altiico Catalog pipeline and research interface**. It:
 
-A generated Hubzz staging bundle separates stageable avatar sets from deferred
-sets. Unsupported chains, unknown licenses, and partial inventories are never
-silently coerced into stronger claims.
+- discovers candidate avatar collections from public registries, marketplaces, chain data, project metadata, GitHub, IPFS, Arweave, and direct asset URLs;
+- preserves source observations and conflicts instead of silently replacing them;
+- validates GLB 2.0 files and requires `VRM` or `VRMC_vrm` for a VRM claim;
+- accepts rigged GLB and evidence-backed rigged FBX only through explicit validation lanes;
+- produces deterministic SQLite and JSON snapshots;
+- exports conservative, unlisted staging candidates for Hubzz;
+- deploys a static, read-only evidence catalog.
 
-## Status
+It does **not** optimize avatars, grant usage rights, publish Hubzz collections, replace Hubzz moderation, or treat an unknown field as a positive claim. See [SCOPE.md](SCOPE.md) for the authoritative boundary.
 
-The catalog acceptance gate tracks how many collections fully satisfy the
-evidence bar. Current state lives in `data/catalog_acceptance.json`:
-passing collections, failing collections with per-field reasons, and
-scope-missing collections that are documented in scope but not yet in the
-completeness report.
+## Trust model
 
-The gate semantics are deliberately strict:
+The catalog follows four rules:
 
-- Every must-have field carries a real value or an explicit, evidence-backed
-  resolution state (`not_available`, `not_applicable`, `unrecoverable`,
-  `sunset`, `holder_gated`).
-- `project_status` is one of `active`, `dormant`, `sunset`, evidenced.
-- `avatar_inventory` must be exhaustive: every enumerated asset is probed and
-  must validate as VRM, rigged GLB, or evidence-backed rigged FBX.
-- `file_access` records the access mode and ownership requirement with
-  evidence.
+1. **Identity is exact.** Contract, chain, token, marketplace, and internal row identities remain distinct.
+2. **Files are inspected.** A URL, extension, marketplace field, or metadata string is not binary proof.
+3. **Unknown stays unknown.** Missing licensing, access, or inventory evidence never becomes open, public, or complete by default.
+4. **Generated artifacts move together.** The database, exports, probes, and public payload share one deterministic snapshot identity.
+
+## Current status
+
+The source of truth is generated, not hand-maintained:
+
+- `data/catalog_acceptance.json` records passing and failing collections with reason codes.
+- `static/data/hubzz-prealpha-staging.json` separates stageable and deferred Hubzz candidates.
+- `static/data/build-info.json` identifies the deployed public snapshot.
+
+Print the current status without relying on stale README numbers:
+
+```bash
+python scripts/project_status.py
+python scripts/project_status.py --json
+```
+
+## Quick start
+
+### Prerequisites
+
+- Python 3.11
+- SQLite 3
+- Node.js for JavaScript syntax checks and browser-focused tests
+- API credentials only for live enrichment jobs
+
+### Set up the environment
+
+```bash
+python3.11 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+The equivalent shortcut is:
+
+```bash
+make bootstrap
+```
+
+### Verify the repository
+
+```bash
+make verify
+make test
+```
+
+`make verify` runs deterministic repository checks that do not require third-party credentials. `make test` runs the full committed test suite.
+
+### Run the public catalog locally
+
+```bash
+make serve
+```
+
+Then open <http://localhost:8000/>.
+
+## Common commands
+
+```bash
+make help          # show supported commands
+make status        # print catalog and staging status
+make verify        # repository invariants, Python compile, and JS syntax
+make test          # full pytest suite
+make build         # rebuild the public catalog from the committed database
+make acceptance    # regenerate and enforce the avatar acceptance gate
+make serve         # serve static/ on localhost:8000
+```
+
+See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for credentials, generated artifacts, and research workflow details.
+
+## Pipeline
+
+```text
+public discovery sources
+        |
+        v
+per-collection research shards
+        |
+        v
+materialize SQLite and normalized research store
+        |
+        v
+export inventories and probe every claimed asset
+        |
+        v
+audit completeness and enforce acceptance
+        |
+        v
+snapshot-pinned public catalog and Hubzz staging bundle
+```
+
+The standard unit of work is one research shard in `data/catalog_research.d/`. A high-quality change enumerates the relevant asset lane, records evidence for every required field, probes every claimed file, regenerates affected artifacts, and proves that the acceptance result changed for the right reason.
 
 ## Repository layout
 
-```
-scripts/            pipeline stages: discovery, research, materialize,
-                    export, probe, audit, enforce, build
-scripts/crawler/    HTTP crawl engine (shared fetch/store primitives)
-data/               SQLite index, research shards (catalog_research.d/),
-                    probe results, acceptance reports, evidence cache
-data/catalog_research.d/   per-collection research shards (the unit of work)
-static/             generated deploy artifacts (content-hashed, snapshot-pinned)
-static/data/        build-info.json, hashed collections, inventories, manifests
-docs/               design notes and integration plans
-.github/workflows/  scheduled scraper + integrity jobs (GitHub Actions)
-tests/              pipeline test suite (pytest)
-```
-
-## How the pipeline works
-
-```
-discovery sources (OpenSea, Moralis, Etherscan, GitHub, IPFS, ...)
-        |
-        v
-research shard per collection (data/catalog_research.d/*.json)
-        |
-        v
-materialize -> export inventories -> probe (binary validation)
-        |
-        v
-audit (completeness report) -> enforce (acceptance gate)
-        |
-        v
-build (snapshot-pinned static artifacts -> Vercel)
+```text
+.github/                   contribution templates, CI, security, automation
+config/                    cache and license normalization policy
+data/                      SQLite index, evidence, probes, acceptance reports
+data/catalog_research.d/   per-collection research shards
+scripts/                   discovery, materialization, export, probe, audit tools
+scripts/crawler/           shared crawl and persistence primitives
+static/                    public catalog source and generated deployment data
+static/data/               snapshot-pinned public payloads and staging exports
+tests/                     Python and browser-focused verification
+docs/                      architecture, development, integration, release notes
 ```
 
-Every artifact shares one deterministic snapshot identity
-(`vrmcat-v1-…`, see `scripts/catalog_snapshot.py`) so the committed database,
-exports, and deployed site are always provably in sync.
+## Architecture and product boundary
 
-## Running locally
+- [Architecture](docs/ARCHITECTURE.md)
+- [Development guide](docs/DEVELOPMENT.md)
+- [Hubzz Altiico integration direction](docs/HUBZZ_ALTIICO_INTEGRATION.md)
+- [Roadmap](ROADMAP.md)
+- [Release process](docs/RELEASING.md)
 
-```bash
-# regenerate research store + inventories from shards and the SQLite index
-PYTHONPATH=. python3 scripts/build_catalog_research_store.py --output data/catalog_research_merged.json
-PYTHONPATH=. python3 scripts/export_vrm_inventory.py --research data/catalog_research_merged.json --output static/data/vrm-inventory.json
-PYTHONPATH=. python3 scripts/export_avatar_inventory.py --research data/catalog_research_merged.json --vrm-inventory static/data/vrm-inventory.json --openpage-assets data/openpage_asset_discovery.json --output static/data/avatar-inventory.json
+The downstream Hubzz Altiico application is a separate product surface. This repository remains the evidence and staging authority until an explicit backend ingestion path replaces browser-side or manual coupling.
 
-# audit + enforce the acceptance gate
-PYTHONPATH=. python3 scripts/audit_avatar_completeness.py --research data/catalog_research_merged.json --inventory static/data/avatar-inventory.json --tiers A,B,C --output data/catalog_completeness_report.json
-PYTHONPATH=. python3 scripts/enforce_avatar_acceptance.py --report data/catalog_completeness_report.json --inventory static/data/avatar-inventory.json --probe data/avatar_inventory_probe.json --output data/catalog_acceptance.json
+## Contributing
 
-# tests
-python3 -m pytest -p no:recording
-```
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Contributions must preserve provenance, exact identity binding, fail-closed semantics, and deterministic generated outputs.
 
-The standard unit of work is one research shard per collection: enumerate the
-full asset lane, probe every file, resolve every field with evidence, then
-regenerate and verify the gate moved.
+Use the issue templates for bugs and feature proposals. Security vulnerabilities must follow [SECURITY.md](SECURITY.md), not a public issue.
 
-## Data and provenance
+## Versioning
 
-- Attribution and data sources: see `CREDITS.md` (includes ToxSam's
-  open-source-avatars registry, OpenSea, Moralis, Etherscan, IPFS, and artist
-  archives).
-- Scope, success criteria, and boundary decisions: see `SCOPE.md`.
-- The catalog is a research tool. It documents third-party collections; verify
-  license and usage terms before reusing any avatar.
+The project is pre-1.0. Schema changes, acceptance semantics, and generated artifact contracts may still evolve. Releases follow Semantic Versioning where practical, with breaking pre-1.0 changes called out explicitly in [CHANGELOG.md](CHANGELOG.md).
 
-## License
+## Data, attribution, and legal use
 
-Code: MIT (see `LICENSE`). Catalog data remains attribution-carrying research
-output; where a source's own terms are stricter, theirs govern.
+The MIT license covers repository code. Catalog data is attribution-carrying research output assembled from third-party sources. A source's own license and terms continue to govern its content. Verify rights before downloading, modifying, redistributing, or publishing any avatar.
+
+See [CREDITS.md](CREDITS.md) for source attribution and [LICENSE](LICENSE) for the code license.
