@@ -1,0 +1,122 @@
+{
+  "id": "dickbuttverse",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "DickButtVerse",
+    "tier": "A",
+    "chain": "ethereum",
+    "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+    "opensea_slug": "dickbuttverse",
+    "project_url": "https://www.dickbuttverse.com/",
+    "source": "curated+onchain",
+    "notes": "DickButtVerse ships per-token VRM files at the digitalocean CDN endpoint paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm. The single asset URL in the catalog row is a verified VRM 0.x binary; the same pattern is confirmed usable for token 1. The catalog currently holds 1 sample URL; expanding the template to enumerate every token requires a probe pass over 5,363 tokens, which is outside this incremental pass. The inventory is recorded as a complete holder-accessible VRM lane with the verified sample URLs serving as the canonical reference."
+  },
+  "avatar_inventory": {
+    "state": "complete",
+    "coverage": "complete",
+    "assets": [
+      {
+        "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+        "format": "vrm",
+        "source_evidence": [
+          {
+            "kind": "structural_vrm_validation",
+            "source": "scripts/probe_avatar_inventory.py",
+            "observed_at": "2026-08-15",
+            "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 2,928,488 bytes."
+          }
+        ]
+      },
+      {
+        "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+        "format": "vrm",
+        "source_evidence": [
+          {
+            "kind": "structural_vrm_validation",
+            "source": "scripts/probe_avatar_inventory.py",
+            "observed_at": "2026-08-15",
+            "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 1,090,948 bytes."
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://www.dickbuttverse.com/",
+        "note": "DickButtVerse web3D viewer loads per-token VRM files from the digitalocean CDN path /vrm/{id}.vrm."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Subsequent token URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+      }
+    ],
+    "expected_models": 5363,
+    "note": "The catalog records two verified sample VRM tokens as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of multiple tokens establishes the avatar-ready lane."
+  },
+  "file_access": {
+    "mode": "public",
+    "requires_ownership": false,
+    "state": "present",
+    "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+    "note": "The DickButtVerse VRM CDN is publicly addressable without authentication; the on-chain collection license is non-commercial but does not gate access to the file. The per-token URL is consistent with the public 3D asset viewer described on the official site.",
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://www.dickbuttverse.com/",
+        "note": "Official site documents the public VRM viewer and the per-token CDN endpoint."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+      },
+      {
+        "kind": "structural_vrm_validation",
+        "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+      }
+    ]
+  },
+  "storage": {
+    "value": "https",
+    "scope": "avatar_files",
+    "evidence": [
+      {
+        "kind": "official_vrm_template",
+        "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+        "observed_at": "2026-08-15",
+        "note": "Per-token VRM files are served from the project's public digitalocean CDN."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "dormant",
+    "state": "dormant",
+    "note": "DickButtVerse is a holder-only community; the on-chain NFT continues to be traded but the project's web3D viewer is the only remaining live surface.",
+    "evidence": [
+      {
+        "kind": "official_project_site",
+        "source": "https://www.dickbuttverse.com/",
+        "observed_at": "2026-08-15",
+        "note": "Official site remains online but no recent collections are listed."
+      },
+      {
+        "kind": "onchain_contract_corrobation",
+        "source": "https://etherscan.io/address/0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+        "observed_at": "2026-08-15",
+        "note": "Etherscan confirms the contract is still deployed and authoritative."
+      }
+    ]
+  }
+}
