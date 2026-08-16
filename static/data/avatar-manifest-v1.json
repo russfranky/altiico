@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-08-16T22:43:38Z",
-  "snapshot_id": "vrmcat-v1-8102eb7feef174c8f74ffd16",
+  "generated_at": "2026-08-16T22:50:02Z",
+  "snapshot_id": "vrmcat-v1-74afa53b79d5c5103f92580a",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -116,7 +116,7 @@
     },
     {
       "id": "cyber-across-verse",
-      "name": "Cyber Across Verse",
+      "name": "Cyber Across Verse  3D Avatars Characters",
       "tier": "A",
       "identifiers": {
         "chain": "polygon",

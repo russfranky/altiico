@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T18:19:57.431042+00:00",
+  "generatedAt": "2026-08-16T22:46:17.848784+00:00",
   "moralis": {
     "freshCrossReference": true,
     "freshModelDiscovery": true,
@@ -10,7 +10,7 @@
       "collectionsWithErrors": 4,
       "collectionsWithConflicts": 37,
       "fieldComparisons": 372,
-      "fieldConflicts": 55,
+      "fieldConflicts": 56,
       "agreementByField": {
         "banner_image_url": {
           "compared": 56,
@@ -34,8 +34,8 @@
         },
         "num_owners": {
           "compared": 55,
-          "agreed": 50,
-          "conflicted": 5
+          "agreed": 49,
+          "conflicted": 6
         },
         "total_supply": {
           "compared": 61,
@@ -45,7 +45,8 @@
       }
     },
     "modelAttemptSummary": {
-      "collectionsInspected": 62,
+      "collectionsInspected": 63,
+      "contractsInspected": 68,
       "collectionsWithErrors": 0,
       "nftsWithSignals": 222,
       "modelCandidates": 612,
@@ -55,8 +56,8 @@
   "etherscan": {
     "freshCorroborated": 63,
     "selectedCorroborated": 63,
-    "collectionsWithErrors": 66,
-    "allCollectionsHaveErrors": true,
+    "collectionsWithErrors": 1,
+    "allCollectionsHaveErrors": false,
     "rateLimitedCollections": 0,
     "preservedCollections": 0,
     "mode": "fresh"
