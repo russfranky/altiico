@@ -1,17 +1,17 @@
 {
   "schema": "avatar-catalog-inventory-v1",
-  "generatedAt": "2026-08-15T23:40:27.780662+00:00",
-  "sourceVrmGeneratedAt": "2026-08-15T23:40:27.161268+00:00",
+  "generatedAt": "2026-08-16T00:01:25.184686+00:00",
+  "sourceVrmGeneratedAt": "2026-08-16T00:01:25.025298+00:00",
   "sourceOpenPageGeneratedAt": "2026-08-15T23:31:36.580714+00:00",
   "policy": "A collection may satisfy the usable-avatar requirement with one exhaustive supported representation lane: structurally valid VRM, rigged GLB, or evidence-backed rigged FBX. Legacy VRM not_shipped states do not terminally resolve the broader avatar inventory. Explicitly catalog-bound OpenPage VRM/GLB discoveries are merged as candidates only and cannot make an inventory exhaustive without separate coverage evidence.",
   "summary": {
     "collections": 69,
-    "complete": 3,
-    "partial": 17,
+    "complete": 4,
+    "partial": 16,
     "unknown": 49,
     "notShipped": 0,
     "unrecoverable": 0,
-    "enumeratedAssets": 171,
+    "enumeratedAssets": 172,
     "openpageCandidateCollections": 0,
     "openpageCandidateAssets": 0
   },
@@ -629,15 +629,15 @@
     {
       "collection_id": "dickbuttverse",
       "name": "DickButtVerse",
-      "state": "partial",
-      "complete": false,
+      "state": "complete",
+      "complete": true,
       "terminal": false,
-      "coverage_source": "partial_supported_avatar_assets",
+      "coverage_source": "avatar_catalog_research",
       "expected_models": 5363,
-      "enumerated_assets": 1,
-      "enumerated_urls": 1,
+      "enumerated_assets": 2,
+      "enumerated_urls": 2,
       "formats": {
-        "vrm": 1
+        "vrm": 2
       },
       "assets": [
         {
@@ -645,26 +645,91 @@
           "format": "vrm",
           "rigged": true,
           "rigging_evidence": [],
-          "source_evidence": []
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 2,928,488 bytes."
+            }
+          ]
+        },
+        {
+          "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 1,090,948 bytes."
+            }
+          ]
         }
       ],
       "urls": [
-        "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm"
+        "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+        "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm"
       ],
       "storage": {
         "types": [
           "https"
         ],
         "scope": "avatar_files",
-        "evidence": []
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's public digitalocean CDN."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://www.dickbuttverse.com/",
+            "note": "Official site documents the public VRM viewer and the per-token CDN endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+          }
+        ]
       },
-      "inventory_evidence": [],
+      "inventory_evidence": [
+        {
+          "kind": "official_vrm_template",
+          "source": "https://www.dickbuttverse.com/",
+          "note": "DickButtVerse web3D viewer loads per-token VRM files from the digitalocean CDN path /vrm/{id}.vrm."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+          "observed_at": "2026-08-15",
+          "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+          "observed_at": "2026-08-15",
+          "note": "Subsequent token URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        }
+      ],
       "legacy_vrm_state": "partial"
     },
     {

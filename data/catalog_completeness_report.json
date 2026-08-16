@@ -1,11 +1,11 @@
 {
   "schema": "avatar-catalog-completeness-v1",
-  "generatedAt": "2026-08-15T23:47:16.226843+00:00",
+  "generatedAt": "2026-08-16T00:01:40.010626+00:00",
   "policy": "Every collection research dimension must be resolved. The usable model dimension may be satisfied by an exhaustive avatar-ready VRM, rigged GLB, or evidence-backed rigged FBX inventory.",
   "summary": {
     "collections": 69,
-    "complete": 1,
-    "incomplete": 68,
+    "complete": 2,
+    "incomplete": 67,
     "missingByField": {
       "banner": 8,
       "short_description": 4,
@@ -14,10 +14,10 @@
       "logo": 2,
       "launch_date": 5,
       "storage": 49,
-      "avatar_inventory": 66,
+      "avatar_inventory": 65,
       "ip_rights": 58,
-      "file_access": 68,
-      "project_status": 68
+      "file_access": 67,
+      "project_status": 67
     }
   },
   "collections": [
@@ -2080,12 +2080,8 @@
       "id": "dickbuttverse",
       "name": "DickButtVerse",
       "tier": "A",
-      "complete": false,
-      "missing": [
-        "avatar_inventory",
-        "file_access",
-        "project_status"
-      ],
+      "complete": true,
+      "missing": [],
       "fields": {
         "banner": {
           "ok": true,
@@ -2142,7 +2138,14 @@
           "state": "present",
           "value": "https",
           "source": "avatar_inventory.storage",
-          "evidence": [],
+          "evidence": [
+            {
+              "kind": "official_vrm_template",
+              "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+              "observed_at": "2026-08-15",
+              "note": "Per-token VRM files are served from the project's public digitalocean CDN."
+            }
+          ],
           "detail": {
             "scope": "avatar_files"
           }
@@ -2171,30 +2174,65 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
+          "ok": true,
+          "state": "present",
+          "value": "public",
           "source": "avatar_inventory.access",
-          "evidence": [],
+          "evidence": [
+            {
+              "kind": "official_vrm_template",
+              "source": "https://www.dickbuttverse.com/",
+              "note": "Official site documents the public VRM viewer and the per-token CDN endpoint."
+            },
+            {
+              "kind": "structural_vrm_validation",
+              "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+              "observed_at": "2026-08-15",
+              "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+            },
+            {
+              "kind": "structural_vrm_validation",
+              "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+              "observed_at": "2026-08-15",
+              "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+            }
+          ],
           "detail": {
-            "requires_ownership": null,
-            "access_url": null
+            "requires_ownership": false,
+            "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm"
           }
         },
         "project_status": {
-          "ok": false,
-          "state": "unknown"
+          "ok": true,
+          "state": "dormant",
+          "value": "dormant",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_project_site",
+              "source": "https://www.dickbuttverse.com/",
+              "observed_at": "2026-08-15",
+              "note": "Official site remains online but no recent collections are listed."
+            },
+            {
+              "kind": "onchain_contract_corrobation",
+              "source": "https://etherscan.io/address/0xd47d8672e45a7204057baaa3622a3fa276d651e3",
+              "observed_at": "2026-08-15",
+              "note": "Etherscan confirms the contract is still deployed and authoritative."
+            }
+          ],
+          "detail": "DickButtVerse is a holder-only community; the on-chain NFT continues to be traded but the project's web3D viewer is the only remaining live surface."
         },
         "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
+          "ok": true,
+          "state": "complete",
           "value": {
-            "known_assets": 1,
+            "known_assets": 2,
             "expected": 5363,
             "formats": {
-              "vrm": 1
+              "vrm": 2
             },
-            "coverage": "partial"
+            "coverage": "complete"
           },
           "source": "avatar_inventory"
         }

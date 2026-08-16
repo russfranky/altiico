@@ -1,18 +1,18 @@
 {
   "schema": "avatar-inventory-structural-probe-v1",
-  "generatedAt": "2026-08-15T23:52:16.785764+00:00",
-  "sourceGeneratedAt": "2026-08-15T23:40:27.780662+00:00",
+  "generatedAt": "2026-08-16T00:02:34.621696+00:00",
+  "sourceGeneratedAt": "2026-08-16T00:01:25.184686+00:00",
   "policy": "Every enumerated non-terminal asset must be avatar-ready: VRM extension, GLB skin/joint rig, or recognizable FBX with explicit rigging evidence.",
   "summary": {
-    "collections": 1,
-    "avatarReadyCompleteCollections": 1,
-    "urls": 1,
-    "validAvatarUrls": 1,
-    "validVrmUrls": 1,
+    "collections": 3,
+    "avatarReadyCompleteCollections": 2,
+    "urls": 3,
+    "validAvatarUrls": 3,
+    "validVrmUrls": 3,
     "validRiggedGlbUrls": 0,
     "validRiggedFbxUrls": 0,
     "statusCounts": {
-      "valid_vrm": 1
+      "valid_vrm": 3
     }
   },
   "collections": [
@@ -26,6 +26,34 @@
       "urls": 1,
       "validAssetUrls": 1,
       "validVrmUrls": 1,
+      "validRiggedGlbUrls": 0,
+      "validRiggedFbxUrls": 0,
+      "invalidUrls": []
+    },
+    {
+      "catalogId": "research-0x1142c6",
+      "name": "mferverse: OG mfers",
+      "terminalResearchState": null,
+      "metadataComplete": false,
+      "avatarReadyComplete": false,
+      "structurallyComplete": false,
+      "urls": 0,
+      "validAssetUrls": 0,
+      "validVrmUrls": 0,
+      "validRiggedGlbUrls": 0,
+      "validRiggedFbxUrls": 0,
+      "invalidUrls": []
+    },
+    {
+      "catalogId": "dickbuttverse",
+      "name": "DickButtVerse",
+      "terminalResearchState": null,
+      "metadataComplete": true,
+      "avatarReadyComplete": true,
+      "structurallyComplete": true,
+      "urls": 2,
+      "validAssetUrls": 2,
+      "validVrmUrls": 2,
       "validRiggedGlbUrls": 0,
       "validRiggedFbxUrls": 0,
       "invalidUrls": []
@@ -45,6 +73,40 @@
       "jsonChunkSha256": "e8eb9ab7cd413c8ca6b3ded452b0be59dda91e6f705de767111d0463abe140f3",
       "networkRequests": 2,
       "transportUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
+      "formatHint": "vrm",
+      "formatMismatch": false,
+      "error": null
+    },
+    {
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "status": "valid_vrm",
+      "validAvatar": true,
+      "validVrm": true,
+      "actualFormat": "vrm",
+      "vrmSpec": "0.x",
+      "rigged": true,
+      "riggingProof": "vrm_extension",
+      "totalLength": 2928488,
+      "jsonChunkSha256": "9b64bdc7af7bb882a137326a3202170357f76be71e3b3dda0e88e56df2c8974c",
+      "networkRequests": 2,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+      "formatHint": "vrm",
+      "formatMismatch": false,
+      "error": null
+    },
+    {
+      "url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+      "status": "valid_vrm",
+      "validAvatar": true,
+      "validVrm": true,
+      "actualFormat": "vrm",
+      "vrmSpec": "0.x",
+      "rigged": true,
+      "riggingProof": "vrm_extension",
+      "totalLength": 1090948,
+      "jsonChunkSha256": "c3db4bf44ff08bee4b97dd16426e1e05946646a86c81488ec20ee338dc65de17",
+      "networkRequests": 2,
+      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
       "formatHint": "vrm",
       "formatMismatch": false,
       "error": null

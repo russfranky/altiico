@@ -1,6 +1,6 @@
 {
   "schema": "vrm-catalog-inventory-v2",
-  "generatedAt": "2026-08-15T23:40:27.161268+00:00",
+  "generatedAt": "2026-08-16T00:01:25.025298+00:00",
   "policy": "Complete non-terminal inventory requires explicit exhaustive VRM links; templates remain candidates until expanded, and one sample link never implies completeness.",
   "summary": {
     "collections": 69,
@@ -593,14 +593,39 @@
         "types": [
           "https"
         ],
-        "scope": "vrm_files",
-        "evidence": []
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's public digitalocean CDN."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://www.dickbuttverse.com/",
+            "note": "Official site documents the public VRM viewer and the per-token CDN endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+          }
+        ]
       },
       "inventory_evidence": []
     },
