@@ -9,3 +9,5 @@ __pycache__/
 .env*
 .claude/skills/
 data/openpage_feed_health.json
+
+.worker/

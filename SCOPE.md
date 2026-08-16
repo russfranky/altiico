@@ -1,4 +1,4 @@
-# SCOPE: vrm-catalog
+# SCOPE: altiico (formerly vrm-catalog)
 
 Updated 2026-08-11 after the owner explicitly asked for the catalog to support
 staging avatar sets in Hubzz pre-alpha. This supersedes the earlier statement

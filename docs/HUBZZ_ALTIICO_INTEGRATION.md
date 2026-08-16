@@ -2,6 +2,10 @@
 
 Status: planning note, not an implementation commitment.
 
+> Naming note: this repository was renamed `vrm-catalog` → `russfranky/altiico`.
+> In this document, "altiico" still refers to the separate `hubzz-altiico` SPA
+> and "vrm-catalog" to this repository's evidence pipeline.
+
 ## Goal
 
 Move the useful public-facing capabilities of `vrm-catalog` into `russfranky/hubzz-altiico` so users experience one Hubzz avatar discovery product instead of a standalone evidence catalog plus a separate altiico browser.
