@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-16T05:43:00Z",
-  "snapshot_id": "vrmcat-v1-931934f64f254a592e157b5f",
+  "generated_at": "2026-08-16T22:41:19Z",
+  "snapshot_id": "vrmcat-v1-6c3f139d05aa0de86a834f6a",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -45,6 +45,21 @@
       "banner": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/e70e58fdece34aadec4f34e078e494/e4e70e58fdece34aadec4f34e078e494.gif",
       "avatar_count": 4875,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "A"
+    },
+    {
+      "slug": "cyber-across-verse",
+      "name": "Cyber Across Verse",
+      "description": null,
+      "license": "Unknown",
+      "chain": "polygon",
+      "storage_provider": "self-host",
+      "contract": null,
+      "banner": null,
+      "pfp": "https://i2c.seadn.io/polygon/0x2953399124f0cbb46d2cbacd8a89cf0599974963/c1b45c87c7284961a9d46a0b945cbb/c3c1b45c87c7284961a9d46a0b945cbb.png",
+      "avatar_count": null,
       "purchase_gated": false,
       "status": "staged",
       "tier": "A"

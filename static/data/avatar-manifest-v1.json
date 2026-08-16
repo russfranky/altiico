@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-08-16T05:43:00Z",
-  "snapshot_id": "vrmcat-v1-931934f64f254a592e157b5f",
+  "generated_at": "2026-08-16T22:41:19Z",
+  "snapshot_id": "vrmcat-v1-6c3f139d05aa0de86a834f6a",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -112,6 +112,44 @@
         "corporate_use": false,
         "terminates_on_transfer": false,
         "hate_speech_termination": true
+      }
+    },
+    {
+      "id": "cyber-across-verse",
+      "name": "Cyber Across Verse",
+      "tier": "A",
+      "identifiers": {
+        "chain": "polygon",
+        "chain_id": "137",
+        "opensea_slug": "cyber-across-verse"
+      },
+      "resolution": {
+        "strategy": "token_metadata",
+        "vrm_pointer": {
+          "json_pointer_candidates": [
+            "/vrm_url",
+            "/vrm",
+            "/asset",
+            "/animation_url",
+            "/files/0/uri"
+          ],
+          "required_mime": [
+            "model/gltf-binary",
+            "model/vrm",
+            "application/octet-stream"
+          ]
+        }
+      },
+      "license": {
+        "use_scope": "unknown",
+        "commercial_scope": "unknown",
+        "credit": "unknown",
+        "redistribute_original": false,
+        "modify": false,
+        "redistribute_modified": false,
+        "corporate_use": false,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": false
       }
     },
     {

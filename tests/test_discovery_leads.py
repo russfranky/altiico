@@ -31,6 +31,7 @@ LEAD_SECTIONS = (
     "dappradar",
     "programmatic_sources",
     "awesome_3d_missing_contracts",
+    "opensea_nft_discovery",
 )
 
 # Sections expected by the methodology. A missing section means a triage

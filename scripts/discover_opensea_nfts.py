@@ -32,6 +32,7 @@ DEFAULT_QUERIES = (
     "VRMC_vrm",
     "VRoid Hub",
     "ready player me VRM",
+    "3D Avatar Character VRM",
 )
 
 # Known non-avatar or non-VRM marketplace hits that dominate unfiltered search.
@@ -56,6 +57,7 @@ JUNK_COLLECTION_SLUGS = frozenset({
     "da-gloobiez",
 })
 DOMAIN_NAME_RE = re.compile(r"\.(?:eth|crypto|nft|wallet|dao|x|luxe|blockchain)$", re.I)
+UNTITLED_COLLECTION_RE = re.compile(r"^untitled-collection-\d+$", re.I)
 
 
 def utc_now() -> str:
@@ -104,14 +106,30 @@ def _collection_slug(row: dict[str, Any]) -> str:
 
 
 def is_junk_lead(hit: dict[str, Any]) -> bool:
-    """Drop known non-avatar marketplaces and domain-name tokens before spending get_nft budget."""
+    """Drop known non-avatar marketplaces, untitled dumps, and domain-name tokens."""
     slug = str(hit.get("collection") or "").strip().lower()
     if slug in JUNK_COLLECTION_SLUGS:
+        return True
+    if UNTITLED_COLLECTION_RE.match(slug):
         return True
     name = str(hit.get("name") or "").strip()
     if DOMAIN_NAME_RE.search(name):
         return True
     return False
+
+
+def unique_validations(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep one record per content hash so CDN mirrors are not counted twice."""
+    seen: set[str] = set()
+    unique: list[dict[str, Any]] = []
+    for row in rows:
+        sha = str(row.get("content_sha256") or row.get("sha256") or "").lower()
+        if sha:
+            if sha in seen:
+                continue
+            seen.add(sha)
+        unique.append(row)
+    return unique
 
 
 def lead_score(hit: dict[str, Any]) -> tuple[int, int, str]:
@@ -237,6 +255,7 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                         hit["validated_vrms"].append(validation)
                     else:
                         hit["rejected_model_candidates"].append(validation)
+                hit["validated_vrms"] = unique_validations(hit["validated_vrms"])
                 if hit["validated_vrms"]:
                     print(
                         f"NFT VRM HIT {hit['chain']}:{hit['contract']}:{hit['token_id']} "
@@ -255,6 +274,7 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
 
     valid = [v for hit in ranked for v in hit["validated_vrms"]]
     rejected = [v for hit in ranked for v in hit["rejected_model_candidates"]]
+    unique_valid = unique_validations(valid)
     summary = {
         "search_requests": search_requests,
         "queries": len(queries),
@@ -269,6 +289,7 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
         "model_candidates": sum(len(hit["model_candidates"]) for hit in ranked),
         "nfts_with_validated_vrms": sum(bool(hit["validated_vrms"]) for hit in ranked),
         "validated_vrms": len(valid),
+        "unique_validated_vrms": len(unique_valid),
         "rejected_model_candidates": len(rejected),
         "validation_statuses": dict(Counter(v["status"] for v in [*valid, *rejected])),
     }
