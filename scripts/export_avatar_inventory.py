@@ -155,7 +155,14 @@ def merge_assets(assets: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if current is None:
             merged[url] = dict(asset)
             continue
-        if current.get("format") == "unknown" and asset.get("format") != "unknown":
+        if current.get("format") != asset.get("format") and asset.get("format") in SUPPORTED_FORMATS:
+            # Extensionless CDN URLs default to VRM when imported from the
+            # VRM inventory. An evidenced research format (GLB/FBX) wins.
+            if current.get("format") == "unknown" or asset.get("source_evidence"):
+                current["format"] = asset.get("format")
+                if asset.get("rigged") is not None:
+                    current["rigged"] = asset.get("rigged")
+        elif current.get("format") == "unknown" and asset.get("format") != "unknown":
             current["format"] = asset.get("format")
         if asset.get("rigged") is True:
             current["rigged"] = True

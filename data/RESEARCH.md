@@ -1,5 +1,13 @@
 # superyeti — Deep Research: Missing Collections & Data Quality Improvements
 
+**2026-08-17 addendum.** Historical “fully rigged NFT avatar” claims from X
+plus A3AC / XR / Bankless archives live in
+[`x_rigged_avatar_claims.json`](x_rigged_avatar_claims.json)
+([method note](x_rigged_avatar_claims.md)). That file is a claims ledger, not
+a verified VRM inventory. VOLTZ is already in the catalog: public sample is
+a GLB idle; official VRM is holder-gated. See
+[`catalog_research.d/voltz.json`](catalog_research.d/voltz.json).
+
 ## Current State
 
 - **65 collections** (Tier A: 25, Tier B: 29, Tier C: 11)

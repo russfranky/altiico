@@ -1,0 +1,199 @@
+{
+  "id": "voltz",
+  "schema": "vrm-catalog-research-v1",
+  "identity": {
+    "name": "VOLTZ Avatars",
+    "creator": "VOLTZ",
+    "tier": "B",
+    "chain": "ethereum",
+    "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
+    "opensea_slug": "voltz-avatars",
+    "project_url": "https://voltz.me/",
+    "source": "official+opensea+structural-probe",
+    "notes": "Found. voltz.me / OpenSea / 0xea377cfd0ceab570569d8d37a910071d9e9eb1d4. Public CDN sample (assets.voltz.me/avatar/3d/…) returns 1.glbV01-idle.glb — glTF 2.0, CORS *, no VRM/VRMC_vrm extension, no skins. The vault (wallet-gated) documents VRM + GLB + FBX. Locale copy: VRM is a private encrypted holder link; currently 4 archetype VRMs (Female, Android, Male, Old man), not a unique VRM per token. Instagram 2022 also advertised .GLB / .VRM / .FBX in the vault. We did not get a public VRM URL. Status stays reachable_not_vrm as VRM, labeled GLB-not-VRM."
+  },
+  "x": {
+    "value": "https://x.com/voltz_me",
+    "handle": "voltz_me",
+    "evidence": [
+      {
+        "kind": "official_project_profile",
+        "source": "https://x.com/voltz_me",
+        "observed_at": "2026-08-17"
+      },
+      {
+        "kind": "opensea_collection_social",
+        "source": "https://opensea.io/collection/voltz-avatars",
+        "observed_at": "2026-08-17"
+      }
+    ]
+  },
+  "launch_date": {
+    "value": "2022-05-10",
+    "evidence": [
+      {
+        "kind": "marketplace_history",
+        "source": "https://opensea.io/collection/voltz-avatars",
+        "note": "OpenSea records the collection created date as 10 May 2022."
+      }
+    ]
+  },
+  "short_description": {
+    "value": "VOLTZ are metaverse-ready, full-body 3D avatars. The public CDN sample is a GLB idle; official VRM files are holder-gated vault downloads (four archetypes, not per-token).",
+    "evidence": [
+      {
+        "kind": "official_collection_copy",
+        "source": "https://opensea.io/collection/voltz-avatars",
+        "note": "OpenSea description states VOLTZ are metaverse-ready, full-body gaming rigged 3D avatars."
+      },
+      {
+        "kind": "structural_glb_validation",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17",
+        "note": "Public sample fetches as GLB 2.0 named 1.glbV01-idle.glb with no VRM/VRMC_vrm extension and no skins."
+      },
+      {
+        "kind": "official_vault_copy",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17",
+        "note": "Vault locale copy documents VRM as a private encrypted holder link and lists four archetype VRMs."
+      }
+    ]
+  },
+  "project_status": {
+    "value": "active",
+    "state": "active",
+    "note": "Official site, vault, and OpenSea collection remain reachable.",
+    "evidence": [
+      {
+        "kind": "official_site",
+        "source": "https://voltz.me/",
+        "observed_at": "2026-08-17"
+      },
+      {
+        "kind": "marketplace_listing",
+        "source": "https://opensea.io/collection/voltz-avatars",
+        "observed_at": "2026-08-17"
+      }
+    ]
+  },
+  "storage": {
+    "value": "self_host",
+    "scope": "public_glb_sample_and_holder_vault",
+    "note": "Public token model URLs are served from assets.voltz.me. Official VRM/FBX delivery is the wallet-gated vault, not the public CDN sample.",
+    "evidence": [
+      {
+        "kind": "public_cdn_sample",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17"
+      },
+      {
+        "kind": "official_vault",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17"
+      }
+    ]
+  },
+  "avatar_formats": {
+    "value": ["glb", "vrm", "fbx"],
+    "state": "shipped_mixed_access",
+    "note": "Public sample is an unrigged GLB idle. Official copy documents VRM + GLB + FBX in the holder vault. VRM is not a unique per-token file.",
+    "evidence": [
+      {
+        "kind": "structural_glb_validation",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17",
+        "note": "Content-Disposition 1.glbV01-idle.glb; glTF 2.0; no VRM/VRMC_vrm; no skins."
+      },
+      {
+        "kind": "official_vault_copy",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17",
+        "note": "Vault documents VRM + GLB + FBX. VRM described as a private encrypted holder link. Four archetypes: Female, Android, Male, Old man."
+      }
+    ]
+  },
+  "vrm_inventory": {
+    "state": "holder_gated",
+    "coverage": "holder_gated_archetype_vrms_not_public",
+    "urls": [],
+    "note": "Official VRM exists in the wallet-gated vault as a private encrypted holder link. Currently four archetype VRMs (Female, Android, Male, Old man), not one unique file per token. The public assets.voltz.me model URL is a GLB idle and must not be counted as a VRM inventory URL.",
+    "evidence": [
+      {
+        "kind": "official_vault_copy",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17",
+        "note": "VRM is a private encrypted holder link; four archetype files, not per-token."
+      },
+      {
+        "kind": "structural_glb_validation",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17",
+        "note": "Public sample is GLB 2.0 without a VRM extension, so it is excluded from the VRM inventory."
+      }
+    ]
+  },
+  "avatar_inventory": {
+    "state": "partial",
+    "coverage": "public_glb_sample_not_vrm_vault_holder_gated",
+    "assets": [
+      {
+        "url": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "format": "glb",
+        "rigged": false,
+        "source_evidence": [
+          {
+            "kind": "structural_glb_validation",
+            "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+            "observed_at": "2026-08-17",
+            "note": "Fetched as GLB 2.0 named 1.glbV01-idle.glb. No VRM/VRMC_vrm extension. No skins, so this public sample is not a usable rigged avatar under probe rules."
+          }
+        ]
+      }
+    ],
+    "note": "One public GLB idle was recovered. Official VRM/FBX remain holder-gated and unenumerated. Do not treat the public URL as a verified VRM.",
+    "evidence": [
+      {
+        "kind": "structural_glb_validation",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17",
+        "note": "Public CDN sample is a GLB idle, not a VRM."
+      },
+      {
+        "kind": "official_vault_copy",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17",
+        "note": "Vault documents additional VRM + GLB + FBX behind wallet ownership."
+      }
+    ]
+  },
+  "file_access": {
+    "mode": "holder_gated",
+    "requires_ownership": true,
+    "access_url": "https://voltz.me/en/voltz-vault",
+    "state": "holder_gated",
+    "note": "Official VRM is a private encrypted holder link in the vault. The public CDN sample is a GLB idle, not a VRM.",
+    "evidence": [
+      {
+        "kind": "official_vault",
+        "source": "https://voltz.me/en/voltz-vault",
+        "observed_at": "2026-08-17",
+        "note": "Vault requires a connected wallet. VRM described as a private encrypted holder link."
+      }
+    ]
+  },
+  "avatar_file_access": {
+    "mode": "public",
+    "requires_ownership": false,
+    "access_url": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+    "note": "The public sample GLB is reachable without a wallet. It is not a VRM and is not rigged.",
+    "evidence": [
+      {
+        "kind": "public_cdn_sample",
+        "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "observed_at": "2026-08-17",
+        "note": "HTTP 200, CORS *, Content-Disposition 1.glbV01-idle.glb."
+      }
+    ]
+  }
+}

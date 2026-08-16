@@ -41,6 +41,10 @@ assert((html.match(/role="dialog"/g) || []).length === 1, "keeps only the necess
 assert(!html.includes("imgModal"), "removes the redundant image-preview modal");
 assert(!js.includes("showImg("), "removes image-preview JavaScript");
 assert(js.includes("function clearFilters()"), "offers one reset path for search and filters");
+assert(
+  js.includes("GLB, not VRM") && js.includes("Not a VRM") && !js.includes("Invalid file"),
+  "reachable-not-VRM files are labeled as found GLBs, not missing collections",
+);
 assert(js.includes("aria-hidden"), "keeps viewer visibility explicit to assistive technology");
 assert(js.includes("lastFocusedElement"), "returns focus after the viewer closes");
 assert(js.includes("if (!window._vrmModalOpen)"), "pauses the 3D render loop when the viewer closes");

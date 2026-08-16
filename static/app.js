@@ -312,7 +312,13 @@ function vrmStatus(collection) {
     return `<span class="badge vrm-live" title="${esc(title)}">Verified</span>`;
   }
   if (status === 'reachable_not_vrm') {
-    return '<span class="badge vrm-warn" title="The file is reachable but does not contain a VRM extension">Invalid file</span>';
+    const notes = String(collection.notes || collection.short_description || '').toLowerCase();
+    const glb = notes.includes('glb');
+    const label = glb ? 'GLB, not VRM' : 'Not a VRM';
+    const title = glb
+      ? 'A file was fetched. It is a GLB without a VRM / VRMC_vrm extension. The VRM, if it exists, is not at this URL.'
+      : 'A file was fetched, but it is not a valid VRM. There is no VRM / VRMC_vrm extension at this URL.';
+    return `<span class="badge vrm-warn" title="${esc(title)}">${label}</span>`;
   }
   if (status === 'no_url') {
     return '<span class="badge vrm-none" title="No VRM file URL is recorded">No file</span>';

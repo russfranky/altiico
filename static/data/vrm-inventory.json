@@ -5,11 +5,11 @@
   "summary": {
     "collections": 69,
     "complete": 2,
-    "partial": 18,
+    "partial": 17,
     "unknown": 49,
     "notShipped": 0,
     "unrecoverable": 0,
-    "enumeratedUrls": 171,
+    "enumeratedUrls": 170,
     "moralisCompleteCollections": 0
   },
   "collections": [
@@ -1966,33 +1966,62 @@
     {
       "collection_id": "voltz",
       "name": "VOLTZ Avatars",
-      "state": "partial",
+      "state": "holder_gated",
       "complete": false,
       "terminal": false,
-      "coverage_source": "partial_links",
+      "coverage_source": "catalog_research",
       "expected_models": 3623,
-      "enumerated_urls": 1,
-      "urls": [
-        "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325"
-      ],
+      "enumerated_urls": 0,
+      "urls": [],
       "candidate_url_template": null,
       "url_template_evidence": [],
       "moralis_metadata_complete": false,
       "moralis_tokens_enumerated": 0,
       "storage": {
         "types": [
-          "https"
+          "self_host"
         ],
-        "scope": "vrm_files",
-        "evidence": []
+        "scope": "public_glb_sample_and_holder_vault",
+        "evidence": [
+          {
+            "kind": "public_cdn_sample",
+            "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+            "observed_at": "2026-08-17"
+          },
+          {
+            "kind": "official_vault",
+            "source": "https://voltz.me/en/voltz-vault",
+            "observed_at": "2026-08-17"
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "holder_gated",
+        "requires_ownership": true,
+        "access_url": "https://voltz.me/en/voltz-vault",
+        "evidence": [
+          {
+            "kind": "official_vault",
+            "source": "https://voltz.me/en/voltz-vault",
+            "observed_at": "2026-08-17",
+            "note": "Vault requires a connected wallet. VRM described as a private encrypted holder link."
+          }
+        ]
       },
-      "inventory_evidence": []
+      "inventory_evidence": [
+        {
+          "kind": "official_vault_copy",
+          "source": "https://voltz.me/en/voltz-vault",
+          "observed_at": "2026-08-17",
+          "note": "VRM is a private encrypted holder link; four archetype files, not per-token."
+        },
+        {
+          "kind": "structural_glb_validation",
+          "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+          "observed_at": "2026-08-17",
+          "note": "Public sample is GLB 2.0 without a VRM extension, so it is excluded from the VRM inventory."
+        }
+      ]
     },
     {
       "collection_id": "research-0x631086",
