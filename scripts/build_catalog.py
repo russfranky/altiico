@@ -116,6 +116,7 @@ def query_collections(conn) -> list:
         }
 
     for c in collections:
+        c.pop("project_status", None)
         c["contracts"] = contracts_map.get(c["id"], [])
         c.update(avatar_reach.get(c["id"], {}))
         ld = license_map.get(c["id"])

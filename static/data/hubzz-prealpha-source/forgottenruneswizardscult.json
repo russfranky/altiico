@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "7362",
-      "tokenId": "7362",
-      "name": "Shadow Mage Rowena of the Wood",
+      "id": "sample",
+      "tokenId": null,
+      "name": "Forgotten Runes Wizards Cult sample",
       "originalSourceUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
       "transportUrl": "https://nftz.forgottenrunes.com/dev/3d/wizards/7362/wizard_7362.vrm",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42/c76e428b85abb9108538a240459712/56c76e428b85abb9108538a240459712.png",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

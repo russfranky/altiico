@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "20",
-      "tokenId": "20",
-      "name": "Boomboxhead #114",
+      "id": "sample",
+      "tokenId": null,
+      "name": "Boomboxheads V2 sample",
       "originalSourceUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
       "transportUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xb67ff46dfde55ad2fe05881433e5687fd1000312/27ebbf300bda437abbfe9ed8f612a93e.jpeg",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "2051",
-      "tokenId": "2051",
-      "name": "Metaani GEN#08000",
+      "id": "sample",
+      "tokenId": null,
+      "name": "MetaaniGEN sample",
       "originalSourceUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
       "transportUrl": "ipfs://QmaNMoE1yFGPqdiiFuBkoo26utAXsf7WdxutUKWkFiJDTF",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xa467ab9447afa5db0c70325348d810d2058dde18/62b3e138636c8f7331cc40d14d5b51/5962b3e138636c8f7331cc40d14d5b51.png",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

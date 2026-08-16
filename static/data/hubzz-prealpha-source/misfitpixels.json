@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "9",
-      "tokenId": "9",
-      "name": "MisfitPIXELS #231",
+      "id": "sample",
+      "tokenId": null,
+      "name": "MisfitPIXELS sample",
       "originalSourceUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
       "transportUrl": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0x618951345638caa062259cdbed445d4fb661b774/ddd2509040d907c11ccc4cb9bd178d/15ddd2509040d907c11ccc4cb9bd178d.png",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

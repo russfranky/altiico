@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "17438",
-      "tokenId": "17438",
-      "name": "Meebit #14428",
+      "id": "sample",
+      "tokenId": null,
+      "name": "Meebits sample",
       "originalSourceUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
       "transportUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7/184e2fc586f67d167e7f536bc278f7/c5184e2fc586f67d167e7f536bc278f7.png",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

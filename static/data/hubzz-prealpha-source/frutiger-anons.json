@@ -9,12 +9,12 @@
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "4",
-      "tokenId": "4",
-      "name": "Frutiger Anons #137",
+      "id": "sample",
+      "tokenId": null,
+      "name": "Frutiger Anons sample",
       "originalSourceUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
       "transportUrl": "https://ipfs.io/ipfs/bafybeias5zgqftbiqjfg6bdufufgqzgedlhnlgtx7u7qi3lvlbhf2f4wxy/1.vrm",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088/238eae79f93b324e57269eb153447f7c.gif",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",

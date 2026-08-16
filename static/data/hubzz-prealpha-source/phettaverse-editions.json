@@ -11,10 +11,10 @@
     {
       "id": "sample",
       "tokenId": null,
-      "name": "Take The Tab",
+      "name": "Phettaverse Editions sample",
       "originalSourceUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
       "transportUrl": "ipfs://QmZYVVP2XMNK2mjcrac6zyocvAU9xuEupZ4zYuoPVuimr7/borgormachinelowpoly.vrm",
-      "thumbnailUrl": "https://i2c.seadn.io/ethereum/0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51/6447c730e2f355c9efb86af3e0c1f7/c06447c730e2f355c9efb86af3e0c1f7.png",
+      "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
       "validationScope": "collection_sample_binary",
