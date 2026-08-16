@@ -5,6 +5,8 @@ VRM, FBX, and rigged GLB model inventories. Every claim in the catalog is
 source-attributed; every accepted avatar file passes binary validation, not
 URL or keyword heuristics.
 
+Public catalog: <https://altii.co/>
+
 Formerly `russfranky/vrm-catalog`. See `docs/HUBZZ_ALTIICO_INTEGRATION.md` for
 the planned merge of the public-facing catalog into the Hubzz avatar product.
 

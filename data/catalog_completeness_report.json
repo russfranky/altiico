@@ -1,23 +1,23 @@
 {
-  "schema": "avatar-catalog-completeness-v1",
-  "generatedAt": "2026-08-16T01:27:12.043584+00:00",
-  "policy": "Every collection research dimension must be resolved. The usable model dimension may be satisfied by an exhaustive avatar-ready VRM, rigged GLB, or evidence-backed rigged FBX inventory.",
+  "schema": "vrm-catalog-completeness-v1",
+  "generatedAt": "2026-08-16T03:19:03.782660+00:00",
+  "policy": "Every required collection research dimension must be concrete or explicitly resolved with evidence; IP rights and file-access gating are independent.",
   "summary": {
     "collections": 69,
-    "complete": 6,
-    "incomplete": 63,
+    "complete": 0,
+    "incomplete": 69,
     "missingByField": {
       "banner": 8,
       "short_description": 4,
-      "discord": 22,
-      "x": 14,
+      "discord": 21,
+      "x": 13,
       "logo": 2,
       "launch_date": 5,
-      "storage": 49,
-      "avatar_inventory": 61,
+      "storage": 48,
+      "vrm_inventory": 66,
       "ip_rights": 56,
-      "file_access": 63,
-      "project_status": 63
+      "file_access": 59,
+      "project_status": 62
     }
   },
   "collections": [
@@ -28,7 +28,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -86,8 +86,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -95,29 +94,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 3325,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -129,7 +110,7 @@
       "missing": [
         "discord",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -185,8 +166,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -194,29 +174,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 14833,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -227,7 +189,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -285,8 +247,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -294,29 +255,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 2500,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -327,7 +270,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -385,8 +328,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -394,29 +336,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9993,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -429,7 +353,7 @@
         "discord",
         "x",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -483,8 +407,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -492,29 +415,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 2000,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -524,7 +429,7 @@
       "tier": "B",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -584,11 +489,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -596,31 +497,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 26617,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -630,11 +511,7 @@
       "tier": "A",
       "complete": false,
       "missing": [
-        "discord",
-        "x",
-        "avatar_inventory",
-        "file_access",
-        "project_status"
+        "vrm_inventory"
       ],
       "fields": {
         "banner": {
@@ -650,12 +527,35 @@
           "source": "derived:description"
         },
         "discord": {
-          "ok": false,
-          "state": "missing"
+          "ok": true,
+          "state": "not_available",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_public_surface_inspection",
+              "source": "https://gm3.github.io/boomboxheads-v2/",
+              "observed_at": "2026-08-15",
+              "note": "Official mint page contains only a 'Mint page has moved to Zora!' note; no Discord link anywhere on the page."
+            },
+            {
+              "kind": "official_public_surface_inspection",
+              "source": "https://github.com/gm3/boomboxheads-v2-assets",
+              "observed_at": "2026-08-15",
+              "note": "Official v2 assets repository README contains no Discord link or invite."
+            },
+            {
+              "kind": "official_public_surface_inspection",
+              "source": "https://github.com/gm3/boom-tools",
+              "observed_at": "2026-08-15",
+              "note": "Official generator tool repository README contains no Discord link or invite."
+            }
+          ]
         },
         "x": {
-          "ok": false,
-          "state": "missing"
+          "ok": true,
+          "state": "present",
+          "value": "https://x.com/boomboxheads",
+          "source": "collections.twitter_username"
         },
         "logo": {
           "ok": true,
@@ -687,11 +587,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -717,32 +613,54 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
+          "ok": true,
+          "state": "present",
+          "value": "public",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "public_gateway_verification",
+              "source": "https://ipfs.io/ipfs/QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
+              "observed_at": "2026-08-15",
+              "note": "VRM binaries served successfully over public IPFS gateways without authentication during structural probing."
+            },
+            {
+              "kind": "official_license_statement",
+              "source": "https://github.com/gm3/boomboxheads-v2-assets",
+              "observed_at": "2026-08-15",
+              "note": "Official assets repository states the entire collection is CC0, allowing commercial use."
+            }
+          ],
           "detail": {
-            "requires_ownership": null,
-            "access_url": null
+            "access_url": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/",
+            "note": "All 420 VRM files are served from public IPFS gateways (ipfs.io, dweb.link, cloudflare-ipfs.com) without an NFT, wallet, or account; the collection is CC0."
           }
         },
         "project_status": {
-          "ok": false,
-          "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 420,
-            "formats": {
-              "vrm": 1
+          "ok": true,
+          "state": "dormant",
+          "value": "dormant",
+          "source": "catalog_research",
+          "evidence": [
+            {
+              "kind": "official_surface_static",
+              "source": "https://gm3.github.io/boomboxheads-v2/",
+              "observed_at": "2026-08-15",
+              "note": "Official mint page is static and defers to Zora; no current campaign, roadmap, or news."
             },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
+            {
+              "kind": "official_project_document",
+              "source": "https://hackmd.io/@XR/boomboxheads-v2",
+              "observed_at": "2026-08-15",
+              "note": "Project writeup last dated 2024-03-07; describes the completed mint and post-mint experiments."
+            },
+            {
+              "kind": "curated_collection_record",
+              "source": "https://opensea.io/collection/boomboxheads-v2",
+              "observed_at": "2026-08-15",
+              "note": "Release date 2023-04-17; capped supply 420 minted; only 5 recorded sales with no ongoing mint."
+            }
+          ]
         }
       }
     },
@@ -753,7 +671,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -811,8 +729,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -820,29 +737,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 333,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -853,7 +752,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -911,8 +810,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -920,29 +818,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9640,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -953,7 +833,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1011,8 +891,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1020,29 +899,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 19764,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1053,7 +914,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1111,8 +972,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1120,29 +980,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 19764,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1153,7 +995,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1211,8 +1053,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1220,29 +1061,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9999,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1253,7 +1076,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1311,8 +1134,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1320,29 +1142,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 300,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1350,8 +1154,10 @@
       "id": "a3ac-0xc49a9a",
       "name": "Chibi Apes",
       "tier": "C",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -1407,18 +1213,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [
-            {
-              "kind": "official_collection_3d_documentation",
-              "source": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
-              "observed_at": "2026-08-15",
-              "note": "Per-token rigged GLB files are served from the project's public CDN."
-            }
-          ],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -1444,7 +1239,7 @@
           "ok": true,
           "state": "present",
           "value": "public",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "official_collection_3d_documentation",
@@ -1465,8 +1260,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": false,
-            "access_url": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb"
+            "access_url": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
+            "note": "The Chibi Apes GLB CDN is publicly addressable without authentication; the on-chain token metadata publishes the URL directly. Owners and non-owners alike can fetch the avatar model."
           }
         },
         "project_status": {
@@ -1489,19 +1284,6 @@
             }
           ],
           "detail": "Chibi Labs remains an active collection project. The on-chain mint is closed but the 3D avatar viewer and CDN continue to serve live rigged GLB files for every minted token."
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 1,
-            "expected": 2998,
-            "formats": {
-              "glb": 1
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1512,7 +1294,7 @@
       "complete": false,
       "missing": [
         "discord",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1570,11 +1352,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -1582,31 +1360,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 4875,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1617,7 +1375,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1675,8 +1433,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1684,29 +1441,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 583,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1719,7 +1458,7 @@
         "banner",
         "short_description",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1773,8 +1512,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -1782,29 +1520,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 37,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1814,7 +1534,7 @@
       "tier": "A",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "file_access",
         "project_status"
       ],
@@ -1873,11 +1593,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -1904,31 +1620,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 10001,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -1939,7 +1635,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -1997,8 +1693,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2006,29 +1701,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 6967,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2042,7 +1719,7 @@
         "discord",
         "x",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2094,8 +1771,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2103,29 +1779,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 114,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2133,8 +1791,10 @@
       "id": "dickbuttverse",
       "name": "DickButtVerse",
       "tier": "A",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -2190,18 +1850,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [
-            {
-              "kind": "official_vrm_template",
-              "source": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
-              "observed_at": "2026-08-15",
-              "note": "Per-token VRM files are served from the project's public digitalocean CDN."
-            }
-          ],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -2230,7 +1879,7 @@
           "ok": true,
           "state": "present",
           "value": "public",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "official_vrm_template",
@@ -2251,8 +1900,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": false,
-            "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm"
+            "access_url": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/{id}.vrm",
+            "note": "The DickButtVerse VRM CDN is publicly addressable without authentication; the on-chain collection license is non-commercial but does not gate access to the file. The per-token URL is consistent with the public 3D asset viewer described on the official site."
           }
         },
         "project_status": {
@@ -2275,19 +1924,6 @@
             }
           ],
           "detail": "DickButtVerse is a holder-only community; the on-chain NFT continues to be traded but the project's web3D viewer is the only remaining live surface."
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 2,
-            "expected": 5363,
-            "formats": {
-              "vrm": 2
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2298,7 +1934,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2356,8 +1992,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2365,29 +2000,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 788,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2398,7 +2015,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2456,8 +2073,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2465,29 +2081,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 10000,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2502,7 +2100,7 @@
         "x",
         "launch_date",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2552,8 +2150,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2561,29 +2158,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": null,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2594,7 +2173,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2652,8 +2231,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2661,29 +2239,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9999,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2694,7 +2254,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -2752,8 +2312,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -2761,29 +2320,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9986,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2791,8 +2332,10 @@
       "id": "forgottenruneswizardscult",
       "name": "Forgotten Runes Wizards Cult",
       "tier": "A",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -2848,18 +2391,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [
-            {
-              "kind": "official_vrm_template",
-              "source": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
-              "observed_at": "2026-08-15",
-              "note": "Per-token VRM files are served from the project's own HTTPS endpoint."
-            }
-          ],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -2886,9 +2418,9 @@
         },
         "file_access": {
           "ok": true,
-          "state": "present",
+          "state": "holder_gated",
           "value": "holder_gated",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "official_vrm_template",
@@ -2908,8 +2440,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": true,
-            "access_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm"
+            "access_url": "https://nftz.forgottenrunes.com/dev/3d/wizards/{id}/wizard_{id}.vrm",
+            "note": "The Forgotten Runes VRM endpoint is publicly addressable by token ID; the holders' experience is gated by the holder-facing portal that exposes the link. The per-token URL is consistent with the public wizard download flow described on the official site."
           }
         },
         "project_status": {
@@ -2931,19 +2463,6 @@
             }
           ],
           "detail": "Forgotten Runes remains an active community-driven wizard lore project. The official site continues to publish wizard lore and the on-chain tokenURI surface remains live."
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 1,
-            "expected": 9944,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -2955,7 +2474,7 @@
       "missing": [
         "discord",
         "x",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3011,11 +2530,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -3023,31 +2538,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 400,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3057,7 +2552,7 @@
       "tier": "C",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3117,11 +2612,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -3129,31 +2620,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 8074,
-            "formats": {
-              "glb": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3161,8 +2632,10 @@
       "id": "NeonGlitch86 Collection (Shape side)",
       "name": "GARY GRIFTER",
       "tier": "A",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -3231,11 +2704,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -3264,7 +2733,7 @@
           "ok": true,
           "state": "present",
           "value": "public",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "public_repository_verification",
@@ -3274,8 +2743,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": false,
-            "access_url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/"
+            "access_url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/",
+            "note": "The VRM archive is served from a public GitHub repository; raw URLs download without an NFT, wallet, or account."
           }
         },
         "project_status": {
@@ -3297,19 +2766,6 @@
               "note": "Collection launch date 2024-03-06; no ongoing mint or project activity observed."
             }
           ]
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 46,
-            "expected": 27,
-            "formats": {
-              "vrm": 46
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3321,7 +2777,6 @@
       "missing": [
         "discord",
         "x",
-        "file_access",
         "project_status"
       ],
       "fields": {
@@ -3378,11 +2833,7 @@
             "https",
             "ipfs"
           ],
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -3408,32 +2859,14 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "ok": true,
+          "state": "present",
+          "value": "public",
+          "source": "avatars.is_public"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 61,
-            "expected": 60,
-            "formats": {
-              "vrm": 61
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3444,7 +2877,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3502,8 +2935,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -3511,29 +2943,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 11101,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3544,7 +2958,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3602,8 +3016,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -3611,29 +3024,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 5555,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3646,7 +3041,7 @@
         "discord",
         "x",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3700,8 +3095,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -3709,29 +3103,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 499,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3744,7 +3120,7 @@
         "discord",
         "x",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -3798,8 +3174,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -3807,29 +3182,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 67,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -3837,8 +3194,10 @@
       "id": "meebits",
       "name": "Meebits",
       "tier": "A",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -3894,18 +3253,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [
-            {
-              "kind": "official_vrm_template",
-              "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
-              "observed_at": "2026-08-15",
-              "note": "Per-token VRM files are served from the project larvabots API."
-            }
-          ],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -3934,7 +3282,7 @@
           "ok": true,
           "state": "present",
           "value": "public",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "official_vrm_template",
@@ -3955,8 +3303,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": false,
-            "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}"
+            "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+            "note": "The Meebits VRM API is publicly addressable without authentication. The project is operated by Yuga Labs and the assets are publicly available for download."
           }
         },
         "project_status": {
@@ -3979,19 +3327,6 @@
             }
           ],
           "detail": "Meebits remains an active avatar series under Yuga Labs. The latest 3D mesh and VRM API continues to serve validated per-token VRM files."
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 3,
-            "expected": 20000,
-            "formats": {
-              "vrm": 3
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4002,7 +3337,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4060,8 +3395,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -4069,29 +3403,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 7777,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4101,7 +3417,7 @@
       "tier": "A",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "file_access",
         "project_status"
       ],
@@ -4160,11 +3476,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -4191,31 +3503,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 1354,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4226,7 +3518,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4284,8 +3576,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -4293,29 +3584,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 4721,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4330,7 +3603,7 @@
         "x",
         "launch_date",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4380,8 +3653,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -4389,29 +3661,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": null,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4419,8 +3673,10 @@
       "id": "misfitpixels",
       "name": "MisfitPIXELS",
       "tier": "A",
-      "complete": true,
-      "missing": [],
+      "complete": false,
+      "missing": [
+        "vrm_inventory"
+      ],
       "fields": {
         "banner": {
           "ok": true,
@@ -4476,18 +3732,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [
-            {
-              "kind": "official_collection_3d_documentation",
-              "source": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
-              "observed_at": "2026-08-15",
-              "note": "Per-token VRM files are served from the project's public CDN."
-            }
-          ],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -4513,7 +3758,7 @@
           "ok": true,
           "state": "present",
           "value": "public",
-          "source": "avatar_inventory.access",
+          "source": "catalog_research",
           "evidence": [
             {
               "kind": "official_collection_3d_documentation",
@@ -4534,8 +3779,8 @@
             }
           ],
           "detail": {
-            "requires_ownership": false,
-            "access_url": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm"
+            "access_url": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+            "note": "The MisfitPIXELS CDN is publicly addressable without authentication; the on-chain token metadata publishes the URL directly. Owners and non-owners alike can fetch the avatar model."
           }
         },
         "project_status": {
@@ -4558,19 +3803,6 @@
             }
           ],
           "detail": "MisfitPIXELS remains an active collection project. The on-chain mint is closed but the 3D avatar delivery and metadata service continue to serve live VRM/FBX/GLB/GLTF files for every minted token."
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 1,
-            "expected": 1000,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4581,7 +3813,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4639,8 +3871,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -4648,29 +3879,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9999,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4684,7 +3897,7 @@
         "short_description",
         "discord",
         "x",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4736,11 +3949,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -4748,31 +3957,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 41,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4786,8 +3975,6 @@
         "discord",
         "x",
         "launch_date",
-        "avatar_inventory",
-        "file_access",
         "project_status"
       ],
       "fields": {
@@ -4840,11 +4027,7 @@
             "https",
             "ipfs"
           ],
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -4870,32 +4053,14 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "ok": true,
+          "state": "present",
+          "value": "public",
+          "source": "avatars.is_public"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 12,
-            "expected": null,
-            "formats": {
-              "vrm": 12
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -4906,7 +4071,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -4964,8 +4129,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -4973,29 +4137,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 8875,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5007,7 +4153,7 @@
       "missing": [
         "discord",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5063,8 +4209,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5072,29 +4217,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 1965,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5105,7 +4232,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5163,8 +4290,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5172,29 +4298,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 2390,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5205,7 +4313,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5263,8 +4371,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5272,29 +4379,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9982,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5310,7 +4399,7 @@
         "logo",
         "launch_date",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5358,8 +4447,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5367,29 +4455,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": null,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5400,7 +4470,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5458,8 +4528,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5467,29 +4536,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 11001,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5500,7 +4551,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5558,8 +4609,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5567,29 +4617,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9668,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5599,7 +4631,7 @@
       "tier": "A",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5659,11 +4691,7 @@
           "ok": true,
           "state": "present",
           "value": "ipfs",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -5671,31 +4699,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 371,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5708,7 +4716,7 @@
         "banner",
         "discord",
         "x",
-        "avatar_inventory",
+        "vrm_inventory",
         "file_access",
         "project_status"
       ],
@@ -5761,11 +4769,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -5792,31 +4796,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 1,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5833,7 +4817,7 @@
         "logo",
         "launch_date",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5879,8 +4863,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5888,29 +4871,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": null,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -5922,7 +4887,7 @@
       "missing": [
         "discord",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -5978,8 +4943,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -5987,29 +4951,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 2129,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6020,7 +4966,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6078,8 +5024,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6087,29 +5032,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 5553,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6121,7 +5048,7 @@
       "missing": [
         "discord",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6177,8 +5104,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6186,29 +5112,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 47848,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6219,7 +5127,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6277,8 +5185,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6286,29 +5193,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9997,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6319,7 +5208,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6377,8 +5266,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6386,29 +5274,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9999,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6419,7 +5289,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6477,8 +5347,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6486,29 +5355,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9998,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6519,7 +5370,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6577,8 +5428,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6586,29 +5436,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9998,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6619,8 +5451,7 @@
       "complete": false,
       "missing": [
         "discord",
-        "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6675,9 +5506,10 @@
           }
         },
         "storage": {
-          "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "ok": true,
+          "state": "present",
+          "value": "https",
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -6685,29 +5517,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 631,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6717,7 +5531,7 @@
       "tier": "B",
       "complete": false,
       "missing": [
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6777,11 +5591,7 @@
           "ok": true,
           "state": "present",
           "value": "https",
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": false,
@@ -6789,31 +5599,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "partial",
-          "value": {
-            "known_assets": 1,
-            "expected": 3623,
-            "formats": {
-              "vrm": 1
-            },
-            "coverage": "partial"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6825,7 +5615,7 @@
       "missing": [
         "discord",
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6881,8 +5671,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6890,29 +5679,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 4442,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -6923,7 +5694,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -6981,8 +5752,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -6990,29 +5760,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 9735,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -7023,7 +5775,6 @@
       "complete": false,
       "missing": [
         "discord",
-        "file_access",
         "project_status"
       ],
       "fields": {
@@ -7082,11 +5833,7 @@
             "https",
             "ipfs"
           ],
-          "source": "avatar_inventory.storage",
-          "evidence": [],
-          "detail": {
-            "scope": "avatar_files"
-          }
+          "source": "vrm_urls"
         },
         "ip_rights": {
           "ok": true,
@@ -7112,32 +5859,14 @@
           "source": "license_dimensions"
         },
         "file_access": {
-          "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "ok": true,
+          "state": "present",
+          "value": "public",
+          "source": "avatars.is_public"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": true,
-          "state": "complete",
-          "value": {
-            "known_assets": 81,
-            "expected": 80,
-            "formats": {
-              "vrm": 81
-            },
-            "coverage": "complete"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -7148,7 +5877,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -7206,8 +5935,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -7215,29 +5943,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 4000,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -7248,7 +5958,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -7306,8 +6016,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -7315,29 +6024,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 10000,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     },
@@ -7348,7 +6039,7 @@
       "complete": false,
       "missing": [
         "storage",
-        "avatar_inventory",
+        "vrm_inventory",
         "ip_rights",
         "file_access",
         "project_status"
@@ -7406,8 +6097,7 @@
         },
         "storage": {
           "ok": false,
-          "state": "unknown",
-          "source": "avatar_inventory.storage"
+          "state": "unknown"
         },
         "ip_rights": {
           "ok": false,
@@ -7415,29 +6105,11 @@
         },
         "file_access": {
           "ok": false,
-          "state": "unknown",
-          "value": null,
-          "source": "avatar_inventory.access",
-          "evidence": [],
-          "detail": {
-            "requires_ownership": null,
-            "access_url": null
-          }
+          "state": "unknown"
         },
         "project_status": {
           "ok": false,
           "state": "unknown"
-        },
-        "avatar_inventory": {
-          "ok": false,
-          "state": "unknown",
-          "value": {
-            "known_assets": 0,
-            "expected": 1379,
-            "formats": {},
-            "coverage": "unknown"
-          },
-          "source": "avatar_inventory"
         }
       }
     }
