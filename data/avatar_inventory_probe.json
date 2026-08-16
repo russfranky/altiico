@@ -1,17 +1,18 @@
 {
   "schema": "avatar-inventory-structural-probe-v1",
-  "generatedAt": "2026-08-16T00:04:45.704371+00:00",
-  "sourceGeneratedAt": "2026-08-16T00:04:35.229765+00:00",
+  "generatedAt": "2026-08-16T00:11:32.006470+00:00",
+  "sourceGeneratedAt": "2026-08-16T00:11:23.037126+00:00",
   "policy": "Every enumerated non-terminal asset must be avatar-ready: VRM extension, GLB skin/joint rig, or recognizable FBX with explicit rigging evidence.",
   "summary": {
-    "collections": 4,
-    "avatarReadyCompleteCollections": 3,
-    "urls": 6,
-    "validAvatarUrls": 6,
+    "collections": 5,
+    "avatarReadyCompleteCollections": 4,
+    "urls": 7,
+    "validAvatarUrls": 7,
     "validVrmUrls": 6,
-    "validRiggedGlbUrls": 0,
+    "validRiggedGlbUrls": 1,
     "validRiggedFbxUrls": 0,
     "statusCounts": {
+      "valid_rigged_glb": 1,
       "valid_vrm": 6
     }
   },
@@ -69,6 +70,20 @@
       "validAssetUrls": 3,
       "validVrmUrls": 3,
       "validRiggedGlbUrls": 0,
+      "validRiggedFbxUrls": 0,
+      "invalidUrls": []
+    },
+    {
+      "catalogId": "a3ac-0xc49a9a",
+      "name": "Chibi Apes",
+      "terminalResearchState": null,
+      "metadataComplete": true,
+      "avatarReadyComplete": true,
+      "structurallyComplete": true,
+      "urls": 1,
+      "validAssetUrls": 1,
+      "validVrmUrls": 0,
+      "validRiggedGlbUrls": 1,
       "validRiggedFbxUrls": 0,
       "invalidUrls": []
     }
@@ -173,6 +188,22 @@
       "networkRequests": 2,
       "transportUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
       "formatHint": "vrm",
+      "formatMismatch": false,
+      "error": null
+    },
+    {
+      "url": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+      "status": "valid_rigged_glb",
+      "validAvatar": true,
+      "validVrm": false,
+      "actualFormat": "glb",
+      "rigged": true,
+      "riggingProof": "gltf_skin_joints",
+      "totalLength": 5627212,
+      "jsonChunkSha256": "3cdccdbceaf1633fe6c71b09fc5d79fcc25fb50d46325c0a025eee88e7403046",
+      "networkRequests": 2,
+      "transportUrl": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+      "formatHint": "glb",
       "formatMismatch": false,
       "error": null
     }

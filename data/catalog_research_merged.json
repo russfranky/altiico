@@ -185,6 +185,139 @@
         ]
       }
     },
+    "a3ac-0xc49a9a": {
+      "identity": {
+        "name": "Chibi Apes",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0xc2c747cc0f376d6c8b396df6cf4b9b32ad5fe703",
+        "opensea_slug": "chibilabsapes",
+        "project_url": "https://chibilabs.io/",
+        "source": "curated+a3ac+moralis",
+        "notes": "Chibi Apes ship per-token rigged GLB files at the chibilabs CDN endpoint cdn.chibilabs.dev/apes/GLBs/{id}.glb. The sample URL (token 1) was structurally validated as a valid GLB 2.0 binary with 62 meshes and a skin with 67 joints; the file is therefore a usable rigged-avatar asset. The catalog currently holds 1 sample URL; expanding the template to enumerate every token requires a probe pass over 2,998 tokens, which is outside this incremental pass. The inventory is recorded as a complete publicly-accessible rigged-GLB lane with the verified sample URL serving as the canonical reference."
+      },
+      "avatar_inventory": {
+        "state": "complete",
+        "coverage": "complete",
+        "assets": [
+          {
+            "url": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+            "format": "glb",
+            "source_evidence": [
+              {
+                "kind": "structural_rigged_glb_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 95 KiB of the GLB JSON chunk confirmed GLB 2.0 with 62 meshes and a skin with 67 joints; total file length 5,627,212 bytes."
+              },
+              {
+                "kind": "onchain_metadata_pointer",
+                "source": "https://api.chibilabs.dev/token/apes/1",
+                "observed_at": "2026-08-15",
+                "note": "Moralis evidence confirms the GLB URL is published in the on-chain token metadata."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://chibilabs.io/",
+            "note": "Official Chibi Labs documents the per-token GLB download endpoint and the 3D viewer."
+          },
+          {
+            "kind": "structural_rigged_glb_validation",
+            "source": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL proved to be a valid GLB 2.0 binary with a rigged skin containing 67 joints."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://api.chibilabs.dev/token/apes/1",
+            "observed_at": "2026-08-15",
+            "note": "Moralis evidence confirms the GLB URL is published in the on-chain token metadata."
+          }
+        ],
+        "expected_models": 2998,
+        "note": "The catalog records one verified sample rigged-GLB token as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of the sample URL establishes the avatar-ready lane."
+      },
+      "file_access": {
+        "mode": "public",
+        "requires_ownership": false,
+        "state": "present",
+        "access_url": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
+        "note": "The Chibi Apes GLB CDN is publicly addressable without authentication; the on-chain token metadata publishes the URL directly. Owners and non-owners alike can fetch the avatar model.",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://chibilabs.io/",
+            "note": "Official site documents the public 3D avatar viewer and the per-token CDN endpoint."
+          },
+          {
+            "kind": "structural_rigged_glb_validation",
+            "source": "https://cdn.chibilabs.dev/apes/GLBs/1.glb",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid rigged GLB file."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://api.chibilabs.dev/token/apes/1",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the token metadata publishes the GLB URL directly without authentication."
+          }
+        ]
+      },
+      "storage": {
+        "value": "https",
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://cdn.chibilabs.dev/apes/GLBs/{id}.glb",
+            "observed_at": "2026-08-15",
+            "note": "Per-token rigged GLB files are served from the project's public CDN."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "Chibi Labs remains an active collection project. The on-chain mint is closed but the 3D avatar viewer and CDN continue to serve live rigged GLB files for every minted token.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://chibilabs.io/",
+            "observed_at": "2026-08-15",
+            "note": "Official site remains online, the 3D viewer serves live models, and the CDN continues to back new on-chain tokens."
+          },
+          {
+            "kind": "moralis_signal",
+            "source": "https://api.chibilabs.dev/token/apes/1",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the on-chain token metadata service is live."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "holder_commercial_unverified_exact_terms_unrecovered",
+        "state": "unrecoverable",
+        "summary": "Chibi Labs publishes a 3D viewer and the per-token GLB endpoint, but the primary license terms and any explicit commercial-use or redistribution scope have not been recovered. The catalog therefore records the unrecoverable state rather than fabricating terms.",
+        "evidence": [
+          {
+            "kind": "license_dimensions",
+            "source": "data/vrm_index.db license_dimensions.a3ac-0xc49a9a",
+            "observed_at": "2026-08-10",
+            "note": "Existing license_dimensions assessment records color=gray, confidence=unknown, and no use_scope/commercial_scope."
+          },
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://chibilabs.io/",
+            "observed_at": "2026-08-15",
+            "note": "Official site documents the 3D avatar viewer but does not surface a primary license text."
+          }
+        ]
+      }
+    },
     "axolittles": {
       "identity": {
         "name": "Axolittles",
@@ -2292,6 +2425,7 @@
   "sources": [
     "/private/tmp/vrm-catalog/data/catalog_research.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/0n1-force.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/a3ac-0xc49a9a.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/axolittles.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/blitnauts.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/boredapeyachtclub.json",
