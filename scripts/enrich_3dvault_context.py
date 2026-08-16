@@ -18,14 +18,17 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 
-from discover_3dvault import page_signals
+from discover_3dvault import is_hashlike_label, page_signals
 
 BASE = Path(__file__).parent.parent
 DEFAULT_REPORT = BASE / "data" / "3dvault_discovery.json"
 URL_RE = re.compile(r"https?://[^\s\"'<>]+", re.I)
 HREF_RE = re.compile(r"(?:href|data-href|data-url|onclick)\s*=\s*[\"']([^\"']+)[\"']", re.I)
 TAG_RE = re.compile(r"<[^>]+>")
-HASHLIKE_RE = re.compile(r"^[a-f0-9_\-.]{24,}$", re.I)
+HASHLIKE_RE = re.compile(
+    r"^[a-f0-9]{16,}(?:[_-][a-f0-9]{8,})+(?:\.(?:png|jpe?g|gif|webp|svg))+$",
+    re.I,
+)
 ASSET_EXT = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".css", ".js", ".woff", ".woff2")
 
 
@@ -37,7 +40,7 @@ def clean_text(fragment: str) -> str:
     chunks = []
     for chunk in re.split(r"[|•·]", text):
         chunk = chunk.strip()
-        if not chunk or len(chunk) > 180 or HASHLIKE_RE.fullmatch(chunk):
+        if not chunk or len(chunk) > 180 or is_hashlike_label(chunk) or HASHLIKE_RE.fullmatch(chunk):
             continue
         if chunk.lower().startswith(("http://", "https://")):
             continue
@@ -123,10 +126,11 @@ def main() -> None:
             lead["sourceRole"] = "curated_context_link_lead"
             recovered_links += 1
         current_label = str(lead.get("label") or "")
-        if human and (not current_label or HASHLIKE_RE.fullmatch(current_label)):
+        if human and (not current_label or is_hashlike_label(current_label)):
             # Conservative label: context is a hint, not canonical identity.
             lead["contextLabelHint"] = human[:180]
-            recovered_labels += 1
+            if not current_label or is_hashlike_label(current_label):
+                recovered_labels += 1
         if lead.get("kind") == "avatar_collection" and lead.get("url"):
             lead["linkedPage"] = page_signals(session, lead["url"], args.timeout)
             followed += 1

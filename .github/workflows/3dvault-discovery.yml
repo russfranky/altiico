@@ -50,7 +50,7 @@ jobs:
           python scripts/discover_3dvault.py --output data/3dvault_discovery.json --max-follow 50
           python scripts/enrich_3dvault_context.py --report data/3dvault_discovery.json
           python scripts/discover_3dvault_backend.py --output data/3dvault_backend_probe.json
-          python scripts/discover_3dvault_named_projects.py --output data/3dvault_named_project_discovery.json --sample 40 --timeout 12 --collection-concurrency 2
+          python scripts/discover_3dvault_named_projects.py --output data/3dvault_named_project_discovery.json --slugs-from data/3dvault_backend_probe.json --sample 40 --timeout 12 --collection-concurrency 2
       - name: Materialize consideration inventory and evidence
         run: |
           python scripts/promote_3dvault_consideration.py

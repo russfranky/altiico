@@ -76,3 +76,39 @@ async def test_non_rate_limit_api_error_is_not_retried(monkeypatch):
         await runner.cleanup()
 
     assert calls == 1
+
+
+@pytest.mark.asyncio
+async def test_unverified_contract_is_empty_result_not_error(monkeypatch):
+    calls = 0
+
+    async def handler(request):
+        nonlocal calls
+        calls += 1
+        return web.json_response(
+            {
+                "status": "0",
+                "message": "NOTOK",
+                "result": "Contract source code not verified",
+            }
+        )
+
+    app = web.Application()
+    app.router.add_get("/", handler)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "127.0.0.1", 0)
+    await site.start()
+    port = site._server.sockets[0].getsockname()[1]
+    monkeypatch.setattr(etherscan_client, "BASE_URL", f"http://127.0.0.1:{port}/")
+
+    try:
+        async with EtherscanClient(
+            "test-key", max_concurrency=1, min_request_interval=0
+        ) as client:
+            result = await client.source_code("ethereum", "0xabc")
+    finally:
+        await runner.cleanup()
+
+    assert calls == 1
+    assert result == []

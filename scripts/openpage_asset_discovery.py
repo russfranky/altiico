@@ -145,19 +145,35 @@ def url_hits(value: str) -> list[str]:
     return [normalize_url(match.group(0)) for match in URL_RE.finditer(value)]
 
 
+VIA_PRIORITY = {
+    "mml_fetched": 3,
+    "mml_inline": 2,
+    "openpage_record": 1,
+}
+
+
 def add_hit(
     target: list[dict[str, Any]],
-    seen: set[tuple[str, str]],
+    seen: set[str],
     *,
     url: str,
     source: str,
     via: str,
 ) -> None:
+    """Record one URL per evidence lane, upgrading via when a better source appears."""
     normalized = normalize_url(url)
-    key = (normalized, via)
-    if not normalized or key in seen:
+    if not normalized:
         return
-    seen.add(key)
+    if normalized in seen:
+        for item in target:
+            if item["url"] != normalized:
+                continue
+            if VIA_PRIORITY.get(via, 0) > VIA_PRIORITY.get(str(item.get("via") or ""), 0):
+                item["source"] = source
+                item["via"] = via
+            return
+        return
+    seen.add(normalized)
     target.append({"url": normalized, "source": source, "via": via})
 
 
@@ -213,10 +229,10 @@ def inspect_record(
     vrm: list[dict[str, Any]] = []
     glb: list[dict[str, Any]] = []
     animation_glb: list[dict[str, Any]] = []
-    seen_mml: set[tuple[str, str]] = set()
-    seen_vrm: set[tuple[str, str]] = set()
-    seen_glb: set[tuple[str, str]] = set()
-    seen_animation_glb: set[tuple[str, str]] = set()
+    seen_mml: set[str] = set()
+    seen_vrm: set[str] = set()
+    seen_glb: set[str] = set()
+    seen_animation_glb: set[str] = set()
 
     for path, value in walk(record):
         for url in url_hits(value):

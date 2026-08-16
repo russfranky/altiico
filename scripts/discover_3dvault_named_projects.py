@@ -11,8 +11,43 @@ from scripts.opensea_client import OpenSeaClient
 from scripts.discover_opensea_candidates import _inspect_collection
 DEFAULT_SLUGS=("clonex","chimperschronicles","immadegen-quantum-cube","thewynlambo","visitors-of-imma-degen","voyagers-of-imma-degen")
 def now(): return datetime.now(timezone.utc).isoformat()
+
+
+def slugs_from_probe(path: Path) -> list[str]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    values = list(payload.get("openseaSlugs") or [])
+    for row in payload.get("assets") or []:
+        if isinstance(row, dict):
+            values.extend(row.get("openseaSlugs") or [])
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in values:
+        slug = str(raw or "").strip()
+        key = slug.lower()
+        if not slug or key in seen:
+            continue
+        seen.add(key)
+        out.append(slug)
+    return out
+
+
+def resolve_slugs(args: argparse.Namespace) -> list[str]:
+    slugs = [s.strip() for s in str(args.slugs or "").split(",") if s.strip()]
+    if args.slugs_from:
+        slugs.extend(slugs_from_probe(Path(args.slugs_from)))
+    out: list[str] = []
+    seen: set[str] = set()
+    for slug in slugs:
+        key = slug.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(slug)
+    return out or list(DEFAULT_SLUGS)
+
+
 async def run(args):
-    slugs=[s.strip() for s in args.slugs.split(",") if s.strip()]; client=OpenSeaClient(max_concurrency=2); leads=[]
+    slugs=resolve_slugs(args); client=OpenSeaClient(max_concurrency=2); leads=[]
     try:
         for slug in slugs:
             lead={"slug":slug,"name":slug,"description":"","contract":"","chains":[],"external_url":"","image_url":"","banner_image_url":"","nfts_sampled":0,"metadata_documents":0,"metadata_fetch_errors":0,"model_candidates":[],"validated_vrms":[],"rejected_model_candidates":[],"errors":[]}
@@ -36,6 +71,6 @@ async def run(args):
             s=str(row.get("status") or "unknown"); statuses[s]=statuses.get(s,0)+1
     return {"schema":"3dvault-named-project-discovery-v1","generatedAt":now(),"source":"3dvault recovered OpenSea collection identities","policy":"lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes","summary":{"collectionsInspected":len(leads),"nftsSampled":sum(x["nfts_sampled"] for x in leads),"metadataDocuments":sum(x["metadata_documents"] for x in leads),"modelCandidates":sum(len(x["model_candidates"]) for x in leads),"validatedVrms":sum(len(x["validated_vrms"]) for x in leads),"collectionsWithValidatedVrms":sum(bool(x["validated_vrms"]) for x in leads),"rejectedModelCandidates":sum(len(x["rejected_model_candidates"]) for x in leads),"validationStatuses":statuses},"collections":leads}
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--slugs",default=",".join(DEFAULT_SLUGS)); ap.add_argument("--sample",type=int,default=40); ap.add_argument("--timeout",type=float,default=12); ap.add_argument("--collection-concurrency",type=int,default=2); ap.add_argument("--output",type=Path,default=Path("data/3dvault_named_project_discovery.json")); args=ap.parse_args(); out=asyncio.run(run(args)); args.output.write_text(json.dumps(out,indent=2)+"\n",encoding="utf-8"); print(json.dumps(out["summary"],indent=2))
+    ap=argparse.ArgumentParser(); ap.add_argument("--slugs",default=",".join(DEFAULT_SLUGS)); ap.add_argument("--slugs-from",type=Path,help="JSON probe (openseaSlugs) to merge with --slugs"); ap.add_argument("--sample",type=int,default=40); ap.add_argument("--timeout",type=float,default=12); ap.add_argument("--collection-concurrency",type=int,default=2); ap.add_argument("--output",type=Path,default=Path("data/3dvault_named_project_discovery.json")); args=ap.parse_args(); out=asyncio.run(run(args)); args.output.write_text(json.dumps(out,indent=2)+"\n",encoding="utf-8"); print(json.dumps(out["summary"],indent=2))
     for c in out["collections"]: print(json.dumps({"slug":c["slug"],"name":c["name"],"contract":c["contract"],"nfts":c["nfts_sampled"],"modelCandidates":len(c["model_candidates"]),"validatedVrms":len(c["validated_vrms"]),"external":c["external_url"]},ensure_ascii=False))
 if __name__=="__main__": main()

@@ -1,3 +1,4 @@
+from scripts.audit_etherscan_authority import is_optional_explorer_error
 from scripts.preserve_etherscan_evidence import merge_with_previous, refresh_unusable
 
 
@@ -108,3 +109,15 @@ def test_all_error_audit_with_corroboration_remains_usable():
 
 def test_all_error_audit_without_corroboration_fails_closed():
     assert refresh_unusable(66, 66, 0) is True
+
+
+def test_etherscan_pro_tokeninfo_is_optional_warning():
+    assert is_optional_explorer_error(
+        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
+    )
+    assert is_optional_explorer_error(
+        "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain"
+    )
+    assert not is_optional_explorer_error(
+        "source: RuntimeError: Etherscan API error: Invalid API Key"
+    )
