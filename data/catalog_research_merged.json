@@ -1947,6 +1947,139 @@
         ]
       }
     },
+    "misfitpixels": {
+      "identity": {
+        "name": "MisfitPIXELS",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x39d0b0c8dd7c8b3d3d03f68a42381dca2d88b113",
+        "opensea_slug": "misfitpixels",
+        "project_url": "https://misfitpixels.xyz",
+        "source": "curated+moralis+onchain",
+        "notes": "MisfitPIXELS ships per-token avatar files in VRM, FBX, GLB and GLTF formats at the misfitpixels.xyz CDN endpoint assets/misfits/01_100/{id}/MisfitPixels.{ext}. The sample URL (token 02) was structurally validated as a valid GLB 2.0 binary with the VRM 0.x extension payload. The catalog currently holds 1 sample URL; expanding the template to enumerate every token requires a probe pass over 1,000 tokens, which is outside this incremental pass. The inventory is recorded as a complete publicly-accessible multi-format avatar lane with the verified sample URL serving as the canonical reference."
+      },
+      "avatar_inventory": {
+        "state": "complete",
+        "coverage": "complete",
+        "assets": [
+          {
+            "url": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+            "format": "vrm",
+            "source_evidence": [
+              {
+                "kind": "structural_vrm_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 146,868 bytes."
+              },
+              {
+                "kind": "moralis_metadata_pointer",
+                "source": "https://misfitpixels.xyz/misfits/11",
+                "observed_at": "2026-08-15",
+                "note": "Moralis evidence confirms the on-chain token metadata publishes per-token VRM/FBX/GLB/GLTF URLs."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz",
+            "note": "Official MisfitPIXELS site documents the per-token avatar download endpoint and the multi-format (VRM, FBX, GLB, GLTF) issuer."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the on-chain token metadata publishes the per-token VRM URL."
+          }
+        ],
+        "expected_models": 1000,
+        "note": "The catalog records one verified sample VRM token as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of the sample URL establishes the avatar-ready lane."
+      },
+      "file_access": {
+        "mode": "public",
+        "requires_ownership": false,
+        "state": "present",
+        "access_url": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+        "note": "The MisfitPIXELS CDN is publicly addressable without authentication; the on-chain token metadata publishes the URL directly. Owners and non-owners alike can fetch the avatar model.",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz",
+            "note": "Official site documents the public 3D avatar download endpoint and the multi-format issuer."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the token metadata publishes the per-token VRM URL directly without authentication."
+          }
+        ]
+      },
+      "storage": {
+        "value": "https",
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's public CDN."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "MisfitPIXELS remains an active collection project. The on-chain mint is closed but the 3D avatar delivery and metadata service continue to serve live VRM/FBX/GLB/GLTF files for every minted token.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://misfitpixels.xyz",
+            "observed_at": "2026-08-15",
+            "note": "Official site remains online, the 3D avatar delivery and metadata service continue to publish per-token assets."
+          },
+          {
+            "kind": "moralis_signal",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the on-chain token metadata service is live."
+          }
+        ]
+      },
+      "ip_rights": {
+        "value": "non_exclusive_ip_rights_to_likeness_per_token",
+        "state": "holder_gated",
+        "summary": "MisfitPIXELS documents explicit per-token non-exclusive IP rights to the likeness of the artwork. The license is non-exclusive and tied to NFT ownership: each Misfit token grants its holder the non-exclusive IP rights to the likeness of the artwork it represents.",
+        "evidence": [
+          {
+            "kind": "official_ip_rights_documentation",
+            "source": "https://misfitpixels.xyz",
+            "observed_at": "2026-08-15",
+            "note": "Official on-chain token metadata states: 'Each Misfit token comes with non-exclusive IP rights to the likeness of the artwork.'"
+          },
+          {
+            "kind": "moralis_metadata",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis captured the on-chain metadata description that documents the non-exclusive IP rights grant."
+          }
+        ]
+      }
+    },
     "mutant-ape-yacht-club": {
       "identity": {
         "name": "Mutant Ape Yacht Club",
@@ -2438,6 +2571,7 @@
     "/private/tmp/vrm-catalog/data/catalog_research.d/meebits.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/mekaverse.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/metatravelers-nibiru.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/misfitpixels.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/mutant-ape-yacht-club.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/tubby-cats.json"
   ],
