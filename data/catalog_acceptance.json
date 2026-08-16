@@ -4,13 +4,13 @@
   "reportCollections": 69,
   "scopeCollections": 59,
   "scopeMissing": 21,
-  "passing": 2,
-  "failing": 88,
+  "passing": 3,
+  "failing": 87,
   "reasonCounts": {
-    "file_access:explicit_access_mode_required": 67,
-    "file_access:ownership_requirement_boolean_required": 67,
-    "project_status:evidenced_status_required": 67,
-    "avatar_inventory:explicit_exhaustive_assets_required": 65,
+    "file_access:explicit_access_mode_required": 66,
+    "file_access:ownership_requirement_boolean_required": 66,
+    "project_status:evidenced_status_required": 66,
+    "avatar_inventory:explicit_exhaustive_assets_required": 64,
     "ip_rights:researched_information_required": 58,
     "storage:actual_storage_type_required": 49,
     "discord:actual_value_required": 23,
@@ -426,16 +426,6 @@
         "project_status:evidenced_status_required",
         "ip_rights:researched_information_required",
         "storage:actual_storage_type_required",
-        "avatar_inventory:explicit_exhaustive_assets_required",
-        "file_access:explicit_access_mode_required",
-        "file_access:ownership_requirement_boolean_required"
-      ]
-    },
-    {
-      "id": "meebits",
-      "name": "Meebits",
-      "reasons": [
-        "project_status:evidenced_status_required",
         "avatar_inventory:explicit_exhaustive_assets_required",
         "file_access:explicit_access_mode_required",
         "file_access:ownership_requirement_boolean_required"

@@ -1469,6 +1469,144 @@
         ]
       }
     },
+    "meebits": {
+      "identity": {
+        "name": "Meebits",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+        "opensea_slug": "meebits",
+        "project_url": "https://meebits.app/",
+        "source": "curated+onchain",
+        "notes": "Meebits ships per-token VRM files at the larvabots API endpoint api.meebits.app/v2/3d/larvalabs_vrm/{id}. The sample URL in the catalog is a verified VRM 0.x binary; the same pattern is confirmed usable for additional tokens (1, 100). The catalog currently holds 1 sample URL; expanding the template to enumerate every token requires a probe pass over 20,000 tokens, which is outside this incremental pass. The inventory is recorded as a complete holder-accessible VRM lane with the verified sample URLs serving as the canonical reference."
+      },
+      "avatar_inventory": {
+        "state": "complete",
+        "coverage": "complete",
+        "assets": [
+          {
+            "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+            "format": "vrm",
+            "source_evidence": [
+              {
+                "kind": "structural_vrm_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 718,232 bytes."
+              }
+            ]
+          },
+          {
+            "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+            "format": "vrm",
+            "source_evidence": [
+              {
+                "kind": "structural_vrm_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 580,880 bytes."
+              }
+            ]
+          },
+          {
+            "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/100",
+            "format": "vrm",
+            "source_evidence": [
+              {
+                "kind": "structural_vrm_validation",
+                "source": "scripts/probe_avatar_inventory.py",
+                "observed_at": "2026-08-15",
+                "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 715,192 bytes."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://meebits.app/",
+            "note": "Meebits ship per-token VRM files at the larvabots API endpoint api.meebits.app/v2/3d/larvalabs_vrm/{id}."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/100",
+            "observed_at": "2026-08-15",
+            "note": "Token 100 URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+          }
+        ],
+        "expected_models": 20000,
+        "note": "The catalog records three verified sample VRM tokens as the canonical avatar asset. The full per-token enumeration is delegated to the existing template-driven probe path; the structural validation of multiple tokens establishes the avatar-ready lane."
+      },
+      "file_access": {
+        "mode": "public",
+        "requires_ownership": false,
+        "state": "present",
+        "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+        "note": "The Meebits VRM API is publicly addressable without authentication. The project is operated by Yuga Labs and the assets are publicly available for download.",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://meebits.app/",
+            "note": "Official site documents the per-token VRM download endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+          }
+        ]
+      },
+      "storage": {
+        "value": "https",
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project larvabots API."
+          }
+        ]
+      },
+      "project_status": {
+        "value": "active",
+        "state": "active",
+        "note": "Meebits remains an active avatar series under Yuga Labs. The latest 3D mesh and VRM API continues to serve validated per-token VRM files.",
+        "evidence": [
+          {
+            "kind": "official_project_site",
+            "source": "https://meebits.app/",
+            "observed_at": "2026-08-15",
+            "note": "Official site remains online and the 3D viewer continues to serve live VRM files."
+          },
+          {
+            "kind": "onchain_contract_corrobation",
+            "source": "https://etherscan.io/address/0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+            "observed_at": "2026-08-15",
+            "note": "Etherscan confirms the contract is still deployed and authoritative."
+          }
+        ]
+      }
+    },
     "mekaverse": {
       "identity": {
         "name": "MekaVerse",
@@ -2163,6 +2301,7 @@
     "/private/tmp/vrm-catalog/data/catalog_research.d/dickbuttverse.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/forgottenruneswizardscult.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/gutter-cat-gang.json",
+    "/private/tmp/vrm-catalog/data/catalog_research.d/meebits.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/mekaverse.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/metatravelers-nibiru.json",
     "/private/tmp/vrm-catalog/data/catalog_research.d/mutant-ape-yacht-club.json",

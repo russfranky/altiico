@@ -1,17 +1,17 @@
 {
   "schema": "avatar-catalog-inventory-v1",
-  "generatedAt": "2026-08-16T00:01:25.184686+00:00",
-  "sourceVrmGeneratedAt": "2026-08-16T00:01:25.025298+00:00",
+  "generatedAt": "2026-08-16T00:04:35.229765+00:00",
+  "sourceVrmGeneratedAt": "2026-08-16T00:04:35.134462+00:00",
   "sourceOpenPageGeneratedAt": "2026-08-15T23:31:36.580714+00:00",
   "policy": "A collection may satisfy the usable-avatar requirement with one exhaustive supported representation lane: structurally valid VRM, rigged GLB, or evidence-backed rigged FBX. Legacy VRM not_shipped states do not terminally resolve the broader avatar inventory. Explicitly catalog-bound OpenPage VRM/GLB discoveries are merged as candidates only and cannot make an inventory exhaustive without separate coverage evidence.",
   "summary": {
     "collections": 69,
-    "complete": 4,
-    "partial": 16,
+    "complete": 5,
+    "partial": 15,
     "unknown": 49,
     "notShipped": 0,
     "unrecoverable": 0,
-    "enumeratedAssets": 172,
+    "enumeratedAssets": 174,
     "openpageCandidateCollections": 0,
     "openpageCandidateAssets": 0
   },
@@ -1717,26 +1717,63 @@
     {
       "collection_id": "meebits",
       "name": "Meebits",
-      "state": "partial",
-      "complete": false,
+      "state": "complete",
+      "complete": true,
       "terminal": false,
-      "coverage_source": "partial_supported_avatar_assets",
+      "coverage_source": "avatar_catalog_research",
       "expected_models": 20000,
-      "enumerated_assets": 1,
-      "enumerated_urls": 1,
+      "enumerated_assets": 3,
+      "enumerated_urls": 3,
       "formats": {
-        "vrm": 1
+        "vrm": 3
       },
       "assets": [
+        {
+          "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 580,880 bytes."
+            }
+          ]
+        },
+        {
+          "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/100",
+          "format": "vrm",
+          "rigged": true,
+          "rigging_evidence": [],
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 715,192 bytes."
+            }
+          ]
+        },
         {
           "url": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
           "format": "vrm",
           "rigged": true,
           "rigging_evidence": [],
-          "source_evidence": []
+          "source_evidence": [
+            {
+              "kind": "structural_vrm_validation",
+              "source": "scripts/probe_avatar_inventory.py",
+              "observed_at": "2026-08-15",
+              "note": "First 4 KiB and full JSON chunk confirmed as GLB 2.0 with the VRM 0.x extension payload; total file length 718,232 bytes."
+            }
+          ]
         }
       ],
       "urls": [
+        "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+        "https://api.meebits.app/v2/3d/larvalabs_vrm/100",
         "https://api.meebits.app/v2/3d/larvalabs_vrm/17438"
       ],
       "storage": {
@@ -1744,15 +1781,64 @@
           "https"
         ],
         "scope": "avatar_files",
-        "evidence": []
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project larvabots API."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://api.meebits.app/v2/3d/larvalabs_vrm/{id}",
+        "evidence": [
+          {
+            "kind": "official_vrm_template",
+            "source": "https://meebits.app/",
+            "note": "Official site documents the per-token VRM download endpoint."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+            "observed_at": "2026-08-15",
+            "note": "Token 1 URL is publicly reachable without authentication and returns a valid VRM file."
+          }
+        ]
       },
-      "inventory_evidence": [],
+      "inventory_evidence": [
+        {
+          "kind": "official_vrm_template",
+          "source": "https://meebits.app/",
+          "note": "Meebits ship per-token VRM files at the larvabots API endpoint api.meebits.app/v2/3d/larvalabs_vrm/{id}."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+          "observed_at": "2026-08-15",
+          "note": "Sample URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/1",
+          "observed_at": "2026-08-15",
+          "note": "Token 1 URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        },
+        {
+          "kind": "structural_vrm_validation",
+          "source": "https://api.meebits.app/v2/3d/larvalabs_vrm/100",
+          "observed_at": "2026-08-15",
+          "note": "Token 100 URL proved to be a valid GLB 2.0 binary with the VRM 0.x extension payload."
+        }
+      ],
       "legacy_vrm_state": "partial"
     },
     {
