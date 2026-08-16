@@ -1,6 +1,6 @@
 {
   "schema": "vrm-catalog-inventory-v2",
-  "generatedAt": "2026-08-16T00:11:22.953003+00:00",
+  "generatedAt": "2026-08-16T01:27:08.907601+00:00",
   "policy": "Complete non-terminal inventory requires explicit exhaustive VRM links; templates remain candidates until expanded, and one sample link never implies completeness.",
   "summary": {
     "collections": 69,
@@ -930,10 +930,17 @@
         "evidence": []
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://raw.githubusercontent.com/neonglitch86/vrm/main/",
+        "evidence": [
+          {
+            "kind": "public_repository_verification",
+            "source": "https://api.github.com/repos/neonglitch86/vrm",
+            "observed_at": "2026-08-15",
+            "note": "Repository is public and raw.githubusercontent.com URLs served the VRM binaries without authentication during structural probing."
+          }
+        ]
       },
       "inventory_evidence": []
     },
@@ -1325,14 +1332,39 @@
         "types": [
           "https"
         ],
-        "scope": "vrm_files",
-        "evidence": []
+        "scope": "avatar_files",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Per-token VRM files are served from the project's public CDN."
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://misfitpixels.xyz/assets/misfits/01_100/{id}/MisfitPixels.vrm",
+        "evidence": [
+          {
+            "kind": "official_collection_3d_documentation",
+            "source": "https://misfitpixels.xyz",
+            "note": "Official site documents the public 3D avatar download endpoint and the multi-format issuer."
+          },
+          {
+            "kind": "structural_vrm_validation",
+            "source": "https://misfitpixels.xyz/assets/misfits/01_100/02/MisfitPixels.vrm",
+            "observed_at": "2026-08-15",
+            "note": "Sample URL is publicly reachable without authentication and returns a valid VRM file."
+          },
+          {
+            "kind": "moralis_metadata_pointer",
+            "source": "https://misfitpixels.xyz/misfits/11",
+            "observed_at": "2026-08-15",
+            "note": "Moralis confirms the token metadata publishes the per-token VRM URL directly without authentication."
+          }
+        ]
       },
       "inventory_evidence": []
     },

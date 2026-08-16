@@ -8,7 +8,9 @@ every asset must validate as one of:
 - evidence-backed rigged FBX
 
 The broader gate intentionally does not treat a legacy ``VRM not shipped`` fact
-as proof that no usable GLB/FBX avatar exists.
+as proof that no usable GLB/FBX avatar exists. A must-have field with no real
+value still passes when the report resolved it explicitly (for example
+``not_available``) with evidence.
 """
 from __future__ import annotations
 
@@ -17,6 +19,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from scripts.audit_catalog_completeness import EXPLICIT_RESOLUTION_STATES
 from scripts.enforce_catalog_acceptance import (
     MUST_HAVE_VALUE,
     PROJECT_STATUSES,
@@ -53,6 +56,14 @@ def probe_index(payload: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
     }
 
 
+def explicitly_resolved(field: dict[str, Any]) -> bool:
+    if not field.get("ok"):
+        return False
+    state = str(field.get("state") or "").strip().lower()
+    evidence = field.get("evidence")
+    return state in EXPLICIT_RESOLUTION_STATES and bool(evidence)
+
+
 def evaluate_collection(
     collection: dict[str, Any],
     inventory: dict[str, Any] | None,
@@ -63,7 +74,7 @@ def evaluate_collection(
 
     for name in MUST_HAVE_VALUE:
         field = fields.get(name) or {}
-        if not field_has_value(field):
+        if not field_has_value(field) and not explicitly_resolved(field):
             failures.append(f"{name}:actual_value_required")
 
     status = fields.get("project_status") or {}
