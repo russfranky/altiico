@@ -1,6 +1,6 @@
 {
   "schema": "authoritative-catalog-consensus-v2",
-  "generatedAt": "2026-08-12T18:23:45.492757+00:00",
+  "generatedAt": "2026-08-16T22:50:02.419689+00:00",
   "policy": {
     "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
@@ -11,10 +11,10 @@
   "summary": {
     "collections": 62,
     "explorerCorroborated": 61,
-    "bitqueryCorroborated": 11,
+    "bitqueryCorroborated": 12,
     "onchainCorroborated": 61,
     "bitqueryModelSignalTokens": 0,
-    "reviewItems": 62,
+    "reviewItems": 39,
     "etherscanConflicts": 0
   },
   "collections": [
@@ -340,10 +340,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666753+00:00",
+      "observedAt": "2026-08-16T22:45:34.135660+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713564+00:00",
+        "observedAt": "2026-08-16T22:46:18.156339+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
@@ -360,13 +360,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.555958+00:00",
+        "observedAt": "2026-08-16T22:48:17.585997+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -425,7 +423,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4789,
-            "moralis": "4811"
+            "moralis": "4810"
           }
         },
         "floorPrice": {
@@ -433,7 +431,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0192799,
-            "moralis": "0.010899"
+            "moralis": "0.01"
           }
         }
       },
@@ -441,7 +439,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-25T10:45:28.000Z",
-        "transferCount": "46147",
+        "transferCount": "46174",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -809,10 +807,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666796+00:00",
+      "observedAt": "2026-08-16T22:45:34.135708+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713606+00:00",
+        "observedAt": "2026-08-16T22:46:18.156382+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Akutar",
@@ -829,114 +827,112 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.556214+00:00",
+        "observedAt": "2026-08-16T22:48:17.586229+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 24,
+        "uniqueTokenIds": 19,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "12657",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/12657.json",
+            "tokenId": "153",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/153.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
-            "block": "25733786",
-            "time": "2026-08-11T19:16:35Z",
-            "txHash": "0x56ffd1397df464670f12afb90ea03627afde51d484ee9294149323417c1a42a8"
+            "sender": "0xd360b4cbdd34cd4ea70806f45aed848d92843a5c",
+            "receiver": "0xd8d2dd940fdf9987a1ef637798ca40f90553e479",
+            "block": "25769815",
+            "time": "2026-08-16T19:47:47Z",
+            "txHash": "0x3b5a830bb85405139529f616c989b78ad4a00ad66c69491f8a9af5ef2702a8bd"
           },
           {
-            "tokenId": "9776",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9776.json",
+            "tokenId": "153",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/153.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732434",
-            "time": "2026-08-11T14:44:47Z",
-            "txHash": "0x0d9b23f8d864d5714905aad147675c4bb788453fe154fdcaaf7f39b8998d9d60"
+            "sender": "0x059f008f7651b5b4c3fe35348ada3bb4d3ccb2a7",
+            "receiver": "0xd360b4cbdd34cd4ea70806f45aed848d92843a5c",
+            "block": "25769682",
+            "time": "2026-08-16T19:21:11Z",
+            "txHash": "0xea2ce2ea4924c693cce50e5fb84640a9785ecea2adc7eabac57ed2d350eb5d5f"
           },
           {
-            "tokenId": "11516",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
+            "tokenId": "3311",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/3311.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732384",
-            "time": "2026-08-11T14:34:35Z",
-            "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
-          },
-          {
-            "tokenId": "6822",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/6822.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732384",
-            "time": "2026-08-11T14:34:35Z",
-            "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
-          },
-          {
-            "tokenId": "11516",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xeeacd78e4650221b60bb7f283e39ebbe84e1b24a",
-            "receiver": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "block": "25731540",
-            "time": "2026-08-11T11:45:11Z",
-            "txHash": "0xcccf83f8f5ed2850aa06b7a6be03a54b36abc08fb4e7d3a9b14407a366f773c0"
-          },
-          {
-            "tokenId": "14622",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14622.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+            "sender": "0x5abfa366a2b79a68541643f330c041c3203cc8ca",
             "receiver": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+            "block": "25768669",
+            "time": "2026-08-16T15:58:11Z",
+            "txHash": "0xd754c0505e47556d34f235b4ffed67d0c6cbd466f763f9cefdbd6a27aa160d44"
           },
           {
-            "tokenId": "14158",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14158.json",
+            "tokenId": "153",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/153.json",
+            "name": "Akutars",
+            "symbol": "AKU",
+            "protocol": null,
+            "sender": "0x12709eba6f4db2df2faf25bae08a2fb1de01be6d",
+            "receiver": "0x059f008f7651b5b4c3fe35348ada3bb4d3ccb2a7",
+            "block": "25767674",
+            "time": "2026-08-16T12:39:11Z",
+            "txHash": "0xd7ddb3c8206941ad679cf38b47e4b75f407b1dfc6666ff567bd9ec0b89682c11"
+          },
+          {
+            "tokenId": "7043",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/7043.json",
+            "name": "Akutars",
+            "symbol": "AKU",
+            "protocol": null,
+            "sender": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
+            "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
+            "block": "25766892",
+            "time": "2026-08-16T10:02:23Z",
+            "txHash": "0x426946391233691ab49f4c6a1c6e4bb61010d68c0f7b0236c31ece8f306830a3"
+          },
+          {
+            "tokenId": "7043",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/7043.json",
+            "name": "Akutars",
+            "symbol": "AKU",
+            "protocol": null,
+            "sender": "0x2509260c14d85579335ae6107f9e8b4eb9e1d2ea",
+            "receiver": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
+            "block": "25766725",
+            "time": "2026-08-16T09:28:59Z",
+            "txHash": "0x3a51c5576106456ed3d63ce0a323baa6fffb40965c0e98d8d6130e003243639a"
+          },
+          {
+            "tokenId": "3311",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/3311.json",
+            "name": "Akutars",
+            "symbol": "AKU",
+            "protocol": null,
+            "sender": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
+            "receiver": "0x5abfa366a2b79a68541643f330c041c3203cc8ca",
+            "block": "25756431",
+            "time": "2026-08-14T23:01:47Z",
+            "txHash": "0x8115f6b204dd90bc7b3e0ac05a15aa745946f54063a7d0277e2f6cdb4171db49"
+          },
+          {
+            "tokenId": "9866",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9866.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
             "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xb9783493d12b9b3fce1d00242aff22dd08bb9810",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
-          },
-          {
-            "tokenId": "14774",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14774.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xb180e3fde77c0d4499a934014f437e8d442fd8a8",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+            "receiver": "0x2492bd0ba7a1596f3217a6b76df6301e45cf29d0",
+            "block": "25752398",
+            "time": "2026-08-14T09:32:35Z",
+            "txHash": "0x43e7c8978e559640c8894907a9d33c3f82b67eaa8df315eea15df886734c934c"
           }
         ],
         "errors": []
@@ -999,7 +995,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00033,
-            "moralis": "0.0004"
+            "moralis": "0.00033999"
           }
         }
       },
@@ -1007,7 +1003,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-04-07T03:14:59.000Z",
-        "transferCount": "3832",
+        "transferCount": "3833",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -1342,10 +1338,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666822+00:00",
+      "observedAt": "2026-08-16T22:45:34.135738+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713629+00:00",
+        "observedAt": "2026-08-16T22:46:18.156410+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AllstarzPSX",
@@ -1362,13 +1358,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.556311+00:00",
+        "observedAt": "2026-08-16T22:48:17.586329+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 1,
         "uniqueTokenIds": 1,
@@ -1376,16 +1370,16 @@
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "2208",
-            "uri": "ipfs://bafybeiaat2syu6sgvvt7cfwnxntdzhqtphykhfphzb4rjxebx6ka4co72y/2208.json",
+            "tokenId": "1782",
+            "uri": "ipfs://bafybeiaat2syu6sgvvt7cfwnxntdzhqtphykhfphzb4rjxebx6ka4co72y/1782.json",
             "name": "Allstarz PSX",
             "symbol": "PSX",
             "protocol": null,
-            "sender": "0xd99e1e1b885f505c1f78ec3fdc6d289ba72a07a9",
-            "receiver": "0xe26067c76fdbe877f48b0a8400cf5db8b47af0fe",
-            "block": "25738480",
-            "time": "2026-08-12T11:00:35Z",
-            "txHash": "0x54daed8885e21ddc2cdf3818f84eed3d0ea64acb63b8eefa96080968a7788266"
+            "sender": "0x19d266792b28a441cb0f6a3334ba617ef18b50ee",
+            "receiver": "0xae4705dc0816ee6d8a13f1c72780ec5021915fed",
+            "block": "25755186",
+            "time": "2026-08-14T18:51:35Z",
+            "txHash": "0xb681ee6cbb29f4d9f79785f09a0303727ac2608621b8e7dc8325f821c1017f83"
           }
         ],
         "errors": []
@@ -1511,10 +1505,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:10.201739+00:00",
+      "observedAt": "2026-08-16T22:45:35.249761+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:01.027923+00:00",
+        "observedAt": "2026-08-16T22:46:21.485996+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ArbiDudesGenOne",
@@ -1531,13 +1525,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.255802+00:00",
+        "observedAt": "2026-08-16T22:48:18.513119+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -1604,7 +1596,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.006889999999,
-            "moralis": "0.369"
+            "moralis": "0.3333333333"
           }
         }
       },
@@ -1667,10 +1659,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:10.477530+00:00",
+      "observedAt": "2026-08-16T22:45:36.057849+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:02.852172+00:00",
+        "observedAt": "2026-08-16T22:46:23.274344+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Arbibots",
@@ -1687,116 +1679,17 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.261062+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 21,
-        "uniqueTokenIds": 20,
+        "observedAt": "2026-08-16T22:48:18.603574+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "1676",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1216",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1320",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0xa0708d9093ce39e7b2aed1509120456fa78a2f02",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1765",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "block": "493433764",
-            "time": "2026-08-11T13:16:41Z",
-            "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
-          },
-          {
-            "tokenId": "1216",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101eb380d06e443c7d456aed63961b16e290d8c7",
-            "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "block": "493433764",
-            "time": "2026-08-11T13:16:41Z",
-            "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
-          },
-          {
-            "tokenId": "1478",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0xd90d8c74545728cd8200c66084e36dc10afdca40",
-            "block": "493433394",
-            "time": "2026-08-11T13:15:08Z",
-            "txHash": "0x8d27288c494154ca5d4a70e45b62b56b48ff5fed92021f73f4c311926daa1b5f"
-          },
-          {
-            "tokenId": "358",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x1b5cbe0440861590ba929b2d0ef819a8f5f0d454",
-            "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
-            "block": "493428746",
-            "time": "2026-08-11T12:55:46Z",
-            "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
-          },
-          {
-            "tokenId": "1828",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x2897be1b8411c248dfaab1186bdd89a3f4b2ffbe",
-            "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
-            "block": "493428746",
-            "time": "2026-08-11T12:55:46Z",
-            "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -1849,7 +1742,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4986,
-            "moralis": "4984"
+            "moralis": "4986"
           }
         },
         "floorPrice": {
@@ -1857,7 +1750,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0096607,
-            "moralis": "0.0179997"
+            "moralis": "0.0182"
           }
         }
       },
@@ -1865,7 +1758,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2020-02-07T02:49:07.000Z",
-        "transferCount": "72462",
+        "transferCount": "72492",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -2706,10 +2599,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.100262+00:00",
+      "observedAt": "2026-08-16T22:45:36.282762+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:04.649876+00:00",
+        "observedAt": "2026-08-16T22:46:23.604179+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AvastarTeleporter",
@@ -2726,42 +2619,28 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.302802+00:00",
+        "observedAt": "2026-08-16T22:48:18.625476+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 18,
+        "uniqueTokenIds": 17,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "13544",
-            "uri": "https://avastars.io/metadata/13544",
+            "tokenId": "4660",
+            "uri": "https://avastars.io/metadata/4660",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0x23934e253c4f9c44f73a85b350c00a72e1d9c20b",
-            "block": "25740597",
-            "time": "2026-08-12T18:05:35Z",
-            "txHash": "0xb26f2dc1fe4e75c1ccc149e21b0b36877003af3771959e770bcb4e54145e2156"
-          },
-          {
-            "tokenId": "13891",
-            "uri": "https://avastars.io/metadata/13891",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0x15e36420e0c8a75264916ea341642f4acd4db83e",
-            "block": "25739054",
-            "time": "2026-08-12T12:55:47Z",
-            "txHash": "0x54e8200d8ed6160d06499225a7b760152f1f49095c772d2cd345827615048ab1"
+            "sender": "0xe59d87e5298ac2fb24c2fc55d256cb8fcb696238",
+            "receiver": "0xb0cf6360b50c48280e2c18fe9d96bc7d6f5ed697",
+            "block": "25770152",
+            "time": "2026-08-16T20:55:11Z",
+            "txHash": "0xb8e663b7346234fcdbf44b3088418f809bde4236b35d46d7eff7a084ec55da66"
           },
           {
             "tokenId": "1325",
@@ -2769,71 +2648,83 @@
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xac74491480c6bb30c26627c6cbae8a2b5952da54",
-            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25738302",
-            "time": "2026-08-12T10:24:59Z",
-            "txHash": "0xbb19cfdcbd1ae079f66f40efcdcb938402977dde5573b64abbbb5c23139256ca"
+            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "receiver": "0x51f1d95cc6651537b7c497f4d146e4e9aa92565b",
+            "block": "25763097",
+            "time": "2026-08-15T21:20:59Z",
+            "txHash": "0x28efac6917527672a811d8075572b586baa397430ee0a4c688f08334a0700b9a"
           },
           {
-            "tokenId": "1325",
-            "uri": "https://avastars.io/metadata/1325",
+            "tokenId": "25177",
+            "uri": "https://avastars.io/metadata/25177",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xc9f6e34a9ad2e75ed4373f24e2651139c484b2c6",
-            "receiver": "0xac74491480c6bb30c26627c6cbae8a2b5952da54",
-            "block": "25738237",
-            "time": "2026-08-12T10:11:59Z",
-            "txHash": "0xfbf1c2bf579eadff3e0225627e309f6637eef821cbb2546905efc4eb049506ac"
+            "sender": "0xa5d439865e1bad41168977f9f97af2dd877b8948",
+            "receiver": "0x04fc0276e1d398d9597fa9755b16dce6b496acb1",
+            "block": "25760977",
+            "time": "2026-08-15T14:15:11Z",
+            "txHash": "0x9452c0ca10657586de758d713e608b3f37932de709f41feaf8a9e4cf78553936"
           },
           {
-            "tokenId": "11462",
-            "uri": "https://avastars.io/metadata/11462",
+            "tokenId": "7853",
+            "uri": "https://avastars.io/metadata/7853",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736791",
-            "time": "2026-08-12T05:21:23Z",
-            "txHash": "0xdb65ca103a5035d1dfad3fe1ffe6e39b2a9e5e1add3e9183061c117730f08c2b"
+            "sender": "0xa5d439865e1bad41168977f9f97af2dd877b8948",
+            "receiver": "0x04fc0276e1d398d9597fa9755b16dce6b496acb1",
+            "block": "25760977",
+            "time": "2026-08-15T14:15:11Z",
+            "txHash": "0x9452c0ca10657586de758d713e608b3f37932de709f41feaf8a9e4cf78553936"
           },
           {
-            "tokenId": "10479",
-            "uri": "https://avastars.io/metadata/10479",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736787",
-            "time": "2026-08-12T05:20:35Z",
-            "txHash": "0xaf164c6cda868469ac0bd94d50ec4b9c9d98c3a283de77db941287fa544f3dcf"
-          },
-          {
-            "tokenId": "13945",
-            "uri": "https://avastars.io/metadata/13945",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0xa5bf67d7cfcb24c5f20a991766d29db9598f16dd",
-            "block": "25736768",
-            "time": "2026-08-12T05:16:47Z",
-            "txHash": "0x53cc1a8e3313fcf3710d1c737364a7b4bb12c50ca1ac730f6c5f626910ea6d3e"
-          },
-          {
-            "tokenId": "3400",
-            "uri": "https://avastars.io/metadata/3400",
+            "tokenId": "21117",
+            "uri": "https://avastars.io/metadata/21117",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
             "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736718",
-            "time": "2026-08-12T05:06:47Z",
-            "txHash": "0x8fb97e2577fc8707359499def12fc7eb999bab2877355efdbf84076b2bb357a0"
+            "receiver": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
+            "block": "25757287",
+            "time": "2026-08-15T01:54:23Z",
+            "txHash": "0x56a27c0cad4463668634357cb3d2dcb7e5f53b9e2ee4f1399e5c67dceee3d8b5"
+          },
+          {
+            "tokenId": "24494",
+            "uri": "https://avastars.io/metadata/24494",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
+            "block": "25757287",
+            "time": "2026-08-15T01:54:23Z",
+            "txHash": "0x56a27c0cad4463668634357cb3d2dcb7e5f53b9e2ee4f1399e5c67dceee3d8b5"
+          },
+          {
+            "tokenId": "21153",
+            "uri": "https://avastars.io/metadata/21153",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
+            "block": "25757272",
+            "time": "2026-08-15T01:51:11Z",
+            "txHash": "0x4c9d401552d4db8200ce30821d7db98bb2885daa87cbe84f909fa71c7769bcf2"
+          },
+          {
+            "tokenId": "21873",
+            "uri": "https://avastars.io/metadata/21873",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "receiver": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
+            "block": "25757272",
+            "time": "2026-08-15T01:51:11Z",
+            "txHash": "0x4c9d401552d4db8200ce30821d7db98bb2885daa87cbe84f909fa71c7769bcf2"
           }
         ],
         "errors": []
@@ -2959,10 +2850,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.167898+00:00",
+      "observedAt": "2026-08-16T22:45:36.629349+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:05.022600+00:00",
+        "observedAt": "2026-08-16T22:46:25.416631+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -2979,13 +2870,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.491020+00:00",
+        "observedAt": "2026-08-16T22:48:18.730994+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3052,7 +2941,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00399,
-            "moralis": "0.0079597"
+            "moralis": "0.0069797"
           }
         }
       },
@@ -3060,7 +2949,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-07-13T13:40:59.000Z",
-        "transferCount": "822",
+        "transferCount": "823",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -3139,10 +3028,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.640203+00:00",
+      "observedAt": "2026-08-16T22:45:36.727093+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:06.820424+00:00",
+        "observedAt": "2026-08-16T22:46:27.220714+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DiamondCollection",
@@ -3159,13 +3048,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.550175+00:00",
+        "observedAt": "2026-08-16T22:48:18.807378+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 1,
         "uniqueTokenIds": 1,
@@ -3173,16 +3060,16 @@
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "5",
-            "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/5",
+            "tokenId": "260",
+            "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/260",
             "name": "Bourey vs Bulley: Bourverse",
             "symbol": "BVBB",
             "protocol": null,
-            "sender": "0x1e44b0ebc7aac6e33575be1268040cee247e5ad3",
-            "receiver": "0xe6ac7475950de2181065ea6d442e5b5b8ce07b28",
-            "block": "25716503",
-            "time": "2026-08-09T09:23:47Z",
-            "txHash": "0xd30dda656287f1251b9c43c9f67270f0c5432af31d585fee7950be464e5f6ee5"
+            "sender": "0xb8c08e51dbf447590ad17b55e6a7d77f74b3f748",
+            "receiver": "0x3a5055af0724a4b33fbdf09268b84877726b2560",
+            "block": "25764152",
+            "time": "2026-08-16T00:52:59Z",
+            "txHash": "0xf6ee8347335b7fb097259fe4bfb449d41d082bde8b359776b8a4874d65864681"
           }
         ],
         "errors": []
@@ -3237,7 +3124,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2636,
-            "moralis": "2632"
+            "moralis": "2630"
           }
         },
         "floorPrice": {
@@ -3253,7 +3140,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-22T23:23:06.000Z",
-        "transferCount": "47799",
+        "transferCount": "47833",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -3698,10 +3585,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.027971+00:00",
+      "observedAt": "2026-08-16T22:45:37.087044+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:08.656968+00:00",
+        "observedAt": "2026-08-16T22:46:29.074813+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Loomlocknft",
@@ -3718,66 +3605,112 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.554862+00:00",
+        "observedAt": "2026-08-16T22:48:19.082834+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 4,
-        "uniqueTokenIds": 4,
-        "transferUris": 4,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 19,
+        "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "3641",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/3641.json",
+            "tokenId": "9410",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/9410.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0xd308d5d998cbece1b92cfd35708938ae7ee1ddcd",
+            "sender": "0xc467e34fe152885516b731ced7d228ab6a2f797a",
+            "receiver": "0xd9bd8a0689ac230426587a94330dade6f8e039b7",
+            "block": "25770688",
+            "time": "2026-08-16T22:42:23Z",
+            "txHash": "0x4c74248cda97071a869821cec3fbc7840235a35ae8828797f0e67a3ac58d8d30"
+          },
+          {
+            "tokenId": "11019",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/11019.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0xc467e34fe152885516b731ced7d228ab6a2f797a",
+            "receiver": "0xd9bd8a0689ac230426587a94330dade6f8e039b7",
+            "block": "25770688",
+            "time": "2026-08-16T22:42:23Z",
+            "txHash": "0x4c74248cda97071a869821cec3fbc7840235a35ae8828797f0e67a3ac58d8d30"
+          },
+          {
+            "tokenId": "3636",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/3636.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0xab16f7ed2165abe28d3e3868f5502979b26992d3",
             "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25738886",
-            "time": "2026-08-12T12:22:11Z",
-            "txHash": "0x6cd1e23cc51defbb31571240730867db2db04cc076b6dc2590ffccc54f63ce5f"
+            "block": "25770671",
+            "time": "2026-08-16T22:38:59Z",
+            "txHash": "0x21fdbacc8520e1922f47be4eb95f2ef5b071916df760ba3ab34ff646f2563fca"
           },
           {
-            "tokenId": "12",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/12.json",
+            "tokenId": "1073",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/1073.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0x85dc5ee6a64bd6e28e96b20a768705d40f7553d7",
-            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
-            "block": "25736282",
-            "time": "2026-08-12T03:37:47Z",
-            "txHash": "0x3be0bc3e35ca111cf4f01c50e62e11507db6bd89b5e6d23c59015ac993606e87"
+            "sender": "0xc467e34fe152885516b731ced7d228ab6a2f797a",
+            "receiver": "0xd9bd8a0689ac230426587a94330dade6f8e039b7",
+            "block": "25770627",
+            "time": "2026-08-16T22:30:11Z",
+            "txHash": "0xb0280fdd55e5d3e49ed11f6eb836c309e23936e8c190de695cc144639b8defb0"
           },
           {
-            "tokenId": "819",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/819.json",
+            "tokenId": "4006",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/4006.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0x2fc6e03f0b445e9d7c910a468b716431e2866779",
-            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
-            "block": "25736279",
-            "time": "2026-08-12T03:37:11Z",
-            "txHash": "0x5e3781ddf1d908afd7c59450eab18902cff73bf3f01288dfac37de8386d8ee31"
+            "sender": "0xc467e34fe152885516b731ced7d228ab6a2f797a",
+            "receiver": "0xd9bd8a0689ac230426587a94330dade6f8e039b7",
+            "block": "25770627",
+            "time": "2026-08-16T22:30:11Z",
+            "txHash": "0xb0280fdd55e5d3e49ed11f6eb836c309e23936e8c190de695cc144639b8defb0"
           },
           {
-            "tokenId": "585",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/585.json",
+            "tokenId": "620",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/620.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0xa43711f5dcc3559a1e07ec124fd167e26c9bad43",
-            "receiver": "0x771c3994d0f838eb7a163513b1f41f8417458f28",
-            "block": "25714457",
-            "time": "2026-08-09T02:33:35Z",
-            "txHash": "0x845e3f2e31410d1d86f29d009c19011fa4411e41bfe3e8e6c28fba21c8a66e11"
+            "sender": "0xda30d629fbf792e56c74c20ec17f5ca96f41aec6",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25770599",
+            "time": "2026-08-16T22:24:35Z",
+            "txHash": "0x8827b587c6c90ca5bda142ae7ebd19266f60eeef5dfca9a6857ee00524f187e2"
+          },
+          {
+            "tokenId": "1836",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/1836.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x747065869959dc431551904b8ee4ec079783f299",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25770584",
+            "time": "2026-08-16T22:21:35Z",
+            "txHash": "0x6333e6ebfbafce1fe9eea2a08dd1265040cbad0e91c9e648317536c39b793410"
+          },
+          {
+            "tokenId": "10110",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/10110.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x747065869959dc431551904b8ee4ec079783f299",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25770580",
+            "time": "2026-08-16T22:20:47Z",
+            "txHash": "0x9512db9e73ab98cecd17249ee2996a2cbf1767a947c0bc93b6f2adcc0831bfc1"
           }
         ],
         "errors": []
@@ -3832,7 +3765,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 9195,
-            "moralis": "9171"
+            "moralis": "9170"
           }
         },
         "floorPrice": {
@@ -3840,7 +3773,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.26475957,
-            "moralis": "0.267989"
+            "moralis": "0.252999"
           }
         }
       },
@@ -3848,7 +3781,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232802",
+        "transferCount": "232899",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4139,10 +4072,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.363046+00:00",
+      "observedAt": "2026-08-16T22:45:37.303572+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:10.408372+00:00",
+        "observedAt": "2026-08-16T22:46:30.857781+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4159,114 +4092,112 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.732998+00:00",
+        "observedAt": "2026-08-16T22:48:19.165976+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 25,
+        "uniqueTokenIds": 19,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "1833",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/1833",
+            "tokenId": "11415",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/11415",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740677",
-            "time": "2026-08-12T18:21:35Z",
-            "txHash": "0xc72efffaed3958adaaf7a0f1b0acc2be3fb3d589d7883d1af977d964eab0cb93"
+            "sender": "0xe59d87e5298ac2fb24c2fc55d256cb8fcb696238",
+            "receiver": "0xb8707a97c3ee78753b46769c813785f2de0a634a",
+            "block": "25769076",
+            "time": "2026-08-16T17:19:35Z",
+            "txHash": "0xc47b0dceba30381f08dfd997f28d7e8e49596329812a25b9393735fc60d1009c"
           },
           {
-            "tokenId": "8757",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/8757",
+            "tokenId": "4920",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4920",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x2bd88113b8d94d48e5cca8b4c11f36f0c509a293",
-            "block": "25740646",
-            "time": "2026-08-12T18:15:23Z",
-            "txHash": "0x11584c380529dc280fbc628330596e42bd693a694832fa93b192d01d16f74d5a"
-          },
-          {
-            "tokenId": "4036",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4036",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x994b470248b6f9bbede09422a15990efdb793096",
-            "block": "25740640",
-            "time": "2026-08-12T18:14:11Z",
-            "txHash": "0xcd5b0c0d610ca30d131a1978210d69bb6e14fdc71d207be418c47cc012cead22"
-          },
-          {
-            "tokenId": "17165",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/17165",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740637",
-            "time": "2026-08-12T18:13:35Z",
-            "txHash": "0x11b84de6ee108dcc4ad032274a32b586cc5169d0c401eea496de63081e1a98a4"
-          },
-          {
-            "tokenId": "15177",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/15177",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740626",
-            "time": "2026-08-12T18:11:23Z",
-            "txHash": "0x6b5c9c06c645998a138b933e73ddaf76291a191dd5c7905ef3ca875fdc2cbbba"
-          },
-          {
-            "tokenId": "1005",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/1005",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
+            "sender": "0x960ff98b3bce6d1ca22a6ecd85f260a1db9776c2",
             "receiver": "0x028296d8bf1995549d5b9446622cf565bbd0a26e",
-            "block": "25740600",
-            "time": "2026-08-12T18:06:11Z",
-            "txHash": "0x538a52c1a0496efa9906f1f91329a4220f01c5d9ef43e2a087cf33d851e9e21b"
+            "block": "25768198",
+            "time": "2026-08-16T14:23:59Z",
+            "txHash": "0x180cd496579a6bc91c81311cde3f96556322aecd966b77c164d2e9f630403595"
           },
           {
-            "tokenId": "7595",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/7595",
+            "tokenId": "2514",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2514",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x36f98b7e0ab0aa5f8d13f8f5b8c496b05ba8dc08",
-            "block": "25740593",
-            "time": "2026-08-12T18:04:47Z",
-            "txHash": "0x067e02a7a72f161498b3e30fca614ac9cc58d61353f007d42c07d9737f3b9612"
+            "sender": "0x36f98b7e0ab0aa5f8d13f8f5b8c496b05ba8dc08",
+            "receiver": "0xd1312980ac04a12d857d5c82f78e9e5568d93ad3",
+            "block": "25767711",
+            "time": "2026-08-16T12:46:35Z",
+            "txHash": "0x13406f635436b1ffbcf7198be518efa06c058b2ab2661a5d4d2095c527bf0755"
           },
           {
-            "tokenId": "10508",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10508",
+            "tokenId": "13014",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/13014",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
-            "block": "25740584",
-            "time": "2026-08-12T18:02:59Z",
-            "txHash": "0x56b1425c01687744c2fdd686046c1a8a75285965235057385cc3be5d9b1babe9"
+            "sender": "0x0d9ec524ed52f109c530a28c91fe190c44c0babd",
+            "receiver": "0xd8cbce77b92142ac1fb3056c13cd4a5b705b16c8",
+            "block": "25767072",
+            "time": "2026-08-16T10:38:23Z",
+            "txHash": "0x949d7922c09998587c78492d7b6fbd5d258d6ae2a6fc4e9e4ee82aff07408770"
+          },
+          {
+            "tokenId": "13014",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/13014",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x9fc64f59523793ebbe14ad33d565d00d6272eb13",
+            "receiver": "0x0d9ec524ed52f109c530a28c91fe190c44c0babd",
+            "block": "25767045",
+            "time": "2026-08-16T10:32:59Z",
+            "txHash": "0x0ea499b5e8ee638749ca42d44dd35cc327d6bd97302ebc2e419f5f2e9b11732f"
+          },
+          {
+            "tokenId": "648",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/648",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x371267a1863080c5f39229183350e0d87d39743e",
+            "receiver": "0x823de2c44369e94cac3da789ad4b6493e27e4bfe",
+            "block": "25766379",
+            "time": "2026-08-16T08:19:47Z",
+            "txHash": "0x58bffcc785092983439c63ade1a7582d48efe98ab275d0424f0e78c83a148057"
+          },
+          {
+            "tokenId": "10437",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10437",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x371267a1863080c5f39229183350e0d87d39743e",
+            "receiver": "0x823de2c44369e94cac3da789ad4b6493e27e4bfe",
+            "block": "25766379",
+            "time": "2026-08-16T08:19:47Z",
+            "txHash": "0x58bffcc785092983439c63ade1a7582d48efe98ab275d0424f0e78c83a148057"
+          },
+          {
+            "tokenId": "10953",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10953",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x371267a1863080c5f39229183350e0d87d39743e",
+            "receiver": "0x823de2c44369e94cac3da789ad4b6493e27e4bfe",
+            "block": "25766379",
+            "time": "2026-08-16T08:19:47Z",
+            "txHash": "0x58bffcc785092983439c63ade1a7582d48efe98ab275d0424f0e78c83a148057"
           }
         ],
         "errors": []
@@ -4317,19 +4248,19 @@
           }
         },
         "owners": {
-          "preferred": "9171",
+          "preferred": "9170",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "9171"
+            "moralis": "9170"
           }
         },
         "floorPrice": {
-          "preferred": "0.267989",
+          "preferred": "0.252999",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.267989"
+            "moralis": "0.252999"
           }
         }
       },
@@ -4337,7 +4268,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232802",
+        "transferCount": "232899",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4628,10 +4559,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.672900+00:00",
+      "observedAt": "2026-08-16T22:45:37.689868+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:12.225323+00:00",
+        "observedAt": "2026-08-16T22:46:32.661517+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4648,13 +4579,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.885222+00:00",
+        "observedAt": "2026-08-16T22:48:19.177820+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -4715,7 +4644,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3149,
-            "moralis": "3141"
+            "moralis": "3140"
           }
         },
         "floorPrice": {
@@ -4723,7 +4652,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0270249,
-            "moralis": "0.02166668"
+            "moralis": "0.021666"
           }
         }
       },
@@ -4731,7 +4660,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-11-05T11:06:24.000Z",
-        "transferCount": "34933",
+        "transferCount": "34935",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -5121,10 +5050,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.992456+00:00",
+      "observedAt": "2026-08-16T22:45:37.828936+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:14.031711+00:00",
+        "observedAt": "2026-08-16T22:46:34.480808+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChainRunners",
@@ -5141,13 +5070,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.885763+00:00",
+        "observedAt": "2026-08-16T22:48:19.319352+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5190,7 +5117,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/ethereum/30a8108c3ade358faf12dd0d79f13455/426c2a9a1852ed227872a80a577c3b/93426c2a9a1852ed227872a80a577c3b.jpeg",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1918ece9baa54a1e5672c27def787e/621918ece9baa54a1e5672c27def787e.png"
           }
         }
       },
@@ -5204,11 +5131,11 @@
           }
         },
         "owners": {
-          "preferred": "727986",
+          "preferred": "727978",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727986"
+            "moralis": "727978"
           }
         },
         "floorPrice": {
@@ -5224,13 +5151,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4022865",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:13.434386+00:00",
+      "observedAt": "2026-08-16T22:45:38.151813+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:15.834995+00:00",
+        "observedAt": "2026-08-16T22:46:36.283683+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -5247,13 +5174,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:59.008062+00:00",
+        "observedAt": "2026-08-16T22:48:19.445361+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5322,7 +5247,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.001325,
-            "moralis": "0.0007597"
+            "moralis": "0.000705"
           }
         }
       },
@@ -5687,10 +5612,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:14.253412+00:00",
+      "observedAt": "2026-08-16T22:45:38.393010+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:17.631878+00:00",
+        "observedAt": "2026-08-16T22:46:38.054420+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChibiApes",
@@ -5707,13 +5632,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.697431+00:00",
+        "observedAt": "2026-08-16T22:48:25.950981+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5790,7 +5713,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-09-26T07:10:23.000Z",
-        "transferCount": "3390",
+        "transferCount": "3391",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -6004,10 +5927,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:16.325034+00:00",
+      "observedAt": "2026-08-16T22:45:39.350245+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:19.465338+00:00",
+        "observedAt": "2026-08-16T22:46:39.901699+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -6024,13 +5947,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.698713+00:00",
+        "observedAt": "2026-08-16T22:48:26.007594+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6073,7 +5994,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1c5b2d3f374818d6cf62ea4f02c3b131.jpeg",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1918ece9baa54a1e5672c27def787e/621918ece9baa54a1e5672c27def787e.png"
           }
         }
       },
@@ -6087,11 +6008,11 @@
           }
         },
         "owners": {
-          "preferred": "727986",
+          "preferred": "727978",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727986"
+            "moralis": "727978"
           }
         },
         "floorPrice": {
@@ -6107,13 +6028,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4022865",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:16.462141+00:00",
+      "observedAt": "2026-08-16T22:45:39.591515+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:21.251890+00:00",
+        "observedAt": "2026-08-16T22:46:41.701145+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -6130,13 +6051,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.799410+00:00",
+        "observedAt": "2026-08-16T22:48:26.240795+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6197,7 +6116,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2762,
-            "moralis": "2753"
+            "moralis": "2752"
           }
         },
         "floorPrice": {
@@ -6205,7 +6124,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0285989,
-            "moralis": "0.040019"
+            "moralis": "0.039999"
           }
         }
       },
@@ -6213,7 +6132,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-04T01:32:54.000Z",
-        "transferCount": "49227",
+        "transferCount": "49236",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -6548,10 +6467,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:16.932886+00:00",
+      "observedAt": "2026-08-16T22:45:40.439713+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:23.061422+00:00",
+        "observedAt": "2026-08-16T22:46:43.504276+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CyberBrokers",
@@ -6568,13 +6487,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.327313+00:00",
+        "observedAt": "2026-08-16T22:48:32.623532+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6643,7 +6560,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00176789,
-            "moralis": "0.0015"
+            "moralis": "0.0016797"
           }
         }
       },
@@ -6651,7 +6568,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-01-20T18:17:34.000Z",
-        "transferCount": "32578",
+        "transferCount": "32580",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -6953,10 +6870,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:17.849888+00:00",
+      "observedAt": "2026-08-16T22:45:41.084276+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:24.849753+00:00",
+        "observedAt": "2026-08-16T22:46:45.289384+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DASKa",
@@ -6973,13 +6890,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.478960+00:00",
+        "observedAt": "2026-08-16T22:48:32.874034+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7307,10 +7222,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:18.153433+00:00",
+      "observedAt": "2026-08-16T22:45:41.111633+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:26.653765+00:00",
+        "observedAt": "2026-08-16T22:46:47.076754+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FairxyzBeaconProxy",
@@ -7327,13 +7242,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.536714+00:00",
+        "observedAt": "2026-08-16T22:48:33.202718+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7767,10 +7680,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:18.522976+00:00",
+      "observedAt": "2026-08-16T22:45:41.401537+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:28.485115+00:00",
+        "observedAt": "2026-08-16T22:46:48.950197+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DickButtVerse",
@@ -7787,13 +7700,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:18.936516+00:00",
+        "observedAt": "2026-08-16T22:48:39.381980+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8148,10 +8059,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:19.622021+00:00",
+      "observedAt": "2026-08-16T22:45:42.430346+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:30.298570+00:00",
+        "observedAt": "2026-08-16T22:46:50.722960+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC1967Proxy",
@@ -8168,13 +8079,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:19.384442+00:00",
+        "observedAt": "2026-08-16T22:48:39.868620+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8235,7 +8144,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3088,
-            "moralis": "3096"
+            "moralis": "3097"
           }
         },
         "floorPrice": {
@@ -8243,7 +8152,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.013543,
-            "moralis": "0.02"
+            "moralis": "0.016"
           }
         }
       },
@@ -8251,7 +8160,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-05T19:45:41.000Z",
-        "transferCount": "64725",
+        "transferCount": "64744",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -8795,10 +8704,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:19.951727+00:00",
+      "observedAt": "2026-08-16T22:45:42.737832+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:33.890727+00:00",
+        "observedAt": "2026-08-16T22:46:52.521885+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FLUF",
@@ -8815,13 +8724,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:19.485696+00:00",
+        "observedAt": "2026-08-16T22:48:40.275653+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9277,10 +9184,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:21.524943+00:00",
+      "observedAt": "2026-08-16T22:45:42.965574+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:36.042018+00:00",
+        "observedAt": "2026-08-16T22:46:56.114163+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "GenF",
@@ -9297,13 +9204,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:25.606213+00:00",
+        "observedAt": "2026-08-16T22:48:46.130784+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9372,7 +9277,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00095909,
-            "moralis": "0.0008397"
+            "moralis": "0.0009397"
           }
         }
       },
@@ -9459,10 +9364,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.065935+00:00",
+      "observedAt": "2026-08-16T22:45:43.236596+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:37.882976+00:00",
+        "observedAt": "2026-08-16T22:46:57.950184+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FlyFrogs",
@@ -9479,13 +9384,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:26.341814+00:00",
+        "observedAt": "2026-08-16T22:48:46.545679+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9546,7 +9449,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2866,
-            "moralis": "2872"
+            "moralis": "2875"
           }
         },
         "floorPrice": {
@@ -9554,7 +9457,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.04,
-            "moralis": "0.03428199"
+            "moralis": "0.0296825"
           }
         }
       },
@@ -9562,7 +9465,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-06-28T03:00:18.000Z",
-        "transferCount": "59525",
+        "transferCount": "59556",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -9952,10 +9855,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.500776+00:00",
+      "observedAt": "2026-08-16T22:45:43.581727+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:39.657335+00:00",
+        "observedAt": "2026-08-16T22:46:59.713588+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ForgottenRunesWizardsCult",
@@ -9972,13 +9875,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:26.404937+00:00",
+        "observedAt": "2026-08-16T22:48:46.902909+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10110,10 +10011,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.973812+00:00",
+      "observedAt": "2026-08-16T22:45:43.819997+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:41.470740+00:00",
+        "observedAt": "2026-08-16T22:47:01.547363+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -10130,13 +10031,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:32.220044+00:00",
+        "observedAt": "2026-08-16T22:48:52.927394+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10197,7 +10096,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3538,
-            "moralis": "3533"
+            "moralis": "3532"
           }
         },
         "floorPrice": {
@@ -10205,7 +10104,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00083999,
-            "moralis": "0.00083999"
+            "moralis": "0.00082999"
           }
         }
       },
@@ -10213,7 +10112,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-26T01:18:44.000Z",
-        "transferCount": "21560",
+        "transferCount": "21561",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -10823,10 +10722,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:24.567636+00:00",
+      "observedAt": "2026-08-16T22:45:44.371271+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:43.289039+00:00",
+        "observedAt": "2026-08-16T22:47:03.371722+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FyatLux",
@@ -10843,13 +10742,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:33.520967+00:00",
+        "observedAt": "2026-08-16T22:48:53.349418+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10981,12 +10878,12 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:24.938496+00:00",
+      "observedAt": "2026-08-16T22:45:44.904841+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:46.881848+00:00",
+        "observedAt": "2026-08-16T22:47:06.950575+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "HalloweenRising",
@@ -11003,15 +10900,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 0,
-        "errors": [
-          "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:34.246528+00:00",
+        "observedAt": "2026-08-16T22:48:53.806407+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11533,10 +11426,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:25.163741+00:00",
+      "observedAt": "2026-08-16T22:45:45.195166+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:48.696863+00:00",
+        "observedAt": "2026-08-16T22:47:08.767740+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "JaduAVA",
@@ -11553,13 +11446,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:39.171565+00:00",
+        "observedAt": "2026-08-16T22:48:59.572935+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11628,7 +11519,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.014299,
-            "moralis": "0.013999"
+            "moralis": "0.013539"
           }
         }
       },
@@ -11636,7 +11527,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-02-04T09:35:16.000Z",
-        "transferCount": "37393",
+        "transferCount": "37398",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12015,10 +11906,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:25.455771+00:00",
+      "observedAt": "2026-08-16T22:45:45.926368+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:50.482243+00:00",
+        "observedAt": "2026-08-16T22:47:10.530102+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Karafuru",
@@ -12035,13 +11926,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:40.338448+00:00",
+        "observedAt": "2026-08-16T22:49:00.069836+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12098,11 +11987,11 @@
           }
         },
         "owners": {
-          "preferred": 226,
-          "status": "corroborated",
+          "preferred": null,
+          "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 226,
-            "moralis": "223"
+            "moralis": "221"
           }
         },
         "floorPrice": {
@@ -12118,7 +12007,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2026-01-12T15:58:01.000Z",
-        "transferCount": "885",
+        "transferCount": "889",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12173,10 +12062,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.043704+00:00",
+      "observedAt": "2026-08-16T22:45:46.109441+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:52.299491+00:00",
+        "observedAt": "2026-08-16T22:47:12.336139+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "VFTokenCAirdrop",
@@ -12193,15 +12082,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 0,
-        "errors": [
-          "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:40.829645+00:00",
+        "observedAt": "2026-08-16T22:49:00.482699+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12333,10 +12218,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.393931+00:00",
+      "observedAt": "2026-08-16T22:45:46.799365+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:54.126070+00:00",
+        "observedAt": "2026-08-16T22:47:14.183357+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "MonaAvatars",
@@ -12353,13 +12238,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:45.878144+00:00",
+        "observedAt": "2026-08-16T22:49:06.543037+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12420,7 +12303,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 6339,
-            "moralis": "6343"
+            "moralis": "6342"
           }
         },
         "floorPrice": {
@@ -12428,7 +12311,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.3615683179000002,
-            "moralis": "0.34725"
+            "moralis": "0.3684"
           }
         }
       },
@@ -12436,7 +12319,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-05-03T00:49:32.000Z",
-        "transferCount": "143623",
+        "transferCount": "143681",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12914,10 +12797,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.687218+00:00",
+      "observedAt": "2026-08-16T22:45:47.121352+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:55.929366+00:00",
+        "observedAt": "2026-08-16T22:47:15.989488+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Meebits",
@@ -12934,13 +12817,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:47.164784+00:00",
+        "observedAt": "2026-08-16T22:49:06.885836+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13178,10 +13059,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:27.871186+00:00",
+      "observedAt": "2026-08-16T22:45:47.880863+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:57.716971+00:00",
+        "observedAt": "2026-08-16T22:47:17.753792+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "metaaniGEN",
@@ -13198,13 +13079,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:47.682070+00:00",
+        "observedAt": "2026-08-16T22:49:07.323537+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13281,7 +13160,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-06-06T10:12:53.000Z",
-        "transferCount": "11482",
+        "transferCount": "11484",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -14320,10 +14199,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:27.910118+00:00",
+      "observedAt": "2026-08-16T22:45:47.992596+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:59.558734+00:00",
+        "observedAt": "2026-08-16T22:47:19.592525+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TransparentUpgradeableProxy",
@@ -14340,19 +14219,42 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:52.662415+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-08-16T22:49:13.499911+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 2,
+        "uniqueTokenIds": 2,
+        "transferUris": 2,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "775",
+            "uri": "https://www.metashima.com/minted/775",
+            "name": "Metashima",
+            "symbol": "SHIMA",
+            "protocol": null,
+            "sender": "0x01f19e970a1253230b23c7657b4799ef22a6b62f",
+            "receiver": "0x07ce9a4c5fa3c2eca8bfaf31925bdd81555ddddd",
+            "block": "25769433",
+            "time": "2026-08-16T18:31:23Z",
+            "txHash": "0x25996bfcd93964340d4f76314674870f8a0b010c7b2f64602be4adb5957cec52"
+          },
+          {
+            "tokenId": "3675",
+            "uri": "https://www.metashima.com/minted/3675",
+            "name": "Metashima",
+            "symbol": "SHIMA",
+            "protocol": null,
+            "sender": "0x01f19e970a1253230b23c7657b4799ef22a6b62f",
+            "receiver": "0x07ce9a4c5fa3c2eca8bfaf31925bdd81555ddddd",
+            "block": "25769433",
+            "time": "2026-08-16T18:31:23Z",
+            "txHash": "0x25996bfcd93964340d4f76314674870f8a0b010c7b2f64602be4adb5957cec52"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -14562,10 +14464,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:28.409483+00:00",
+      "observedAt": "2026-08-16T22:45:48.523660+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:03.165582+00:00",
+        "observedAt": "2026-08-16T22:47:23.197972+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721NESDrop",
@@ -14582,13 +14484,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:53.930427+00:00",
+        "observedAt": "2026-08-16T22:49:13.838726+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -14647,7 +14547,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3349,
-            "moralis": "3378"
+            "moralis": "3384"
           }
         },
         "floorPrice": {
@@ -14655,7 +14555,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.67999999,
-            "moralis": "0.484"
+            "moralis": "0.498958"
           }
         }
       },
@@ -14663,7 +14563,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-15T16:38:30.000Z",
-        "transferCount": "177375",
+        "transferCount": "177474",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -14943,10 +14843,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:28.850737+00:00",
+      "observedAt": "2026-08-16T22:45:48.864531+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:04.977469+00:00",
+        "observedAt": "2026-08-16T22:47:25.022970+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Moonbirds",
@@ -14963,114 +14863,112 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:54.458516+00:00",
+        "observedAt": "2026-08-16T22:49:14.069098+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 14,
+        "uniqueTokenIds": 13,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "2010",
+            "tokenId": "1306",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
-            "sender": "0x3dbc93aecd50e485ecd2dd6dbe73d1ec19a4d839",
-            "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "block": "25740459",
-            "time": "2026-08-12T17:37:59Z",
-            "txHash": "0xd49ccf7e4abe9ba57138e5db81fc9f93636f339cfd9f712621e2650ef090a5d0"
+            "sender": "0xe3277959ae81e4e581292128afa06045cdd9703e",
+            "receiver": "0x65046473fa4fc0f63a75ee7bfd3f33cf11d5a7ee",
+            "block": "25770189",
+            "time": "2026-08-16T21:02:35Z",
+            "txHash": "0x8ba101a5ebb51b0a9fe6577e3ed2f53284e72e2140e2546096550debb0a3d8b1"
           },
           {
-            "tokenId": "2010",
+            "tokenId": "5272",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
-            "sender": "0x3a3b180a7eb906d808a999148a81128543efc5bc",
-            "receiver": "0x3dbc93aecd50e485ecd2dd6dbe73d1ec19a4d839",
-            "block": "25740399",
-            "time": "2026-08-12T17:25:59Z",
-            "txHash": "0xa95871b97e5510321d179817e2332421472c3df41aa8da6d27fc01f8ae3f64e1"
+            "sender": "0xe3277959ae81e4e581292128afa06045cdd9703e",
+            "receiver": "0x65046473fa4fc0f63a75ee7bfd3f33cf11d5a7ee",
+            "block": "25770189",
+            "time": "2026-08-16T21:02:35Z",
+            "txHash": "0x8ba101a5ebb51b0a9fe6577e3ed2f53284e72e2140e2546096550debb0a3d8b1"
           },
           {
-            "tokenId": "6765",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "receiver": "0xf41b389e0c1950dc0b16c9498eae77131cc08a56",
-            "block": "25739640",
-            "time": "2026-08-12T14:53:35Z",
-            "txHash": "0x1bbcb3be03927cd19b9c9fce9641cf8c68e0e1edee1dba01059b6c215e16e510"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "receiver": "0xf41b389e0c1950dc0b16c9498eae77131cc08a56",
-            "block": "25739640",
-            "time": "2026-08-12T14:53:35Z",
-            "txHash": "0x0afd4f5b7014d1fad20477aa8f74a0b361eaa52a2aaf956692758703f1fcfc14"
-          },
-          {
-            "tokenId": "2506",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x0b7862feac03e8d03341daa68506dc95d1fed9ae",
-            "receiver": "0x22ba1e3ef17609151fb322cfca979fe0d85248f7",
-            "block": "25738998",
-            "time": "2026-08-12T12:44:35Z",
-            "txHash": "0x30d366ee4736e620f68a86eff7021607a42af393808ad7f97a0733ef998480df"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "receiver": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "block": "25738964",
-            "time": "2026-08-12T12:37:47Z",
-            "txHash": "0x345e71311156c16e322593a344eeced60c4630ab74ca7fc32cff6933069e0c81"
-          },
-          {
-            "tokenId": "2677",
+            "tokenId": "2381",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
             "sender": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "receiver": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "block": "25738961",
-            "time": "2026-08-12T12:37:11Z",
-            "txHash": "0xbfa9fc8e967866726f3761e7b3f57d846ddfbf4caacfd970f12aef19d63c4c6f"
+            "receiver": "0x8ab1ef55f1868040336fbe825a88f41014c062be",
+            "block": "25769892",
+            "time": "2026-08-16T20:03:11Z",
+            "txHash": "0xc1f4fdea6d8f0e637ed54712a3ec93b6110c64967c01f08ac3e9873902817f10"
           },
           {
-            "tokenId": "547",
+            "tokenId": "6550",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
-            "sender": "0x8f34c409c8e00dcaa761b92f826465031d2edad9",
+            "sender": "0x1a87998b11423723dc3ed625944f6fb83550f821",
             "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25735833",
-            "time": "2026-08-12T02:07:35Z",
-            "txHash": "0xdffffd3f57d71831d19642d1520968322880557ce2e57359218002edb3177764"
+            "block": "25769310",
+            "time": "2026-08-16T18:06:23Z",
+            "txHash": "0xb4841e2ee4ba05b6b0d1ebc44d5fd3ccb71fd0c22bdee4a627f9cffc949c169a"
+          },
+          {
+            "tokenId": "5373",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x66627c4bfd7205d831d9757ae69f41af405237ae",
+            "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+            "block": "25767380",
+            "time": "2026-08-16T11:40:11Z",
+            "txHash": "0x861fc8e58c10c2000d4b967ae27be7ee89d6557f50888a20b14d90cfdcab98e8"
+          },
+          {
+            "tokenId": "5373",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
+            "receiver": "0x66627c4bfd7205d831d9757ae69f41af405237ae",
+            "block": "25767040",
+            "time": "2026-08-16T10:31:59Z",
+            "txHash": "0x8fda436f0038b891f4dc0c0966b109a7c86d7135551273813dff31457bf36630"
+          },
+          {
+            "tokenId": "7926",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x62446efb497a24ac8b3c5f65ed28a60056552e03",
+            "receiver": "0xb5479d539096b67ad412b3421043d320da4fe245",
+            "block": "25766106",
+            "time": "2026-08-16T07:25:11Z",
+            "txHash": "0x5500fb0ab25084312a572804c8392f3de93bf0288fcba32552b9f576a8de7efc"
+          },
+          {
+            "tokenId": "3803",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x178572b261ed2d52be2c7c41e2580d1826479e0c",
+            "receiver": "0x85907cf7e513a24998cdfe720ae7e7b2a442ea38",
+            "block": "25765889",
+            "time": "2026-08-16T06:41:23Z",
+            "txHash": "0x6bbde2bee79c9832e4962c729f875f7e59bfcb3f6d185ee9db828d8184d9741b"
           }
         ],
         "errors": []
@@ -15144,13 +15042,13 @@
         "transferCount": "0",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:29.754757+00:00",
+      "observedAt": "2026-08-16T22:45:49.337656+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}",
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:06.787514+00:00",
+        "observedAt": "2026-08-16T22:47:26.796499+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": "",
@@ -15167,15 +15065,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 0,
-        "errors": [
-          "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-          "creation: RuntimeError: Etherscan API error: No data found",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:59.617478+00:00",
+        "observedAt": "2026-08-16T22:49:20.325587+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15365,10 +15259,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:29.828835+00:00",
+      "observedAt": "2026-08-16T22:45:49.720040+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:08.571745+00:00",
+        "observedAt": "2026-08-16T22:47:28.618952+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NG86VRM",
@@ -15385,13 +15279,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.065529+00:00",
+        "observedAt": "2026-08-16T22:49:20.660427+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15466,7 +15358,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-21T17:34:52.000Z",
-        "transferCount": "20278",
+        "transferCount": "20279",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -15845,10 +15737,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:30.516150+00:00",
+      "observedAt": "2026-08-16T22:45:51.243565+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:10.381374+00:00",
+        "observedAt": "2026-08-16T22:47:30.434427+00:00",
         "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": "",
@@ -15865,115 +15757,28 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.459597+00:00",
+        "observedAt": "2026-08-16T22:49:20.798929+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 12,
-        "uniqueTokenIds": 8,
-        "transferUris": 12,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
+        "transferUris": 1,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "7225",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
+            "tokenId": "8586",
+            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/8586",
             "name": "Daz3D Non-Fungible People",
             "symbol": "DAZNFP",
             "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7226",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7298",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7298",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7297",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7297",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "5767",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5767",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7225",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
-          },
-          {
-            "tokenId": "7226",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
-          },
-          {
-            "tokenId": "5898",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5898",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xcc800a41da6947b224bb57cb553e6744420323f6",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
+            "sender": "0xd46e96e9e83477334966bc4c3edbdade9dd9c850",
+            "receiver": "0x0d7ae19336dbd22f14a7021034fd3199ef35c349",
+            "block": "25753519",
+            "time": "2026-08-14T13:17:23Z",
+            "txHash": "0x6ade2a67e8b1f5b051fd32a5d5f84e6a3d4eab71dfb79b3bf36f666d01795e18"
           }
         ],
         "errors": []
@@ -16016,11 +15821,11 @@
       },
       "stats": {
         "totalSupply": {
-          "preferred": 1965,
+          "preferred": 1969,
           "status": "corroborated",
           "sources": {
-            "catalogOrOpenSea": 1965,
-            "moralis": "1965"
+            "catalogOrOpenSea": 1969,
+            "moralis": "1969"
           }
         },
         "owners": {
@@ -16028,7 +15833,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 513,
-            "moralis": "512"
+            "moralis": "511"
           }
         },
         "floorPrice": {
@@ -16036,7 +15841,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.883199,
-            "moralis": "1.75"
+            "moralis": "0.8"
           }
         }
       },
@@ -16044,7 +15849,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-08T16:02:23.000Z",
-        "transferCount": "10591",
+        "transferCount": "10604",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -16123,10 +15928,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.094193+00:00",
+      "observedAt": "2026-08-16T22:45:51.830585+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:12.152127+00:00",
+        "observedAt": "2026-08-16T22:47:32.305923+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NounsToken",
@@ -16143,114 +15948,112 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.698530+00:00",
+        "observedAt": "2026-08-16T22:49:20.934871+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 14,
+        "tokensSampled": 10,
+        "uniqueTokenIds": 5,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "1570",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x5da05d81ba4b4716bbc4631f9ed712d78a0bae08",
-            "receiver": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "block": "25739228",
-            "time": "2026-08-12T13:30:35Z",
-            "txHash": "0x613cf1a569f7654fbf5ea27fa0fd90ff31e3fe3d493a2754ad4ef346d3077463"
-          },
-          {
-            "tokenId": "1570",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x929b67daff3787cef9061ecd474fbbeebbfa8311",
-            "receiver": "0x5da05d81ba4b4716bbc4631f9ed712d78a0bae08",
-            "block": "25739221",
-            "time": "2026-08-12T13:29:11Z",
-            "txHash": "0x6fa615753869eafdbe79018ade9586d17de8b2b04e83c350b1f2e2224d64b079"
-          },
-          {
-            "tokenId": "1394",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x4972bcab33ad4123c2ebca2e1d25dd25c86380e1",
-            "receiver": "0x538384891ef5cb8ce9ca7cc045d7829acbfc9360",
-            "block": "25737088",
-            "time": "2026-08-12T06:20:47Z",
-            "txHash": "0x1019fcf864c5bb2762fdd929ce1af065fe819e440ac800257718a8914dad4080"
-          },
-          {
-            "tokenId": "1989",
+            "tokenId": "1993",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25764656",
+            "time": "2026-08-16T02:34:11Z",
+            "txHash": "0xfd9a5b9915a9ef47258570606c39fb08ab12185c27c9c936fdbbca49f8bc779e"
           },
           {
-            "tokenId": "1990",
+            "tokenId": "1994",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x0000000000000000000000000000000000000000",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25764656",
+            "time": "2026-08-16T02:34:11Z",
+            "txHash": "0xfd9a5b9915a9ef47258570606c39fb08ab12185c27c9c936fdbbca49f8bc779e"
           },
           {
-            "tokenId": "1990",
+            "tokenId": "1994",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
             "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25764656",
+            "time": "2026-08-16T02:34:11Z",
+            "txHash": "0xfd9a5b9915a9ef47258570606c39fb08ab12185c27c9c936fdbbca49f8bc779e"
           },
           {
-            "tokenId": "1455",
+            "tokenId": "1992",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
-            "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
-            "block": "25728504",
-            "time": "2026-08-11T01:34:11Z",
-            "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+            "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25756997",
+            "time": "2026-08-15T00:55:35Z",
+            "txHash": "0x595617a7132f0f30d44ed3b5f6855c8be649f4af2662e83807f5ca388e171608"
           },
           {
-            "tokenId": "1743",
+            "tokenId": "1993",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
-            "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
-            "block": "25728504",
-            "time": "2026-08-11T01:34:11Z",
-            "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+            "sender": "0x0000000000000000000000000000000000000000",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25756997",
+            "time": "2026-08-15T00:55:35Z",
+            "txHash": "0x595617a7132f0f30d44ed3b5f6855c8be649f4af2662e83807f5ca388e171608"
+          },
+          {
+            "tokenId": "1993",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "block": "25756997",
+            "time": "2026-08-15T00:55:35Z",
+            "txHash": "0x595617a7132f0f30d44ed3b5f6855c8be649f4af2662e83807f5ca388e171608"
+          },
+          {
+            "tokenId": "1739",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x2af83b8b339aebc2a1532d7cf03fb4ca8ba1caf9",
+            "receiver": "0x5584051d2d21f09d80a176b97e87e6d460053323",
+            "block": "25756918",
+            "time": "2026-08-15T00:39:47Z",
+            "txHash": "0x8c19d4a7e80bacc06f497edaf0256036f404710630c52ee996889d93e54768ab"
+          },
+          {
+            "tokenId": "1991",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25749036",
+            "time": "2026-08-13T22:16:59Z",
+            "txHash": "0xb06664d2ccd43f8b7248403d134a09bd18fd2ccac40c26848fd836da89d6a8cf"
           }
         ],
         "errors": []
@@ -16376,10 +16179,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.438422+00:00",
+      "observedAt": "2026-08-16T22:45:52.042018+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:13.973779+00:00",
+        "observedAt": "2026-08-16T22:47:34.042995+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -16396,13 +16199,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.843225+00:00",
+        "observedAt": "2026-08-16T22:49:20.936822+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -16461,7 +16262,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3778,
-            "moralis": "3777"
+            "moralis": "3771"
           }
         },
         "floorPrice": {
@@ -16469,7 +16270,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006392,
-            "moralis": "0.0009533"
+            "moralis": "0.0010743"
           }
         }
       },
@@ -16477,7 +16278,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-11T08:31:15.000Z",
-        "transferCount": "29187",
+        "transferCount": "29200",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -17263,10 +17064,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.756680+00:00",
+      "observedAt": "2026-08-16T22:45:52.218556+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:15.781048+00:00",
+        "observedAt": "2026-08-16T22:47:35.849524+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Omnimorphs",
@@ -17283,19 +17084,114 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.009554+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-08-16T22:49:21.038768+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 13,
+        "uniqueTokenIds": 13,
+        "transferUris": 13,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "7465",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/7465",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "receiver": "0xda60f6f99cea7fb4acfb3dfcb817691eaa41ba4e",
+            "block": "25769498",
+            "time": "2026-08-16T18:44:23Z",
+            "txHash": "0x2b5726af0762d01b7c6fca93053a07a607b6649252ba6bf609753f97740876e4"
+          },
+          {
+            "tokenId": "3793",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/3793",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdc79d17baf5ebe72c500e479c064bdaba35ac8b6",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          },
+          {
+            "tokenId": "5671",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/5671",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdc79d17baf5ebe72c500e479c064bdaba35ac8b6",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          },
+          {
+            "tokenId": "7452",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/7452",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdae477dd79e44b6952330931b74ee59f7bd91279",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          },
+          {
+            "tokenId": "326",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/326",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xa18ddadad6f3122c9dc447386f9fa642d01bdfaf",
+            "receiver": "0x0791319cd15c127c887f1d92fbe64fd28b55b0e1",
+            "block": "25759329",
+            "time": "2026-08-15T08:43:11Z",
+            "txHash": "0xe146ac1c88af9c37011e8e1efc7295d6b57af2d627e83771bcb7e85ea4041c81"
+          },
+          {
+            "tokenId": "5139",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/5139",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xdae477dd79e44b6952330931b74ee59f7bd91279",
+            "receiver": "0x90ff27642013f0d93651ff964ce4b5fca7dcf62a",
+            "block": "25759253",
+            "time": "2026-08-15T08:27:59Z",
+            "txHash": "0x17f3acd4d32e69af645da0a5e01e684632d0637f4bf0d3dc6f856e7bb2a609be"
+          },
+          {
+            "tokenId": "7809",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/7809",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x72919e83afd6cb328e6182314373b830b828fac9",
+            "receiver": "0x90ff27642013f0d93651ff964ce4b5fca7dcf62a",
+            "block": "25759253",
+            "time": "2026-08-15T08:27:59Z",
+            "txHash": "0x17f3acd4d32e69af645da0a5e01e684632d0637f4bf0d3dc6f856e7bb2a609be"
+          },
+          {
+            "tokenId": "5746",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/5746",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x3f31a31c1426ba9ffb16da1e52d9f4d966d1d6f0",
+            "receiver": "0x90ff27642013f0d93651ff964ce4b5fca7dcf62a",
+            "block": "25759253",
+            "time": "2026-08-15T08:27:59Z",
+            "txHash": "0x17f3acd4d32e69af645da0a5e01e684632d0637f4bf0d3dc6f856e7bb2a609be"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -17356,7 +17252,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0224654,
-            "moralis": "0.0216576"
+            "moralis": "0.02161826"
           }
         }
       },
@@ -17364,7 +17260,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-06-28T22:18:59.000Z",
-        "transferCount": "46118",
+        "transferCount": "46171",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -17534,10 +17430,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:32.140468+00:00",
+      "observedAt": "2026-08-16T22:45:52.996034+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:19.382465+00:00",
+        "observedAt": "2026-08-16T22:47:39.438956+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ParallelAvatars",
@@ -17554,117 +17450,20 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.184837+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 23,
-        "transferUris": 25,
+        "observedAt": "2026-08-16T22:49:21.261186+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "8654",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/8654",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
-            "receiver": "0x5688228ee0812aa6e5b2780a4aa659367c925397",
-            "block": "25740191",
-            "time": "2026-08-12T16:44:11Z",
-            "txHash": "0xac580d2cf0411913eeb34ad83ccbf590244909c135c3cc8ccf33bdf5e35444b7"
-          },
-          {
-            "tokenId": "7030",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7030",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x28358cef6f55f9746c9c26c62e5728036b4f64b8",
-            "receiver": "0x7542c9df25dae8a004f29b8647641757b4582098",
-            "block": "25736190",
-            "time": "2026-08-12T03:19:11Z",
-            "txHash": "0x4fc6688d8c20c3b713ebc0235a7e90d73844d67e5ca28a1e1fca0f3ac2f99d21"
-          },
-          {
-            "tokenId": "1414",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/1414",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "4913",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/4913",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "5236",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5236",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "5259",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5259",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "5545",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5545",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          },
-          {
-            "tokenId": "5598",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5598",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
-          }
-        ],
-        "errors": []
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        ]
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -17732,7 +17531,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-17T01:58:01.000Z",
-        "transferCount": "41608",
+        "transferCount": "41612",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -18254,10 +18053,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:33.131901+00:00",
+      "observedAt": "2026-08-16T22:45:53.340550+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:21.193802+00:00",
+        "observedAt": "2026-08-16T22:47:41.262737+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "PartyBears",
@@ -18274,22 +18073,67 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.270438+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-08-16T22:49:21.262348+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 4,
+        "uniqueTokenIds": 2,
+        "transferUris": 4,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "3466",
+            "uri": "https://api.partybear.xyz/api/token/3466",
+            "name": "Party Bears",
+            "symbol": "PartyBears",
+            "protocol": null,
+            "sender": "0xa96aa691e0a94cbbddef2f900cb554fc8df67ad4",
+            "receiver": "0xb19c1bcf7ca6a12fb4c96e4336ac8cc5804c32ce",
+            "block": "25764803",
+            "time": "2026-08-16T03:03:35Z",
+            "txHash": "0x637350a757c10221b199f3d6b955e82dd14aea51983d4ec8123576ff7f48a8e4"
+          },
+          {
+            "tokenId": "4064",
+            "uri": "https://api.partybear.xyz/api/token/4064",
+            "name": "Party Bears",
+            "symbol": "PartyBears",
+            "protocol": null,
+            "sender": "0xa96aa691e0a94cbbddef2f900cb554fc8df67ad4",
+            "receiver": "0xb19c1bcf7ca6a12fb4c96e4336ac8cc5804c32ce",
+            "block": "25764803",
+            "time": "2026-08-16T03:03:35Z",
+            "txHash": "0x637350a757c10221b199f3d6b955e82dd14aea51983d4ec8123576ff7f48a8e4"
+          },
+          {
+            "tokenId": "4064",
+            "uri": "https://api.partybear.xyz/api/token/4064",
+            "name": "Party Bears",
+            "symbol": "PartyBears",
+            "protocol": null,
+            "sender": "0x8164d40213b7c7e6d8b68e35bda20e9598498257",
+            "receiver": "0xa96aa691e0a94cbbddef2f900cb554fc8df67ad4",
+            "block": "25764183",
+            "time": "2026-08-16T00:59:11Z",
+            "txHash": "0x156f1ace849688fc96351024b85d7774c09c29778a59b6ee55e8d470912b2670"
+          },
+          {
+            "tokenId": "3466",
+            "uri": "https://api.partybear.xyz/api/token/3466",
+            "name": "Party Bears",
+            "symbol": "PartyBears",
+            "protocol": null,
+            "sender": "0x8164d40213b7c7e6d8b68e35bda20e9598498257",
+            "receiver": "0xa96aa691e0a94cbbddef2f900cb554fc8df67ad4",
+            "block": "25764183",
+            "time": "2026-08-16T00:59:11Z",
+            "txHash": "0x156f1ace849688fc96351024b85d7774c09c29778a59b6ee55e8d470912b2670"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -18560,10 +18404,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:33.253432+00:00",
+      "observedAt": "2026-08-16T22:45:53.570329+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:22.976489+00:00",
+        "observedAt": "2026-08-16T22:47:43.035595+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Phetta",
@@ -18580,13 +18424,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.460116+00:00",
+        "observedAt": "2026-08-16T22:49:21.312380+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18629,7 +18471,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/collection/pixelbeasts/image/c0c371523b31aec1a3cabd6db62ef1/6cc0c371523b31aec1a3cabd6db62ef1.png",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1918ece9baa54a1e5672c27def787e/621918ece9baa54a1e5672c27def787e.png"
           }
         }
       },
@@ -18647,7 +18489,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1,
-            "moralis": "727986"
+            "moralis": "727978"
           }
         },
         "floorPrice": {
@@ -18663,13 +18505,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4022865",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:34.762207+00:00",
+      "observedAt": "2026-08-16T22:45:54.299790+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:24.817789+00:00",
+        "observedAt": "2026-08-16T22:47:44.875881+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -18686,13 +18528,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.511612+00:00",
+        "observedAt": "2026-08-16T22:49:21.517941+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -19742,10 +19582,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:34.984880+00:00",
+      "observedAt": "2026-08-16T22:45:54.529162+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:26.602306+00:00",
+        "observedAt": "2026-08-16T22:47:46.682048+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "OptimizedTransparentUpgradeableProxy",
@@ -19762,13 +19602,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:08.153653+00:00",
+        "observedAt": "2026-08-16T22:49:27.962612+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -19829,7 +19667,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2494,
-            "moralis": "2491"
+            "moralis": "2490"
           }
         },
         "floorPrice": {
@@ -19837,7 +19675,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006686,
-            "moralis": "0.0008559"
+            "moralis": "0.0005556"
           }
         }
       },
@@ -19845,7 +19683,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-10-20T13:58:04.000Z",
-        "transferCount": "16794",
+        "transferCount": "16800",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -20257,10 +20095,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:35.270158+00:00",
+      "observedAt": "2026-08-16T22:45:55.327728+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:28.421071+00:00",
+        "observedAt": "2026-08-16T22:47:48.491031+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TheModZ",
@@ -20277,13 +20115,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:08.327291+00:00",
+        "observedAt": "2026-08-16T22:49:28.077631+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20360,7 +20196,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-27T07:43:22.000Z",
-        "transferCount": "131965",
+        "transferCount": "131968",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -20871,10 +20707,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:35.797797+00:00",
+      "observedAt": "2026-08-16T22:45:55.850714+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:30.228897+00:00",
+        "observedAt": "2026-08-16T22:47:50.257482+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Seeker",
@@ -20891,13 +20727,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:11.194264+00:00",
+        "observedAt": "2026-08-16T22:49:28.411437+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20954,19 +20788,19 @@
           }
         },
         "owners": {
-          "preferred": "2634",
+          "preferred": "2631",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2634"
+            "moralis": "2631"
           }
         },
         "floorPrice": {
-          "preferred": "0.0008296",
+          "preferred": "0.013",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.0008296"
+            "moralis": "0.013"
           }
         }
       },
@@ -20974,7 +20808,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-23T17:59:55.000Z",
-        "transferCount": "18095",
+        "transferCount": "18149",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -21265,10 +21099,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.103260+00:00",
+      "observedAt": "2026-08-16T22:45:55.965166+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:32.021458+00:00",
+        "observedAt": "2026-08-16T22:47:52.098492+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "WynLambo",
@@ -21285,13 +21119,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:14.992258+00:00",
+        "observedAt": "2026-08-16T22:49:34.771380+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -21637,10 +21469,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.444728+00:00",
+      "observedAt": "2026-08-16T22:45:56.674074+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:33.849650+00:00",
+        "observedAt": "2026-08-16T22:47:53.909249+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ToxicSkullsClubProxy",
@@ -21657,13 +21489,11 @@
           "balanceOf": false
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:15.139861+00:00",
+        "observedAt": "2026-08-16T22:49:34.938375+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -21724,7 +21554,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2615,
-            "moralis": "2609"
+            "moralis": "2611"
           }
         },
         "floorPrice": {
@@ -21732,7 +21562,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.003135,
-            "moralis": "0.00731"
+            "moralis": "0.0071597"
           }
         }
       },
@@ -21740,7 +21570,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34716",
+        "transferCount": "34724",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -22075,10 +21905,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.782868+00:00",
+      "observedAt": "2026-08-16T22:45:57.436490+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:35.647968+00:00",
+        "observedAt": "2026-08-16T22:47:55.705987+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22095,13 +21925,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:17.917946+00:00",
+        "observedAt": "2026-08-16T22:49:35.029787+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22158,19 +21986,19 @@
           }
         },
         "owners": {
-          "preferred": "2609",
+          "preferred": "2611",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2609"
+            "moralis": "2611"
           }
         },
         "floorPrice": {
-          "preferred": "0.00731",
+          "preferred": "0.0071597",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.00731"
+            "moralis": "0.0071597"
           }
         }
       },
@@ -22178,7 +22006,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34716",
+        "transferCount": "34724",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -22513,10 +22341,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:37.203663+00:00",
+      "observedAt": "2026-08-16T22:45:57.745288+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:37.519813+00:00",
+        "observedAt": "2026-08-16T22:47:57.518169+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22533,13 +22361,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:21.755751+00:00",
+        "observedAt": "2026-08-16T22:49:41.660119+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22830,10 +22656,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:37.442726+00:00",
+      "observedAt": "2026-08-16T22:45:58.394026+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:39.258126+00:00",
+        "observedAt": "2026-08-16T22:47:59.316511+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ImmaDegenVoyagerReveal",
@@ -22850,13 +22676,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:21.908633+00:00",
+        "observedAt": "2026-08-16T22:49:41.808061+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23488,10 +23312,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:39.526402+00:00",
+      "observedAt": "2026-08-16T22:45:58.463095+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:41.063174+00:00",
+        "observedAt": "2026-08-16T22:48:01.128263+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Voltz",
@@ -23508,13 +23332,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:24.924407+00:00",
+        "observedAt": "2026-08-16T22:49:41.898246+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23575,7 +23397,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1297,
-            "moralis": "1290"
+            "moralis": "1291"
           }
         },
         "floorPrice": {
@@ -23583,7 +23405,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00029,
-            "moralis": "0.001986"
+            "moralis": "0.00197"
           }
         }
       },
@@ -23591,7 +23413,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2024-12-25T17:31:53.000Z",
-        "transferCount": "17834",
+        "transferCount": "17844",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -24036,10 +23858,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.003773+00:00",
+      "observedAt": "2026-08-16T22:45:58.667676+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:42.836151+00:00",
+        "observedAt": "2026-08-16T22:48:02.893912+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Vaifus",
@@ -24056,15 +23878,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 0,
-        "errors": [
-          "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:28.531491+00:00",
+        "observedAt": "2026-08-16T22:49:48.677849+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24125,7 +23943,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3817,
-            "moralis": "3815"
+            "moralis": "3814"
           }
         },
         "floorPrice": {
@@ -24133,7 +23951,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.002340999999,
-            "moralis": "0.00182"
+            "moralis": "0.0018609999999"
           }
         }
       },
@@ -24141,7 +23959,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-24T06:15:46.000Z",
-        "transferCount": "25119",
+        "transferCount": "25124",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -24553,10 +24371,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.049524+00:00",
+      "observedAt": "2026-08-16T22:45:59.325719+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:44.660509+00:00",
+        "observedAt": "2026-08-16T22:48:04.746354+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Woodie",
@@ -24573,13 +24391,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:28.812196+00:00",
+        "observedAt": "2026-08-16T22:49:48.731837+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24711,12 +24527,12 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.343485+00:00",
+      "observedAt": "2026-08-16T22:46:00.786511+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:46.483579+00:00",
+        "observedAt": "2026-08-16T22:48:06.535579+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "XmasChibis",
@@ -24733,13 +24549,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:31.917155+00:00",
+        "observedAt": "2026-08-16T22:49:48.733963+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24808,7 +24622,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.007097,
-            "moralis": "0.007569"
+            "moralis": "0.007559"
           }
         }
       },
@@ -24871,10 +24685,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:41.027437+00:00",
+      "observedAt": "2026-08-16T22:46:01.217880+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:48.254385+00:00",
+        "observedAt": "2026-08-16T22:48:08.301612+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721SeaDrop",
@@ -24891,13 +24705,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:35.544481+00:00",
+        "observedAt": "2026-08-16T22:49:55.402499+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24958,7 +24770,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3043,
-            "moralis": "3040"
+            "moralis": "3037"
           }
         },
         "floorPrice": {
@@ -24966,7 +24778,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0999199,
-            "moralis": "0.092799"
+            "moralis": "0.091999"
           }
         }
       },
@@ -24974,7 +24786,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-12-29T14:26:11.000Z",
-        "transferCount": "78247",
+        "transferCount": "78303",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -25430,10 +25242,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:41.235427+00:00",
+      "observedAt": "2026-08-16T22:46:01.375391+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:50.089067+00:00",
+        "observedAt": "2026-08-16T22:48:10.148439+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AKCB",
@@ -25450,13 +25262,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 25,
-        "errors": [
-          "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:35.695523+00:00",
+        "observedAt": "2026-08-16T22:49:55.446903+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -25536,12 +25346,12 @@
         "transferCount": "7204",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:42.353939+00:00",
+      "observedAt": "2026-08-16T22:46:02.383607+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:51.981474+00:00",
+        "observedAt": "2026-08-16T22:48:12.298307+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Token",
@@ -25558,15 +25368,11 @@
           "balanceOf": true
         },
         "eventLogsSampled": 0,
-        "errors": [
-          "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-          "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-        ],
+        "errors": [],
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:38.819660+00:00",
+        "observedAt": "2026-08-16T22:49:55.567190+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -25591,48 +25397,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "research-0xaad35c",
-      "name": "Akutars",
-      "chain": "ethereum",
-      "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "allstarz-psx",
-      "name": "Allstarz PSX",
-      "chain": "ethereum",
-      "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "research-0x1ac7a2",
-      "name": "ArbiDudesGenOne",
-      "chain": "arbitrum",
-      "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25645,9 +25410,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25660,22 +25423,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "boomboxheads-v2",
-      "name": "Boomboxheads V2",
-      "chain": "ethereum",
-      "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25688,9 +25436,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25704,9 +25450,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25719,9 +25463,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -25734,24 +25476,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "chain-runners",
-      "name": "Chain Runners",
-      "chain": "ethereum",
-      "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25768,24 +25493,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "a3ac-0xc49a9a",
-      "name": "Chibi Apes",
-      "chain": "ethereum",
-      "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25804,9 +25512,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25823,24 +25529,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "cyberbrokers",
-      "name": "CyberBrokers",
-      "chain": "ethereum",
-      "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25855,9 +25544,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25872,24 +25559,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "dickbuttverse",
-      "name": "DickButtVerse",
-      "chain": "ethereum",
-      "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25904,9 +25574,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25921,9 +25589,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25938,24 +25604,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "fly-frogs",
-      "name": "Fly Frogs",
-      "chain": "ethereum",
-      "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -25971,24 +25620,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "frutiger-anons",
-      "name": "Frutiger Anons",
-      "chain": "ethereum",
-      "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26003,9 +25635,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26020,41 +25650,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "a3ac-0x86fc6f",
-      "name": "Jadu AVA",
-      "chain": "ethereum",
-      "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "research-0xd2F668",
-      "name": "Karafuru",
-      "chain": "ethereum",
-      "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26065,15 +25661,12 @@
       "chain": "base",
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
       "sourceConflicts": [
+        "owners",
         "floorPrice"
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26088,39 +25681,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "meebits",
-      "name": "Meebits",
-      "chain": "ethereum",
-      "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "metaanigen",
-      "name": "MetaaniGEN",
-      "chain": "ethereum",
-      "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26135,22 +25696,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "misfitpixels",
-      "name": "MisfitPIXELS",
-      "chain": "ethereum",
-      "contract": "0x618951345638caa062259cdbed445d4fb661b774",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26163,9 +25709,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26182,11 +25726,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-        "creation: RuntimeError: Etherscan API error: No data found",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26200,9 +25740,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26215,10 +25753,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "abi: RuntimeError: Etherscan API error: Contract source code not verified",
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26231,22 +25766,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "og-meta-meeples-pfp",
-      "name": "OG Meta Meeples PFP",
-      "chain": "ethereum",
-      "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26259,22 +25779,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": []
-    },
-    {
-      "catalogId": "research-0x0fc3dd",
-      "name": "Parallel Avatars",
-      "chain": "ethereum",
-      "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": []
     },
     {
@@ -26287,12 +25792,8 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "etherscanErrors": [],
+      "bitqueryErrors": []
     },
     {
       "catalogId": "phettaverse-editions",
@@ -26304,9 +25805,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26324,9 +25823,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26342,24 +25839,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "a3ac-0x50e712",
-      "name": "The Modz",
-      "chain": "ethereum",
-      "contract": "0x50e712b3a260d7639179e8277836253461418f23",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26375,9 +25855,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26392,24 +25870,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "toxic-skulls-club",
-      "name": "Toxic Skulls Club",
-      "chain": "ethereum",
-      "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26424,9 +25885,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26441,9 +25900,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26458,41 +25915,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "voltz",
-      "name": "VOLTZ Avatars",
-      "chain": "ethereum",
-      "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "research-0x631086",
-      "name": "Virtuals Waifus",
-      "chain": "base",
-      "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26507,9 +25930,7 @@
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26524,39 +25945,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "research-0x35373e",
-      "name": "ZTX Genesis Homes",
-      "chain": "arbitrum",
-      "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
-    },
-    {
-      "catalogId": "a3ac-0x77372a",
-      "name": "a KID called BEAST",
-      "chain": "ethereum",
-      "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
-      "sourceConflicts": [],
-      "sourceErrors": [],
-      "etherscanConflicts": [],
-      "etherscanErrors": [
-        "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]
@@ -26574,11 +25963,7 @@
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscanConflicts": [],
-      "etherscanErrors": [
-        "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
-        "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
-      ],
+      "etherscanErrors": [],
       "bitqueryErrors": [
         "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
       ]

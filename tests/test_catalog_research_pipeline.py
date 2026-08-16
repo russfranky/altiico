@@ -256,6 +256,40 @@ def test_terminal_research_state_is_explicit_not_fabricated(tmp_path: Path):
     assert result["access"]["mode"] == "unavailable"
 
 
+def test_holder_gated_vrm_excludes_public_glb_sample(tmp_path: Path):
+    db = tmp_path / "catalog.db"
+    make_db(db)
+    conn = sqlite3.connect(db)
+    conn.row_factory = sqlite3.Row
+    glb = "https://assets.example.test/avatar/3d/idle"
+    research = {
+        "vrm_inventory": {
+            "state": "holder_gated",
+            "urls": [],
+            "evidence": evidence(),
+        },
+        "avatar_inventory": {
+            "state": "partial",
+            "assets": [{"url": glb, "format": "glb", "rigged": False}],
+            "evidence": evidence(),
+        },
+        "file_access": {
+            "mode": "holder_gated",
+            "requires_ownership": True,
+            "access_url": "https://example.test/vault",
+            "evidence": evidence(),
+        },
+    }
+    result = inventory_for(conn, inventory_row(vrm_url_https=glb), research)
+    conn.close()
+    assert glb not in result["urls"]
+    assert result["state"] == "holder_gated"
+    assert result["complete"] is False
+    assert result["terminal"] is False
+    assert result["access"]["mode"] == "holder_gated"
+    assert result["access"]["requires_ownership"] is True
+
+
 def test_inventory_export_schema_v2(tmp_path: Path):
     db = tmp_path / "catalog.db"
     make_db(db)

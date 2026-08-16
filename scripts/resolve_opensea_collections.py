@@ -43,7 +43,8 @@ from scripts.opensea_client import OpenSeaClient  # noqa: E402
 # --------------------------------------------------------------------------- consts
 
 SHARED_STOREFRONT_CONTRACTS: set[str] = {
-    "0x495f947276749ce646f68ac8c248420045cb7b5e",
+    "0x495f947276749ce646f68ac8c248420045cb7b5e",  # Ethereum OpenSea shared storefront
+    "0x2953399124f0cbb46d2cbacd8a89cf0599974963",  # Polygon OpenSea shared storefront
 }
 
 _REPO_ROOT = _SCRIPT_DIR.parent

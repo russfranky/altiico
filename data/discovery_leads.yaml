@@ -270,3 +270,37 @@ awesome_3d_missing_contracts:
     vrm_param: null
     review_state: pending
     notes: Genuinely absent from the catalog; README marks no 3D-avatar metadata field.
+
+# ─── OpenSea NFT-level VRM discovery (2026-08-16) ────────────────────────────
+# Binary-validated hits from scripts/discover_opensea_nfts.py. Untitled dumps
+# and mixed 1/1 editions stay leads; only a named multi-token series is
+# auto-promoted into vrm_index.db.
+opensea_nft_discovery:
+  - name: Cyber Across Verse
+    opensea_slug: cyber-across-verse
+    chain: polygon
+    review_state: confirmed
+    collection_id: cyber-across-verse
+    provenance: opensea-nft-discovery
+    notes: 14 tokens on the Polygon OpenSea shared storefront validated as VRM 0.x.
+      Catalog identity is the slug, not 0x2953399124f0cbb46d2cbacd8a89cf0599974963.
+  - name: Art Unchained Editions
+    opensea_slug: art-unchained-editions
+    chain: ethereum
+    contract: "0xefb95e27cdb5055ed5967b7a2c19f32d47a56de3"
+    review_state: investigating
+    notes: One validated VRM 0.x token ("LIT Rat 3D VRM Avatar"). Collection is a
+      mixed editions drop, not an admitted VRM avatar series.
+  - name: Treed 2 / Qa-Qa
+    opensea_slug: treed-2
+    chain: base
+    contract: "0x97af1960d5b59bf203558a06cd45991d8a55f81c"
+    review_state: investigating
+    notes: One validated VRM 0.x token ("Qa-Qa (Printable VRM Avatar)"). Slug is
+      weak; do not promote until the collection is shown to be an avatar series.
+  - name: Untitled OpenSea dump 195722659
+    opensea_slug: untitled-collection-195722659
+    chain: polygon
+    review_state: excluded
+    reason: Untitled shared-storefront dump; not a named avatar collection.
+    notes: File validated as VRM 0.x but has no collection identity.

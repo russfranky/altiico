@@ -54886,15 +54886,22 @@
       "enumerated_assets": 1,
       "enumerated_urls": 1,
       "formats": {
-        "vrm": 1
+        "glb": 1
       },
       "assets": [
         {
           "url": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
-          "format": "vrm",
-          "rigged": true,
+          "format": "glb",
+          "rigged": false,
           "rigging_evidence": [],
-          "source_evidence": []
+          "source_evidence": [
+            {
+              "kind": "structural_glb_validation",
+              "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+              "observed_at": "2026-08-17",
+              "note": "Fetched as GLB 2.0 named 1.glbV01-idle.glb. No VRM/VRMC_vrm extension. No skins, so this public sample is not a usable rigged avatar under probe rules."
+            }
+          ]
         }
       ],
       "urls": [
@@ -54902,19 +54909,50 @@
       ],
       "storage": {
         "types": [
-          "https"
+          "self_host"
         ],
-        "scope": "avatar_files",
-        "evidence": []
+        "scope": "public_glb_sample_and_holder_vault",
+        "evidence": [
+          {
+            "kind": "public_cdn_sample",
+            "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+            "observed_at": "2026-08-17"
+          },
+          {
+            "kind": "official_vault",
+            "source": "https://voltz.me/en/voltz-vault",
+            "observed_at": "2026-08-17"
+          }
+        ]
       },
       "access": {
-        "mode": null,
-        "requires_ownership": null,
-        "access_url": null,
-        "evidence": []
+        "mode": "public",
+        "requires_ownership": false,
+        "access_url": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+        "evidence": [
+          {
+            "kind": "public_cdn_sample",
+            "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+            "observed_at": "2026-08-17",
+            "note": "HTTP 200, CORS *, Content-Disposition 1.glbV01-idle.glb."
+          }
+        ]
       },
-      "inventory_evidence": [],
-      "legacy_vrm_state": "partial"
+      "inventory_evidence": [
+        {
+          "kind": "structural_glb_validation",
+          "source": "https://assets.voltz.me/avatar/3d/bc88a9db815485d94a580a6d960265ab9d2325",
+          "observed_at": "2026-08-17",
+          "note": "Public CDN sample is a GLB idle, not a VRM."
+        },
+        {
+          "kind": "official_vault_copy",
+          "source": "https://voltz.me/en/voltz-vault",
+          "observed_at": "2026-08-17",
+          "note": "Vault documents additional VRM + GLB + FBX behind wallet ownership."
+        }
+      ],
+      "legacy_vrm_state": "holder_gated"
     },
     {
       "collection_id": "research-0x631086",

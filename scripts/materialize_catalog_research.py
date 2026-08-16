@@ -48,6 +48,7 @@ CORE_FIELD_MAP = {
 }
 IDENTITY_FIELD_MAP = {
     "name": "name",
+    "creator": "creator",
     "tier": "tier",
     "chain": "chain",
     "contract": "contract",

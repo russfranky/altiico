@@ -11,6 +11,7 @@ import argparse
 import asyncio
 import json
 import os
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -24,7 +25,39 @@ if str(_REPO_ROOT) not in sys.path:
 from scripts.discover_opensea_candidates import _inspect_nft, _text  # noqa: E402
 from scripts.opensea_client import CHAIN_MAP, OpenSeaClient  # noqa: E402
 
-DEFAULT_QUERIES = ("VRM", "VRM avatar", "GLB avatar", "glTF avatar", "3D avatar")
+# Bare "VRM" is a substring trap (ENS, Courtyard, Uniswap LP, SuperRare).
+DEFAULT_QUERIES = (
+    "VRM avatar",
+    "VRM 1.0",
+    "VRMC_vrm",
+    "VRoid Hub",
+    "ready player me VRM",
+    "3D Avatar Character VRM",
+)
+
+# Known non-avatar or non-VRM marketplace hits that dominate unfiltered search.
+JUNK_COLLECTION_SLUGS = frozenset({
+    "ens",
+    "ens-name-wrapper",
+    "courtyard-nft",
+    "courtyard",
+    "uniswap-v3-positions",
+    "uniswap-v4-positions",
+    "unstoppable-domains",
+    "superrare",
+    "the-sandbox",
+    "the-sandbox-assets",
+    "decentraland",
+    "dcl-names",
+    "townstar",
+    "lootrealms",
+    "thecurrency",
+    "galafilmcollectibles",
+    "letters-by-vinnie-hager",
+    "da-gloobiez",
+})
+DOMAIN_NAME_RE = re.compile(r"\.(?:eth|crypto|nft|wallet|dao|x|luxe|blockchain)$", re.I)
+UNTITLED_COLLECTION_RE = re.compile(r"^untitled-collection-\d+$", re.I)
 
 
 def utc_now() -> str:
@@ -72,6 +105,57 @@ def _collection_slug(row: dict[str, Any]) -> str:
     return _text(row.get("collection_slug") or row.get("slug"))
 
 
+def is_junk_lead(hit: dict[str, Any]) -> bool:
+    """Drop known non-avatar marketplaces, untitled dumps, and domain-name tokens."""
+    slug = str(hit.get("collection") or "").strip().lower()
+    if slug in JUNK_COLLECTION_SLUGS:
+        return True
+    if UNTITLED_COLLECTION_RE.match(slug):
+        return True
+    name = str(hit.get("name") or "").strip()
+    if DOMAIN_NAME_RE.search(name):
+        return True
+    return False
+
+
+def unique_validations(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep one record per content hash so CDN mirrors are not counted twice."""
+    seen: set[str] = set()
+    unique: list[dict[str, Any]] = []
+    for row in rows:
+        sha = str(row.get("content_sha256") or row.get("sha256") or "").lower()
+        if sha:
+            if sha in seen:
+                continue
+            seen.add(sha)
+        unique.append(row)
+    return unique
+
+
+def lead_score(hit: dict[str, Any]) -> tuple[int, int, str]:
+    """Higher is better. Prefer VRM-specific queries and collection names."""
+    queries = hit.get("queries") or []
+    if isinstance(queries, set):
+        queries = list(queries)
+    score = 0
+    for query in queries:
+        lowered = str(query).casefold()
+        if "vrmc" in lowered or "vroid" in lowered:
+            score += 5
+        elif "vrm" in lowered and "avatar" in lowered:
+            score += 4
+        elif "vrm" in lowered:
+            score += 3
+        elif "glb" in lowered or "gltf" in lowered:
+            score += 1
+    blob = f"{hit.get('collection') or ''} {hit.get('name') or ''}".casefold()
+    if "vrm" in blob or "vroid" in blob:
+        score += 5
+    if "avatar" in blob:
+        score += 2
+    return (score, len(queries), str(hit.get("key") or ""))
+
+
 def _search_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
     for key in ("results", "nfts", "items"):
         value = data.get(key)
@@ -87,6 +171,8 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
     hits: dict[str, dict[str, Any]] = {}
     search_requests = 0
     unresolved_search_hits = 0
+    discarded_junk = 0
+    ranked: list[dict[str, Any]] = []
 
     try:
         for query in queries:
@@ -134,9 +220,12 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                     })
                     hit["queries"].add(query)
 
-        ranked = list(hits.values())[: args.max_nfts]
+        filtered = [hit for hit in hits.values() if not is_junk_lead(hit)]
+        discarded_junk = len(hits) - len(filtered)
+        ranked = sorted(filtered, key=lead_score, reverse=True)[: args.max_nfts]
         print(
             f"NFT-level search produced {len(hits)} resolved unique NFT leads; "
+            f"discarded {discarded_junk} known-junk collections; "
             f"inspecting {len(ranked)}",
             file=sys.stderr,
         )
@@ -166,6 +255,7 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
                         hit["validated_vrms"].append(validation)
                     else:
                         hit["rejected_model_candidates"].append(validation)
+                hit["validated_vrms"] = unique_validations(hit["validated_vrms"])
                 if hit["validated_vrms"]:
                     print(
                         f"NFT VRM HIT {hit['chain']}:{hit['contract']}:{hit['token_id']} "
@@ -177,7 +267,6 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
     finally:
         await client.close()
 
-    ranked = list(hits.values())[: args.max_nfts]
     for hit in ranked:
         hit["queries"] = sorted(hit["queries"])
         # Avoid storing a redundant full OpenSea payload in the artifact.
@@ -185,11 +274,13 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
 
     valid = [v for hit in ranked for v in hit["validated_vrms"]]
     rejected = [v for hit in ranked for v in hit["rejected_model_candidates"]]
+    unique_valid = unique_validations(valid)
     summary = {
         "search_requests": search_requests,
         "queries": len(queries),
         "chains": len(chains),
         "unique_resolved_nft_leads": len(hits),
+        "junk_leads_discarded": discarded_junk,
         "nfts_inspected": len(ranked),
         "unresolved_search_hits": unresolved_search_hits,
         "metadata_documents_fetched": sum(bool(hit["metadata_fetched"]) for hit in ranked),
@@ -198,6 +289,7 @@ async def discover(args: argparse.Namespace) -> dict[str, Any]:
         "model_candidates": sum(len(hit["model_candidates"]) for hit in ranked),
         "nfts_with_validated_vrms": sum(bool(hit["validated_vrms"]) for hit in ranked),
         "validated_vrms": len(valid),
+        "unique_validated_vrms": len(unique_valid),
         "rejected_model_candidates": len(rejected),
         "validation_statuses": dict(Counter(v["status"] for v in [*valid, *rejected])),
     }

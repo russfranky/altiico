@@ -26,6 +26,11 @@ DEFAULT_OUTPUT = BASE / "data" / "3dvault_discovery.json"
 MODEL_RE = re.compile(r"(?:ipfs://|https?://|ar://)[^\s\"'<>]+?\.(?:vrm|glb|gltf)(?:\?[^\s\"'<>]*)?", re.I)
 CONTRACT_RE = re.compile(r"0x[a-fA-F0-9]{40}")
 OPENSEA_RE = re.compile(r"https?://(?:www\.)?opensea\.io/(?:collection/[^\s\"'<>/?#]+|assets/[^\s\"'<>]+)", re.I)
+HASHLIKE_LABEL_RE = re.compile(
+    r"^[a-f0-9]{16,}(?:[_-][a-f0-9]{8,})+(?:\.(?:png|jpe?g|gif|webp|svg))+$",
+    re.I,
+)
+GENERIC_LABEL_RE = re.compile(r"(?:image|logo|learn more|website|visit)", re.I)
 
 
 class LinkImageParser(HTMLParser):
@@ -42,12 +47,20 @@ class LinkImageParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         a = {k: (v or "") for k, v in attrs}
         if tag == "a":
-            self.current_anchor = {"href": a.get("href", ""), "text": [], "images": []}
+            self.current_anchor = {
+                "href": a.get("href", ""),
+                "text": [],
+                "images": [],
+                "aria": a.get("aria-label") or "",
+                "name": a.get("data-name") or a.get("data-title") or a.get("title") or "",
+            }
         elif tag == "img":
             img = {
                 "src": a.get("src") or a.get("data-src") or a.get("data-lazy-src") or "",
                 "alt": a.get("alt", ""),
                 "title": a.get("title", ""),
+                "aria": a.get("aria-label") or a.get("aria-labelledby") or "",
+                "name": a.get("data-name") or a.get("data-title") or a.get("data-label") or "",
             }
             self.images.append(img)
             if self.current_anchor is not None:
@@ -126,18 +139,45 @@ def normalize_url(base: str, value: str) -> str:
     return urljoin(base, value)
 
 
-def label_for(anchor: dict[str, Any]) -> str:
-    pieces = [anchor.get("text", "")]
-    for img in anchor.get("images") or []:
-        pieces.extend([img.get("alt", ""), img.get("title", "")])
+def is_hashlike_label(value: str) -> bool:
+    """True when a label is just a content-hashed asset filename, not a collection name."""
+    text = " ".join(str(value or "").split()).strip()
+    if not text:
+        return False
+    basename = text.rsplit("/", 1)[-1]
+    return bool(HASHLIKE_LABEL_RE.fullmatch(basename))
+
+
+def human_label(*pieces: Any) -> str:
     for piece in pieces:
-        piece = " ".join(str(piece).split()).strip()
-        if piece and not re.fullmatch(r"(?:image|logo|learn more|website|visit)", piece, re.I):
-            return piece
+        text = " ".join(str(piece or "").split()).strip()
+        if not text:
+            continue
+        if GENERIC_LABEL_RE.fullmatch(text):
+            continue
+        if is_hashlike_label(text):
+            continue
+        return text
+    return ""
+
+
+def label_for(anchor: dict[str, Any]) -> str:
+    pieces = [anchor.get("text", ""), anchor.get("aria", ""), anchor.get("name", "")]
+    for img in anchor.get("images") or []:
+        pieces.extend([
+            img.get("name", ""),
+            img.get("aria", ""),
+            img.get("alt", ""),
+            img.get("title", ""),
+        ])
+    label = human_label(*pieces)
+    if label:
+        return label
     href = anchor.get("href", "")
     if href:
         host = urlparse(href).netloc.replace("www.", "")
-        return host or href
+        if host and not is_hashlike_label(host):
+            return host
     return ""
 
 
@@ -195,13 +235,18 @@ def build_leads(base_url: str, anchors: list[dict[str, Any]], images: list[dict[
             "imageUrl": image,
             "source": "3dvault",
             "sourceRole": "curated_relationship_lead",
+            "labelQuality": "human" if label else "unresolved",
         })
     # Preserve image-only partner entries when the site does not wrap logos in links.
     for img in images:
         image = normalize_url(base_url, img.get("src", ""))
         if not image or image in used_images:
             continue
-        label = " ".join((img.get("alt") or img.get("title") or "").split())
+        label = " ".join((
+            img.get("name") or img.get("aria") or img.get("alt") or img.get("title") or ""
+        ).split())
+        if is_hashlike_label(label):
+            label = ""
         leads.append({
             "leadId": lead_id(kind, label, "", image),
             "kind": kind,
@@ -210,6 +255,7 @@ def build_leads(base_url: str, anchors: list[dict[str, Any]], images: list[dict[
             "imageUrl": image,
             "source": "3dvault",
             "sourceRole": "curated_image_lead",
+            "labelQuality": "human" if label else "unresolved",
         })
     # exact dedupe
     out: dict[str, dict[str, Any]] = {}

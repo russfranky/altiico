@@ -10,6 +10,14 @@ def test_short_description_is_bounded_and_prefers_sentence_boundary():
     assert result == "Useful first sentence."
 
 
+def test_tiny_sentence_does_not_starve_the_card():
+    text = "Ok. " + ("More detail " * 40)
+    result = short_description(text, max_chars=80)
+    assert result.startswith("Ok. More detail")
+    assert result.endswith("…")
+    assert len(result) <= 81
+
+
 def test_materializer_preserves_manual_short_description_and_fills_blanks(tmp_path: Path):
     db = tmp_path / "catalog.db"
     conn = sqlite3.connect(db)

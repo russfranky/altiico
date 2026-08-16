@@ -156,6 +156,27 @@ def research_urls(research_row: dict[str, Any]) -> list[str]:
     return [str(url).strip() for url in inv["urls"] if valid_url(url)]
 
 
+def non_vrm_urls(research_row: dict[str, Any]) -> set[str]:
+    """URLs research has classified as a non-VRM avatar format.
+
+    The collections table often stores a public CDN sample on
+    ``vrm_url_https`` even when that file is a GLB idle. Those URLs must
+    not be re-imported as VRM inventory links.
+    """
+    inv = research_row.get("avatar_inventory")
+    if not isinstance(inv, dict):
+        return set()
+    out: set[str] = set()
+    for raw in inv.get("assets") or []:
+        if not isinstance(raw, dict):
+            continue
+        fmt = str(raw.get("format") or "").strip().lower()
+        url = str(raw.get("url") or "").strip()
+        if fmt in {"glb", "fbx"} and valid_url(url):
+            out.add(url)
+    return out
+
+
 def research_template(research_row: dict[str, Any]) -> str | None:
     inv = research_row.get("vrm_inventory")
     if not isinstance(inv, dict) or not evidence(inv):
@@ -176,6 +197,7 @@ def inventory_for(
     moralis_row = moralis_row or {}
 
     urls = avatar_urls(conn, collection_id) + research_urls(research_row)
+    excluded = non_vrm_urls(research_row)
     direct = str(row.get("vrm_url_https") or "").strip()
     if valid_url(direct):
         urls.append(direct)
@@ -185,7 +207,7 @@ def inventory_for(
         if valid_url(url)
     ]
     urls.extend(moralis_urls)
-    urls = sorted(set(urls))
+    urls = sorted({url for url in urls if url not in excluded})
 
     raw_template = str(row.get("vrm_url_pattern") or "").strip()
     candidate_template = (
@@ -213,6 +235,11 @@ def inventory_for(
             state = observed_state
             complete = True
             terminal = True
+            coverage_source = "catalog_research"
+        elif observed_state == "holder_gated":
+            state = "holder_gated"
+            complete = False
+            terminal = False
             coverage_source = "catalog_research"
         elif observed_state == "complete" and research_urls(research_row):
             state = "complete"

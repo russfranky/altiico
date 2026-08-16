@@ -28,7 +28,9 @@ def short_description(value: object, max_chars: int = 180) -> str:
         return text
     cut = text[: max_chars + 1]
     sentence = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
-    if sentence >= max_chars // 2:
+    # Prefer a complete sentence even when it is shorter than half the budget.
+    # Drop only tiny fragments ("Ok.") so cards still have a useful clause.
+    if sentence >= 12:
         return cut[: sentence + 1].strip()
     word = cut.rfind(" ")
     if word < max_chars // 2:

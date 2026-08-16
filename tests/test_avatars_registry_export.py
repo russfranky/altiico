@@ -148,9 +148,26 @@ def test_build_entry_ipfs_pattern_is_ipfs_storage():
     assert entry["storage_provider"] == "ipfs"
 
 
-def test_redistribution_prohibited_is_gated_and_labeled():
+def test_redistribution_prohibited_is_labeled_but_not_file_gated():
+    """Restrictive license is a rights label, not a file-access gate."""
     row = {"id": "r", "name": "R", "chain": "ethereum",
            "vrm_license": "Redistribution_Prohibited", "license_category": "red", "tier": "A"}
+    entry, _ = build_entry(row)
+    assert entry["license"] == "All Rights Reserved"
+    assert entry["purchase_gated"] is False
+
+
+def test_holder_gated_file_access_sets_purchase_gated():
+    row = {
+        "id": "r",
+        "name": "R",
+        "chain": "ethereum",
+        "vrm_license": "Redistribution_Prohibited",
+        "license_category": "red",
+        "tier": "A",
+        "file_access_mode": "holder_gated",
+        "file_access_requires_ownership": True,
+    }
     entry, _ = build_entry(row)
     assert entry["license"] == "All Rights Reserved"
     assert entry["purchase_gated"] is True

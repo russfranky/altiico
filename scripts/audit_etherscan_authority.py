@@ -27,6 +27,18 @@ from scripts.etherscan_client import EtherscanClient  # noqa: E402
 DEFAULT_DB = ROOT / "data" / "vrm_index.db"
 DEFAULT_OUT = ROOT / "data" / "etherscan_authority_report.json"
 
+OPTIONAL_EXPLORER_MARKERS = (
+    "api pro endpoint",
+    "upgrade to api pro",
+    "free api access is not supported",
+)
+
+
+def is_optional_explorer_error(error: str) -> bool:
+    """Pro-only or plan-gated explorer modules are warnings, not collection failures."""
+    text = str(error or "").casefold()
+    return any(marker in text for marker in OPTIONAL_EXPLORER_MARKERS)
+
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -67,7 +79,7 @@ async def inspect(client: EtherscanClient, row: sqlite3.Row) -> dict[str, Any]:
     result: dict[str, Any] = {
         "catalogId": text(row["id"]), "name": text(row["name"]), "chain": chain,
         "chainId": CHAINS[chain].chain_id if chain in CHAINS else None,
-        "contract": contract, "observedAt": now_iso(), "errors": [],
+        "contract": contract, "observedAt": now_iso(), "errors": [], "warnings": [],
     }
     if chain not in CHAINS or not contract.startswith("0x"):
         result["errors"].append("unsupported_or_missing_evm_contract")
@@ -80,7 +92,13 @@ async def inspect(client: EtherscanClient, row: sqlite3.Row) -> dict[str, Any]:
         safe("logs", client.logs, chain, contract, offset=25),
     )
     source, e1 = source_r; abi, e2 = abi_r; creation, e3 = creation_r; token_info, e4 = token_r; logs, e5 = logs_r
-    result["errors"].extend(e for e in (e1, e2, e3, e4, e5) if e)
+    for err in (e1, e2, e3, e4, e5):
+        if not err:
+            continue
+        if is_optional_explorer_error(err):
+            result["warnings"].append(err)
+        else:
+            result["errors"].append(err)
     source0 = source[0] if isinstance(source, list) and source else {}
     creation0 = creation[0] if isinstance(creation, list) and creation else {}
     token0 = token_info[0] if isinstance(token_info, list) and token_info else {}

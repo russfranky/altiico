@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-16T05:43:00Z",
-  "snapshot_id": "vrmcat-v1-931934f64f254a592e157b5f",
+  "generated_at": "2026-08-16T22:50:02Z",
+  "snapshot_id": "vrmcat-v1-f530c5288bc917ec08a15ee9",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -45,6 +45,21 @@
       "banner": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/e70e58fdece34aadec4f34e078e494/e4e70e58fdece34aadec4f34e078e494.gif",
       "avatar_count": 4875,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "A"
+    },
+    {
+      "slug": "cyber-across-verse",
+      "name": "Cyber Across Verse  3D Avatars Characters",
+      "description": "3D Avatars as NFTs to use them across multiple \nVirtual Worlds, Streaming, VTubing, Video Calls and more.\n\nAvatars are .VRM 3D files and single-edition tokens on the  Polygon chains.\n\nAfter the purchase you able to download the .vrm 3D file format.\n\nThese avatars can be used in different streaming platforms, Metaverse, VrChat, VTubing like YouTube, Twitch and many more to come.\n\nWhich applications can use .VRM files?\n\nLive streaming tool, Motion capture, Animation, Photography, Metaverse,\nGame, Browser Game and more.\n\nFull list here: https://vrm.dev/en/vrm/vrm_applications\n\nAt time to use your avatar on VrChat you just need to watch a tutorial on youtube.\n\nI made every single character one by one so I didn't use any algorithms.\n\nThis collection includes characters inspired by real people alive or dead and other characters are purely coincidential.\n\nAny suggestion, request or help\n\ncav3d.info@gmail.com\n\nGET YOURS - EXPERIMENT - ENJOY",
+      "license": "Unknown",
+      "chain": "polygon",
+      "storage_provider": "self-host",
+      "contract": null,
+      "banner": "https://i2c.seadn.io/matic/1fc3ddfdb81835829343a58cdc17adf3/36dbb1173f148b38ae9ec05917e7ce/2e36dbb1173f148b38ae9ec05917e7ce.png?fit=inside",
+      "pfp": "https://i2c.seadn.io/matic/1fc3ddfdb81835829343a58cdc17adf3/e54711c18a7958019e5b43699bdeab/5de54711c18a7958019e5b43699bdeab.gif",
+      "avatar_count": 14,
       "purchase_gated": false,
       "status": "staged",
       "tier": "A"
@@ -494,7 +509,7 @@
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
       "banner": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/3abb29c00bf1d0692ccd932e34dc24/ee3abb29c00bf1d0692ccd932e34dc24.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/578c5892a0e584cef7a9c54b031395/cc578c5892a0e584cef7a9c54b031395.png",
-      "avatar_count": 1965,
+      "avatar_count": 1969,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"

@@ -14,10 +14,23 @@ from scripts.chain_registry import CHAINS
 BASE_URL = "https://api.etherscan.io/v2/api"
 MAX_ATTEMPTS = 5
 RATE_LIMIT_MARKERS = ("rate limit", "max calls per sec", "too many requests")
+EMPTY_RESULT_MARKERS = (
+    "NO TRANSACTIONS FOUND",
+    "NO RECORDS FOUND",
+    "NO DATA FOUND",
+    "CONTRACT SOURCE CODE NOT VERIFIED",
+)
 
 
 def _retry_delay(attempt: int) -> float:
     return min(20.0, 2 ** attempt) + random.uniform(0, 0.4)
+
+
+def _is_empty_result(message: Any, result: Any) -> bool:
+    texts = [str(message or "")]
+    if isinstance(result, str):
+        texts.append(result)
+    return any(text.strip().upper() in EMPTY_RESULT_MARKERS for text in texts)
 
 
 def _is_rate_limit_message(value: Any) -> bool:
@@ -109,7 +122,9 @@ class EtherscanClient:
                     raise RuntimeError("Etherscan returned a non-object response")
                 # Etherscan uses status=0 for genuine errors, empty results, and plan-level throttling.
                 status, message, result = str(data.get("status", "")), str(data.get("message", "")), data.get("result")
-                if status == "0" and message.upper() not in {"NO TRANSACTIONS FOUND", "NO RECORDS FOUND"}:
+                if status == "0":
+                    if _is_empty_result(message, result):
+                        return [] if not isinstance(result, list) else result
                     detail = result if isinstance(result, str) else message
                     if _is_rate_limit_message(detail) or _is_rate_limit_message(message):
                         if attempt == MAX_ATTEMPTS:

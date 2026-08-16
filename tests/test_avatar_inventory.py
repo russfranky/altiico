@@ -205,3 +205,31 @@ def test_openpage_candidates_do_not_override_evidence_backed_terminal_avatar_sta
     assert result["state"] == "partial"
     assert result["complete"] is False
     assert result["terminal"] is False
+
+
+def test_research_glb_format_overrides_extensionless_vrm_default():
+    url = "https://assets.example.test/avatar/3d/abc123"
+    row = base_vrm_row(urls=[url])
+    research = {
+        "avatar_inventory": {
+            "state": "partial",
+            "assets": [
+                {
+                    "url": url,
+                    "format": "glb",
+                    "rigged": False,
+                    "source_evidence": [
+                        {
+                            "kind": "structural_glb_validation",
+                            "note": "GLB 2.0 idle, no VRM extension",
+                        }
+                    ],
+                }
+            ],
+            "evidence": evidence(),
+        }
+    }
+    result = inventory_for(row, research)
+    assert result["formats"] == {"glb": 1}
+    assert result["assets"][0]["format"] == "glb"
+    assert result["assets"][0]["rigged"] is False
