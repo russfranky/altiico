@@ -534,7 +534,6 @@ function openVrmViewer(vrmUrl, name) {
         for (const gateway of [
           'https://ipfs.io',
           'https://dweb.link',
-          'https://cloudflare-ipfs.com',
           'https://gateway.pinata.cloud',
         ]) {
           const alternate = gateway + '/ipfs/' + cid + path;

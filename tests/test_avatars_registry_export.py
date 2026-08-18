@@ -149,8 +149,14 @@ def test_build_entry_ipfs_pattern_is_ipfs_storage():
 
 
 def test_redistribution_prohibited_is_gated_and_labeled():
+    """Restrictive IP is labeled All Rights Reserved; gating is file-access only.
+
+    ``purchase_gated`` must not be inferred from license. A Redistribution
+    Prohibited collection can still host public files. Holder-gated download
+    is covered by ``tests/test_export_avatars_registry_access.py``.
+    """
     row = {"id": "r", "name": "R", "chain": "ethereum",
            "vrm_license": "Redistribution_Prohibited", "license_category": "red", "tier": "A"}
     entry, _ = build_entry(row)
     assert entry["license"] == "All Rights Reserved"
-    assert entry["purchase_gated"] is True
+    assert entry["purchase_gated"] is False

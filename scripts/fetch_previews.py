@@ -13,9 +13,18 @@ Outputs:
 import sqlite3, json, urllib.request, time, sys, re, concurrent.futures
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
-KEY = open(__import__('os').path.expanduser('~/.opensea/api_key')).read().strip()
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT  # repo root; scrape caches live under data/
+DB = ROOT / "data" / "vrm_index.db"
+API_KEY_PATH = Path.home() / ".opensea" / "api_key"
+KEY = ""
+
+
+def load_opensea_key() -> str:
+    try:
+        return API_KEY_PATH.read_text().strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"No OpenSea API key at {API_KEY_PATH}") from exc
 
 def os_get(url, timeout=15):
     req = urllib.request.Request(url, headers={"X-API-KEY": KEY, "User-Agent": "vrm-scraper/6.0"})
@@ -32,14 +41,17 @@ def ipfs_to_https(ipfs_url):
     if not ipfs_url: return None
     if ipfs_url.startswith('ipfs://'):
         cid = ipfs_url[7:]
-        # Use Cloudflare gateway (fast, reliable)
-        return f"https://cloudflare-ipfs.com/ipfs/{cid}"
+        # Cloudflare's public gateway shut down; use ipfs.io like the
+        # reachability checker and the catalog viewer fallbacks.
+        return f"https://ipfs.io/ipfs/{cid}"
     if ipfs_url.startswith('ar://'):
         cid = ipfs_url[5:]
         return f"https://arweave.net/{cid}"
     return ipfs_url if ipfs_url.startswith('http') else None
 
 def main():
+    global KEY
+    KEY = load_opensea_key()
     conn = sqlite3.connect(str(DB))
     conn.row_factory = sqlite3.Row
 

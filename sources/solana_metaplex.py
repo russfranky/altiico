@@ -30,7 +30,6 @@ THREE_D_ANVIL_COLLECTION_MINT: str | None = None
 # Gateways for rewriting decentralized storage URIs to HTTPS.
 IPFS_GATEWAYS = [
     "https://ipfs.io/ipfs/",
-    "https://cloudflare-ipfs.com/ipfs/",
     "https://dweb.link/ipfs/",
 ]
 ARWEAVE_GATEWAY = "https://arweave.net/"

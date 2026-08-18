@@ -145,19 +145,40 @@ def url_hits(value: str) -> list[str]:
     return [normalize_url(match.group(0)) for match in URL_RE.finditer(value)]
 
 
+VIA_RANK = {
+    "openpage_record": 0,
+    "mml_inline": 1,
+    "mml_fetched": 2,
+}
+
+
 def add_hit(
     target: list[dict[str, Any]],
-    seen: set[tuple[str, str]],
+    seen: set[tuple[str, str]] | set[str],
     *,
     url: str,
     source: str,
     via: str,
 ) -> None:
+    """Record one URL, upgrading weaker provenance instead of duplicating it.
+
+    OpenPage records often embed the same model URL both as a typed field and
+    inside inline MML. Keep a single row per URL and promote
+    ``openpage_record`` → ``mml_inline`` → ``mml_fetched``.
+    """
     normalized = normalize_url(url)
-    key = (normalized, via)
-    if not normalized or key in seen:
+    if not normalized:
         return
-    seen.add(key)
+    existing = next((item for item in target if item["url"] == normalized), None)
+    if existing:
+        if VIA_RANK.get(via, 0) > VIA_RANK.get(existing.get("via"), 0):
+            existing["via"] = via
+            existing["source"] = source
+        return
+    seen_key = normalized
+    if seen_key in seen:
+        return
+    seen.add(seen_key)  # type: ignore[arg-type]
     target.append({"url": normalized, "source": source, "via": via})
 
 
@@ -213,10 +234,10 @@ def inspect_record(
     vrm: list[dict[str, Any]] = []
     glb: list[dict[str, Any]] = []
     animation_glb: list[dict[str, Any]] = []
-    seen_mml: set[tuple[str, str]] = set()
-    seen_vrm: set[tuple[str, str]] = set()
-    seen_glb: set[tuple[str, str]] = set()
-    seen_animation_glb: set[tuple[str, str]] = set()
+    seen_mml: set[str] = set()
+    seen_vrm: set[str] = set()
+    seen_glb: set[str] = set()
+    seen_animation_glb: set[str] = set()
 
     for path, value in walk(record):
         for url in url_hits(value):

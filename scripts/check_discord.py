@@ -13,9 +13,18 @@ Outputs:
 import sqlite3, json, urllib.request, urllib.error, time, sys, re, concurrent.futures
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
-KEY = open(__import__('os').path.expanduser('~/.opensea/api_key')).read().strip()
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT  # repo root; scrape caches live under data/
+DB = ROOT / "data" / "vrm_index.db"
+API_KEY_PATH = Path.home() / ".opensea" / "api_key"
+KEY = ""
+
+
+def load_opensea_key() -> str:
+    try:
+        return API_KEY_PATH.read_text().strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"No OpenSea API key at {API_KEY_PATH}") from exc
 
 def os_get(url):
     req = urllib.request.Request(url, headers={"X-API-KEY": KEY, "User-Agent": "vrm-scraper/5.0"})
@@ -61,6 +70,8 @@ def check_discord(discord_url):
         return {'status': 'error', 'code': code, 'error': str(e), 'url': discord_url}
 
 def main():
+    global KEY
+    KEY = load_opensea_key()
     conn = sqlite3.connect(str(DB))
     conn.row_factory = sqlite3.Row
     slugs = [r[0] for r in conn.execute(
