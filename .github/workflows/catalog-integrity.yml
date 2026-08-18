@@ -36,3 +36,14 @@ jobs:
           python -m pytest tests/ -q
           node tests/catalog-performance.mjs
           node tests/catalog-ux.mjs
+      - name: Package QA snapshot
+        if: always()
+        run: tar --exclude=.git -czf /tmp/altiico-qa-snapshot.tar.gz .
+      - name: Upload QA snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: altiico-qa-snapshot
+          path: /tmp/altiico-qa-snapshot.tar.gz
+          if-no-files-found: error
+          retention-days: 1
