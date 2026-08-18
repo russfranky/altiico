@@ -10,6 +10,14 @@ def test_short_description_is_bounded_and_prefers_sentence_boundary():
     assert result == "Useful first sentence."
 
 
+def test_short_description_truncates_when_first_sentence_exceeds_budget():
+    text = "This single sentence is deliberately longer than the eighty character card budget without a break"
+    result = short_description(text, max_chars=80)
+    assert result.endswith("…")
+    assert len(result) <= 81
+    assert "This single sentence" in result
+
+
 def test_materializer_preserves_manual_short_description_and_fills_blanks(tmp_path: Path):
     db = tmp_path / "catalog.db"
     conn = sqlite3.connect(db)

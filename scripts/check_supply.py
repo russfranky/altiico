@@ -14,9 +14,18 @@ Outputs:
 import sqlite3, json, urllib.request, time, sys, re
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
-KEY = open(__import__('os').path.expanduser('~/.opensea/api_key')).read().strip()
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT  # repo root; scrape caches live under data/
+DB = ROOT / "data" / "vrm_index.db"
+API_KEY_PATH = Path.home() / ".opensea" / "api_key"
+KEY = ""
+
+
+def load_opensea_key() -> str:
+    try:
+        return API_KEY_PATH.read_text().strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"No OpenSea API key at {API_KEY_PATH}") from exc
 
 RPCS = {
     'ethereum': 'https://ethereum.publicnode.com',
@@ -108,6 +117,8 @@ def parse_description_for_supply(desc):
     return None
 
 def main():
+    global KEY
+    KEY = load_opensea_key()
     conn = sqlite3.connect(str(DB))
     conn.row_factory = sqlite3.Row
 

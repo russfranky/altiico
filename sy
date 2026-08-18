@@ -30,12 +30,37 @@ Shortcuts:
   sy -d          same as: sy find --discord none   (no discord)
   sy -v          same as: sy find --nft-type generative
 """
-import sqlite3, argparse, json, sys, os, subprocess, urllib.request, ssl, time
+import sqlite3, argparse, json, sys, os, shutil, subprocess, urllib.request, ssl, time
 from pathlib import Path
 
 BASE = Path(__file__).parent.resolve()
+SCRIPTS_DIR = BASE / "scripts"
+STATIC_DIR = BASE / "static"
 DB = BASE / "data" / "vrm_index.db"
 KEY_FILE = Path(os.path.expanduser("~/.opensea/api_key"))
+
+ENRICH_SCRIPTS = {
+    "supply": "check_supply.py",
+    "traits": "check_traits.py",
+    "previews": "fetch_previews.py",
+    "discord": "check_discord.py",
+    "urls": "check_opensea_urls.py",
+    "vrm": "check_vrm_v2.py",
+}
+
+
+def enrich_script_path(name: str) -> Path:
+    """Resolve a named enrichment script from ``scripts/``, never the repo root."""
+    filename = ENRICH_SCRIPTS[name]
+    return SCRIPTS_DIR / filename
+
+
+def build_index_path() -> Path:
+    return SCRIPTS_DIR / "build_index.py"
+
+
+def catalog_html_path() -> Path:
+    return STATIC_DIR / "index.html"
 
 # ─── DB helpers ──────────────────────────────────────────────────────────────
 
@@ -172,11 +197,28 @@ def cmd_show(args):
         print("Usage: sy show <name>  (e.g. sy show clonex)")
         return
     c = conn()
-    # Try name match, then slug, then contract, then id
-    row = c.execute("SELECT * FROM collections WHERE name LIKE ? ORDER BY name", (f"%{args.query}%",)).fetchone()
+    q = args.query.strip()
+    # Prefer an exact identity match so short queries do not silently land on
+    # the first LIKE hit ordered by name (e.g. ``sy show a``).
+    row = c.execute(
+        """SELECT * FROM collections
+           WHERE lower(name) = lower(?)
+              OR lower(id) = lower(?)
+              OR lower(opensea_slug) = lower(?)
+              OR lower(contract) = lower(?)
+           ORDER BY name""",
+        (q, q, q, q),
+    ).fetchone()
     if not row:
-        row = c.execute("SELECT * FROM collections WHERE opensea_slug LIKE ? OR id LIKE ? OR contract LIKE ?",
-                        (f"%{args.query}%", f"%{args.query}%", f"%{args.query}%")).fetchone()
+        row = c.execute(
+            "SELECT * FROM collections WHERE name LIKE ? ORDER BY name",
+            (f"%{q}%",),
+        ).fetchone()
+    if not row:
+        row = c.execute(
+            "SELECT * FROM collections WHERE opensea_slug LIKE ? OR id LIKE ? OR contract LIKE ?",
+            (f"%{q}%", f"%{q}%", f"%{q}%"),
+        ).fetchone()
     if not row:
         print(f"Not found: {args.query}")
         c.close()
@@ -589,43 +631,55 @@ def name_col_for(table):
     return 'name' if table == 'collections' else 'slug'
 
 def cmd_enrich(args):
-    """Run enrichment scripts."""
-    scripts = {
-        'supply': 'check_supply.py',
-        'traits': 'check_traits.py',
-        'previews': 'fetch_previews.py',
-        'discord': 'check_discord.py',
-        'urls': 'check_opensea_urls.py',
-        'vrm': 'check_vrm_v2.py',
-    }
+    """Run enrichment scripts from ``scripts/``. Returns a process exit code."""
     if args.only:
-        if args.only not in scripts:
-            print(f"Unknown: {args.only}. Available: {', '.join(scripts)}")
-            return
+        if args.only not in ENRICH_SCRIPTS:
+            print(f"Unknown: {args.only}. Available: {', '.join(ENRICH_SCRIPTS)}")
+            return 1
         run = [args.only]
     else:
-        run = list(scripts.keys())
+        run = list(ENRICH_SCRIPTS.keys())
 
+    failures = 0
     for name in run:
-        script = scripts[name]
-        path = BASE / script
+        path = enrich_script_path(name)
         if not path.exists():
-            print(f"  ✗ {script} not found")
+            print(f"  ✗ {path.name} not found at {path}")
+            failures += 1
             continue
         print(f"\n{'='*50}")
-        print(f"  Running {script}...")
+        print(f"  Running {path.relative_to(BASE)}...")
         print(f"{'='*50}")
         result = subprocess.run([sys.executable, str(path)], cwd=str(BASE))
         if result.returncode != 0:
-            print(f"  ✗ {script} failed (exit {result.returncode})")
+            print(f"  ✗ {path.name} failed (exit {result.returncode})")
+            failures += 1
+    return 1 if failures else 0
 
 def cmd_build(args):
-    """Rebuild DB + HTML."""
+    """Rebuild DB + HTML via ``scripts/build_index.py`` and ``static/index.html``."""
+    builder = build_index_path()
+    if not builder.exists():
+        print(f"  ✗ {builder} not found")
+        return 1
     print("Rebuilding database + HTML...")
-    result = subprocess.run([sys.executable, str(BASE / "build_index.py")], cwd=str(BASE))
-    if result.returncode == 0 and not args.no_html:
-        print("\nOpening index.html...")
-        subprocess.run(['open', str(BASE / 'index.html')])
+    result = subprocess.run([sys.executable, str(builder)], cwd=str(BASE))
+    if result.returncode != 0:
+        print(f"  ✗ {builder.name} failed (exit {result.returncode})")
+        return result.returncode
+    if args.no_html:
+        return 0
+    html = catalog_html_path()
+    if not html.exists():
+        print(f"  ✗ catalog HTML not found at {html}")
+        return 1
+    opener = shutil.which("open") or shutil.which("xdg-open")
+    if opener:
+        print("\nOpening catalog HTML...")
+        subprocess.run([opener, str(html)])
+    else:
+        print(f"\nCatalog HTML: {html}")
+    return 0
 
 def cmd_schema(args):
     """Print DB schema."""
@@ -828,6 +882,7 @@ def main():
                 setattr(args, attr, False)
 
     cmd = args.command or 'ls'
+    code = 0
 
     if cmd == 'ls' or cmd == 'find':
         cmd_list(args)
@@ -844,9 +899,9 @@ def main():
     elif cmd == 'images':
         cmd_images(args)
     elif cmd == 'enrich':
-        cmd_enrich(args)
+        code = cmd_enrich(args) or 0
     elif cmd == 'build':
-        cmd_build(args)
+        code = cmd_build(args) or 0
     elif cmd == 'schema':
         cmd_schema(args)
     elif cmd == 'sql':
@@ -855,6 +910,8 @@ def main():
         cmd_db(args)
     else:
         p.print_help()
+        code = 2
+    return code
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -26,10 +26,14 @@ def short_description(value: object, max_chars: int = 180) -> str:
         return ""
     if len(text) <= max_chars:
         return text
+    # Keep a complete first sentence whenever it fits, even if it is shorter
+    # than half the card budget. Padding a short sentence with truncated
+    # leftovers produces a worse catalog card than the sentence alone.
+    for ender in (". ", "! ", "? "):
+        idx = text.find(ender)
+        if 0 <= idx < max_chars:
+            return text[: idx + 1].strip()
     cut = text[: max_chars + 1]
-    sentence = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
-    if sentence >= max_chars // 2:
-        return cut[: sentence + 1].strip()
     word = cut.rfind(" ")
     if word < max_chars // 2:
         word = max_chars

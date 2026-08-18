@@ -126,6 +126,23 @@ def test_inline_mml_can_surface_explicit_vrm_candidate():
     ]
 
 
+def test_inline_mml_upgrades_weaker_openpage_record_for_same_url():
+    result = inspect_record(
+        {
+            "catalogId": "demo",
+            "vrmUrl": "https://cdn.example/avatar.vrm",
+            "mml": '<m-character src="https://cdn.example/avatar.vrm"></m-character>',
+        }
+    )
+    assert result["vrmCandidates"] == [
+        {
+            "url": "https://cdn.example/avatar.vrm",
+            "source": "$.mml",
+            "via": "mml_inline",
+        }
+    ]
+
+
 def test_fetched_mml_resolves_relative_model_src_without_promoting_glb():
     def fake_fetch(url):
         assert url == "https://assets.openpage.fun/avatar/42.mml"

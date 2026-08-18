@@ -12,9 +12,10 @@ Outputs:
 import sqlite3, json, urllib.request, urllib.error, concurrent.futures, time, sys
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
-OUT = BASE / "opensea_url_status.json"
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT  # repo root; scrape caches live under data/
+DB = ROOT / "data" / "vrm_index.db"
+OUT = ROOT / "data" / "os_scrape" / "opensea_url_status.json"
 
 def check_url(slug, timeout=15):
     url = f"https://opensea.io/collection/{slug}"
