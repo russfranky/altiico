@@ -1,6 +1,6 @@
 {
   "schema": "authoritative-catalog-consensus-v2",
-  "generatedAt": "2026-08-12T18:23:45.492757+00:00",
+  "generatedAt": "2026-08-19T09:04:02.442876+00:00",
   "policy": {
     "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
@@ -11,7 +11,7 @@
   "summary": {
     "collections": 62,
     "explorerCorroborated": 61,
-    "bitqueryCorroborated": 11,
+    "bitqueryCorroborated": 10,
     "onchainCorroborated": 61,
     "bitqueryModelSignalTokens": 0,
     "reviewItems": 62,
@@ -340,10 +340,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666753+00:00",
+      "observedAt": "2026-08-19T08:58:49.594970+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713564+00:00",
+        "observedAt": "2026-08-19T09:00:17.332710+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
@@ -366,7 +366,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.555958+00:00",
+        "observedAt": "2026-08-19T09:02:17.926456+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -425,7 +425,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4789,
-            "moralis": "4811"
+            "moralis": "4810"
           }
         },
         "floorPrice": {
@@ -433,7 +433,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0192799,
-            "moralis": "0.010899"
+            "moralis": "0.0095"
           }
         }
       },
@@ -441,7 +441,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-25T10:45:28.000Z",
-        "transferCount": "46147",
+        "transferCount": "46202",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -809,10 +809,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666796+00:00",
+      "observedAt": "2026-08-19T08:58:49.595016+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713606+00:00",
+        "observedAt": "2026-08-19T09:00:17.332754+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Akutar",
@@ -835,108 +835,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.556214+00:00",
+        "observedAt": "2026-08-19T09:02:17.926666+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 24,
+        "uniqueTokenIds": 16,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "12657",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/12657.json",
+            "tokenId": "12979",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/12979.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
-            "block": "25733786",
-            "time": "2026-08-11T19:16:35Z",
-            "txHash": "0x56ffd1397df464670f12afb90ea03627afde51d484ee9294149323417c1a42a8"
+            "sender": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "receiver": "0xd8d2dd940fdf9987a1ef637798ca40f90553e479",
+            "block": "25787409",
+            "time": "2026-08-19T06:37:59Z",
+            "txHash": "0x9659879866c9916af4c18c488799b9c30d035265f07adb5d472ac3919ad67177"
           },
           {
-            "tokenId": "9776",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9776.json",
+            "tokenId": "11333",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11333.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732434",
-            "time": "2026-08-11T14:44:47Z",
-            "txHash": "0x0d9b23f8d864d5714905aad147675c4bb788453fe154fdcaaf7f39b8998d9d60"
+            "sender": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "receiver": "0xcbb98619052ccf059df39181e2102050a320b0f4",
+            "block": "25787401",
+            "time": "2026-08-19T06:36:23Z",
+            "txHash": "0x425d3eef4e802b2016b0f4489e90e44415c3d56016c735c4f77ab5af01191ea7"
           },
           {
-            "tokenId": "11516",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
+            "tokenId": "11332",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11332.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732384",
-            "time": "2026-08-11T14:34:35Z",
-            "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
+            "sender": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "receiver": "0xd8d2dd940fdf9987a1ef637798ca40f90553e479",
+            "block": "25787303",
+            "time": "2026-08-19T06:16:35Z",
+            "txHash": "0xb02c216a66e6f04fe2ca8ed1a3c84e4115cfda1427fff83cc2c7e0287feba9c1"
           },
           {
-            "tokenId": "6822",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/6822.json",
+            "tokenId": "4516",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/4516.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
-            "receiver": "0xe55793b68e3f16e13a3a22718189e275bb9a1bc0",
-            "block": "25732384",
-            "time": "2026-08-11T14:34:35Z",
-            "txHash": "0xfb58e39d58950d2797c76934455c76beb8a7d810e8cc408320977c8d881283d8"
+            "sender": "0xb2d0b117d36cd9a74bafdb3d01ff754b30a66e23",
+            "receiver": "0xd40e498aa66cfb88ed31565494785cbe72076441",
+            "block": "25787288",
+            "time": "2026-08-19T06:13:35Z",
+            "txHash": "0xce8fe3996fae84b9f3b5e1467469cd2cc2114f38ed03ddcaeb670ce2fa3e95f0"
           },
           {
-            "tokenId": "11516",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11516.json",
+            "tokenId": "4516",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/4516.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xeeacd78e4650221b60bb7f283e39ebbe84e1b24a",
-            "receiver": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "block": "25731540",
-            "time": "2026-08-11T11:45:11Z",
-            "txHash": "0xcccf83f8f5ed2850aa06b7a6be03a54b36abc08fb4e7d3a9b14407a366f773c0"
+            "sender": "0x858c4b29231e541d4cddfb5cd434b9f2c7fec05f",
+            "receiver": "0xb2d0b117d36cd9a74bafdb3d01ff754b30a66e23",
+            "block": "25787287",
+            "time": "2026-08-19T06:13:23Z",
+            "txHash": "0x392de7225d151d5eda184ee5547cd42b740c3238ef8ef916c73974f024757a1c"
           },
           {
-            "tokenId": "14622",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14622.json",
+            "tokenId": "11332",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11332.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+            "sender": "0x858c4b29231e541d4cddfb5cd434b9f2c7fec05f",
+            "receiver": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "block": "25787287",
+            "time": "2026-08-19T06:13:23Z",
+            "txHash": "0xd9dd3ef2126c9dc84a5d578025eeef69ab6122c63fb99afa4c1528d4c4fee85a"
           },
           {
-            "tokenId": "14158",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14158.json",
+            "tokenId": "12979",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/12979.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xb9783493d12b9b3fce1d00242aff22dd08bb9810",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+            "sender": "0x858c4b29231e541d4cddfb5cd434b9f2c7fec05f",
+            "receiver": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "block": "25787287",
+            "time": "2026-08-19T06:13:23Z",
+            "txHash": "0xd9dd3ef2126c9dc84a5d578025eeef69ab6122c63fb99afa4c1528d4c4fee85a"
           },
           {
-            "tokenId": "14774",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/14774.json",
+            "tokenId": "11333",
+            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/11333.json",
             "name": "Akutars",
             "symbol": "AKU",
             "protocol": null,
-            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
-            "receiver": "0xb180e3fde77c0d4499a934014f437e8d442fd8a8",
-            "block": "25723069",
-            "time": "2026-08-10T07:21:59Z",
-            "txHash": "0xd915ed12ba0a1a93c0db98f195b652a9624aeb79f765c7dc8a8826d04c0230b4"
+            "sender": "0x858c4b29231e541d4cddfb5cd434b9f2c7fec05f",
+            "receiver": "0x609f9d259bad4eaeaff894be9649cf1e936a5d77",
+            "block": "25787287",
+            "time": "2026-08-19T06:13:23Z",
+            "txHash": "0xd9dd3ef2126c9dc84a5d578025eeef69ab6122c63fb99afa4c1528d4c4fee85a"
           }
         ],
         "errors": []
@@ -999,7 +999,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00033,
-            "moralis": "0.0004"
+            "moralis": "0.00045999"
           }
         }
       },
@@ -1007,7 +1007,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-04-07T03:14:59.000Z",
-        "transferCount": "3832",
+        "transferCount": "3833",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -1342,10 +1342,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:08.666822+00:00",
+      "observedAt": "2026-08-19T08:58:49.595050+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:19:57.713629+00:00",
+        "observedAt": "2026-08-19T09:00:17.332779+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AllstarzPSX",
@@ -1368,26 +1368,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:57.556311+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 1,
-        "uniqueTokenIds": 1,
-        "transferUris": 1,
+        "observedAt": "2026-08-19T09:02:17.926765+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "2208",
-            "uri": "ipfs://bafybeiaat2syu6sgvvt7cfwnxntdzhqtphykhfphzb4rjxebx6ka4co72y/2208.json",
-            "name": "Allstarz PSX",
-            "symbol": "PSX",
-            "protocol": null,
-            "sender": "0xd99e1e1b885f505c1f78ec3fdc6d289ba72a07a9",
-            "receiver": "0xe26067c76fdbe877f48b0a8400cf5db8b47af0fe",
-            "block": "25738480",
-            "time": "2026-08-12T11:00:35Z",
-            "txHash": "0x54daed8885e21ddc2cdf3818f84eed3d0ea64acb63b8eefa96080968a7788266"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -1511,10 +1498,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:10.201739+00:00",
+      "observedAt": "2026-08-19T08:58:50.719679+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:01.027923+00:00",
+        "observedAt": "2026-08-19T09:00:20.687413+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ArbiDudesGenOne",
@@ -1537,7 +1524,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.255802+00:00",
+        "observedAt": "2026-08-19T09:02:18.710954+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -1604,7 +1591,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.006889999999,
-            "moralis": "0.369"
+            "moralis": "0.3333333333"
           }
         }
       },
@@ -1667,10 +1654,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:10.477530+00:00",
+      "observedAt": "2026-08-19T08:58:51.146420+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:02.852172+00:00",
+        "observedAt": "2026-08-19T09:00:22.495409+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Arbibots",
@@ -1693,110 +1680,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.261062+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 21,
-        "uniqueTokenIds": 20,
+        "observedAt": "2026-08-19T09:02:18.713449+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "1676",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1216",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1320",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0xa0708d9093ce39e7b2aed1509120456fa78a2f02",
-            "receiver": "0xae91437e87ca1841cb71f59385fccd30d84ba702",
-            "block": "493439586",
-            "time": "2026-08-11T13:40:53Z",
-            "txHash": "0xac4dba5e260e422931e84b4757636817dff37ce04bc3dc7b6f5da1ffe7dbd7c5"
-          },
-          {
-            "tokenId": "1765",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "block": "493433764",
-            "time": "2026-08-11T13:16:41Z",
-            "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
-          },
-          {
-            "tokenId": "1216",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101eb380d06e443c7d456aed63961b16e290d8c7",
-            "receiver": "0x8d910779211f12e7f109792cafe0a98185982db3",
-            "block": "493433764",
-            "time": "2026-08-11T13:16:41Z",
-            "txHash": "0xece50e72a060a0927126360017d330bb79f5b9f80d66e019f3c8581e4615b53a"
-          },
-          {
-            "tokenId": "1478",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x101bb8d14cc1632a6973eca68f97ec4c5fc8c421",
-            "receiver": "0xd90d8c74545728cd8200c66084e36dc10afdca40",
-            "block": "493433394",
-            "time": "2026-08-11T13:15:08Z",
-            "txHash": "0x8d27288c494154ca5d4a70e45b62b56b48ff5fed92021f73f4c311926daa1b5f"
-          },
-          {
-            "tokenId": "358",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x1b5cbe0440861590ba929b2d0ef819a8f5f0d454",
-            "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
-            "block": "493428746",
-            "time": "2026-08-11T12:55:46Z",
-            "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
-          },
-          {
-            "tokenId": "1828",
-            "uri": null,
-            "name": "Arbibots",
-            "symbol": "BOT",
-            "protocol": null,
-            "sender": "0x2897be1b8411c248dfaab1186bdd89a3f4b2ffbe",
-            "receiver": "0x6a19891e91a3d4d690cc8f9627290d25bfd34df6",
-            "block": "493428746",
-            "time": "2026-08-11T12:55:46Z",
-            "txHash": "0x5109836da32ec13774950c474eaa81c03338dd2349058ba0a2a0c7e074fcc104"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -1849,7 +1739,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4986,
-            "moralis": "4984"
+            "moralis": "4985"
           }
         },
         "floorPrice": {
@@ -1857,7 +1747,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0096607,
-            "moralis": "0.0179997"
+            "moralis": "0.0182"
           }
         }
       },
@@ -1865,7 +1755,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2020-02-07T02:49:07.000Z",
-        "transferCount": "72462",
+        "transferCount": "72497",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -2706,10 +2596,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.100262+00:00",
+      "observedAt": "2026-08-19T08:58:52.159432+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:04.649876+00:00",
+        "observedAt": "2026-08-19T09:00:24.325716+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AvastarTeleporter",
@@ -2732,36 +2622,84 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.302802+00:00",
+        "observedAt": "2026-08-19T09:02:18.759299+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 18,
-        "transferUris": 25,
+        "tokensSampled": 9,
+        "uniqueTokenIds": 8,
+        "transferUris": 9,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "13544",
-            "uri": "https://avastars.io/metadata/13544",
+            "tokenId": "10476",
+            "uri": "https://avastars.io/metadata/10476",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0x23934e253c4f9c44f73a85b350c00a72e1d9c20b",
-            "block": "25740597",
-            "time": "2026-08-12T18:05:35Z",
-            "txHash": "0xb26f2dc1fe4e75c1ccc149e21b0b36877003af3771959e770bcb4e54145e2156"
+            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+            "receiver": "0xc8b91f54b5d43af2b01bd60828593518027e40ba",
+            "block": "25786107",
+            "time": "2026-08-19T02:16:47Z",
+            "txHash": "0xf5f38fc4cb3582c423e93e7f00d933071fee1c46ad0c8f15a847d5e9f51f3e96"
           },
           {
-            "tokenId": "13891",
-            "uri": "https://avastars.io/metadata/13891",
+            "tokenId": "2118",
+            "uri": "https://avastars.io/metadata/2118",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0x15e36420e0c8a75264916ea341642f4acd4db83e",
-            "block": "25739054",
-            "time": "2026-08-12T12:55:47Z",
-            "txHash": "0x54e8200d8ed6160d06499225a7b760152f1f49095c772d2cd345827615048ab1"
+            "sender": "0xd387a6e4e84a6c86bd90c158c6028a58cc8ac459",
+            "receiver": "0xc8b91f54b5d43af2b01bd60828593518027e40ba",
+            "block": "25786107",
+            "time": "2026-08-19T02:16:47Z",
+            "txHash": "0xf5f38fc4cb3582c423e93e7f00d933071fee1c46ad0c8f15a847d5e9f51f3e96"
+          },
+          {
+            "tokenId": "25587",
+            "uri": "https://avastars.io/metadata/25587",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0xd8f25e68dfc8c14daf61f8fc934cfb7dc47c78e8",
+            "receiver": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
+            "block": "25786076",
+            "time": "2026-08-19T02:10:35Z",
+            "txHash": "0xb836938adbe357b79059c2fe7b58ffff4f705bf089460572f3e6a76c3b498e77"
+          },
+          {
+            "tokenId": "25587",
+            "uri": "https://avastars.io/metadata/25587",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0x8f06b66d039df7a291b10607f4ef1958ba9158d4",
+            "receiver": "0xd8f25e68dfc8c14daf61f8fc934cfb7dc47c78e8",
+            "block": "25786075",
+            "time": "2026-08-19T02:10:23Z",
+            "txHash": "0x7aa987c0ad47b120872c50a315cd70d1640624e64d4e47beb872bad30fe753d4"
+          },
+          {
+            "tokenId": "24494",
+            "uri": "https://avastars.io/metadata/24494",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
+            "receiver": "0x57e9bd374b37878f359e5ff91b4ce92a47753b19",
+            "block": "25776370",
+            "time": "2026-08-17T17:42:47Z",
+            "txHash": "0xd3fc9a88bec170c5bb951fa14f580aa0c63448eefcc70eefa0bdbdd254f4cbf6"
+          },
+          {
+            "tokenId": "4660",
+            "uri": "https://avastars.io/metadata/4660",
+            "name": "Avastar",
+            "symbol": "AVASTAR",
+            "protocol": null,
+            "sender": "0xe59d87e5298ac2fb24c2fc55d256cb8fcb696238",
+            "receiver": "0xb0cf6360b50c48280e2c18fe9d96bc7d6f5ed697",
+            "block": "25770152",
+            "time": "2026-08-16T20:55:11Z",
+            "txHash": "0xb8e663b7346234fcdbf44b3088418f809bde4236b35d46d7eff7a084ec55da66"
           },
           {
             "tokenId": "1325",
@@ -2769,71 +2707,23 @@
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xac74491480c6bb30c26627c6cbae8a2b5952da54",
-            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25738302",
-            "time": "2026-08-12T10:24:59Z",
-            "txHash": "0xbb19cfdcbd1ae079f66f40efcdcb938402977dde5573b64abbbb5c23139256ca"
+            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "receiver": "0x51f1d95cc6651537b7c497f4d146e4e9aa92565b",
+            "block": "25763097",
+            "time": "2026-08-15T21:20:59Z",
+            "txHash": "0x28efac6917527672a811d8075572b586baa397430ee0a4c688f08334a0700b9a"
           },
           {
-            "tokenId": "1325",
-            "uri": "https://avastars.io/metadata/1325",
+            "tokenId": "25177",
+            "uri": "https://avastars.io/metadata/25177",
             "name": "Avastar",
             "symbol": "AVASTAR",
             "protocol": null,
-            "sender": "0xc9f6e34a9ad2e75ed4373f24e2651139c484b2c6",
-            "receiver": "0xac74491480c6bb30c26627c6cbae8a2b5952da54",
-            "block": "25738237",
-            "time": "2026-08-12T10:11:59Z",
-            "txHash": "0xfbf1c2bf579eadff3e0225627e309f6637eef821cbb2546905efc4eb049506ac"
-          },
-          {
-            "tokenId": "11462",
-            "uri": "https://avastars.io/metadata/11462",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736791",
-            "time": "2026-08-12T05:21:23Z",
-            "txHash": "0xdb65ca103a5035d1dfad3fe1ffe6e39b2a9e5e1add3e9183061c117730f08c2b"
-          },
-          {
-            "tokenId": "10479",
-            "uri": "https://avastars.io/metadata/10479",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736787",
-            "time": "2026-08-12T05:20:35Z",
-            "txHash": "0xaf164c6cda868469ac0bd94d50ec4b9c9d98c3a283de77db941287fa544f3dcf"
-          },
-          {
-            "tokenId": "13945",
-            "uri": "https://avastars.io/metadata/13945",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "receiver": "0xa5bf67d7cfcb24c5f20a991766d29db9598f16dd",
-            "block": "25736768",
-            "time": "2026-08-12T05:16:47Z",
-            "txHash": "0x53cc1a8e3313fcf3710d1c737364a7b4bb12c50ca1ac730f6c5f626910ea6d3e"
-          },
-          {
-            "tokenId": "3400",
-            "uri": "https://avastars.io/metadata/3400",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "receiver": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
-            "block": "25736718",
-            "time": "2026-08-12T05:06:47Z",
-            "txHash": "0x8fb97e2577fc8707359499def12fc7eb999bab2877355efdbf84076b2bb357a0"
+            "sender": "0xa5d439865e1bad41168977f9f97af2dd877b8948",
+            "receiver": "0x04fc0276e1d398d9597fa9755b16dce6b496acb1",
+            "block": "25760977",
+            "time": "2026-08-15T14:15:11Z",
+            "txHash": "0x9452c0ca10657586de758d713e608b3f37932de709f41feaf8a9e4cf78553936"
           }
         ],
         "errors": []
@@ -2959,10 +2849,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.167898+00:00",
+      "observedAt": "2026-08-19T08:58:53.603574+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:05.022600+00:00",
+        "observedAt": "2026-08-19T09:00:24.650500+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -2985,7 +2875,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.491020+00:00",
+        "observedAt": "2026-08-19T09:02:18.935109+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3052,7 +2942,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00399,
-            "moralis": "0.0079597"
+            "moralis": "0.0069597"
           }
         }
       },
@@ -3060,7 +2950,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-07-13T13:40:59.000Z",
-        "transferCount": "822",
+        "transferCount": "824",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -3139,10 +3029,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:11.640203+00:00",
+      "observedAt": "2026-08-19T08:58:53.807241+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:06.820424+00:00",
+        "observedAt": "2026-08-19T09:00:26.478284+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DiamondCollection",
@@ -3165,24 +3055,36 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.550175+00:00",
+        "observedAt": "2026-08-19T09:02:18.941255+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 1,
-        "uniqueTokenIds": 1,
-        "transferUris": 1,
+        "tokensSampled": 2,
+        "uniqueTokenIds": 2,
+        "transferUris": 2,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "5",
-            "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/5",
+            "tokenId": "303",
+            "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/303",
             "name": "Bourey vs Bulley: Bourverse",
             "symbol": "BVBB",
             "protocol": null,
-            "sender": "0x1e44b0ebc7aac6e33575be1268040cee247e5ad3",
-            "receiver": "0xe6ac7475950de2181065ea6d442e5b5b8ce07b28",
-            "block": "25716503",
-            "time": "2026-08-09T09:23:47Z",
-            "txHash": "0xd30dda656287f1251b9c43c9f67270f0c5432af31d585fee7950be464e5f6ee5"
+            "sender": "0x217d846f117287f8b323ccf83d4eb122ab7c56fe",
+            "receiver": "0x3a5055af0724a4b33fbdf09268b84877726b2560",
+            "block": "25781067",
+            "time": "2026-08-18T09:25:47Z",
+            "txHash": "0xf9e5cc7b63702d59fd092300ef1d2112da38788138620d1b813864a0e194811c"
+          },
+          {
+            "tokenId": "260",
+            "uri": "ipfs://bafybeif7ck57lyq73idzisncquk6lea56y43ygodpnc5bmcebpf7bi3apa/260",
+            "name": "Bourey vs Bulley: Bourverse",
+            "symbol": "BVBB",
+            "protocol": null,
+            "sender": "0xb8c08e51dbf447590ad17b55e6a7d77f74b3f748",
+            "receiver": "0x3a5055af0724a4b33fbdf09268b84877726b2560",
+            "block": "25764152",
+            "time": "2026-08-16T00:52:59Z",
+            "txHash": "0xf6ee8347335b7fb097259fe4bfb449d41d082bde8b359776b8a4874d65864681"
           }
         ],
         "errors": []
@@ -3237,7 +3139,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2636,
-            "moralis": "2632"
+            "moralis": "2628"
           }
         },
         "floorPrice": {
@@ -3253,7 +3155,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-22T23:23:06.000Z",
-        "transferCount": "47799",
+        "transferCount": "47842",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -3698,10 +3600,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.027971+00:00",
+      "observedAt": "2026-08-19T08:58:54.505767+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:08.656968+00:00",
+        "observedAt": "2026-08-19T09:00:28.298110+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Loomlocknft",
@@ -3724,60 +3626,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.554862+00:00",
+        "observedAt": "2026-08-19T09:02:19.014674+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 4,
-        "uniqueTokenIds": 4,
-        "transferUris": 4,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 18,
+        "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "3641",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/3641.json",
+            "tokenId": "10484",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/10484.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0xd308d5d998cbece1b92cfd35708938ae7ee1ddcd",
+            "sender": "0x4a1721c493c481b48ab05db82265e149c95ac33f",
             "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25738886",
-            "time": "2026-08-12T12:22:11Z",
-            "txHash": "0x6cd1e23cc51defbb31571240730867db2db04cc076b6dc2590ffccc54f63ce5f"
+            "block": "25785472",
+            "time": "2026-08-19T00:09:35Z",
+            "txHash": "0x965ea5360c5a6bb313990e88cb2a183d9c454fa81ca2577829c54fe2427c2d35"
           },
           {
-            "tokenId": "12",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/12.json",
+            "tokenId": "10091",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/10091.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0x85dc5ee6a64bd6e28e96b20a768705d40f7553d7",
-            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
-            "block": "25736282",
-            "time": "2026-08-12T03:37:47Z",
-            "txHash": "0x3be0bc3e35ca111cf4f01c50e62e11507db6bd89b5e6d23c59015ac993606e87"
+            "sender": "0x1a14100e52b20a8951163fe17ee4b3515d3fd5f7",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25783903",
+            "time": "2026-08-18T18:55:23Z",
+            "txHash": "0xa69478d8aba00a6fde0fbd31c8ebd776f3869cfe3aeea5b235197086dedfcb00"
           },
           {
-            "tokenId": "819",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/819.json",
+            "tokenId": "4278",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/4278.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0x2fc6e03f0b445e9d7c910a468b716431e2866779",
-            "receiver": "0x6b40176cdf732dbb35c1d0575c9b829817410984",
-            "block": "25736279",
-            "time": "2026-08-12T03:37:11Z",
-            "txHash": "0x5e3781ddf1d908afd7c59450eab18902cff73bf3f01288dfac37de8386d8ee31"
+            "sender": "0xc9894777e2ec7641f2c9fb00c0e6960f16d8e3af",
+            "receiver": "0xcce32684890dbc55d0d297e8db2c71eee5a23373",
+            "block": "25782963",
+            "time": "2026-08-18T15:46:59Z",
+            "txHash": "0xbc4d88dafb3a06eeabfb41524fe0263264d340c39696c6a938305f633961aee1"
           },
           {
-            "tokenId": "585",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/585.json",
+            "tokenId": "655",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/655.json",
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0xa43711f5dcc3559a1e07ec124fd167e26c9bad43",
+            "sender": "0xc9894777e2ec7641f2c9fb00c0e6960f16d8e3af",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25782960",
+            "time": "2026-08-18T15:46:23Z",
+            "txHash": "0x9feda72d719dfd44721e37af634512a0b1bcb23512caac9be731b4e2f15b6357"
+          },
+          {
+            "tokenId": "495",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/495.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0xc9894777e2ec7641f2c9fb00c0e6960f16d8e3af",
             "receiver": "0x771c3994d0f838eb7a163513b1f41f8417458f28",
-            "block": "25714457",
-            "time": "2026-08-09T02:33:35Z",
-            "txHash": "0x845e3f2e31410d1d86f29d009c19011fa4411e41bfe3e8e6c28fba21c8a66e11"
+            "block": "25782956",
+            "time": "2026-08-18T15:45:35Z",
+            "txHash": "0x74a4376efb7336d14640c8930f985198cb7a11c1846a7d454170a5a99931b13f"
+          },
+          {
+            "tokenId": "10110",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/10110.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "receiver": "0x2389817bd285e7ba3cfe5f9d9b3543eb2ac89a2e",
+            "block": "25777297",
+            "time": "2026-08-17T20:49:23Z",
+            "txHash": "0xa0305f78884ba4387ad2119fc4eddc9ca3f1e274b9ba1fdad733629a1eec028e"
+          },
+          {
+            "tokenId": "2772",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/2772.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x9202c70fbe4ef611e2bcab26b6f10c94475e7f6b",
+            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "block": "25774774",
+            "time": "2026-08-17T12:22:35Z",
+            "txHash": "0x5e41aa00993346b1b6d8958561dbb6a73c201e1c23a2033cabea34e3c7c0b6b1"
+          },
+          {
+            "tokenId": "620",
+            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/620.json",
+            "name": "loomlocknft",
+            "symbol": "LL",
+            "protocol": null,
+            "sender": "0x07d492ea9fb196e80df09528b47710aa112903b1",
+            "receiver": "0x9202c70fbe4ef611e2bcab26b6f10c94475e7f6b",
+            "block": "25773081",
+            "time": "2026-08-17T06:43:23Z",
+            "txHash": "0xb4420d2b15305a6c065d24404aa826f085da9ca2e218749c9ce7634c0288c876"
           }
         ],
         "errors": []
@@ -3836,11 +3786,11 @@
           }
         },
         "floorPrice": {
-          "preferred": 0.26475957,
-          "status": "corroborated",
+          "preferred": null,
+          "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.26475957,
-            "moralis": "0.267989"
+            "moralis": "0.239999"
           }
         }
       },
@@ -3848,7 +3798,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232802",
+        "transferCount": "232949",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4139,10 +4089,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.363046+00:00",
+      "observedAt": "2026-08-19T08:58:55.025012+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:10.408372+00:00",
+        "observedAt": "2026-08-19T09:00:30.095001+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4165,108 +4115,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.732998+00:00",
+        "observedAt": "2026-08-19T09:02:19.290827+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 25,
+        "uniqueTokenIds": 20,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "1833",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/1833",
+            "tokenId": "1625",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/1625",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740677",
-            "time": "2026-08-12T18:21:35Z",
-            "txHash": "0xc72efffaed3958adaaf7a0f1b0acc2be3fb3d589d7883d1af977d964eab0cb93"
+            "sender": "0x5431c0dce14a9ffdffc82097538f330e6d2cbc81",
+            "receiver": "0x8454e5438c631a18423b3c11e4aa2e1b96ee10e8",
+            "block": "25788059",
+            "time": "2026-08-19T08:48:11Z",
+            "txHash": "0xe4913edc527a4c58b7757756261be1cf4d722335a4e5335722f3f17b468b7a16"
           },
           {
-            "tokenId": "8757",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/8757",
+            "tokenId": "15716",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/15716",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x2bd88113b8d94d48e5cca8b4c11f36f0c509a293",
-            "block": "25740646",
-            "time": "2026-08-12T18:15:23Z",
-            "txHash": "0x11584c380529dc280fbc628330596e42bd693a694832fa93b192d01d16f74d5a"
+            "sender": "0x5431c0dce14a9ffdffc82097538f330e6d2cbc81",
+            "receiver": "0x511432a0ca35ea7a3874290872333b8b719280fc",
+            "block": "25788059",
+            "time": "2026-08-19T08:48:11Z",
+            "txHash": "0xe4913edc527a4c58b7757756261be1cf4d722335a4e5335722f3f17b468b7a16"
           },
           {
-            "tokenId": "4036",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4036",
+            "tokenId": "4710",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4710",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x994b470248b6f9bbede09422a15990efdb793096",
-            "block": "25740640",
-            "time": "2026-08-12T18:14:11Z",
-            "txHash": "0xcd5b0c0d610ca30d131a1978210d69bb6e14fdc71d207be418c47cc012cead22"
+            "sender": "0x5431c0dce14a9ffdffc82097538f330e6d2cbc81",
+            "receiver": "0x2f5c2bf44a550c46f0d3f3d6db53fbcfacabe333",
+            "block": "25788059",
+            "time": "2026-08-19T08:48:11Z",
+            "txHash": "0xe4913edc527a4c58b7757756261be1cf4d722335a4e5335722f3f17b468b7a16"
           },
           {
-            "tokenId": "17165",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/17165",
+            "tokenId": "19617",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/19617",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740637",
-            "time": "2026-08-12T18:13:35Z",
-            "txHash": "0x11b84de6ee108dcc4ad032274a32b586cc5169d0c401eea496de63081e1a98a4"
+            "sender": "0x52653f7a14903be0d00cd3225fd3ace2295c3ebc",
+            "receiver": "0x99057a0cd4db8cbf99985f1b5ce499b6b48364a7",
+            "block": "25787739",
+            "time": "2026-08-19T07:43:59Z",
+            "txHash": "0x7d4cb706c31bf69d5617a642509a5d6080aa9ae62defd9106c2ac5199794b347"
           },
           {
-            "tokenId": "15177",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/15177",
+            "tokenId": "19617",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/19617",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x7e0f57a597a46fbb96f7574643b555c2ab2d5958",
-            "block": "25740626",
-            "time": "2026-08-12T18:11:23Z",
-            "txHash": "0x6b5c9c06c645998a138b933e73ddaf76291a191dd5c7905ef3ca875fdc2cbbba"
+            "sender": "0xf41b389e0c1950dc0b16c9498eae77131cc08a56",
+            "receiver": "0x52653f7a14903be0d00cd3225fd3ace2295c3ebc",
+            "block": "25787729",
+            "time": "2026-08-19T07:41:59Z",
+            "txHash": "0x07a0d39d6a4b39ea08a0a0122594cf7ce743744db17d65eb4334f1a602f1d5e1"
           },
           {
-            "tokenId": "1005",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/1005",
+            "tokenId": "5387",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/5387",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x028296d8bf1995549d5b9446622cf565bbd0a26e",
-            "block": "25740600",
-            "time": "2026-08-12T18:06:11Z",
-            "txHash": "0x538a52c1a0496efa9906f1f91329a4220f01c5d9ef43e2a087cf33d851e9e21b"
+            "sender": "0xbcf34c6ea37cc4acb0619b6ebe20cea8adba9264",
+            "receiver": "0x0a8f013c0155e81ee493564843607d96e73c1ea5",
+            "block": "25787626",
+            "time": "2026-08-19T07:21:23Z",
+            "txHash": "0xde0bd9081c9f60c4e34a56d22887dbeee876cbe73646530178bc8ce44f19b2e1"
           },
           {
-            "tokenId": "7595",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/7595",
+            "tokenId": "2345",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2345",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0x36f98b7e0ab0aa5f8d13f8f5b8c496b05ba8dc08",
-            "block": "25740593",
-            "time": "2026-08-12T18:04:47Z",
-            "txHash": "0x067e02a7a72f161498b3e30fca614ac9cc58d61353f007d42c07d9737f3b9612"
+            "sender": "0x8454e5438c631a18423b3c11e4aa2e1b96ee10e8",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25786899",
+            "time": "2026-08-19T04:55:47Z",
+            "txHash": "0xcb5e8be39f0354668d39745ddf2a51029af63bbb3d1274690b7db5dfb68b1b48"
           },
           {
-            "tokenId": "10508",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/10508",
+            "tokenId": "9348",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/9348",
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x1ee2f9b0e856b737d51a316075fd84a5e3d0bec4",
-            "receiver": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
-            "block": "25740584",
-            "time": "2026-08-12T18:02:59Z",
-            "txHash": "0x56b1425c01687744c2fdd686046c1a8a75285965235057385cc3be5d9b1babe9"
+            "sender": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "receiver": "0xc22395ad28aa56566ae847859ea744c02f9a2f42",
+            "block": "25786628",
+            "time": "2026-08-19T04:00:59Z",
+            "txHash": "0xbf8d77bcdbb15ffbd8c71b896a68da4e29232e0fada27aab7dcda0fc65c9303d"
           }
         ],
         "errors": []
@@ -4325,11 +4275,11 @@
           }
         },
         "floorPrice": {
-          "preferred": "0.267989",
+          "preferred": "0.239999",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.267989"
+            "moralis": "0.239999"
           }
         }
       },
@@ -4337,7 +4287,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232802",
+        "transferCount": "232949",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4628,10 +4578,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.672900+00:00",
+      "observedAt": "2026-08-19T08:58:55.485998+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:12.225323+00:00",
+        "observedAt": "2026-08-19T09:00:31.892964+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4654,7 +4604,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.885222+00:00",
+        "observedAt": "2026-08-19T09:02:19.304240+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -4715,7 +4665,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3149,
-            "moralis": "3141"
+            "moralis": "3139"
           }
         },
         "floorPrice": {
@@ -4731,7 +4681,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-11-05T11:06:24.000Z",
-        "transferCount": "34933",
+        "transferCount": "34943",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -5121,10 +5071,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:12.992456+00:00",
+      "observedAt": "2026-08-19T08:58:55.763912+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:14.031711+00:00",
+        "observedAt": "2026-08-19T09:00:33.740693+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChainRunners",
@@ -5147,7 +5097,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:58.885763+00:00",
+        "observedAt": "2026-08-19T09:02:19.387009+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5190,7 +5140,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/ethereum/30a8108c3ade358faf12dd0d79f13455/426c2a9a1852ed227872a80a577c3b/93426c2a9a1852ed227872a80a577c3b.jpeg",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/5b2d1735cfbd6d864d6c1630ca4d28/8f5b2d1735cfbd6d864d6c1630ca4d28.jpeg"
           }
         }
       },
@@ -5204,11 +5154,11 @@
           }
         },
         "owners": {
-          "preferred": "727986",
+          "preferred": "727983",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727986"
+            "moralis": "727983"
           }
         },
         "floorPrice": {
@@ -5224,13 +5174,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4023061",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:13.434386+00:00",
+      "observedAt": "2026-08-19T08:58:56.314994+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:15.834995+00:00",
+        "observedAt": "2026-08-19T09:00:35.526675+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -5253,7 +5203,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:21:59.008062+00:00",
+        "observedAt": "2026-08-19T09:02:19.608551+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5322,7 +5272,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.001325,
-            "moralis": "0.0007597"
+            "moralis": "0.0005597"
           }
         }
       },
@@ -5687,10 +5637,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:14.253412+00:00",
+      "observedAt": "2026-08-19T08:58:56.641692+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:17.631878+00:00",
+        "observedAt": "2026-08-19T09:00:37.307817+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChibiApes",
@@ -5713,7 +5663,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.697431+00:00",
+        "observedAt": "2026-08-19T09:02:25.904818+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5790,7 +5740,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-09-26T07:10:23.000Z",
-        "transferCount": "3390",
+        "transferCount": "3391",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -6004,10 +5954,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:16.325034+00:00",
+      "observedAt": "2026-08-19T08:58:57.453647+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:19.465338+00:00",
+        "observedAt": "2026-08-19T09:00:39.127119+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -6030,7 +5980,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.698713+00:00",
+        "observedAt": "2026-08-19T09:02:26.062360+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6073,7 +6023,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/1c5b2d3f374818d6cf62ea4f02c3b131.jpeg",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/5b2d1735cfbd6d864d6c1630ca4d28/8f5b2d1735cfbd6d864d6c1630ca4d28.jpeg"
           }
         }
       },
@@ -6087,11 +6037,11 @@
           }
         },
         "owners": {
-          "preferred": "727986",
+          "preferred": "727983",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727986"
+            "moralis": "727983"
           }
         },
         "floorPrice": {
@@ -6107,13 +6057,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4023061",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:16.462141+00:00",
+      "observedAt": "2026-08-19T08:58:58.349341+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:21.251890+00:00",
+        "observedAt": "2026-08-19T09:00:40.938806+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -6136,7 +6086,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:05.799410+00:00",
+        "observedAt": "2026-08-19T09:02:26.570747+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6197,7 +6147,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2762,
-            "moralis": "2753"
+            "moralis": "2751"
           }
         },
         "floorPrice": {
@@ -6205,7 +6155,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0285989,
-            "moralis": "0.040019"
+            "moralis": "0.038596"
           }
         }
       },
@@ -6213,7 +6163,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-04T01:32:54.000Z",
-        "transferCount": "49227",
+        "transferCount": "49252",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -6548,10 +6498,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:16.932886+00:00",
+      "observedAt": "2026-08-19T08:58:58.483273+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:23.061422+00:00",
+        "observedAt": "2026-08-19T09:00:42.756072+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CyberBrokers",
@@ -6574,7 +6524,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.327313+00:00",
+        "observedAt": "2026-08-19T09:02:32.873475+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6643,7 +6593,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00176789,
-            "moralis": "0.0015"
+            "moralis": "0.0016797"
           }
         }
       },
@@ -6651,7 +6601,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-01-20T18:17:34.000Z",
-        "transferCount": "32578",
+        "transferCount": "32580",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -6953,10 +6903,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:17.849888+00:00",
+      "observedAt": "2026-08-19T08:58:59.484240+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:24.849753+00:00",
+        "observedAt": "2026-08-19T09:00:44.525200+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DASKa",
@@ -6979,7 +6929,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.478960+00:00",
+        "observedAt": "2026-08-19T09:02:32.958611+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7307,10 +7257,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:18.153433+00:00",
+      "observedAt": "2026-08-19T08:58:59.958965+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:26.653765+00:00",
+        "observedAt": "2026-08-19T09:00:46.325422+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FairxyzBeaconProxy",
@@ -7333,7 +7283,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:12.536714+00:00",
+        "observedAt": "2026-08-19T09:02:33.184287+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7767,10 +7717,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:18.522976+00:00",
+      "observedAt": "2026-08-19T08:59:01.280658+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:28.485115+00:00",
+        "observedAt": "2026-08-19T09:00:48.136970+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DickButtVerse",
@@ -7793,7 +7743,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:18.936516+00:00",
+        "observedAt": "2026-08-19T09:02:39.673757+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8148,10 +8098,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:19.622021+00:00",
+      "observedAt": "2026-08-19T08:59:01.608996+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:30.298570+00:00",
+        "observedAt": "2026-08-19T09:00:49.940113+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC1967Proxy",
@@ -8174,7 +8124,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:19.384442+00:00",
+        "observedAt": "2026-08-19T09:02:39.816653+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8235,7 +8185,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3088,
-            "moralis": "3096"
+            "moralis": "3097"
           }
         },
         "floorPrice": {
@@ -8251,7 +8201,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-05T19:45:41.000Z",
-        "transferCount": "64725",
+        "transferCount": "64745",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -8795,10 +8745,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:19.951727+00:00",
+      "observedAt": "2026-08-19T08:59:02.448705+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:33.890727+00:00",
+        "observedAt": "2026-08-19T09:00:51.767089+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FLUF",
@@ -8821,7 +8771,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:19.485696+00:00",
+        "observedAt": "2026-08-19T09:02:39.817844+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9277,10 +9227,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:21.524943+00:00",
+      "observedAt": "2026-08-19T08:59:02.597228+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:36.042018+00:00",
+        "observedAt": "2026-08-19T09:00:55.368293+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "GenF",
@@ -9303,7 +9253,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:25.606213+00:00",
+        "observedAt": "2026-08-19T09:02:46.429303+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9372,7 +9322,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00095909,
-            "moralis": "0.0008397"
+            "moralis": "0.0009297"
           }
         }
       },
@@ -9459,10 +9409,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.065935+00:00",
+      "observedAt": "2026-08-19T08:59:03.164926+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:37.882976+00:00",
+        "observedAt": "2026-08-19T09:00:57.202813+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FlyFrogs",
@@ -9485,7 +9435,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:26.341814+00:00",
+        "observedAt": "2026-08-19T09:02:46.761489+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9546,7 +9496,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2866,
-            "moralis": "2872"
+            "moralis": "2873"
           }
         },
         "floorPrice": {
@@ -9554,7 +9504,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.04,
-            "moralis": "0.03428199"
+            "moralis": "0.02899899"
           }
         }
       },
@@ -9562,7 +9512,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-06-28T03:00:18.000Z",
-        "transferCount": "59525",
+        "transferCount": "59562",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -9952,10 +9902,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.500776+00:00",
+      "observedAt": "2026-08-19T08:59:03.634624+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:39.657335+00:00",
+        "observedAt": "2026-08-19T09:01:00.800318+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ForgottenRunesWizardsCult",
@@ -9978,7 +9928,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:26.404937+00:00",
+        "observedAt": "2026-08-19T09:02:46.849798+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10110,10 +10060,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:22.973812+00:00",
+      "observedAt": "2026-08-19T08:59:04.514539+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:41.470740+00:00",
+        "observedAt": "2026-08-19T09:01:02.626570+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -10136,7 +10086,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:32.220044+00:00",
+        "observedAt": "2026-08-19T09:02:53.390899+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10197,7 +10147,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3538,
-            "moralis": "3533"
+            "moralis": "3532"
           }
         },
         "floorPrice": {
@@ -10205,7 +10155,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00083999,
-            "moralis": "0.00083999"
+            "moralis": "0.00082999"
           }
         }
       },
@@ -10213,7 +10163,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-26T01:18:44.000Z",
-        "transferCount": "21560",
+        "transferCount": "21561",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -10823,10 +10773,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:24.567636+00:00",
+      "observedAt": "2026-08-19T08:59:04.956973+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:43.289039+00:00",
+        "observedAt": "2026-08-19T09:01:04.409781+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FyatLux",
@@ -10849,7 +10799,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:33.520967+00:00",
+        "observedAt": "2026-08-19T09:02:53.435205+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10981,12 +10931,12 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:24.938496+00:00",
+      "observedAt": "2026-08-19T08:59:05.406232+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:46.881848+00:00",
+        "observedAt": "2026-08-19T09:01:06.590687+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "HalloweenRising",
@@ -11011,7 +10961,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:34.246528+00:00",
+        "observedAt": "2026-08-19T09:02:54.626757+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11533,10 +11483,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:25.163741+00:00",
+      "observedAt": "2026-08-19T08:59:05.734326+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:48.696863+00:00",
+        "observedAt": "2026-08-19T09:01:08.397748+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "JaduAVA",
@@ -11559,7 +11509,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:39.171565+00:00",
+        "observedAt": "2026-08-19T09:02:59.863037+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11628,7 +11578,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.014299,
-            "moralis": "0.013999"
+            "moralis": "0.013539"
           }
         }
       },
@@ -11636,7 +11586,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-02-04T09:35:16.000Z",
-        "transferCount": "37393",
+        "transferCount": "37416",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12015,10 +11965,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:25.455771+00:00",
+      "observedAt": "2026-08-19T08:59:06.317088+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:50.482243+00:00",
+        "observedAt": "2026-08-19T09:01:10.159283+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Karafuru",
@@ -12041,7 +11991,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:40.338448+00:00",
+        "observedAt": "2026-08-19T09:03:00.330604+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12098,11 +12048,11 @@
           }
         },
         "owners": {
-          "preferred": 226,
-          "status": "corroborated",
+          "preferred": null,
+          "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 226,
-            "moralis": "223"
+            "moralis": "220"
           }
         },
         "floorPrice": {
@@ -12110,7 +12060,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1.2,
-            "moralis": "1.1111"
+            "moralis": "1.04"
           }
         }
       },
@@ -12118,7 +12068,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2026-01-12T15:58:01.000Z",
-        "transferCount": "885",
+        "transferCount": "892",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12173,10 +12123,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.043704+00:00",
+      "observedAt": "2026-08-19T08:59:08.213975+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:52.299491+00:00",
+        "observedAt": "2026-08-19T09:01:11.980923+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "VFTokenCAirdrop",
@@ -12201,7 +12151,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:40.829645+00:00",
+        "observedAt": "2026-08-19T09:03:01.203122+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12333,10 +12283,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.393931+00:00",
+      "observedAt": "2026-08-19T08:59:09.196617+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:54.126070+00:00",
+        "observedAt": "2026-08-19T09:01:13.806961+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "MonaAvatars",
@@ -12359,7 +12309,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:45.878144+00:00",
+        "observedAt": "2026-08-19T09:03:06.848845+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12424,11 +12374,11 @@
           }
         },
         "floorPrice": {
-          "preferred": 0.3615683179000002,
-          "status": "corroborated",
+          "preferred": null,
+          "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.3615683179000002,
-            "moralis": "0.34725"
+            "moralis": "0.4"
           }
         }
       },
@@ -12436,7 +12386,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-05-03T00:49:32.000Z",
-        "transferCount": "143623",
+        "transferCount": "143748",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -12914,10 +12864,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:26.687218+00:00",
+      "observedAt": "2026-08-19T08:59:10.820574+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:55.929366+00:00",
+        "observedAt": "2026-08-19T09:01:15.615587+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Meebits",
@@ -12940,7 +12890,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:47.164784+00:00",
+        "observedAt": "2026-08-19T09:03:07.234447+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13178,10 +13128,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:27.871186+00:00",
+      "observedAt": "2026-08-19T08:59:11.384597+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:57.716971+00:00",
+        "observedAt": "2026-08-19T09:01:17.396519+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "metaaniGEN",
@@ -13204,7 +13154,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:47.682070+00:00",
+        "observedAt": "2026-08-19T09:03:07.947581+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13281,7 +13231,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-06-06T10:12:53.000Z",
-        "transferCount": "11482",
+        "transferCount": "11484",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -14320,10 +14270,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:27.910118+00:00",
+      "observedAt": "2026-08-19T08:59:12.372941+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:20:59.558734+00:00",
+        "observedAt": "2026-08-19T09:01:21.036680+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TransparentUpgradeableProxy",
@@ -14346,13 +14296,38 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:52.662415+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-08-19T09:03:13.612723+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 2,
+        "uniqueTokenIds": 2,
+        "transferUris": 2,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "775",
+            "uri": "https://www.metashima.com/minted/775",
+            "name": "Metashima",
+            "symbol": "SHIMA",
+            "protocol": null,
+            "sender": "0x01f19e970a1253230b23c7657b4799ef22a6b62f",
+            "receiver": "0x07ce9a4c5fa3c2eca8bfaf31925bdd81555ddddd",
+            "block": "25769433",
+            "time": "2026-08-16T18:31:23Z",
+            "txHash": "0x25996bfcd93964340d4f76314674870f8a0b010c7b2f64602be4adb5957cec52"
+          },
+          {
+            "tokenId": "3675",
+            "uri": "https://www.metashima.com/minted/3675",
+            "name": "Metashima",
+            "symbol": "SHIMA",
+            "protocol": null,
+            "sender": "0x01f19e970a1253230b23c7657b4799ef22a6b62f",
+            "receiver": "0x07ce9a4c5fa3c2eca8bfaf31925bdd81555ddddd",
+            "block": "25769433",
+            "time": "2026-08-16T18:31:23Z",
+            "txHash": "0x25996bfcd93964340d4f76314674870f8a0b010c7b2f64602be4adb5957cec52"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -14562,10 +14537,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:28.409483+00:00",
+      "observedAt": "2026-08-19T08:59:13.136681+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:03.165582+00:00",
+        "observedAt": "2026-08-19T09:01:24.622827+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721NESDrop",
@@ -14588,7 +14563,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:53.930427+00:00",
+        "observedAt": "2026-08-19T09:03:14.044259+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -14647,7 +14622,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3349,
-            "moralis": "3378"
+            "moralis": "3384"
           }
         },
         "floorPrice": {
@@ -14655,7 +14630,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.67999999,
-            "moralis": "0.484"
+            "moralis": "0.4788"
           }
         }
       },
@@ -14663,7 +14638,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-15T16:38:30.000Z",
-        "transferCount": "177375",
+        "transferCount": "177494",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -14943,10 +14918,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:28.850737+00:00",
+      "observedAt": "2026-08-19T08:59:13.790774+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:04.977469+00:00",
+        "observedAt": "2026-08-19T09:01:25.106787+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Moonbirds",
@@ -14969,36 +14944,96 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:54.458516+00:00",
+        "observedAt": "2026-08-19T09:03:14.555449+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 14,
+        "uniqueTokenIds": 17,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "2010",
+            "tokenId": "1117",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x68c8bc6577c091dac3ea75c26594fd26f23e91f4",
+            "receiver": "0xd330910b10213014da00d72872f6721a3e52d54b",
+            "block": "25787971",
+            "time": "2026-08-19T08:30:35Z",
+            "txHash": "0xf2d46f5862b16c7924c1261a293b4ffefc9faaa9ccc5c1dc7591240e8fde0ed0"
+          },
+          {
+            "tokenId": "5199",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x69b455874e1f15bea1bdff37be2c14c80ced6b2d",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25786891",
+            "time": "2026-08-19T04:54:11Z",
+            "txHash": "0x32106fd880246c94790e1f126dc84b5d71356481c0a4f959c8e7f9fedf26ad03"
+          },
+          {
+            "tokenId": "2647",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x67d58520775af7848f3ee2adaa227435f5a91a04",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25786539",
+            "time": "2026-08-19T03:43:11Z",
+            "txHash": "0x6031b41ffb6d93a10f6c6dcd9d8aa864817f1fedec5a20117e5a5ec0ffae2176"
+          },
+          {
+            "tokenId": "4364",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x67d58520775af7848f3ee2adaa227435f5a91a04",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25786156",
+            "time": "2026-08-19T02:26:35Z",
+            "txHash": "0xc81f2f1527b751564ee0c86617b0b7c662f459bd4dc617f477addc956aed46e1"
+          },
+          {
+            "tokenId": "6703",
+            "uri": null,
+            "name": "Moonbirds",
+            "symbol": "MOONBIRD",
+            "protocol": null,
+            "sender": "0x67d58520775af7848f3ee2adaa227435f5a91a04",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "25786151",
+            "time": "2026-08-19T02:25:35Z",
+            "txHash": "0xdda884571cc09d38ee7b36403447196600e08bf66e8314f1471cc3fa7bc2be11"
+          },
+          {
+            "tokenId": "4258",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
             "sender": "0x3dbc93aecd50e485ecd2dd6dbe73d1ec19a4d839",
             "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "block": "25740459",
-            "time": "2026-08-12T17:37:59Z",
-            "txHash": "0xd49ccf7e4abe9ba57138e5db81fc9f93636f339cfd9f712621e2650ef090a5d0"
+            "block": "25785339",
+            "time": "2026-08-18T23:42:59Z",
+            "txHash": "0xe7ac852acc59a2483a17509fabe05ab4b0a15b9d876b5c3c4afc13523b292aa2"
           },
           {
-            "tokenId": "2010",
+            "tokenId": "4258",
             "uri": null,
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
-            "sender": "0x3a3b180a7eb906d808a999148a81128543efc5bc",
+            "sender": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
             "receiver": "0x3dbc93aecd50e485ecd2dd6dbe73d1ec19a4d839",
-            "block": "25740399",
-            "time": "2026-08-12T17:25:59Z",
-            "txHash": "0xa95871b97e5510321d179817e2332421472c3df41aa8da6d27fc01f8ae3f64e1"
+            "block": "25785225",
+            "time": "2026-08-18T23:20:11Z",
+            "txHash": "0xe5b525979b7ebca08af9e2a5c720be86b6ce5e0c4f0ab84ce54a047812e0939a"
           },
           {
             "tokenId": "6765",
@@ -15006,71 +15041,11 @@
             "name": "Moonbirds",
             "symbol": "MOONBIRD",
             "protocol": null,
-            "sender": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "receiver": "0xf41b389e0c1950dc0b16c9498eae77131cc08a56",
-            "block": "25739640",
-            "time": "2026-08-12T14:53:35Z",
-            "txHash": "0x1bbcb3be03927cd19b9c9fce9641cf8c68e0e1edee1dba01059b6c215e16e510"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "receiver": "0xf41b389e0c1950dc0b16c9498eae77131cc08a56",
-            "block": "25739640",
-            "time": "2026-08-12T14:53:35Z",
-            "txHash": "0x0afd4f5b7014d1fad20477aa8f74a0b361eaa52a2aaf956692758703f1fcfc14"
-          },
-          {
-            "tokenId": "2506",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x0b7862feac03e8d03341daa68506dc95d1fed9ae",
-            "receiver": "0x22ba1e3ef17609151fb322cfca979fe0d85248f7",
-            "block": "25738998",
-            "time": "2026-08-12T12:44:35Z",
-            "txHash": "0x30d366ee4736e620f68a86eff7021607a42af393808ad7f97a0733ef998480df"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "receiver": "0xb497070466dc15fa6420b4781bb0352257146495",
-            "block": "25738964",
-            "time": "2026-08-12T12:37:47Z",
-            "txHash": "0x345e71311156c16e322593a344eeced60c4630ab74ca7fc32cff6933069e0c81"
-          },
-          {
-            "tokenId": "2677",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "receiver": "0x4bc10a13a35565107ba0d6a0b273e163ef1fb746",
-            "block": "25738961",
-            "time": "2026-08-12T12:37:11Z",
-            "txHash": "0xbfa9fc8e967866726f3761e7b3f57d846ddfbf4caacfd970f12aef19d63c4c6f"
-          },
-          {
-            "tokenId": "547",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x8f34c409c8e00dcaa761b92f826465031d2edad9",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25735833",
-            "time": "2026-08-12T02:07:35Z",
-            "txHash": "0xdffffd3f57d71831d19642d1520968322880557ce2e57359218002edb3177764"
+            "sender": "0x2a9a6bf65ab612e4bb3c5dc7478d45dc17ffd5de",
+            "receiver": "0xa96c707a4005ad2c592cd3634a45396cfb25309f",
+            "block": "25783693",
+            "time": "2026-08-18T18:13:23Z",
+            "txHash": "0x0a3018bcf2cc3e547d466a9c4eb47769a5bc07879c358646f528225964ccadc6"
           }
         ],
         "errors": []
@@ -15144,13 +15119,13 @@
         "transferCount": "0",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:29.754757+00:00",
+      "observedAt": "2026-08-19T08:59:14.367243+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}",
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:06.787514+00:00",
+        "observedAt": "2026-08-19T09:01:27.339857+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": "",
@@ -15175,7 +15150,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:22:59.617478+00:00",
+        "observedAt": "2026-08-19T09:03:20.671332+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15365,10 +15340,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:29.828835+00:00",
+      "observedAt": "2026-08-19T08:59:15.866026+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:08.571745+00:00",
+        "observedAt": "2026-08-19T09:01:28.597230+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NG86VRM",
@@ -15391,7 +15366,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.065529+00:00",
+        "observedAt": "2026-08-19T09:03:20.856087+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15466,7 +15441,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-21T17:34:52.000Z",
-        "transferCount": "20278",
+        "transferCount": "20279",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -15845,10 +15820,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:30.516150+00:00",
+      "observedAt": "2026-08-19T08:59:16.776555+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:10.381374+00:00",
+        "observedAt": "2026-08-19T09:01:30.413490+00:00",
         "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": "",
@@ -15872,110 +15847,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.459597+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 12,
-        "uniqueTokenIds": 8,
-        "transferUris": 12,
+        "observedAt": "2026-08-19T09:03:21.095227+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "7225",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7226",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7298",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7298",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7297",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7297",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "5767",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5767",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "receiver": "0xe44d701efacb70ba69f9c98cf5bd701cbaf2d0d3",
-            "block": "25729156",
-            "time": "2026-08-11T03:45:11Z",
-            "txHash": "0x3205d1162b18debdabd90f0490a297fd760244cbcb97a3027d710a341bcd4444"
-          },
-          {
-            "tokenId": "7225",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7225",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
-          },
-          {
-            "tokenId": "7226",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7226",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xeec8ecb76d0bbdd9abee7fd9f7abf706b40b172d",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
-          },
-          {
-            "tokenId": "5898",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5898",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x5fc771d35b0615d79c76c04c2cbe849647241180",
-            "receiver": "0xcc800a41da6947b224bb57cb553e6744420323f6",
-            "block": "25727570",
-            "time": "2026-08-10T22:25:35Z",
-            "txHash": "0xb893c08f44d07c9ac0f25c322636dbf5512d5b74d9f4760f5ab8a0f9cb7fe6c2"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -16016,11 +15894,11 @@
       },
       "stats": {
         "totalSupply": {
-          "preferred": 1965,
+          "preferred": 1971,
           "status": "corroborated",
           "sources": {
-            "catalogOrOpenSea": 1965,
-            "moralis": "1965"
+            "catalogOrOpenSea": 1971,
+            "moralis": "1971"
           }
         },
         "owners": {
@@ -16036,7 +15914,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.883199,
-            "moralis": "1.75"
+            "moralis": "1.1"
           }
         }
       },
@@ -16044,7 +15922,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-08T16:02:23.000Z",
-        "transferCount": "10591",
+        "transferCount": "10611",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -16123,10 +16001,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.094193+00:00",
+      "observedAt": "2026-08-19T08:59:17.432751+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:12.152127+00:00",
+        "observedAt": "2026-08-19T09:01:32.249515+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NounsToken",
@@ -16149,108 +16027,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.698530+00:00",
+        "observedAt": "2026-08-19T09:03:21.118350+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 14,
+        "tokensSampled": 10,
+        "uniqueTokenIds": 5,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "1570",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x5da05d81ba4b4716bbc4631f9ed712d78a0bae08",
-            "receiver": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "block": "25739228",
-            "time": "2026-08-12T13:30:35Z",
-            "txHash": "0x613cf1a569f7654fbf5ea27fa0fd90ff31e3fe3d493a2754ad4ef346d3077463"
-          },
-          {
-            "tokenId": "1570",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x929b67daff3787cef9061ecd474fbbeebbfa8311",
-            "receiver": "0x5da05d81ba4b4716bbc4631f9ed712d78a0bae08",
-            "block": "25739221",
-            "time": "2026-08-12T13:29:11Z",
-            "txHash": "0x6fa615753869eafdbe79018ade9586d17de8b2b04e83c350b1f2e2224d64b079"
-          },
-          {
-            "tokenId": "1394",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x4972bcab33ad4123c2ebca2e1d25dd25c86380e1",
-            "receiver": "0x538384891ef5cb8ce9ca7cc045d7829acbfc9360",
-            "block": "25737088",
-            "time": "2026-08-12T06:20:47Z",
-            "txHash": "0x1019fcf864c5bb2762fdd929ce1af065fe819e440ac800257718a8914dad4080"
-          },
-          {
-            "tokenId": "1989",
+            "tokenId": "1995",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25781834",
+            "time": "2026-08-18T12:00:23Z",
+            "txHash": "0x0f8a18373476459a604ddab73c442cf94c2889ad6e7938e18744e1fabc62b824"
           },
           {
-            "tokenId": "1990",
+            "tokenId": "1996",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x0000000000000000000000000000000000000000",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25781834",
+            "time": "2026-08-18T12:00:23Z",
+            "txHash": "0x0f8a18373476459a604ddab73c442cf94c2889ad6e7938e18744e1fabc62b824"
           },
           {
-            "tokenId": "1990",
+            "tokenId": "1996",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
             "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
-            "block": "25733900",
-            "time": "2026-08-11T19:39:23Z",
-            "txHash": "0x9f707869856196dd998ad0e78b96f90a9a2f1c32f56daadb91a8df1d1d7d7f8c"
+            "block": "25781834",
+            "time": "2026-08-18T12:00:23Z",
+            "txHash": "0x0f8a18373476459a604ddab73c442cf94c2889ad6e7938e18744e1fabc62b824"
           },
           {
-            "tokenId": "1455",
+            "tokenId": "1570",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
-            "block": "25728504",
-            "time": "2026-08-11T01:34:11Z",
-            "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+            "receiver": "0x4974b8b450f5ad362fb4cff6a3881928b9366dc6",
+            "block": "25776837",
+            "time": "2026-08-17T19:16:59Z",
+            "txHash": "0xded7d659b289f106a862f19239e139065a8aec89f30e626ef12d6062ffbd79d6"
           },
           {
-            "tokenId": "1743",
+            "tokenId": "1994",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
-            "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
-            "receiver": "0xde18269def501a0cc2cd44dd215d9ad9a3f2fec1",
-            "block": "25728504",
-            "time": "2026-08-11T01:34:11Z",
-            "txHash": "0x855f8deda69855e858c601f5b67585a4d601344518af535cf187db8db1c58f54"
+            "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25773902",
+            "time": "2026-08-17T09:27:35Z",
+            "txHash": "0xf7e322847fb977133b256e7afdc5c2565fa2f49abb46334cdd4d831cf748917b"
+          },
+          {
+            "tokenId": "1995",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x0000000000000000000000000000000000000000",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25773902",
+            "time": "2026-08-17T09:27:35Z",
+            "txHash": "0xf7e322847fb977133b256e7afdc5c2565fa2f49abb46334cdd4d831cf748917b"
+          },
+          {
+            "tokenId": "1995",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "block": "25773902",
+            "time": "2026-08-17T09:27:35Z",
+            "txHash": "0xf7e322847fb977133b256e7afdc5c2565fa2f49abb46334cdd4d831cf748917b"
+          },
+          {
+            "tokenId": "1993",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
+            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
+            "block": "25764656",
+            "time": "2026-08-16T02:34:11Z",
+            "txHash": "0xfd9a5b9915a9ef47258570606c39fb08ab12185c27c9c936fdbbca49f8bc779e"
           }
         ],
         "errors": []
@@ -16376,10 +16254,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.438422+00:00",
+      "observedAt": "2026-08-19T08:59:17.814762+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:13.973779+00:00",
+        "observedAt": "2026-08-19T09:01:34.027765+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -16402,7 +16280,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:00.843225+00:00",
+        "observedAt": "2026-08-19T09:03:21.335137+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -16461,7 +16339,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3778,
-            "moralis": "3777"
+            "moralis": "3771"
           }
         },
         "floorPrice": {
@@ -16469,7 +16347,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006392,
-            "moralis": "0.0009533"
+            "moralis": "0.0010743"
           }
         }
       },
@@ -16477,7 +16355,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-11T08:31:15.000Z",
-        "transferCount": "29187",
+        "transferCount": "29200",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -17263,10 +17141,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:31.756680+00:00",
+      "observedAt": "2026-08-19T08:59:18.566940+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:15.781048+00:00",
+        "observedAt": "2026-08-19T09:01:35.825375+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Omnimorphs",
@@ -17289,13 +17167,62 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.009554+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-08-19T09:03:21.382926+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 4,
+        "uniqueTokenIds": 4,
+        "transferUris": 4,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "7465",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/7465",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "receiver": "0xda60f6f99cea7fb4acfb3dfcb817691eaa41ba4e",
+            "block": "25769498",
+            "time": "2026-08-16T18:44:23Z",
+            "txHash": "0x2b5726af0762d01b7c6fca93053a07a607b6649252ba6bf609753f97740876e4"
+          },
+          {
+            "tokenId": "3793",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/3793",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdc79d17baf5ebe72c500e479c064bdaba35ac8b6",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          },
+          {
+            "tokenId": "5671",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/5671",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdc79d17baf5ebe72c500e479c064bdaba35ac8b6",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          },
+          {
+            "tokenId": "7452",
+            "uri": "https://connect.omnimorphs.com/api/v1/external/omnimorphs/7452",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0xe00fc1b909364aa2f5dd9d4e095771cba05ea7e3",
+            "receiver": "0xdae477dd79e44b6952330931b74ee59f7bd91279",
+            "block": "25767964",
+            "time": "2026-08-16T13:37:11Z",
+            "txHash": "0xc027edbd7abe23ed24ceb0c000dc71ee37e9f7a0c81f360e4c74b3bd832ec328"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -17348,7 +17275,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2614,
-            "moralis": "2626"
+            "moralis": "2623"
           }
         },
         "floorPrice": {
@@ -17356,7 +17283,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0224654,
-            "moralis": "0.0216576"
+            "moralis": "0.02161826"
           }
         }
       },
@@ -17364,7 +17291,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-06-28T22:18:59.000Z",
-        "transferCount": "46118",
+        "transferCount": "46181",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -17534,10 +17461,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:32.140468+00:00",
+      "observedAt": "2026-08-19T08:59:19.108490+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:19.382465+00:00",
+        "observedAt": "2026-08-19T09:01:39.429969+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ParallelAvatars",
@@ -17560,108 +17487,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.184837+00:00",
+        "observedAt": "2026-08-19T09:03:21.530769+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 23,
+        "uniqueTokenIds": 22,
         "transferUris": 25,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "8654",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/8654",
+            "tokenId": "148",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/148",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
-            "receiver": "0x5688228ee0812aa6e5b2780a4aa659367c925397",
-            "block": "25740191",
-            "time": "2026-08-12T16:44:11Z",
-            "txHash": "0xac580d2cf0411913eeb34ad83ccbf590244909c135c3cc8ccf33bdf5e35444b7"
+            "sender": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "receiver": "0xd1b5b02937e542c67a934a4f3ce59321b3ff89ea",
+            "block": "25787440",
+            "time": "2026-08-19T06:44:11Z",
+            "txHash": "0x603fd4625b7dd044b3af00a8b677f1432f01660821c226fa7627c27959294b32"
           },
           {
-            "tokenId": "7030",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7030",
+            "tokenId": "3412",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/3412",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x28358cef6f55f9746c9c26c62e5728036b4f64b8",
-            "receiver": "0x7542c9df25dae8a004f29b8647641757b4582098",
-            "block": "25736190",
-            "time": "2026-08-12T03:19:11Z",
-            "txHash": "0x4fc6688d8c20c3b713ebc0235a7e90d73844d67e5ca28a1e1fca0f3ac2f99d21"
+            "sender": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "receiver": "0xd1b5b02937e542c67a934a4f3ce59321b3ff89ea",
+            "block": "25780118",
+            "time": "2026-08-18T06:14:59Z",
+            "txHash": "0x9d8800fb4609078e8c326c041c98c39bfb8ac4ac2001c78c0158b6cb19835896"
           },
           {
-            "tokenId": "1414",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/1414",
+            "tokenId": "2835",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/2835",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "receiver": "0xd1b5b02937e542c67a934a4f3ce59321b3ff89ea",
+            "block": "25780115",
+            "time": "2026-08-18T06:14:23Z",
+            "txHash": "0x3b004c45a6520b0c17c36e4f3855549ed0ada767084024fd5fb4e972dbb3fe60"
           },
           {
-            "tokenId": "4913",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/4913",
+            "tokenId": "10319",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/10319",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0x965238d0a7cf3dc69ef12d4f0ca4617e61ede849",
+            "receiver": "0xd1b5b02937e542c67a934a4f3ce59321b3ff89ea",
+            "block": "25778182",
+            "time": "2026-08-17T23:46:23Z",
+            "txHash": "0x5ca280ee54b8b36a513b8177338c42537c22c26f1d7d9d2b406f2d8407ba7b37"
           },
           {
-            "tokenId": "5236",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5236",
+            "tokenId": "10971",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/10971",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0x85dafa95eb2b8a145eb9c5f8ae33c0a85c68d4b1",
+            "receiver": "0xd1b5b02937e542c67a934a4f3ce59321b3ff89ea",
+            "block": "25775513",
+            "time": "2026-08-17T14:50:59Z",
+            "txHash": "0xdeeb03d4b1df52ddd35f414ffc5a86c21f809b8c70d85b028c62b9ab73510353"
           },
           {
-            "tokenId": "5259",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5259",
+            "tokenId": "7154",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7154",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0xa13db64a2e354e473cd914bde5cde32200144130",
+            "receiver": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
+            "block": "25773802",
+            "time": "2026-08-17T09:07:35Z",
+            "txHash": "0xc543b43ceef34f141ac2146ace8eeda175a5adc88669661b16702ccca29b7cdb"
           },
           {
-            "tokenId": "5545",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5545",
+            "tokenId": "7141",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7141",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "receiver": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
+            "block": "25773351",
+            "time": "2026-08-17T07:37:23Z",
+            "txHash": "0xf3df77da4b73798d4204ed171710fe03630128f7953c3d63ca5c66c18cac3ecb"
           },
           {
-            "tokenId": "5598",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/5598",
+            "tokenId": "8660",
+            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/8660",
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x755c62ca4d1a5a8da128dd629cfa810679fc2fd2",
-            "receiver": "0xb981290d9d804075986482f0302c03a3cd2aff32",
-            "block": "25735360",
-            "time": "2026-08-12T00:31:59Z",
-            "txHash": "0xd6f94b647f2e18b490239e7f74d560cdc499a48ccadb75e4b00f014f172788cd"
+            "sender": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "receiver": "0x1b752293437f25032ac09a51e3c5d9c49420cd14",
+            "block": "25773164",
+            "time": "2026-08-17T06:59:59Z",
+            "txHash": "0x53a62f2097a944eb8079a0ea6fa9eabe32e051020ae10c9d02fe5b5a24074370"
           }
         ],
         "errors": []
@@ -17732,7 +17659,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-17T01:58:01.000Z",
-        "transferCount": "41608",
+        "transferCount": "41612",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -18254,10 +18181,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:33.131901+00:00",
+      "observedAt": "2026-08-19T08:59:19.791909+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:21.193802+00:00",
+        "observedAt": "2026-08-19T09:01:41.251734+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "PartyBears",
@@ -18280,7 +18207,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.270438+00:00",
+        "observedAt": "2026-08-19T09:03:21.609822+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18560,10 +18487,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:33.253432+00:00",
+      "observedAt": "2026-08-19T08:59:20.477474+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:22.976489+00:00",
+        "observedAt": "2026-08-19T09:01:43.031067+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Phetta",
@@ -18586,7 +18513,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.460116+00:00",
+        "observedAt": "2026-08-19T09:03:21.697795+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18629,7 +18556,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": "https://i2c.seadn.io/collection/pixelbeasts/image/c0c371523b31aec1a3cabd6db62ef1/6cc0c371523b31aec1a3cabd6db62ef1.png",
-            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/ae708767c4728477dd43963e22b0b4/8bae708767c4728477dd43963e22b0b4.jpeg"
+            "moralis": "https://i2c.seadn.io/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/5b2d1735cfbd6d864d6c1630ca4d28/8f5b2d1735cfbd6d864d6c1630ca4d28.jpeg"
           }
         }
       },
@@ -18647,7 +18574,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1,
-            "moralis": "727986"
+            "moralis": "727983"
           }
         },
         "floorPrice": {
@@ -18663,13 +18590,13 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4016909",
+        "transferCount": "4023061",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:34.762207+00:00",
+      "observedAt": "2026-08-19T08:59:21.244423+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:24.817789+00:00",
+        "observedAt": "2026-08-19T09:01:44.825668+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -18692,7 +18619,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:01.511612+00:00",
+        "observedAt": "2026-08-19T09:03:21.793051+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18761,7 +18688,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.15,
-            "moralis": "0.0126"
+            "moralis": "0.08999"
           }
         }
       },
@@ -18769,7 +18696,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-05-23T01:03:47.000Z",
-        "transferCount": "5161",
+        "transferCount": "5162",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -19742,10 +19669,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:34.984880+00:00",
+      "observedAt": "2026-08-19T08:59:22.276437+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:26.602306+00:00",
+        "observedAt": "2026-08-19T09:01:46.656016+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "OptimizedTransparentUpgradeableProxy",
@@ -19768,7 +19695,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:08.153653+00:00",
+        "observedAt": "2026-08-19T09:03:28.429704+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -19829,7 +19756,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2494,
-            "moralis": "2491"
+            "moralis": "2490"
           }
         },
         "floorPrice": {
@@ -19837,7 +19764,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006686,
-            "moralis": "0.0008559"
+            "moralis": "0.0005988"
           }
         }
       },
@@ -19845,7 +19772,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-10-20T13:58:04.000Z",
-        "transferCount": "16794",
+        "transferCount": "16800",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -20257,10 +20184,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:35.270158+00:00",
+      "observedAt": "2026-08-19T08:59:22.826693+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:28.421071+00:00",
+        "observedAt": "2026-08-19T09:01:48.460534+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TheModZ",
@@ -20283,7 +20210,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:08.327291+00:00",
+        "observedAt": "2026-08-19T09:03:28.448535+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20344,7 +20271,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 5135,
-            "moralis": "5131"
+            "moralis": "5130"
           }
         },
         "floorPrice": {
@@ -20360,7 +20287,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-27T07:43:22.000Z",
-        "transferCount": "131965",
+        "transferCount": "131969",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -20871,10 +20798,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:35.797797+00:00",
+      "observedAt": "2026-08-19T08:59:23.041312+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:30.228897+00:00",
+        "observedAt": "2026-08-19T09:01:50.269900+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Seeker",
@@ -20897,7 +20824,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:11.194264+00:00",
+        "observedAt": "2026-08-19T09:03:28.523730+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -20954,19 +20881,19 @@
           }
         },
         "owners": {
-          "preferred": "2634",
+          "preferred": "2626",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2634"
+            "moralis": "2626"
           }
         },
         "floorPrice": {
-          "preferred": "0.0008296",
+          "preferred": "0.00898",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.0008296"
+            "moralis": "0.00898"
           }
         }
       },
@@ -20974,7 +20901,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-23T17:59:55.000Z",
-        "transferCount": "18095",
+        "transferCount": "18162",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -21265,10 +21192,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.103260+00:00",
+      "observedAt": "2026-08-19T08:59:23.492348+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:32.021458+00:00",
+        "observedAt": "2026-08-19T09:01:52.060590+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "WynLambo",
@@ -21291,7 +21218,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:14.992258+00:00",
+        "observedAt": "2026-08-19T09:03:35.205557+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -21352,7 +21279,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4200,
-            "moralis": "4197"
+            "moralis": "4198"
           }
         },
         "floorPrice": {
@@ -21368,7 +21295,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-03-13T13:44:35.000Z",
-        "transferCount": "13726",
+        "transferCount": "13728",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -21637,10 +21564,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.444728+00:00",
+      "observedAt": "2026-08-19T08:59:24.007193+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:33.849650+00:00",
+        "observedAt": "2026-08-19T09:01:53.875205+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ToxicSkullsClubProxy",
@@ -21663,7 +21590,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:15.139861+00:00",
+        "observedAt": "2026-08-19T09:03:35.221211+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -21724,7 +21651,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2615,
-            "moralis": "2609"
+            "moralis": "2611"
           }
         },
         "floorPrice": {
@@ -21732,7 +21659,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.003135,
-            "moralis": "0.00731"
+            "moralis": "0.0064815"
           }
         }
       },
@@ -21740,7 +21667,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34716",
+        "transferCount": "34729",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -22075,10 +22002,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:36.782868+00:00",
+      "observedAt": "2026-08-19T08:59:24.440301+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:35.647968+00:00",
+        "observedAt": "2026-08-19T09:01:55.658940+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22101,7 +22028,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:17.917946+00:00",
+        "observedAt": "2026-08-19T09:03:35.293619+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22158,19 +22085,19 @@
           }
         },
         "owners": {
-          "preferred": "2609",
+          "preferred": "2611",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2609"
+            "moralis": "2611"
           }
         },
         "floorPrice": {
-          "preferred": "0.00731",
+          "preferred": "0.0064815",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.00731"
+            "moralis": "0.0064815"
           }
         }
       },
@@ -22178,7 +22105,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34716",
+        "transferCount": "34729",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -22513,10 +22440,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:37.203663+00:00",
+      "observedAt": "2026-08-19T08:59:24.926661+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:37.519813+00:00",
+        "observedAt": "2026-08-19T09:01:57.458063+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22539,7 +22466,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:21.755751+00:00",
+        "observedAt": "2026-08-19T09:03:41.967195+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22830,10 +22757,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:37.442726+00:00",
+      "observedAt": "2026-08-19T08:59:25.477524+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:39.258126+00:00",
+        "observedAt": "2026-08-19T09:01:59.267197+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ImmaDegenVoyagerReveal",
@@ -22856,7 +22783,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:21.908633+00:00",
+        "observedAt": "2026-08-19T09:03:42.011666+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22933,7 +22860,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2022-05-09T10:27:47.000Z",
-        "transferCount": "4937",
+        "transferCount": "4941",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -23488,10 +23415,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:39.526402+00:00",
+      "observedAt": "2026-08-19T08:59:25.863821+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:41.063174+00:00",
+        "observedAt": "2026-08-19T09:02:02.895079+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Voltz",
@@ -23514,7 +23441,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:24.924407+00:00",
+        "observedAt": "2026-08-19T09:03:42.080417+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -23575,7 +23502,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1297,
-            "moralis": "1290"
+            "moralis": "1291"
           }
         },
         "floorPrice": {
@@ -23583,7 +23510,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00029,
-            "moralis": "0.001986"
+            "moralis": "0.00197"
           }
         }
       },
@@ -23591,7 +23518,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2024-12-25T17:31:53.000Z",
-        "transferCount": "17834",
+        "transferCount": "17844",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -24036,10 +23963,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.003773+00:00",
+      "observedAt": "2026-08-19T08:59:26.171428+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:42.836151+00:00",
+        "observedAt": "2026-08-19T09:02:03.211224+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Vaifus",
@@ -24064,7 +23991,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:28.531491+00:00",
+        "observedAt": "2026-08-19T09:03:48.652660+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24125,7 +24052,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3817,
-            "moralis": "3815"
+            "moralis": "3814"
           }
         },
         "floorPrice": {
@@ -24141,7 +24068,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-24T06:15:46.000Z",
-        "transferCount": "25119",
+        "transferCount": "25124",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -24553,10 +24480,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.049524+00:00",
+      "observedAt": "2026-08-19T08:59:26.600674+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:44.660509+00:00",
+        "observedAt": "2026-08-19T09:02:06.514316+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Woodie",
@@ -24579,7 +24506,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:28.812196+00:00",
+        "observedAt": "2026-08-19T09:03:48.841029+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24711,12 +24638,12 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:40.343485+00:00",
+      "observedAt": "2026-08-19T08:59:27.028728+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:46.483579+00:00",
+        "observedAt": "2026-08-19T09:02:08.279726+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "XmasChibis",
@@ -24739,7 +24666,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:31.917155+00:00",
+        "observedAt": "2026-08-19T09:03:48.855579+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24808,7 +24735,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.007097,
-            "moralis": "0.007569"
+            "moralis": "0.0075599"
           }
         }
       },
@@ -24871,10 +24798,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:41.027437+00:00",
+      "observedAt": "2026-08-19T08:59:28.563409+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:48.254385+00:00",
+        "observedAt": "2026-08-19T09:02:08.625925+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721SeaDrop",
@@ -24897,7 +24824,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:35.544481+00:00",
+        "observedAt": "2026-08-19T09:03:55.387523+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -24958,7 +24885,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3043,
-            "moralis": "3040"
+            "moralis": "3042"
           }
         },
         "floorPrice": {
@@ -24966,7 +24893,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0999199,
-            "moralis": "0.092799"
+            "moralis": "0.084587"
           }
         }
       },
@@ -24974,7 +24901,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-12-29T14:26:11.000Z",
-        "transferCount": "78247",
+        "transferCount": "78364",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -25430,10 +25357,10 @@
           }
         ]
       },
-      "observedAt": "2026-08-12T18:19:41.235427+00:00",
+      "observedAt": "2026-08-19T08:59:29.052202+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:50.089067+00:00",
+        "observedAt": "2026-08-19T09:02:10.481614+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AKCB",
@@ -25456,7 +25383,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:35.695523+00:00",
+        "observedAt": "2026-08-19T09:03:55.429999+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -25533,15 +25460,15 @@
         "verifiedCollection": null,
         "possibleSpam": null,
         "syncedAt": null,
-        "transferCount": "7204",
+        "transferCount": "7205",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-12T18:19:42.353939+00:00",
+      "observedAt": "2026-08-19T08:59:33.026198+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-08-12T18:21:51.981474+00:00",
+        "observedAt": "2026-08-19T09:02:12.796195+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Token",
@@ -25566,7 +25493,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-08-12T18:23:38.819660+00:00",
+        "observedAt": "2026-08-19T09:03:55.512624+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -25715,7 +25642,8 @@
       "chain": "ethereum",
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
       "sourceConflicts": [
-        "name"
+        "name",
+        "floorPrice"
       ],
       "sourceErrors": [],
       "etherscanConflicts": [],
@@ -26065,6 +25993,7 @@
       "chain": "base",
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
       "sourceConflicts": [
+        "owners",
         "floorPrice"
       ],
       "sourceErrors": [],
@@ -26100,7 +26029,9 @@
       "name": "Meebits",
       "chain": "ethereum",
       "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "sourceConflicts": [],
+      "sourceConflicts": [
+        "floorPrice"
+      ],
       "sourceErrors": [],
       "etherscanConflicts": [],
       "etherscanErrors": [
