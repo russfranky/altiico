@@ -1,12 +1,12 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-08-12T05:06:17.474056+00:00",
+  "generatedAt": "2026-08-20T10:05:13.206323+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
     "collectionsInspected": 6,
     "nftsSampled": 222,
-    "metadataDocuments": 210,
+    "metadataDocuments": 213,
     "modelCandidates": 38,
     "validatedVrms": 0,
     "collectionsWithValidatedVrms": 0,
@@ -93,11 +93,11 @@
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9894: TimeoutError: The read operation timed out",
-        "metadata 9968: TimeoutError: The read operation timed out",
-        "metadata 9839: TimeoutError: The read operation timed out",
-        "metadata 9845: TimeoutError: The read operation timed out",
-        "metadata 9952: TimeoutError: The read operation timed out"
+        "metadata 9997: TimeoutError: The read operation timed out",
+        "metadata 9996: TimeoutError: The read operation timed out",
+        "metadata 9983: TimeoutError: The read operation timed out",
+        "metadata 9966: TimeoutError: The read operation timed out",
+        "metadata 9960: TimeoutError: The read operation timed out"
       ]
     },
     {
@@ -112,16 +112,13 @@
       "image_url": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/a0c64b4fa6d4f41fb0f84a4450579b/0aa0c64b4fa6d4f41fb0f84a4450579b.gif",
       "banner_image_url": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/57e38d7b4c978747d80e69ffaa8154/c057e38d7b4c978747d80e69ffaa8154.jpeg?fit=inside",
       "nfts_sampled": 40,
-      "metadata_documents": 36,
-      "metadata_fetch_errors": 4,
+      "metadata_documents": 39,
+      "metadata_fetch_errors": 1,
       "model_candidates": [],
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9978: TimeoutError: The read operation timed out",
-        "metadata 9979: TimeoutError: The read operation timed out",
-        "metadata 9976: TimeoutError: The read operation timed out",
-        "metadata 9971: TimeoutError: The read operation timed out"
+        "metadata 9996: TimeoutError: The read operation timed out"
       ]
     },
     {
@@ -327,17 +324,17 @@
           "field": "model",
           "path": "$.model",
           "reason": "field_name",
-          "url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
-          "metadata_url": "https://assets-voyager.voltz.me/avatar/1302",
-          "token_id": "1302"
+          "url": "https://assets-voyager.voltz.me/avatar/3d/be8df8888455dcd64a581d38984431fac97326c620f1",
+          "metadata_url": "https://assets-voyager.voltz.me/avatar/1406",
+          "token_id": "1406"
         },
         {
           "field": "model",
           "path": "$.model",
           "reason": "field_name",
-          "url": "https://assets-voyager.voltz.me/avatar/3d/be8df8888455dcd64a581d38984431fac97326c620f1",
-          "metadata_url": "https://assets-voyager.voltz.me/avatar/1406",
-          "token_id": "1406"
+          "url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
+          "metadata_url": "https://assets-voyager.voltz.me/avatar/1302",
+          "token_id": "1302"
         },
         {
           "field": "model",
@@ -792,21 +789,6 @@
           "token_id": "560"
         },
         {
-          "canonical_url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
-          "transport_url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
-          "valid": false,
-          "status": "valid_glb_not_vrm",
-          "vrm_spec": null,
-          "content_sha256": "",
-          "bytes": 7394644,
-          "error": "GLB has no extensions object",
-          "field": "model",
-          "path": "$.model",
-          "reason": "field_name",
-          "metadata_url": "https://assets-voyager.voltz.me/avatar/1302",
-          "token_id": "1302"
-        },
-        {
           "canonical_url": "https://assets-voyager.voltz.me/avatar/3d/be8df8888455dcd64a581d38984431fac97326c620f1",
           "transport_url": "https://assets-voyager.voltz.me/avatar/3d/be8df8888455dcd64a581d38984431fac97326c620f1",
           "valid": false,
@@ -820,6 +802,21 @@
           "reason": "field_name",
           "metadata_url": "https://assets-voyager.voltz.me/avatar/1406",
           "token_id": "1406"
+        },
+        {
+          "canonical_url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
+          "transport_url": "https://assets-voyager.voltz.me/avatar/3d/ef8dfadcd157df8f4a581a389c4434af9c2421cc72aa",
+          "valid": false,
+          "status": "valid_glb_not_vrm",
+          "vrm_spec": null,
+          "content_sha256": "",
+          "bytes": 7394644,
+          "error": "GLB has no extensions object",
+          "field": "model",
+          "path": "$.model",
+          "reason": "field_name",
+          "metadata_url": "https://assets-voyager.voltz.me/avatar/1302",
+          "token_id": "1302"
         },
         {
           "canonical_url": "https://assets-voyager.voltz.me/avatar/3d/efdfaadbd3078e8c4a5d1e388d0332fe9971259323",
