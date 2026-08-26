@@ -1,6 +1,6 @@
 {
   "schema": "moralis-model-discovery-v2",
-  "generatedAt": "2026-08-19T09:00:16.914872+00:00",
+  "generatedAt": "2026-08-26T09:07:22.902527+00:00",
   "policy": "lead-only; .vrm/.glb and unsupported_media are not VRM proof; every registered contract is sampled",
   "summary": {
     "collectionsInspected": 63,

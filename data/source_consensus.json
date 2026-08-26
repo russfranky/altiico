@@ -1,6 +1,6 @@
 {
   "schema": "catalog-source-consensus-v1",
-  "generatedAt": "2026-08-19T08:59:44.473925+00:00",
+  "generatedAt": "2026-08-26T09:07:02.090757+00:00",
   "sourceReport": "data/source_cross_reference_report.json",
   "policy": {
     "immutableIdentity": "contract and chain require direct evidence; a marketplace index may corroborate but does not override validated discovery evidence",
@@ -10,7 +10,7 @@
   },
   "summary": {
     "collections": 62,
-    "reviewItems": 40,
+    "reviewItems": 41,
     "observationStatusCounts": {
       "conflict": 58,
       "corroborated": 278,
@@ -77,8 +77,7 @@
       "chain": "ethereum",
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
       "conflictFields": [
-        "name",
-        "floorPrice"
+        "name"
       ],
       "errors": []
     },
@@ -433,6 +432,16 @@
       ]
     },
     {
+      "catalogId": "a3ac-0x77372a",
+      "name": "a KID called BEAST",
+      "chain": "ethereum",
+      "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
+      "conflictFields": [
+        "floorPrice"
+      ],
+      "errors": []
+    },
+    {
       "catalogId": "research-0x1142c6",
       "name": "mferverse: OG mfers",
       "chain": "base",
@@ -495,7 +504,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1382,
-            "moralis": "1378"
+            "moralis": "1377"
           }
         },
         "floorPrice": {
@@ -503,7 +512,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.003139,
-            "moralis": "0.003"
+            "moralis": "0.002999"
           }
         }
       },
@@ -511,7 +520,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-23T04:49:27.000Z",
-        "transferCount": "11333",
+        "transferCount": "11336",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -769,7 +778,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:49.594970+00:00",
+      "observedAt": "2026-08-26T09:06:19.560656+00:00",
       "errors": []
     },
     "research-0xaad35c": {
@@ -820,7 +829,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4789,
-            "moralis": "4810"
+            "moralis": "4799"
           }
         },
         "floorPrice": {
@@ -828,7 +837,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0192799,
-            "moralis": "0.0095"
+            "moralis": "0.009999"
           }
         }
       },
@@ -836,7 +845,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-25T10:45:28.000Z",
-        "transferCount": "46202",
+        "transferCount": "46248",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -1204,7 +1213,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:49.595016+00:00",
+      "observedAt": "2026-08-26T09:06:19.560715+00:00",
       "errors": []
     },
     "allstarz-psx": {
@@ -1263,7 +1272,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00033,
-            "moralis": "0.00045999"
+            "moralis": "0.00037999"
           }
         }
       },
@@ -1271,7 +1280,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-04-07T03:14:59.000Z",
-        "transferCount": "3833",
+        "transferCount": "3837",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -1606,7 +1615,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:49.595050+00:00",
+      "observedAt": "2026-08-26T09:06:19.560759+00:00",
       "errors": []
     },
     "research-0x1ac7a2": {
@@ -1728,7 +1737,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:50.719679+00:00",
+      "observedAt": "2026-08-26T09:06:20.883339+00:00",
       "errors": []
     },
     "research-0xc1fcf3": {
@@ -1787,7 +1796,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.006889999999,
-            "moralis": "0.3333333333"
+            "moralis": "0.04999"
           }
         }
       },
@@ -1795,7 +1804,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2021-09-16T23:19:52.000Z",
-        "transferCount": "2809",
+        "transferCount": "2814",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -1850,7 +1859,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:51.146420+00:00",
+      "observedAt": "2026-08-26T09:06:21.099873+00:00",
       "errors": []
     },
     "avastars": {
@@ -1901,7 +1910,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4986,
-            "moralis": "4985"
+            "moralis": "4983"
           }
         },
         "floorPrice": {
@@ -1909,7 +1918,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0096607,
-            "moralis": "0.0182"
+            "moralis": "0.010099"
           }
         }
       },
@@ -1917,7 +1926,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2020-02-07T02:49:07.000Z",
-        "transferCount": "72497",
+        "transferCount": "72557",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -2758,7 +2767,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:52.159432+00:00",
+      "observedAt": "2026-08-26T09:06:21.456182+00:00",
       "errors": []
     },
     "boomboxheads-v2": {
@@ -2880,7 +2889,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:53.603574+00:00",
+      "observedAt": "2026-08-26T09:06:22.364356+00:00",
       "errors": []
     },
     "bourey-vs-bulley-bourverse": {
@@ -2931,7 +2940,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 263,
-            "moralis": "256"
+            "moralis": "257"
           }
         },
         "floorPrice": {
@@ -2939,7 +2948,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00399,
-            "moralis": "0.0069597"
+            "moralis": "0.0068797"
           }
         }
       },
@@ -2947,7 +2956,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-07-13T13:40:59.000Z",
-        "transferCount": "824",
+        "transferCount": "827",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -3026,7 +3035,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:53.807241+00:00",
+      "observedAt": "2026-08-26T09:06:22.687421+00:00",
       "errors": []
     },
     "wassies": {
@@ -3077,7 +3086,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2636,
-            "moralis": "2628"
+            "moralis": "2627"
           }
         },
         "floorPrice": {
@@ -3093,7 +3102,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-22T23:23:06.000Z",
-        "transferCount": "47842",
+        "transferCount": "47866",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -3538,7 +3547,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:54.505767+00:00",
+      "observedAt": "2026-08-26T09:06:22.877559+00:00",
       "errors": []
     },
     "a3ac-0x49cf6f": {
@@ -3589,15 +3598,15 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 9195,
-            "moralis": "9171"
+            "moralis": "9151"
           }
         },
         "floorPrice": {
-          "preferred": null,
-          "status": "conflict",
+          "preferred": 0.26475957,
+          "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.26475957,
-            "moralis": "0.239999"
+            "moralis": "0.257182"
           }
         }
       },
@@ -3605,7 +3614,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232949",
+        "transferCount": "233120",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -3896,7 +3905,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:55.025012+00:00",
+      "observedAt": "2026-08-26T09:06:23.284590+00:00",
       "errors": []
     },
     "research-0x49cf6f": {
@@ -3943,19 +3952,19 @@
           }
         },
         "owners": {
-          "preferred": "9171",
+          "preferred": "9151",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "9171"
+            "moralis": "9151"
           }
         },
         "floorPrice": {
-          "preferred": "0.239999",
+          "preferred": "0.257182",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.239999"
+            "moralis": "0.257182"
           }
         }
       },
@@ -3963,7 +3972,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-12T13:50:39.000Z",
-        "transferCount": "232949",
+        "transferCount": "233120",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4254,7 +4263,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:55.485998+00:00",
+      "observedAt": "2026-08-26T09:06:23.728945+00:00",
       "errors": []
     },
     "chain-runners": {
@@ -4305,7 +4314,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3149,
-            "moralis": "3139"
+            "moralis": "3138"
           }
         },
         "floorPrice": {
@@ -4313,7 +4322,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0270249,
-            "moralis": "0.02166668"
+            "moralis": "0.02491"
           }
         }
       },
@@ -4321,7 +4330,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-11-05T11:06:24.000Z",
-        "transferCount": "34943",
+        "transferCount": "34968",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -4711,7 +4720,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:55.763912+00:00",
+      "observedAt": "2026-08-26T09:06:23.998545+00:00",
       "errors": []
     },
     "chametheon": {
@@ -4758,11 +4767,11 @@
           }
         },
         "owners": {
-          "preferred": "727983",
+          "preferred": "727958",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727983"
+            "moralis": "727958"
           }
         },
         "floorPrice": {
@@ -4778,10 +4787,10 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4023061",
+        "transferCount": "4023824",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-19T08:58:56.314994+00:00",
+      "observedAt": "2026-08-26T09:06:24.763873+00:00",
       "errors": []
     },
     "a3ac-0xc49a9a": {
@@ -4832,7 +4841,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1771,
-            "moralis": "1771"
+            "moralis": "1769"
           }
         },
         "floorPrice": {
@@ -4840,7 +4849,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.001325,
-            "moralis": "0.0005597"
+            "moralis": "0.0007297"
           }
         }
       },
@@ -4848,7 +4857,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-08T22:06:25.000Z",
-        "transferCount": "12526",
+        "transferCount": "12541",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -5205,7 +5214,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:56.641692+00:00",
+      "observedAt": "2026-08-26T09:06:24.919866+00:00",
       "errors": []
     },
     "chuddie": {
@@ -5256,7 +5265,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1091,
-            "moralis": "894"
+            "moralis": "893"
           }
         },
         "floorPrice": {
@@ -5272,7 +5281,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-09-26T07:10:23.000Z",
-        "transferCount": "3391",
+        "transferCount": "3393",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -5486,7 +5495,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:57.453647+00:00",
+      "observedAt": "2026-08-26T09:06:25.197254+00:00",
       "errors": []
     },
     "cyberanimedoll-avatar": {
@@ -5533,11 +5542,11 @@
           }
         },
         "owners": {
-          "preferred": "727983",
+          "preferred": "727958",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "727983"
+            "moralis": "727958"
           }
         },
         "floorPrice": {
@@ -5553,10 +5562,10 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4023061",
+        "transferCount": "4023824",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-19T08:58:58.349341+00:00",
+      "observedAt": "2026-08-26T09:06:26.430114+00:00",
       "errors": []
     },
     "cyberbrokers": {
@@ -5607,7 +5616,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2762,
-            "moralis": "2751"
+            "moralis": "2749"
           }
         },
         "floorPrice": {
@@ -5615,7 +5624,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0285989,
-            "moralis": "0.038596"
+            "moralis": "0.0313522"
           }
         }
       },
@@ -5623,7 +5632,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-04T01:32:54.000Z",
-        "transferCount": "49252",
+        "transferCount": "49273",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -5958,7 +5967,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:58.483273+00:00",
+      "observedAt": "2026-08-26T09:06:27.052138+00:00",
       "errors": []
     },
     "the-dask": {
@@ -6017,7 +6026,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00176789,
-            "moralis": "0.0016797"
+            "moralis": "0.0007487"
           }
         }
       },
@@ -6025,7 +6034,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-01-20T18:17:34.000Z",
-        "transferCount": "32580",
+        "transferCount": "32583",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -6327,7 +6336,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:59.484240+00:00",
+      "observedAt": "2026-08-26T09:06:27.504489+00:00",
       "errors": []
     },
     "coldie": {
@@ -6645,7 +6654,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:58:59.958965+00:00",
+      "observedAt": "2026-08-26T09:06:27.691708+00:00",
       "errors": []
     },
     "dickbuttverse": {
@@ -7069,7 +7078,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:01.280658+00:00",
+      "observedAt": "2026-08-26T09:06:28.117861+00:00",
       "errors": []
     },
     "elysium-shell-next-mecha": {
@@ -7414,7 +7423,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:01.608996+00:00",
+      "observedAt": "2026-08-26T09:06:28.562456+00:00",
       "errors": []
     },
     "a3ac-0xccc441": {
@@ -7465,7 +7474,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3088,
-            "moralis": "3097"
+            "moralis": "3098"
           }
         },
         "floorPrice": {
@@ -7481,7 +7490,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-05T19:45:41.000Z",
-        "transferCount": "64745",
+        "transferCount": "64772",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -8025,7 +8034,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:02.448705+00:00",
+      "observedAt": "2026-08-26T09:06:28.988826+00:00",
       "errors": []
     },
     "research-0x369156": {
@@ -8084,7 +8093,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.006222,
-            "moralis": "0.0064304"
+            "moralis": "0.0042247"
           }
         }
       },
@@ -8092,7 +8101,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-02-01T16:45:48.000Z",
-        "transferCount": "30533",
+        "transferCount": "30536",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -8471,7 +8480,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:02.597228+00:00",
+      "observedAt": "2026-08-26T09:06:29.234130+00:00",
       "errors": []
     },
     "fly-frogs": {
@@ -8530,7 +8539,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00095909,
-            "moralis": "0.0009297"
+            "moralis": "0.0007631"
           }
         }
       },
@@ -8538,7 +8547,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-03T06:50:29.000Z",
-        "transferCount": "26557",
+        "transferCount": "26561",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -8617,7 +8626,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:03.164926+00:00",
+      "observedAt": "2026-08-26T09:06:29.606118+00:00",
       "errors": []
     },
     "forgottenruneswizardscult": {
@@ -8668,7 +8677,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2866,
-            "moralis": "2873"
+            "moralis": "2871"
           }
         },
         "floorPrice": {
@@ -8676,7 +8685,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.04,
-            "moralis": "0.02899899"
+            "moralis": "0.034199"
           }
         }
       },
@@ -8684,7 +8693,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-06-28T03:00:18.000Z",
-        "transferCount": "59562",
+        "transferCount": "59586",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -9074,7 +9083,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:03.634624+00:00",
+      "observedAt": "2026-08-26T09:06:29.956376+00:00",
       "errors": []
     },
     "frutiger-anons": {
@@ -9196,7 +9205,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:04.514539+00:00",
+      "observedAt": "2026-08-26T09:06:30.389662+00:00",
       "errors": []
     },
     "a3ac-0x14c447": {
@@ -9247,7 +9256,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3538,
-            "moralis": "3532"
+            "moralis": "3531"
           }
         },
         "floorPrice": {
@@ -9255,7 +9264,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00083999,
-            "moralis": "0.00082999"
+            "moralis": "0.00083999"
           }
         }
       },
@@ -9263,7 +9272,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-26T01:18:44.000Z",
-        "transferCount": "21561",
+        "transferCount": "21564",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -9873,7 +9882,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:04.956973+00:00",
+      "observedAt": "2026-08-26T09:06:30.909668+00:00",
       "errors": []
     },
     "halloween-rising": {
@@ -9995,7 +10004,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:05.406232+00:00",
+      "observedAt": "2026-08-26T09:06:31.477360+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ]
@@ -10056,7 +10065,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0023899,
-            "moralis": "0.002709"
+            "moralis": "0.001813"
           }
         }
       },
@@ -10064,7 +10073,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-09-06T20:36:21.000Z",
-        "transferCount": "30545",
+        "transferCount": "30553",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -10509,7 +10518,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:05.734326+00:00",
+      "observedAt": "2026-08-26T09:06:31.735571+00:00",
       "errors": []
     },
     "research-0xd2F668": {
@@ -10560,7 +10569,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3184,
-            "moralis": "3188"
+            "moralis": "3182"
           }
         },
         "floorPrice": {
@@ -10568,7 +10577,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.014299,
-            "moralis": "0.013539"
+            "moralis": "0.013"
           }
         }
       },
@@ -10576,7 +10585,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-02-04T09:35:16.000Z",
-        "transferCount": "37416",
+        "transferCount": "37428",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -10955,7 +10964,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:06.317088+00:00",
+      "observedAt": "2026-08-26T09:06:32.150796+00:00",
       "errors": []
     },
     "research-0x324F60": {
@@ -11014,7 +11023,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1.2,
-            "moralis": "1.04"
+            "moralis": "0.95"
           }
         }
       },
@@ -11022,7 +11031,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2026-01-12T15:58:01.000Z",
-        "transferCount": "892",
+        "transferCount": "897",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -11077,7 +11086,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:08.213975+00:00",
+      "observedAt": "2026-08-26T09:06:33.789773+00:00",
       "errors": []
     },
     "mona-avatars": {
@@ -11199,7 +11208,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:09.196617+00:00",
+      "observedAt": "2026-08-26T09:06:34.718485+00:00",
       "errors": []
     },
     "meebits": {
@@ -11250,7 +11259,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 6339,
-            "moralis": "6343"
+            "moralis": "6342"
           }
         },
         "floorPrice": {
@@ -11258,7 +11267,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.3615683179000002,
-            "moralis": "0.4"
+            "moralis": "0.418"
           }
         }
       },
@@ -11266,7 +11275,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-05-03T00:49:32.000Z",
-        "transferCount": "143748",
+        "transferCount": "143881",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -11744,7 +11753,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:10.820574+00:00",
+      "observedAt": "2026-08-26T09:06:36.015242+00:00",
       "errors": []
     },
     "metaanigen": {
@@ -11972,7 +11981,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:11.384597+00:00",
+      "observedAt": "2026-08-26T09:06:36.405264+00:00",
       "errors": []
     },
     "a3ac-0x223ef0": {
@@ -12023,7 +12032,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1507,
-            "moralis": "1506"
+            "moralis": "1504"
           }
         },
         "floorPrice": {
@@ -12031,7 +12040,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00093,
-            "moralis": "0.0004297"
+            "moralis": "0.0003797"
           }
         }
       },
@@ -12039,7 +12048,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-06-06T10:12:53.000Z",
-        "transferCount": "11484",
+        "transferCount": "11502",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -13078,7 +13087,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:12.372941+00:00",
+      "observedAt": "2026-08-26T09:06:37.054880+00:00",
       "errors": []
     },
     "misfitpixels": {
@@ -13286,7 +13295,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:13.136681+00:00",
+      "observedAt": "2026-08-26T09:06:37.583681+00:00",
       "errors": []
     },
     "research-0x235817": {
@@ -13337,7 +13346,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3349,
-            "moralis": "3384"
+            "moralis": "3373"
           }
         },
         "floorPrice": {
@@ -13345,7 +13354,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.67999999,
-            "moralis": "0.4788"
+            "moralis": "0.7165"
           }
         }
       },
@@ -13353,7 +13362,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-04-15T16:38:30.000Z",
-        "transferCount": "177494",
+        "transferCount": "177818",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -13633,7 +13642,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:13.790774+00:00",
+      "observedAt": "2026-08-26T09:06:38.181675+00:00",
       "errors": []
     },
     "neonglitch86-collection-polygon-side": {
@@ -13703,7 +13712,7 @@
         "transferCount": "0",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-19T08:59:14.367243+00:00",
+      "observedAt": "2026-08-26T09:06:38.584805+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}",
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
@@ -13888,7 +13897,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:15.866026+00:00",
+      "observedAt": "2026-08-26T09:06:40.044453+00:00",
       "errors": []
     },
     "research-0x92133e": {
@@ -14334,7 +14343,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:16.776555+00:00",
+      "observedAt": "2026-08-26T09:06:40.706965+00:00",
       "errors": []
     },
     "nouns": {
@@ -14373,11 +14382,11 @@
       },
       "stats": {
         "totalSupply": {
-          "preferred": 1971,
+          "preferred": 1977,
           "status": "corroborated",
           "sources": {
-            "catalogOrOpenSea": 1971,
-            "moralis": "1971"
+            "catalogOrOpenSea": 1977,
+            "moralis": "1977"
           }
         },
         "owners": {
@@ -14393,7 +14402,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.883199,
-            "moralis": "1.1"
+            "moralis": "1.5"
           }
         }
       },
@@ -14401,7 +14410,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-08-08T16:02:23.000Z",
-        "transferCount": "10611",
+        "transferCount": "10633",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -14480,7 +14489,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:17.432751+00:00",
+      "observedAt": "2026-08-26T09:06:41.243927+00:00",
       "errors": []
     },
     "og-meta-meeples-pfp": {
@@ -14602,7 +14611,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:17.814762+00:00",
+      "observedAt": "2026-08-26T09:06:41.883899+00:00",
       "errors": []
     },
     "omnimorphs": {
@@ -14653,7 +14662,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3778,
-            "moralis": "3771"
+            "moralis": "3770"
           }
         },
         "floorPrice": {
@@ -14661,7 +14670,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006392,
-            "moralis": "0.0010743"
+            "moralis": "0.0010441"
           }
         }
       },
@@ -14669,7 +14678,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-11T08:31:15.000Z",
-        "transferCount": "29200",
+        "transferCount": "29205",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -15455,7 +15464,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:18.566940+00:00",
+      "observedAt": "2026-08-26T09:06:42.359791+00:00",
       "errors": []
     },
     "research-0x0fc3dd": {
@@ -15506,7 +15515,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2614,
-            "moralis": "2623"
+            "moralis": "2626"
           }
         },
         "floorPrice": {
@@ -15514,7 +15523,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0224654,
-            "moralis": "0.02161826"
+            "moralis": "0.0199"
           }
         }
       },
@@ -15522,7 +15531,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-06-28T22:18:59.000Z",
-        "transferCount": "46181",
+        "transferCount": "46231",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -15692,7 +15701,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:19.108490+00:00",
+      "observedAt": "2026-08-26T09:06:42.837165+00:00",
       "errors": []
     },
     "a3ac-0x35471f": {
@@ -15731,11 +15740,11 @@
       },
       "stats": {
         "totalSupply": {
-          "preferred": 9668,
+          "preferred": 9660,
           "status": "corroborated",
           "sources": {
-            "catalogOrOpenSea": 9668,
-            "moralis": "9668"
+            "catalogOrOpenSea": 9660,
+            "moralis": "9660"
           }
         },
         "owners": {
@@ -15751,7 +15760,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00219,
-            "moralis": "0.009699"
+            "moralis": "0.004897"
           }
         }
       },
@@ -15759,7 +15768,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-12-17T01:58:01.000Z",
-        "transferCount": "41612",
+        "transferCount": "41625",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -16281,7 +16290,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:19.791909+00:00",
+      "observedAt": "2026-08-26T09:06:43.307560+00:00",
       "errors": []
     },
     "phettaverse-editions": {
@@ -16551,7 +16560,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:20.477474+00:00",
+      "observedAt": "2026-08-26T09:06:43.624058+00:00",
       "errors": []
     },
     "pixelbeasts": {
@@ -16602,7 +16611,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 1,
-            "moralis": "727983"
+            "moralis": "727958"
           }
         },
         "floorPrice": {
@@ -16618,10 +16627,10 @@
         "verifiedCollection": false,
         "possibleSpam": true,
         "syncedAt": "2020-12-02T17:39:33.000Z",
-        "transferCount": "4023061",
+        "transferCount": "4023824",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-19T08:59:21.244423+00:00",
+      "observedAt": "2026-08-26T09:06:44.129528+00:00",
       "errors": []
     },
     "rstlss-x-claire-silver-pixelgeist": {
@@ -16680,7 +16689,7 @@
           "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.15,
-            "moralis": "0.08999"
+            "moralis": "0.04499"
           }
         }
       },
@@ -16688,7 +16697,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-05-23T01:03:47.000Z",
-        "transferCount": "5162",
+        "transferCount": "5163",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -17661,7 +17670,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:22.276437+00:00",
+      "observedAt": "2026-08-26T09:06:44.946285+00:00",
       "errors": []
     },
     "a3ac-0x50e712": {
@@ -17712,7 +17721,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2494,
-            "moralis": "2490"
+            "moralis": "2489"
           }
         },
         "floorPrice": {
@@ -17720,7 +17729,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.0006686,
-            "moralis": "0.0005988"
+            "moralis": "0.0005826"
           }
         }
       },
@@ -17728,7 +17737,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-10-20T13:58:04.000Z",
-        "transferCount": "16800",
+        "transferCount": "16802",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -18140,7 +18149,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:22.826693+00:00",
+      "observedAt": "2026-08-26T09:06:45.578919+00:00",
       "errors": []
     },
     "a3ac-0xaaf03a": {
@@ -18191,7 +18200,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 5135,
-            "moralis": "5130"
+            "moralis": "5129"
           }
         },
         "floorPrice": {
@@ -18207,7 +18216,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-03-27T07:43:22.000Z",
-        "transferCount": "131969",
+        "transferCount": "131971",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -18718,7 +18727,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:23.041312+00:00",
+      "observedAt": "2026-08-26T09:06:46.083749+00:00",
       "errors": []
     },
     "research-0x414c5e": {
@@ -18765,19 +18774,19 @@
           }
         },
         "owners": {
-          "preferred": "2626",
+          "preferred": "2624",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2626"
+            "moralis": "2624"
           }
         },
         "floorPrice": {
-          "preferred": "0.00898",
+          "preferred": "0.006979",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.00898"
+            "moralis": "0.006979"
           }
         }
       },
@@ -18785,7 +18794,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-23T17:59:55.000Z",
-        "transferCount": "18162",
+        "transferCount": "18182",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -19076,7 +19085,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:23.492348+00:00",
+      "observedAt": "2026-08-26T09:06:46.599817+00:00",
       "errors": []
     },
     "toxic-skulls-club": {
@@ -19127,7 +19136,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 4200,
-            "moralis": "4198"
+            "moralis": "4197"
           }
         },
         "floorPrice": {
@@ -19143,7 +19152,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2023-03-13T13:44:35.000Z",
-        "transferCount": "13728",
+        "transferCount": "13730",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -19412,7 +19421,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:24.007193+00:00",
+      "observedAt": "2026-08-26T09:06:46.972911+00:00",
       "errors": []
     },
     "immadegen-void": {
@@ -19463,7 +19472,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 2615,
-            "moralis": "2611"
+            "moralis": "2613"
           }
         },
         "floorPrice": {
@@ -19471,7 +19480,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.003135,
-            "moralis": "0.0064815"
+            "moralis": "0.0056297"
           }
         }
       },
@@ -19479,7 +19488,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34729",
+        "transferCount": "34757",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -19814,7 +19823,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:24.440301+00:00",
+      "observedAt": "2026-08-26T09:06:47.434817+00:00",
       "errors": []
     },
     "research-0xdb5558": {
@@ -19861,19 +19870,19 @@
           }
         },
         "owners": {
-          "preferred": "2611",
+          "preferred": "2613",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "2611"
+            "moralis": "2613"
           }
         },
         "floorPrice": {
-          "preferred": "0.0064815",
+          "preferred": "0.0056297",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.0064815"
+            "moralis": "0.0056297"
           }
         }
       },
@@ -19881,7 +19890,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-07-02T08:10:10.000Z",
-        "transferCount": "34729",
+        "transferCount": "34757",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -20216,7 +20225,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:24.926661+00:00",
+      "observedAt": "2026-08-26T09:06:47.800267+00:00",
       "errors": []
     },
     "research-0x3137e0": {
@@ -20263,19 +20272,19 @@
           }
         },
         "owners": {
-          "preferred": "161",
+          "preferred": "162",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "161"
+            "moralis": "162"
           }
         },
         "floorPrice": {
-          "preferred": "0.015",
+          "preferred": "0.005",
           "status": "single_source_moralis",
           "sources": {
             "catalogOrOpenSea": null,
-            "moralis": "0.015"
+            "moralis": "0.005"
           }
         }
       },
@@ -20283,7 +20292,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2023-03-24T14:43:59.000Z",
-        "transferCount": "688",
+        "transferCount": "689",
         "sampledNfts": [
           {
             "tokenId": "1001",
@@ -20497,7 +20506,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:25.477524+00:00",
+      "observedAt": "2026-08-26T09:06:48.098608+00:00",
       "errors": []
     },
     "voltz": {
@@ -20548,7 +20557,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 535,
-            "moralis": "535"
+            "moralis": "533"
           }
         },
         "floorPrice": {
@@ -20556,7 +20565,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.019,
-            "moralis": "0.00049"
+            "moralis": "0.014"
           }
         }
       },
@@ -20564,7 +20573,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2022-05-09T10:27:47.000Z",
-        "transferCount": "4941",
+        "transferCount": "4950",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -21119,7 +21128,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:25.863821+00:00",
+      "observedAt": "2026-08-26T09:06:48.493236+00:00",
       "errors": []
     },
     "research-0x631086": {
@@ -21170,7 +21179,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 1297,
-            "moralis": "1291"
+            "moralis": "1288"
           }
         },
         "floorPrice": {
@@ -21178,7 +21187,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.00029,
-            "moralis": "0.00197"
+            "moralis": "0.0018"
           }
         }
       },
@@ -21186,7 +21195,7 @@
         "verifiedCollection": false,
         "possibleSpam": false,
         "syncedAt": "2024-12-25T17:31:53.000Z",
-        "transferCount": "17844",
+        "transferCount": "17856",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -21631,7 +21640,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:26.171428+00:00",
+      "observedAt": "2026-08-26T09:06:48.724185+00:00",
       "errors": []
     },
     "woodies": {
@@ -21682,7 +21691,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3817,
-            "moralis": "3814"
+            "moralis": "3798"
           }
         },
         "floorPrice": {
@@ -21690,7 +21699,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.002340999999,
-            "moralis": "0.00182"
+            "moralis": "0.008"
           }
         }
       },
@@ -21698,7 +21707,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2021-09-24T06:15:46.000Z",
-        "transferCount": "25124",
+        "transferCount": "25195",
         "sampledNfts": [
           {
             "tokenId": "0",
@@ -22110,7 +22119,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:26.600674+00:00",
+      "observedAt": "2026-08-26T09:06:49.020980+00:00",
       "errors": []
     },
     "xmas-chibis": {
@@ -22232,7 +22241,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:27.028728+00:00",
+      "observedAt": "2026-08-26T09:06:49.388461+00:00",
       "errors": [
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ]
@@ -22293,7 +22302,7 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 0.007097,
-            "moralis": "0.0075599"
+            "moralis": "0.0075593"
           }
         }
       },
@@ -22356,7 +22365,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:28.563409+00:00",
+      "observedAt": "2026-08-26T09:06:50.256555+00:00",
       "errors": []
     },
     "a3ac-0x77372a": {
@@ -22407,15 +22416,15 @@
           "status": "corroborated",
           "sources": {
             "catalogOrOpenSea": 3043,
-            "moralis": "3042"
+            "moralis": "3043"
           }
         },
         "floorPrice": {
-          "preferred": 0.0999199,
-          "status": "corroborated",
+          "preferred": null,
+          "status": "conflict",
           "sources": {
             "catalogOrOpenSea": 0.0999199,
-            "moralis": "0.084587"
+            "moralis": "0.065277"
           }
         }
       },
@@ -22423,7 +22432,7 @@
         "verifiedCollection": true,
         "possibleSpam": false,
         "syncedAt": "2022-12-29T14:26:11.000Z",
-        "transferCount": "78364",
+        "transferCount": "78450",
         "sampledNfts": [
           {
             "tokenId": "1",
@@ -22879,7 +22888,7 @@
           }
         ]
       },
-      "observedAt": "2026-08-19T08:59:29.052202+00:00",
+      "observedAt": "2026-08-26T09:06:50.329673+00:00",
       "errors": []
     },
     "research-0x1142c6": {
@@ -22946,10 +22955,10 @@
         "verifiedCollection": null,
         "possibleSpam": null,
         "syncedAt": null,
-        "transferCount": "7205",
+        "transferCount": "7206",
         "sampledNfts": []
       },
-      "observedAt": "2026-08-19T08:59:33.026198+00:00",
+      "observedAt": "2026-08-26T09:06:52.750605+00:00",
       "errors": [
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ]
