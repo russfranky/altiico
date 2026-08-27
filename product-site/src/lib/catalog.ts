@@ -1,3 +1,5 @@
+import catalogAcceptanceSnapshot from '@/data/catalog-acceptance.snapshot.json';
+
 export type EvidenceState = 'verified' | 'partial' | 'review';
 export type ReadinessState = 'ready' | 'staged' | 'preview';
 
@@ -38,6 +40,28 @@ export type AvatarSet = {
   sourceSetId?: string;
   evidence: Evidence;
   avatars: Avatar[];
+};
+
+export type CatalogEvidenceSnapshot = {
+  schema: string;
+  source: {
+    repository: string;
+    path: string;
+    commit: string;
+    blobSha: string;
+    sourceSchema: string;
+    mode: string;
+  };
+  summary: {
+    collections: number;
+    reportCollections: number;
+    scopeCollections: number;
+    scopeMissing: number;
+    passing: number;
+    failing: number;
+  };
+  bindings: unknown[];
+  note: string;
 };
 
 const fixtures: AvatarSet[] = [
@@ -88,16 +112,20 @@ const fixtures: AvatarSet[] = [
   }
 ];
 
+const pinnedCatalogEvidence = catalogAcceptanceSnapshot as CatalogEvidenceSnapshot;
+
 export interface AvatarCatalogAdapter {
   listSets(): Promise<AvatarSet[]>;
   getSetBySlug(slug: string): Promise<AvatarSet | null>;
   getAvatarBySlug(setSlug: string, avatarSlug: string): Promise<Avatar | null>;
+  getCatalogEvidenceSnapshot(): Promise<CatalogEvidenceSnapshot>;
 }
 
 export const localCatalogAdapter: AvatarCatalogAdapter = {
-  async listSets() { return fixtures; },
-  async getSetBySlug(slug) { return fixtures.find((set) => set.slug === slug) ?? null; },
+  async listSets() { return structuredClone(fixtures); },
+  async getSetBySlug(slug) { return structuredClone(fixtures.find((set) => set.slug === slug) ?? null); },
   async getAvatarBySlug(setSlug, avatarSlug) {
-    return fixtures.find((set) => set.slug === setSlug)?.avatars.find((avatar) => avatar.slug === avatarSlug) ?? null;
-  }
+    return structuredClone(fixtures.find((set) => set.slug === setSlug)?.avatars.find((avatar) => avatar.slug === avatarSlug) ?? null);
+  },
+  async getCatalogEvidenceSnapshot() { return structuredClone(pinnedCatalogEvidence); }
 };
