@@ -1,13 +1,25 @@
+# Legacy evidence pipeline
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
 *.egg-info/
-.DS_Store
-.vercel/
-.vercel
-.env*
 .claude/skills/
 data/openpage_feed_health.json
-
 .worker/
+
+# Altiico web foundation
+node_modules/
+.next/
+out/
+dist/
+.turbo/
+.vercel/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+coverage/
+.tmp/

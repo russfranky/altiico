@@ -1,0 +1,1 @@
+{"name":"@altiico/ui","version":"0.0.0","private":true,"type":"module","sideEffects":["*.css","src/*.css"],"exports":{".":"./src/index.ts","./styles.css":"./src/styles.css"},"peerDependencies":{"react":"^19.2.8"}}

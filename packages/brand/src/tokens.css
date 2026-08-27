@@ -1,0 +1,8 @@
+:root {
+  --altiico-canvas:#0b0d10;--altiico-surface:#15181d;--altiico-raised:#252a31;--altiico-signal:#14e0c6;--altiico-ink:#e6e8ea;
+  --altiico-ink-88:rgb(230 232 234 / .88);--altiico-ink-72:rgb(230 232 234 / .72);--altiico-ink-56:rgb(230 232 234 / .56);--altiico-ink-48:rgb(230 232 234 / .48);--altiico-ink-32:rgb(230 232 234 / .32);--altiico-ink-22:rgb(230 232 234 / .22);--altiico-ink-12:rgb(230 232 234 / .12);--altiico-ink-06:rgb(230 232 234 / .06);
+  --altiico-signal-72:rgb(20 224 198 / .72);--altiico-signal-28:rgb(20 224 198 / .28);--altiico-signal-18:rgb(20 224 198 / .18);--altiico-signal-10:rgb(20 224 198 / .1);--altiico-signal-06:rgb(20 224 198 / .06);
+  --altiico-font-display:"Space Grotesk","Arial Narrow","Helvetica Neue",Arial,sans-serif;--altiico-font-body:"Space Grotesk","Helvetica Neue",Arial,sans-serif;--altiico-font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --altiico-type-display-xl:clamp(4rem,8.1vw,8.4rem);--altiico-type-title:clamp(1.7rem,2.5vw,2.55rem);--altiico-type-body-lg:clamp(1rem,1.35vw,1.18rem);--altiico-type-micro:.68rem;
+  --altiico-line:1px solid var(--altiico-ink-22);--altiico-line-soft:1px solid var(--altiico-ink-12);--altiico-line-signal:1px solid var(--altiico-signal-72);--altiico-radius-control:3px;--altiico-radius-frame:10px;--altiico-page-max:100rem;--altiico-motion-fast:140ms;--altiico-motion-base:220ms;
+}

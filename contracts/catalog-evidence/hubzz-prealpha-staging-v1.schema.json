@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://altiico.local/contracts/catalog-evidence/hubzz-prealpha-staging-v1.schema.json",
+  "title": "Hubzz Prealpha Staging Snapshot v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema", "schemaVersion", "generatedAt", "snapshotId", "sets"],
+  "properties": {
+    "schema": { "const": "hubzz-prealpha-staging-v1" },
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "snapshotId": { "type": "string", "minLength": 1 },
+    "sets": {"type":"array","items":{"type":"object","additionalProperties":true,"required":["set","stageClass","sourceAssets","coverage","warnings"]}}
+  }
+}

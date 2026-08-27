@@ -1,0 +1,3 @@
+import type { HTMLAttributes } from 'react';
+type BrandMarkProps = HTMLAttributes<HTMLSpanElement> & { compact?: boolean };
+export function BrandMark({ compact=false,className='',...props }:BrandMarkProps){if(compact)return <span className={`altiico-ii-mark ${className}`.trim()} aria-label="Altiico" {...props}><span aria-hidden="true">ii</span><span className="altiico-ii-smile" aria-hidden="true"/></span>;return <span className={`altiico-wordmark ${className}`.trim()} aria-label="Altiico" {...props}><span aria-hidden="true">ALT</span><span className="altiico-wordmark-accent" aria-hidden="true">ii</span><span aria-hidden="true">CO</span></span>}

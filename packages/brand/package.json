@@ -1,0 +1,1 @@
+{"name":"@altiico/brand","version":"0.0.0","private":true,"sideEffects":["*.css","src/*.css"],"exports":{"./tokens.css":"./src/tokens.css"}}

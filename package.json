@@ -1,0 +1,20 @@
+{
+  "name": "altiico-site",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@11.24.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "pnpm --filter @altiico/web dev",
+    "build": "pnpm --filter @altiico/web build",
+    "lint": "pnpm --filter @altiico/web lint",
+    "typecheck": "pnpm --filter @altiico/web typecheck",
+    "check:repo": "node scripts/check-repo.mjs",
+    "check:brand": "node scripts/check-brand-contract.mjs",
+    "check:catalog": "node scripts/check-catalog-contract.mjs",
+    "check:legacy": "node scripts/check-legacy-altiico-contract.mjs",
+    "check:avatar": "node scripts/check-avatar-contract.mjs",
+    "check:unix": "node scripts/check-unix-philosophy.mjs && node scripts/check-local-imports.mjs && node scripts/check-module-boundaries.mjs && node scripts/check-pure-layers.mjs && node scripts/check-source-neutrality.mjs && node scripts/check-import-cycles.mjs && node scripts/check-module-reachability.mjs && node scripts/check-source-size.mjs && node scripts/check-shared-usage.mjs && node scripts/check-wire-contracts.mjs && node scripts/compile-catalog-tests.mjs && node --test tests/catalog/*.test.mjs",
+    "check": "pnpm check:repo && pnpm check:unix && pnpm check:brand && pnpm check:catalog && pnpm check:avatar && pnpm check:legacy && node scripts/check-typescript-syntax.mjs && pnpm lint && pnpm typecheck && pnpm build"
+  }
+}

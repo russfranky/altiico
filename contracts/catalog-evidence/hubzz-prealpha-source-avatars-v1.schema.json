@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://altiico.local/contracts/catalog-evidence/hubzz-prealpha-source-avatars-v1.schema.json",
+  "title": "Hubzz Prealpha Source Avatars v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema", "schemaVersion", "generatedAt", "snapshotId", "setSlug", "count", "reachableCount", "binaryValidatedCount", "avatars"],
+  "properties": {
+    "schema": { "const": "hubzz-prealpha-source-avatars-v1" },
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "snapshotId": { "type": "string", "minLength": 1 },
+    "setSlug": { "type": "string", "minLength": 1 },
+    "count": { "type": "integer", "minimum": 0 },
+    "reachableCount": { "type": "integer", "minimum": 0 },
+    "binaryValidatedCount": { "type": "integer", "minimum": 0 },
+    "avatars": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "reachable", "vrmValidated", "validationScope"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "tokenId": { "type": ["string", "null"] },
+          "name": { "type": ["string", "null"] },
+          "originalSourceUrl": { "type": ["string", "null"] },
+          "thumbnailUrl": { "type": ["string", "null"] },
+          "reachable": { "type": "boolean" },
+          "vrmValidated": { "type": "boolean" },
+          "validationScope": { "type": "string" },
+          "checkedAt": { "type": ["string", "null"] },
+          "checkStatus": { "type": ["string", "null"] },
+          "vrmSpec": { "type": ["string", "null"] },
+          "fileSizeOriginal": { "type": ["integer", "null"], "minimum": 0 }
+        }
+      }
+    }
+  }
+}
