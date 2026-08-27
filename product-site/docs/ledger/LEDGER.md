@@ -5,9 +5,8 @@
 - Phase: `F8 — Bento discovery composition`
 - Branch: `product-site-foundation`
 - Public main deployment: unchanged
-- Last imported standalone checkpoint: `8869f35 / T-007`
+- Last standalone checkpoint: `8869f35 / T-007`
 - Current turn: `T-008`
-- Branch integration commit: `660d5a405d76fd700777ddf34167dd4d75ccbf28`
 
 ## Stable decisions
 
@@ -21,14 +20,11 @@
 
 ## T-008 completed
 
-- Added the public product site under `product-site/` on the safe integration branch.
-- Added a background navigation layer behind the bento composition.
-- Applied asymmetrical bento composition to the landing page.
-- Applied bento composition to avatar-set discovery.
-- Applied bento composition to set detail.
-- Applied bento composition to individual-avatar detail.
+- Integrated the new public product site under `product-site/` on the safe branch.
+- Added quiet background navigation behind the bento composition.
+- Applied asymmetrical bento composition to landing, discovery, set detail, and avatar detail.
 - Kept the primary robot illustration slot visually dominant.
-- Added evidence and identity cells without changing stable product contracts.
+- Added identity, evidence, readiness, traits, and preview cells without changing stable route identity.
 - Added task-first mobile collapse rules.
 - Kept fixture data explicitly separate from live catalog evidence.
 
