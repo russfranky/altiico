@@ -1,6 +1,6 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-08-20T10:05:13.206323+00:00",
+  "generatedAt": "2026-08-27T19:59:23.380032+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
@@ -87,17 +87,18 @@
       "image_url": "https://i2c.seadn.io/ethereum/40467921292c404ca992d8277f2aa835/48308f1b16d63e08446116182a76e7/a448308f1b16d63e08446116182a76e7.gif",
       "banner_image_url": "https://i2c.seadn.io/ethereum/40467921292c404ca992d8277f2aa835/30d2e573f92f7c2dff6edf6553f923/3730d2e573f92f7c2dff6edf6553f923.png?fit=inside",
       "nfts_sampled": 40,
-      "metadata_documents": 35,
-      "metadata_fetch_errors": 5,
+      "metadata_documents": 34,
+      "metadata_fetch_errors": 6,
       "model_candidates": [],
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9997: TimeoutError: The read operation timed out",
-        "metadata 9996: TimeoutError: The read operation timed out",
-        "metadata 9983: TimeoutError: The read operation timed out",
-        "metadata 9966: TimeoutError: The read operation timed out",
-        "metadata 9960: TimeoutError: The read operation timed out"
+        "metadata 9999: TimeoutError: The read operation timed out",
+        "metadata 9998: TimeoutError: The read operation timed out",
+        "metadata 9995: URLError: <urlopen error _ssl.c:999: The handshake operation timed out>",
+        "metadata 9989: TimeoutError: The read operation timed out",
+        "metadata 9980: TimeoutError: The read operation timed out",
+        "metadata 9974: TimeoutError: The read operation timed out"
       ]
     },
     {
@@ -112,14 +113,12 @@
       "image_url": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/a0c64b4fa6d4f41fb0f84a4450579b/0aa0c64b4fa6d4f41fb0f84a4450579b.gif",
       "banner_image_url": "https://i2c.seadn.io/ethereum/ffc4fd5861c94a439dc699d70ea4386d/57e38d7b4c978747d80e69ffaa8154/c057e38d7b4c978747d80e69ffaa8154.jpeg?fit=inside",
       "nfts_sampled": 40,
-      "metadata_documents": 39,
-      "metadata_fetch_errors": 1,
+      "metadata_documents": 40,
+      "metadata_fetch_errors": 0,
       "model_candidates": [],
       "validated_vrms": [],
       "rejected_model_candidates": [],
-      "errors": [
-        "metadata 9996: TimeoutError: The read operation timed out"
-      ]
+      "errors": []
     },
     {
       "slug": "voyagers-of-imma-degen",
