@@ -19,7 +19,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: product-site
@@ -53,3 +53,66 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Start production server
+        shell: bash
+        run: |
+          npm run start -- -H 127.0.0.1 -p 3000 > next-server.log 2>&1 &
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat next-server.log
+          exit 1
+
+      - name: Route smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          routes=(
+            '/'
+            '/explore/avatar-sets'
+            '/explore/avatar-sets/core-entity-lab'
+            '/explore/avatar-sets/core-entity-lab/avatars/robot-anchor'
+          )
+          : > route-smoke.log
+          for route in "${routes[@]}"; do
+            status="$(curl --silent --output /dev/null --write-out '%{http_code}' "http://127.0.0.1:3000${route}")"
+            printf '%s %s\n' "$status" "$route" | tee -a route-smoke.log
+            test "$status" = '200'
+          done
+
+      - name: Install screenshot browser
+        run: npx --yes playwright@1.55.0 install --with-deps chromium
+
+      - name: Capture desktop and mobile routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p qa
+          routes=(
+            'home|/'
+            'sets|/explore/avatar-sets'
+            'set-detail|/explore/avatar-sets/core-entity-lab'
+            'avatar-detail|/explore/avatar-sets/core-entity-lab/avatars/robot-anchor'
+          )
+          for entry in "${routes[@]}"; do
+            name="${entry%%|*}"
+            route="${entry#*|}"
+            npx --yes playwright@1.55.0 screenshot --browser=chromium --full-page --viewport-size='1440,1100' "http://127.0.0.1:3000${route}" "qa/${name}-desktop.png"
+            npx --yes playwright@1.55.0 screenshot --browser=chromium --full-page --viewport-size='390,844' "http://127.0.0.1:3000${route}" "qa/${name}-mobile.png"
+          done
+
+      - name: Upload visual QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-site-visual-qa
+          path: |
+            product-site/qa/*.png
+            product-site/route-smoke.log
+            product-site/next-server.log
+          if-no-files-found: warn
+          retention-days: 1
