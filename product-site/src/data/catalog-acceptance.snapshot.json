@@ -1,0 +1,21 @@
+{
+  "schema": "altiico-product-site-catalog-evidence-snapshot-v1",
+  "source": {
+    "repository": "russfranky/altiico",
+    "path": "data/catalog_acceptance.json",
+    "commit": "5acdaa6e42a10ad7dc6637e6e472582fb25313a2",
+    "blobSha": "670aaebf277668bc9d0300c856d04b1da716590e",
+    "sourceSchema": "avatar-catalog-acceptance-v1",
+    "mode": "read-only"
+  },
+  "summary": {
+    "collections": 90,
+    "reportCollections": 69,
+    "scopeCollections": 59,
+    "scopeMissing": 21,
+    "passing": 8,
+    "failing": 82
+  },
+  "bindings": [],
+  "note": "This snapshot carries catalog acceptance evidence only. It does not map root catalog identities to product-owned set or avatar IDs."
+}
