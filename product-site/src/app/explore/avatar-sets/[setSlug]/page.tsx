@@ -18,26 +18,32 @@ export default async function AvatarSetPage({ params }: { params: Promise<{ setS
   return (
     <ProductShell section="SET / DETAIL">
       <div className="bentoGrid detailGrid">
-        <BentoPanel className="detailIdentity" label="SET / PRODUCT IDENTITY">
+        <BentoPanel className="detailIdentity">
           <Link className="backLink" href="/explore/avatar-sets">← ALL SETS</Link>
+          <span className="eyebrow">AVATAR SET</span>
           <h1>{set.name}</h1>
           <p>{set.description}</p>
+          <div className="identityStrip" aria-label="Set identity and evidence">
+            <span><small>CHAIN</small><b>{set.chain ?? '—'}</b></span>
+            <span><small>CONTRACT</small><b>{set.contract ?? 'NOT SET'}</b></span>
+            <span><small>EVIDENCE</small><b>{set.evidence.state}</b></span>
+            <span><small>LICENSE</small><b>{set.license ?? 'REVIEW'}</b></span>
+          </div>
           <code>{set.id}</code>
         </BentoPanel>
-        <BentoPanel className="detailVisual" label="PRIMARY ENTITY">
+
+        <BentoPanel className="detailVisual">
           <RobotAnchor />
         </BentoPanel>
-        <BentoPanel className="identityFacts" label="SOURCE IDENTITY">
-          <div className="metricRow"><span>SLUG</span><b>{set.slug}</b></div>
-          <div className="metricRow"><span>CHAIN</span><b>{set.chain ?? '—'}</b></div>
-          <div className="metricRow"><span>CONTRACT</span><b>{set.contract ?? 'NOT SET'}</b></div>
-        </BentoPanel>
-        <BentoPanel className="evidenceFacts" label="EVIDENCE">
-          <div className="metricRow"><span>STATE</span><b>{set.evidence.state}</b></div>
-          <div className="metricRow"><span>SOURCE</span><b>{set.evidence.source}</b></div>
-          <div className="metricRow"><span>LICENSE</span><b>{set.license ?? 'REVIEW'}</b></div>
-        </BentoPanel>
-        <BentoPanel className="membersCell" label="AVATAR MEMBERS">
+
+        <BentoPanel className="membersCell">
+          <div className="sectionHeading">
+            <div>
+              <span className="eyebrow">AVATAR MEMBERS</span>
+              <h2>Choose an identity.</h2>
+            </div>
+            <span className="memberCount">{set.avatars.length} MEMBERS</span>
+          </div>
           <div className="memberGrid">
             {set.avatars.length ? set.avatars.map((avatar) => (
               <Link
