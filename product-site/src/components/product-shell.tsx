@@ -23,7 +23,7 @@ export function ProductShell({ children, section = 'PUBLIC SYSTEM' }: { children
         <span className="navState"><i />{section}</span>
       </header>
       <main>{children}</main>
-      <footer className="pageFooter"><Wordmark /><span>IDENTITY → ASSET → PRESENCE</span><span>PRODUCT SITE / T-008</span></footer>
+      <footer className="pageFooter"><Wordmark /><span>IDENTITY → ASSET → PRESENCE</span></footer>
     </div>
   );
 }
