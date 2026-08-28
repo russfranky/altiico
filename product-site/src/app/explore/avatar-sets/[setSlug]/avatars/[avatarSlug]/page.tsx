@@ -11,14 +11,44 @@ export default async function AvatarPage({ params }: { params: Params }) {
   const set = await localCatalogAdapter.getSetBySlug(setSlug);
   const avatar = await localCatalogAdapter.getAvatarBySlug(setSlug, avatarSlug);
   if (!set || !avatar) notFound();
+
   return (
     <ProductShell section="ENTITY / PROFILE">
       <div className="bentoGrid avatarGrid">
-        <BentoPanel className="avatarTitle" label="ENTITY / PRODUCT IDENTITY"><Link className="backLink" href={`/explore/avatar-sets/${set.slug}`}>← {set.name}</Link><h1>{avatar.name}</h1><code>{avatar.id}</code></BentoPanel>
-        <BentoPanel className="avatarVisual" label={avatar.role === 'primary' ? 'PRIMARY ENTITY' : 'SUPPORTING ENTITY'}><RobotAnchor /></BentoPanel>
-        <BentoPanel className="avatarEvidence" label="EVIDENCE"><div className="metricRow"><span>STATE</span><b>{avatar.evidence.state}</b></div><div className="metricRow"><span>SOURCE ID</span><b>{avatar.sourceAssetId ?? 'NOT MAPPED'}</b></div><div className="metricRow"><span>TOKEN ID</span><b>{avatar.tokenId ?? 'NOT MAPPED'}</b></div><div className="metricRow"><span>VRM SPEC</span><b>{avatar.vrmSpec ?? 'PENDING'}</b></div></BentoPanel>
-        <BentoPanel className="avatarTraits" label="TRAITS">{avatar.traits.map((trait) => <div className="traitRow" key={`${trait.label}-${trait.value}`}><span>{trait.label}</span><b>{trait.value}</b><em>{trait.source}</em></div>)}</BentoPanel>
-        <BentoPanel className="previewCell" label="3D PREVIEW / RESERVED"><h2>ENGINE VIEW</h2><p>The WebGL viewer enters here after the visual shell and adapter contracts pass review.</p><button disabled>OPEN STUDIO →</button></BentoPanel>
+        <BentoPanel className="avatarTitle">
+          <Link className="backLink" href={`/explore/avatar-sets/${set.slug}`}>← {set.name}</Link>
+          <span className="eyebrow">{avatar.role === 'primary' ? 'PRIMARY AVATAR' : 'AVATAR PROFILE'}</span>
+          <h1>{avatar.name}</h1>
+          <p>A stable public identity with evidence kept separate from route ownership.</p>
+          <code>{avatar.id}</code>
+        </BentoPanel>
+
+        <BentoPanel className="avatarVisual">
+          <RobotAnchor />
+        </BentoPanel>
+
+        <BentoPanel className="avatarDetails">
+          <div className="identityStrip" aria-label="Avatar evidence summary">
+            <span><small>STATE</small><b>{avatar.evidence.state}</b></span>
+            <span><small>SOURCE ID</small><b>{avatar.sourceAssetId ?? 'NOT MAPPED'}</b></span>
+            <span><small>TOKEN ID</small><b>{avatar.tokenId ?? 'NOT MAPPED'}</b></span>
+            <span><small>VRM SPEC</small><b>{avatar.vrmSpec ?? 'PENDING'}</b></span>
+          </div>
+
+          {avatar.traits.length ? (
+            <div className="traitList" aria-label="Avatar traits">
+              {avatar.traits.map((trait) => (
+                <div className="traitRow" key={`${trait.label}-${trait.value}`}>
+                  <span>{trait.label}</span>
+                  <b>{trait.value}</b>
+                  <em>{trait.source}</em>
+                </div>
+              ))}
+            </div>
+          ) : null}
+
+          <p className="studioNote">3D engine preview stays out of this page until the viewer is real and useful.</p>
+        </BentoPanel>
       </div>
     </ProductShell>
   );
