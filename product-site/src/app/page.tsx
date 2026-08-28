@@ -6,15 +6,29 @@ export default function Home() {
   return (
     <ProductShell section="AVATAR FACTORY / ONLINE">
       <div className="bentoGrid landingGrid">
-        <BentoPanel className="heroCell" label="ALTIICO / HUBZZ IDENTITY INFRASTRUCTURE">
+        <BentoPanel className="heroCell">
+          <span className="eyebrow">PUBLIC AVATAR IDENTITY SYSTEM</span>
           <h1>YOUR ALTER EGO<br />STARTS HERE.</h1>
-          <p>One public system for avatar identity, discovery, verification, and evidence-aware operations.</p>
+          <p>Discover avatar identities, see the evidence behind them, and carry a stable identity into Hubzz.</p>
           <Link className="systemButton primary" href="/explore/avatar-sets">BROWSE AVATAR SETS <span>→</span></Link>
         </BentoPanel>
-        <BentoPanel className="robotCell" label="ENTITY / PRIMARY"><RobotAnchor /></BentoPanel>
-        <BentoPanel className="smallCell" label="01 / DISCOVER"><h2>BROWSE THE LINEUP.</h2><p>Find a set before you enter the world.</p></BentoPanel>
-        <BentoPanel className="smallCell" label="02 / VERIFY"><h2>SEE ENGINE TRUTH.</h2><p>Keep visual claims tied to evidence.</p></BentoPanel>
-        <BentoPanel className="wideCell" label="03 / OPERATE"><div className="metricRow"><span>IDENTITY</span><b>PRODUCT OWNED</b></div><div className="metricRow"><span>EVIDENCE</span><b>ADAPTER FED</b></div><div className="metricRow"><span>PUBLICATION</span><b>REVIEW GATED</b></div></BentoPanel>
+
+        <BentoPanel className="robotCell">
+          <RobotAnchor />
+        </BentoPanel>
+
+        <BentoPanel className="homeSupportCell">
+          <div className="supportStatement">
+            <span className="eyebrow">DISCOVER</span>
+            <h2>Find the identity first.</h2>
+            <p>Browse product-owned sets and individual avatars before entering the engine.</p>
+          </div>
+          <div className="supportStatement">
+            <span className="eyebrow">VERIFY</span>
+            <h2>Keep the evidence attached.</h2>
+            <p>Source, validation, and license claims stay visible without becoming the public identity.</p>
+          </div>
+        </BentoPanel>
       </div>
     </ProductShell>
   );
