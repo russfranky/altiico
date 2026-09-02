@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-08-27T19:59:23Z",
-  "snapshot_id": "vrmcat-v1-3b34ec48489c88ba551e8063",
+  "generated_at": "2026-09-02T12:53:25Z",
+  "snapshot_id": "vrmcat-v1-4859de2b860c52fba16427ad",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -494,7 +494,7 @@
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
       "banner": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/3abb29c00bf1d0692ccd932e34dc24/ee3abb29c00bf1d0692ccd932e34dc24.png?fit=inside",
       "pfp": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/578c5892a0e584cef7a9c54b031395/cc578c5892a0e584cef7a9c54b031395.png",
-      "avatar_count": 1977,
+      "avatar_count": 1983,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -592,7 +592,7 @@
     {
       "slug": "woodies",
       "name": "Woodies",
-      "description": "Woodies are a 9,736 item digital collectible on the Ethereum blockchain. Each unique 2D character comes with a metaverse-ready, fully rigged 3D avatar usable in Decentraland, Nifty Island, and VIPE.",
+      "description": "Woodies are a 9,736 item digital collectible on the Ethereum blockchain. Each unique 2D character comes with a metaverse-ready, fully rigged 3D avatar usable in Decentraland.",
       "license": "Unknown",
       "chain": "ethereum",
       "storage_provider": "contract-metadata",

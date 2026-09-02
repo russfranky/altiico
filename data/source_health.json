@@ -1,56 +1,56 @@
 {
-  "generatedAt": "2026-08-26T09:07:23.026174+00:00",
+  "generatedAt": "2026-09-02T12:49:42.252722+00:00",
   "moralis": {
-    "freshCrossReference": true,
-    "freshModelDiscovery": true,
-    "crossReferenceMode": "fresh",
-    "modelDiscoveryMode": "fresh",
+    "freshCrossReference": false,
+    "freshModelDiscovery": false,
+    "crossReferenceMode": "current-committed",
+    "modelDiscoveryMode": "current-committed",
     "attemptSummary": {
       "collectionsInspected": 62,
-      "collectionsWithErrors": 4,
-      "collectionsWithConflicts": 39,
+      "collectionsWithErrors": 62,
+      "collectionsWithConflicts": 0,
       "fieldComparisons": 372,
-      "fieldConflicts": 58,
+      "fieldConflicts": 0,
       "agreementByField": {
         "banner_image_url": {
-          "compared": 56,
-          "agreed": 55,
-          "conflicted": 1
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         },
         "floor_price": {
-          "compared": 45,
-          "agreed": 37,
-          "conflicted": 8
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         },
         "image_url": {
-          "compared": 60,
-          "agreed": 55,
-          "conflicted": 5
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         },
         "name": {
-          "compared": 59,
-          "agreed": 31,
-          "conflicted": 28
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         },
         "num_owners": {
-          "compared": 55,
-          "agreed": 49,
-          "conflicted": 6
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         },
         "total_supply": {
-          "compared": 61,
-          "agreed": 51,
-          "conflicted": 10
+          "compared": 0,
+          "agreed": 0,
+          "conflicted": 0
         }
       }
     },
     "modelAttemptSummary": {
       "collectionsInspected": 63,
       "contractsInspected": 68,
-      "collectionsWithErrors": 0,
-      "nftsWithSignals": 222,
-      "modelCandidates": 612,
-      "unsupportedMediaNfts": 49
+      "collectionsWithErrors": 63,
+      "nftsWithSignals": 0,
+      "modelCandidates": 0,
+      "unsupportedMediaNfts": 0
     }
   },
   "etherscan": {
