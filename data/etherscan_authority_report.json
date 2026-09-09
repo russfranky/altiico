@@ -1,6 +1,6 @@
 {
   "schema": "etherscan-authority-audit-v1",
-  "generatedAt": "2026-09-02T12:51:41.718863+00:00",
+  "generatedAt": "2026-09-09T13:03:19.166134+00:00",
   "source": "Etherscan API V2",
   "policy": "explorer evidence corroborates chain/contract/token facts but never substitutes for direct tokenURI or VRM binary validation",
   "summary": {
@@ -18,7 +18,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x62eb144fe92ddc1b10bcade03a0c09f6fbffbffb",
-      "observedAt": "2026-09-02T12:49:42.543320+00:00",
+      "observedAt": "2026-09-09T13:01:19.644646+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -52,7 +52,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xaad35c2dadbe77f97301617d82e661776c891fa9",
-      "observedAt": "2026-09-02T12:49:42.543363+00:00",
+      "observedAt": "2026-09-09T13:01:19.644688+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -86,7 +86,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
-      "observedAt": "2026-09-02T12:49:42.543395+00:00",
+      "observedAt": "2026-09-09T13:01:19.644715+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -120,7 +120,7 @@
       "chain": "arbitrum",
       "chainId": 42161,
       "contract": "0x1ac7a2fc7f66fa4edf2713a88cd4bad24220c86c",
-      "observedAt": "2026-09-02T12:49:45.872893+00:00",
+      "observedAt": "2026-09-09T13:01:22.999214+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -154,7 +154,7 @@
       "chain": "arbitrum",
       "chainId": 42161,
       "contract": "0xc1fcf330b4b4c773fa7e6835f681e8f798e9ebff",
-      "observedAt": "2026-09-02T12:49:47.670005+00:00",
+      "observedAt": "2026-09-09T13:01:24.786928+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -188,7 +188,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049",
-      "observedAt": "2026-09-02T12:49:49.802045+00:00",
+      "observedAt": "2026-09-09T13:01:25.092404+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -222,7 +222,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xb67ff46dfde55ad2fe05881433e5687fd1000312",
-      "observedAt": "2026-09-02T12:49:49.888260+00:00",
+      "observedAt": "2026-09-09T13:01:27.170753+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -256,7 +256,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xcbd19f85965127bba4534bf21bf50008f054e54e",
-      "observedAt": "2026-09-02T12:49:51.643344+00:00",
+      "observedAt": "2026-09-09T13:01:28.788068+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -290,7 +290,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x1d20a51f088492a0f1c57f047a9e30c9ab5c07ea",
-      "observedAt": "2026-09-02T12:49:53.464209+00:00",
+      "observedAt": "2026-09-09T13:01:30.606773+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -324,7 +324,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-      "observedAt": "2026-09-02T12:49:55.259305+00:00",
+      "observedAt": "2026-09-09T13:01:32.378422+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -358,7 +358,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
-      "observedAt": "2026-09-02T12:49:57.049534+00:00",
+      "observedAt": "2026-09-09T13:01:34.196374+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -392,7 +392,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x97597002980134bea46250aa0510c9b90d87a587",
-      "observedAt": "2026-09-02T12:49:58.862279+00:00",
+      "observedAt": "2026-09-09T13:01:35.993465+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -426,7 +426,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-09-02T12:50:00.669538+00:00",
+      "observedAt": "2026-09-09T13:01:37.797756+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -460,7 +460,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674",
-      "observedAt": "2026-09-02T12:50:02.444094+00:00",
+      "observedAt": "2026-09-09T13:01:39.542266+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -494,7 +494,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x6b67b34dfded7cf3b32cab94045aa82da2cc4bd9",
-      "observedAt": "2026-09-02T12:50:04.281812+00:00",
+      "observedAt": "2026-09-09T13:01:41.412660+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -528,7 +528,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-09-02T12:50:06.090198+00:00",
+      "observedAt": "2026-09-09T13:01:43.244564+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -562,7 +562,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x892848074ddea461a15f337250da3ce55580ca85",
-      "observedAt": "2026-09-02T12:50:07.888534+00:00",
+      "observedAt": "2026-09-09T13:01:45.025568+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -596,7 +596,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x19d84b2a4b21910339af097a1bddb48682d6f47d",
-      "observedAt": "2026-09-02T12:50:09.682668+00:00",
+      "observedAt": "2026-09-09T13:01:46.820108+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -630,7 +630,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x76250e9269e3df7d5bdc6af42582a1b54bf5d24e",
-      "observedAt": "2026-09-02T12:50:11.466678+00:00",
+      "observedAt": "2026-09-09T13:01:48.587052+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -664,7 +664,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xd47d8672e45a7204057baaa3622a3fa276d651e3",
-      "observedAt": "2026-09-02T12:50:13.309365+00:00",
+      "observedAt": "2026-09-09T13:01:50.430726+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -698,7 +698,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xfa37cfae8458a692511cd7ffcd9ac18a69af4274",
-      "observedAt": "2026-09-02T12:50:15.109189+00:00",
+      "observedAt": "2026-09-09T13:01:52.235787+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -732,7 +732,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d",
-      "observedAt": "2026-09-02T12:50:16.909746+00:00",
+      "observedAt": "2026-09-09T13:01:54.034343+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -766,7 +766,7 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0x1bcbd0d45d35bbbe514bec8cb9e48c51835a6d8c",
-      "observedAt": "2026-09-02T12:50:18.712118+00:00",
+      "observedAt": "2026-09-09T13:01:55.838366+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -800,7 +800,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x369156da04b6f313b532f7ae08e661e402b1c2f2",
-      "observedAt": "2026-09-02T12:50:20.516811+00:00",
+      "observedAt": "2026-09-09T13:01:57.622468+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -834,7 +834,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc",
-      "observedAt": "2026-09-02T12:50:22.334829+00:00",
+      "observedAt": "2026-09-09T13:01:59.446502+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -868,7 +868,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42",
-      "observedAt": "2026-09-02T12:50:24.110215+00:00",
+      "observedAt": "2026-09-09T13:02:01.214908+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -902,7 +902,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xbfd4f75a3c09c26e6ce9e67a257f6fbce9f63088",
-      "observedAt": "2026-09-02T12:50:25.932815+00:00",
+      "observedAt": "2026-09-09T13:02:03.055078+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -936,7 +936,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d",
-      "observedAt": "2026-09-02T12:50:27.757161+00:00",
+      "observedAt": "2026-09-09T13:02:04.880224+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -970,7 +970,7 @@
       "chain": "shape",
       "chainId": 360,
       "contract": "0xe7ba6df2934c487bb49435394fdd4b80268e2d3c",
-      "observedAt": "2026-09-02T12:50:29.556526+00:00",
+      "observedAt": "2026-09-09T13:02:06.672729+00:00",
       "errors": [
         "source: RuntimeError: Etherscan API error: Missing or unsupported chainid parameter (required for v2 api), please see https://api.etherscan.io/v2/chainlist for the list of supported chainids",
         "abi: RuntimeError: Etherscan API error: Missing or unsupported chainid parameter (required for v2 api), please see https://api.etherscan.io/v2/chainlist for the list of supported chainids",
@@ -1008,7 +1008,7 @@
       "chain": "optimism",
       "chainId": 10,
       "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
-      "observedAt": "2026-09-02T12:50:31.372701+00:00",
+      "observedAt": "2026-09-09T13:02:08.455845+00:00",
       "errors": [
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
@@ -1044,7 +1044,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x86fc6f6c6702cef7d3bae87ef41256715416db71",
-      "observedAt": "2026-09-02T12:50:33.162090+00:00",
+      "observedAt": "2026-09-09T13:02:10.276266+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1078,7 +1078,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xd2f668a8461d6761115daf8aeb3cdf5f40c532c6",
-      "observedAt": "2026-09-02T12:50:34.929580+00:00",
+      "observedAt": "2026-09-09T13:02:12.021943+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1112,7 +1112,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x324f60ba2d1815ef649dcc73559172305f5dd02c",
-      "observedAt": "2026-09-02T12:50:36.733635+00:00",
+      "observedAt": "2026-09-09T13:02:13.830884+00:00",
       "errors": [
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
@@ -1148,7 +1148,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x773f02bbb852920099931f332089f3fadfbfa4b6",
-      "observedAt": "2026-09-02T12:50:38.570603+00:00",
+      "observedAt": "2026-09-09T13:02:15.679632+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1182,7 +1182,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-      "observedAt": "2026-09-02T12:50:40.373445+00:00",
+      "observedAt": "2026-09-09T13:02:17.498139+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1216,7 +1216,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xa467ab9447afa5db0c70325348d810d2058dde18",
-      "observedAt": "2026-09-02T12:50:42.150604+00:00",
+      "observedAt": "2026-09-09T13:02:19.244978+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1250,7 +1250,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x223ef06367b89458df762cfa633fb53f403cb9c9",
-      "observedAt": "2026-09-02T12:50:43.983818+00:00",
+      "observedAt": "2026-09-09T13:02:21.082681+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1284,7 +1284,7 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0x53e38a3bb5954cc7830bbc6f2520b61d01d95056",
-      "observedAt": "2026-09-02T12:50:45.802365+00:00",
+      "observedAt": "2026-09-09T13:02:22.922094+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1318,7 +1318,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x618951345638caa062259cdbed445d4fb661b774",
-      "observedAt": "2026-09-02T12:50:47.597721+00:00",
+      "observedAt": "2026-09-09T13:02:24.701546+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1352,7 +1352,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
-      "observedAt": "2026-09-02T12:50:49.407931+00:00",
+      "observedAt": "2026-09-09T13:02:26.516462+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1386,7 +1386,7 @@
       "chain": "polygon",
       "chainId": 137,
       "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
-      "observedAt": "2026-09-02T12:50:51.623237+00:00",
+      "observedAt": "2026-09-09T13:02:28.718455+00:00",
       "errors": [
         "abi: RuntimeError: Etherscan API error: Contract source code not verified",
         "creation: RuntimeError: Etherscan API error: No data found",
@@ -1422,7 +1422,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-      "observedAt": "2026-09-02T12:50:53.016769+00:00",
+      "observedAt": "2026-09-09T13:02:30.123170+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1456,7 +1456,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x92133e21fff525b16d1edcf78be82297d25d1154",
-      "observedAt": "2026-09-02T12:50:54.831409+00:00",
+      "observedAt": "2026-09-09T13:02:31.935033+00:00",
       "errors": [
         "abi: RuntimeError: Etherscan API error: Contract source code not verified",
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
@@ -1491,7 +1491,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
-      "observedAt": "2026-09-02T12:50:56.928843+00:00",
+      "observedAt": "2026-09-09T13:02:35.582416+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1525,7 +1525,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x1459c170e940e52628d9917c85772f7e897e7c0c",
-      "observedAt": "2026-09-02T12:50:58.437012+00:00",
+      "observedAt": "2026-09-09T13:02:37.345738+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1559,7 +1559,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xb5f3dee204ca76e913bb3129ba0312b9f0f31d82",
-      "observedAt": "2026-09-02T12:51:00.236497+00:00",
+      "observedAt": "2026-09-09T13:02:39.168211+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1593,7 +1593,7 @@
       "chain": "ape_chain",
       "chainId": 33139,
       "contract": "0xa7ae1bbfa1ee713acf2a240cd5fff184685f5304",
-      "observedAt": "2026-09-02T12:51:02.049917+00:00",
+      "observedAt": "2026-09-09T13:02:39.457736+00:00",
       "errors": [
         "abi: RuntimeError: Etherscan API error: Contract source code not verified",
         "creation: RuntimeError: Etherscan API error: No data found",
@@ -1629,7 +1629,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x0fc3dd8c37880a297166bed57759974a157f0e74",
-      "observedAt": "2026-09-02T12:51:03.839390+00:00",
+      "observedAt": "2026-09-09T13:02:41.297970+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1663,7 +1663,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x35471f47c3c0bc5fc75025b97a19ecdde00f78f8",
-      "observedAt": "2026-09-02T12:51:05.643623+00:00",
+      "observedAt": "2026-09-09T13:02:43.125785+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1697,7 +1697,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x41eb9dd376c9a3f1c02e5f3f89f22ad6ae970d51",
-      "observedAt": "2026-09-02T12:51:07.433633+00:00",
+      "observedAt": "2026-09-09T13:02:44.881374+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1731,7 +1731,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e",
-      "observedAt": "2026-09-02T12:51:09.262136+00:00",
+      "observedAt": "2026-09-09T13:02:46.731333+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1765,7 +1765,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x0e58adde284e95fa591cd3904452b12356570251",
-      "observedAt": "2026-09-02T12:51:11.068626+00:00",
+      "observedAt": "2026-09-09T13:02:48.530881+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1799,7 +1799,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x50e712b3a260d7639179e8277836253461418f23",
-      "observedAt": "2026-09-02T12:51:12.886229+00:00",
+      "observedAt": "2026-09-09T13:02:50.344205+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1833,7 +1833,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xaaf03a65cbd8f01b512cd8d530a675b3963de255",
-      "observedAt": "2026-09-02T12:51:14.655488+00:00",
+      "observedAt": "2026-09-09T13:02:52.156794+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1867,7 +1867,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x414c5e3716bcec4b2373108b187914215695627a",
-      "observedAt": "2026-09-02T12:51:16.484597+00:00",
+      "observedAt": "2026-09-09T13:02:53.955542+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1901,7 +1901,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x5ca8dd7f8e1ee6d0c27a7be6d9f33ef403fbcdd8",
-      "observedAt": "2026-09-02T12:51:18.291870+00:00",
+      "observedAt": "2026-09-09T13:02:55.757705+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1935,7 +1935,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "observedAt": "2026-09-02T12:51:20.093351+00:00",
+      "observedAt": "2026-09-09T13:02:57.557141+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -1969,7 +1969,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xdb55584e5104505a6b38776ee4dcba7dd6bb25fe",
-      "observedAt": "2026-09-02T12:51:21.901711+00:00",
+      "observedAt": "2026-09-09T13:02:59.370225+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2003,7 +2003,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x3137e02341a4acbf01a02cfb60ccc194c3452756",
-      "observedAt": "2026-09-02T12:51:23.699692+00:00",
+      "observedAt": "2026-09-09T13:03:01.163636+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2037,7 +2037,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0xea377cfd0ceab570569d8d37a910071d9e9eb1d4",
-      "observedAt": "2026-09-02T12:51:25.514146+00:00",
+      "observedAt": "2026-09-09T13:03:02.989543+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2071,7 +2071,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x631086734a5415f324f4ca350560b56e86c29fdf",
-      "observedAt": "2026-09-02T12:51:27.286352+00:00",
+      "observedAt": "2026-09-09T13:03:04.787573+00:00",
       "errors": [
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
@@ -2107,7 +2107,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x134460d32fc66a6d84487c20dcd9fdcf92316017",
-      "observedAt": "2026-09-02T12:51:29.120580+00:00",
+      "observedAt": "2026-09-09T13:03:06.579547+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2141,7 +2141,7 @@
       "chain": "polygon",
       "chainId": 137,
       "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
-      "observedAt": "2026-09-02T12:51:30.928277+00:00",
+      "observedAt": "2026-09-09T13:03:08.383767+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2175,7 +2175,7 @@
       "chain": "arbitrum",
       "chainId": 42161,
       "contract": "0x35373efc2fd7d852729cae869cc32acc979100bd",
-      "observedAt": "2026-09-02T12:51:32.696475+00:00",
+      "observedAt": "2026-09-09T13:03:10.145333+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2209,7 +2209,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "contract": "0x77372a4cc66063575b05b44481f059be356964a4",
-      "observedAt": "2026-09-02T12:51:34.540997+00:00",
+      "observedAt": "2026-09-09T13:03:12.012927+00:00",
       "errors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
@@ -2243,7 +2243,7 @@
       "chain": "base",
       "chainId": 8453,
       "contract": "0x1142c6fc1fa893b508d5ac3a2d715a61104722e0",
-      "observedAt": "2026-09-02T12:51:36.409560+00:00",
+      "observedAt": "2026-09-09T13:03:13.861508+00:00",
       "errors": [
         "creation: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
