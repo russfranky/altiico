@@ -1,6 +1,6 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-09-10T13:47:40.079755+00:00",
+  "generatedAt": "2026-09-17T14:26:17.999411+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
