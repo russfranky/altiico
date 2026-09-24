@@ -1,6 +1,6 @@
 {
   "schema": "moralis-candidate-reconciliation-v1",
-  "generatedAt": "2026-09-17T15:01:20Z",
+  "generatedAt": "2026-09-24T15:06:37Z",
   "sourceReport": "data/moralis_candidate_validation.json",
   "policy": "existing exact collection identity only; binary VRM proof required; no fuzzy collection creation and no avatar creation from bounded samples; reconciled proof rows are retained cumulatively across recurring runs",
   "summary": {
