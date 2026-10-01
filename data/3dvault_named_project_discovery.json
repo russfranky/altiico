@@ -1,6 +1,6 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-09-24T14:24:12.865748+00:00",
+  "generatedAt": "2026-10-01T16:41:32.666095+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
@@ -52,7 +52,7 @@
       "rejected_model_candidates": [],
       "errors": [
         "metadata 16: HTTPError: HTTP Error 404: Not Found",
-        "metadata 13: HTTPError: HTTP Error 404: Not Found"
+        "metadata 4: HTTPError: HTTP Error 404: Not Found"
       ]
     },
     {
@@ -92,7 +92,7 @@
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9983: TimeoutError: The read operation timed out"
+        "metadata 9986: TimeoutError: The read operation timed out"
       ]
     },
     {
