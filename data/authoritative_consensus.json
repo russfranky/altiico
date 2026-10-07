@@ -1,6 +1,6 @@
 {
   "schema": "authoritative-catalog-consensus-v2",
-  "generatedAt": "2026-09-09T13:05:01.838740+00:00",
+  "generatedAt": "2026-10-07T15:40:04.636405+00:00",
   "policy": {
     "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
@@ -11,7 +11,7 @@
   "summary": {
     "collections": 62,
     "explorerCorroborated": 61,
-    "bitqueryCorroborated": 10,
+    "bitqueryCorroborated": 21,
     "onchainCorroborated": 61,
     "bitqueryModelSignalTokens": 0,
     "reviewItems": 62,
@@ -343,7 +343,7 @@
       "observedAt": "2026-08-26T09:06:19.560656+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:19.644646+00:00",
+        "observedAt": "2026-10-07T15:37:57.845644+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
@@ -366,38 +366,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:19.431276+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 2,
-        "uniqueTokenIds": 2,
-        "transferUris": 2,
+        "observedAt": "2026-10-07T15:39:57.247559+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "184",
-            "uri": "https://adworld.game/api/metadata/184",
-            "name": "AdWorld Season 1",
-            "symbol": "ADW01",
-            "protocol": null,
-            "sender": "0x4e63de28138c18c4f76dbd49f05053918ebc5864",
-            "receiver": "0xc7fba9d210e4fd323a271d49177054b170fa21f1",
-            "block": "25928916",
-            "time": "2026-09-07T23:59:23Z",
-            "txHash": "0x37566a269d716d527d814f4d6291c79404a83dc303aeb212b24dda881be30ad2"
-          },
-          {
-            "tokenId": "3198",
-            "uri": "https://adworld.game/api/metadata/3198",
-            "name": "AdWorld Season 1",
-            "symbol": "ADW01",
-            "protocol": null,
-            "sender": "0x4e63de28138c18c4f76dbd49f05053918ebc5864",
-            "receiver": "0x3f31a31c1426ba9ffb16da1e52d9f4d966d1d6f0",
-            "block": "25928903",
-            "time": "2026-09-07T23:56:47Z",
-            "txHash": "0xe056456bce5bb6feb629449a205a09666ed47e812a29720654459d403d82d221"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -837,7 +812,7 @@
       "observedAt": "2026-08-26T09:06:19.560715+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:19.644688+00:00",
+        "observedAt": "2026-10-07T15:37:57.845681+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Akutar",
@@ -860,111 +835,16 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:19.431512+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 10,
-        "uniqueTokenIds": 7,
-        "transferUris": 10,
+        "observedAt": "2026-10-07T15:39:57.247776+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "5238",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/5238.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xb180e3fde77c0d4499a934014f437e8d442fd8a8",
-            "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
-            "block": "25917821",
-            "time": "2026-09-06T10:51:11Z",
-            "txHash": "0xf134fb241250ad502df4f5a3cd1d354a48a071966faa37d602da656bf5a14042"
-          },
-          {
-            "tokenId": "10281",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/10281.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x666aa2cfb4a80748636a6a3df807e9040043f59c",
-            "receiver": "0xf599edb99bdc9d86b96891dac0ad0e07465f7fb0",
-            "block": "25917777",
-            "time": "2026-09-06T10:42:23Z",
-            "txHash": "0xb20c79b7c9d67adbdeba9d17ec0029a1287da94a7003d55583337c49b8186dfe"
-          },
-          {
-            "tokenId": "5559",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/5559.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "receiver": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "block": "25917314",
-            "time": "2026-09-06T09:09:47Z",
-            "txHash": "0xa15464a7b6f72690453da516d6ab3604396111bcdc7b6ea6c089edff56f539a1"
-          },
-          {
-            "tokenId": "9189",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9189.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "receiver": "0x88880de439babf4ce0aa60b81b3a91de9cb5f495",
-            "block": "25917312",
-            "time": "2026-09-06T09:09:23Z",
-            "txHash": "0x5f1f45fe03c930e1043a552eca7a1bc514d6bff639beebce1b642816ec76566d"
-          },
-          {
-            "tokenId": "922",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/922.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x2492bd0ba7a1596f3217a6b76df6301e45cf29d0",
-            "receiver": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "block": "25913582",
-            "time": "2026-09-05T20:40:23Z",
-            "txHash": "0x687b540a655a6c04218551986df77f02edb2a408ad2d05165158e7d8969ef3f4"
-          },
-          {
-            "tokenId": "923",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/923.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x2492bd0ba7a1596f3217a6b76df6301e45cf29d0",
-            "receiver": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "block": "25913580",
-            "time": "2026-09-05T20:39:59Z",
-            "txHash": "0x801da779231928f92d8e6f562a50bb251da7d2247f71a13ade3fddfd0620111e"
-          },
-          {
-            "tokenId": "5559",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/5559.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0x00330fffa1ee8503d09fabed9bff204dc3cb3059",
-            "receiver": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "block": "25911349",
-            "time": "2026-09-05T13:12:47Z",
-            "txHash": "0x297f41126aab45484126a3d1dd4d0342f061c7d3825c454a9671c5f2f99d490d"
-          },
-          {
-            "tokenId": "9189",
-            "uri": "ipfs://QmeheS1gXQpdduhQsaba8Z1Q1bxz5xeSEzKdtEthdkRUw6/9189.json",
-            "name": "Akutars",
-            "symbol": "AKU",
-            "protocol": null,
-            "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
-            "receiver": "0x87b5d54ed4e5757a3280a727bd271bfb7e870e7e",
-            "block": "25911349",
-            "time": "2026-09-05T13:12:47Z",
-            "txHash": "0x297f41126aab45484126a3d1dd4d0342f061c7d3825c454a9671c5f2f99d490d"
-          }
-        ],
-        "errors": []
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+        ]
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -1370,7 +1250,7 @@
       "observedAt": "2026-08-26T09:06:19.560759+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:19.644715+00:00",
+        "observedAt": "2026-10-07T15:37:57.845701+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AllstarzPSX",
@@ -1393,13 +1273,50 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:19.431615+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:39:57.247846+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 3,
+        "uniqueTokenIds": 3,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "1199",
+            "uri": null,
+            "name": "Allstarz PSX",
+            "symbol": "PSX",
+            "protocol": null,
+            "sender": "0x7cc4e967242e1cad92152d47ae0bb9169e97d553",
+            "receiver": "0x19d266792b28a441cb0f6a3334ba617ef18b50ee",
+            "block": "26115734",
+            "time": "2026-10-04T01:34:59Z",
+            "txHash": "0x91ff26ecfd5a305d3752d7385dcc4831e9c3e60c44eaa0c1f57f90df92f52d42"
+          },
+          {
+            "tokenId": "269",
+            "uri": null,
+            "name": "Allstarz PSX",
+            "symbol": "PSX",
+            "protocol": null,
+            "sender": "0x7cc4e967242e1cad92152d47ae0bb9169e97d553",
+            "receiver": "0x19d266792b28a441cb0f6a3334ba617ef18b50ee",
+            "block": "26115414",
+            "time": "2026-10-04T00:30:47Z",
+            "txHash": "0x07f5cac36c185315adc7c2fb57754226882527707cc5f371579082ea63b1d83c"
+          },
+          {
+            "tokenId": "661",
+            "uri": null,
+            "name": "Allstarz PSX",
+            "symbol": "PSX",
+            "protocol": null,
+            "sender": "0x7cc4e967242e1cad92152d47ae0bb9169e97d553",
+            "receiver": "0x19d266792b28a441cb0f6a3334ba617ef18b50ee",
+            "block": "26115253",
+            "time": "2026-10-03T23:58:35Z",
+            "txHash": "0xd3209815a8ff54ae9bc2bc9549bd292c6233488fb519aae26d1ffbcab83514a7"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -1526,7 +1443,7 @@
       "observedAt": "2026-08-26T09:06:20.883339+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:22.999214+00:00",
+        "observedAt": "2026-10-07T15:38:01.162319+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ArbiDudesGenOne",
@@ -1549,14 +1466,16 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.189608+00:00",
+        "observedAt": "2026-10-07T15:39:58.000972+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": []
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+        ]
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -1682,7 +1601,7 @@
       "observedAt": "2026-08-26T09:06:21.099873+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:24.786928+00:00",
+        "observedAt": "2026-10-07T15:38:03.013590+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Arbibots",
@@ -1705,7 +1624,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.230724+00:00",
+        "observedAt": "2026-10-07T15:39:58.032699+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -2624,7 +2543,7 @@
       "observedAt": "2026-08-26T09:06:21.456182+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:25.092404+00:00",
+        "observedAt": "2026-10-07T15:38:04.996648+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AvastarTeleporter",
@@ -2647,110 +2566,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.388117+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 23,
-        "transferUris": 25,
+        "observedAt": "2026-10-07T15:39:58.257221+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "15051",
-            "uri": "https://avastars.io/metadata/15051",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xebced2d753d655e321af6ac3de9c4e1ebfaab435",
-            "receiver": "0xd40e498aa66cfb88ed31565494785cbe72076441",
-            "block": "25935496",
-            "time": "2026-09-08T22:00:47Z",
-            "txHash": "0xc1471141d85336109b75b27922c104d484b4da0ec929e45a4a6052f2b9a3b707"
-          },
-          {
-            "tokenId": "9545",
-            "uri": "https://avastars.io/metadata/9545",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0xd8f25e68dfc8c14daf61f8fc934cfb7dc47c78e8",
-            "receiver": "0xdcdc1c1cc33aa817cbdbe8f5e2390bf7cc43dc4b",
-            "block": "25928828",
-            "time": "2026-09-07T23:41:35Z",
-            "txHash": "0x87b8287d4a647829d6bf3789ae4af3d5bad36060e0caeca4f73e8f7f7c0e8952"
-          },
-          {
-            "tokenId": "2334",
-            "uri": "https://avastars.io/metadata/2334",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x31e99699bccde902afc7c4b6b23bb322b8459d22",
-            "receiver": "0x74fb9510dafd52648735859f11be1145dc0f9528",
-            "block": "25928827",
-            "time": "2026-09-07T23:41:23Z",
-            "txHash": "0x7ad4e79740d0c6455147dd54f3025c29c059b53431ee713e29ba77955ec34761"
-          },
-          {
-            "tokenId": "9545",
-            "uri": "https://avastars.io/metadata/9545",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x31e99699bccde902afc7c4b6b23bb322b8459d22",
-            "receiver": "0xd8f25e68dfc8c14daf61f8fc934cfb7dc47c78e8",
-            "block": "25928827",
-            "time": "2026-09-07T23:41:23Z",
-            "txHash": "0x7ad4e79740d0c6455147dd54f3025c29c059b53431ee713e29ba77955ec34761"
-          },
-          {
-            "tokenId": "8494",
-            "uri": "https://avastars.io/metadata/8494",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x31e99699bccde902afc7c4b6b23bb322b8459d22",
-            "receiver": "0x7db5255041e2058bc40d0b07c8e36da0de37baff",
-            "block": "25928827",
-            "time": "2026-09-07T23:41:23Z",
-            "txHash": "0x7ad4e79740d0c6455147dd54f3025c29c059b53431ee713e29ba77955ec34761"
-          },
-          {
-            "tokenId": "9542",
-            "uri": "https://avastars.io/metadata/9542",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x31e99699bccde902afc7c4b6b23bb322b8459d22",
-            "receiver": "0x7db5255041e2058bc40d0b07c8e36da0de37baff",
-            "block": "25928827",
-            "time": "2026-09-07T23:41:23Z",
-            "txHash": "0x7ad4e79740d0c6455147dd54f3025c29c059b53431ee713e29ba77955ec34761"
-          },
-          {
-            "tokenId": "7549",
-            "uri": "https://avastars.io/metadata/7549",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x9e30ad52595a892c4e5cb54be99cf11277b7ff41",
-            "receiver": "0x83f3475ff6e9a448f0f3bb570695bcc2574145ba",
-            "block": "25928465",
-            "time": "2026-09-07T22:28:47Z",
-            "txHash": "0xdcdfe277d24ed439825800c8bdb25655fc486806b357d0a02de1767976e074d2"
-          },
-          {
-            "tokenId": "25177",
-            "uri": "https://avastars.io/metadata/25177",
-            "name": "Avastar",
-            "symbol": "AVASTAR",
-            "protocol": null,
-            "sender": "0x04fc0276e1d398d9597fa9755b16dce6b496acb1",
-            "receiver": "0x900e7ad1ab18cebb4c21f71795364e9b636831ca",
-            "block": "25919675",
-            "time": "2026-09-06T17:02:47Z",
-            "txHash": "0xba982ee6d2c9e18fd29b7b757411f004dc7dd5948bb9db56d6719132c4cd04d4"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -2877,7 +2699,7 @@
       "observedAt": "2026-08-26T09:06:22.364356+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:27.170753+00:00",
+        "observedAt": "2026-10-07T15:38:05.120659+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -2900,7 +2722,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.394631+00:00",
+        "observedAt": "2026-10-07T15:39:58.324258+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3057,7 +2879,7 @@
       "observedAt": "2026-08-26T09:06:22.687421+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:28.788068+00:00",
+        "observedAt": "2026-10-07T15:38:06.967902+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DiamondCollection",
@@ -3080,7 +2902,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.521839+00:00",
+        "observedAt": "2026-10-07T15:39:58.530170+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -3603,7 +3425,7 @@
       "observedAt": "2026-08-26T09:06:22.877559+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:30.606773+00:00",
+        "observedAt": "2026-10-07T15:38:08.748166+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Loomlocknft",
@@ -3626,60 +3448,24 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.654683+00:00",
+        "observedAt": "2026-10-07T15:39:58.601828+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 4,
-        "uniqueTokenIds": 4,
-        "transferUris": 4,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
+        "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "8068",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/8068.json",
+            "tokenId": "768",
+            "uri": null,
             "name": "loomlocknft",
             "symbol": "LL",
             "protocol": null,
-            "sender": "0x1ecd13f2b981414c3f788c9f435abd8df35caf35",
-            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25928871",
-            "time": "2026-09-07T23:50:23Z",
-            "txHash": "0x16208353dc745a37d1128dfc73eca20b481550b5fa5beb2c4589eb95e39b6089"
-          },
-          {
-            "tokenId": "7878",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/7878.json",
-            "name": "loomlocknft",
-            "symbol": "LL",
-            "protocol": null,
-            "sender": "0xa558fe4389aa30d3062f0a8771ae3590fe8c1713",
+            "sender": "0x7b181d0aac0758a0c82a14265afa0a01577f05d9",
             "receiver": "0x3068e30a4ae02825ed5a51b0c070f04332642702",
-            "block": "25926414",
-            "time": "2026-09-07T15:36:47Z",
-            "txHash": "0xa91be19b8ce9d98828e9732e9e3472d9cbe885296bb85b686fc982c2455bb56d"
-          },
-          {
-            "tokenId": "3395",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/3395.json",
-            "name": "loomlocknft",
-            "symbol": "LL",
-            "protocol": null,
-            "sender": "0x53d98d7cf2e3d03ef031fdec197792d0c713303d",
-            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25926028",
-            "time": "2026-09-07T14:19:23Z",
-            "txHash": "0xbbd7eaccd48dca6d15bcef50bf25caf1ceac3ab6e76d7fc4ea84a9cf588b9d1b"
-          },
-          {
-            "tokenId": "1559",
-            "uri": "https://arweave.net/LGlMDKAWgcDyvYoft1YV6Y2pBBAwjWaFuZrDP9yD-RY/1559.json",
-            "name": "loomlocknft",
-            "symbol": "LL",
-            "protocol": null,
-            "sender": "0x11268b7b1ff187edc31ebb07e51bf034842c61b3",
-            "receiver": "0x07d492ea9fb196e80df09528b47710aa112903b1",
-            "block": "25925196",
-            "time": "2026-09-07T11:31:35Z",
-            "txHash": "0x947391c2997cb65030a8619d53da43c17975bd9afbca0bc84d662c147065eb2d"
+            "block": "26131425",
+            "time": "2026-10-06T06:03:59Z",
+            "txHash": "0x73c903e1bb354fc0a7ee4d5ba99f8ccb435072ad36be678f74cf37e9c9b6b189"
           }
         ],
         "errors": []
@@ -4044,7 +3830,7 @@
       "observedAt": "2026-08-26T09:06:23.284590+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:32.378422+00:00",
+        "observedAt": "2026-10-07T15:38:10.549020+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4067,108 +3853,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.666045+00:00",
+        "observedAt": "2026-10-07T15:39:58.641364+00:00",
         "contractObservedOnchain": true,
         "tokensSampled": 25,
-        "uniqueTokenIds": 22,
-        "transferUris": 25,
+        "uniqueTokenIds": 17,
+        "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "19497",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/19497",
+            "tokenId": "18398",
+            "uri": null,
             "name": "CloneX",
             "symbol": "CloneX",
             "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939985",
-            "time": "2026-09-09T13:02:35Z",
-            "txHash": "0x02fcb7d6d7143d560ecb725aa2e1d8392ebfb44e062124e3fb22c6b3eff17e76"
-          },
-          {
-            "tokenId": "19497",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/19497",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x09b9c041d991298781c05021cf1482e915923bd1",
-            "receiver": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "block": "25939982",
-            "time": "2026-09-09T13:01:59Z",
-            "txHash": "0xcece1565bcab983310bcfcd51c30ed4048a37671455ae9024d196acf523a9e73"
-          },
-          {
-            "tokenId": "13474",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/13474",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939969",
-            "time": "2026-09-09T12:59:23Z",
-            "txHash": "0xb246dc4e2a0753169459a21121ca4427144dcec2596825ad0360998d1007a803"
-          },
-          {
-            "tokenId": "17328",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/17328",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939962",
-            "time": "2026-09-09T12:57:59Z",
-            "txHash": "0xf357572f3494d5505df0b23a3c8d4d38b73c7932d45ee3ae647bb1f645c1afe5"
-          },
-          {
-            "tokenId": "19451",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/19451",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939952",
-            "time": "2026-09-09T12:55:59Z",
-            "txHash": "0x1d998ddc481cf44edfda9013f57d5e1e80a1b2a1792a64dff42f5f9cbdc88920"
-          },
-          {
-            "tokenId": "216",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/216",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939948",
-            "time": "2026-09-09T12:55:11Z",
-            "txHash": "0xa818dce363895394a0580f8dd749be16efc3d7da5a12e186f3a1bfa1d4c78224"
-          },
-          {
-            "tokenId": "3730",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/3730",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x038ed400ed7f6fb8d9b2313e85b33c4e1bd631da",
-            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
-            "block": "25939931",
-            "time": "2026-09-09T12:51:47Z",
-            "txHash": "0x7634716b28b32a1f0d0d8606b64f31c6922a3d1c87ca8692d23a08d5fc654083"
-          },
-          {
-            "tokenId": "9537",
-            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/9537",
-            "name": "CloneX",
-            "symbol": "CloneX",
-            "protocol": null,
-            "sender": "0x738dec8877eedf8c4a0f23e03fa1df4657ef6998",
+            "sender": "0x2940aec2db0706b0f8b24eec2241bd98a57cc244",
             "receiver": "0xd6de78c59f62288d304090e6d67a50e9f0b83704",
-            "block": "25939674",
-            "time": "2026-09-09T11:59:47Z",
-            "txHash": "0x499d1dfcf3ac46c9f4fbcbd37643c544b71e605328b4f257c56afa57fa2931d1"
+            "block": "26141381",
+            "time": "2026-10-07T15:23:47Z",
+            "txHash": "0x8f424cae8eade0fe64a1c31f9d5ba0528f024fbae65758fe98e97bb14bff9b8c"
+          },
+          {
+            "tokenId": "15148",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x2c3f5e2662b17209500ed1e7640fb8f602eea796",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "26138764",
+            "time": "2026-10-07T06:37:47Z",
+            "txHash": "0xe5eb921154738c18c7dfca947ac4c2e42013c2d8e80c445e18095a79764c939d"
+          },
+          {
+            "tokenId": "11363",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xce7a5362eebb29874b38cc3e6f85fafc5fd70c44",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "4714",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xca36097c9f0c4f1866ee4a998869d5ae24b1c3cc",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "7513",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "15598",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xbce28c649a0a8970091b4d90127fc41da58c9037",
+            "receiver": "0xb9b6668c05a2c6cfee12f7736ae8a74214c03d1d",
+            "block": "26135763",
+            "time": "2026-10-06T20:35:47Z",
+            "txHash": "0x77645bcb9081231a4feef1b61f93ede493b39c2e97fe7d6de1d06b3df335f74d"
+          },
+          {
+            "tokenId": "10645",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xcca4446b31a94d7708729a13bea16e73d47e1eed",
+            "receiver": "0xb7538d969b0ec2a83d086507ce49a005ac064fe9",
+            "block": "26134882",
+            "time": "2026-10-06T17:39:35Z",
+            "txHash": "0xabd1f231a2ef0bd7c3ad6b9784323e9794bc1d8fbf5427ff4761deebcefd5855"
+          },
+          {
+            "tokenId": "2851",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xc24d1402fe5f1e63112ac15ed7e757ee9f79a3ba",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "26134830",
+            "time": "2026-10-06T17:29:11Z",
+            "txHash": "0xd5675a1708ad0cd3bfb5737d3674632eb8b29b20a7b3813283201dbeff074322"
           }
         ],
         "errors": []
@@ -4533,7 +4319,7 @@
       "observedAt": "2026-08-26T09:06:23.728945+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:34.196374+00:00",
+        "observedAt": "2026-10-07T15:38:12.349666+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4556,16 +4342,111 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.751785+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:39:58.792189+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 17,
+        "transferUris": 10,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "18398",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x2940aec2db0706b0f8b24eec2241bd98a57cc244",
+            "receiver": "0xd6de78c59f62288d304090e6d67a50e9f0b83704",
+            "block": "26141381",
+            "time": "2026-10-07T15:23:47Z",
+            "txHash": "0x8f424cae8eade0fe64a1c31f9d5ba0528f024fbae65758fe98e97bb14bff9b8c"
+          },
+          {
+            "tokenId": "15148",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/15148",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x2c3f5e2662b17209500ed1e7640fb8f602eea796",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "26138764",
+            "time": "2026-10-07T06:37:47Z",
+            "txHash": "0xe5eb921154738c18c7dfca947ac4c2e42013c2d8e80c445e18095a79764c939d"
+          },
+          {
+            "tokenId": "11363",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/11363",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xce7a5362eebb29874b38cc3e6f85fafc5fd70c44",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "4714",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/4714",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xca36097c9f0c4f1866ee4a998869d5ae24b1c3cc",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "7513",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/7513",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0x1e572678738674481de656233e8456bbc4b3b0ab",
+            "receiver": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
+            "block": "26138761",
+            "time": "2026-10-07T06:37:11Z",
+            "txHash": "0xdddd856e12abeba28dc4ffb9c42dae100edb40c3b782e3f5d68da2ad21c8abb7"
+          },
+          {
+            "tokenId": "15598",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/15598",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xbce28c649a0a8970091b4d90127fc41da58c9037",
+            "receiver": "0xb9b6668c05a2c6cfee12f7736ae8a74214c03d1d",
+            "block": "26135763",
+            "time": "2026-10-06T20:35:47Z",
+            "txHash": "0x77645bcb9081231a4feef1b61f93ede493b39c2e97fe7d6de1d06b3df335f74d"
+          },
+          {
+            "tokenId": "10645",
+            "uri": null,
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xcca4446b31a94d7708729a13bea16e73d47e1eed",
+            "receiver": "0xb7538d969b0ec2a83d086507ce49a005ac064fe9",
+            "block": "26134882",
+            "time": "2026-10-06T17:39:35Z",
+            "txHash": "0xabd1f231a2ef0bd7c3ad6b9784323e9794bc1d8fbf5427ff4761deebcefd5855"
+          },
+          {
+            "tokenId": "2851",
+            "uri": "https://ohm647fhcdf3f6547mcreqj2pgfdzxba7q54ugunppzk3maqy2ma.arweave.net/NGdLvqHyCPyfGzcODgHhOjenXajH--m6mpkp1JLY8M0/2851",
+            "name": "CloneX",
+            "symbol": "CloneX",
+            "protocol": null,
+            "sender": "0xc24d1402fe5f1e63112ac15ed7e757ee9f79a3ba",
+            "receiver": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+            "block": "26134830",
+            "time": "2026-10-06T17:29:11Z",
+            "txHash": "0xd5675a1708ad0cd3bfb5737d3674632eb8b29b20a7b3813283201dbeff074322"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -5026,7 +4907,7 @@
       "observedAt": "2026-08-26T09:06:23.998545+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:35.993465+00:00",
+        "observedAt": "2026-10-07T15:38:14.157084+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChainRunners",
@@ -5049,16 +4930,27 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.941547+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:39:58.846416+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "511",
+            "uri": null,
+            "name": "Chain Runners",
+            "symbol": "RUN",
+            "protocol": null,
+            "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
+            "receiver": "0x77fe5dd1d22cb3b73ae88f125bf2cea64cfefaa7",
+            "block": "26123956",
+            "time": "2026-10-05T05:03:59Z",
+            "txHash": "0x4262c241c8e30f4b6a9645c2fc7370056b044b7b00dfc6c9b3c389ebb6328c07"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -5132,7 +5024,7 @@
       "observedAt": "2026-08-26T09:06:24.763873+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:37.797756+00:00",
+        "observedAt": "2026-10-07T15:38:15.964458+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -5155,7 +5047,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:20.973957+00:00",
+        "observedAt": "2026-10-07T15:39:59.017950+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -5163,7 +5055,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -5592,7 +5484,7 @@
       "observedAt": "2026-08-26T09:06:24.919866+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:39.542266+00:00",
+        "observedAt": "2026-10-07T15:38:17.757929+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChibiApes",
@@ -5615,16 +5507,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:27.233508+00:00",
+        "observedAt": "2026-10-07T15:39:59.172471+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -5909,7 +5799,7 @@
       "observedAt": "2026-08-26T09:06:25.197254+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:41.412660+00:00",
+        "observedAt": "2026-10-07T15:38:19.571850+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -5932,16 +5822,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:27.581140+00:00",
+        "observedAt": "2026-10-07T15:39:59.243849+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -6015,7 +5903,7 @@
       "observedAt": "2026-08-26T09:06:26.430114+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:43.244564+00:00",
+        "observedAt": "2026-10-07T15:38:21.380777+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -6038,16 +5926,111 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:27.636752+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:39:59.334503+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 21,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "2485050474617492253657970371697643944580510880023237115193258540044199657473",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0x11a04750983e4a0a6c5df5c0fa349890a08f9001",
+            "receiver": "0x8dc2a09747b2eed6a5c96693f5205b3ac0e504a4",
+            "block": "26141329",
+            "time": "2026-10-07T15:13:23Z",
+            "txHash": "0x19b3756db1756d5d958f44160227e87bf3defb4feffc6472d5acbb892cd0d336"
+          },
+          {
+            "tokenId": "20331478546256365083689063527039864327720174751810602029774601718086043173064",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xd26b76e50f6510cdd4bf45d59279705f36946d23",
+            "receiver": "0x52064e0c6ed96d2600bbccda7b7d6afd5b3f3aca",
+            "block": "26141161",
+            "time": "2026-10-07T14:39:35Z",
+            "txHash": "0x607441c2e4ddc010b309eed4a3a88c00c5cbb4567dd19b2bf0aef145484a89a3"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013620609541556142081",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xa410ab6d56e6eaac6ed01070621467b543861c52",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140654",
+            "time": "2026-10-07T12:57:23Z",
+            "txHash": "0xdf9838b0ea6fc49ad72653f47b91697b05e6b691283e6534423a3185f0fc87ec"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013621706854160662529",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140457",
+            "time": "2026-10-07T12:17:59Z",
+            "txHash": "0x2a243f9ee6ab6bcaaa61ec58d63d1f1523c79d0aea8db15d9c159f27256c0d51"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013621986130114117633",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140445",
+            "time": "2026-10-07T12:15:35Z",
+            "txHash": "0x7f93bb863f6aa01b19eb382261a0f6d764da20a0b9a531bdd24621b0a0b806be"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013619458352881860609",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140434",
+            "time": "2026-10-07T12:13:23Z",
+            "txHash": "0x3758c45ee4272b836631df94461e86cdde3ab33ae2acdf534b094cd4632f370e"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013620959186253774849",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140425",
+            "time": "2026-10-07T12:11:35Z",
+            "txHash": "0xdbb0e2f7b721259f0dbde18f7099d14ace5bfab44713e28152f5b21f49a51d03"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013623647492183687169",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0x3ecae9ac9de6d2889aefd43595a2554ccc86c5da",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140161",
+            "time": "2026-10-07T11:18:47Z",
+            "txHash": "0x2ebcf15b54bc93fc9d75687485afbb8bd5d21a147d83f4f15aca25dd1aebc732"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -6453,7 +6436,7 @@
       "observedAt": "2026-08-26T09:06:27.052138+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:45.025568+00:00",
+        "observedAt": "2026-10-07T15:38:23.183024+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CyberBrokers",
@@ -6476,7 +6459,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:33.990139+00:00",
+        "observedAt": "2026-10-07T15:39:59.482534+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -6484,7 +6467,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -6858,7 +6841,7 @@
       "observedAt": "2026-08-26T09:06:27.504489+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:46.820108+00:00",
+        "observedAt": "2026-10-07T15:38:24.991678+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DASKa",
@@ -6881,16 +6864,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:34.250452+00:00",
+        "observedAt": "2026-10-07T15:39:59.607716+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -7212,7 +7193,7 @@
       "observedAt": "2026-08-26T09:06:27.691708+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:48.587052+00:00",
+        "observedAt": "2026-10-07T15:38:26.785026+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FairxyzBeaconProxy",
@@ -7235,7 +7216,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:34.259719+00:00",
+        "observedAt": "2026-10-07T15:39:59.629057+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -7243,7 +7224,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -7672,7 +7653,7 @@
       "observedAt": "2026-08-26T09:06:28.117861+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:50.430726+00:00",
+        "observedAt": "2026-10-07T15:38:28.602352+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DickButtVerse",
@@ -7695,16 +7676,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:40.616894+00:00",
+        "observedAt": "2026-10-07T15:39:59.677581+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -8053,7 +8032,7 @@
       "observedAt": "2026-08-26T09:06:28.562456+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:52.235787+00:00",
+        "observedAt": "2026-10-07T15:38:30.406010+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC1967Proxy",
@@ -8076,7 +8055,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:40.846432+00:00",
+        "observedAt": "2026-10-07T15:39:59.774858+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8084,7 +8063,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -8700,7 +8679,7 @@
       "observedAt": "2026-08-26T09:06:28.988826+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:54.034343+00:00",
+        "observedAt": "2026-10-07T15:38:32.214694+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FLUF",
@@ -8723,7 +8702,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:41.059598+00:00",
+        "observedAt": "2026-10-07T15:39:59.895805+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -8731,7 +8710,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -9182,7 +9161,7 @@
       "observedAt": "2026-08-26T09:06:29.234130+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:57.622468+00:00",
+        "observedAt": "2026-10-07T15:38:35.817593+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "GenF",
@@ -9205,7 +9184,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:47.133122+00:00",
+        "observedAt": "2026-10-07T15:39:59.922216+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9213,7 +9192,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -9364,7 +9343,7 @@
       "observedAt": "2026-08-26T09:06:29.606118+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:01:59.446502+00:00",
+        "observedAt": "2026-10-07T15:38:37.625415+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FlyFrogs",
@@ -9387,7 +9366,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:47.424564+00:00",
+        "observedAt": "2026-10-07T15:39:59.946452+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9395,7 +9374,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -9857,7 +9836,7 @@
       "observedAt": "2026-08-26T09:06:29.956376+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:01.214908+00:00",
+        "observedAt": "2026-10-07T15:38:39.447980+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ForgottenRunesWizardsCult",
@@ -9880,7 +9859,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:47.750845+00:00",
+        "observedAt": "2026-10-07T15:40:00.044615+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -9888,7 +9867,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -10015,7 +9994,7 @@
       "observedAt": "2026-08-26T09:06:30.389662+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:03.055078+00:00",
+        "observedAt": "2026-10-07T15:38:41.237308+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -10038,7 +10017,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:53.562444+00:00",
+        "observedAt": "2026-10-07T15:40:00.068183+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10046,7 +10025,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -10728,7 +10707,7 @@
       "observedAt": "2026-08-26T09:06:30.909668+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:04.880224+00:00",
+        "observedAt": "2026-10-07T15:38:43.050814+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FyatLux",
@@ -10751,7 +10730,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:54.204101+00:00",
+        "observedAt": "2026-10-07T15:40:00.089066+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10759,7 +10738,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -10888,7 +10867,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:08.455845+00:00",
+        "observedAt": "2026-10-07T15:38:46.657510+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "HalloweenRising",
@@ -10913,7 +10892,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:03:54.612491+00:00",
+        "observedAt": "2026-10-07T15:40:00.190457+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -10921,7 +10900,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -11438,7 +11417,7 @@
       "observedAt": "2026-08-26T09:06:31.735571+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:10.276266+00:00",
+        "observedAt": "2026-10-07T15:38:48.460808+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "JaduAVA",
@@ -11461,7 +11440,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:00.012051+00:00",
+        "observedAt": "2026-10-07T15:40:00.214321+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11469,7 +11448,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -11920,7 +11899,7 @@
       "observedAt": "2026-08-26T09:06:32.150796+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:12.021943+00:00",
+        "observedAt": "2026-10-07T15:38:50.249185+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Karafuru",
@@ -11943,7 +11922,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:00.903497+00:00",
+        "observedAt": "2026-10-07T15:40:00.228419+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -11951,7 +11930,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -12078,7 +12057,7 @@
       "observedAt": "2026-08-26T09:06:33.789773+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:13.830884+00:00",
+        "observedAt": "2026-10-07T15:38:52.053185+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "VFTokenCAirdrop",
@@ -12103,16 +12082,63 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:01.107784+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:00.337017+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 4,
+        "uniqueTokenIds": 2,
+        "transferUris": 4,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "292",
+            "uri": "https://api-metadata.veefriends.com/v1/collections/0x324f60ba2d1815ef649dcc73559172305f5dd02c/tokens/292",
+            "name": "Koala 2025 Collector's Briefcase",
+            "symbol": "KCB25",
+            "protocol": null,
+            "sender": "0x190d2261e293a6cddec5dd10b33044f48e10bd32",
+            "receiver": "0x49aa8427e896d9750dfe7410cf078a398d95db15",
+            "block": "52207275",
+            "time": "2026-10-05T12:38:17Z",
+            "txHash": "0xa491eeeba4f7a279d3bbc94aa4d9819fe117f6548df30e6febdecf29efb4341c"
+          },
+          {
+            "tokenId": "292",
+            "uri": "https://api-metadata.veefriends.com/v1/collections/0x324f60ba2d1815ef649dcc73559172305f5dd02c/tokens/292",
+            "name": "Koala 2025 Collector's Briefcase",
+            "symbol": "KCB25",
+            "protocol": null,
+            "sender": "0xb9ac8d21986d8746a49ba0f9f2c534663c03aa36",
+            "receiver": "0x190d2261e293a6cddec5dd10b33044f48e10bd32",
+            "block": "52207225",
+            "time": "2026-10-05T12:36:37Z",
+            "txHash": "0xa4c060575dcbd6aa1d531fffec11b6e071886e791460ae325133098d49903eee"
+          },
+          {
+            "tokenId": "292",
+            "uri": "https://api-metadata.veefriends.com/v1/collections/0x324f60ba2d1815ef649dcc73559172305f5dd02c/tokens/292",
+            "name": "Koala 2025 Collector's Briefcase",
+            "symbol": "KCB25",
+            "protocol": null,
+            "sender": "0xb50aeb5de54590137f1ac34a9419a52de9b5a967",
+            "receiver": "0xb9ac8d21986d8746a49ba0f9f2c534663c03aa36",
+            "block": "52207157",
+            "time": "2026-10-05T12:34:21Z",
+            "txHash": "0xc563ec7df2f30c07418ec00be6f8810d7fa5567674cf0cb5a0cf87679f4da724"
+          },
+          {
+            "tokenId": "171",
+            "uri": "https://api-metadata.veefriends.com/v1/collections/0x324f60ba2d1815ef649dcc73559172305f5dd02c/tokens/171",
+            "name": "Koala 2025 Collector's Briefcase",
+            "symbol": "KCB25",
+            "protocol": null,
+            "sender": "0x473b123ecb9b396aa67603aaa3cec686446bdb77",
+            "receiver": "0xdd9394ebb054e5f2e2daa3721b08c6d58c30ec1b",
+            "block": "52171901",
+            "time": "2026-10-04T16:59:09Z",
+            "txHash": "0xca23ad7321f97856fa293889db84c95c0c242f2396bc296977d3998bee0c4f60"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -12238,7 +12264,7 @@
       "observedAt": "2026-08-26T09:06:34.718485+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:15.679632+00:00",
+        "observedAt": "2026-10-07T15:38:53.870497+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "MonaAvatars",
@@ -12261,7 +12287,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:06.874578+00:00",
+        "observedAt": "2026-10-07T15:40:00.366499+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -12269,7 +12295,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -12819,7 +12845,7 @@
       "observedAt": "2026-08-26T09:06:36.015242+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:17.498139+00:00",
+        "observedAt": "2026-10-07T15:38:55.680837+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Meebits",
@@ -12842,16 +12868,111 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:07.587744+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:00.369425+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 10,
+        "transferUris": 6,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "7465",
+            "uri": null,
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x3156132953f788f66b720f07a9e7870cbfcf7fbb",
+            "receiver": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "block": "26141419",
+            "time": "2026-10-07T15:31:23Z",
+            "txHash": "0x2e6b5bafb4f4590d5b088827190ed5e9cf25b2ece7346880eacd5efe57ea623d"
+          },
+          {
+            "tokenId": "1045",
+            "uri": null,
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0xf9d2ecc123a3d6116a78e424c0c62fd2abcd7a81",
+            "block": "26141413",
+            "time": "2026-10-07T15:30:11Z",
+            "txHash": "0x87265b1e7c238f4c6d8965a32f06552734cb967ef1aa42ddc333557f3d29d2c3"
+          },
+          {
+            "tokenId": "7465",
+            "uri": null,
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0x3156132953f788f66b720f07a9e7870cbfcf7fbb",
+            "block": "26141311",
+            "time": "2026-10-07T15:09:47Z",
+            "txHash": "0xe419c9a5b16eb3f062b8d020f3ba8c6aa5d1bf561e91f6f070f4e1736f68de1b"
+          },
+          {
+            "tokenId": "1045",
+            "uri": "https://meebits.larvalabs.com/meebit/1045",
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0xf9d2ecc123a3d6116a78e424c0c62fd2abcd7a81",
+            "receiver": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "block": "26140938",
+            "time": "2026-10-07T13:54:35Z",
+            "txHash": "0x385bc289ba3a1f0a2316a5b7f5c4d18692d036c3c4ee0ddea082660f6dc78adf"
+          },
+          {
+            "tokenId": "1045",
+            "uri": null,
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0xf9d2ecc123a3d6116a78e424c0c62fd2abcd7a81",
+            "block": "26140830",
+            "time": "2026-10-07T13:32:35Z",
+            "txHash": "0x7d52f8e0a465c68fff0d24763f8047996f2ccf9fa9473cfd78bcd6de8458128e"
+          },
+          {
+            "tokenId": "10153",
+            "uri": "https://meebits.larvalabs.com/meebit/10153",
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x0fd2b7534b1601a60b1026b4be1865b39bf29b62",
+            "receiver": "0x0ffd13c11ffd3e4c6430f3b4671111fb67356815",
+            "block": "26140485",
+            "time": "2026-10-07T12:23:35Z",
+            "txHash": "0x778dfaaecf416e2c8a526503358aac07979be6046c24283dfd0fab543083c17a"
+          },
+          {
+            "tokenId": "5853",
+            "uri": "https://meebits.larvalabs.com/meebit/5853",
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x3156132953f788f66b720f07a9e7870cbfcf7fbb",
+            "receiver": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "block": "26139971",
+            "time": "2026-10-07T10:40:23Z",
+            "txHash": "0xe4a6ab378bfc5de4c0d7a16b6b5948f8e42f0e991a50ad8fffeb5b77196d984d"
+          },
+          {
+            "tokenId": "5853",
+            "uri": null,
+            "name": "Meebits",
+            "symbol": "⚇",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0x3156132953f788f66b720f07a9e7870cbfcf7fbb",
+            "block": "26139149",
+            "time": "2026-10-07T07:55:11Z",
+            "txHash": "0x43f440457e2c10dc17b73078e9af34fe69a2f564f00d8fff554382602a60c9de"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -13083,7 +13204,7 @@
       "observedAt": "2026-08-26T09:06:36.405264+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:19.244978+00:00",
+        "observedAt": "2026-10-07T15:38:57.469956+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "metaaniGEN",
@@ -13106,7 +13227,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:07.696777+00:00",
+        "observedAt": "2026-10-07T15:40:00.513203+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -13114,7 +13235,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -14225,7 +14346,7 @@
       "observedAt": "2026-08-26T09:06:37.054880+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:21.082681+00:00",
+        "observedAt": "2026-10-07T15:38:59.295982+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TransparentUpgradeableProxy",
@@ -14248,7 +14369,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:13.542693+00:00",
+        "observedAt": "2026-10-07T15:40:00.660783+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -14467,7 +14588,7 @@
       "observedAt": "2026-08-26T09:06:37.583681+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:24.701546+00:00",
+        "observedAt": "2026-10-07T15:39:02.899515+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721NESDrop",
@@ -14490,50 +14611,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:14.283534+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 3,
-        "uniqueTokenIds": 3,
-        "transferUris": 3,
+        "observedAt": "2026-10-07T15:40:00.688442+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "929",
-            "uri": "ipfs://QmcD36n6YWuNZSBc15aHjCX1Ufr5HGn8SoVeDp4chyjvxe/929",
-            "name": "MisfitPIXELS",
-            "symbol": "Misfits",
-            "protocol": null,
-            "sender": "0x6fdd4dddf5ab7987e0365e1e89c30e434e51442f",
-            "receiver": "0x6d2ab8fb1cf2ee3f0bd6c4b08d619bcc2c628972",
-            "block": "25914779",
-            "time": "2026-09-06T00:41:11Z",
-            "txHash": "0xc1f5fbddf22a15fcda67fe2e519cbb7ea70323b6a9f5e2eb8edb1ed798cd6964"
-          },
-          {
-            "tokenId": "930",
-            "uri": "ipfs://QmcD36n6YWuNZSBc15aHjCX1Ufr5HGn8SoVeDp4chyjvxe/930",
-            "name": "MisfitPIXELS",
-            "symbol": "Misfits",
-            "protocol": null,
-            "sender": "0x6fdd4dddf5ab7987e0365e1e89c30e434e51442f",
-            "receiver": "0x6d2ab8fb1cf2ee3f0bd6c4b08d619bcc2c628972",
-            "block": "25914779",
-            "time": "2026-09-06T00:41:11Z",
-            "txHash": "0xc1f5fbddf22a15fcda67fe2e519cbb7ea70323b6a9f5e2eb8edb1ed798cd6964"
-          },
-          {
-            "tokenId": "931",
-            "uri": "ipfs://QmcD36n6YWuNZSBc15aHjCX1Ufr5HGn8SoVeDp4chyjvxe/931",
-            "name": "MisfitPIXELS",
-            "symbol": "Misfits",
-            "protocol": null,
-            "sender": "0x6fdd4dddf5ab7987e0365e1e89c30e434e51442f",
-            "receiver": "0x6d2ab8fb1cf2ee3f0bd6c4b08d619bcc2c628972",
-            "block": "25914779",
-            "time": "2026-09-06T00:41:11Z",
-            "txHash": "0xc1f5fbddf22a15fcda67fe2e519cbb7ea70323b6a9f5e2eb8edb1ed798cd6964"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -14885,7 +14969,7 @@
       "observedAt": "2026-08-26T09:06:38.181675+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:26.516462+00:00",
+        "observedAt": "2026-10-07T15:39:04.703770+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Moonbirds",
@@ -14908,111 +14992,16 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:14.475116+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 25,
-        "uniqueTokenIds": 14,
+        "observedAt": "2026-10-07T15:40:01.516007+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "534",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x2a7aa8c959d514701ee779a44b0fb97cc4f1bbbe",
-            "receiver": "0xdd930b9a03cc1b7342a9a7804dc2c63dae353776",
-            "block": "25938860",
-            "time": "2026-09-09T09:16:35Z",
-            "txHash": "0xdcd8e448aa24545f98fa975396ee617f07855f0aaee45340b64439dcce549cb1"
-          },
-          {
-            "tokenId": "534",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x3bcc42f88d035d763a6155ede8a0b00049e6b077",
-            "receiver": "0x2a7aa8c959d514701ee779a44b0fb97cc4f1bbbe",
-            "block": "25938789",
-            "time": "2026-09-09T09:02:11Z",
-            "txHash": "0x69adfe6a67e4d9933f2f03216d05bb36c628370398ddf8213810b3fd15118ade"
-          },
-          {
-            "tokenId": "3171",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
-            "receiver": "0xb5be918f7412ab7358064e0cfca78c03e53645bf",
-            "block": "25938653",
-            "time": "2026-09-09T08:34:47Z",
-            "txHash": "0x2139cbdc07240557470f60fff12b89950f02b2c58a9d032835cc030ceea89f4f"
-          },
-          {
-            "tokenId": "3171",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xa2ff4d41088ff7fc92cbae620db8bb7d9de360fc",
-            "receiver": "0xbd726bfb7a8ca001e03f63f4119a0ed465ff78e8",
-            "block": "25938611",
-            "time": "2026-09-09T08:26:23Z",
-            "txHash": "0x5244af077902856329e0fa905c3a93f4827f9afa6e329941b3cfdd00fa9bb2b9"
-          },
-          {
-            "tokenId": "8032",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "receiver": "0xaf68f720d7e51b88a76ec35aab2b1694f8f0892a",
-            "block": "25938253",
-            "time": "2026-09-09T07:14:35Z",
-            "txHash": "0x8ba324caf9a3e6981180fe7b8b8361d052f3f9b7e1ba62c94da6a9bdad2beeb7"
-          },
-          {
-            "tokenId": "4150",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x999994ffead9c09a0d6203854356bccae3056db7",
-            "receiver": "0xc826e770ce8f9c668dcc4a31642e385164e0171b",
-            "block": "25937735",
-            "time": "2026-09-09T05:30:35Z",
-            "txHash": "0xe9061967070a6f0c8a98abd74ed67ed2bc02917067f439b3931eb8c7e0804760"
-          },
-          {
-            "tokenId": "2139",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0x8ebb624ef82ae9c4b4ffbf3035831318c5d24b60",
-            "receiver": "0x49960769aa50b533aa628acdaa054bd5263d0d42",
-            "block": "25934221",
-            "time": "2026-09-08T17:45:23Z",
-            "txHash": "0xb03f1204268a5dc52fe069706a7c43e062b5f3b5ced0b9de9cb13f0b9ac7ce45"
-          },
-          {
-            "tokenId": "2139",
-            "uri": null,
-            "name": "Moonbirds",
-            "symbol": "MOONBIRD",
-            "protocol": null,
-            "sender": "0xb6ed41af7c6c1865f05a2e4234d21296c174ab02",
-            "receiver": "0x8ebb624ef82ae9c4b4ffbf3035831318c5d24b60",
-            "block": "25934196",
-            "time": "2026-09-08T17:40:23Z",
-            "txHash": "0x3dbf52e63a2517f8c39aba8c2db3a966adc688b17937c7c33cf5c70d532f40c8"
-          }
-        ],
-        "errors": []
+        "sampledTransfers": [],
+        "errors": [
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+        ]
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -15089,7 +15078,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:28.718455+00:00",
+        "observedAt": "2026-10-07T15:39:06.893283+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": "",
@@ -15114,7 +15103,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:20.295897+00:00",
+        "observedAt": "2026-10-07T15:40:01.518667+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15307,7 +15296,7 @@
       "observedAt": "2026-08-26T09:06:40.044453+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:30.123170+00:00",
+        "observedAt": "2026-10-07T15:39:08.316586+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NG86VRM",
@@ -15330,7 +15319,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:20.707969+00:00",
+        "observedAt": "2026-10-07T15:40:01.543193+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -15787,7 +15776,7 @@
       "observedAt": "2026-08-26T09:06:40.706965+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:31.935033+00:00",
+        "observedAt": "2026-10-07T15:39:10.124242+00:00",
         "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": "",
@@ -15811,86 +15800,13 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:20.929345+00:00",
-        "contractObservedOnchain": true,
-        "tokensSampled": 6,
-        "uniqueTokenIds": 5,
-        "transferUris": 6,
+        "observedAt": "2026-10-07T15:40:01.675076+00:00",
+        "contractObservedOnchain": false,
+        "tokensSampled": 0,
+        "uniqueTokenIds": 0,
+        "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [
-          {
-            "tokenId": "3354",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/3354",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xb85789a5202836d94c3940a0a1c5f8111c1a60fd",
-            "receiver": "0x5549d91e675e24e4f860f49c386988db284505ca",
-            "block": "25936311",
-            "time": "2026-09-09T00:44:35Z",
-            "txHash": "0xe6d27c81a9faf40a37fe8cdb55415b8bdf2286cf276dfe30042d9f3e784b3be9"
-          },
-          {
-            "tokenId": "5572",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/5572",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x3ba74c579e12b9e25b8c55dbf63c22b0e8d86d1e",
-            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
-            "block": "25933447",
-            "time": "2026-09-08T15:09:23Z",
-            "txHash": "0x56d57355e1f32a9682e132b1c3a2861a4916cef20fa2b468e4058f207dbaa47a"
-          },
-          {
-            "tokenId": "7718",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7718",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x3ba74c579e12b9e25b8c55dbf63c22b0e8d86d1e",
-            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
-            "block": "25933447",
-            "time": "2026-09-08T15:09:23Z",
-            "txHash": "0x56d57355e1f32a9682e132b1c3a2861a4916cef20fa2b468e4058f207dbaa47a"
-          },
-          {
-            "tokenId": "7717",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/7717",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0x3ba74c579e12b9e25b8c55dbf63c22b0e8d86d1e",
-            "receiver": "0xb814f14996dd967a04e858ebe36120784ced4e36",
-            "block": "25933447",
-            "time": "2026-09-08T15:09:23Z",
-            "txHash": "0x56d57355e1f32a9682e132b1c3a2861a4916cef20fa2b468e4058f207dbaa47a"
-          },
-          {
-            "tokenId": "4473",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/4473",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xc603ff55fadcdbbebc19cc48b271b9b90ca09068",
-            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
-            "block": "25928817",
-            "time": "2026-09-07T23:39:23Z",
-            "txHash": "0x4558834b9b4e402dfd87c7aaa18eed5d5bf57a23b8f522c73c4634fd09a820aa"
-          },
-          {
-            "tokenId": "4473",
-            "uri": "https://nftcdn.daz3d.com/nfp/gen1/m/4473",
-            "name": "Daz3D Non-Fungible People",
-            "symbol": "DAZNFP",
-            "protocol": null,
-            "sender": "0xab23ef17e882dc97bfe3c2d3913f433167ce3873",
-            "receiver": "0xc603ff55fadcdbbebc19cc48b271b9b90ca09068",
-            "block": "25919427",
-            "time": "2026-09-06T16:13:11Z",
-            "txHash": "0x384d434aa6c08df7787364cec14d4ed54c4ac18d311f6c2d7b7b38cb7ce99c15"
-          }
-        ],
+        "sampledTransfers": [],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -16041,7 +15957,7 @@
       "observedAt": "2026-08-26T09:06:41.243927+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:35.582416+00:00",
+        "observedAt": "2026-10-07T15:39:11.989570+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NounsToken",
@@ -16064,108 +15980,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.122958+00:00",
+        "observedAt": "2026-10-07T15:40:01.824680+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 13,
+        "tokensSampled": 15,
         "uniqueTokenIds": 8,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "1829",
+            "tokenId": "1382",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
-            "sender": "0xc7ccec521eed20fcddff8f95424816ac421c7d87",
-            "receiver": "0x1a5198b210d3c0b31d42c34f45ccdd7b3d9592ea",
-            "block": "25938340",
-            "time": "2026-09-09T07:31:59Z",
-            "txHash": "0x8b60a5519c7e9bb0292242538abf25ab902682f75b0fc9ac6e40ec637c3c7d16"
+            "sender": "0xcb06bede7cb0a4b333581b6bdcd05f7cc737b9cc",
+            "receiver": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "block": "26140391",
+            "time": "2026-10-07T12:04:47Z",
+            "txHash": "0x7e0448a879457b4c7515f062916ec9ecc9f017c6a3931493bb8ee040f82fee09"
           },
           {
-            "tokenId": "2014",
+            "tokenId": "1750",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0xcb06bede7cb0a4b333581b6bdcd05f7cc737b9cc",
+            "receiver": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "block": "26140391",
+            "time": "2026-10-07T12:04:47Z",
+            "txHash": "0x3b382fe72ffc13bef4f3bccc0f94090e0a245f249d06537abbda41b13a03dd3c"
+          },
+          {
+            "tokenId": "1750",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0xcb06bede7cb0a4b333581b6bdcd05f7cc737b9cc",
+            "block": "26140379",
+            "time": "2026-10-07T12:02:23Z",
+            "txHash": "0x0b5f40bbc5c069b439b22a27392a09995c6b3e9e2cdacbba94c4d8b58f28baf3"
+          },
+          {
+            "tokenId": "1382",
+            "uri": null,
+            "name": "Nouns",
+            "symbol": "NOUN",
+            "protocol": null,
+            "sender": "0x958c41181182e76f221331b2755b77d9e1426a98",
+            "receiver": "0xcb06bede7cb0a4b333581b6bdcd05f7cc737b9cc",
+            "block": "26140379",
+            "time": "2026-10-07T12:02:23Z",
+            "txHash": "0x9c2b12021ba26e4e688283d003a32ebacdc8b626b207f7c604f061065843a689"
+          },
+          {
+            "tokenId": "2039",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25936128",
-            "time": "2026-09-09T00:07:47Z",
-            "txHash": "0x39380f110d8f0fc777309af5da8a5a1003e3ca5f39ca157dd2c969d2cadf3ea0"
+            "block": "26131936",
+            "time": "2026-10-06T07:46:35Z",
+            "txHash": "0x2a497ba10bbdd6aca8619aab6f6ca1067325f57a4aa74cda17b14a0c6d1aade1"
           },
           {
-            "tokenId": "2015",
+            "tokenId": "2040",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x0000000000000000000000000000000000000000",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25936128",
-            "time": "2026-09-09T00:07:47Z",
-            "txHash": "0x39380f110d8f0fc777309af5da8a5a1003e3ca5f39ca157dd2c969d2cadf3ea0"
+            "block": "26131936",
+            "time": "2026-10-06T07:46:35Z",
+            "txHash": "0x2a497ba10bbdd6aca8619aab6f6ca1067325f57a4aa74cda17b14a0c6d1aade1"
           },
           {
-            "tokenId": "2015",
+            "tokenId": "2040",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
             "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
-            "block": "25936128",
-            "time": "2026-09-09T00:07:47Z",
-            "txHash": "0x39380f110d8f0fc777309af5da8a5a1003e3ca5f39ca157dd2c969d2cadf3ea0"
+            "block": "26131936",
+            "time": "2026-10-06T07:46:35Z",
+            "txHash": "0x2a497ba10bbdd6aca8619aab6f6ca1067325f57a4aa74cda17b14a0c6d1aade1"
           },
           {
-            "tokenId": "1745",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x6ccb83c907dbf0b4bc28f9bf83173b0ab943350b",
-            "receiver": "0x88b835e481cabef3c7c35e4007b2f413aab7755f",
-            "block": "25929422",
-            "time": "2026-09-08T01:40:47Z",
-            "txHash": "0x7a50ab78e7eef462d477c2aa893e620bb28535d3f73836afdf986924deed1a36"
-          },
-          {
-            "tokenId": "2013",
+            "tokenId": "2038",
             "uri": null,
             "name": "Nouns",
             "symbol": "NOUN",
             "protocol": null,
             "sender": "0x830bd73e4184cef73443c15111a1df14e495c706",
             "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25928228",
-            "time": "2026-09-07T21:41:11Z",
-            "txHash": "0xfdce41c2bee6bb194ed2bf07d6cfbe19e29704dbf293a6a6e0db03e6154bcd94"
-          },
-          {
-            "tokenId": "2014",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0x0000000000000000000000000000000000000000",
-            "receiver": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "block": "25928228",
-            "time": "2026-09-07T21:41:11Z",
-            "txHash": "0xfdce41c2bee6bb194ed2bf07d6cfbe19e29704dbf293a6a6e0db03e6154bcd94"
-          },
-          {
-            "tokenId": "2014",
-            "uri": null,
-            "name": "Nouns",
-            "symbol": "NOUN",
-            "protocol": null,
-            "sender": "0xb1a32fc9f9d8b2cf86c068cae13108809547ef71",
-            "receiver": "0x830bd73e4184cef73443c15111a1df14e495c706",
-            "block": "25928228",
-            "time": "2026-09-07T21:41:11Z",
-            "txHash": "0xfdce41c2bee6bb194ed2bf07d6cfbe19e29704dbf293a6a6e0db03e6154bcd94"
+            "block": "26124579",
+            "time": "2026-10-05T07:08:59Z",
+            "txHash": "0x1f9533f3f59f1d5e8cc7d8dcbd8d9150c6cb073a8ea073362a1b492eb663f459"
           }
         ],
         "errors": []
@@ -16294,7 +16210,7 @@
       "observedAt": "2026-08-26T09:06:41.883899+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:37.345738+00:00",
+        "observedAt": "2026-10-07T15:39:13.741259+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -16317,7 +16233,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.211681+00:00",
+        "observedAt": "2026-10-07T15:40:01.929408+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -17181,7 +17097,7 @@
       "observedAt": "2026-08-26T09:06:42.359791+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:39.168211+00:00",
+        "observedAt": "2026-10-07T15:39:15.531417+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Omnimorphs",
@@ -17204,13 +17120,110 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.214415+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:01.939619+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 25,
+        "transferUris": 2,
         "modelSignals": [],
-        "sampledTransfers": [],
+        "sampledTransfers": [
+          {
+            "tokenId": "2186",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x2965442564d082b21c624c1783f3a67660c127a5",
+            "block": "26112891",
+            "time": "2026-10-03T16:04:47Z",
+            "txHash": "0x0b2ed28cf2d808073c6c814480448d648108809b2b6c700cac04f3395ff63d04"
+          },
+          {
+            "tokenId": "3985",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x56f38104a917c0bc02dc45be2e506c9d48ce5629",
+            "block": "26112891",
+            "time": "2026-10-03T16:04:47Z",
+            "txHash": "0x0b2ed28cf2d808073c6c814480448d648108809b2b6c700cac04f3395ff63d04"
+          },
+          {
+            "tokenId": "6397",
+            "uri": "https://omnimorphs.mypinata.cloud/ipfs/bafybeiecntsh73ivw7gnurdinzghzacal2biqn63sx5apgz5hky7p7qrvy/6397",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x56f38104a917c0bc02dc45be2e506c9d48ce5629",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          },
+          {
+            "tokenId": "6155",
+            "uri": "https://omnimorphs.mypinata.cloud/ipfs/bafybeiecntsh73ivw7gnurdinzghzacal2biqn63sx5apgz5hky7p7qrvy/6155",
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x824ff7e44653e3262fd144d15582125e77345647",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          },
+          {
+            "tokenId": "1897",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x824ff7e44653e3262fd144d15582125e77345647",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          },
+          {
+            "tokenId": "3970",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x824ff7e44653e3262fd144d15582125e77345647",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          },
+          {
+            "tokenId": "1899",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x824ff7e44653e3262fd144d15582125e77345647",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          },
+          {
+            "tokenId": "6906",
+            "uri": null,
+            "name": "Omnimorphs",
+            "symbol": "OMNI",
+            "protocol": null,
+            "sender": "0x34f5c36dfd35ef66c996eca754bc5e38165f31f4",
+            "receiver": "0x824ff7e44653e3262fd144d15582125e77345647",
+            "block": "26112688",
+            "time": "2026-10-03T15:24:11Z",
+            "txHash": "0xf26ae745df72094d3f2864083714d3769f49427c067e223c1b10dc14894e2d9b"
+          }
+        ],
         "errors": []
       },
       "authorityStatus": "onchain_corroborated"
@@ -17452,7 +17465,7 @@
       "observedAt": "2026-08-26T09:06:42.837165+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:41.297970+00:00",
+        "observedAt": "2026-10-07T15:39:19.143199+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ParallelAvatars",
@@ -17475,108 +17488,108 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.342525+00:00",
+        "observedAt": "2026-10-07T15:40:02.162558+00:00",
         "contractObservedOnchain": true,
-        "tokensSampled": 23,
-        "uniqueTokenIds": 20,
-        "transferUris": 23,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 19,
+        "transferUris": 11,
         "modelSignals": [],
         "sampledTransfers": [
           {
-            "tokenId": "6308",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/6308",
+            "tokenId": "3066",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0xf2dc5f237286cb8e9b35e95b896d93eee5811313",
-            "receiver": "0x54c6d73baf9dd8612978b694b23a309263b54cfa",
-            "block": "25939605",
-            "time": "2026-09-09T11:45:59Z",
-            "txHash": "0xdbd609ad330537393fd019364decea25b7d36653a86ae265ddc8d2e8bed8b395"
-          },
-          {
-            "tokenId": "2222",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/2222",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0x5bcf9cde39ff70beddba2e96ff315e83828f9b76",
+            "sender": "0x5be8bdc96c423f265fc589ff8611e4c72ee94dca",
             "receiver": "0x62782b7e6a839a8eef5665218d5c2eed0103586a",
-            "block": "25934669",
-            "time": "2026-09-08T19:15:11Z",
-            "txHash": "0xe51651d50306e67b8874057870a0481a7ab252b499d204bfdb1bd895f8af4071"
+            "block": "26139223",
+            "time": "2026-10-07T08:09:59Z",
+            "txHash": "0xc746f4cd5b825c8a30f353a1a4b597c8097c6e4b2c05310ab570b932e15b74b4"
           },
           {
-            "tokenId": "2222",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/2222",
+            "tokenId": "2877",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x7b168bdc1d91bf1186c96b89a49fea2b2a45c993",
-            "receiver": "0x5bcf9cde39ff70beddba2e96ff315e83828f9b76",
-            "block": "25934626",
-            "time": "2026-09-08T19:06:35Z",
-            "txHash": "0xe3343e8d412f4518465f49149f456d3c2fe60a30c530692caab9ae885d0085ff"
+            "sender": "0x5be8bdc96c423f265fc589ff8611e4c72ee94dca",
+            "receiver": "0xbc7bb09d663c46095e00c9240a7f4201fd41a14d",
+            "block": "26139223",
+            "time": "2026-10-07T08:09:59Z",
+            "txHash": "0xc746f4cd5b825c8a30f353a1a4b597c8097c6e4b2c05310ab570b932e15b74b4"
           },
           {
-            "tokenId": "10679",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/10679",
+            "tokenId": "4961",
+            "uri": null,
+            "name": "Parallel Avatars",
+            "symbol": "LLPPL",
+            "protocol": null,
+            "sender": "0x497c07deed07cc209d74c542ee754ce09d0e6db7",
+            "receiver": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
+            "block": "26131956",
+            "time": "2026-10-06T07:50:35Z",
+            "txHash": "0xebfb1df663ac40225d00c30d8be7791a8c08ce051e548c7e4fca1a7a751bdbf5"
+          },
+          {
+            "tokenId": "4961",
+            "uri": null,
+            "name": "Parallel Avatars",
+            "symbol": "LLPPL",
+            "protocol": null,
+            "sender": "0xe6787a6ea1c9faa825c26640cca4b43c3d8b8d95",
+            "receiver": "0x497c07deed07cc209d74c542ee754ce09d0e6db7",
+            "block": "26131954",
+            "time": "2026-10-06T07:50:11Z",
+            "txHash": "0x95db2cc7c7991a17e062b108417e0bb98b27f5c4a0647a3a499d453a15110019"
+          },
+          {
+            "tokenId": "4919",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
             "sender": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
-            "receiver": "0xf22a3a7dfd8861820a4ce900d45ce1b9b26c0259",
-            "block": "25934114",
-            "time": "2026-09-08T17:23:59Z",
-            "txHash": "0xfb88f57fcf4ce65daad772182c3108bd2bd301ede98b294bd466867539ee342e"
+            "receiver": "0x0a07491559297c5cef52661ce593b149037ac733",
+            "block": "26117429",
+            "time": "2026-10-04T07:14:47Z",
+            "txHash": "0x4f76509e9758146fb8e945d6d54d31fc906cf7bf6642098aba7ceee9372733fb"
           },
           {
-            "tokenId": "1505",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/1505",
+            "tokenId": "8139",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0xaf0e0b676d1f5c9445169b7ac904744a028ea7fa",
-            "receiver": "0xb5e384530c2580acf4a5395ffb2d57172d9603c3",
-            "block": "25933904",
-            "time": "2026-09-08T16:41:23Z",
-            "txHash": "0xe2f3a20e07b56aee7465d2fb4b8803814f8b799275f0dcf13ed548100a78df3f"
+            "sender": "0x4ddbfab062fa5abf7a75562023c34c7218f9a765",
+            "receiver": "0x0a07491559297c5cef52661ce593b149037ac733",
+            "block": "26117429",
+            "time": "2026-10-04T07:14:47Z",
+            "txHash": "0x4f76509e9758146fb8e945d6d54d31fc906cf7bf6642098aba7ceee9372733fb"
           },
           {
-            "tokenId": "4259",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/4259",
+            "tokenId": "4919",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x14934c52ef4157572bd9a60ee75328ec321bacad",
-            "receiver": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
-            "block": "25933728",
-            "time": "2026-09-08T16:06:11Z",
-            "txHash": "0x4362db37346aa58a09b8c5d948d83e9cae80b18c7a5bf48da7a08cc60c5e872a"
+            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "receiver": "0xd93bea8972f02df40d1df236757de7b7cfb6a04c",
+            "block": "26116898",
+            "time": "2026-10-04T05:28:23Z",
+            "txHash": "0x8544a1d69c4ea44c131389f71e0a7a6075518282aac29a4189d8611fe114d7ab"
           },
           {
-            "tokenId": "7264",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/7264",
+            "tokenId": "8474",
+            "uri": null,
             "name": "Parallel Avatars",
             "symbol": "LLPPL",
             "protocol": null,
-            "sender": "0x14934c52ef4157572bd9a60ee75328ec321bacad",
-            "receiver": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
-            "block": "25933728",
-            "time": "2026-09-08T16:06:11Z",
-            "txHash": "0x4362db37346aa58a09b8c5d948d83e9cae80b18c7a5bf48da7a08cc60c5e872a"
-          },
-          {
-            "tokenId": "6423",
-            "uri": "https://nftdata.parallelnft.com/api/parallel-avatars/ipfs/6423",
-            "name": "Parallel Avatars",
-            "symbol": "LLPPL",
-            "protocol": null,
-            "sender": "0xd99bd5cef9681b5cbf78b02827a69998704b5f80",
-            "receiver": "0xb6320c032fac4e09fea2143d70c2c3c4ca54a831",
-            "block": "25933687",
-            "time": "2026-09-08T15:57:59Z",
-            "txHash": "0xc8a7e05b0e207004d5279df4d6e474a246e17ff04df3569a910fc8cf539da02d"
+            "sender": "0x917660a684d89f4713d2e22054fec8ea2e29c11a",
+            "receiver": "0x54c6d73baf9dd8612978b694b23a309263b54cfa",
+            "block": "26116898",
+            "time": "2026-10-04T05:28:23Z",
+            "txHash": "0x8544a1d69c4ea44c131389f71e0a7a6075518282aac29a4189d8611fe114d7ab"
           }
         ],
         "errors": []
@@ -18172,7 +18185,7 @@
       "observedAt": "2026-08-26T09:06:43.307560+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:43.125785+00:00",
+        "observedAt": "2026-10-07T15:39:20.949444+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "PartyBears",
@@ -18195,16 +18208,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.474669+00:00",
+        "observedAt": "2026-10-07T15:40:02.194746+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -18478,7 +18489,7 @@
       "observedAt": "2026-08-26T09:06:43.624058+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:44.881374+00:00",
+        "observedAt": "2026-10-07T15:39:22.742876+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Phetta",
@@ -18501,7 +18512,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.490734+00:00",
+        "observedAt": "2026-10-07T15:40:02.216676+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -18509,7 +18520,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -18584,7 +18595,7 @@
       "observedAt": "2026-08-26T09:06:44.129528+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:46.731333+00:00",
+        "observedAt": "2026-10-07T15:39:24.562025+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -18607,16 +18618,111 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:21.616404+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:02.363200+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 21,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "2485050474617492253657970371697643944580510880023237115193258540044199657473",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0x11a04750983e4a0a6c5df5c0fa349890a08f9001",
+            "receiver": "0x8dc2a09747b2eed6a5c96693f5205b3ac0e504a4",
+            "block": "26141329",
+            "time": "2026-10-07T15:13:23Z",
+            "txHash": "0x19b3756db1756d5d958f44160227e87bf3defb4feffc6472d5acbb892cd0d336"
+          },
+          {
+            "tokenId": "20331478546256365083689063527039864327720174751810602029774601718086043173064",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xd26b76e50f6510cdd4bf45d59279705f36946d23",
+            "receiver": "0x52064e0c6ed96d2600bbccda7b7d6afd5b3f3aca",
+            "block": "26141161",
+            "time": "2026-10-07T14:39:35Z",
+            "txHash": "0x607441c2e4ddc010b309eed4a3a88c00c5cbb4567dd19b2bf0aef145484a89a3"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013620609541556142081",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xa410ab6d56e6eaac6ed01070621467b543861c52",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140654",
+            "time": "2026-10-07T12:57:23Z",
+            "txHash": "0xdf9838b0ea6fc49ad72653f47b91697b05e6b691283e6534423a3185f0fc87ec"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013621706854160662529",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140457",
+            "time": "2026-10-07T12:17:59Z",
+            "txHash": "0x2a243f9ee6ab6bcaaa61ec58d63d1f1523c79d0aea8db15d9c159f27256c0d51"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013621986130114117633",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140445",
+            "time": "2026-10-07T12:15:35Z",
+            "txHash": "0x7f93bb863f6aa01b19eb382261a0f6d764da20a0b9a531bdd24621b0a0b806be"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013619458352881860609",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140434",
+            "time": "2026-10-07T12:13:23Z",
+            "txHash": "0x3758c45ee4272b836631df94461e86cdde3ab33ae2acdf534b094cd4632f370e"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013620959186253774849",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0xdeed59fc3bb02d50a54bc9d379e8c9d0ec053068",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140425",
+            "time": "2026-10-07T12:11:35Z",
+            "txHash": "0xdbb0e2f7b721259f0dbde18f7099d14ace5bfab44713e28152f5b21f49a51d03"
+          },
+          {
+            "tokenId": "3850255714560880033049635341256723360087176540359008306013623647492183687169",
+            "uri": null,
+            "name": "OpenSea Shared Storefront",
+            "symbol": "OPENSTORE",
+            "protocol": null,
+            "sender": "0x3ecae9ac9de6d2889aefd43595a2554ccc86c5da",
+            "receiver": "0x88f7cadd37a6b030b0ee7efe90b283e1be947054",
+            "block": "26140161",
+            "time": "2026-10-07T11:18:47Z",
+            "txHash": "0x2ebcf15b54bc93fc9d75687485afbb8bd5d21a147d83f4f15aca25dd1aebc732"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -19660,7 +19766,7 @@
       "observedAt": "2026-08-26T09:06:44.946285+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:48.530881+00:00",
+        "observedAt": "2026-10-07T15:39:26.363223+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "OptimizedTransparentUpgradeableProxy",
@@ -19683,16 +19789,27 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:27.997050+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:02.409920+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "154",
+            "uri": null,
+            "name": "RSTLSS x Claire Silver",
+            "symbol": "RSTLSSCS",
+            "protocol": null,
+            "sender": "0x2b752a7a65740dd89998dbb58998af0f4ed20b41",
+            "receiver": "0x71c80f106aa856c38592ebf5bb50b4a83ba15bd8",
+            "block": "26132780",
+            "time": "2026-10-06T10:37:35Z",
+            "txHash": "0xab2d74d5dbceefc3f1262feab2cd68d5c219a753c2038aeb5c61aa777e3924e0"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -20175,7 +20292,7 @@
       "observedAt": "2026-08-26T09:06:45.578919+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:50.344205+00:00",
+        "observedAt": "2026-10-07T15:39:28.179537+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TheModZ",
@@ -20198,16 +20315,63 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:28.151547+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:02.466116+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 4,
+        "uniqueTokenIds": 4,
+        "transferUris": 4,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "1878",
+            "uri": "https://cdn.themodz.studio/kids/metadata/1878",
+            "name": "The ModZ",
+            "symbol": "MODZ",
+            "protocol": null,
+            "sender": "0xe6384f5bebce89b061d7826a6f03f4d481d3a615",
+            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "block": "26124788",
+            "time": "2026-10-05T07:51:11Z",
+            "txHash": "0xeafd3970633732175b7faed91a383ca3c0904866945b1b5e692022d5c37facef"
+          },
+          {
+            "tokenId": "1567",
+            "uri": "https://cdn.themodz.studio/kids/metadata/1567",
+            "name": "The ModZ",
+            "symbol": "MODZ",
+            "protocol": null,
+            "sender": "0xe6384f5bebce89b061d7826a6f03f4d481d3a615",
+            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "block": "26124788",
+            "time": "2026-10-05T07:51:11Z",
+            "txHash": "0xeafd3970633732175b7faed91a383ca3c0904866945b1b5e692022d5c37facef"
+          },
+          {
+            "tokenId": "744",
+            "uri": "https://cdn.themodz.studio/kids/metadata/744",
+            "name": "The ModZ",
+            "symbol": "MODZ",
+            "protocol": null,
+            "sender": "0xe6384f5bebce89b061d7826a6f03f4d481d3a615",
+            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "block": "26124788",
+            "time": "2026-10-05T07:51:11Z",
+            "txHash": "0xeafd3970633732175b7faed91a383ca3c0904866945b1b5e692022d5c37facef"
+          },
+          {
+            "tokenId": "4851",
+            "uri": "https://cdn.themodz.studio/kids/metadata/4851",
+            "name": "The ModZ",
+            "symbol": "MODZ",
+            "protocol": null,
+            "sender": "0xe6384f5bebce89b061d7826a6f03f4d481d3a615",
+            "receiver": "0x798c4d95f5c186ea4fa2838cda5e797a28f982e6",
+            "block": "26124788",
+            "time": "2026-10-05T07:51:11Z",
+            "txHash": "0xeafd3970633732175b7faed91a383ca3c0904866945b1b5e692022d5c37facef"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -20789,7 +20953,7 @@
       "observedAt": "2026-08-26T09:06:46.083749+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:52.156794+00:00",
+        "observedAt": "2026-10-07T15:39:29.962550+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Seeker",
@@ -20812,16 +20976,27 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:28.508871+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:02.655823+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
+        "transferUris": 1,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "3813",
+            "uri": "https://api.seekers.xyz/seeker/3813",
+            "name": "Seekers",
+            "symbol": "SEEKERS",
+            "protocol": null,
+            "sender": "0xe250d225646297733eb81a595634acc968bfc77e",
+            "receiver": "0x18108b989462f65e2ea03f4372a06f499f514900",
+            "block": "26114796",
+            "time": "2026-10-03T22:26:59Z",
+            "txHash": "0x75623b5eaf81c0a116c315bc24a21635b78627fc2844b574d81ae74eb337cc39"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -21183,7 +21358,7 @@
       "observedAt": "2026-08-26T09:06:46.599817+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:53.955542+00:00",
+        "observedAt": "2026-10-07T15:39:31.782151+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "WynLambo",
@@ -21206,16 +21381,63 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:34.863791+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:02.777493+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 4,
+        "uniqueTokenIds": 4,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "5963",
+            "uri": null,
+            "name": "WynLambo",
+            "symbol": "WYN",
+            "protocol": null,
+            "sender": "0xecd4e80710bf10968ffe99132f57f658d8ffa785",
+            "receiver": "0xc7fba9d210e4fd323a271d49177054b170fa21f1",
+            "block": "26134550",
+            "time": "2026-10-06T16:32:59Z",
+            "txHash": "0x2f9d38817e9d43442a91395d3f9e830b7b917c25c6c9f5b3b89bdb94c3d3a570"
+          },
+          {
+            "tokenId": "6789",
+            "uri": null,
+            "name": "WynLambo",
+            "symbol": "WYN",
+            "protocol": null,
+            "sender": "0xecd4e80710bf10968ffe99132f57f658d8ffa785",
+            "receiver": "0x3f31a31c1426ba9ffb16da1e52d9f4d966d1d6f0",
+            "block": "26134550",
+            "time": "2026-10-06T16:32:59Z",
+            "txHash": "0x2f9d38817e9d43442a91395d3f9e830b7b917c25c6c9f5b3b89bdb94c3d3a570"
+          },
+          {
+            "tokenId": "9199",
+            "uri": null,
+            "name": "WynLambo",
+            "symbol": "WYN",
+            "protocol": null,
+            "sender": "0xecd4e80710bf10968ffe99132f57f658d8ffa785",
+            "receiver": "0x3f31a31c1426ba9ffb16da1e52d9f4d966d1d6f0",
+            "block": "26134550",
+            "time": "2026-10-06T16:32:59Z",
+            "txHash": "0x2f9d38817e9d43442a91395d3f9e830b7b917c25c6c9f5b3b89bdb94c3d3a570"
+          },
+          {
+            "tokenId": "6979",
+            "uri": null,
+            "name": "WynLambo",
+            "symbol": "WYN",
+            "protocol": null,
+            "sender": "0x30a54e68ed48e61a83e548703b86f5fcaf1ef062",
+            "receiver": "0x2fab8e58748f18814b37b86d6ec9bb237118027b",
+            "block": "26129634",
+            "time": "2026-10-06T00:04:23Z",
+            "txHash": "0xd64b80b86a6398c1eb651840de69ebc812123e1a2a071d57967a96b24885e8e7"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -21555,7 +21777,7 @@
       "observedAt": "2026-08-26T09:06:46.972911+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:55.757705+00:00",
+        "observedAt": "2026-10-07T15:39:33.585772+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ToxicSkullsClubProxy",
@@ -21578,16 +21800,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:34.933711+00:00",
+        "observedAt": "2026-10-07T15:40:02.809156+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -21993,7 +22213,7 @@
       "observedAt": "2026-08-26T09:06:47.434817+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:57.557141+00:00",
+        "observedAt": "2026-10-07T15:39:35.390264+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22016,16 +22236,51 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:35.176162+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:02.937825+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 3,
+        "uniqueTokenIds": 3,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "9791",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x19b03da0ff6de628105a2bdab2910a778530a605",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          },
+          {
+            "tokenId": "9069",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x3b858837155f9ba32259b48140a48886f8c7260e",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          },
+          {
+            "tokenId": "6498",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x3b858837155f9ba32259b48140a48886f8c7260e",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -22431,7 +22686,7 @@
       "observedAt": "2026-08-26T09:06:47.800267+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:02:59.370225+00:00",
+        "observedAt": "2026-10-07T15:39:37.194425+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22454,16 +22709,51 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:41.665895+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:03.051230+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 3,
+        "uniqueTokenIds": 3,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "9791",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x19b03da0ff6de628105a2bdab2910a778530a605",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          },
+          {
+            "tokenId": "9069",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x3b858837155f9ba32259b48140a48886f8c7260e",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          },
+          {
+            "tokenId": "6498",
+            "uri": null,
+            "name": "Visitors of Imma Degen",
+            "symbol": "VOID",
+            "protocol": null,
+            "sender": "0xaae654404a9370a2cce99af14e6f9e4b206e0f36",
+            "receiver": "0x3b858837155f9ba32259b48140a48886f8c7260e",
+            "block": "26141384",
+            "time": "2026-10-07T15:24:23Z",
+            "txHash": "0x3eb8a3c879e4fdecb59af5dadd3cb8d4a632bc43867cde95988e5e27f1e74f15"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -22748,7 +23038,7 @@
       "observedAt": "2026-08-26T09:06:48.098608+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:01.163636+00:00",
+        "observedAt": "2026-10-07T15:39:38.999222+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ImmaDegenVoyagerReveal",
@@ -22771,7 +23061,7 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:41.805459+00:00",
+        "observedAt": "2026-10-07T15:40:03.082839+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
@@ -22779,7 +23069,7 @@
         "modelSignals": [],
         "sampledTransfers": [],
         "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+          "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
         ]
       },
       "authorityStatus": "onchain_corroborated"
@@ -23406,7 +23696,7 @@
       "observedAt": "2026-08-26T09:06:48.493236+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:02.989543+00:00",
+        "observedAt": "2026-10-07T15:39:40.803600+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Voltz",
@@ -23429,16 +23719,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:41.889160+00:00",
+        "observedAt": "2026-10-07T15:40:03.237926+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -23954,7 +24242,7 @@
       "observedAt": "2026-08-26T09:06:48.724185+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:04.787573+00:00",
+        "observedAt": "2026-10-07T15:39:42.603367+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Vaifus",
@@ -23979,16 +24267,27 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:48.296063+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:03.250817+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 1,
+        "uniqueTokenIds": 1,
+        "transferUris": 1,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "258",
+            "uri": "ipfs://QmdJ5Wo1AvFcyMfcVx5HcNKk6uY5i84gSXsGYpjUnLpKmd/258.json",
+            "name": "Virtuals Waifus",
+            "symbol": "Vaifus",
+            "protocol": null,
+            "sender": "0xfbcb6dbc2881b0cf6adf24600dac0790bca0d6dd",
+            "receiver": "0xfa6479acaf5962800441c39b8414eadeb59107f5",
+            "block": "52285952",
+            "time": "2026-10-07T08:20:51Z",
+            "txHash": "0x185480d71055ebb4adb239b38057caa4bf39e00964507c8e1566ad83620273ab"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -24471,7 +24770,7 @@
       "observedAt": "2026-08-26T09:06:49.020980+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:06.579547+00:00",
+        "observedAt": "2026-10-07T15:39:44.419587+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Woodie",
@@ -24494,16 +24793,39 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:48.370369+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
+        "observedAt": "2026-10-07T15:40:03.345958+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 2,
+        "uniqueTokenIds": 2,
         "transferUris": 0,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "1180",
+            "uri": null,
+            "name": "Woodie",
+            "symbol": "WOODIE",
+            "protocol": null,
+            "sender": "0xe5dcbba45ccf73f01a54f4c241a8df416280b572",
+            "receiver": "0x7915e43086cd78be341df73726c0947b6334b978",
+            "block": "26132402",
+            "time": "2026-10-06T09:20:23Z",
+            "txHash": "0x65354f02352ce43b4159f3022b76ea8feef77ec2a59d86ad9b7a925641ad7222"
+          },
+          {
+            "tokenId": "4764",
+            "uri": null,
+            "name": "Woodie",
+            "symbol": "WOODIE",
+            "protocol": null,
+            "sender": "0xd5b0e0b038a51fbf82e66fccbc972ee83cef9f1b",
+            "receiver": "0x30d98397b2db33fbc3865cdd68a4933fd97c0ac9",
+            "block": "26119139",
+            "time": "2026-10-04T12:58:11Z",
+            "txHash": "0x52f09381b869a76103cc6e046c749cae84ddf17c3a1b6a71549563ce1e69154b"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -24631,7 +24953,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:08.383767+00:00",
+        "observedAt": "2026-10-07T15:39:46.225389+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "XmasChibis",
@@ -24654,16 +24976,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:48.465588+00:00",
+        "observedAt": "2026-10-07T15:40:03.570719+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -24789,7 +25109,7 @@
       "observedAt": "2026-08-26T09:06:50.256555+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:10.145333+00:00",
+        "observedAt": "2026-10-07T15:39:48.011488+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721SeaDrop",
@@ -24812,16 +25132,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:54.901548+00:00",
+        "observedAt": "2026-10-07T15:40:03.686162+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -25348,7 +25666,7 @@
       "observedAt": "2026-08-26T09:06:50.329673+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:12.012927+00:00",
+        "observedAt": "2026-10-07T15:39:49.837780+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AKCB",
@@ -25371,16 +25689,111 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:55.049359+00:00",
-        "contractObservedOnchain": false,
-        "tokensSampled": 0,
-        "uniqueTokenIds": 0,
-        "transferUris": 0,
+        "observedAt": "2026-10-07T15:40:03.717987+00:00",
+        "contractObservedOnchain": true,
+        "tokensSampled": 25,
+        "uniqueTokenIds": 17,
+        "transferUris": 9,
         "modelSignals": [],
-        "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "sampledTransfers": [
+          {
+            "tokenId": "7042",
+            "uri": "ipfs://QmcF2EGREssjhgrC3Bake94RyrXP52oViYXB8f1Sxacwhu/7042",
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0xfee36c593a39e68efab66c7ca0a38242344f68e6",
+            "receiver": "0x4a20dbeb32de0788d96298af9578b6d3e8e97efb",
+            "block": "26137054",
+            "time": "2026-10-07T00:54:35Z",
+            "txHash": "0xececd3f85cd2f37db68614a5809b09c23677279a89c36ebdf88932a915efe31e"
+          },
+          {
+            "tokenId": "7042",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0x002abeed0d169784bc6e2c365e7785fcb9cd6cba",
+            "receiver": "0xfee36c593a39e68efab66c7ca0a38242344f68e6",
+            "block": "26135938",
+            "time": "2026-10-06T21:10:47Z",
+            "txHash": "0x51dc27feda27c12dcc77b1cc450660114aaa473f40af0b3f1b6382e07cabc565"
+          },
+          {
+            "tokenId": "9876",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0xc05efb1147d5f077acd8aeeb83ac12e6fe81d6b1",
+            "receiver": "0x982878c2bfab39da666e3f8da9363307c1a73118",
+            "block": "26135301",
+            "time": "2026-10-06T19:03:23Z",
+            "txHash": "0xf83f00f8160913b7a0bf3453d2d7f80125bb2fe6a15e4fceb9ccb57a44602801"
+          },
+          {
+            "tokenId": "3606",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0x97c09405f4c19c6f7b80574660328aa6406f4bbf",
+            "receiver": "0x33923a28f4e4d3c6aec1cf157988c0a0927b94b0",
+            "block": "26134652",
+            "time": "2026-10-06T16:53:23Z",
+            "txHash": "0x5de985f61bc240d4fab2afc7edf19a21790ad029cda4d463a5d8f919b5ae9b76"
+          },
+          {
+            "tokenId": "623",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0x755faf85277b848ed6a290c268e95e7b510ac8ff",
+            "receiver": "0xc832ee31beb6de71ad09d0774dba189b1e43a0b7",
+            "block": "26130551",
+            "time": "2026-10-06T03:08:59Z",
+            "txHash": "0x4a26b639138a77157452c58c8955dcf1879072086c9d42de99942514cc3eb97b"
+          },
+          {
+            "tokenId": "4859",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0xae48b86906557df663b61a2f998046ef4bc8425f",
+            "receiver": "0xafda0e0e160a3e7103c7587321b45a4317d109a7",
+            "block": "26130137",
+            "time": "2026-10-06T01:45:47Z",
+            "txHash": "0xa8d7ced736c518d030bd2495b2c4416b6af0ae2db6da2ee6ab0c51e09b803703"
+          },
+          {
+            "tokenId": "4859",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0x5689955fc068464e87933cf280219548551976f7",
+            "receiver": "0xae48b86906557df663b61a2f998046ef4bc8425f",
+            "block": "26130131",
+            "time": "2026-10-06T01:44:35Z",
+            "txHash": "0x423de6cd4f6a0827f6d4459f5bf0e51c3ab5cbc521ef8f766f5fdc4ee0d5d258"
+          },
+          {
+            "tokenId": "5394",
+            "uri": null,
+            "name": "a KID called BEAST",
+            "symbol": "AKCB",
+            "protocol": null,
+            "sender": "0xf72e7c395e252926c11152d59e28f35bd204508a",
+            "receiver": "0xf2ba9671189ac475c7a90640075f2f5a5b92386b",
+            "block": "26129758",
+            "time": "2026-10-06T00:29:11Z",
+            "txHash": "0xde8874f220a8f0511dd0257c1f763e43651aae1cd4172a4a79bfb04b3b97cdcb"
+          }
+        ],
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     },
@@ -25456,7 +25869,7 @@
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-09-09T13:03:13.861508+00:00",
+        "observedAt": "2026-10-07T15:39:51.725779+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Token",
@@ -25481,16 +25894,14 @@
         "conflicts": []
       },
       "bitquery": {
-        "observedAt": "2026-09-09T13:04:55.140121+00:00",
+        "observedAt": "2026-10-07T15:40:03.913212+00:00",
         "contractObservedOnchain": false,
         "tokensSampled": 0,
         "uniqueTokenIds": 0,
         "transferUris": 0,
         "modelSignals": [],
         "sampledTransfers": [],
-        "errors": [
-          "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-        ]
+        "errors": []
       },
       "authorityStatus": "onchain_corroborated"
     }
@@ -25522,7 +25933,9 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": []
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+      ]
     },
     {
       "catalogId": "allstarz-psx",
@@ -25548,7 +25961,9 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": []
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+      ]
     },
     {
       "catalogId": "research-0xc1fcf3",
@@ -25652,9 +26067,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "chain-runners",
@@ -25667,9 +26080,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "chametheon",
@@ -25687,7 +26098,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25701,9 +26112,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "chuddie",
@@ -25722,9 +26131,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "cyberanimedoll-avatar",
@@ -25741,9 +26148,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "cyberbrokers",
@@ -25757,7 +26162,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25773,9 +26178,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "coldie",
@@ -25791,7 +26194,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25805,9 +26208,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "elysium-shell-next-mecha",
@@ -25823,7 +26224,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25840,7 +26241,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25857,7 +26258,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25872,7 +26273,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25890,7 +26291,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25905,7 +26306,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25922,7 +26323,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25941,7 +26342,7 @@
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25956,7 +26357,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25971,7 +26372,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -25990,9 +26391,7 @@
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "mona-avatars",
@@ -26008,7 +26407,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -26024,9 +26423,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "metaanigen",
@@ -26040,7 +26437,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -26084,7 +26481,9 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": []
+      "bitqueryErrors": [
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
+      ]
     },
     {
       "catalogId": "neonglitch86-collection-polygon-side",
@@ -26208,9 +26607,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "phettaverse-editions",
@@ -26226,7 +26623,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -26245,9 +26642,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "rstlss-x-claire-silver-pixelgeist",
@@ -26263,9 +26658,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "a3ac-0x50e712",
@@ -26278,9 +26671,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "a3ac-0xaaf03a",
@@ -26296,9 +26687,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0x414c5e",
@@ -26313,9 +26702,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "toxic-skulls-club",
@@ -26328,9 +26715,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "immadegen-void",
@@ -26345,9 +26730,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0xdb5558",
@@ -26362,9 +26745,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0x3137e0",
@@ -26380,7 +26761,7 @@
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
       "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
+        "RuntimeError: Bitquery HTTP 403: {\"errors\":[{\"message\":\"access denied by status: 403\"}]}"
       ]
     },
     {
@@ -26394,9 +26775,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0x631086",
@@ -26411,9 +26790,7 @@
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "woodies",
@@ -26428,9 +26805,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "xmas-chibis",
@@ -26445,9 +26820,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0x35373e",
@@ -26460,9 +26833,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "a3ac-0x77372a",
@@ -26477,9 +26848,7 @@
       "etherscanErrors": [
         "token_info: RuntimeError: Etherscan API error: Sorry, it looks like you are trying to access an API Pro endpoint. Contact us to upgrade to API Pro."
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     },
     {
       "catalogId": "research-0x1142c6",
@@ -26499,9 +26868,7 @@
         "token_info: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis",
         "logs: RuntimeError: Etherscan API error: Free API access is not supported for this chain. Please upgrade your api plan for full chain coverage. https://etherscan.io/apis"
       ],
-      "bitqueryErrors": [
-        "RuntimeError: Bitquery retry budget exhausted: HTTP 429"
-      ]
+      "bitqueryErrors": []
     }
   ]
 }
