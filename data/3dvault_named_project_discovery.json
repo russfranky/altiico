@@ -1,12 +1,12 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-10-01T16:41:32.666095+00:00",
+  "generatedAt": "2026-10-08T16:55:10.216620+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
     "collectionsInspected": 6,
     "nftsSampled": 222,
-    "metadataDocuments": 219,
+    "metadataDocuments": 220,
     "modelCandidates": 0,
     "validatedVrms": 0,
     "collectionsWithValidatedVrms": 0,
@@ -45,14 +45,13 @@
       "image_url": "https://i2c.seadn.io/ethereum/921c9b0ee07c4b49af82559ddfd94a4b/2b820dc5aa4b35f0b35349c9d92b5e/b42b820dc5aa4b35f0b35349c9d92b5e.png",
       "banner_image_url": "https://i2c.seadn.io/ethereum/921c9b0ee07c4b49af82559ddfd94a4b/04abd6e809a11dd7615352b52d501a/8a04abd6e809a11dd7615352b52d501a.png",
       "nfts_sampled": 22,
-      "metadata_documents": 20,
-      "metadata_fetch_errors": 2,
+      "metadata_documents": 21,
+      "metadata_fetch_errors": 1,
       "model_candidates": [],
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 16: HTTPError: HTTP Error 404: Not Found",
-        "metadata 4: HTTPError: HTTP Error 404: Not Found"
+        "metadata 16: HTTPError: HTTP Error 404: Not Found"
       ]
     },
     {
@@ -92,7 +91,7 @@
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9986: TimeoutError: The read operation timed out"
+        "metadata 9984: TimeoutError: The read operation timed out"
       ]
     },
     {
