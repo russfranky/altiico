@@ -1,0 +1,30 @@
+name: OpenSea historical cross-check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crosscheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run cross-check (Etherscan, Moralis, Bitquery)
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+          MORALIS_API_KEY: ${{ secrets.MORALIS_API_KEY }}
+          BITQUERY_API_KEY: ${{ secrets.BITQUERY_API_KEY }}
+        run: python research/crosscheck/run_crosscheck.py
+      - name: Commit results
+        run: |
+          git config user.name "crosscheck"
+          git config user.email "actions@users.noreply.github.com"
+          git add research/crosscheck/results
+          git diff --cached --quiet || git commit -m "OpenSea cross-check results"
+          git push
