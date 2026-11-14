@@ -1,0 +1,5132 @@
+{
+ "contracts": [
+  {
+   "slug": "acclimatedmooncats",
+   "contract": "0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
+  },
+  {
+   "slug": "cryptokitties",
+   "contract": "0x06012c8cf97bead5deae237070f9587f8e7a266d"
+  },
+  {
+   "slug": "cryptopunks",
+   "contract": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb"
+  },
+  {
+   "slug": "curiocardswrapper",
+   "contract": "0x04afa589e2b933f9463c5639f412b183ec062505"
+  },
+  {
+   "slug": "chainmonsters",
+   "contract": "0xa7c5c9e2fef1c447e962a9eb3d1fc5012dfaa68e"
+  },
+  {
+   "slug": "cryptofighters",
+   "contract": "0x87d598064c736dd0c712d329afcfaa0ccc1921a1"
+  },
+  {
+   "slug": "cryptobots",
+   "contract": "0xf7a6e15dfd5cdd9ef12711bd757a9b6021abf643"
+  },
+  {
+   "slug": "etherlambos",
+   "contract": "0xda9f43015749056182352e9dc6d3ee0b6293d80a"
+  },
+  {
+   "slug": "decentraland",
+   "contract": "0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d"
+  },
+  {
+   "slug": "fishbank",
+   "contract": "0xa98ad92a642570b83b369c4eb70efefe638bc895"
+  },
+  {
+   "slug": "known-origin",
+   "contract": "0xfbeef911dc5821886e1dda71586d90ed28174b7d"
+  },
+  {
+   "slug": "mythereum",
+   "contract": "0xc70be5b7c19529ef642d16c10dfe91c58b5c3bf0"
+  },
+  {
+   "slug": "superrare",
+   "contract": "0x41a322b28d0ff354040e2cbc676f0320d8c8850d"
+  },
+  {
+   "slug": "cryptocrystal",
+   "contract": "0xcfbc9103362aec4ce3089f155c2da2eea1cb7602"
+  },
+  {
+   "slug": "pandaearth",
+   "contract": "0x663e4229142a27f00bafb5d087e1e730648314c3"
+  },
+  {
+   "slug": "cryptovoxels",
+   "contract": "0x79986af15539de2db9a5086382daeda917a9cf0c"
+  },
+  {
+   "slug": "hyperdragons",
+   "contract": "0x7fdcd2a1e52f10c28cb7732f46393e297ecadda1"
+  },
+  {
+   "slug": "makersplace",
+   "contract": "0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756"
+  },
+  {
+   "slug": "ether-kingdoms",
+   "contract": "0xf766b3e7073f5a6483e27de20ea6f59b30b28f87"
+  },
+  {
+   "slug": "cryptoarte",
+   "contract": "0xbace7e22f06554339911a03b8e0ae28203da9598"
+  },
+  {
+   "slug": "crypt-oink",
+   "contract": "0x1a94fce7ef36bc90959e206ba569a12afbc91ca1"
+  },
+  {
+   "slug": "codex-record",
+   "contract": "0x8853b05833029e3cf8d3cbb592f9784fa43d2a79"
+  },
+  {
+   "slug": "mlb-champions",
+   "contract": "0x8c9b261faef3b3c2e64ab5e58e04615f8c788099"
+  },
+  {
+   "slug": "war-riders",
+   "contract": "0x5caebd3b32e210e85ce3e9d51638b9c445481567"
+  },
+  {
+   "slug": "everdragons",
+   "contract": "0x772da237fc93ded712e5823b497db5991cc6951e"
+  },
+  {
+   "slug": "lordless",
+   "contract": "0x15820072729d045ec5232ba3bd060ec5df38e09a"
+  },
+  {
+   "slug": "cryptorome",
+   "contract": "0x13c8a7817ab3e74c28f5ef0eb7d7a3bdb329c2a0"
+  },
+  {
+   "slug": "mythwars",
+   "contract": "0xa24fbbd7f3ce4f27a842013bc3badf8ee5c448e9"
+  },
+  {
+   "slug": "mycryptoheroes",
+   "contract": "0x273f7f8e6489682df756151f5525576e322d51a3"
+  },
+  {
+   "slug": "hedgie",
+   "contract": "0x452b2bc7c94515720b36d304ce33909a8323f3e3"
+  },
+  {
+   "slug": "cryptantcrab",
+   "contract": "0xecd6b4a2f82b0c9fb283a4a8a1ef5adf555f794b"
+  },
+  {
+   "slug": "su-squares",
+   "contract": "0xe9e3f9cfc1a64dfca53614a0182cfad56c10624f"
+  },
+  {
+   "slug": "chainbreakers",
+   "contract": "0x0111ac7e9425c891f935c4ce54cf16db7c14b7db"
+  },
+  {
+   "slug": "cryptomotors",
+   "contract": "0x30a2fa3c93fb9f93d1efeffd350c6a6bb62ba000"
+  },
+  {
+   "slug": "cryptobeasties",
+   "contract": "0xffdf17652cca46eb98a214cb3e413c8661241e49"
+  },
+  {
+   "slug": "hashkingsplanet",
+   "contract": "0x57cdee8a9658f364553fe89ba200252b00ad05d9"
+  },
+  {
+   "slug": "pixelcons",
+   "contract": "0x5536b6aadd29eaf0db112bb28046a5fad3761bd4"
+  },
+  {
+   "slug": "cryptoassault",
+   "contract": "0x31af195db332bc9203d758c74df5a5c5e597cdb7"
+  },
+  {
+   "slug": "editional",
+   "contract": "0x05f02507c7134dbae420ab8c0ef56e999b59da03"
+  },
+  {
+   "slug": "cryptokaiju",
+   "contract": "0x102c527714ab7e652630cac7a30abb482b041fd0"
+  },
+  {
+   "slug": "cryptoatoms",
+   "contract": "0xbdaed67214641b7eda3bf8d7431c3ae5fc46f466"
+  },
+  {
+   "slug": "marblecards",
+   "contract": "0x1d963688fe2209a98db35c67a041524822cf04ff"
+  },
+  {
+   "slug": "cryptoflowers-v3",
+   "contract": "0x8bc67d00253fd60b1afcce88b78820413139f4c6"
+  },
+  {
+   "slug": "poap",
+   "contract": "0xa1eb40c284c5b44419425c4202fa8dabff31006b"
+  },
+  {
+   "slug": "flowers-252988316",
+   "contract": "0x4f41d10f7e67fd16bde916b4a6dc3dd101c57394"
+  },
+  {
+   "slug": "plasma-bears",
+   "contract": "0x909899c5dbb5002610dd8543b6f638be56e3b17e"
+  },
+  {
+   "slug": "reality-clash-weapon",
+   "contract": "0x20bd491fee75b6af6c2100c83b83312d620f2958"
+  },
+  {
+   "slug": "wallofchain",
+   "contract": "0xf9d9702d031407f425a4412682fdc56b07d05262"
+  },
+  {
+   "slug": "blockcities",
+   "contract": "0x2f2d5aa0efdb9ca3c9bb789693d06bebea88792f"
+  },
+  {
+   "slug": "ens",
+   "contract": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85"
+  },
+  {
+   "slug": "cheezewizard",
+   "contract": "0x2f4bdafb22bd92aa7b7552d270376de8edccbc1e"
+  },
+  {
+   "slug": "f1-delta-time",
+   "contract": "0x2af75676692817d85121353f0d6e8e9ae6ad5576"
+  },
+  {
+   "slug": "cryptoskulls",
+   "contract": "0xc1caf0c19a8ac28c41fe59ba6c754e4b9bd54de9"
+  },
+  {
+   "slug": "cryptospells",
+   "contract": "0x67cbbb366a51fff9ad869d027e496ba49f5f6d55"
+  },
+  {
+   "slug": "digitalartcollective-v7",
+   "contract": "0x91c3373f6e49bcc9ff313572493c77e8aaa752b8"
+  },
+  {
+   "slug": "neon-district",
+   "contract": "0x25741f5f2dbdde9cfd38f73be7052ec03b0e9d85"
+  },
+  {
+   "slug": "megacryptopolis",
+   "contract": "0xf06059f01f6f08a603c939359a0a1186f7687685"
+  },
+  {
+   "slug": "dragonereum",
+   "contract": "0x960f401aed58668ef476ef02b2a2d43b83c261d8"
+  },
+  {
+   "slug": "monsterbit",
+   "contract": "0x5f5ff74b198e5095069cf132d2523dbae516613f"
+  },
+  {
+   "slug": "cryptotarot",
+   "contract": "0xfb6751d440406edc54136b3b803e8bdae3db8865"
+  },
+  {
+   "slug": "cryptominerworld",
+   "contract": "0x34fa7ddde9d0e1b98cd281ee1e8ba1db37c64399"
+  },
+  {
+   "slug": "sorare",
+   "contract": "0x629a673a8242c2ac4b7b8c5d8735fbeac21a6205"
+  },
+  {
+   "slug": "chainguardians",
+   "contract": "0x3cd41ec039c1f2dd1f76144bb3722e7b503f50ab"
+  },
+  {
+   "slug": "etherbots",
+   "contract": "0xd2f81cd7a20d60c0d558496c7169a20968389b40"
+  },
+  {
+   "slug": "instartoken",
+   "contract": "0x543ecfb0d28fa40d639494957e7cba52460f490e"
+  },
+  {
+   "slug": "blocklords",
+   "contract": "0x2c04e6dd23c33a66f58dfb79dfb15285336c92d0"
+  },
+  {
+   "slug": "clovers",
+   "contract": "0xb55c5cac5014c662fdbf21a2c59cd45403c482fd"
+  },
+  {
+   "slug": "age-of-rust-legacy",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "9-lives-arena",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "lost-relics",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "ether-legends",
+   "contract": "0xe07919263b3b209f4ce065670be4e75e9a1adac3"
+  },
+  {
+   "slug": "kingdom-karnage",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "cats-in-mechs",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "forest-knight-old",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "space-misfits",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "spirit-clash",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "battle-racers",
+   "contract": "0x0f3b491841680eb40bd2be42bce7104f2511dbd9"
+  },
+  {
+   "slug": "knightstory",
+   "contract": "0x2fb5d7dda4f1f20f974a0fdd547c38674e8d940c"
+  },
+  {
+   "slug": "gods-unchained",
+   "contract": "0x0e3a2a1f2146d86a604adc220b4967a898d7fe07"
+  },
+  {
+   "slug": "decentraland-wearables",
+   "contract": "0xc1f4b0eea2bd6690930e6c66efd3e197d620b9c2"
+  },
+  {
+   "slug": "terravirtuanft",
+   "contract": "0xf095c2e133c15c69f147e6f9688465b27ca3063d"
+  },
+  {
+   "slug": "cryptowiener-4",
+   "contract": "0xe73c9d94a542b1708450e13d12d4b38204dfd72c"
+  },
+  {
+   "slug": "unstoppable-domains",
+   "contract": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe"
+  },
+  {
+   "slug": "rarible",
+   "contract": "0x6a5ff3ceecae9ceb96e6ac6c76b82af8b39f0eb3"
+  },
+  {
+   "slug": "brave-frontier-heroes",
+   "contract": "0xc03844f07f86ad1d90a1c4a2a8204dcf00f3a991"
+  },
+  {
+   "slug": "dabdragon-approved-registry",
+   "contract": "0xa408baab333a0dfdf0055ddde9f2322ceb2d4cf9"
+  },
+  {
+   "slug": "spells-of-genesis-cards",
+   "contract": "0x9227a3d959654c8004fa77dffc380ec40880fff6"
+  },
+  {
+   "slug": "async-art",
+   "contract": "0x6c424c25e9f1fff9642cb5b7750b0db7312c29ad"
+  },
+  {
+   "slug": "niftymoji",
+   "contract": "0xde544e54a330abd1ea8a0e6693d46bfe95d9a684"
+  },
+  {
+   "slug": "digital-pop-art",
+   "contract": "0xb9b25168c28499b248bbbe514e685eca1892547d"
+  },
+  {
+   "slug": "chainguardians-art",
+   "contract": "0x30ab12b93a31124333643cb6d55b96046b31aaa1"
+  },
+  {
+   "slug": "league-of-kingdoms",
+   "contract": "0xe955f66d88756ab7c604fa5718c24337d6c4b864"
+  },
+  {
+   "slug": "dissolution",
+   "contract": "0x729b3a486407a01b2fdbf4f8f90aa7ff5f20b0f1"
+  },
+  {
+   "slug": "war-of-crypto",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "wrapped-cryptopunks",
+   "contract": "0xb7f7f6c52f2e2fdb1963eab30438024864c313f6"
+  },
+  {
+   "slug": "snarkart",
+   "contract": "0x9caeba1049f2f7f56ec561186b3ca6009e4b7b86"
+  },
+  {
+   "slug": "dontrug-me",
+   "contract": "0x44d6e8933f8271abcf253c72f9ed7e0e4c0323b3"
+  },
+  {
+   "slug": "portion",
+   "contract": "0xda98f59e1edecb2545d7b07b794e704ed6cf1f7a"
+  },
+  {
+   "slug": "crypto-planets",
+   "contract": "0x08d5a6a6b01cbcba2b90eb22bac81637020923f0"
+  },
+  {
+   "slug": "signed-crypto-punk",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ethercats",
+   "contract": "0xff3559412c4618af7c6e6f166c74252ff6364456"
+  },
+  {
+   "slug": "cryptopepes",
+   "contract": "0xe714485b00e1062c1dfef1aee64ad6c8b85987f3"
+  },
+  {
+   "slug": "hashmasks",
+   "contract": "0xc2c747e0f7004f9e8817db2ca4997657a7746928"
+  },
+  {
+   "slug": "revv-motorsport",
+   "contract": "0xa7a05e655cbed5356d2fa851e96f7f68e4a6f954"
+  },
+  {
+   "slug": "crypto-heroes-on-mars",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-color-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptofrogz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptofoxes-origin",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "legendsofcryptonia",
+   "contract": "0x876295342f2cda8d83e05f395063efa676535c43"
+  },
+  {
+   "slug": "wrappedcryptocats",
+   "contract": "0xd0e7bc3f1efc5f098534bce73589835b8273b9a0"
+  },
+  {
+   "slug": "ether-cards-founder",
+   "contract": "0x97ca7fe0b0288f5eb85f386fed876618fb9b8ab8"
+  },
+  {
+   "slug": "luckycryptocats",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "curio-cards-wrapper",
+   "contract": "0x3c2754c0cdc5499df1a50d608d8985070bf87b30"
+  },
+  {
+   "slug": "renftlabs",
+   "contract": "0x0db8c099b426677f575d512874d45a767e9acc3c"
+  },
+  {
+   "slug": "hd-mooncats",
+   "contract": "0xd1b01ea07981a40907f6b8f472cc8f37066dfea7"
+  },
+  {
+   "slug": "cryptospacemen",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "rogue-west-crypto-trading-card-game",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "platon",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptosigns",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "boredapeyachtclub",
+   "contract": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+  },
+  {
+   "slug": "cryptocities-archive",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptofoxes-v2",
+   "contract": "0xa9fdb3f96fae7c12d70393659867c6115683ada0"
+  },
+  {
+   "slug": "meebits",
+   "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7"
+  },
+  {
+   "slug": "crypto-owls-1",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "nft-dungeon",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "etherpoems",
+   "contract": "0x46c31b6b330c4522d6b37cb3cecdf2da9ff46f61"
+  },
+  {
+   "slug": "cool-cats-nft",
+   "contract": "0x1a92f7381b9f03921564a437210bb9396471050c"
+  },
+  {
+   "slug": "v-race-cryptovehicles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "pudgypenguins",
+   "contract": "0xbd3531da5cf5857e7cfaa92426877b022e612cf8"
+  },
+  {
+   "slug": "spaceshibes-ethereum",
+   "contract": "0x3995d8d37094b2d0c6d874192fe3331705d7768a"
+  },
+  {
+   "slug": "cryptoedition",
+   "contract": "0xc22616e971a670e72f35570337e562c3e515fbfe"
+  },
+  {
+   "slug": "cryptogemalliance",
+   "contract": "0xce3c0bbe70110b5d557dedc9c364c9e8cee4c37b"
+  },
+  {
+   "slug": "cryptoempire-nft",
+   "contract": "0x109440e0a0b37c0e2a17f91bdea42a8fb17663fb"
+  },
+  {
+   "slug": "ethertulips",
+   "contract": "0xf7f6dee46c6bdcf32c14a825f3a714262960c361"
+  },
+  {
+   "slug": "firstproject",
+   "contract": "0xc9cb0fee73f060db66d2693d92d75c825b1afdbf"
+  },
+  {
+   "slug": "cryptoadz-by-gremplin",
+   "contract": "0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6"
+  },
+  {
+   "slug": "theoriginsxyz",
+   "contract": "0x05a21d06b666107b3799fe106978de3dff4541e2"
+  },
+  {
+   "slug": "facanft",
+   "contract": "0xfa17634d561a0cd2090a5b1cbb95c972f77d2534"
+  },
+  {
+   "slug": "lootprints",
+   "contract": "0x1e9385ee28c5c7d33f3472f732fb08ce3cebce1f"
+  },
+  {
+   "slug": "crypto-ninja-nft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptocities2018",
+   "contract": "0xbdcbd7b7c07091d8f8ffdd2bdf99019058f82346"
+  },
+  {
+   "slug": "leedoproject",
+   "contract": "0xbe5c953dd0ddb0ce033a98f36c981f1b74d3b33f"
+  },
+  {
+   "slug": "crypto-punk-bros",
+   "contract": "0x9c9a7bda362b4b0a3829a01cfa77d8d0b30d8444"
+  },
+  {
+   "slug": "cryptofantasy-nfl-2021",
+   "contract": "0x6e1b98153399d5e4e710c1a0b803c74d3d7f2957"
+  },
+  {
+   "slug": "doodles-official",
+   "contract": "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e"
+  },
+  {
+   "slug": "cryptofoxes-origin-steak",
+   "contract": "0x0d685869cf9ce4a6bda2380ca76f504dd18eab8c"
+  },
+  {
+   "slug": "cryptocards-collection",
+   "contract": "0x3a7dc718eaf31f0a55988161f3d75d7ca785b034"
+  },
+  {
+   "slug": "cryptoraidersmusic",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-hobos-pet-partners",
+   "contract": "0xfc2f56dc926c7fddac4000c0a38e30bd36a43d30"
+  },
+  {
+   "slug": "thebeargame",
+   "contract": "0xe27a60f3cf27f716ac998b61492a36090973aac7"
+  },
+  {
+   "slug": "cryptochasers-robot",
+   "contract": "0x81ca1f6608747285c9c001ba4f5ff6ff2b5f36f8"
+  },
+  {
+   "slug": "wizards-dragons-game-v2",
+   "contract": "0x999e88075692bcee3dbc07e7e64cd32f39a1d3ab"
+  },
+  {
+   "slug": "metazoo-games-tokens",
+   "contract": "0x2d366be8fa4d15c289964dd4adf7be6cc5e896e8"
+  },
+  {
+   "slug": "cryptocitizensofficial",
+   "contract": "0xbdde08bd57e5c9fd563ee7ac61618cb2ecdc0ce0"
+  },
+  {
+   "slug": "cryptochampionsnft",
+   "contract": "0x97a923ed35351a1382e6bcbb5239fc8d93360085"
+  },
+  {
+   "slug": "cryptowars-genesis-spies",
+   "contract": "0x661cfebfef2021ee5bd92ced5cc9f2c765826414"
+  },
+  {
+   "slug": "wrapped-historic-dada",
+   "contract": "0x5f53f9f5dcf76757f7cbf35c2e47164c65b9b5ed"
+  },
+  {
+   "slug": "cryptodragons-com-eggs",
+   "contract": "0xaae9df0f50d53f9ac50651bf69590ab7b1091451"
+  },
+  {
+   "slug": "cryptodragons-com-cd",
+   "contract": "0x3943cf9bd3aca41a66ec911a6395727db274856e"
+  },
+  {
+   "slug": "elegant-elephants-nft",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "cryptokickers",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "emblem-vault",
+   "contract": "0x82c7a8f707110f5fbb16184a5933e9f78a34c6ab"
+  },
+  {
+   "slug": "budverse-cans-heritage-edition",
+   "contract": "0xd6f4a923e2ecd9ab7391840ac78d04bfe40bd5e1"
+  },
+  {
+   "slug": "cryptovoxel-wearables",
+   "contract": "0xa58b5224e2fd94020cb2837231b2b0e4247301a6"
+  },
+  {
+   "slug": "blockart",
+   "contract": "0xb80fbf6cdb49c33dc6ae4ca11af8ac47b0b4c0f3"
+  },
+  {
+   "slug": "bored-mummy-waking-up",
+   "contract": "0xf621b26ce64ed28f42231bcb578a8089f7958372"
+  },
+  {
+   "slug": "gazers-by-matt-kane",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "cryptobabypunksopensea",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "artgrails",
+   "contract": "0x864ff5975607fb053056a4fb4c67f557028f7320"
+  },
+  {
+   "slug": "async-blueprints",
+   "contract": "0xc143bbfcdbdbed6d454803804752a064a622c1f3"
+  },
+  {
+   "slug": "clonex",
+   "contract": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b"
+  },
+  {
+   "slug": "cyberkongz",
+   "contract": "0x57a204aa1042f6e66dd7730813f4024114d74f37"
+  },
+  {
+   "slug": "angryboarsnft",
+   "contract": "0xa66cc78067fd1e6aa3eec4ccdff88d81527f92c1"
+  },
+  {
+   "slug": "fragments-of-an-infinite-field-by-monica-rizzolli",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "bastard-gan-punks-v2",
+   "contract": "0x31385d3520bced94f77aae104b406994d8f2168c"
+  },
+  {
+   "slug": "cryptocoven",
+   "contract": "0x5180db8f5c931aae63c74266b211f580155ecac8"
+  },
+  {
+   "slug": "bitsforai",
+   "contract": "0xce5b23f11c486be7f8be4fac3b4ee6372d7ee91e"
+  },
+  {
+   "slug": "apparitions-by-aaron-penne",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "chicken-derby",
+   "contract": "0x8634666ba15ada4bbc83b9dbf285f73d9e46e4c2"
+  },
+  {
+   "slug": "chromie-squiggle-by-snowfro",
+   "contract": "0x059edd72cd353df5106d2b9cc5ab83a52287ac3a"
+  },
+  {
+   "slug": "cryptojankyz",
+   "contract": "0x066f2d5ead7951f0d0038c19affd500b9f02c0e5"
+  },
+  {
+   "slug": "bubblegumkids",
+   "contract": "0xa5ae87b40076745895bb7387011ca8de5fde37e0"
+  },
+  {
+   "slug": "eponym",
+   "contract": "0xaa20f900e24ca7ed897c44d92012158f436ef791"
+  },
+  {
+   "slug": "crypto-unicorns-market",
+   "contract": "0xdc0479cc5bba033b3e7de9f178607150b3abce1f"
+  },
+  {
+   "slug": "bored-ape-kennel-club",
+   "contract": "0xba30e5f9bb24caa003e9f2f0497ad287fdf95623"
+  },
+  {
+   "slug": "chainfaces",
+   "contract": "0x91047abf3cab8da5a9515c8750ab33b4f1560a7a"
+  },
+  {
+   "slug": "autoglyphs",
+   "contract": "0xd4e4078ca3495de5b1d4db434bebc5a986197782"
+  },
+  {
+   "slug": "24px",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "archetype-by-kjetil-golid",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "bears-deluxe",
+   "contract": "0x4bb33f6e69fd62cf3abbcc6f1f43b94a5d572c2b"
+  },
+  {
+   "slug": "flowers-by-rvig",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "adam-bomb-squad",
+   "contract": "0x7ab2352b1d2e185560494d5e577f9d3c238b78c5"
+  },
+  {
+   "slug": "cyberkongz-vx",
+   "contract": "0x7ea3cca10668b8346aec0bf1844a49e995527c8b"
+  },
+  {
+   "slug": "deadfellaz",
+   "contract": "0x2acab3dea77832c09420663b0e1cb386031ba17b"
+  },
+  {
+   "slug": "fvck-crystal",
+   "contract": "0x7afeda4c714e1c0a2a1248332c100924506ac8e6"
+  },
+  {
+   "slug": "cryptooldpunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "flyfish-club",
+   "contract": "0xc9d8f15803c645e98b17710a0b6593f097064bef"
+  },
+  {
+   "slug": "0n1-force",
+   "contract": "0x3bf2922f4520a8ba0c2efc3d2a1539678dad5e9d"
+  },
+  {
+   "slug": "fidenza-by-tyler-hobbs",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "alienfrensnft",
+   "contract": "0x123b30e25973fecd8354dd5f41cc45a3065ef88c"
+  },
+  {
+   "slug": "ciphersquares-official",
+   "contract": "0x2252d401ec9d16065069529b053b105fe42e0176"
+  },
+  {
+   "slug": "cryptospinners",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "goofball-gang",
+   "contract": "0xf1987f66553460a4f0730ce17484f5a9a2e883a6"
+  },
+  {
+   "slug": "dcl-names",
+   "contract": "0x2a187453064356c898cae034eaed119e1663acb8"
+  },
+  {
+   "slug": "ghxsts",
+   "contract": "0xcbd38d10511f0274e040085c0bc1f85cc96fff82"
+  },
+  {
+   "slug": "cryptopervs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "decentralized-nations",
+   "contract": "0xa9cfc59a96eaf67f8e1b8bc494d3863863c1f8ed"
+  },
+  {
+   "slug": "desperate-ape-wives",
+   "contract": "0xf1268733c6fb05ef6be9cf23d24436dcd6e0b35e"
+  },
+  {
+   "slug": "bitaliens",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "360punks-",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoshibes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dokidoki",
+   "contract": "0x7cdc0421469398e0f3aa8890693d86c840ac8931"
+  },
+  {
+   "slug": "criminaldonkeys",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ethermon",
+   "contract": "0x5d00d312e171be5342067c09bae883f9bcb2003b"
+  },
+  {
+   "slug": "bccg",
+   "contract": "0x8280d56ac92b5bff058d60c99932fdecdcc9441a"
+  },
+  {
+   "slug": "allstarfreaks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "adidasoriginals",
+   "contract": "0x28472a58a490c5e09a238847f66a68a47cc76f0f"
+  },
+  {
+   "slug": "cryptonauts-by-blockzero-labs",
+   "contract": "0x1d48ddb875d1e540ee0715dbb7b019d02a3ba4db"
+  },
+  {
+   "slug": "galaxyeggs9999",
+   "contract": "0xa08126f5e1ed91a635987071e6ff5eb2aeb67c48"
+  },
+  {
+   "slug": "candydigital",
+   "contract": "0x7a44228e46cdd37a85c0b07c4043b86c11e8c315"
+  },
+  {
+   "slug": "fine-wearables",
+   "contract": "0x671a75ab9a13c6230b6eaf4d46db3a367e89873d"
+  },
+  {
+   "slug": "ggchd",
+   "contract": "0x5bb137ba6dcf1c4d8ad2d09ec4617eb33b77fa33"
+  },
+  {
+   "slug": "gensokishionline",
+   "contract": "0xc7a096b4c6610ba3a836070333ff7922b9866a36"
+  },
+  {
+   "slug": "cryptoblots-by-daim-aggott-honsch",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "gbots-gamee",
+   "contract": "0xe582f888e079c9766272e6441802c5ed37e960b9"
+  },
+  {
+   "slug": "cryptodickbutts-s3",
+   "contract": "0x42069abfe407c60cf4ae4112bedead391dba1cdb"
+  },
+  {
+   "slug": "billionairezombiesclub",
+   "contract": "0x4bca2c2ece9402b5d4dd031b49d48166c40b7957"
+  },
+  {
+   "slug": "absurdarboretum",
+   "contract": "0xe731af8f99d41f0dfb081c3b85649e1bab9d3bd4"
+  },
+  {
+   "slug": "fnd",
+   "contract": "0x3b3ee1931dc30c1957379fac9aba94d1c48a5405"
+  },
+  {
+   "slug": "great-ape-society",
+   "contract": "0xa0f38233688bb578c0a88102a95b846c18bc0ba7"
+  },
+  {
+   "slug": "covidpunksnft",
+   "contract": "0xe4cfae3aa41115cb94cff39bb5dbae8bd0ea9d41"
+  },
+  {
+   "slug": "apocalyptic-apes",
+   "contract": "0xf793a77e32a0e5c0cd28383e1e04bbc66ee52438"
+  },
+  {
+   "slug": "ape-gang",
+   "contract": "0x2118fa9369b9a52fb6bf8cf3fd392643d55a53b4"
+  },
+  {
+   "slug": "fukufukubuncho",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "1000faces",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "1111-by-kevin-abosch",
+   "contract": "0x7f72528229f85c99d8843c0317ef91f4a2793edf"
+  },
+  {
+   "slug": "cryptorastas-collection",
+   "contract": "0x07cd221b2fe54094277a2f4e1c1bc6df14e63678"
+  },
+  {
+   "slug": "augmented-sequence-by-toiminto",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "emblem-vault-matic",
+   "contract": "0x8b8407c6184f1f0fd1082e83d6a3b8349caced12"
+  },
+  {
+   "slug": "crypto-phunks",
+   "contract": "0xf07468ead8cf26c752c676e43c814fee9c8cf402"
+  },
+  {
+   "slug": "asm-aifa-genesis",
+   "contract": "0x26437d312fb36bdd7ac9f322a6d4ccfe0c4fa313"
+  },
+  {
+   "slug": "aivatarnft",
+   "contract": "0x2a6eec51ee67a941fa50c1fbc4ca8853604461b8"
+  },
+  {
+   "slug": "genesis-drop-ark",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "habbo-avatars",
+   "contract": "0x8a1bbef259b00ced668a8c69e50d92619c672176"
+  },
+  {
+   "slug": "foxfam",
+   "contract": "0x7cba74d0b16c8e18a9e48d3b7404d7739bb24f23"
+  },
+  {
+   "slug": "forgottenruneswizardscult",
+   "contract": "0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42"
+  },
+  {
+   "slug": "etherstar",
+   "contract": "0x8e44ebb62ef1d1191eda8e5f1cb2ffc279182c5b"
+  },
+  {
+   "slug": "eeths",
+   "contract": "0xfa781ed91fba381f73c477327641242ce55fab5b"
+  },
+  {
+   "slug": "crypto-pills-by-micha-klein",
+   "contract": "0x7dd04448c6cd405345d03529bff9749fd89f8f4f"
+  },
+  {
+   "slug": "coolmans-universe",
+   "contract": "0xa5c0bd78d1667c13bfb403e2a3336871396713c5"
+  },
+  {
+   "slug": "capsulehouse",
+   "contract": "0xfcb1315c4273954f74cb16d5b663dbf479eec62e"
+  },
+  {
+   "slug": "hash-kitties",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "genwatch",
+   "contract": "0xc323f3b39ab0779fc6300cad7d7e3f47c1b86c27"
+  },
+  {
+   "slug": "fameladysquad",
+   "contract": "0xf3e6dbbe461c6fa492cea7cb1f5c5ea660eb1b47"
+  },
+  {
+   "slug": "eternal-klay",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "exclusible-gold-alpha",
+   "contract": "0xb4f0e074c31fc2b5d45ff212ca30025c3c047f48"
+  },
+  {
+   "slug": "crypto-stamp-edition-1",
+   "contract": "0x7e789e2dd1340971de0a9bca35b14ac0939aa330"
+  },
+  {
+   "slug": "crazyskullznft",
+   "contract": "0x3a4ca1c1bb243d299032753fdd75e8fec1f0d585"
+  },
+  {
+   "slug": "crazypanthers",
+   "contract": "0x99b539af3af904e257142ac8ed700453f47499b7"
+  },
+  {
+   "slug": "anonymice",
+   "contract": "0xbad6186e92002e312078b5a1dafd5ddf63d3f731"
+  },
+  {
+   "slug": "heropunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "goonsofbalatroon",
+   "contract": "0x8442dd3e5529063b43c69212d64d5ad67b726ea6"
+  },
+  {
+   "slug": "generativemasks",
+   "contract": "0x80416304142fa37929f8a4eee83ee7d2dac12d7c"
+  },
+  {
+   "slug": "gangland-skulls",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "from-physical-to-digital",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fluf",
+   "contract": "0xccc441ac31f02cd96c153db6fd5fe0a2f4e6a68d"
+  },
+  {
+   "slug": "carelessbears",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptocannabisclub",
+   "contract": "0x80a4b80c653112b789517eb28ac111519b608b19"
+  },
+  {
+   "slug": "evolved-apes-inc",
+   "contract": "0x233a65b06ef83ccf2fd58832086dd782f9da1642"
+  },
+  {
+   "slug": "balance-exhibition",
+   "contract": "0x15ce6c459243d3e52d8b1b0d1b5d76fa835b40f8"
+  },
+  {
+   "slug": "bored-ape-chemistry-club",
+   "contract": "0x22c36bfdcef207f9c0cc941936eff94d4246d14a"
+  },
+  {
+   "slug": "alphabetty-doodles",
+   "contract": "0x6d05064fe99e40f1c3464e7310a23ffaded56e20"
+  },
+  {
+   "slug": "10ktf",
+   "contract": "0x0cfb5d82be2b949e8fa73a656df91821e2ad99fd"
+  },
+  {
+   "slug": "fluf-world-thingies",
+   "contract": "0x1afef6b252cc35ec061efe6a9676c90915a73f18"
+  },
+  {
+   "slug": "demon-scribbles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptohamsters-awww",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "birdezgangnft",
+   "contract": "0x6bab62a185980f96bbf83b0b80013962c3b2772d"
+  },
+  {
+   "slug": "beeple-everydays",
+   "contract": "0x6e5dc5405baefb8c0166bcc78d2692777f2cbffb"
+  },
+  {
+   "slug": "avastar",
+   "contract": "0xf3e778f839934fc819cfa1040aabacecba01e049"
+  },
+  {
+   "slug": "amber-vittoria-alphabet-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "abstract-art-collection",
+   "contract": "0x47344543c4c8887ce86f6c4ad8c253457b1b9697"
+  },
+  {
+   "slug": "3x3punks",
+   "contract": "0x44a02d74b5b8b50511e58490dc7d450a887b36f8"
+  },
+  {
+   "slug": "glitchkicks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "glewme-city-real-estate",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "forgottensouls",
+   "contract": "0x251b5f14a825c537ff788604ea1b58e49b70726f"
+  },
+  {
+   "slug": "gang-goods",
+   "contract": "0x4949d4cf7e401383a70fa39236f440ec704c55b7"
+  },
+  {
+   "slug": "dogexjr",
+   "contract": "0xbcbf811adbb1a1a45a57c9a94506d5422a53b236"
+  },
+  {
+   "slug": "dreamingdoge",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dropbearsnft",
+   "contract": "0x0fd644bea6db6736a77c155d343fcc7747b837d6"
+  },
+  {
+   "slug": "crypto-kombat-collection",
+   "contract": "0xd0f27dfa54fbf80b823a63470c0e693ae4a626b8"
+  },
+  {
+   "slug": "digital",
+   "contract": "0x752aa32a2cc49aed842874326379ea1f95b1cbe6"
+  },
+  {
+   "slug": "bossbeauties",
+   "contract": "0xb5c747561a185a146f83cfff25bdfd2455b31ff4"
+  },
+  {
+   "slug": "bktr-io",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "based-fish-mafia",
+   "contract": "0x138ff21a21dfc06fbfccf15f2d9fd290a660e152"
+  },
+  {
+   "slug": "audioglyphs",
+   "contract": "0xfb3765e0e7ac73e736566af913fa58c3cfd686b7"
+  },
+  {
+   "slug": "axolittles",
+   "contract": "0xf36446105ff682999a442b003f2224bcb3d82067"
+  },
+  {
+   "slug": "aether",
+   "contract": "0x31d4c5be1082a88f2abafea549b6c189c2cf057f"
+  },
+  {
+   "slug": "fortune-media",
+   "contract": "0x47e22659d9ae152975e6cbfa2eed5dc8b75ac545"
+  },
+  {
+   "slug": "fntn",
+   "contract": "0x2fb704d243cfa179ffad4d87acb1d36bcf243a44"
+  },
+  {
+   "slug": "ethermonkeys",
+   "contract": "0xff1be3171a16fe431e31d874e4de14814362e588"
+  },
+  {
+   "slug": "etherland",
+   "contract": "0x66018a2ac8f28f4d68d1f018680957f2f22528da"
+  },
+  {
+   "slug": "cryptostykz",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "cryptozoo-co",
+   "contract": "0xccee4d557588e982ecf3a2391d718c76589d8af9"
+  },
+  {
+   "slug": "critterznft",
+   "contract": "0x8ffb9b504d497e4000967391e70d542b8cc6748a"
+  },
+  {
+   "slug": "cryptodunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chibidinos",
+   "contract": "0xe12edaab53023c75473a5a011bdb729ee73545e8"
+  },
+  {
+   "slug": "animetas",
+   "contract": "0x18df6c571f6fe9283b87f910e41dc5c8b77b7da5"
+  },
+  {
+   "slug": "gutterrats",
+   "contract": "0xd7b397edad16ca8111ca4a3b832d0a5e3ae2438c"
+  },
+  {
+   "slug": "fly-frogs",
+   "contract": "0x31d4da52c12542ac3d6aadba5ed26a3a563a86dc"
+  },
+  {
+   "slug": "experiments-ukv0xqvktz",
+   "contract": "0x3f5c61b6a9cb384b410aff38cfe92b2411a566b0"
+  },
+  {
+   "slug": "etherthings",
+   "contract": "0x4995ff1c49baa6576029b7398479068ba664449c"
+  },
+  {
+   "slug": "cryptoshibago",
+   "contract": "0xcf4a7e8b367e65e368a021901bfc828acfba31fb"
+  },
+  {
+   "slug": "crypto-yankiz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoavatars",
+   "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1"
+  },
+  {
+   "slug": "crypto-raiders-characters",
+   "contract": "0xfd12ec7ea4b381a79c78fe8b2248b4c559011ffb"
+  },
+  {
+   "slug": "citylights-v2",
+   "contract": "0x1aba27d6a420feb25af6cf6b80b93b7526725a71"
+  },
+  {
+   "slug": "citizens-of-bulliever-island",
+   "contract": "0x329fa32f6520fb67bb3c1fc3a6909beb8239544c"
+  },
+  {
+   "slug": "boredbananas",
+   "contract": "0xe19b9d6538c1ab71434098d9806a7cec5b186ba0"
+  },
+  {
+   "slug": "babyghosts",
+   "contract": "0x030d5ffc1f8a64c58a040e0216b96e52c5cbe569"
+  },
+  {
+   "slug": "asm-brains",
+   "contract": "0xd0318da435dbce0b347cc6faa330b5a9889e3585"
+  },
+  {
+   "slug": "alpacadabraz",
+   "contract": "0x3db5463a9e2d04334192c6f2dd4b72def4751a61"
+  },
+  {
+   "slug": "arcadenft",
+   "contract": "0xa0c38108bbb0f5f2fb46a2019d7314cce38f3f22"
+  },
+  {
+   "slug": "ai-art-house",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "degenerate-regenerate",
+   "contract": "0x7828c811636ccf051993c1ec3157b0b732e55b23"
+  },
+  {
+   "slug": "chubbies",
+   "contract": "0x1db61fc42a843bad4d91a2d788789ea4055b8613"
+  },
+  {
+   "slug": "crypto-drogen",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chill-frogs",
+   "contract": "0xa3b7cee4e082183e69a03fc03476f28b12c545a7"
+  },
+  {
+   "slug": "chaos-algorithm",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bikes-of-burden",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bitairt",
+   "contract": "0xd70f41dd5875eee7fa9dd8048567bc932124a8d2"
+  },
+  {
+   "slug": "akc",
+   "contract": "0x9bf252f97891b907f002f2887eff9246e3054080"
+  },
+  {
+   "slug": "89-seconds-atomized-v5",
+   "contract": "0x0f130a170127aa4e5776ab05305ff614ff352253"
+  },
+  {
+   "slug": "hedgecoin",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "hashflow-official",
+   "contract": "0x41e3d4b3a79e464f65fffe18aa063de983ef97de"
+  },
+  {
+   "slug": "habbo-portraits",
+   "contract": "0x700a7c29daa50d5428424d5315af292f2a2c153a"
+  },
+  {
+   "slug": "grouchy-tiger-social-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "golden-state-warriors-legacy-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "getijde-by-bart-simons",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "genies",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ghostsproject",
+   "contract": "0xdf3407636bbf3a015a8e48a079ef7ba49e687fd3"
+  },
+  {
+   "slug": "gen-dot-art",
+   "contract": "0x1ca39c7f0f65b4da24b094a9afac7acf626b7f38"
+  },
+  {
+   "slug": "fat-ape-club-1",
+   "contract": "0xf3114dd5c5b50a573e66596563d15a630ed359b4"
+  },
+  {
+   "slug": "eth-men-comics",
+   "contract": "0x5ceb7e1bd70690667b19bd2832ca85aef221a79a"
+  },
+  {
+   "slug": "dizzydragons",
+   "contract": "0x882a47e6070aca3f38ce6929501f4787803a072b"
+  },
+  {
+   "slug": "cryptoflyz",
+   "contract": "0xf8b0a49da21e6381f1cd3cf43445800abe852179"
+  },
+  {
+   "slug": "crypto-corgis",
+   "contract": "0x51e613727fdd2e0b91b51c3e5427e9440a7957e4"
+  },
+  {
+   "slug": "crazy-lizard-army",
+   "contract": "0x86f6bf16f495afc065da4095ac12ccd5e83a8c85"
+  },
+  {
+   "slug": "coca-cola",
+   "contract": "0x455f04c9c54fffa699e9f6b1271e857a1f2bddfa"
+  },
+  {
+   "slug": "burnables-nft",
+   "contract": "0xf9b8e02a97780381ea1fbdd41d7706acd163dd9a"
+  },
+  {
+   "slug": "av-yacht-club",
+   "contract": "0x69dafb15ae5d8fa732829c64fd330ebfaa25b0e4"
+  },
+  {
+   "slug": "aethirwars",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fxckface",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "flowtys",
+   "contract": "0x52607cb9c342821ea41ad265b9bb6a23bea49468"
+  },
+  {
+   "slug": "ether-orcs",
+   "contract": "0x3abedba3052845ce3f57818032bfa747cded3fca"
+  },
+  {
+   "slug": "emily-lazar-september-mourning-the-soul-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "earc",
+   "contract": "0x9ee36cd3e78badcaf0cbed71c824bd8c5cb65a8c"
+  },
+  {
+   "slug": "drstizzlwizzl",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "doublepops",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "digitalaxgenesis",
+   "contract": "0x89505d2a27b7e8ac56252081d721ecd525e4241e"
+  },
+  {
+   "slug": "ctrlboutique",
+   "contract": "0xa12295d0ead2f22f1ebf273ac456a5b9b5a6f8d2"
+  },
+  {
+   "slug": "cryptohasbi",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-doctors",
+   "contract": "0x0197374b08702ee7bd26112abd8b174c068051bb"
+  },
+  {
+   "slug": "caninecartel",
+   "contract": "0x23c54ac322cba66eddcf95c5697b53fc3a8a608c"
+  },
+  {
+   "slug": "buzzedbears",
+   "contract": "0x4923017f3b7fac4e096b46e401c0662f0b7e393f"
+  },
+  {
+   "slug": "bigtime-founders",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "angry-pitbull-club",
+   "contract": "0x05fee3b8e939acbb4e8073d784e3ec0977509770"
+  },
+  {
+   "slug": "a-ton-of-coke",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "10ktf-stockroom",
+   "contract": "0x7daec605e9e2a1717326eedfd660601e2753a057"
+  },
+  {
+   "slug": "1001-dagssons",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gunslingersnft",
+   "contract": "0x7350271594848ab8c0371ef4afeef199c69c3e05"
+  },
+  {
+   "slug": "godsremix",
+   "contract": "0x285ea754d9418073cc87994f1de143f918551390"
+  },
+  {
+   "slug": "from-the-fragments-of-tezuka-osamu-generative-art",
+   "contract": "0x320c1ca2bdda1375174a98bfd06ed7c2d60e9842"
+  },
+  {
+   "slug": "encryptas-1",
+   "contract": "0x6391a41819c699972b75bf61db6b34ef940c96f0"
+  },
+  {
+   "slug": "fastfoodpunks",
+   "contract": "0x51f437e4b25ce7bc7d43c13ba1140dd0e52151cb"
+  },
+  {
+   "slug": "divineanarchy",
+   "contract": "0xc631164b6cb1340b5123c9162f8558c866de1926"
+  },
+  {
+   "slug": "decentraland-polygon-wearables",
+   "contract": "0x793b73e9f7c8d3df3fb16f4a23568838baf2eb0a"
+  },
+  {
+   "slug": "cunningfoxes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptotrunks",
+   "contract": "0x375ea781c49eafedde07afe6196f885761f166ae"
+  },
+  {
+   "slug": "cryptogreats",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-packaged-goods",
+   "contract": "0x837b40be9ce60c79b63d1356a5f9fcad721421ec"
+  },
+  {
+   "slug": "critterzplots",
+   "contract": "0x3d7f0f28e1d42082e3de70ec4c9d1d59a07affb9"
+  },
+  {
+   "slug": "bscwin-bulls",
+   "contract": "0xbeeee60bd1201d6992d5c499d7df9fa4d23a35c9"
+  },
+  {
+   "slug": "charged-particles-proton",
+   "contract": "0x63174fa9680c674a5580f7d747832b2a2133ad8f"
+  },
+  {
+   "slug": "blockbots-by-indorse",
+   "contract": "0x945520a9f9f9a6a7679ceec5ed28ee19d2ac18b9"
+  },
+  {
+   "slug": "block-head-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bittrees-collection",
+   "contract": "0x8545d4bbf6d00259b8c8434ccba20ab46d2c2117"
+  },
+  {
+   "slug": "billionaireclubnft",
+   "contract": "0x5df340b5d1618c543ac81837da1c2d2b17b3b5d8"
+  },
+  {
+   "slug": "badassbulls",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "arabian-camels",
+   "contract": "0x3b3bc9b1dd9f3c8716fff083947b8769e2ff9781"
+  },
+  {
+   "slug": "arenagolf-golfer-nft",
+   "contract": "0x443b862d3815b1898e85085cafca57fc4335a1be"
+  },
+  {
+   "slug": "artificial-intelligence-art-aia",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "27-bit-digital-by-kai",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "greenworld",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hatchables",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "grayboys",
+   "contract": "0x8d4100897447d173289560bc85c5c432be4f44e4"
+  },
+  {
+   "slug": "generativedungeon",
+   "contract": "0x18487d2cac946c7fe800855c4039aac210f68baa"
+  },
+  {
+   "slug": "fluf-world-scenes-and-sounds",
+   "contract": "0x6fad73936527d2a82aea5384d252462941b44042"
+  },
+  {
+   "slug": "foxxiesofficial",
+   "contract": "0xc7e76248bd47dda22db50a1743032082821f6172"
+  },
+  {
+   "slug": "ethereans-official",
+   "contract": "0xfd3fd9b793bac60e7f0a9b9fb759db3e250383cb"
+  },
+  {
+   "slug": "embersword-land",
+   "contract": "0xe7e16f2da731265778f87cb8d7850e31b84b7b86"
+  },
+  {
+   "slug": "dotdotdots",
+   "contract": "0xce25e60a89f200b1fa40f6c313047ffe386992c3"
+  },
+  {
+   "slug": "elevated-deconstructions-by-luxpris",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "doobits",
+   "contract": "0x587c93251dfceb987a84b85a52f9489d2ac820a7"
+  },
+  {
+   "slug": "doki-doki-matic",
+   "contract": "0x2d0d9b4075e231bff33141d69df49ffcf3be7642"
+  },
+  {
+   "slug": "cryptomorph",
+   "contract": "0x8dc3be37a1d83a174a4d417980bcb455e347ba65"
+  },
+  {
+   "slug": "demihuman",
+   "contract": "0xa6916545a56f75acd43fb6a1527a73a41d2b4081"
+  },
+  {
+   "slug": "cryptodickbutts",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-hipsters-nft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-duckies",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "creaturetoadz",
+   "contract": "0xa4631a191044096834ce65d1ee86b16b171d8080"
+  },
+  {
+   "slug": "chibi-apes",
+   "contract": "0xc49a9ab342b6ea66792d4110e9ca0ab36e3a5674"
+  },
+  {
+   "slug": "cdao",
+   "contract": "0x7eef591a6cc0403b9652e98e88476fe1bf31ddeb"
+  },
+  {
+   "slug": "bullrunbabestoken",
+   "contract": "0x4ad4455ad5ef891695c221e8e683efa65fabede0"
+  },
+  {
+   "slug": "bricktopians-by-law-degree",
+   "contract": "0x9eeeaf684e228c2d5c89435e010acc02c41dc86b"
+  },
+  {
+   "slug": "blockstamp",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "blitmap",
+   "contract": "0x8d04a8c79ceb0889bdd12acdf3fa9d207ed3ff63"
+  },
+  {
+   "slug": "artvatars",
+   "contract": "0xbccaa7acb552a2c7eb27c7eb77c2cc99580735b9"
+  },
+  {
+   "slug": "artifex",
+   "contract": "0x2d820afb710681580a55ca8077b57fba6dd9fd72"
+  },
+  {
+   "slug": "arpeggi-genesis-studio-pass",
+   "contract": "0xd614e3b775b94794ea16a7843f31a56c36edcb09"
+  },
+  {
+   "slug": "96intheshade",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hashes",
+   "contract": "0xd07e72b00431af84ad438ca995fd9a7f0207542d"
+  },
+  {
+   "slug": "hapebeastgenesis",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ghettogrannyclub",
+   "contract": "0x2a2efa26af7d5c61b371bce8b4a5006adbef3588"
+  },
+  {
+   "slug": "galaxy-fight-club",
+   "contract": "0x3702f4c46785bbd947d59a2516ac1ea30f2babf2"
+  },
+  {
+   "slug": "fyat-lux-dawn",
+   "contract": "0x14c4471a7f6dcac4f03a81ded6253eaceff15b3d"
+  },
+  {
+   "slug": "fewocious-x-rtfkt",
+   "contract": "0xc633787348f652611c3166209d1fc4cd82b30ada"
+  },
+  {
+   "slug": "eternalroyals",
+   "contract": "0xad0969b48d379bf21f5bf71a13419675789c517a"
+  },
+  {
+   "slug": "emojikeys",
+   "contract": "0xc4dc21607257d6a860f6a658fd52444b3e9c142a"
+  },
+  {
+   "slug": "edition365",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "delectables-by-foodmasku",
+   "contract": "0x3d0f31395b0238093a37663c22ac98aa4ac71f0b"
+  },
+  {
+   "slug": "dope-shibas",
+   "contract": "0x763864f1a74d748015f45f7c1181b60e62e40804"
+  },
+  {
+   "slug": "cyber-humanoid",
+   "contract": "0x953a89ae2cc623dd765ed297cc21ab96a4d0e327"
+  },
+  {
+   "slug": "cryptosaurs1",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "cyberalienz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-bull-society",
+   "contract": "0x469823c7b84264d1bafbcd6010e9cdf1cac305a3"
+  },
+  {
+   "slug": "crazy-babies-official",
+   "contract": "0x65f18d5c9faa70f1dd1617d287c8970c18c54dbd"
+  },
+  {
+   "slug": "croodles",
+   "contract": "0x51abcb8aeca60c69ca58e4bcfd6350ba7587ebfc"
+  },
+  {
+   "slug": "colorglyphs",
+   "contract": "0x60f3680350f65beb2752788cb48abfce84a4759e"
+  },
+  {
+   "slug": "clxwns",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chain-runners-nft",
+   "contract": "0x97597002980134bea46250aa0510c9b90d87a587"
+  },
+  {
+   "slug": "boonjiproject",
+   "contract": "0x4cd0ea8b1bdb5ab9249d96ccf3d8a0d3ada2bc76"
+  },
+  {
+   "slug": "blockydoge",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "beautiful-cities-trey-ratcliff",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "async-music",
+   "contract": "0x3e43944d977dea22511da6d33c0cab666a604515"
+  },
+  {
+   "slug": "aswang",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "asm-aifa-all-stars",
+   "contract": "0x96be46c50e882dbd373081d08e0cde2b055adf6c"
+  },
+  {
+   "slug": "arcus-rik",
+   "contract": "0xbc1e0507f3a01a7bf37ad3e2a2e1eab20f482812"
+  },
+  {
+   "slug": "afterparty-utopians",
+   "contract": "0x862a7bbee9c9ec010069571c73ba8e6cd0769251"
+  },
+  {
+   "slug": "adventure-cards",
+   "contract": "0x329fd5e0d9aad262b13ca07c87d001bec716ed39"
+  },
+  {
+   "slug": "0xmons-xyz",
+   "contract": "0x0427743df720801825a5c82e0582b1e915e0f750"
+  },
+  {
+   "slug": "head5-dm5",
+   "contract": "0x89d2e41408eacbbcc5eebeffaaa27fd2a01ff88b"
+  },
+  {
+   "slug": "grandpaape",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gensys-x",
+   "contract": "0x3ec057be60db3a2d416e14a6e3ab7f37ffccd7b8"
+  },
+  {
+   "slug": "gameevouchers",
+   "contract": "0xe114bce907a86d81f321c6fd8d8c51d542022c92"
+  },
+  {
+   "slug": "galaktic-gang",
+   "contract": "0xf4cd7e65348deb24e30dedee639c4936ae38b763"
+  },
+  {
+   "slug": "g-evols",
+   "contract": "0x34b4df75a17f8b3a6eff6bba477d39d701f5e92c"
+  },
+  {
+   "slug": "foxyfamnft",
+   "contract": "0x444467738cf0c5bcca9c1d6f66670f4c493e53ff"
+  },
+  {
+   "slug": "frenly-frogs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fly-frogs-tadpoles",
+   "contract": "0x9d3031d181ec6a2a784ba152f993332442fe8bfc"
+  },
+  {
+   "slug": "final-forms",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "first-one-on-cv",
+   "contract": "0x9306af3f24f54a5000d1fd9eb740fcc699bb12e1"
+  },
+  {
+   "slug": "fat-baby",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "evaverse",
+   "contract": "0x837704ec8dfec198789baf061d6e93b0e1555da6"
+  },
+  {
+   "slug": "eponym-gen2",
+   "contract": "0xbf0f9180325d2606765c8fc60566810830b897b0"
+  },
+  {
+   "slug": "ethernity-master",
+   "contract": "0x7ee75aada6ad9b5f3623312d957ef0f4e4d34534"
+  },
+  {
+   "slug": "ebb-and-flow",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dos-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "demoncrazy",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dazn-x-canelo-saunders",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "deadheads",
+   "contract": "0x6fc355d4e0ee44b292e50878f49798ff755a5bbc"
+  },
+  {
+   "slug": "daopunksnft",
+   "contract": "0x700f045de43fce6d2c25df0288b41669b7566bbe"
+  },
+  {
+   "slug": "crumbys-bakery",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "corruption-s",
+   "contract": "0x5bdf397bb2912859dbd8011f320a222f79a28d2e"
+  },
+  {
+   "slug": "chameleon-collective",
+   "contract": "0xfd3c3717164831916e6d2d7cdde9904dd793ec84"
+  },
+  {
+   "slug": "coodles",
+   "contract": "0x9c38bc76f282eb881a387c04fb67e9fc60aecf78"
+  },
+  {
+   "slug": "cbhoyothisisnotajpeg",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bryson-dechambeau-limited-edition-nfts",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "barn-owlz",
+   "contract": "0x2a281305a50627a22ec3e7d82ae656adfee6d964"
+  },
+  {
+   "slug": "beeple-special-edition",
+   "contract": "0x12f28e2106ce8fd8464885b80ea865e98b465149"
+  },
+  {
+   "slug": "badfacebots",
+   "contract": "0x65cc7530e8c6f5a51257f7b7586361c4a22cec93"
+  },
+  {
+   "slug": "art-by-gabe-weis",
+   "contract": "0x9d714d192bf2aa77b4acbb9500039d3d18298080"
+  },
+  {
+   "slug": "apesofspace-official",
+   "contract": "0xf6e2c197e96b63b982ca639262cdf0a5f296d528"
+  },
+  {
+   "slug": "amiscats",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "animal-society",
+   "contract": "0xce82d65314502ce39472a2442d4a2cbc4cb9f293"
+  },
+  {
+   "slug": "alphagirlclub",
+   "contract": "0x8c5029957bf42c61d19a29075dc4e00b626e5022"
+  },
+  {
+   "slug": "algorhythms-by-han-x-nicolas-daniel",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "afterparty-mintpass",
+   "contract": "0xdfeda9c39b3571fe1d403e381ebc06e9d5d85fb5"
+  },
+  {
+   "slug": "abstract-landscapes-by-northlandscapes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "actors-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "heartbreak-bear-official",
+   "contract": "0x630f9ff82f82a68671df290ffaec2d767df77a07"
+  },
+  {
+   "slug": "harrypackart-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gutterpigeons",
+   "contract": "0x950b9476a4de757bb134483029ac4ec17e739e3a"
+  },
+  {
+   "slug": "goatsoup",
+   "contract": "0x608c2feb6b80993b26ffb6fa84f454ad3ac38bf0"
+  },
+  {
+   "slug": "gods-unchained-collectibles",
+   "contract": "0xa5e5be69c923c701ae6ac8f1f5936af3ae610c68"
+  },
+  {
+   "slug": "genzee",
+   "contract": "0x201675fbfaaac3a51371e4c31ff73ac14cee2a5a"
+  },
+  {
+   "slug": "ghouliesnft",
+   "contract": "0x348b61a9e774906d66e985bc25be11c5f01fd485"
+  },
+  {
+   "slug": "gan-apes-nft",
+   "contract": "0xbae6f981dc151cfc633212f06a9c5b4e37920454"
+  },
+  {
+   "slug": "g4n9",
+   "contract": "0xb195991d16c1473bdf4b122a2ed0245113fcb2f9"
+  },
+  {
+   "slug": "furry-faced-fellas",
+   "contract": "0xa4c3a1e95146bfcb639dd7c8f69f70186c982176"
+  },
+  {
+   "slug": "flavatools",
+   "contract": "0x3a65e10a544379ee6927053b6710a3f6393de76c"
+  },
+  {
+   "slug": "fanggangnft",
+   "contract": "0x9d418c2cae665d877f909a725402ebd3a0742844"
+  },
+  {
+   "slug": "eboy-blockbob",
+   "contract": "0xe7afb4189603a901b74f8085f775931a60996166"
+  },
+  {
+   "slug": "duckdao-hunters",
+   "contract": "0x9d34c91d03809bc012768d8c608e862c0c985b81"
+  },
+  {
+   "slug": "dogepirates",
+   "contract": "0xa1e6f6a2bdd99dbb8cdb754c5d307c3cadb05ece"
+  },
+  {
+   "slug": "dnacultura-nfts",
+   "contract": "0x3fc1801789ccd1d5cfaad4116413c00837414856"
+  },
+  {
+   "slug": "democracity-by-generative-artworks",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "death-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dapperdinosnft",
+   "contract": "0x2d0ee46b804f415be4dc8aa1040834f5125ebd2e"
+  },
+  {
+   "slug": "cryptoweebs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptojaks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptocubes",
+   "contract": "0xdbb163b22e839a26d2a5011841cb4430019020f9"
+  },
+  {
+   "slug": "cryptoapes-official",
+   "contract": "0x29714cafe792ef8b8c649451d13c89e21a0d7f5b"
+  },
+  {
+   "slug": "cooldogsofficial",
+   "contract": "0x56681458e00cafe1206313d2d033946f458fdefd"
+  },
+  {
+   "slug": "cometh-spaceships",
+   "contract": "0xbcd4f1ecff4318e7a0c791c7728f3830db506c71"
+  },
+  {
+   "slug": "clubrare",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "collectible-figures",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "clonex-mintvial",
+   "contract": "0x348fc118bcc65a92dc033a951af153d14d945312"
+  },
+  {
+   "slug": "clevergirlsnft",
+   "contract": "0xc29b546b57bda23a83e4537eb6096fab30a54ea5"
+  },
+  {
+   "slug": "chonknft",
+   "contract": "0xc805658931f959abc01133aa13ff173769133512"
+  },
+  {
+   "slug": "chubbiverse-frens",
+   "contract": "0x42f1654b8eeb80c96471451b1106b63d0b1a9fe1"
+  },
+  {
+   "slug": "chimera-by-mpkoz",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "che-yu-wu-generative-art",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "case-simmons-temple-x-111",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "boredpunksociety",
+   "contract": "0x588adab62e81a9379322a0b928f1497d5ccef212"
+  },
+  {
+   "slug": "bloom-with-grace",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bitznft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bnv",
+   "contract": "0x2b36e8d3a3676c40208bc6e491d3a70d1ac950eb"
+  },
+  {
+   "slug": "bearsontheblock",
+   "contract": "0x02aa731631c6d7f8241d74f906f5b51724ab98f8"
+  },
+  {
+   "slug": "bastard-penguins",
+   "contract": "0x350b4cdd07cc5836e30086b993d27983465ec014"
+  },
+  {
+   "slug": "astroheadsnft",
+   "contract": "0xdc51a1f6e6dd40296ea02ffdf9dd7750a2417be1"
+  },
+  {
+   "slug": "apes3d",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "animo-official",
+   "contract": "0x569f26145f0c2fcc3da68395be3639009c53b6d8"
+  },
+  {
+   "slug": "airbaltic-city-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "angels-of-aether",
+   "contract": "0xa57e6c1b3154016933b739ca2cd895a1b617dbb4"
+  },
+  {
+   "slug": "afrodroids-by-owo",
+   "contract": "0x77aa555c8a518b56a1ed57b7b4b85ee2ad479d06"
+  },
+  {
+   "slug": "3landworld",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "3d-bored-ape-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "1989-sisters",
+   "contract": "0x657fabdb226abc59227e02e94089afbc67a597fe"
+  },
+  {
+   "slug": "100bisous",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "0xidentitiesgen1",
+   "contract": "0x94eb22709273659046f1fc34c1de771b45ea8107"
+  },
+  {
+   "slug": "haematopoiesis",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "halloweenbears",
+   "contract": "0xd4048be096f969f51fd5642a9c744ec2a7eb89fe"
+  },
+  {
+   "slug": "hall-of-fame-goat-lodge",
+   "contract": "0x004f5683e183908d0f6b688239e3e2d5bbb066ca"
+  },
+  {
+   "slug": "gummo-land",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "guardians-of-aether",
+   "contract": "0xadeadd157904040b99bffb07d935e7f97e210a4d"
+  },
+  {
+   "slug": "guardians-of-the-metaverse",
+   "contract": "0x62cdaf466511888792c8c413239baa70f57f1654"
+  },
+  {
+   "slug": "grillzgang",
+   "contract": "0xbd9071b63f25dd199079ed80b3b384d78042956b"
+  },
+  {
+   "slug": "genesis-curry-flow",
+   "contract": "0xa4f709db1f2b5f78d5f44ea5f30e430193b532c3"
+  },
+  {
+   "slug": "glyph-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "function-draw",
+   "contract": "0xe8a6564540a7a79bccaac7b9b2c7925c6858ccea"
+  },
+  {
+   "slug": "galacticapes",
+   "contract": "0x12d2d1bed91c24f878f37e66bd829ce7197e4d14"
+  },
+  {
+   "slug": "firstevernft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "friday-night-punks",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "fast-food-pudgy-penguin",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fatcatzgenesis",
+   "contract": "0xa142cf204d9d64f8270bf1e84a297b8b7644ba6b"
+  },
+  {
+   "slug": "etherbears",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "epiceagles",
+   "contract": "0x395fc9db003e58b804188155dc7e0e609a062f61"
+  },
+  {
+   "slug": "endowment",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "elysian-fields-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "earthassets",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "earlyworm-works",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "e9art",
+   "contract": "0x6d389e3b8e4d2c6cc1daa4c1ec002779d85a6a5c"
+  },
+  {
+   "slug": "dreamloops",
+   "contract": "0xf1b33ac32dbc6617f7267a349be6ebb004feccff"
+  },
+  {
+   "slug": "dreamers-yugal",
+   "contract": "0x230b1ad6d3fdb8772d0f86b29dcadf2a45cba7fe"
+  },
+  {
+   "slug": "dogs-of-elon",
+   "contract": "0xd8cdb4b17a741dc7c6a57a650974cd2eba544ff7"
+  },
+  {
+   "slug": "diela-maharanie-1",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dooodle",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "diamond-dawgs",
+   "contract": "0x48e6013ecf4d40ce15c5223b62fc2fe33296c2e4"
+  },
+  {
+   "slug": "di-animals",
+   "contract": "0x25593a50255bfb30ea027f6966417b0bf780401d"
+  },
+  {
+   "slug": "deltahub-capital-v4",
+   "contract": "0xca008c0bf62c0421b958de86b3d45c86ecae43f1"
+  },
+  {
+   "slug": "delorean-s-40th-anniversary-nft-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "degenereggs",
+   "contract": "0xd06ac17edc908ae0cf7790d66a1ad07dbaa86ace"
+  },
+  {
+   "slug": "cryptopunks-alive",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "deafbeef",
+   "contract": "0xd754937672300ae6708a51229112de4017810934"
+  },
+  {
+   "slug": "cryptopunk-fine-art-portraits",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptohoots-steampunk-parliament",
+   "contract": "0x5754f44bc96f9f0fe1a568253452a3f40f5e9f59"
+  },
+  {
+   "slug": "crypto-princesses-dream-edition",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "collecting-hands",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chibi-galaxy",
+   "contract": "0x5aeb2a703323f69b20f397bcb7b38610ec37237b"
+  },
+  {
+   "slug": "bored-boy",
+   "contract": "0x366026c5d81e6ae42f68b0b119b89ae246afa4fd"
+  },
+  {
+   "slug": "blockracers",
+   "contract": "0x73d203f6138030f17706a99d760e05d01cab83e8"
+  },
+  {
+   "slug": "blokkbots",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "blockbirds",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "blockchainbikers",
+   "contract": "0x15533781a650f0c34f587cdb60965cdfd16ff624"
+  },
+  {
+   "slug": "bladerunner-punks",
+   "contract": "0x0651132f094551f9d4e40de3e1e2f8b7ac149c3a"
+  },
+  {
+   "slug": "bitpixi-friends",
+   "contract": "0x469da19448b0fafcf781350efcd5a09267ca1f99"
+  },
+  {
+   "slug": "bitgans",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bitmates",
+   "contract": "0xf8c18df7509c03b45e6247b2b9e73fcadef24dd6"
+  },
+  {
+   "slug": "bit-birds",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "beezerbears",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "axie-infinity-fan-art-axielife",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "awayiflew",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "atari-capsule-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aryamularama",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "artificial-intelligence-art",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "artinmotionnyc",
+   "contract": "0x9fad36767eb4208abaf5f423b9a6c140c10bde8f"
+  },
+  {
+   "slug": "angels-vs-demons-1",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aicryptoart",
+   "contract": "0x8ae8d2ae74a96595bcdab803b563f594009e3db2"
+  },
+  {
+   "slug": "alpha-centauri-kid",
+   "contract": "0xd33bc0af2dc4e39cbaef4beff8d1fb3c00c2e7a3"
+  },
+  {
+   "slug": "adidas-bitski",
+   "contract": "0xd6a30176bb3bc72385d517ea9d44970a06214fdf"
+  },
+  {
+   "slug": "888innercircle",
+   "contract": "0x36d30b3b85255473d27dd0f7fd8f35e36a9d6f06"
+  },
+  {
+   "slug": "3dpunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aavegotchi-wearable-vouchers",
+   "contract": "0xe54891774eed9277236bac10d82788aee0aed313"
+  },
+  {
+   "slug": "hb-wallet",
+   "contract": "0x5d7abf5a305a43523e7687c21d1c8d0cc2315f2f"
+  },
+  {
+   "slug": "hashbastards",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hatbeardman",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gutterdogs",
+   "contract": "0x6e9da81ce622fb65abf6a8d8040e460ff2543add"
+  },
+  {
+   "slug": "gorillanemesis",
+   "contract": "0x984eea281bf65638ac6ed30c4ff7977ea7fe0433"
+  },
+  {
+   "slug": "goop-troop",
+   "contract": "0x15a2d6c2b4b9903c27f50cb8b32160ab17f186e2"
+  },
+  {
+   "slug": "gorilla-mansion-3d",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "ghosts-of-elowah",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "genx-by-hok",
+   "contract": "0x5b29d4c6de73fa99ea53172689b7f62c99408e8d"
+  },
+  {
+   "slug": "generative-faces",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "generation-habibi-mint-pass",
+   "contract": "0x6d7c78944158925d7bf41ac228c0cbbca1133d83"
+  },
+  {
+   "slug": "g12",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fvckrender",
+   "contract": "0x91d12acb6d2548f7a87874b400dfa8739f31226d"
+  },
+  {
+   "slug": "fortune-teller-collection",
+   "contract": "0x2ceb85a2402c94305526ab108e7597a102d6c175"
+  },
+  {
+   "slug": "fomoverse",
+   "contract": "0x74bb71a4210e33256885def483fd4227b7f9d88f"
+  },
+  {
+   "slug": "folia",
+   "contract": "0xdce09254dd3592381b6a5b7a848b29890b656e01"
+  },
+  {
+   "slug": "flowerblocks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fastfoodfrenscollection",
+   "contract": "0x4721d66937b16274fac603509e9d61c5372ff220"
+  },
+  {
+   "slug": "floor-beta",
+   "contract": "0xa0c3122e71fd972e868fddae76e3ed2b174ceaf9"
+  },
+  {
+   "slug": "farsiteship",
+   "contract": "0x81c29b9c2b6d918f6f6e3706182e6c7ea1abbb80"
+  },
+  {
+   "slug": "fewocious",
+   "contract": "0x3b7296d63f799c1566b0c09df61cb7fdd6ac95cb"
+  },
+  {
+   "slug": "f5doitmusic",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "ethalien",
+   "contract": "0x56b391339615fd0e88e0d370f451fa91478bb20f"
+  },
+  {
+   "slug": "eth-men-2-0",
+   "contract": "0x33b83b6d3179dcb4094c685c2418cab06372ed89"
+  },
+  {
+   "slug": "entrope",
+   "contract": "0xf8c08433dd41eaee2e424c9e91467ab27772d9ec"
+  },
+  {
+   "slug": "edgy-veggies",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "dystopunks",
+   "contract": "0xbea8123277142de42571f1fac045225a1d347977"
+  },
+  {
+   "slug": "dsc-x-kate",
+   "contract": "0x4e496620c21f4ac611ebf57684499d25e7bd93fe"
+  },
+  {
+   "slug": "drive-dave-krugman",
+   "contract": "0xec71ed650722ef6f98c1c28f0b34c9846c1ba10b"
+  },
+  {
+   "slug": "dream-engine-by-remo-x-dcsan",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "dogedash",
+   "contract": "0x44357cb1fc60fd5c6e3e673f6b71b38baf83d386"
+  },
+  {
+   "slug": "dollars-nakamoto",
+   "contract": "0xbeda58401038c864c9fc9145f28e47b7b00a0e86"
+  },
+  {
+   "slug": "dorkisofficial",
+   "contract": "0x0588a0182ee72f74d0ba3b1fc6f5109599a46a9c"
+  },
+  {
+   "slug": "digiwhales",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "devols1",
+   "contract": "0xdd991ec0a7cd7c7334e3e4553aa5e4fb850168d9"
+  },
+  {
+   "slug": "dicklebutts",
+   "contract": "0x0e0fc97e5337478830f30dda023339607ad1ba4c"
+  },
+  {
+   "slug": "devs-for-revolution",
+   "contract": "0x25ed58c027921e14d86380ea2646e3a1b5c55a8b"
+  },
+  {
+   "slug": "degenz",
+   "contract": "0xfb9e9e7150ccebfe42d58de1989c5283d0eaab2e"
+  },
+  {
+   "slug": "darkdormneighbors",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "dapp-cats",
+   "contract": "0x33b50467e18ba7c412fc5659215236fd35390dbc"
+  },
+  {
+   "slug": "darkhorizon",
+   "contract": "0xd46814b736db3c6feed576a59e3ff140075c9e0a"
+  },
+  {
+   "slug": "cyber-doggos",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cutepigsnft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "curseddeer",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "currensy",
+   "contract": "0xfc7380e9c58b4ce947a33550a7a41443b0d9a554"
+  },
+  {
+   "slug": "cryptoleos",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptomutts-official",
+   "contract": "0x25c65721e26fa5f3c97f129f4e24972482327bc9"
+  },
+  {
+   "slug": "cryptohomme",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptodrunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-hodlers-nft",
+   "contract": "0xe12a2a0fb3fb5089a498386a734df7060c1693b8"
+  },
+  {
+   "slug": "cryptocosplay",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-chick-3",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypt0-rabbits",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "croakz-v2-1",
+   "contract": "0x7cae7b9b9a235d1d94102598e1f23310a0618914"
+  },
+  {
+   "slug": "cool-cats-collabs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "creepz-invasion-pass",
+   "contract": "0xf3ec2d6394fc899a5dc1823a205670ebb30939cc"
+  },
+  {
+   "slug": "covidbots",
+   "contract": "0x9525c4fe14addba627db8e45036767895181e559"
+  },
+  {
+   "slug": "collision",
+   "contract": "0x111174b2414e14b4b5441646ec221ef1726a87b1"
+  },
+  {
+   "slug": "chainbunnies",
+   "contract": "0x9f4564b85cb77ce76cc725f29758cbfe20213aae"
+  },
+  {
+   "slug": "codedpunksociety",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "celebritycode",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bossllamas",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bvgarden",
+   "contract": "0x33e1977d6593050520b1fe2d5c586376ad07046d"
+  },
+  {
+   "slug": "bullseum",
+   "contract": "0xb894e12536486141158bc26684bdef85ea90379a"
+  },
+  {
+   "slug": "boring-bananas-company",
+   "contract": "0xb9ab19454ccb145f9643214616c5571b8a4ef4f2"
+  },
+  {
+   "slug": "bored-ape-paint-art",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "blockmarkgems",
+   "contract": "0xb62b330a1b1ed55feb93296f89ea7679c4e0c36c"
+  },
+  {
+   "slug": "blootofficial",
+   "contract": "0x4f8730e0b32b04beaa5757e5aea3aef970e5b613"
+  },
+  {
+   "slug": "blankfaceofficial",
+   "contract": "0x06f8b41b72c04b2bba587fc7b09dbfb877ca7d04"
+  },
+  {
+   "slug": "bitshields",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bitbehr",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "birdguys",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "benevolent-goblin-friendship-society",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bearxlabs",
+   "contract": "0xe22e1e620dffb03065cd77db0162249c0c91bf01"
+  },
+  {
+   "slug": "bayc-honorary-members",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "basicboredapeclub",
+   "contract": "0xd16bdccae06dfd701a59103446a17e22e9ca0ef0"
+  },
+  {
+   "slug": "ballmanproject",
+   "contract": "0x80ab79e5c36351fb5dbe2b35e97f724eca47ae29"
+  },
+  {
+   "slug": "baboonbrigade",
+   "contract": "0x42535ec3ed3120c3d2f51828795984493f44f80b"
+  },
+  {
+   "slug": "avariksagauniverse",
+   "contract": "0x127e479ac59a1ea76afdedf830fecc2909aa4cae"
+  },
+  {
+   "slug": "art-v4",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "arcona-digital-land",
+   "contract": "0xdf5d68d54433661b1e5e90a547237ffb0adf6ec2"
+  },
+  {
+   "slug": "arc-robots",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "approving-corgis-official",
+   "contract": "0x4f1b1306e8bd70389d3c413888a61bb41171a0bc"
+  },
+  {
+   "slug": "angryapesunited",
+   "contract": "0x9546eeb89df8f010da4953c2ef456e282b3db25a"
+  },
+  {
+   "slug": "ape-dao-remix",
+   "contract": "0xfb61bd914d4cd5509ecbd4b16a0f96349e52db3d"
+  },
+  {
+   "slug": "alpacacity",
+   "contract": "0xc7e5e9434f4a71e6db978bd65b4d61d3593e5f27"
+  },
+  {
+   "slug": "airbits",
+   "contract": "0x18da8be743b76b57164220483c6ab15f37ca1417"
+  },
+  {
+   "slug": "acutecat",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "air22",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "1000milesout",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hewerclan",
+   "contract": "0xd601c171851c460082ace709f665a9566586f14b"
+  },
+  {
+   "slug": "her-sight",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "heavencomputer",
+   "contract": "0x80adb36595239fe918c7d118c1f81e07d070801a"
+  },
+  {
+   "slug": "headdao",
+   "contract": "0xf62c6a8e7bcdc96cda11bd765b40afa9ffc19ab9"
+  },
+  {
+   "slug": "hashhead",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hashcards",
+   "contract": "0x92aea89ab89b99dbc62e82f5cdee1ef07bdfedcd"
+  },
+  {
+   "slug": "hash-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "grunts",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gutter-art",
+   "contract": "0x66d235edb76902e31880d50672f871931a3b530f"
+  },
+  {
+   "slug": "greyscalepunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gravel",
+   "contract": "0x8cefcb5a4d159914b9cf2701d8891f23480f66b2"
+  },
+  {
+   "slug": "gorillamafia",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "godsofrock",
+   "contract": "0x213fde8b7fbb8b9ecf7f34792e604eafb9bd292f"
+  },
+  {
+   "slug": "gobabygo",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gmworld",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gluefactoryshow",
+   "contract": "0x15c2b137e59620552bd0d712fe7279cf1f47468d"
+  },
+  {
+   "slug": "gft-exchange-yao-family-wines-the-chop-drop",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "edifice-by-ben-kovach",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "dotwork",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dope-v4",
+   "contract": "0x8707276df042e89669d69a177d3da7dc78bd8723"
+  },
+  {
+   "slug": "doge-pound-puppies-real",
+   "contract": "0x73883743dd9894bd2d43e975465b50df8d3af3b2"
+  },
+  {
+   "slug": "diamondcryptodunks",
+   "contract": "0xf0b23d4738ed2c7d89a13d3391ae4e9a8ccf0e44"
+  },
+  {
+   "slug": "digitalaxnft",
+   "contract": "0x0b509f4b044f713a91bb50535914f7ad160532fe"
+  },
+  {
+   "slug": "deviant-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "desultor",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "degenerate-apes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "deodand",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "defi-of-thrones",
+   "contract": "0x016cd7b70373a58a0e27051e089d7f02bfcd8127"
+  },
+  {
+   "slug": "deepseajelly",
+   "contract": "0xdc0e48bb3c438f4ac932e265abf0e98706261dc9"
+  },
+  {
+   "slug": "dead-freaks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dalton-mannerud",
+   "contract": "0x85a4cb1dea05e308438f7ce8221e8ec29fe7c8f2"
+  },
+  {
+   "slug": "cybergirl-fashion",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cyberducks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cxllabs",
+   "contract": "0x3e7ab1ef6bb7f26826139e743b54d23acc0e137c"
+  },
+  {
+   "slug": "cupcatsofficial",
+   "contract": "0x8cd8155e1af6ad31dd9eec2ced37e04145acfcb3"
+  },
+  {
+   "slug": "cultwines",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cubedcreatures",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cubeverse",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptotitties",
+   "contract": "0x892e84f9186cf852611ed957942d6ba7571c4d74"
+  },
+  {
+   "slug": "cryptohansclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptolanders",
+   "contract": "0xe5c9353af2f0dab9a02607e7f1f874f1a9060387"
+  },
+  {
+   "slug": "cryptodinosaurs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoderby",
+   "contract": "0xf26a23019b4699068bb54457f32dafcf22a9d371"
+  },
+  {
+   "slug": "cryptoburbs",
+   "contract": "0xe0c6ad7b53227ed95333d9e9f9f15deea4f7f12d"
+  },
+  {
+   "slug": "cryptodemonzv2",
+   "contract": "0x3148e680b34f007156e624256986d8ba59ee82ee"
+  },
+  {
+   "slug": "cryptobeasts-official",
+   "contract": "0xa74e199990ff572a320508547ab7f44ea51e6f28"
+  },
+  {
+   "slug": "cryptobauhaus",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoartfusion",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-wafuku-nft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-geishas",
+   "contract": "0xa5efd7a7b3bb0de53bc3f2aa59004722d1431a15"
+  },
+  {
+   "slug": "crazy-crows-chess-club",
+   "contract": "0x220524bdf02ccfdf009f47ad4e483439ff136a9c"
+  },
+  {
+   "slug": "crypto-hobos",
+   "contract": "0xd153f0014db6d1f339c6340d2c9f59214355d9d7"
+  },
+  {
+   "slug": "complicit",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "colonists",
+   "contract": "0x9f4df153d95a8460f6e82c21cab92719781fab84"
+  },
+  {
+   "slug": "claypunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chibi-genesis",
+   "contract": "0x4ef0fe82b42b6104bbceb69e764abd2050acfdd4"
+  },
+  {
+   "slug": "chads-nft",
+   "contract": "0x9cf63efbe189091b7e3d364c7f6cfbe06997872b"
+  },
+  {
+   "slug": "chef-boi-r-doge",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "catc",
+   "contract": "0x82712d0052c6d8185383b5554a071c440b902992"
+  },
+  {
+   "slug": "capolavoro",
+   "contract": "0xaa2b2cf8cb82a457cb74d60bb2401ca03d64ccab"
+  },
+  {
+   "slug": "bywayofwater",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "byoland",
+   "contract": "0x0616a2ef54bad0b37dce41c8d8e35cce17a926f3"
+  },
+  {
+   "slug": "burj-khalifa-2",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "buildspace-v2",
+   "contract": "0x3cd266509d127d0eac42f4474f57d0526804b44e"
+  },
+  {
+   "slug": "bullsontheblock",
+   "contract": "0x3a8778a58993ba4b941f85684d74750043a4bb5f"
+  },
+  {
+   "slug": "buckets-club",
+   "contract": "0x025f45bb7e08abea27a3c6a9cfb8d2acc2f6a134"
+  },
+  {
+   "slug": "bored-doodle-punk-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "break-the-internet",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "boxingboyz-metaverse",
+   "contract": "0x12622b71aa62a595be0f65009264de3fe3dbc7aa"
+  },
+  {
+   "slug": "bored-ape-kids-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bongbears",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bluntz",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "bluechipnfts",
+   "contract": "0xe62629453094c67ee44d16ed27a116271d62355f"
+  },
+  {
+   "slug": "beeple",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "blackandwhitenights",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bezogis",
+   "contract": "0x7619ce0787a1a1f23a87c1dad39d451f3438af86"
+  },
+  {
+   "slug": "bbside",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aww-rats",
+   "contract": "0x130e08bb88d4ce39bc5e8928932ecafdd5b430ff"
+  },
+  {
+   "slug": "bastard",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "avproject",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "auston",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "artmarbles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "artcatsnft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "asemica-by-emily-edelman-dima-ofman-andrew-badr",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "apostles-genesis",
+   "contract": "0xe70da20a2b10d60ca620a4e494fe2b37c9499e97"
+  },
+  {
+   "slug": "ape-harbour-yachts",
+   "contract": "0x24d0cbd0d5d7b50212251c5dc7cb810e7af71f6a"
+  },
+  {
+   "slug": "anime-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ape-island-season-1",
+   "contract": "0x09b9905a472aa1d387c9c1d8d956aff5463837e8"
+  },
+  {
+   "slug": "angrymeerkatsnft",
+   "contract": "0xd5c5927c9db9da82acfb29ed51554d25f2ef7b7e"
+  },
+  {
+   "slug": "alfa-pass",
+   "contract": "0x26eeb71350d60466ab18c8cbac1ea2d58c39c140"
+  },
+  {
+   "slug": "8clit",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "amber-vittoria-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "9tales",
+   "contract": "0x367d3a87cc46fd91d202bd2b3ebe820fb010cadd"
+  },
+  {
+   "slug": "888innercirclethedrops",
+   "contract": "0x715565baf69afcbbe88f56d46f1c9fe2df828705"
+  },
+  {
+   "slug": "720-minutes-by-alexis-andre",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "70s-pop-series-two-by-daniel-catt",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "6maker",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "heartbeatsnfts",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "heroes-of-evermore",
+   "contract": "0xf1ef40f5aea5d1501c1b8bcd216cf305764fca40"
+  },
+  {
+   "slug": "happyapesfamily",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "hammys",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "haildraconis",
+   "contract": "0xd3f152a5dbd3b932b751f50df6e7b5939bb3ed9a"
+  },
+  {
+   "slug": "hackatao",
+   "contract": "0xfd385556ebf6b183380afcd61efd8194d0d46520"
+  },
+  {
+   "slug": "gurlz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "grifters-by-xcopy",
+   "contract": "0xc143bbfcdbdbed6d454803804752a064a622c1f3"
+  },
+  {
+   "slug": "gunlord",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "great-expectations",
+   "contract": "0xf8b37af2b5fe2ce1cc303a8472dedccca0953bb2"
+  },
+  {
+   "slug": "gravityfootwear",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "goodbye-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gmpunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "geometricminimalart",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gener8tive-tones",
+   "contract": "0xc410b0acced045a5b57ad235909ae6df1261bcc6"
+  },
+  {
+   "slug": "gener8tive-k-compositions",
+   "contract": "0x3d0c4e9bde15f2681902f9f291b3c905b7ea46f9"
+  },
+  {
+   "slug": "gameofblocks",
+   "contract": "0xe43eba6b038e6156438a1797b3b6c172cc6e4254"
+  },
+  {
+   "slug": "gauntlets",
+   "contract": "0x74ecb5f64363bd663abd3ef08df75dd22d853bfc"
+  },
+  {
+   "slug": "gallery-membership-cards",
+   "contract": "0xe01569ca9b39e55bc7c0dfa09f05fa15cb4c7698"
+  },
+  {
+   "slug": "galactic-secret-agency",
+   "contract": "0x6184f10302cebeea0211f9310225f051cc549626"
+  },
+  {
+   "slug": "fury-nft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "furballs-com-official",
+   "contract": "0x2d004b72d8b7d36f9da2e4a14516618bf53bac57"
+  },
+  {
+   "slug": "fungles-assets",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fud-monsters",
+   "contract": "0x448fc198255128e3ab1f21b2fe7ce5adf154c2b5"
+  },
+  {
+   "slug": "fucked-crypto-homers",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "from-the-other-side",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "from-the-fragments-of-tezuka-osamu-mosaic-art",
+   "contract": "0x47474caa8383e015c0b3f22b2ae2fd8b794e4c8e"
+  },
+  {
+   "slug": "framergence",
+   "contract": "0xbc17cd7f1a58bda5d6181618090813b3050416b5"
+  },
+  {
+   "slug": "fractal-art",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fountain",
+   "contract": "0x3ac9ef13007e2f8ad860a77f5fdf14696acf1e02"
+  },
+  {
+   "slug": "flippy-five-thousand",
+   "contract": "0x68d5d4ff0274dd95760e300ef16b81c5eed09842"
+  },
+  {
+   "slug": "fastfoodsquiggles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "farmers-marketverse-patrons",
+   "contract": "0xea3171718dc324d8258dcdb92268cb62649bd0c1"
+  },
+  {
+   "slug": "f473-cards",
+   "contract": "0x344461cd5f714aac9c5c18cacf7727c740818ef9"
+  },
+  {
+   "slug": "eulerbeats-enigma",
+   "contract": "0xa98771a46dcb34b34cdad5355718f8a97c8e603e"
+  },
+  {
+   "slug": "ethertulips-legacy",
+   "contract": "0x995020804986274763df9deb0296b754f2659ca1"
+  },
+  {
+   "slug": "etherorcsallies",
+   "contract": "0x62674b8ace7d939bb07bea6d32c55b74650e0eaa"
+  },
+  {
+   "slug": "ethergals-community",
+   "contract": "0xd87ca9651cdade60cc0b031c2731aeb5aa722fb3"
+  },
+  {
+   "slug": "ensosupers",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "energysketch",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dystoapez-official",
+   "contract": "0x648e8428e0104ec7d08667866a3568a72fe3898f"
+  },
+  {
+   "slug": "dual-soul",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "drawn-together-mental-health-awareness",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dot-eyes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dogs-unchained",
+   "contract": "0x9c0ffc9088abeb2ea220d642218874639229fa7a"
+  },
+  {
+   "slug": "dogelon-mars-comic-series",
+   "contract": "0xea9707d71ed5c3bd0af871711cb3b597ef1ab043"
+  },
+  {
+   "slug": "divine-zodiac",
+   "contract": "0x75bd294f5adae8428ddcd1431ae2e0d4f5a05707"
+  },
+  {
+   "slug": "dirtybird-flight-club",
+   "contract": "0xa45ef87f51b84dbd0d5b003d288b16d3d044fe6f"
+  },
+  {
+   "slug": "digitalabstraction",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "denations-art-open-edition",
+   "contract": "0x4b16a470ecabfbb565f77b0730bee4fb6d02f9f6"
+  },
+  {
+   "slug": "defi-friends",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "darkforest-valhalla",
+   "contract": "0x9724fdf5ae41570decc2d3094c65eafa7e1ab7d4"
+  },
+  {
+   "slug": "day-of-the-dead-nft",
+   "contract": "0x53a441ac1fb85b439bc3f074345b80f19e9d70a5"
+  },
+  {
+   "slug": "dao-turtles",
+   "contract": "0xc92d06c74a26aeaf4d1a1273fac171f3b09fac79"
+  },
+  {
+   "slug": "cyborgs-arrival-of-chaos",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "dan-otsuki-artworks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cybercrocz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cuvertura",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptounicorn",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoslutsnft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptotulips",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptopanzer",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "cryptocatclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptobabyanimals",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoavatar3d",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoarts-org",
+   "contract": "0x83e3d76bd9303917ad0383a45fc6df171f1be219"
+  },
+  {
+   "slug": "crypto-native",
+   "contract": "0x89568fc8d04b3f833209144b77f39b71078e3cb0"
+  },
+  {
+   "slug": "crypto-cards-for-each-club",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "crypto-circles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cross-studio",
+   "contract": "0xecf83a0876cc330490ca8eb9b6d8e696239cc59d"
+  },
+  {
+   "slug": "circleorzo",
+   "contract": "0x0ae3c3a1504e41a6877de1b854c000ec64894bea"
+  },
+  {
+   "slug": "collection-tanpopoe",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chillmeleons",
+   "contract": "0x344f84e819fc9100b2d228a7bb2a4591718ec0f4"
+  },
+  {
+   "slug": "cheyuwuxnobody",
+   "contract": "0x8ec93001b6d4ca39f29b46244bb856f4151a2bd9"
+  },
+  {
+   "slug": "chad-and-friends",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ceopunks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "censored-series",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "cctv",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "byteosaurus",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cannacomics",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bushido-apes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "brkfst-world",
+   "contract": "0x579b926363de428f4bd4e6abd673cf59170e435f"
+  },
+  {
+   "slug": "borpacasso",
+   "contract": "0x370108cf39555e561353b20ecf1eaae89beb72ce"
+  },
+  {
+   "slug": "boss-logic",
+   "contract": "0x1e6ebe5e7aa3cd50d0d7838ac70c46102e84b5fa"
+  },
+  {
+   "slug": "boredpunksclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bored-ape-ladies",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bored-ape-comic-presale",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bored-ape-comic",
+   "contract": "0x1eb7382976077f92cf25c27cc3b900a274fd0012"
+  },
+  {
+   "slug": "boodles-club",
+   "contract": "0xfc3ad4116eecae71253529c8b690685b1560ae74"
+  },
+  {
+   "slug": "bonsai-zenft",
+   "contract": "0xec9c519d49856fd2f8133a0741b4dbe002ce211b"
+  },
+  {
+   "slug": "bones-club",
+   "contract": "0x8f5a0ea6a20c7221cd865bd5c96f3b18614f7364"
+  },
+  {
+   "slug": "bofadeeznuts",
+   "contract": "0xb1469271ff094d7fb2710b0a69a80a01ec5dbf24"
+  },
+  {
+   "slug": "bobo-shiba",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bitsenjis",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bit-wine",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "biomes",
+   "contract": "0x2e394a23ba638df19a9daf81b4a2a1f4f4398d3c"
+  },
+  {
+   "slug": "binance",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "beastopia-pixelbeasts",
+   "contract": "0xd539a3a5edb713e6587e559a9d007ffff92bd9ab"
+  },
+  {
+   "slug": "bb-bohemian-bulldogs",
+   "contract": "0xcf5997c7a314ae624c6f2f4a6ddc373efd23b276"
+  },
+  {
+   "slug": "badbanana",
+   "contract": "0x819b71fbb346a8fad8f782f3e4b3db1d551b8e6f"
+  },
+  {
+   "slug": "bauhausblocks",
+   "contract": "0x62c1e9f6830098dff647ef78e1f39244258f7bf5"
+  },
+  {
+   "slug": "avenged-sevenfold-x-cam-rackam",
+   "contract": "0xdd0b7d5af6330cf2d991b97c8fc9d87b440c4fe7"
+  },
+  {
+   "slug": "autology-by-steganon",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "astrogems",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "astrons",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "astro-frens",
+   "contract": "0x71b11ac923c967cd5998f23f6dae0d779a6ac8af"
+  },
+  {
+   "slug": "aoz-official",
+   "contract": "0xe84389ec084def478cd64bf9f101390b436bd364"
+  },
+  {
+   "slug": "aoi-the-art-of-identity",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "anthos",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "anonymousman",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "angrydudez",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "america-heroes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "americana-campbells-x-sophiachang",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ambienft",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "alotta-money",
+   "contract": "0x5457ef2d4e248d62b7194f57901361024af9a3f0"
+  },
+  {
+   "slug": "alotta-voxels",
+   "contract": "0x772f52ca0cf135462a334a1e5a990047ad046b6a"
+  },
+  {
+   "slug": "ai-nightscapes",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ai-fountain",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "8sian-main-collection",
+   "contract": "0x198478f870d97d62d640368d111b979d7ca3c38f"
+  },
+  {
+   "slug": "50playgrounds",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "8-bit-sport-football",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "heartnfts",
+   "contract": "0xce50f3ca1f1dbd6fa042666bc0e369565dda457d"
+  },
+  {
+   "slug": "gyre",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gutter-species-mint-pass",
+   "contract": "0x1897d69cc0088d89c1e94889fbd2efffcefed778"
+  },
+  {
+   "slug": "gutter-merch-2",
+   "contract": "0xcc39986019b25e26900619b5c5876139cbf3879c"
+  },
+  {
+   "slug": "gutter-merch",
+   "contract": "0x2163f70d3b4de18a44e570309798e1fbbc916291"
+  },
+  {
+   "slug": "guido-di-salle",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "goneoff",
+   "contract": "0x08128240b68a3cbb5fa9761626c7b9523de22903"
+  },
+  {
+   "slug": "gregory-eddi-jones",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "golden-token-crypto-new-yorkers",
+   "contract": "0xd43529990f3fba41affd66c4a8ab6c1b7292d9dc"
+  },
+  {
+   "slug": "godtail",
+   "contract": "0xddc9c3dced0666b1edcde76a6a20fce1facc08c2"
+  },
+  {
+   "slug": "global-bad-bob",
+   "contract": "0x2953399124f0cbb46d2cbacd8a89cf0599974963"
+  },
+  {
+   "slug": "giraffe-tower",
+   "contract": "0xb487a91382cd66076fc4c1af4d7d8ce7f929a9ba"
+  },
+  {
+   "slug": "gilangndaru",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "geometric-gems",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "genesisrocks100-9999",
+   "contract": "0x39b780e8062ce299ab60ed3d48f447e97511a2ed"
+  },
+  {
+   "slug": "genesis-syncronauts",
+   "contract": "0x505a12c23fdc8f80ca4a1a3000cd39636c927128"
+  },
+  {
+   "slug": "genesis-blocks-art",
+   "contract": "0x26b925eef82525f514c0414db5cf65953d30a4ca"
+  },
+  {
+   "slug": "generation-habibi",
+   "contract": "0x9ce696322a7495b83f279db6080314cf4d9f8c1f"
+  },
+  {
+   "slug": "genbit-bunnies",
+   "contract": "0xe5545fa0636a82c0b37c7db62e2104e69a11d062"
+  },
+  {
+   "slug": "gawds",
+   "contract": "0x3769c5700da07fe5b8eee86be97e061f961ae340"
+  },
+  {
+   "slug": "furbits",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gator-world",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "froggo-niverse",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "frenlyfish",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fluffygoodness",
+   "contract": "0xf6a2c8a4adf384acd7d3871488af84218a46a1c7"
+  },
+  {
+   "slug": "frammenti-by-stefano-contiero",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "floodingfactoryblobs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "floki-inu-diamond-hands-diamond-tier",
+   "contract": "0x1e18de8a026a1cab515e105a26ea95cf35300037"
+  },
+  {
+   "slug": "fivepenguins",
+   "contract": "0x697e0a5e2a6be117760d192a03fac688e774efcf"
+  },
+  {
+   "slug": "flokitars",
+   "contract": "0x23051fe0eb93fabe7b314fd56a95f395058c83b9"
+  },
+  {
+   "slug": "fiiidgt",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fewmans",
+   "contract": "0xad5f6cdda157694439ef9f6dd409424321c74628"
+  },
+  {
+   "slug": "farsiteblueprint",
+   "contract": "0xd423ac796f9ab8ef32c0769a46de63bc974ee080"
+  },
+  {
+   "slug": "farmoore-art",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "0xff",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "32px-penguins",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aavegotchi-frens-raffle-tickets",
+   "contract": "0x93ea6ec350ace7473f7694d43dec2726a515e31a"
+  },
+  {
+   "slug": "aavegotchi-collabs",
+   "contract": "0xa983b3d938eedf79783ce88ed227a47b6861a3e9"
+  },
+  {
+   "slug": "acrocalypse-legacy",
+   "contract": "0xd73acd7f5099fdd910215dbff029185f21ffbcf0"
+  },
+  {
+   "slug": "admixsomnium",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aipepclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "aliencodex",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "allan-kingdom",
+   "contract": "0xe8efaa0060e5382a7a50047d56dadcf0769f1ad8"
+  },
+  {
+   "slug": "allcaps-fan-collectibles",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "angryapearmyweapons",
+   "contract": "0x7a29cbe13bf1d722e244baa6e527f4438763457b"
+  },
+  {
+   "slug": "apes-in-space-nft",
+   "contract": "0x7a3b97a7400e44dadd929431a3640e4fc47daebd"
+  },
+  {
+   "slug": "badbad",
+   "contract": "0x0322f6f11a94cfb1b5b6e95e059d8deb2bf17d6a"
+  },
+  {
+   "slug": "bitpix-trading-cards",
+   "contract": "0x0d487953e81f4ea83590524a517dd729c23de6a7"
+  },
+  {
+   "slug": "bamc-x-cool-pixel-cats",
+   "contract": "0x723293fb529c42d0265ece7b9bdf1e0a31886a0f"
+  },
+  {
+   "slug": "bitverse-clash",
+   "contract": "0x13cbeed375ca2fde7f4981ee296182cd850a331c"
+  },
+  {
+   "slug": "blokpax-vault",
+   "contract": "0xc38c876e702634a1e6bcec088b19952261d664d8"
+  },
+  {
+   "slug": "blockchain-art-institute",
+   "contract": "0x336dcf0f4c0d6465f0cf6445f89da6007ccd186d"
+  },
+  {
+   "slug": "bond-bears",
+   "contract": "0xf17bb82b6e9cc0075ae308e406e5198ba7320545"
+  },
+  {
+   "slug": "boo-bears",
+   "contract": "0x2c889a24af0d0ec6337db8feb589fa6368491146"
+  },
+  {
+   "slug": "bored-ape-seeks-yacht-club-issue-0",
+   "contract": "0xe3b5da60ee5f7b4b6b1ed418c3f09ded9ca2f95c"
+  },
+  {
+   "slug": "bored-baby-ape-yacht-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "bored-mummy-baby-waking-up",
+   "contract": "0xec3db0b6a6f3085c3b2ebd105aebabd34bce7780"
+  },
+  {
+   "slug": "bored-mummy-halloween-candy-factory",
+   "contract": "0x46f101f3b08a6156e8f3553945500e1f62e72a37"
+  },
+  {
+   "slug": "breeds",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chain-reaction-nft-crypto-art-exhibition",
+   "contract": "0x9fe5bdf8194a6aebb1b68b47cb44f382725f38bc"
+  },
+  {
+   "slug": "bubble-budz",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "chainbreakers-18763479",
+   "contract": "0x38e908b70c8e0dcfe452c0fb2ebf432f9c5a6f20"
+  },
+  {
+   "slug": "chibi-fighters-weapons",
+   "contract": "0x9db37d15fefbf42dc390c3c81fee453465841038"
+  },
+  {
+   "slug": "champions-of-everdawn-men",
+   "contract": "0xef9c21e3ba31a74910fc7e7cb3fc814ad842ad6e"
+  },
+  {
+   "slug": "champions-of-everdawn-women",
+   "contract": "0x3d74450d135f16b6fa20c1211c6faef93ee73d7c"
+  },
+  {
+   "slug": "citizens-y2123",
+   "contract": "0xad20084e30624f5eb5d2346ea509c35a86e8f9eb"
+  },
+  {
+   "slug": "color-study-by-jeff-davis",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "color-magic-planets-by-bard-ionson",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "colorblockparty",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "contract-servant",
+   "contract": "0xf915bbfbb6c097dc327e64eec55e9ef4d110d627"
+  },
+  {
+   "slug": "cool-cats-3d",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crappy-dogecoin-doodles",
+   "contract": "0x1ca7228c2984750d4fff8e79a1b0771c4ffd501d"
+  },
+  {
+   "slug": "cool-pixel-cats",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-robots-v3",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "crypto-trader-cards",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoapesog",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptoapesocialclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cryptobots-v2",
+   "contract": "0x21e6348da1793ce4700180ba56c627cea756f5c9"
+  },
+  {
+   "slug": "cryptopunks-v1",
+   "contract": "0x6ba6f2207e343923ba692e5cae646fb0f566db8d"
+  },
+  {
+   "slug": "cryptoteddies-legacy",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "cyberkongzold",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "deactivated-gfc-weapon",
+   "contract": "0x50332caf64c4bc316c736d3cc7965e860a056ca0"
+  },
+  {
+   "slug": "decentraweb-domains-ethereum",
+   "contract": "0x3eaf3d0e21f452adf632744b5608e6c02e88827a"
+  },
+  {
+   "slug": "digitz-genesis-collection",
+   "contract": "0x92b3282dd1bfe571323cc1324177d0def2d4c218"
+  },
+  {
+   "slug": "djenerates-clubbing-edition",
+   "contract": "0x7d05c8d8cc1bac936ea09308a9e94823986f8321"
+  },
+  {
+   "slug": "dogs-unchained-proof-of-steak",
+   "contract": "0xcab65c60d9dc47e1d450c7e9074f73f1ff75f181"
+  },
+  {
+   "slug": "doki-doki-legacy",
+   "contract": "0xcc9f683c2fdbed1801bc8d68a663577d4f3259cd"
+  },
+  {
+   "slug": "dooggies-legacy",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "enchiridion-by-generative-artworks",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "empyrean-by-generative-artworks",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "enjin",
+   "contract": "0xfaafdc07907ff5120a76b34b731b278c38d6043c"
+  },
+  {
+   "slug": "erc1155ffp",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "ethterrestrials-migrated",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "evolvingforest",
+   "contract": "0xd49eccf40689095ad9e8334d8407f037e2cf5e42"
+  },
+  {
+   "slug": "explosionofcolor",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "explosionofcolorreserve",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "fancybearsmetaverse",
+   "contract": "0x87084ec881d5a15c918057f326790db177d218f2"
+  },
+  {
+   "slug": "fantasy-collection-yacht",
+   "contract": "0xa342f5d851e866e18ff98f351f2c6637f4478db5"
+  },
+  {
+   "slug": "filaments-art",
+   "contract": "0x0a57e26e480355510028b5310fd251df96e2274b"
+  },
+  {
+   "slug": "forestmoments",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "forestmusings",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "foundersdao",
+   "contract": "0xd0a07a76746707f6d6d36d9d5897b14a8e9ed493"
+  },
+  {
+   "slug": "genesis-by-dca",
+   "contract": "0x059edd72cd353df5106d2b9cc5ab83a52287ac3a"
+  },
+  {
+   "slug": "genuine-human-art-contract",
+   "contract": "0x7cbf474bf3e354a536804ce6aa1804d1eaf478e9"
+  },
+  {
+   "slug": "geviennaratives-by-cryptowiener",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "goodmorningcafe-old",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "gremplin",
+   "contract": "0x1adaac3daaae37496f9762671281544f912ebf48"
+  },
+  {
+   "slug": "grassetticollection",
+   "contract": "0x04e9206d6718f3f9f1b2d806e5207dda1d17e057"
+  },
+  {
+   "slug": "happyland-gummy-bears",
+   "contract": "0xf32e1bde889ecf672ffae863721c8f7d280f853b"
+  },
+  {
+   "slug": "haylo-relics",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "humans-metaverse",
+   "contract": "0x8a9ece9d8806eb0cde56ac89ccb23a36e2c718cf"
+  },
+  {
+   "slug": "imagined-color",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "infinity-frogs-nft",
+   "contract": "0xa2480eb41dd1f2b0abade9f305826c544d47f696"
+  },
+  {
+   "slug": "infinityveil",
+   "contract": "0x31158181b4b91a423bfdc758fc3bf8735711f9c5"
+  },
+  {
+   "slug": "isotile-genesis-avatars",
+   "contract": "0x31eaa2e93d7afd237f87f30c0dbd3adeb9934f1b"
+  },
+  {
+   "slug": "joe-sorren-trading-cards",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "joetamponi-trading-cards",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "jungle-freaks-genesis",
+   "contract": "0x7e6bc952d4b4bd814853301bee48e99891424de0"
+  },
+  {
+   "slug": "justinaversano-gabbagallery",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "kelly-moore-art",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "knights-of-degen-mint-pass",
+   "contract": "0xef5afc5fb5ea26ac16e00c616d49be1fed849ed0"
+  },
+  {
+   "slug": "knights-of-degen-official",
+   "contract": "0xe3f92992bb4f0f0d173623a52b2922d65172601d"
+  },
+  {
+   "slug": "lady-apes-yacht-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "lazy-lions-bungalows",
+   "contract": "0xd80eef7484c8fab1912a43e44a97774093007ab1"
+  },
+  {
+   "slug": "lazy-lions",
+   "contract": "0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0"
+  },
+  {
+   "slug": "leagueofextraordinarywomen",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "leagueofsacreddevils",
+   "contract": "0xf642d8a98845a25844d3911fa1da1d70587c0acc"
+  },
+  {
+   "slug": "legacy",
+   "contract": "0x8f66a1247a7e2a48998d02593407474b75a7ced6"
+  },
+  {
+   "slug": "legend-maps-founder",
+   "contract": "0xbff184118bf575859dc6a236e8c7c4f80dc7c25c"
+  },
+  {
+   "slug": "legends-of-venari-mestari-seekers",
+   "contract": "0x4e34ec528a663194f4dfe40641e8a3a98abb6e84"
+  },
+  {
+   "slug": "lewitt-generator-generator-by-mitchell-f-chan",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "legends-of-venari-vocari-seekers",
+   "contract": "0x702241c23f1add928c286e65b9e4adc993481702"
+  },
+  {
+   "slug": "lilpudgys",
+   "contract": "0x524cab2ec69124574082676e6f654a18df49a048"
+  },
+  {
+   "slug": "logan",
+   "contract": "0x0c69326bea87398a12be5d3224bd37ac64b30b76"
+  },
+  {
+   "slug": "machinietomigrate",
+   "contract": "0xe6d3e488b9d31943df6e3b7d82f6f842679a1a8c"
+  },
+  {
+   "slug": "loot-weapon",
+   "contract": "0x0ac0ecc6d249f1383c5c7c2ff4941bd56decdd14"
+  },
+  {
+   "slug": "mech-ape-robotech-club",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "mecha-chaotic",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "mekaverse",
+   "contract": "0x9a534628b4062e123ce7ee2222ec20b86e16ca8f"
+  },
+  {
+   "slug": "mekaverse-factory",
+   "contract": "0x8240534f3fbf684c0e29635ab5c8f8efb6f66d42"
+  },
+  {
+   "slug": "meta-legends",
+   "contract": "0xf9c362cdd6eeba080dd87845e88512aa0a18c615"
+  },
+  {
+   "slug": "metahelmet",
+   "contract": "0xbd888e50969748805cdf77bcf283febe493f190c"
+  },
+  {
+   "slug": "metahero-generative",
+   "contract": "0x6dc6001535e15b9def7b0f6a20a2111dfa9454e2"
+  },
+  {
+   "slug": "metaverse-creatures",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "metaverse-hq",
+   "contract": "0x2809a8737477a534df65c4b4cae43d0365e52035"
+  },
+  {
+   "slug": "metaverse-marauders",
+   "contract": "0x84f4226af1eb4b5e76c5dd203eef7f1f3452fb9d"
+  },
+  {
+   "slug": "misfits-collection",
+   "contract": "0x550fbef564ca886f69c38c731940609382f92971"
+  },
+  {
+   "slug": "mistletoadz",
+   "contract": "0x7fcbb823ff16110e5a14c3c897dc0af334423e4f"
+  },
+  {
+   "slug": "monacoplanetyacht",
+   "contract": "0x21bf3da0cf0f28da27169239102e26d3d46956e5"
+  },
+  {
+   "slug": "monster-blocks",
+   "contract": "0xa56a4f2b9807311ac401c6afba695d3b0c31079d"
+  },
+  {
+   "slug": "mutant-ape-yacht-club",
+   "contract": "0x60e4d786628fea6478f785a6d7e704777c86a7c6"
+  },
+  {
+   "slug": "mutant-apewives",
+   "contract": "0x0a7fd3cef7f30ebeab3e9f0fbe4af90eac671cf1"
+  },
+  {
+   "slug": "mutant-dragons",
+   "contract": "0xf7f83cbb51ba65fb19ab9ed6ca9520e637b6f192"
+  },
+  {
+   "slug": "n-project",
+   "contract": "0x05a46f1e545526fb803ff974c790acea34d1f2d6"
+  },
+  {
+   "slug": "mutant-boredape",
+   "contract": "0x359fb071477a9ad82835768f5ce9a29a0e5c1575"
+  },
+  {
+   "slug": "neotokyo-citizens-legacy",
+   "contract": "0xb668beb1fa440f6cf2da0399f8c28cab993bdd65"
+  },
+  {
+   "slug": "neotokyo-outer-identities-legacy",
+   "contract": "0x698fbaaca64944376e2cdc4cad86eaa91362cf54"
+  },
+  {
+   "slug": "nftworldartliuhailun",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "niftydragons",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "nifty-football-trading-card",
+   "contract": "0xbc5370374fe08d699cf7fcd2e625a93bf393ccc4"
+  },
+  {
+   "slug": "niftydegen",
+   "contract": "0x986aea67c7d6a15036e18678065eb663fc5be883"
+  },
+  {
+   "slug": "noaknafo",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "nonfungiblefungi",
+   "contract": "0x90ee3cf59fcde2fe11838b9075ea4681462362f1"
+  },
+  {
+   "slug": "noora-health",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "official-dormant-dragons",
+   "contract": "0xdb3b2e1f699caf230ee75bfbe7d97d70f81bc945"
+  },
+  {
+   "slug": "onchainmonkey",
+   "contract": "0x960b7a6bcd451c9968473f7bbfd9be826efd549a"
+  },
+  {
+   "slug": "one-hour-time-pieces",
+   "contract": "0xe7b32e7de014f124c0b126ac046ae859c4c6f0a3"
+  },
+  {
+   "slug": "oshi-on-sound",
+   "contract": "0x3bf96afe2291d76f2934350624080faefeec9a46"
+  },
+  {
+   "slug": "owangeteam",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "panels-blocks",
+   "contract": "0x47f9dbb7b9a5157031f9ed10d00532a2b7de1c77"
+  },
+  {
+   "slug": "paper-dragons",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "party-penguins",
+   "contract": "0x31f3bba9b71cb1d5e96cd62f0ba3958c034b55e9"
+  },
+  {
+   "slug": "para-kingdom",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "pellek",
+   "contract": "0xe3ea3eafe3fc255f3ebc5b6a2b3345e59e3f2c78"
+  },
+  {
+   "slug": "pepedapp-remint",
+   "contract": "0xdaae81c0077e8917a2eb63bb66ef701ff4781bb0"
+  },
+  {
+   "slug": "picassoplanets",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "pieces-of-me-by-r4v3n",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "play-squid-game",
+   "contract": "0x9cda227147684fc93850d596e13e82ba6599beee"
+  },
+  {
+   "slug": "planets-by-donnoh",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "pluto2",
+   "contract": "0x3f691327267993cfe4842ca1364a52dfe6190ec1"
+  },
+  {
+   "slug": "poap-v2",
+   "contract": "0x22c1f6050e56d2876009903609a2cc3fef83b415"
+  },
+  {
+   "slug": "pudgy-halloween",
+   "contract": "0x4d8679083f77a44449162a0a7ce500f77ca406b8"
+  },
+  {
+   "slug": "pudgycollabs",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "pudgypixelpenguins",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "pudgyrods",
+   "contract": "0x062e691c2054de82f28008a8ccc6d7a1c8ce060d"
+  },
+  {
+   "slug": "punk-portraits-old",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "punkscapes",
+   "contract": "0x51ae5e2533854495f6c587865af64119db8f59b4"
+  },
+  {
+   "slug": "rare-pepe-figures",
+   "contract": "0x6ff08fdafc834e9802f6f2fd181ab84ea111f576"
+  },
+  {
+   "slug": "rarepepe-by-matt-furie",
+   "contract": "0x937a2cd137fe77db397c51975b0caaaa29559cf7"
+  },
+  {
+   "slug": "recordseed",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "redemption-nft",
+   "contract": "0x399aa4e3a65282eee090eb58aedd787431c4af2d"
+  },
+  {
+   "slug": "rightclicksavephotography",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "replicator-by-mad-dog-jones",
+   "contract": "0xae1fb0cce66904b9fa2b60bef2b8057ce2441538"
+  },
+  {
+   "slug": "rob-gronkowski-championship-series-nfts",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "robotos-originals",
+   "contract": "0xe72d6ffd61c279b60b44cb85355a2975db55808c"
+  },
+  {
+   "slug": "roboticapesocialclub",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "robotos-official",
+   "contract": "0x099689220846644f87d1137665cded7bf3422747"
+  },
+  {
+   "slug": "roguesocietybot",
+   "contract": "0xc6735852e181a55f736e9db62831dc63ef8c449a"
+  },
+  {
+   "slug": "rtfkt-capsule-space-drip-1-2",
+   "contract": "0xc541fc1aa62384ab7994268883f80ef92aac6399"
+  },
+  {
+   "slug": "role-for-metaverse",
+   "contract": "0xcd4d337554862f9bc9ffffb67465b7d643e4e3ad"
+  },
+  {
+   "slug": "rookie-league",
+   "contract": "0x56cc0dc0275442892fbedd408393e079f837ebba"
+  },
+  {
+   "slug": "rumble-kong-league-sneakers",
+   "contract": "0x5180f2a553e76fac3cf019c8011711cf2b5c6035"
+  },
+  {
+   "slug": "rumble-kong-league",
+   "contract": "0xef0182dc0574cd5874494a120750fd222fdb909a"
+  },
+  {
+   "slug": "sad-frogs-district",
+   "contract": "0x772c9181b0596229ce5ba898772ce45188284379"
+  },
+  {
+   "slug": "settlements-legacy",
+   "contract": "0xdecc60000ba66700a009b8f9f7d82676b5cfa88a"
+  },
+  {
+   "slug": "snarkysharkz",
+   "contract": "0x67360de9ba51ab59bf0d6a4edad27b9bc0b05755"
+  },
+  {
+   "slug": "somnium-space",
+   "contract": "0x913ae503153d9a335398d0785ba60a2d63ddb4e2"
+  },
+  {
+   "slug": "space-debris-ravaged-by-whalestreet-x-pxlq",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "space-dinos-club",
+   "contract": "0x5aa140dd5b946687e38d5f5ac4ef9e7b0154eff6"
+  },
+  {
+   "slug": "space-punks-club",
+   "contract": "0x45db714f24f5a313569c41683047f1d49e78ba07"
+  },
+  {
+   "slug": "spacepoggers",
+   "contract": "0x4a8b01e437c65fa8612e8b699266c0e0a98ff65c"
+  },
+  {
+   "slug": "space-yetis-official",
+   "contract": "0x33a39af0f83e9d46a055e6eebde3296d26d916f4"
+  },
+  {
+   "slug": "spaceshibas",
+   "contract": "0xef81c2c98cb9718003a89908e6bd1a5fa8a098a3"
+  },
+  {
+   "slug": "spider-tanks",
+   "contract": "0x2a6d6a082c410a195157ec4caf67cb9fd718f087"
+  },
+  {
+   "slug": "spiral-frequencies",
+   "contract": "0x320e2fa93a4010ba47edcde762802374bac8d3f7"
+  },
+  {
+   "slug": "spirit-orb-pets-v0",
+   "contract": "0xeaf546758e6e1ebcaf0b1d7e0bac5b7262c73f00"
+  },
+  {
+   "slug": "spiritcoins",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "spiroflakes-by-alexander-reben",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "spiromorphs-by-sab",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "spottiewifi",
+   "contract": "0xa0e1b198bcc877a950a29512ab5c0ce1bb964c97"
+  },
+  {
+   "slug": "spottiewifi-alltimehigh",
+   "contract": "0x605e28a5888fec153937e223f1a867ff8571e72d"
+  },
+  {
+   "slug": "squid-gang",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "squiddao",
+   "contract": "0x7136ca86129e178399b703932464df8872f9a57a"
+  },
+  {
+   "slug": "st-jame-digital-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "squidapes696",
+   "contract": "0xaa4c5486769d14c8e3c618bf2d2764e6be5d0cf1"
+  },
+  {
+   "slug": "storyofsupduck",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "supducks-old",
+   "contract": "0x3fe1a4c1481c8351e91b64d5c398b159de07cbc5"
+  },
+  {
+   "slug": "superrare-bitgans",
+   "contract": "0x2d413006b09dc8953a468e662d81382942b4c0d2"
+  },
+  {
+   "slug": "talking-blocks-by-remo-x-dcsan",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "technorigami-blockchain-fine-art-gallery",
+   "contract": "0x112bec51a4b0942e7f7b2a5090f5ad57b7901559"
+  },
+  {
+   "slug": "terraforms",
+   "contract": "0x4e1f41613c9084fdb9e34e11fae9412427480e56"
+  },
+  {
+   "slug": "the-animal-kingdom-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "tfue",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "the-8102-yachts",
+   "contract": "0x70624df0bac10baf0a44da6430c79e13231294d6"
+  },
+  {
+   "slug": "the-baby-bears",
+   "contract": "0x9e629d779be89783263d4c4a765c38eb3f18671c"
+  },
+  {
+   "slug": "the-blocks-of-art-by-shvembldr",
+   "contract": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270"
+  },
+  {
+   "slug": "the-kingdom-by-carlos-fama",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "the-colors-legacy",
+   "contract": "0xc22f6c6f04c24fac546a43eb2e2eb10b1d2953da"
+  },
+  {
+   "slug": "the-park-music",
+   "contract": "0x21f53279d74f019b4452237851ce14f37eddc3b9"
+  },
+  {
+   "slug": "the-sevens-genesis",
+   "contract": "0xf497253c2bb7644ebb99e4d9ecc104ae7a79187a"
+  },
+  {
+   "slug": "the-scritchbeat-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "the-soldiers-of-the-metaverse",
+   "contract": "0xe7191c896d59a9c39965e16c5184c44172ec9cf9"
+  },
+  {
+   "slug": "the-spirals-thecolors-dot-art",
+   "contract": "0x9c3e5a4689d8a53886c2476f71e079df6fba4fc6"
+  },
+  {
+   "slug": "theplutoalliance",
+   "contract": "0xdfe3ac769b2d8e382cb86143e0b0b497e1ed5447"
+  },
+  {
+   "slug": "thefirst50",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "timepieces-x-robotos",
+   "contract": "0x0e1f990d264a9818460dde1b81c0b04d8a88e751"
+  },
+  {
+   "slug": "tory",
+   "contract": "0x47dd306909fcd7cd22dfbf2548f7e43a8594b243"
+  },
+  {
+   "slug": "twobitbears",
+   "contract": "0x8ed25b735a788f4f7129db736fc64f3a241137b8"
+  },
+  {
+   "slug": "twobithoney",
+   "contract": "0x65b7990ab726ef573c176bb8b9b5464de6ea6c89"
+  },
+  {
+   "slug": "unitedplanets",
+   "contract": "0x7deb7bce4d360ebe68278dee6054b882aa62d19c"
+  },
+  {
+   "slug": "unstoppable-domains-animals",
+   "contract": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe"
+  },
+  {
+   "slug": "veefriends",
+   "contract": "0xa3aee8bce55beea1951ef834b99f3ac60d1abeeb"
+  },
+  {
+   "slug": "unoffical-trash-punks",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "veefriends-mini-drops",
+   "contract": "0x6cb5c137ed297c74c8dc1f7c669bbd9a60b98c3c"
+  },
+  {
+   "slug": "washington-wizards-starting-five-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "whelpsnft-legacy",
+   "contract": "0xa8934086a260f8ece9166296967d18bd9c8474a5"
+  },
+  {
+   "slug": "we-like-the-cube",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "whiteinfinitys",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "wiley-jw-a-w-jon-fisher-first-author-trading-card",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "winterbears",
+   "contract": "0xc8bcbe0e8ae36d8f9238cd320ef6de88784b1734"
+  },
+  {
+   "slug": "womenandweapons",
+   "contract": "0x338866f8ba75bb9d7a00502e11b099a2636c2c18"
+  },
+  {
+   "slug": "womenofthemetaverse",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "world-of-women-nft",
+   "contract": "0xe785e82358879f061bc3dcac6f0444462d4b5330"
+  },
+  {
+   "slug": "wpl-golden-collection",
+   "contract": "0x495f947276749ce646f68ac8c248420045cb7b5e"
+  },
+  {
+   "slug": "wrapped-ether-rock",
+   "contract": "0xa3f5998047579334607c47a6a2889bf87a17fc02"
+  },
+  {
+   "slug": "wrapped-lunar",
+   "contract": "0xe81175546f554ca6ceb63b142f27de7557c5bf62"
+  },
+  {
+   "slug": "wrapped-mooncatsrescue",
+   "contract": "0x7c40c393dc0f283f318791d746d894ddd3693572"
+  },
+  {
+   "slug": "wrapped-pixereum",
+   "contract": "0x6f9d53ba6c16fcbe66695e860e72a92581b58aed"
+  },
+  {
+   "slug": "wrapped-strikers",
+   "contract": "0x11739d7bd793543a6e83bd7d8601fcbcde04e798"
+  },
+  {
+   "slug": "wrapped-waifus",
+   "contract": "0x9357a3b394798c1575218d18910e926b275ea07a"
+  },
+  {
+   "slug": "xcopy-editions",
+   "contract": "0x8d604ec183903dcd52a3af17dcc52bdf1cd5bc24"
+  },
+  {
+   "slug": "xy-coordinates",
+   "contract": "0x3ca53be299c765cdc66cc1723f8b3eefb3aaa413"
+  },
+  {
+   "slug": "pixelmap",
+   "contract": "0x050dc61dfb867e0fe3cf2948362b6c0f3faf790b"
+  },
+  {
+   "slug": "zerion-genesis-collection",
+   "contract": "0x74ee68a33f6c9f113e22b3b77418b75f85d07d22"
+  },
+  {
+   "slug": "squiggly",
+   "contract": "0x36f379400de6c6bcdf4408b282f8b685c56adc60"
+  },
+  {
+   "slug": "neolastics",
+   "contract": "0xb2d6fb1dc231f97f8cc89467b52f7c4f78484044"
+  },
+  {
+   "slug": "tokens-equal-text",
+   "contract": "0x97cc6bc80fe6c88f054e04593081e9ff9881e364"
+  },
+  {
+   "slug": "certificate-of-inauthenticity",
+   "contract": "0xe63c62f07e7adc4c397fb84d21d5aa6e0e054603"
+  },
+  {
+   "slug": "ikb-cachet-de-garantie-1",
+   "contract": "0x80f1ed6a1ac694317dc5719db099a440627d1ea7"
+  },
+  {
+   "slug": "thousand-ether-homepage",
+   "contract": "0x7bb952ab78b28a62b1525aca54a71e7aa6177645"
+  },
+  {
+   "slug": "realms-of-ether-1",
+   "contract": "0x8479277aacff4663aa4241085a7e27934a0b0840"
+  }
+ ],
+ "quiet_slugs": [
+  "chainmonsters",
+  "pandaearth",
+  "everdragons",
+  "cryptorome",
+  "mythwars",
+  "poap",
+  "wallofchain",
+  "f1-delta-time",
+  "monsterbit",
+  "etherbots",
+  "blocklords",
+  "9-lives-arena",
+  "space-misfits",
+  "gods-unchained",
+  "dabdragon-approved-registry",
+  "niftymoji",
+  "chainguardians-art",
+  "league-of-kingdoms",
+  "war-of-crypto",
+  "signed-crypto-punk",
+  "crypto-heroes-on-mars",
+  "crypto-color-collection",
+  "cryptofrogz",
+  "cryptofoxes-origin",
+  "legendsofcryptonia",
+  "hd-mooncats",
+  "rogue-west-crypto-trading-card-game",
+  "cryptosigns",
+  "crypto-owls-1",
+  "nft-dungeon",
+  "v-race-cryptovehicles",
+  "spaceshibes-ethereum",
+  "cryptoempire-nft",
+  "crypto-ninja-nft",
+  "crypto-punk-bros",
+  "cryptofantasy-nfl-2021",
+  "cryptocards-collection",
+  "cryptoraidersmusic",
+  "elegant-elephants-nft",
+  "cryptokickers",
+  "emblem-vault",
+  "cryptobabypunksopensea",
+  "crypto-unicorns-market",
+  "cryptospinners",
+  "cryptonauts-by-blockzero-labs",
+  "fine-wearables",
+  "fukufukubuncho",
+  "genesis-drop-ark",
+  "eeths",
+  "hash-kitties",
+  "heropunks",
+  "carelessbears",
+  "evolved-apes-inc",
+  "balance-exhibition",
+  "gang-goods",
+  "crypto-kombat-collection",
+  "digital",
+  "cryptostykz",
+  "critterznft",
+  "experiments-ukv0xqvktz",
+  "cryptoshibago",
+  "coca-cola",
+  "doublepops",
+  "ctrlboutique",
+  "a-ton-of-coke",
+  "1001-dagssons",
+  "bittrees-collection",
+  "arenagolf-golfer-nft",
+  "artificial-intelligence-art-aia",
+  "blockstamp",
+  "hapebeastgenesis",
+  "edition365",
+  "cyber-humanoid",
+  "cryptosaurs1",
+  "cyberalienz",
+  "fly-frogs-tadpoles",
+  "first-one-on-cv",
+  "dazn-x-canelo-saunders",
+  "bryson-dechambeau-limited-edition-nfts",
+  "actors-punks",
+  "heartbreak-bear-official",
+  "gods-unchained-collectibles",
+  "ghouliesnft",
+  "furry-faced-fellas",
+  "dogepirates",
+  "dnacultura-nfts",
+  "clubrare",
+  "collectible-figures",
+  "bnv",
+  "100bisous",
+  "gummo-land",
+  "function-draw",
+  "firstevernft",
+  "friday-night-punks",
+  "fast-food-pudgy-penguin",
+  "fatcatzgenesis",
+  "endowment",
+  "delorean-s-40th-anniversary-nft-collection",
+  "degenereggs",
+  "crypto-princesses-dream-edition",
+  "bored-boy",
+  "blockracers",
+  "blokkbots",
+  "bitpixi-friends",
+  "beezerbears",
+  "axie-infinity-fan-art-axielife",
+  "atari-capsule-collection",
+  "artinmotionnyc",
+  "angels-vs-demons-1",
+  "hb-wallet",
+  "hatbeardman",
+  "ghosts-of-elowah",
+  "generation-habibi-mint-pass",
+  "flowerblocks",
+  "f5doitmusic",
+  "edgy-veggies",
+  "dsc-x-kate",
+  "curseddeer",
+  "currensy",
+  "cryptodrunks",
+  "codedpunksociety",
+  "celebritycode",
+  "bored-ape-paint-art",
+  "bitshields",
+  "bitbehr",
+  "basicboredapeclub",
+  "baboonbrigade",
+  "1000milesout",
+  "hashhead",
+  "grunts",
+  "gorillamafia",
+  "gft-exchange-yao-family-wines-the-chop-drop",
+  "dotwork",
+  "deviant-punks",
+  "defi-of-thrones",
+  "cyberducks",
+  "cultwines",
+  "cubedcreatures",
+  "cryptohansclub",
+  "cryptodinosaurs",
+  "crypto-wafuku-nft",
+  "complicit",
+  "chef-boi-r-doge",
+  "capolavoro",
+  "burj-khalifa-2",
+  "buildspace-v2",
+  "boxingboyz-metaverse",
+  "bongbears",
+  "bezogis",
+  "bbside",
+  "aww-rats",
+  "avproject",
+  "auston",
+  "artcatsnft",
+  "8clit",
+  "amber-vittoria-collection",
+  "happyapesfamily",
+  "gunlord",
+  "gravityfootwear",
+  "fungles-assets",
+  "from-the-fragments-of-tezuka-osamu-mosaic-art",
+  "fastfoodsquiggles",
+  "f473-cards",
+  "energysketch",
+  "drawn-together-mental-health-awareness",
+  "dot-eyes",
+  "dogelon-mars-comic-series",
+  "darkforest-valhalla",
+  "day-of-the-dead-nft",
+  "dao-turtles",
+  "cryptounicorn",
+  "cryptopanzer",
+  "cryptocatclub",
+  "cryptoavatar3d",
+  "cryptoarts-org",
+  "crypto-cards-for-each-club",
+  "chad-and-friends",
+  "censored-series",
+  "cctv",
+  "boodles-club",
+  "bb-bohemian-bulldogs",
+  "badbanana",
+  "astrons",
+  "aoi-the-art-of-identity",
+  "anthos",
+  "anonymousman",
+  "angrydudez",
+  "america-heroes",
+  "ai-nightscapes",
+  "ai-fountain",
+  "8-bit-sport-football",
+  "guido-di-salle",
+  "gregory-eddi-jones",
+  "golden-token-crypto-new-yorkers",
+  "godtail",
+  "giraffe-tower",
+  "froggo-niverse",
+  "floodingfactoryblobs",
+  "fiiidgt",
+  "0xff",
+  "aavegotchi-frens-raffle-tickets",
+  "admixsomnium",
+  "allcaps-fan-collectibles",
+  "bitpix-trading-cards",
+  "bamc-x-cool-pixel-cats",
+  "bitverse-clash",
+  "blokpax-vault",
+  "bubble-budz",
+  "crypto-robots-v3",
+  "cryptoapesocialclub",
+  "cryptobots-v2",
+  "cyberkongzold",
+  "deactivated-gfc-weapon",
+  "decentraweb-domains-ethereum",
+  "doki-doki-legacy",
+  "ethterrestrials-migrated",
+  "fantasy-collection-yacht",
+  "forestmoments",
+  "forestmusings",
+  "genuine-human-art-contract",
+  "goodmorningcafe-old",
+  "haylo-relics",
+  "lady-apes-yacht-club",
+  "misfits-collection",
+  "neotokyo-citizens-legacy",
+  "neotokyo-outer-identities-legacy",
+  "nftworldartliuhailun",
+  "noaknafo",
+  "noora-health",
+  "owangeteam",
+  "paper-dragons",
+  "pudgycollabs",
+  "punk-portraits-old",
+  "rare-pepe-figures",
+  "rightclicksavephotography",
+  "technorigami-blockchain-fine-art-gallery",
+  "tfue",
+  "the-park-music",
+  "thefirst50",
+  "unoffical-trash-punks",
+  "we-like-the-cube",
+  "wiley-jw-a-w-jon-fisher-first-author-trading-card",
+  "tokens-equal-text"
+ ],
+ "bitquery_slugs": [
+  "animetas",
+  "coolmans-universe",
+  "beeple-everydays",
+  "cryptodickbutts-s3",
+  "galaxyeggs9999",
+  "fantasy-collection-yacht",
+  "great-expectations",
+  "heavencomputer",
+  "cryptorome",
+  "doodles-official",
+  "creaturetoadz",
+  "cryptoskulls",
+  "cool-cats-nft",
+  "mutant-ape-yacht-club",
+  "cryptoadz-by-gremplin",
+  "hd-mooncats",
+  "break-the-internet",
+  "avastar",
+  "ens",
+  "gilangndaru",
+  "buckets-club",
+  "async-blueprints",
+  "crypto-owls-1",
+  "cryptoarte",
+  "fameladysquad",
+  "gobabygo",
+  "digitalabstraction",
+  "cryptoempire-nft",
+  "cryptofrogz",
+  "alienfrensnft",
+  "pudgypenguins",
+  "fly-frogs",
+  "bored-baby-ape-yacht-club",
+  "bored-ape-comic-presale",
+  "cryptocoven",
+  "cryptoflyz",
+  "amiscats",
+  "cryptokitties",
+  "hashmasks",
+  "g-evols",
+  "cryptocards-collection",
+  "cryptovoxel-wearables",
+  "devs-for-revolution",
+  "galacticapes",
+  "chill-frogs",
+  "alpacadabraz",
+  "unitedplanets",
+  "deltahub-capital-v4",
+  "editional",
+  "adidasoriginals",
+  "capsulehouse",
+  "poap-v2",
+  "boredapeyachtclub",
+  "billionaireclubnft",
+  "known-origin",
+  "alphabetty-doodles",
+  "bored-ape-kennel-club",
+  "bigtime-founders",
+  "pixelcons",
+  "somnium-space",
+  "charged-particles-proton",
+  "mythwars",
+  "apocalyptic-apes",
+  "dotdotdots",
+  "plasma-bears",
+  "mlb-champions",
+  "grillzgang",
+  "biomes",
+  "bricktopians-by-law-degree",
+  "9tales",
+  "degenerate-regenerate",
+  "cross-studio",
+  "world-of-women-nft",
+  "cryptotrunks",
+  "superrare",
+  "art-v4",
+  "asm-brains",
+  "legendsofcryptonia",
+  "etherlambos",
+  "curiocardswrapper",
+  "badbad",
+  "oshi-on-sound",
+  "mecha-chaotic",
+  "0n1-force",
+  "ghostsproject",
+  "cryptosigns",
+  "desperate-ape-wives",
+  "doge-pound-puppies-real",
+  "clonex",
+  "crypto-phunks",
+  "gauntlets",
+  "encryptas-1",
+  "war-riders",
+  "makersplace",
+  "cryptopunks",
+  "grayboys",
+  "dabdragon-approved-registry",
+  "crypto-stamp-edition-1",
+  "crypto-punk-bros",
+  "rarible",
+  "crypto-bull-society",
+  "deadfellaz",
+  "acclimatedmooncats",
+  "adam-bomb-squad",
+  "wallofchain",
+  "decentraland",
+  "xcopy-editions",
+  "flyfish-club",
+  "fewocious",
+  "apes-in-space-nft",
+  "airbits",
+  "lilpudgys",
+  "spaceshibes-ethereum"
+ ]
+}
