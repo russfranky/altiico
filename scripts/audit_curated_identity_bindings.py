@@ -21,12 +21,16 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 DEFAULT_REGISTRY = ROOT / "data" / "awesome_3d_avatar_collections.md"
 DEFAULT_DATA_DIR = ROOT / "static" / "data"
 DEFAULT_BUILD_INFO = DEFAULT_DATA_DIR / "build-info.json"

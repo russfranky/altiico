@@ -16,11 +16,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
-from scripts.audit_catalog_completeness import EXPLICIT_RESOLUTION_STATES
-from scripts.enforce_catalog_acceptance import (
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.audit_catalog_completeness import EXPLICIT_RESOLUTION_STATES  # noqa: E402
+from scripts.enforce_catalog_acceptance import (  # noqa: E402
     MUST_HAVE_VALUE,
     PROJECT_STATUSES,
     SCOPE_TIERS,
@@ -30,7 +35,6 @@ from scripts.enforce_catalog_acceptance import (
     scope_omissions,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_REPORT = ROOT / "data" / "catalog_completeness_report.json"
 DEFAULT_INVENTORY = ROOT / "static" / "data" / "avatar-inventory.json"
 DEFAULT_PROBE = ROOT / "data" / "avatar_inventory_probe.json"

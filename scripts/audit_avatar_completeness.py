@@ -10,17 +10,21 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
-from scripts.audit_catalog_completeness import (
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.audit_catalog_completeness import (  # noqa: E402
     DEFAULT_DB,
     DEFAULT_RESEARCH,
     REQUIRED_FIELDS as LEGACY_REQUIRED_FIELDS,
     run as run_legacy,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INVENTORY = ROOT / "static" / "data" / "avatar-inventory.json"
 DEFAULT_OUTPUT = ROOT / "data" / "catalog_completeness_report.json"
 TERMINAL_STATES = {"not_shipped", "unrecoverable"}
