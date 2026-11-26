@@ -6,19 +6,47 @@ that have a slug but no project_url. Also fills in missing descriptions.
 import json, os, sqlite3, time, urllib.request, urllib.error
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT
+DB = ROOT / "data" / "vrm_index.db"
 DETAILS = BASE / "data" / "os_scrape" / "collection_details.json"
-OSK = os.path.expanduser("~/.opensea/api_key")
+API_KEY_PATH = Path.home() / ".opensea" / "api_key"
+OSK = ""
+
+
+def load_opensea_key() -> str:
+    env_key = os.environ.get("OPENSEA_API_KEY", "").strip()
+    if env_key:
+        return env_key
+    try:
+        key = API_KEY_PATH.read_text(encoding="utf-8").strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"No OpenSea API key at {API_KEY_PATH}") from exc
+    if not key:
+        raise SystemExit(f"Empty OpenSea API key at {API_KEY_PATH}")
+    return key
+
+
+def get_opensea_key() -> str:
+    global OSK
+    if not OSK:
+        OSK = load_opensea_key()
+    return OSK
+
 
 def os_fetch(url):
-    req = urllib.request.Request(url, headers={"X-API-KEY": OSK, "User-Agent": "superyeti/1.0"})
+    req = urllib.request.Request(url, headers={"X-API-KEY": get_opensea_key(), "User-Agent": "superyeti/1.0"})
     with urllib.request.urlopen(req, timeout=15) as r:
         return json.loads(r.read())
 
 def main():
+    get_opensea_key()
     # Load existing details
-    details = json.load(open(DETAILS)) if DETAILS.exists() else {}
+    if DETAILS.exists():
+        with open(DETAILS, encoding="utf-8") as df:
+            details = json.load(df)
+    else:
+        details = {}
 
     # Find collections with slug but no project_url
     conn = sqlite3.connect(DB)
@@ -71,7 +99,9 @@ def main():
             updated += 1
 
     # Save updated details
-    json.dump(details, open(DETAILS, 'w'), indent=2)
+    DETAILS.parent.mkdir(parents=True, exist_ok=True)
+    with open(DETAILS, "w", encoding="utf-8") as df:
+        json.dump(details, df, indent=2)
     conn.commit()
     conn.close()
     print(f"\nUpdated {updated} project URLs")

@@ -21,7 +21,8 @@ Examples:
 import sqlite3, argparse, json, sys, os
 from pathlib import Path
 
-DB = Path(__file__).parent / "vrm_index.db"
+ROOT = Path(__file__).resolve().parent.parent
+DB = ROOT / "data" / "vrm_index.db"
 
 def query_collections(args):
     conn = sqlite3.connect(str(DB))
@@ -242,7 +243,7 @@ def main():
 
     if not DB.exists():
         print(f"Database not found: {DB}", file=sys.stderr)
-        print("Run: python3 build_index.py", file=sys.stderr)
+        print("Run: python3 scripts/build_index.py", file=sys.stderr)
         sys.exit(1)
 
     if args.stats:

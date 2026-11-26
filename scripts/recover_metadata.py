@@ -14,8 +14,9 @@ import json, sqlite3, urllib.request, urllib.error, re, time, html
 from pathlib import Path
 from urllib.parse import urlparse
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT
+DB = ROOT / "data" / "vrm_index.db"
 CACHE = BASE / "data" / "os_scrape" / "wayback_metadata.json"
 
 def wayback_availability(url):
@@ -82,7 +83,11 @@ def clean_wayback_url(url, wayback_url):
     return url
 
 def main():
-    cache = json.load(open(CACHE)) if CACHE.exists() else {}
+    if CACHE.exists():
+        with open(CACHE, encoding="utf-8") as cf:
+            cache = json.load(cf)
+    else:
+        cache = {}
 
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
@@ -183,7 +188,9 @@ def main():
             recovered += 1
 
     # Save cache
-    json.dump(cache, open(CACHE, 'w'), indent=2)
+    CACHE.parent.mkdir(parents=True, exist_ok=True)
+    with open(CACHE, "w", encoding="utf-8") as cf:
+        json.dump(cache, cf, indent=2)
     conn.commit()
     conn.close()
     print(f"\nRecovered metadata for {recovered} collections")

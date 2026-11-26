@@ -13,10 +13,33 @@ Caches to data/os_scrape/collection_meta.json so re-runs are fast.
 import json, os, sqlite3, time, urllib.request, urllib.error
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT
+DB = ROOT / "data" / "vrm_index.db"
 CACHE_PATH = BASE / "data" / "os_scrape" / "collection_meta.json"
-OSK = open(os.path.expanduser("~/.opensea/api_key")).read().strip()
+API_KEY_PATH = Path.home() / ".opensea" / "api_key"
+OSK = ""
+
+
+def load_opensea_key() -> str:
+    env_key = os.environ.get("OPENSEA_API_KEY", "").strip()
+    if env_key:
+        return env_key
+    try:
+        key = API_KEY_PATH.read_text(encoding="utf-8").strip()
+    except FileNotFoundError as exc:
+        raise SystemExit(f"No OpenSea API key at {API_KEY_PATH}") from exc
+    if not key:
+        raise SystemExit(f"Empty OpenSea API key at {API_KEY_PATH}")
+    return key
+
+
+def get_opensea_key() -> str:
+    global OSK
+    if not OSK:
+        OSK = load_opensea_key()
+    return OSK
+
 
 CHAIN_MAP = {
     "polygon": "matic", "base": "base", "optimism": "optimism",
@@ -25,7 +48,7 @@ CHAIN_MAP = {
 
 def os_get(url):
     req = urllib.request.Request(url, headers={
-        "X-API-KEY": OSK, "User-Agent": "superyeti/1.0",
+        "X-API-KEY": get_opensea_key(), "User-Agent": "superyeti/1.0",
     })
     with urllib.request.urlopen(req, timeout=20) as r:
         return json.loads(r.read())
@@ -125,10 +148,12 @@ NEW_COLUMNS = [
 ]
 
 def main():
+    get_opensea_key()
     # Load cache
     cache = {}
     if CACHE_PATH.exists():
-        cache = json.load(open(CACHE_PATH))
+        with open(CACHE_PATH, encoding="utf-8") as cf:
+            cache = json.load(cf)
 
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
@@ -270,10 +295,14 @@ def main():
 
         # Save cache periodically
         if fetched % 10 == 0:
-            json.dump(cache, open(CACHE_PATH, "w"), indent=2)
+            CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+            with open(CACHE_PATH, "w", encoding="utf-8") as cf:
+                json.dump(cache, cf, indent=2)
 
     # Save cache
-    json.dump(cache, open(CACHE_PATH, "w"), indent=2)
+    CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(CACHE_PATH, "w", encoding="utf-8") as cf:
+        json.dump(cache, cf, indent=2)
     conn.commit()
     conn.close()
 
