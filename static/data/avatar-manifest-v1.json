@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-11-19T18:38:41Z",
-  "snapshot_id": "vrmcat-v1-2e649a872c201d03b9d903ed",
+  "generated_at": "2026-11-26T04:32:15Z",
+  "snapshot_id": "vrmcat-v1-4d8c4f57e8f3c09be3f69559",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",

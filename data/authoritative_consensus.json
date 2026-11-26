@@ -1,6 +1,6 @@
 {
   "schema": "authoritative-catalog-consensus-v2",
-  "generatedAt": "2026-10-07T15:40:04.636405+00:00",
+  "generatedAt": "2026-11-26T04:32:15.633527+00:00",
   "policy": {
     "identity": "chain+contract are anchored by direct discovery/on-chain evidence; Etherscan contract/deployment evidence and Bitquery transfer history corroborate identity; OpenSea/Moralis indexes never silently override it",
     "mutableFields": "preserve per-source timestamps and conflicts",
@@ -343,7 +343,7 @@
       "observedAt": "2026-08-26T09:06:19.560656+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:37:57.845644+00:00",
+        "observedAt": "2026-11-26T04:30:12.130197+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ADW",
@@ -812,7 +812,7 @@
       "observedAt": "2026-08-26T09:06:19.560715+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:37:57.845681+00:00",
+        "observedAt": "2026-11-26T04:30:12.130239+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Akutar",
@@ -1250,7 +1250,7 @@
       "observedAt": "2026-08-26T09:06:19.560759+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:37:57.845701+00:00",
+        "observedAt": "2026-11-26T04:30:12.130263+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AllstarzPSX",
@@ -1443,7 +1443,7 @@
       "observedAt": "2026-08-26T09:06:20.883339+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:01.162319+00:00",
+        "observedAt": "2026-11-26T04:30:15.506518+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ArbiDudesGenOne",
@@ -1601,7 +1601,7 @@
       "observedAt": "2026-08-26T09:06:21.099873+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:03.013590+00:00",
+        "observedAt": "2026-11-26T04:30:17.298242+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Arbibots",
@@ -2543,7 +2543,7 @@
       "observedAt": "2026-08-26T09:06:21.456182+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:04.996648+00:00",
+        "observedAt": "2026-11-26T04:30:17.618876+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AvastarTeleporter",
@@ -2699,7 +2699,7 @@
       "observedAt": "2026-08-26T09:06:22.364356+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:05.120659+00:00",
+        "observedAt": "2026-11-26T04:30:19.457171+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -2879,7 +2879,7 @@
       "observedAt": "2026-08-26T09:06:22.687421+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:06.967902+00:00",
+        "observedAt": "2026-11-26T04:30:21.250498+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DiamondCollection",
@@ -3425,7 +3425,7 @@
       "observedAt": "2026-08-26T09:06:22.877559+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:08.748166+00:00",
+        "observedAt": "2026-11-26T04:30:23.113522+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Loomlocknft",
@@ -3830,7 +3830,7 @@
       "observedAt": "2026-08-26T09:06:23.284590+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:10.549020+00:00",
+        "observedAt": "2026-11-26T04:30:24.889499+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4319,7 +4319,7 @@
       "observedAt": "2026-08-26T09:06:23.728945+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:12.349666+00:00",
+        "observedAt": "2026-11-26T04:30:26.692249+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CloneX",
@@ -4907,7 +4907,7 @@
       "observedAt": "2026-08-26T09:06:23.998545+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:14.157084+00:00",
+        "observedAt": "2026-11-26T04:30:28.507208+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChainRunners",
@@ -5024,7 +5024,7 @@
       "observedAt": "2026-08-26T09:06:24.763873+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:15.964458+00:00",
+        "observedAt": "2026-11-26T04:30:30.309953+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -5484,7 +5484,7 @@
       "observedAt": "2026-08-26T09:06:24.919866+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:17.757929+00:00",
+        "observedAt": "2026-11-26T04:30:32.070409+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ChibiApes",
@@ -5799,7 +5799,7 @@
       "observedAt": "2026-08-26T09:06:25.197254+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:19.571850+00:00",
+        "observedAt": "2026-11-26T04:30:33.937303+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -5903,7 +5903,7 @@
       "observedAt": "2026-08-26T09:06:26.430114+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:21.380777+00:00",
+        "observedAt": "2026-11-26T04:30:35.747438+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -6436,7 +6436,7 @@
       "observedAt": "2026-08-26T09:06:27.052138+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:23.183024+00:00",
+        "observedAt": "2026-11-26T04:30:37.541467+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "CyberBrokers",
@@ -6841,7 +6841,7 @@
       "observedAt": "2026-08-26T09:06:27.504489+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:24.991678+00:00",
+        "observedAt": "2026-11-26T04:30:39.335879+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DASKa",
@@ -7193,7 +7193,7 @@
       "observedAt": "2026-08-26T09:06:27.691708+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:26.785026+00:00",
+        "observedAt": "2026-11-26T04:30:41.105434+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FairxyzBeaconProxy",
@@ -7653,7 +7653,7 @@
       "observedAt": "2026-08-26T09:06:28.117861+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:28.602352+00:00",
+        "observedAt": "2026-11-26T04:30:42.967186+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "DickButtVerse",
@@ -8032,7 +8032,7 @@
       "observedAt": "2026-08-26T09:06:28.562456+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:30.406010+00:00",
+        "observedAt": "2026-11-26T04:30:44.769227+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC1967Proxy",
@@ -8679,7 +8679,7 @@
       "observedAt": "2026-08-26T09:06:28.988826+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:32.214694+00:00",
+        "observedAt": "2026-11-26T04:30:46.559909+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FLUF",
@@ -9161,7 +9161,7 @@
       "observedAt": "2026-08-26T09:06:29.234130+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:35.817593+00:00",
+        "observedAt": "2026-11-26T04:30:50.165024+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "GenF",
@@ -9343,7 +9343,7 @@
       "observedAt": "2026-08-26T09:06:29.606118+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:37.625415+00:00",
+        "observedAt": "2026-11-26T04:30:51.995977+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FlyFrogs",
@@ -9836,7 +9836,7 @@
       "observedAt": "2026-08-26T09:06:29.956376+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:39.447980+00:00",
+        "observedAt": "2026-11-26T04:30:53.742072+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ForgottenRunesWizardsCult",
@@ -9994,7 +9994,7 @@
       "observedAt": "2026-08-26T09:06:30.389662+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:41.237308+00:00",
+        "observedAt": "2026-11-26T04:30:55.603954+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Archetype",
@@ -10707,7 +10707,7 @@
       "observedAt": "2026-08-26T09:06:30.909668+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:43.050814+00:00",
+        "observedAt": "2026-11-26T04:30:57.428046+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "FyatLux",
@@ -10867,7 +10867,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:46.657510+00:00",
+        "observedAt": "2026-11-26T04:31:01.006374+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "HalloweenRising",
@@ -11417,7 +11417,7 @@
       "observedAt": "2026-08-26T09:06:31.735571+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:48.460808+00:00",
+        "observedAt": "2026-11-26T04:31:02.827335+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "JaduAVA",
@@ -11899,7 +11899,7 @@
       "observedAt": "2026-08-26T09:06:32.150796+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:50.249185+00:00",
+        "observedAt": "2026-11-26T04:31:04.573341+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Karafuru",
@@ -12057,7 +12057,7 @@
       "observedAt": "2026-08-26T09:06:33.789773+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:52.053185+00:00",
+        "observedAt": "2026-11-26T04:31:06.379933+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "VFTokenCAirdrop",
@@ -12264,7 +12264,7 @@
       "observedAt": "2026-08-26T09:06:34.718485+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:53.870497+00:00",
+        "observedAt": "2026-11-26T04:31:08.230264+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "MonaAvatars",
@@ -12845,7 +12845,7 @@
       "observedAt": "2026-08-26T09:06:36.015242+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:55.680837+00:00",
+        "observedAt": "2026-11-26T04:31:10.059009+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Meebits",
@@ -13204,7 +13204,7 @@
       "observedAt": "2026-08-26T09:06:36.405264+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:57.469956+00:00",
+        "observedAt": "2026-11-26T04:31:11.796807+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "metaaniGEN",
@@ -14346,7 +14346,7 @@
       "observedAt": "2026-08-26T09:06:37.054880+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:38:59.295982+00:00",
+        "observedAt": "2026-11-26T04:31:13.634541+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TransparentUpgradeableProxy",
@@ -14588,7 +14588,7 @@
       "observedAt": "2026-08-26T09:06:37.583681+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:02.899515+00:00",
+        "observedAt": "2026-11-26T04:31:17.259717+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721NESDrop",
@@ -14969,7 +14969,7 @@
       "observedAt": "2026-08-26T09:06:38.181675+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:04.703770+00:00",
+        "observedAt": "2026-11-26T04:31:19.063870+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Moonbirds",
@@ -15078,7 +15078,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:06.893283+00:00",
+        "observedAt": "2026-11-26T04:31:20.822237+00:00",
         "contractCorroborated": false,
         "verifiedSource": false,
         "contractName": "",
@@ -15296,7 +15296,7 @@
       "observedAt": "2026-08-26T09:06:40.044453+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:08.316586+00:00",
+        "observedAt": "2026-11-26T04:31:22.676361+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NG86VRM",
@@ -15776,7 +15776,7 @@
       "observedAt": "2026-08-26T09:06:40.706965+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:10.124242+00:00",
+        "observedAt": "2026-11-26T04:31:24.491942+00:00",
         "contractCorroborated": true,
         "verifiedSource": false,
         "contractName": "",
@@ -15957,7 +15957,7 @@
       "observedAt": "2026-08-26T09:06:41.243927+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:11.989570+00:00",
+        "observedAt": "2026-11-26T04:31:26.260052+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "NounsToken",
@@ -16210,7 +16210,7 @@
       "observedAt": "2026-08-26T09:06:41.883899+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:13.741259+00:00",
+        "observedAt": "2026-11-26T04:31:28.105088+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721DropProxy",
@@ -17097,7 +17097,7 @@
       "observedAt": "2026-08-26T09:06:42.359791+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:15.531417+00:00",
+        "observedAt": "2026-11-26T04:31:29.909088+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Omnimorphs",
@@ -17465,7 +17465,7 @@
       "observedAt": "2026-08-26T09:06:42.837165+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:19.143199+00:00",
+        "observedAt": "2026-11-26T04:31:33.505356+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ParallelAvatars",
@@ -18185,7 +18185,7 @@
       "observedAt": "2026-08-26T09:06:43.307560+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:20.949444+00:00",
+        "observedAt": "2026-11-26T04:31:35.333378+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "PartyBears",
@@ -18489,7 +18489,7 @@
       "observedAt": "2026-08-26T09:06:43.624058+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:22.742876+00:00",
+        "observedAt": "2026-11-26T04:31:37.078324+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Phetta",
@@ -18595,7 +18595,7 @@
       "observedAt": "2026-08-26T09:06:44.129528+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:24.562025+00:00",
+        "observedAt": "2026-11-26T04:31:38.944434+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AssetContractShared",
@@ -19766,7 +19766,7 @@
       "observedAt": "2026-08-26T09:06:44.946285+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:26.363223+00:00",
+        "observedAt": "2026-11-26T04:31:40.742744+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "OptimizedTransparentUpgradeableProxy",
@@ -20292,7 +20292,7 @@
       "observedAt": "2026-08-26T09:06:45.578919+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:28.179537+00:00",
+        "observedAt": "2026-11-26T04:31:42.576088+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "TheModZ",
@@ -20953,7 +20953,7 @@
       "observedAt": "2026-08-26T09:06:46.083749+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:29.962550+00:00",
+        "observedAt": "2026-11-26T04:31:44.307347+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Seeker",
@@ -21358,7 +21358,7 @@
       "observedAt": "2026-08-26T09:06:46.599817+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:31.782151+00:00",
+        "observedAt": "2026-11-26T04:31:46.164427+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "WynLambo",
@@ -21777,7 +21777,7 @@
       "observedAt": "2026-08-26T09:06:46.972911+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:33.585772+00:00",
+        "observedAt": "2026-11-26T04:31:47.977320+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ToxicSkullsClubProxy",
@@ -22213,7 +22213,7 @@
       "observedAt": "2026-08-26T09:06:47.434817+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:35.390264+00:00",
+        "observedAt": "2026-11-26T04:31:49.759677+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -22686,7 +22686,7 @@
       "observedAt": "2026-08-26T09:06:47.800267+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:37.194425+00:00",
+        "observedAt": "2026-11-26T04:31:51.588037+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ContractNFT",
@@ -23038,7 +23038,7 @@
       "observedAt": "2026-08-26T09:06:48.098608+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:38.999222+00:00",
+        "observedAt": "2026-11-26T04:31:53.386163+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ImmaDegenVoyagerReveal",
@@ -23696,7 +23696,7 @@
       "observedAt": "2026-08-26T09:06:48.493236+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:40.803600+00:00",
+        "observedAt": "2026-11-26T04:31:55.207826+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Voltz",
@@ -24242,7 +24242,7 @@
       "observedAt": "2026-08-26T09:06:48.724185+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:42.603367+00:00",
+        "observedAt": "2026-11-26T04:31:56.950806+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Vaifus",
@@ -24770,7 +24770,7 @@
       "observedAt": "2026-08-26T09:06:49.020980+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:44.419587+00:00",
+        "observedAt": "2026-11-26T04:31:58.795389+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Woodie",
@@ -24953,7 +24953,7 @@
         "floor: RuntimeError: Moralis API error 400: {\"message\":\"Chain is not supported\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:46.225389+00:00",
+        "observedAt": "2026-11-26T04:32:00.611034+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "XmasChibis",
@@ -25109,7 +25109,7 @@
       "observedAt": "2026-08-26T09:06:50.256555+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:48.011488+00:00",
+        "observedAt": "2026-11-26T04:32:02.366007+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "ERC721SeaDrop",
@@ -25666,7 +25666,7 @@
       "observedAt": "2026-08-26T09:06:50.329673+00:00",
       "errors": [],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:49.837780+00:00",
+        "observedAt": "2026-11-26T04:32:04.232876+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "AKCB",
@@ -25869,7 +25869,7 @@
         "metadata: RuntimeError: Moralis API error 404: {\"message\":\"No metadata found! Try again later\"}"
       ],
       "etherscan": {
-        "observedAt": "2026-10-07T15:39:51.725779+00:00",
+        "observedAt": "2026-11-26T04:32:06.018332+00:00",
         "contractCorroborated": true,
         "verifiedSource": true,
         "contractName": "Token",

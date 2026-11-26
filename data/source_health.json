@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T15:37:57.621035+00:00",
+  "generatedAt": "2026-11-26T04:30:11.881925+00:00",
   "moralis": {
     "freshCrossReference": false,
     "freshModelDiscovery": false,
@@ -54,12 +54,27 @@
     }
   },
   "etherscan": {
-    "freshCorroborated": 63,
-    "selectedCorroborated": 63,
+    "freshCorroborated": 61,
+    "selectedCorroborated": 61,
     "collectionsWithErrors": 66,
     "allCollectionsHaveErrors": true,
     "rateLimitedCollections": 0,
     "preservedCollections": 0,
     "mode": "fresh"
+  },
+  "bitquery": {
+    "freshObservations": 0,
+    "freshErrors": 62,
+    "freshInspected": 62,
+    "selectedObservations": 21,
+    "mode": "previous_last_good",
+    "attemptSummary": {
+      "collectionsInspected": 62,
+      "collectionsObservedOnchain": 0,
+      "collectionsWithErrors": 62,
+      "tokensSampled": 0,
+      "transferUris": 0,
+      "modelSignalTokens": 0
+    }
   }
 }

@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-11-19T18:38:41Z",
-  "snapshot_id": "vrmcat-v1-2e649a872c201d03b9d903ed",
+  "generated_at": "2026-11-26T04:32:15Z",
+  "snapshot_id": "vrmcat-v1-4d8c4f57e8f3c09be3f69559",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -494,7 +494,7 @@
       "contract": "0x9c8ff314c9bc7f6e59a9d9225fb22946427edc03",
       "banner": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/3abb29c00bf1d0692ccd932e34dc24/ee3abb29c00bf1d0692ccd932e34dc24.png",
       "pfp": "https://i2c.seadn.io/ethereum/45bee2f49bf744628270ed7e17da9b99/578c5892a0e584cef7a9c54b031395/cc578c5892a0e584cef7a9c54b031395.png",
-      "avatar_count": 2011,
+      "avatar_count": 2052,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
@@ -569,7 +569,7 @@
       "contract": "0x3137e02341a4acbf01a02cfb60ccc194c3452756",
       "banner": "https://i2c.seadn.io/ethereum/d58a32b0e9ff4a488da4def4ebfe3b52/558b267061267cdb073aa4f8060ec5/a5558b267061267cdb073aa4f8060ec5.png",
       "pfp": "https://i2c.seadn.io/ethereum/d58a32b0e9ff4a488da4def4ebfe3b52/d8869c43bd34bd9f957f160fcd8e0b/a2d8869c43bd34bd9f957f160fcd8e0b.gif",
-      "avatar_count": 711,
+      "avatar_count": 736,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"
