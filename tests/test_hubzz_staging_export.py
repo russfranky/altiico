@@ -327,3 +327,139 @@ def test_bundle_validation_and_summary(tmp_path):
     assert bundle["sets"][0]["set"]["slug"] == "ready"
     assert bundle["deferred"][0]["slug"] == "blocked"
     conn.close()
+
+
+def test_owner_decision_exclude_defers_collection(tmp_path):
+    conn = make_db()
+    row = insert_collection(conn, id="osa-skip", name="OSA Skip", owner_decision="exclude")
+    entry, deferred = stage_record(conn, row, "2026-11-26T00:00:00Z", tmp_path)
+    assert entry is None
+    assert "owner_excluded" in deferred["reasons"]
+    conn.close()
+
+
+def test_sync_probed_sets_idempotent_preserves_cid_case_and_unknown_license(tmp_path):
+    import json
+    from scripts.sync_probed_inventory_to_db import sync_all
+
+    db = tmp_path / "test.db"
+    conn = sqlite3.connect(str(db))
+    conn.row_factory = sqlite3.Row
+    conn.executescript(
+        """
+        CREATE TABLE collections (
+            id TEXT PRIMARY KEY, name TEXT NOT NULL, tier TEXT, chain TEXT,
+            contract TEXT, opensea_slug TEXT, license_category TEXT, vrm_license TEXT,
+            commercial_use TEXT, allowed_user TEXT, redistribution TEXT,
+            avatar_count INTEGER, total_supply INTEGER, max_supply INTEGER,
+            description TEXT, short_description TEXT, source TEXT,
+            image_url TEXT, banner_image_url TEXT, sample_nft_image TEXT,
+            sample_nft_name TEXT, sample_metadata_url TEXT, release_date TEXT,
+            creator TEXT, project_url TEXT, vrm_url_https TEXT, vrm_url_pattern TEXT,
+            vrm_param TEXT, owner_decision TEXT, is_nsfw INTEGER,
+            vrm_reachable INTEGER, vrm_check_status TEXT, vrm_check_http INTEGER,
+            vrm_check_bytes INTEGER, vrm_check_url TEXT, vrm_checked_at TEXT
+        );
+        CREATE TABLE contracts (
+            collection_id TEXT, address TEXT NOT NULL, chain TEXT NOT NULL,
+            token_standard TEXT, is_primary INTEGER DEFAULT 0,
+            PRIMARY KEY (collection_id, address)
+        );
+        CREATE TABLE avatars (
+            id TEXT PRIMARY KEY, collection_id TEXT, name TEXT, description TEXT,
+            model_file_url TEXT, format TEXT, thumbnail_url TEXT, is_public INTEGER,
+            metadata_json TEXT, reachable INTEGER, check_status TEXT, check_http INTEGER, checked_at TEXT,
+            FOREIGN KEY (collection_id) REFERENCES collections(id)
+        );
+        CREATE TABLE vrm_metadata (
+            source_url TEXT NOT NULL PRIMARY KEY, source_etag TEXT, source_last_modified TEXT,
+            extracted_at TEXT NOT NULL, extractor_version TEXT NOT NULL, vrm_spec TEXT,
+            vrm_meta_json TEXT, parse_error TEXT, content_length INTEGER, content_range TEXT,
+            content_sha256 TEXT, json_chunk_sha256 TEXT, observed_content_length INTEGER, transport_url TEXT
+        );
+        CREATE TABLE avatar_vrm (
+            avatar_id TEXT NOT NULL PRIMARY KEY, vrm_source_url TEXT NOT NULL,
+            FOREIGN KEY (avatar_id) REFERENCES avatars(id),
+            FOREIGN KEY (vrm_source_url) REFERENCES vrm_metadata(source_url)
+        );
+        CREATE TABLE license_dimensions (
+            collection_id TEXT PRIMARY KEY, raw_collection_terms TEXT,
+            raw_embedded_vrm_meta_json TEXT, raw_external_urls TEXT,
+            use_scope TEXT, commercial_scope TEXT, credit TEXT,
+            redistribute_original INTEGER, modify INTEGER, redistribute_modified INTEGER,
+            corporate_use INTEGER, terminates_on_transfer INTEGER, hate_speech_termination INTEGER,
+            color TEXT, reason_codes TEXT, confidence TEXT, conflict_flag INTEGER DEFAULT 0, assessed_at TEXT,
+            FOREIGN KEY (collection_id) REFERENCES collections(id)
+        );
+        """
+    )
+    conn.execute(
+        """
+        INSERT INTO collections (id, name, tier, chain, contract, license_category, vrm_license, image_url, banner_image_url, is_nsfw)
+        VALUES ('avastars', 'Avastars', 'B', 'ethereum', '0xf3e778f839934fc819cfa1040aabacecba01e049', 'unknown', '', 'https://example.test/p.png', 'https://example.test/b.png', 0)
+        """
+    )
+    conn.commit()
+    conn.close()
+
+    inv_path = tmp_path / "inv.json"
+    inv_path.write_text(json.dumps({"collections": []}), encoding="utf-8")
+    probe_path = tmp_path / "probe.json"
+    probe_path.write_text(json.dumps({"generatedAt": "2026-11-26T00:00:00Z", "probes": []}), encoding="utf-8")
+    cid_url = "ipfs://QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_0.vrm"
+    probed_new = tmp_path / "probed_new.json"
+    probed_new.write_text(
+        json.dumps(
+            {
+                "generatedAt": "2026-11-26T00:00:00Z",
+                "tubbyCats": {
+                    "imageUrl": "https://example.test/tubby.jpg",
+                    "bannerImageUrl": "https://example.test/tubby-banner.png",
+                    "avatars": [
+                        {
+                            "url": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+                            "transportUrl": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+                            "valid": True,
+                            "vrmSpec": "0.x",
+                            "totalLength": 1000,
+                            "observedLength": 1000,
+                            "contentSha256": "a" * 64,
+                            "jsonChunkSha256": "b" * 64,
+                        }
+                    ],
+                },
+                "avastars": [
+                    {
+                        "tokenId": "0",
+                        "canonicalUrl": cid_url,
+                        "transportUrl": "https://ipfs.filebase.io/ipfs/QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_0.vrm",
+                        "valid": True,
+                        "vrmSpec": "0.x",
+                        "totalLength": 2000,
+                        "observedLength": 2000,
+                        "contentSha256": "c" * 64,
+                        "jsonChunkSha256": "d" * 64,
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    first = sync_all(db, inv_path, probe_path, probed_new)
+    second = sync_all(db, inv_path, probe_path, probed_new)
+    assert first == second
+
+    verify_conn = sqlite3.connect(str(db))
+    verify_conn.row_factory = sqlite3.Row
+    assert verify_conn.execute("SELECT COUNT(*) FROM avatars WHERE collection_id='tubby-cats'").fetchone()[0] == 1
+    av_url = verify_conn.execute("SELECT model_file_url FROM avatars WHERE collection_id='avastars'").fetchone()[0]
+    assert av_url == cid_url
+    av_col = verify_conn.execute("SELECT * FROM collections WHERE id='avastars'").fetchone()
+    assert av_col["license_category"] == "unknown"
+    bundle = build_bundle(verify_conn, tmp_path / "staging.json")
+    assert validate_bundle(bundle) == []
+    by_slug = {item["set"]["slug"]: item for item in bundle["sets"]}
+    assert "tubby-cats" in by_slug
+    assert by_slug["avastars"]["set"]["purchaseGated"] is None
+    verify_conn.close()

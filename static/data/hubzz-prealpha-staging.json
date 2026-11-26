@@ -1,202 +1,26 @@
 {
   "schema": "hubzz-prealpha-staging-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T16:31:13Z",
-  "snapshotId": "vrmcat-v1-42cd34030474da1e3e448ef7",
+  "generatedAt": "2026-11-26T22:23:46Z",
+  "snapshotId": "vrmcat-v1-b6141a44115f0df6502ead00",
   "source": {
     "repository": "russfranky/vrm-catalog",
     "database": "data/vrm_index.db"
   },
   "summary": {
-    "catalogSets": 69,
-    "stageableSets": 14,
-    "bulkReadySets": 2,
-    "partialReadySets": 1,
-    "previewReadySets": 11,
-    "deferredSets": 55,
-    "sourceAvatars": 160,
-    "binaryValidatedSourceAvatars": 160,
+    "catalogSets": 70,
+    "stageableSets": 12,
+    "bulkReadySets": 7,
+    "partialReadySets": 0,
+    "previewReadySets": 5,
+    "deferredSets": 58,
+    "sourceAvatars": 3446,
+    "binaryValidatedSourceAvatars": 3446,
     "openLicenseSets": 2,
-    "gatedSets": 4,
-    "licenseReviewSets": 8
+    "gatedSets": 3,
+    "licenseReviewSets": 7
   },
   "sets": [
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "halloween-rising",
-        "name": "Halloween Rising",
-        "description": "60 VRM Avatars on the Optimism blockchain with 5 designs, 3 styles and 5 variations. Reroll and claim your halloween monster for 0.025 ETH.",
-        "chain": "optimism",
-        "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
-        "storageProvider": "ipfs",
-        "ingestSource": "ethereum",
-        "license": "Other (VIPE custom)",
-        "author": "Polygonal-Mind",
-        "copyright": null,
-        "mintDate": "2023-10-25",
-        "totalMints": 60,
-        "bannerUrl": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/5f5bdf8034ef6e9838f017d4ba22a5/3f5f5bdf8034ef6e9838f017d4ba22a5.png",
-        "pfpUrl": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/54b3f4801301ca2c1d7c5dd9c76dfa/1754b3f4801301ca2c1d7c5dd9c76dfa.jpeg",
-        "purchaseGated": null,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 60
-      },
-      "stageClass": "bulk_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/halloween-rising.json",
-        "count": 60,
-        "mode": "enumerated",
-        "reachableCount": 60,
-        "binaryValidatedCount": 60,
-        "validationScope": "per_avatar_binary"
-      },
-      "coverage": {
-        "knownAvatars": 60,
-        "reachableSourceAvatars": 60,
-        "binaryValidatedSourceAvatars": 60,
-        "catalogSupply": 60,
-        "coverageRatio": 1.0
-      },
-      "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmXyEuwbgUfMG7WzRZys6JnS6DJvxqkPGDseZmHM8wLJm1/Avatar03_v2_Stylized_Blue.vrm",
-        "transportUrl": "https://bafybeiepddccawiq5awdejukaa3h2knrlv7anjp4fprxfxhrlaycsknicq.ipfs.dweb.link/Avatar03_v2_Stylized_Blue.vrm",
-        "vrmSpec": "0.x",
-        "fileSizeOriginal": 8300844,
-        "validatedAt": "2026-08-11T19:56:25Z",
-        "tokenId": null,
-        "source": "staging-inventory",
-        "chain": null,
-        "contract": null
-      },
-      "bannerEvidence": {
-        "url": "https://i2c.seadn.io/optimism/3d2029e63ce44d1eb68c0c48a7e15e79/5f5bdf8034ef6e9838f017d4ba22a5/3f5f5bdf8034ef6e9838f017d4ba22a5.png",
-        "source": "collection_banner",
-        "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
-      },
-      "warnings": [
-        "license_requires_review"
-      ]
-    },
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "xmas-chibis",
-        "name": "Xmas Chibis",
-        "description": "VIPE's Christmas Avatar Collection 2023. 80 VRM Avatars with 16 Designs and 5 Variations on Polygon.",
-        "chain": "polygon",
-        "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
-        "storageProvider": "ipfs",
-        "ingestSource": "ethereum",
-        "license": "All Rights Reserved",
-        "author": "Polygonal-Mind",
-        "copyright": null,
-        "mintDate": "2023-12-04",
-        "totalMints": 80,
-        "bannerUrl": "https://i2c.seadn.io/polygon/b0de9c9b33394903a7b3d73c26ebc997/b9bade10a0ec9c899711180c3fa13b/6bb9bade10a0ec9c899711180c3fa13b.png",
-        "pfpUrl": "https://i2c.seadn.io/matic/0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483/f4c20b2f5163188ce83db681e1e30a/2af4c20b2f5163188ce83db681e1e30a.png",
-        "purchaseGated": true,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 80
-      },
-      "stageClass": "bulk_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/xmas-chibis.json",
-        "count": 80,
-        "mode": "enumerated",
-        "reachableCount": 80,
-        "binaryValidatedCount": 80,
-        "validationScope": "per_avatar_binary"
-      },
-      "coverage": {
-        "knownAvatars": 80,
-        "reachableSourceAvatars": 80,
-        "binaryValidatedSourceAvatars": 80,
-        "catalogSupply": 80,
-        "coverageRatio": 1.0
-      },
-      "sampleEvidence": {
-        "canonicalUrl": "ipfs://QmSpb8jZRtwDhpp7zjpfvU47GZyapmh8GvQApmzTxFcaLz/Avatar09_Neutral.vrm",
-        "transportUrl": "https://bafybeiccs333rwnme2sjioeg4gzntw3rd7wt2l6y3yv3lqhcmaufqom44m.ipfs.dweb.link/Avatar09_Neutral.vrm",
-        "vrmSpec": "0.x",
-        "fileSizeOriginal": 4967260,
-        "validatedAt": "2026-08-11T19:59:01Z",
-        "tokenId": null,
-        "source": "staging-inventory",
-        "chain": null,
-        "contract": null
-      },
-      "bannerEvidence": {
-        "url": "https://i2c.seadn.io/polygon/b0de9c9b33394903a7b3d73c26ebc997/b9bade10a0ec9c899711180c3fa13b/6bb9bade10a0ec9c899711180c3fa13b.png",
-        "source": "collection_banner",
-        "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
-      },
-      "warnings": []
-    },
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "NeonGlitch86-collection",
-        "name": "NeonGlitch86 Collection",
-        "description": "Collections of avatars Created by NeonGlitch86",
-        "chain": "ethereum",
-        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
-        "storageProvider": "self-host",
-        "ingestSource": "ethereum",
-        "license": "CC0",
-        "author": "NeonGlitch86",
-        "copyright": null,
-        "mintDate": null,
-        "totalMints": 0,
-        "bannerUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
-        "pfpUrl": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
-        "purchaseGated": false,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 9
-      },
-      "stageClass": "partial_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/NeonGlitch86-collection.json",
-        "count": 9,
-        "mode": "enumerated",
-        "reachableCount": 9,
-        "binaryValidatedCount": 9,
-        "validationScope": "per_avatar_binary"
-      },
-      "coverage": {
-        "knownAvatars": 12,
-        "reachableSourceAvatars": 9,
-        "binaryValidatedSourceAvatars": 9,
-        "catalogSupply": 0,
-        "coverageRatio": 0.75
-      },
-      "sampleEvidence": {
-        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
-        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/GG_1.vrm",
-        "vrmSpec": "0.x",
-        "fileSizeOriginal": 5565488,
-        "validatedAt": "2026-08-11T19:53:28Z",
-        "tokenId": null,
-        "source": "staging-inventory",
-        "chain": null,
-        "contract": null
-      },
-      "bannerEvidence": {
-        "url": "https://arweave.net/txlrrzDmYzNtmcEOKcUN1h3sK6NMl36uDkXAQyI_LzE",
-        "source": "pfp_fallback",
-        "fallback": true,
-        "observedAt": "2026-11-26T16:31:13Z"
-      },
-      "warnings": [
-        "partial_avatar_inventory",
-        "banner_uses_pfp_fallback"
-      ]
-    },
     {
       "set": {
         "schemaVersion": 1,
@@ -217,23 +41,23 @@
         "purchaseGated": null,
         "listed": false,
         "status": "staged",
-        "avatarCount": 1
+        "avatarCount": 6
       },
-      "stageClass": "preview_ready",
+      "stageClass": "bulk_ready",
       "sourceAssets": {
         "path": "hubzz-prealpha-source/avastars.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
+        "count": 6,
+        "mode": "enumerated",
+        "reachableCount": 6,
+        "binaryValidatedCount": 6,
         "validationScope": "per_avatar_binary"
       },
       "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
+        "knownAvatars": 6,
+        "reachableSourceAvatars": 6,
+        "binaryValidatedSourceAvatars": 6,
         "catalogSupply": 26617,
-        "coverageRatio": 3.8e-05
+        "coverageRatio": 0.000225
       },
       "sampleEvidence": {
         "canonicalUrl": "https://ipfs.io/ipfs/QmWXa41YRBdJpZUwwYiXakTAkza2efT8hzbS5t8imXyTpC/Avastar_Founder_1.vrm",
@@ -250,10 +74,9 @@
         "url": "https://i2c.seadn.io/ethereum/2d0cdced8a604a7894157cd654fd270e/58f78e61b7e2d8d0885d45a5d55b2d/5258f78e61b7e2d8d0885d45a5d55b2d.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
-        "sample_only",
         "license_requires_review"
       ]
     },
@@ -277,23 +100,23 @@
         "purchaseGated": false,
         "listed": false,
         "status": "staged",
-        "avatarCount": 1
+        "avatarCount": 420
       },
-      "stageClass": "preview_ready",
+      "stageClass": "bulk_ready",
       "sourceAssets": {
         "path": "hubzz-prealpha-source/boomboxheads-v2.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
+        "count": 420,
+        "mode": "enumerated",
+        "reachableCount": 420,
+        "binaryValidatedCount": 420,
         "validationScope": "per_avatar_binary"
       },
       "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
+        "knownAvatars": 420,
+        "reachableSourceAvatars": 420,
+        "binaryValidatedSourceAvatars": 420,
         "catalogSupply": 420,
-        "coverageRatio": 0.002381
+        "coverageRatio": 1.0
       },
       "sampleEvidence": {
         "canonicalUrl": "ipfs://QmURAuSRmFFAyragN3h6M6thhMhBPQmNgoNJApDSvob3D5/30.vrm",
@@ -310,11 +133,9 @@
         "url": "https://i2c.seadn.io/ethereum/bc80446794d9428a9a8eb800b2e8ef8e/103cf6838291bc65ea81e7d60f5fb5/30103cf6838291bc65ea81e7d60f5fb5.jpeg",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
-      "warnings": [
-        "sample_only"
-      ]
+      "warnings": []
     },
     {
       "set": {
@@ -336,23 +157,23 @@
         "purchaseGated": null,
         "listed": false,
         "status": "staged",
-        "avatarCount": 1
+        "avatarCount": 3000
       },
-      "stageClass": "preview_ready",
+      "stageClass": "bulk_ready",
       "sourceAssets": {
         "path": "hubzz-prealpha-source/chuddie.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
+        "count": 3000,
+        "mode": "enumerated",
+        "reachableCount": 3000,
+        "binaryValidatedCount": 3000,
         "validationScope": "per_avatar_binary"
       },
       "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
+        "knownAvatars": 3000,
+        "reachableSourceAvatars": 3000,
+        "binaryValidatedSourceAvatars": 3000,
         "catalogSupply": 4875,
-        "coverageRatio": 0.000205
+        "coverageRatio": 0.615385
       },
       "sampleEvidence": {
         "canonicalUrl": "ipfs://bafybeiaplpkifduvx7ma7d2x7zrhdszhubf7lj3jmb5wxujkxedxxpziiq/127.vrm",
@@ -369,10 +190,9 @@
         "url": "https://i2c.seadn.io/ethereum/459eb6282f154387a283abe3e566d302/0572ce57413f3171f554e37c1940f7/610572ce57413f3171f554e37c1940f7.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
-        "sample_only",
         "license_requires_review"
       ]
     },
@@ -396,23 +216,23 @@
         "purchaseGated": true,
         "listed": false,
         "status": "staged",
-        "avatarCount": 1
+        "avatarCount": 2
       },
-      "stageClass": "preview_ready",
+      "stageClass": "bulk_ready",
       "sourceAssets": {
         "path": "hubzz-prealpha-source/dickbuttverse.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
+        "count": 2,
+        "mode": "enumerated",
+        "reachableCount": 2,
+        "binaryValidatedCount": 2,
         "validationScope": "per_avatar_binary"
       },
       "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
+        "knownAvatars": 2,
+        "reachableSourceAvatars": 2,
+        "binaryValidatedSourceAvatars": 2,
         "catalogSupply": 5363,
-        "coverageRatio": 0.000186
+        "coverageRatio": 0.000373
       },
       "sampleEvidence": {
         "canonicalUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
@@ -429,11 +249,185 @@
         "url": "https://i2c.seadn.io/ethereum/6722cfc96770485f8272155b5d028207/b782ac2acc219e2542714c7ca169ea/47b782ac2acc219e2542714c7ca169ea.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
+      },
+      "warnings": []
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "meebits",
+        "name": "Meebits",
+        "description": "The Meebits are 20,000 unique 3D voxel characters, created by a custom generative algorithm, then registered on the Ethereum blockchain.",
+        "chain": "ethereum",
+        "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "Other (Yuga Labs)",
+        "author": null,
+        "copyright": null,
+        "mintDate": "2021-05-03",
+        "totalMints": 20000,
+        "bannerUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png",
+        "pfpUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/036c8c2bed042a1588622c3173677f/2d036c8c2bed042a1588622c3173677f.png",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 3
+      },
+      "stageClass": "bulk_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/meebits.json",
+        "count": 3,
+        "mode": "enumerated",
+        "reachableCount": 3,
+        "binaryValidatedCount": 3,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 3,
+        "reachableSourceAvatars": 3,
+        "binaryValidatedSourceAvatars": 3,
+        "catalogSupply": 20000,
+        "coverageRatio": 0.00015
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+        "transportUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
+        "vrmSpec": null,
+        "fileSizeOriginal": 718232,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
-        "sample_only"
+        "license_requires_review"
       ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "neonglitch86-collection-polygon-side",
+        "name": "NG86SHAPE",
+        "description": null,
+        "chain": "polygon",
+        "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": null,
+        "author": null,
+        "copyright": null,
+        "mintDate": "2025-10-07",
+        "totalMints": 41,
+        "bannerUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
+        "pfpUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
+        "purchaseGated": null,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 1
+      },
+      "stageClass": "bulk_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/neonglitch86-collection-polygon-side.json",
+        "count": 1,
+        "mode": "enumerated",
+        "reachableCount": 1,
+        "binaryValidatedCount": 1,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 1,
+        "reachableSourceAvatars": 1,
+        "binaryValidatedSourceAvatars": 1,
+        "catalogSupply": 41,
+        "coverageRatio": 0.02439
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 1590520,
+        "validatedAt": "2026-08-10T13:47:53Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
+        "source": "pfp_fallback",
+        "fallback": true,
+        "observedAt": "2026-11-26T22:23:46Z"
+      },
+      "warnings": [
+        "license_requires_review",
+        "banner_uses_pfp_fallback"
+      ]
+    },
+    {
+      "set": {
+        "schemaVersion": 1,
+        "slug": "tubby-cats",
+        "name": "Tubby Cats",
+        "description": "20,000-item CC0 collection with verified public community VRM conversions.",
+        "chain": "ethereum",
+        "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+        "storageProvider": "self-host",
+        "ingestSource": "ethereum",
+        "license": "CC0",
+        "author": null,
+        "copyright": null,
+        "mintDate": null,
+        "totalMints": 20000,
+        "bannerUrl": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/1044/source/textures/unnamed-3.png",
+        "pfpUrl": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/source/textures/18595_face.jpg",
+        "purchaseGated": false,
+        "listed": false,
+        "status": "staged",
+        "avatarCount": 9
+      },
+      "stageClass": "bulk_ready",
+      "sourceAssets": {
+        "path": "hubzz-prealpha-source/tubby-cats.json",
+        "count": 9,
+        "mode": "enumerated",
+        "reachableCount": 9,
+        "binaryValidatedCount": 9,
+        "validationScope": "per_avatar_binary"
+      },
+      "coverage": {
+        "knownAvatars": 9,
+        "reachableSourceAvatars": 9,
+        "binaryValidatedSourceAvatars": 9,
+        "catalogSupply": 20000,
+        "coverageRatio": 0.00045
+      },
+      "sampleEvidence": {
+        "canonicalUrl": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+        "transportUrl": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/159.vrm",
+        "vrmSpec": null,
+        "fileSizeOriginal": 2811176,
+        "validatedAt": "2026-11-26T21:04:43Z",
+        "tokenId": null,
+        "source": "collection-validation",
+        "chain": null,
+        "contract": null
+      },
+      "bannerEvidence": {
+        "url": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/1044/source/textures/unnamed-3.png",
+        "source": "collection_banner",
+        "fallback": false,
+        "observedAt": "2026-11-26T22:23:46Z"
+      },
+      "warnings": []
     },
     {
       "set": {
@@ -488,7 +482,7 @@
         "url": "https://i2c.seadn.io/ethereum/5c1e776de37f42508da92ed914f65016/3a1695a7f59eb5765b7ca0081c7f7c/9a3a1695a7f59eb5765b7ca0081c7f7c.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
         "sample_only",
@@ -548,70 +542,10 @@
         "url": "https://i2c.seadn.io/ethereum/c8e1fdd39a5749b6949d85619a8a8bab/572aabedff827fb6a391e9b86b6b54/34572aabedff827fb6a391e9b86b6b54.gif",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
         "sample_only"
-      ]
-    },
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "meebits",
-        "name": "Meebits",
-        "description": "The Meebits are 20,000 unique 3D voxel characters, created by a custom generative algorithm, then registered on the Ethereum blockchain.",
-        "chain": "ethereum",
-        "contract": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
-        "storageProvider": "self-host",
-        "ingestSource": "ethereum",
-        "license": "Other (Yuga Labs)",
-        "author": null,
-        "copyright": null,
-        "mintDate": "2021-05-03",
-        "totalMints": 20000,
-        "bannerUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png",
-        "pfpUrl": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/036c8c2bed042a1588622c3173677f/2d036c8c2bed042a1588622c3173677f.png",
-        "purchaseGated": null,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 1
-      },
-      "stageClass": "preview_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/meebits.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
-        "validationScope": "per_avatar_binary"
-      },
-      "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "catalogSupply": 20000,
-        "coverageRatio": 5e-05
-      },
-      "sampleEvidence": {
-        "canonicalUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
-        "transportUrl": "https://api.meebits.app/v2/3d/larvalabs_vrm/17438",
-        "vrmSpec": null,
-        "fileSizeOriginal": 718232,
-        "validatedAt": "2026-08-10T13:47:53Z",
-        "tokenId": null,
-        "source": "collection-validation",
-        "chain": null,
-        "contract": null
-      },
-      "bannerEvidence": {
-        "url": "https://i2c.seadn.io/ethereum/333a4a1b74694e5b8b12d9a6983ec00d/eed39f76506b4baf71005d7127d0df/cbeed39f76506b4baf71005d7127d0df.png",
-        "source": "collection_banner",
-        "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
-      },
-      "warnings": [
-        "sample_only",
-        "license_requires_review"
       ]
     },
     {
@@ -667,7 +601,7 @@
         "url": "https://i2c.seadn.io/ethereum/299a4d5b8f3547559afa14673e46cd2c/f9ba6b040d52b6a6a53a1b79c27694/56f9ba6b040d52b6a6a53a1b79c27694.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
         "sample_only"
@@ -726,72 +660,11 @@
         "url": "https://image.mux.com/t8FE49Q1NCYDLeVTw6GO4fH5UaPz01ZyKO01gmelY8I01s/thumbnail.jpg?time=0",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
         "sample_only",
         "license_requires_review"
-      ]
-    },
-    {
-      "set": {
-        "schemaVersion": 1,
-        "slug": "neonglitch86-collection-polygon-side",
-        "name": "NG86SHAPE",
-        "description": null,
-        "chain": "polygon",
-        "contract": "0xcdffc2fae679814913305c13edb86fe7967dbeea",
-        "storageProvider": "self-host",
-        "ingestSource": "ethereum",
-        "license": null,
-        "author": null,
-        "copyright": null,
-        "mintDate": "2025-10-07",
-        "totalMints": 41,
-        "bannerUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
-        "pfpUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
-        "purchaseGated": null,
-        "listed": false,
-        "status": "staged",
-        "avatarCount": 1
-      },
-      "stageClass": "preview_ready",
-      "sourceAssets": {
-        "path": "hubzz-prealpha-source/neonglitch86-collection-polygon-side.json",
-        "count": 1,
-        "mode": "validated_sample",
-        "reachableCount": 1,
-        "binaryValidatedCount": 1,
-        "validationScope": "per_avatar_binary"
-      },
-      "coverage": {
-        "knownAvatars": 0,
-        "reachableSourceAvatars": 0,
-        "binaryValidatedSourceAvatars": 0,
-        "catalogSupply": 41,
-        "coverageRatio": 0.02439
-      },
-      "sampleEvidence": {
-        "canonicalUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
-        "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
-        "vrmSpec": null,
-        "fileSizeOriginal": 1590520,
-        "validatedAt": "2026-08-10T13:47:53Z",
-        "tokenId": null,
-        "source": "collection-validation",
-        "chain": null,
-        "contract": null
-      },
-      "bannerEvidence": {
-        "url": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
-        "source": "pfp_fallback",
-        "fallback": true,
-        "observedAt": "2026-11-26T16:31:13Z"
-      },
-      "warnings": [
-        "sample_only",
-        "license_requires_review",
-        "banner_uses_pfp_fallback"
       ]
     },
     {
@@ -847,7 +720,7 @@
         "url": "https://i2c.seadn.io/ethereum/4cb97b5f3c244500be1a8fb2064dc675/be6917c67bb8b2a1fd2ca521bac5af/dbbe6917c67bb8b2a1fd2ca521bac5af.png",
         "source": "collection_banner",
         "fallback": false,
-        "observedAt": "2026-11-26T16:31:13Z"
+        "observedAt": "2026-11-26T22:23:46Z"
       },
       "warnings": [
         "sample_only",
@@ -1146,10 +1019,10 @@
       "slug": "cryptoavatars",
       "name": "CryptoAvatars",
       "reasons": [
-        "unsupported_chain:multi",
-        "no_binary_validated_vrm"
+        "unsupported_chain:multi"
       ],
       "warnings": [
+        "sample_only",
         "license_requires_review"
       ],
       "facts": {
@@ -1161,8 +1034,8 @@
         "knownAvatars": 0,
         "reachableSourceAvatars": 0,
         "binaryValidatedSourceAvatars": 0,
-        "collectionVrmValidated": false,
-        "vrmCheckStatus": "no_url"
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
       }
     },
     {
@@ -1409,6 +1282,28 @@
       }
     },
     {
+      "slug": "halloween-rising",
+      "name": "Halloween Rising",
+      "reasons": [
+        "owner_excluded"
+      ],
+      "warnings": [
+        "license_requires_review"
+      ],
+      "facts": {
+        "slug": "halloween-rising",
+        "name": "Halloween Rising",
+        "tier": "A",
+        "chain": "optimism",
+        "contract": "0x0ad4c869d0019df7460b33ca852610c9cb0a5647",
+        "knownAvatars": 60,
+        "reachableSourceAvatars": 60,
+        "binaryValidatedSourceAvatars": 60,
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
+      }
+    },
+    {
       "slug": "a3ac-0x86fc6f",
       "name": "Jadu AVA",
       "reasons": [
@@ -1607,6 +1502,29 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": null
+      }
+    },
+    {
+      "slug": "NeonGlitch86-collection",
+      "name": "NeonGlitch86 Collection",
+      "reasons": [
+        "owner_excluded"
+      ],
+      "warnings": [
+        "partial_avatar_inventory",
+        "banner_uses_pfp_fallback"
+      ],
+      "facts": {
+        "slug": "NeonGlitch86-collection",
+        "name": "NeonGlitch86 Collection",
+        "tier": "A",
+        "chain": "ethereum",
+        "contract": "0x776bd31ae5549eac9ed215b5db278229454d5bed",
+        "knownAvatars": 12,
+        "reachableSourceAvatars": 9,
+        "binaryValidatedSourceAvatars": 9,
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
       }
     },
     {
@@ -2053,6 +1971,26 @@
         "binaryValidatedSourceAvatars": 0,
         "collectionVrmValidated": false,
         "vrmCheckStatus": "no_url"
+      }
+    },
+    {
+      "slug": "xmas-chibis",
+      "name": "Xmas Chibis",
+      "reasons": [
+        "owner_excluded"
+      ],
+      "warnings": [],
+      "facts": {
+        "slug": "xmas-chibis",
+        "name": "Xmas Chibis",
+        "tier": "A",
+        "chain": "polygon",
+        "contract": "0x831079839bd0e6bf8e37e8cdfb5479fc1b2ef483",
+        "knownAvatars": 80,
+        "reachableSourceAvatars": 80,
+        "binaryValidatedSourceAvatars": 80,
+        "collectionVrmValidated": true,
+        "vrmCheckStatus": "ok_vrm"
       }
     },
     {

@@ -1,26 +1,25 @@
 {
   "schema": "hubzz-prealpha-source-avatars-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T16:31:13Z",
-  "snapshotId": "vrmcat-v1-42cd34030474da1e3e448ef7",
+  "generatedAt": "2026-11-26T22:23:46Z",
+  "snapshotId": "vrmcat-v1-b6141a44115f0df6502ead00",
   "setSlug": "neonglitch86-collection-polygon-side",
   "count": 1,
   "reachableCount": 1,
   "binaryValidatedCount": 1,
   "avatars": [
     {
-      "id": "sample",
+      "id": "0xcdffc2fae679814913305c13edb86fe7967dbeea/shapey",
       "tokenId": null,
-      "name": "NG86SHAPE sample",
+      "name": "NG86SHAPE (shapey)",
       "originalSourceUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
-      "transportUrl": "https://raw.githubusercontent.com/neonglitch86/vrm/main/shapey.vrm",
-      "thumbnailUrl": null,
+      "thumbnailUrl": "https://i2c.seadn.io/shape/0xcdffc2fae679814913305c13edb86fe7967dbeea/bcec67ec73342ff727f87bcb08bb4d/2fbcec67ec73342ff727f87bcb08bb4d.gif",
       "reachable": true,
       "vrmValidated": true,
-      "validationScope": "collection_sample_binary",
-      "checkedAt": "2026-08-10T13:47:53Z",
+      "validationScope": "per_avatar_binary",
+      "checkedAt": "2026-11-26T21:04:43Z",
       "checkStatus": "ok_vrm",
-      "vrmSpec": null,
+      "vrmSpec": "1.0",
       "fileSizeOriginal": 1590520
     }
   ]

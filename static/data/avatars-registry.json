@@ -1,8 +1,8 @@
 {
   "schema": "hubzz-avatars-registry-v1",
   "source": "vrm-catalog",
-  "generated_at": "2026-11-26T16:31:13Z",
-  "snapshot_id": "vrmcat-v1-42cd34030474da1e3e448ef7",
+  "generated_at": "2026-11-26T22:23:46Z",
+  "snapshot_id": "vrmcat-v1-b6141a44115f0df6502ead00",
   "collections": [
     {
       "slug": "allstarz-psx",
@@ -385,7 +385,7 @@
       "description": "A collection of unique 3D avatars for the open metaverse. Born from Polygonal Mind's 100 Avatars and Avatar Garden — the VRChat space that housed the series.",
       "license": "Unknown",
       "chain": null,
-      "storage_provider": "contract-metadata",
+      "storage_provider": "arweave",
       "contract": "0xc1def47cf1e15ee8c2a92f4e0e968372880d18d1",
       "banner": "https://i2c.seadn.io/ethereum/58362eb2ad6a4671a8c2300ade5589cf/7c8bef83d7eca9459c0516393c4773/b87c8bef83d7eca9459c0516393c4773.jpeg",
       "pfp": "https://i2c.seadn.io/ethereum/58362eb2ad6a4671a8c2300ade5589cf/00f77599a7a948eb4fb38aca0cae45/6a00f77599a7a948eb4fb38aca0cae45.png",
@@ -540,6 +540,21 @@
       "banner": "https://i2c.seadn.io/ethereum/85bd83c84a5c4e808279ed6e326732be/3a7c262b43857b0c7220255da74da6/7b3a7c262b43857b0c7220255da74da6.jpeg",
       "pfp": "https://i2c.seadn.io/ethereum/85bd83c84a5c4e808279ed6e326732be/ca9dcdc67e3c57038a3fd5d2f0a924/2bca9dcdc67e3c57038a3fd5d2f0a924.png",
       "avatar_count": 9999,
+      "purchase_gated": false,
+      "status": "staged",
+      "tier": "B"
+    },
+    {
+      "slug": "tubby-cats",
+      "name": "Tubby Cats",
+      "description": "20,000-item CC0 collection with verified public community VRM conversions.",
+      "license": "CC0",
+      "chain": "ethereum",
+      "storage_provider": "self-host",
+      "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+      "banner": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/1044/source/textures/unnamed-3.png",
+      "pfp": "https://raw.githubusercontent.com/la53rshark/tubby-cats/main/159/source/textures/18595_face.jpg",
+      "avatar_count": 9,
       "purchase_gated": false,
       "status": "staged",
       "tier": "B"

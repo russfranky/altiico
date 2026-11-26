@@ -1,27 +1,40 @@
 {
   "schema": "hubzz-prealpha-source-avatars-v1",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-26T16:31:13Z",
-  "snapshotId": "vrmcat-v1-42cd34030474da1e3e448ef7",
+  "generatedAt": "2026-11-26T22:23:46Z",
+  "snapshotId": "vrmcat-v1-b6141a44115f0df6502ead00",
   "setSlug": "dickbuttverse",
-  "count": 1,
-  "reachableCount": 1,
-  "binaryValidatedCount": 1,
+  "count": 2,
+  "reachableCount": 2,
+  "binaryValidatedCount": 2,
   "avatars": [
     {
-      "id": "sample",
-      "tokenId": null,
-      "name": "DickButtVerse sample",
+      "id": "0xd47d8672e45a7204057baaa3622a3fa276d651e3/0",
+      "tokenId": "0",
+      "name": "DickButtVerse #0",
       "originalSourceUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
-      "transportUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/0.vrm",
       "thumbnailUrl": null,
       "reachable": true,
       "vrmValidated": true,
-      "validationScope": "collection_sample_binary",
-      "checkedAt": "2026-08-12T18:43:32.489748+00:00",
+      "validationScope": "per_avatar_binary",
+      "checkedAt": "2026-08-16T01:21:15.103691+00:00",
       "checkStatus": "ok_vrm",
-      "vrmSpec": null,
+      "vrmSpec": "0.x",
       "fileSizeOriginal": 2928488
+    },
+    {
+      "id": "0xd47d8672e45a7204057baaa3622a3fa276d651e3/1",
+      "tokenId": "1",
+      "name": "DickButtVerse #1",
+      "originalSourceUrl": "https://small.deccdn.com/paths/dbvTour/3dassets/assets/sept30/vrm/1.vrm",
+      "thumbnailUrl": null,
+      "reachable": true,
+      "vrmValidated": true,
+      "validationScope": "per_avatar_binary",
+      "checkedAt": "2026-08-16T01:21:15.103691+00:00",
+      "checkStatus": "ok_vrm",
+      "vrmSpec": "0.x",
+      "fileSizeOriginal": 1090948
     }
   ]
 }

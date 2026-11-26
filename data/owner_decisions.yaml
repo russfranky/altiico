@@ -22,3 +22,7 @@ decisions:
     name: Halloween Rising
     decision: exclude
     reason: Owner declined 2026-08-10 — not using this set.
+  - id: NeonGlitch86-collection
+    name: NeonGlitch86 Collection
+    decision: exclude
+    reason: Owner directive 2026-11-26 — no more Open Source Avatars (OSA) sets.

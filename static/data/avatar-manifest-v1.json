@@ -1,8 +1,8 @@
 {
   "schema": "https://superyeti.example/schema/avatar-manifest-v1.schema.json",
   "version": "1.0.0",
-  "generated_at": "2026-11-26T16:31:13Z",
-  "snapshot_id": "vrmcat-v1-42cd34030474da1e3e448ef7",
+  "generated_at": "2026-11-26T22:23:46Z",
+  "snapshot_id": "vrmcat-v1-b6141a44115f0df6502ead00",
   "collections": [
     {
       "id": "eip155:1/erc721:0x6120991c423f3566753d3c6c91a5b50d7d2461b4",
@@ -1292,6 +1292,31 @@
         "corporate_use": false,
         "terminates_on_transfer": false,
         "hate_speech_termination": false
+      }
+    },
+    {
+      "id": "eip155:1/erc721:0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+      "name": "Tubby Cats",
+      "tier": "B",
+      "identifiers": {
+        "chain": "ethereum",
+        "chain_id": "1",
+        "contract": "0xca7ca7bcc765f77339be2d648ba53ce9c8a262bd",
+        "opensea_slug": "tubby-cats-by-tubby-collective"
+      },
+      "resolution": {
+        "strategy": "unavailable"
+      },
+      "license": {
+        "use_scope": "everyone",
+        "commercial_scope": "corporation",
+        "credit": "unnecessary",
+        "redistribute_original": true,
+        "modify": true,
+        "redistribute_modified": true,
+        "corporate_use": true,
+        "terminates_on_transfer": false,
+        "hate_speech_termination": true
       }
     },
     {

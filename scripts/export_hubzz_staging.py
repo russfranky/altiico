@@ -37,7 +37,7 @@ SCHEMA_VERSION = 1
 PREALPHA_CHAINS = {"ethereum", "zora", "polygon", "base", "optimism", "arbitrum"}
 STORAGE_ONLY_CHAINS = {"ipfs", "arweave"}
 REACHABLE_AVATAR_STATUSES = {"ok_vrm", "ok_glb"}
-OWNER_EXCLUSIONS = {"declined", "excluded", "remove", "removed", "handled"}
+OWNER_EXCLUSIONS = {"exclude", "declined", "excluded", "remove", "removed", "handled"}
 
 
 @dataclass(frozen=True)
