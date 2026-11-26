@@ -516,6 +516,15 @@ function openVrmViewer(vrmUrl, name) {
 
     function urlCandidates(url) {
       const candidates = [url];
+      // ipfs://-scheme URLs: normalize to an https gateway URL first so the
+      // gateway chain below applies (storageOf() already normalizes these for
+      // evidence links; the viewer path never did).
+      const ipfsScheme = /^ipfs:\\/\\/(?:ipfs\\/)?([^/]+)(\\/.*)?$/i.exec(url);
+      if (ipfsScheme) {
+        const normalized = 'https://ipfs.io/ipfs/' + ipfsScheme[1] + (ipfsScheme[2] || '');
+        if (!candidates.includes(normalized)) candidates.push(normalized);
+        url = normalized;
+      }
       const match = /\\/ipfs\\/([A-Za-z0-9]+)(\\/.*)?$/.exec(url);
       if (match) {
         const cid = match[1];
@@ -683,6 +692,16 @@ function openVrmViewer(vrmUrl, name) {
     }
   `;
   document.head.appendChild(script);
+  // script.onerror does not fire when the module graph itself cannot load
+  // (e.g. unresolvable bare specifiers on browsers without importmap
+  // support), so bound the bootstrap: fail loudly instead of hanging.
+  setTimeout(() => {
+    if (window._vrmViewerLoading && !window._vrmViewerReady) {
+      window._vrmViewerLoading = false;
+      window._pendingVrmUrl = null;
+      window._showVrmError('Could not start the VRM viewer. Open the file directly instead.');
+    }
+  }, 20000);
 }
 
 function closeVrmModal() {

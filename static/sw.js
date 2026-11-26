@@ -34,7 +34,10 @@ const FONTS = /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//;
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting())
+    caches.open(CACHE_NAME)
+      // Bypass the HTTP cache so a new version never installs stale shell bytes.
+      .then((cache) => cache.addAll(APP_SHELL.map((entry) => new Request(entry, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -78,9 +81,14 @@ self.addEventListener('fetch', (event) => {
   }
 
   // App shell + Google Fonts: stale-while-revalidate.
+  // Shell entries resolve against the service worker's own scope, so
+  // subpath deployments (e.g. /static/, /dash/) match too.
+  const scopePath = new URL(self.registration.scope).pathname.replace(/\/$/, '');
+  const shellPathFor = (entry) => entry === './' || entry === '.'
+    ? [scopePath + '/', scopePath || '/']
+    : [scopePath + '/' + entry.replace(/^\.\//, '')];
   const isAppShell = url.origin === self.location.origin &&
-    (url.pathname === './' || url.pathname === '/' ||
-     APP_SHELL.includes('./' + url.pathname.replace(/^\//, '')));
+    APP_SHELL.some((entry) => shellPathFor(entry).includes(url.pathname));
   if (isAppShell) {
     // Network-first: the shell changes on every deploy, so a cached copy must
     // never win. Cache is the offline fallback only.

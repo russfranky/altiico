@@ -18,6 +18,8 @@
   --text-sm: 12px;
   --text-md: 14px;
   --text-lg: 20px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * {
@@ -38,6 +40,7 @@ body {
   font-size: var(--text-md);
   font-weight: 400;
   line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.modal-open {
@@ -63,8 +66,10 @@ a {
   text-underline-offset: 3px;
 }
 
-a:hover {
-  color: var(--text);
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--text);
+  }
 }
 
 [hidden] {
@@ -147,6 +152,7 @@ select {
   width: 100%;
   padding-inline: var(--space-3);
   color: var(--text);
+  transition: border-color 150ms var(--ease-out), color 150ms var(--ease-out);
 }
 
 input[type="search"]::placeholder {
@@ -163,15 +169,27 @@ select {
   padding-inline: var(--space-3);
   color: var(--muted);
   cursor: pointer;
+  transition: border-color 160ms var(--ease-out), color 160ms var(--ease-out), transform 160ms var(--ease-out);
 }
 
-.filter-toggle[aria-expanded="true"],
-.filter-toggle:hover,
-.clear-filters:hover,
-input[type="search"]:hover,
-select:hover {
+.filter-toggle:active,
+.clear-filters:active {
+  transform: scale(0.96);
+}
+
+.filter-toggle[aria-expanded="true"] {
   border-color: var(--faint);
   color: var(--text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .filter-toggle:hover,
+  .clear-filters:hover,
+  input[type="search"]:hover,
+  select:hover {
+    border-color: var(--faint);
+    color: var(--text);
+  }
 }
 
 input[type="search"]:focus-visible,
@@ -189,6 +207,12 @@ a:focus-visible {
   gap: var(--space-3);
   padding-top: var(--space-3);
   border-top: 1px solid var(--line);
+  transform-origin: top left;
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.98);
+  }
 }
 
 .filter-panel label {
@@ -235,10 +259,13 @@ main {
   min-height: 76px;
   padding-block: var(--space-3);
   border-bottom: 1px solid var(--line);
+  transition: background-color 160ms var(--ease-out);
 }
 
-.crow:hover {
-  background: var(--surface);
+@media (hover: hover) and (pointer: fine) {
+  .crow:hover {
+    background: var(--surface);
+  }
 }
 
 .crow-thumb {
@@ -314,6 +341,7 @@ main {
 .crow-facts {
   color: var(--muted);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .crow-creator::before {
@@ -375,11 +403,13 @@ main {
   flex-wrap: wrap;
   gap: var(--space-2);
   color: var(--faint);
+  min-width: 0;
 }
 
 .evidence a,
 .evidence span {
   color: inherit;
+  overflow-wrap: anywhere;
 }
 
 .evidence a:hover {
@@ -411,10 +441,12 @@ main {
   text-decoration-color: var(--line);
 }
 
-.icon-link:hover,
-.file-link:hover {
-  color: var(--text);
-  text-decoration-color: currentColor;
+@media (hover: hover) and (pointer: fine) {
+  .icon-link:hover,
+  .file-link:hover {
+    color: var(--text);
+    text-decoration-color: currentColor;
+  }
 }
 
 .vrm-btn {
@@ -428,11 +460,18 @@ main {
   cursor: pointer;
   font-size: var(--text-sm);
   font-weight: 600;
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out);
 }
 
-.vrm-btn:hover {
-  border-color: var(--text);
-  background: var(--text);
+.vrm-btn:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vrm-btn:hover {
+    border-color: var(--text);
+    background: var(--text);
+  }
 }
 
 .empty,
@@ -461,6 +500,11 @@ main {
   inset: 0;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.82);
+  opacity: 1;
+  transition: opacity 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 #vrmModal.active {
@@ -477,6 +521,11 @@ main {
   border: 1px solid var(--line);
   border-radius: var(--space-1);
   background: var(--bg);
+  transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.96);
+  }
 }
 
 #vrmModalHeader,
@@ -512,10 +561,17 @@ main {
   cursor: pointer;
   font-size: var(--text-lg);
   line-height: 1;
+  transition: transform 160ms var(--ease-out), color 150ms var(--ease-out);
 }
 
-#vrmModalClose:hover {
-  color: var(--text);
+#vrmModalClose:active {
+  transform: scale(0.94);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #vrmModalClose:hover {
+    color: var(--text);
+  }
 }
 
 #vrmCanvasContainer {
