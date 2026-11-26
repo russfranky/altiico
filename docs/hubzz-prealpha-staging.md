@@ -1,7 +1,7 @@
 # Hubzz pre-alpha staging bundle
 
-Generated at: `2026-11-26T14:52:58Z`
-Snapshot: `vrmcat-v1-9d52af84eb4b12f348c40055`
+Generated at: `2026-11-26T16:31:13Z`
+Snapshot: `vrmcat-v1-42cd34030474da1e3e448ef7`
 
 ## Summary
 

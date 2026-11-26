@@ -1,12 +1,12 @@
 {
   "schema": "3dvault-named-project-discovery-v1",
-  "generatedAt": "2026-11-19T18:38:41.069148+00:00",
+  "generatedAt": "2026-11-26T16:31:12.873096+00:00",
   "source": "3dvault recovered OpenSea collection identities",
   "policy": "lead-only until binary GLB 2.0 + VRM/VRMC_vrm validation passes",
   "summary": {
     "collectionsInspected": 6,
     "nftsSampled": 222,
-    "metadataDocuments": 196,
+    "metadataDocuments": 198,
     "modelCandidates": 0,
     "validatedVrms": 0,
     "collectionsWithValidatedVrms": 0,
@@ -26,15 +26,13 @@
       "image_url": "https://i2c.seadn.io/ethereum/75db99053ab444cfa0d8fb55d1f60547/2a98bfb35de339b49f3a4f0c4696c4/5c2a98bfb35de339b49f3a4f0c4696c4.png",
       "banner_image_url": "https://i2c.seadn.io/collection/clonex/image_type_hero_desktop/8ea089ae2615d847c20807c471ade4/938ea089ae2615d847c20807c471ade4.png",
       "nfts_sampled": 40,
-      "metadata_documents": 37,
-      "metadata_fetch_errors": 3,
+      "metadata_documents": 39,
+      "metadata_fetch_errors": 1,
       "model_candidates": [],
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 19764: HTTPError: HTTP Error 404: Not Found",
-        "metadata 19763: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1018)>",
-        "metadata 19760: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1018)>"
+        "metadata 19764: HTTPError: HTTP Error 404: Not Found"
       ]
     },
     {
@@ -135,7 +133,7 @@
       "validated_vrms": [],
       "rejected_model_candidates": [],
       "errors": [
-        "metadata 9990: TimeoutError: The read operation timed out"
+        "metadata 9986: TimeoutError: The read operation timed out"
       ]
     },
     {
