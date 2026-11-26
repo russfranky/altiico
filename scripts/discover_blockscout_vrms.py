@@ -135,8 +135,19 @@ def discover(args: argparse.Namespace) -> dict[str, Any]:
     contracts: list[dict[str, Any]] = []
     params: dict[str, Any] = {"type": "ERC-721,ERC-1155"}
     pages = 0
+    availability = "available"
+    source_error: str | None = None
     while len(contracts) < args.max_contracts and pages < args.max_pages:
-        data = _get_json(_url(base, "/tokens", params), args.timeout)
+        try:
+            data = _get_json(_url(base, "/tokens", params), args.timeout)
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+            source_error = f"{type(exc).__name__}: {exc}"[:500]
+            availability = "unavailable" if pages == 0 else "partial"
+            print(
+                f"Blockscout source {availability} on page {pages + 1}: {source_error}",
+                file=sys.stderr,
+            )
+            break
         pages += 1
         items = data.get("items") or []
         if isinstance(items, list):
@@ -189,6 +200,8 @@ def discover(args: argparse.Namespace) -> dict[str, Any]:
     summary = {
         "chain": chain.key,
         "chain_id": chain.chain_id,
+        "availability": availability,
+        "source_error": source_error,
         "blockscout_pages": pages,
         "nft_contracts_discovered": len(contracts),
         "nft_contracts_inspected": len(rows),
@@ -200,9 +213,10 @@ def discover(args: argparse.Namespace) -> dict[str, Any]:
         "validation_statuses": dict(Counter(str(item.get("status")) for item in validations)),
         "error_contracts": sum(bool(row["errors"]) for row in rows),
     }
-    return {
+    report: dict[str, Any] = {
         "schema": "blockscout-vrm-discovery-v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "availability": availability,
         "chain": {
             "key": chain.key,
             "chain_id": chain.chain_id,
@@ -213,6 +227,13 @@ def discover(args: argparse.Namespace) -> dict[str, Any]:
         "summary": summary,
         "contracts": rows,
     }
+    if source_error is not None:
+        report["source_error"] = source_error
+        report["reason"] = (
+            "Blockscout API unavailable during enumeration; no chain VRM absence "
+            "is asserted while source is unavailable"
+        )
+    return report
 
 
 def main(argv: list[str] | None = None) -> int:

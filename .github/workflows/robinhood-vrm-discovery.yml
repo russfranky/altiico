@@ -3,6 +3,7 @@ name: Robinhood Chain VRM discovery
 on:
   push:
     branches:
+      - main
       - agent/opensea-high-recall-discovery
     paths:
       - scripts/chain_registry.py
@@ -68,6 +69,7 @@ jobs:
           import json
           from pathlib import Path
           report = json.loads(Path('data/robinhood_vrm_discovery_report.json').read_text())
+          print('AVAILABILITY:', report.get('availability', 'available'), report.get('source_error') or '')
           print(json.dumps(report['summary'], indent=2))
           print('\nCONTRACTS SCANNED')
           for row in report['contracts']:

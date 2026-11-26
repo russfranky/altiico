@@ -17,6 +17,7 @@ on:
       - scripts/audit_etherscan_authority.py
       - scripts/preserve_etherscan_evidence.py
       - scripts/audit_bitquery_evidence.py
+      - scripts/preserve_bitquery_evidence.py
       - scripts/build_authoritative_consensus.py
       - scripts/export_hubzz_staging.py
       - .github/workflows/authoritative-multisource-refresh.yml
@@ -57,13 +58,12 @@ jobs:
           test -n "$OPENSEA_API_KEY"
           test -n "$MORALIS_API_KEY" || test -n "$MORALIS_KEY"
           test -n "$ETHERSCAN_API_KEY" || test -n "$ETHERSCAN_KEY"
-          test -n "$BITQUERY_API_KEY" || test -n "$BITQUERY_TOKEN" || test -n "$BITQUERY_OAUTH_TOKEN"
       - name: Compile evidence pipeline
         run: |
           python -m py_compile scripts/opensea_client.py scripts/moralis_client.py scripts/etherscan_client.py scripts/bitquery_client.py \
             scripts/cross_reference_sources.py scripts/build_source_consensus.py scripts/discover_moralis_models.py \
             scripts/audit_etherscan_authority.py scripts/preserve_etherscan_evidence.py scripts/audit_bitquery_evidence.py \
-            scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
+            scripts/preserve_bitquery_evidence.py scripts/build_authoritative_consensus.py scripts/export_hubzz_staging.py
       - name: Refresh OpenSea collection media
         run: python scripts/enrich_opensea.py --meta-only --force
       - name: Refresh Moralis without destroying last-good evidence
@@ -163,9 +163,20 @@ jobs:
             --previous data/etherscan_authority_report.json \
             --output data/etherscan_authority_report.json \
             --health data/source_health.json
-      - name: Audit Bitquery on-chain NFT evidence
+      - name: Audit Bitquery on-chain NFT evidence without losing last-good evidence
         run: |
-          python scripts/audit_bitquery_evidence.py --output data/bitquery_evidence_report.json --tokens 25 --concurrency 3 --collection-concurrency 3
+          mkdir -p /tmp/vrm-source-refresh
+          rm -f /tmp/vrm-source-refresh/bitquery.json
+          if [ -n "$BITQUERY_API_KEY" ] || [ -n "$BITQUERY_TOKEN" ] || [ -n "$BITQUERY_OAUTH_TOKEN" ]; then
+            python scripts/audit_bitquery_evidence.py --output /tmp/vrm-source-refresh/bitquery.json --tokens 25 --concurrency 3 --collection-concurrency 3 || echo "Bitquery audit exited non-zero; falling back to preserved evidence."
+          else
+            echo "Bitquery credentials unset; falling back to preserved evidence."
+          fi
+          python scripts/preserve_bitquery_evidence.py \
+            --fresh /tmp/vrm-source-refresh/bitquery.json \
+            --previous data/bitquery_evidence_report.json \
+            --output data/bitquery_evidence_report.json \
+            --health data/source_health.json
           python scripts/build_authoritative_consensus.py
       - name: Regenerate Hubzz and catalog artifacts
         run: |
@@ -187,13 +198,16 @@ jobs:
           missing=[i['set']['slug'] for i in sets if not i['set'].get('bannerUrl')]
           dedicated=sum(i.get('bannerEvidence',{}).get('source')=='collection_banner' for i in sets)
           fallback=sum(i.get('bannerEvidence',{}).get('source')=='pfp_fallback' for i in sets)
-          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'moralisModelAvailability':models.get('availability','available'),'bitquery':bitquery['summary'],'sourceHealth':health}
+          summary={'stageableSets':len(sets),'dedicatedBanners':dedicated,'pfpFallbacks':fallback,'missingBanners':missing,'authority':authority['summary'],'moralisModels':models['summary'],'moralisModelAvailability':models.get('availability','available'),'bitquery':bitquery['summary'],'bitqueryAvailability':bitquery.get('availability','available'),'sourceHealth':health}
           print(json.dumps(summary,indent=2))
           assert not missing
           assert dedicated+fallback==len(sets)
           assert authority['summary']['collections'] > 0
-          assert bitquery['summary']['collectionsInspected'] > 0
-          assert bitquery['summary']['collectionsObservedOnchain'] > 0, 'Bitquery produced no positive on-chain observations'
+          bitquery_mode = health.get('bitquery', {}).get('mode')
+          assert bitquery_mode in {'fresh', 'previous_last_good', 'unavailable'}, f'Unexpected Bitquery mode: {bitquery_mode}'
+          if bitquery_mode != 'unavailable':
+              assert bitquery['summary']['collectionsInspected'] > 0
+              assert bitquery['summary']['collectionsObservedOnchain'] > 0, 'Bitquery produced no positive on-chain observations'
           assert health['etherscan']['selectedCorroborated'] > 0, 'Etherscan retained no corroborated contract evidence'
           PY
       - name: Full repository verification
