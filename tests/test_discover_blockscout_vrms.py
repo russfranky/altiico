@@ -101,3 +101,34 @@ def test_blockscout_unconfigured_chain_still_exits_nonzero(tmp_path, monkeypatch
                 str(tmp_path / "out.json"),
             ]
         )
+
+
+def test_blockscout_non_json_html_response_returns_unavailable_report(tmp_path, monkeypatch):
+    class FakeHtmlResp:
+        def __enter__(self):
+            return self
+        def __exit__(self, *a):
+            return False
+        def read(self):
+            return b"<!DOCTYPE html><html><body>Cloudflare check</body></html>"
+
+    monkeypatch.setattr(discover_blockscout_vrms.urllib.request, "urlopen", lambda req, timeout=0: FakeHtmlResp())
+    out = tmp_path / "robinhood_html.json"
+
+    rc = discover_blockscout_vrms.main(
+        [
+            "--chain",
+            "robinhood",
+            "--output",
+            str(out),
+            "--max-contracts",
+            "10",
+            "--max-pages",
+            "1",
+        ]
+    )
+
+    assert rc == 0
+    report = json.loads(out.read_text(encoding="utf-8"))
+    assert report["availability"] == "unavailable"
+    assert "JSONDecodeError" in report["source_error"]

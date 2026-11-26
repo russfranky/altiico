@@ -9,6 +9,7 @@ with the catalog's binary GLB/VRM validator. It never promotes catalog rows.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import sys
 import time
@@ -60,7 +61,7 @@ def _get_json(url: str, timeout: float, attempts: int = 4) -> dict[str, Any]:
                 delay = min(5.0, 0.75 * attempt)
             print(f"Blockscout HTTP {exc.code}; retry {attempt}/{attempts} after {delay:.2f}s", file=sys.stderr)
             time.sleep(delay)
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except (urllib.error.URLError, TimeoutError, http.client.HTTPException) as exc:
             last_error = exc
             if attempt >= attempts:
                 raise
@@ -140,7 +141,15 @@ def discover(args: argparse.Namespace) -> dict[str, Any]:
     while len(contracts) < args.max_contracts and pages < args.max_pages:
         try:
             data = _get_json(_url(base, "/tokens", params), args.timeout)
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+        except (
+            urllib.error.HTTPError,
+            urllib.error.URLError,
+            TimeoutError,
+            http.client.HTTPException,
+            json.JSONDecodeError,
+            UnicodeDecodeError,
+            OSError,
+        ) as exc:
             source_error = f"{type(exc).__name__}: {exc}"[:500]
             availability = "unavailable" if pages == 0 else "partial"
             print(

@@ -8,8 +8,10 @@ Backfill missing project_url, description, and license from source data:
 import json, sqlite3, urllib.request
 from pathlib import Path
 
-BASE = Path(__file__).parent
-DB = BASE / "vrm_index.db"
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT
+DB = ROOT / "data" / "vrm_index.db"
+A3AC_PATH = BASE / "data" / "os_scrape" / "a3ac_parsed.json"
 
 def normalize_name(n):
     return n.lower().strip().replace('-', ' ').replace('_', ' ')
@@ -46,9 +48,10 @@ def main():
         return
 
     # ─── Source 1: A3AC parsed data ──────────────────────────────────────
-    a3ac_path = BASE / "os_scrape" / "a3ac_parsed.json"
+    a3ac_path = A3AC_PATH
     if a3ac_path.exists():
-        a3ac = json.load(open(a3ac_path))
+        with open(a3ac_path, encoding="utf-8") as af:
+            a3ac = json.load(af)
         for entry in a3ac:
             ename = normalize_name(entry.get('name', ''))
             url = entry.get('project_url', '') or entry.get('website', '') or entry.get('url', '')
